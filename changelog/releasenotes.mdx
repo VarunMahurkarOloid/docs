@@ -1,0 +1,40 @@
+---
+title: Release Notes
+sidebarTitle: "Release Notes"
+---
+
+This page contains a log of changes made to the Oloid API. Each entry includes information about new features, updates, and bug fixes.
+
+## v1.2.0 - Released August 2025
+
+### Features:
+
+- Added support for batch data processing in `POST /data`.
+- Introduced new `GET /users/{id}/details` endpoint for more detailed user information.
+- API now returns error codes with more detailed descriptions.
+
+### Fixes:
+
+- Fixed an issue where the `GET /users` endpoint would occasionally return outdated user data.
+- Resolved bug causing incorrect timestamp formatting in some responses.
+
+## v1.1.0 - Released June 2025
+
+### Features:
+
+- Added OAuth 2.0 support for API authentication (in addition to API key).
+- Introduced `GET /stats` endpoint to fetch system metrics.
+
+### Fixes:
+
+- Fixed pagination issues in `GET /transactions` endpoint.
+
+## v1.0.0 - Released April 2025
+
+- Initial release of the Oloid API.
+- Included basic authentication using API keys.
+- Supported CRUD operations for users, groups, and permissions.
+
+---
+
+Make sure to always check the changelog to stay updated with the latest features and improvements in the Oloid API.

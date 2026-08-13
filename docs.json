@@ -2646,7 +2646,8 @@
                   "resources/guides/facial-scan-policy",
                   "resources/guides/how-to-find-the-card-type-and-card-format-using-the-rf-ideas-configurator-tool",
                   "resources/guides/list-of-oloid-supported-integrations",
-                  "resources/guides/oloid-product-updates"
+                  "resources/guides/oloid-product-updates",
+                  "resources/guides/what-s-new-in-oloid"
                 ]
               },
               {
@@ -2726,46 +2727,33 @@
       },
       {
         "tab": "Changelog",
-        "menu": [
+        "groups": [
           {
-            "item": "Overview",
-            "icon": "book-open",
-            "pages": [
-              "changelog/overview"
-            ]
-          },
-          {
-            "item": "Release Notes",
+            "group": "Product Release Notes",
             "icon": "clock-rotate-left",
             "pages": [
-              "changelog/release-notes",
-              {
-                "group": "Supporting Documents",
-                "pages": [
-                  "changelog/what-s-new-in-oloid"
-                ]
-              }
+              "changelog/platform",
+              "changelog/windows",
+              "changelog/android",
+              "changelog/ios",
+              "changelog/webkey",
+              "changelog/oloidvault",
+              "changelog/userportal"
             ]
           },
           {
-            "item": "iOS",
-            "icon": "apple",
+            "group": "Coming Soon",
+            "icon": "rocket",
             "pages": [
-              "changelog/ios/overview"
+              "changelog/upcoming/apps",
+              "changelog/upcoming/web"
             ]
           },
           {
-            "item": "Android",
-            "icon": "android",
+            "group": "API",
+            "icon": "code",
             "pages": [
-              "changelog/android/overview"
-            ]
-          },
-          {
-            "item": "Admin Portal",
-            "icon": "user-gear",
-            "pages": [
-              "changelog/admin-portal/overview"
+              "changelog/releasenotes"
             ]
           }
         ]
