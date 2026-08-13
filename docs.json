@@ -480,14 +480,6 @@
                     ]
                   },
                   {
-                    "group": "Getting Started",
-                    "pages": [
-                      "passwordless/windows/supervisor/how-to-log-in-to-supervisor-app",
-                      "passwordless/windows/supervisor/setting-up-and-using-supervisor-app",
-                      "passwordless/windows/supervisor/what-is-supervisor-app"
-                    ]
-                  },
-                  {
                     "group": "Installation and Configuration",
                     "pages": [
                       "passwordless/windows/supervisor/how-to-download-supervisor-app",
@@ -1224,6 +1216,46 @@
                   "passwordless/cloudkey/using-the-oloid-cloudkey-app-profile",
                   "passwordless/cloudkey/using-the-oloid-cloudkey-app-wallet",
                   "passwordless/cloudkey/using-the-oloid-cloudkey-app-credentials-tab"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "TimeClock",
+        "menu": [
+          {
+            "item": "Overview",
+            "icon": "book-open",
+            "pages": [
+              "timeclock/overview"
+            ]
+          },
+          {
+            "item": "Android",
+            "icon": "android",
+            "pages": [
+              {
+                "group": "Platform Configuration",
+                "pages": [
+                  "timeclock/android/how-to-enable-devicelock-workday-punch-integration-in-tenant-admin-portal"
+                ]
+              },
+              "timeclock/android/getting-started/introduction"
+            ]
+          },
+          {
+            "item": "iOS",
+            "icon": "apple",
+            "pages": [
+              "timeclock/ios/getting-started/introduction",
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "passwordless/windows/supervisor/how-to-log-in-to-supervisor-app",
+                  "passwordless/windows/supervisor/setting-up-and-using-supervisor-app",
+                  "passwordless/windows/supervisor/what-is-supervisor-app"
                 ]
               }
             ]
@@ -2227,7 +2259,6 @@
             "item": "Integrations",
             "icon": "plug",
             "pages": [
-              "resources/integrations/overview",
               {
                 "group": "SSO & Identity",
                 "pages": [
@@ -2531,67 +2562,41 @@
                     ]
                   }
                 ]
+              },
+              {
+                "group": "PaaS",
+                "pages": [
+                  "passwordless/windows/vault/getting-started"
+                ]
               }
             ]
           },
           {
             "item": "Industry",
             "icon": "building",
-            "pages": [
-              "resources/industry/overview",
+            "dropdowns": [
               {
-                "group": "Healthcare",
+                "dropdown": "Healthcare",
                 "pages": [
-                  {
-                    "group": "Passwordless Authenticator - Miscellaneous Docs",
-                    "pages": [
-                      "resources/industry/healthcare/installing-oloid-agent-rpa-runtime-for-ehr-login-credential-provider-rpa",
-                      "resources/industry/healthcare/installing-oloid-rpa-add-on-rpa-runtime-for-ehr-login-rpa-only",
-                      "resources/industry/healthcare/oloid-passwordless-installation-methods-for-ehr-login"
-                    ]
-                  },
-                  {
-                    "group": "Windows Login (Healthcare) - Overview and Setup",
-                    "pages": [
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-install-epic-hyperspace-for-epic-ehr",
-                      "resources/industry/healthcare/windows-login-healthcare-epic-ehr-integration-with-oloid-windows-login"
-                    ]
-                  },
-                  {
-                    "group": "Windows Login (Healthcare) - Tenant Admin Configuration",
-                    "pages": [
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-configure-epic-ehr-in-the-tenant-admin-portal",
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-configure-reauthenticate-current-user-for-epic-ehr-in-tenant-admin-portal",
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-configure-reauthentication-workflow-for-epic-ehr-in-tenant-admin-portal",
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-configure-two-user-authentication-workflow-for-epic-ehr-in-tenant-admin-portal",
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-enable-current-user-editable-for-epic-ehr-in-tenant-admin-portal"
-                    ]
-                  },
-                  {
-                    "group": "Windows Login (Healthcare) Videos",
-                    "pages": [
-                      "resources/industry/healthcare/windows-login-healthcare-epic-ehr-integration-video-tutorial",
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-configure-reauthenticate-current-user-for-epic-ehr-in-tenant-admin-portal-video-tutorial",
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-configure-two-user-authentication-workflow-for-epic-ehr-in-tenant-admin-portal-video-tutorial"
-                    ]
-                  },
-                  {
-                    "group": "Windows Login (Healthcare)- Reauthentication and User Switching",
-                    "pages": [
-                      "resources/industry/healthcare/windows-login-healthcare-how-to-use-the-reauthenticate-current-user-second-factor-tab-in-epic-ehr"
-                    ]
-                  }
+                  "passwordless/windows/vault/getting-started"
                 ]
               },
               {
-                "group": "Retail",
+                "dropdown": "Pharma",
                 "pages": [
-                  {
-                    "group": "Verify/Connect Videos",
-                    "pages": [
-                      "resources/industry/retail/how-to-download-oloid-verify-app-from-app-store-video-tutorial"
-                    ]
-                  }
+                  "passwordless/windows/connect/getting-started"
+                ]
+              },
+              {
+                "dropdown": "Manufacturing",
+                "pages": [
+                  "passwordless/windows/connect/getting-started"
+                ]
+              },
+              {
+                "dropdown": "Retail",
+                "pages": [
+                  "passwordless/windows/vault/getting-started"
                 ]
               }
             ]
@@ -2668,47 +2673,12 @@
         ]
       },
       {
-        "tab": "TimeClock",
-        "menu": [
-          {
-            "item": "Overview",
-            "icon": "book-open",
-            "pages": [
-              "timeclock/overview"
-            ]
-          },
-          {
-            "item": "Android",
-            "icon": "android",
-            "pages": [
-              "timeclock/android/overview",
-              {
-                "group": "Platform Configuration",
-                "pages": [
-                  "timeclock/android/how-to-enable-devicelock-workday-punch-integration-in-tenant-admin-portal"
-                ]
-              },
-              "timeclock/android/getting-started/introduction"
-            ]
-          },
-          {
-            "item": "iOS",
-            "icon": "apple",
-            "pages": [
-              "timeclock/ios/overview",
-              "timeclock/ios/getting-started/introduction"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "API Reference",
         "groups": [
           {
             "group": "API Documentation",
             "icon": "code",
             "pages": [
-              "api-reference/overview",
               {
                 "group": "API Guides",
                 "pages": [
@@ -2718,9 +2688,7 @@
                   "api-reference/list-transactions-api",
                   "api-reference/login-api-documentation"
                 ]
-              },
-              "api-reference/introduction",
-              "api-reference/authentication"
+              }
             ]
           }
         ]
