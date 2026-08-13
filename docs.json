@@ -1,0 +1,248 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Oloid Changelog",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      }
+    ],
+    "tabs": [
+      {
+        "tab": "Passwordless",
+        "groups": [
+          {
+            "group": "Windows",
+            "icon": "windows",
+            "pages": [
+              "passwordless/windows/overview",
+              {
+                "group": "Connect",
+                "pages": [
+                  "passwordless/windows/connect/getting-started"
+                ]
+              },
+              {
+                "group": "Vault",
+                "pages": [
+                  "passwordless/windows/vault/getting-started"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "iOS",
+            "icon": "apple",
+            "pages": [
+              "passwordless/ios/overview",
+              {
+                "group": "Connect",
+                "pages": [
+                  "passwordless/ios/connect/getting-started"
+                ]
+              },
+              {
+                "group": "Vault",
+                "pages": [
+                  "passwordless/ios/vault/getting-started"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Android",
+            "icon": "android",
+            "pages": [
+              "passwordless/android/overview",
+              {
+                "group": "Connect",
+                "pages": [
+                  "passwordless/android/connect/getting-started"
+                ]
+              },
+              {
+                "group": "Vault",
+                "pages": [
+                  "passwordless/android/vault/getting-started"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Web",
+            "icon": "globe",
+            "pages": [
+              "passwordless/web/overview",
+              {
+                "group": "Connect",
+                "pages": [
+                  "passwordless/web/connect/getting-started"
+                ]
+              },
+              {
+                "group": "Vault",
+                "pages": [
+                  "passwordless/web/vault/getting-started"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "TimeClock",
+        "groups": [
+          {
+            "group": "Android",
+            "icon": "android",
+            "pages": [
+              "timeclock/android/overview",
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "timeclock/android/getting-started/introduction"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "iOS",
+            "icon": "apple",
+            "pages": [
+              "timeclock/ios/overview",
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "timeclock/ios/getting-started/introduction"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Workflow",
+        "groups": [
+          {
+            "group": "Workflow",
+            "icon": "diagram-project",
+            "pages": [
+              "workflow/overview"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "icon": "code",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/authentication"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "iOS",
+            "icon": "apple",
+            "pages": [
+              "changelog/ios/overview"
+            ]
+          },
+          {
+            "group": "Android",
+            "icon": "android",
+            "pages": [
+              "changelog/android/overview"
+            ]
+          },
+          {
+            "group": "Admin Portal",
+            "icon": "user-gear",
+            "pages": [
+              "changelog/admin-portal/overview"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
+          {
+            "group": "Industry",
+            "icon": "building",
+            "pages": [
+              "resources/industry/overview"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "icon": "plug",
+            "pages": [
+              "resources/integrations/overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/website-logo.svg",
+    "dark": "/images/website-logo.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@oloid.ai"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://app.mintlify.com"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/oloid_ai",
+      "linkedin": "https://www.linkedin.com/company/oloid-ai",
+      "facebook": "https://www.facebook.com/oloidAI"
+    }
+  },
+  "appearance": {
+    "default": "light"
+  },
+  "interaction": {
+    "drilldown": false
+  }
+}
