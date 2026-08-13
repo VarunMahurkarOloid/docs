@@ -1,0 +1,108 @@
+---
+title: "Webkey - How to Configure Theme tab for Webkey Application in the Tenant Admin Portal"
+sidebarTitle: "How to Configure Theme tab for Webkey Application"
+description: "This document provides step-by-step instructions to edit Theme tab for WebKey Application in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/web/webkey"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10800135"
+  url: "https://oloid.help/en/articles/10800135-webkey-how-to-configure-theme-tab-for-webkey-application-in-the-tenant-admin-portal"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-07-08T10:38:14Z"
+  migratedAt: "2026-08-13T09:16:06.774980+00:00"
+---
+## Introduction
+
+The **Theme** tab allows Tenant Admin to customize the appearance and branding of the WebKey application. Administrators can configure logos, colors, background images, welcome screen branding, language settings, Help URL, and user-facing messages to provide a consistent authentication experience that aligns with their organization's branding.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- You must create a WebKey application. For more details, refer [How to create a WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+## Steps to edit Theme tab
+
+1. Log in to the **Tenant Admin Portal**. For more details, refer [How to log in to the Tenant Admin Portal](/administration/admin-portal/how-to-log-in-to-the-tenant-admin-portal).
+2. On the **Applications** page, click on the Webkey application to edit. ![](/images/10800135/d5355d7e2b98.png) The application page is displayed. ![](/images/10800135/2bd8833f7047.png)
+3. Go to **Theme**tab. ![](/images/10800135/60674cd06f6f.png) The **Theme** page is displayed.
+4. Do the following.[Edit theme](#h_518f80cec0) [Edit Welcome Screen Image](#h_3e4b45f0f4)[Edit Language Support](#h_b04ede8b7c)[Enable Help URL](#h_50d7b90c33)[Configure Messages](#h_15f6a8afb5)
+5. Click **Deploy Changes**to save the configurations. **Edit theme**
+
+1. Edit Customer logo.**Note:** The maximum file dimensions for the logo are **264x72 px**, with a maximum size of **1 MB** in **PNG** format. ![](/images/10009894/a8fab751f871.png)
+2. **Background Image:** Do one of the following:Edit Background image.**Note:** The maximum file size is **2 MB** (JPG, PNG, JPEG). This image is used as the widget background.orSelect **Solid Background** option > enter color code. ![](/images/10009894/a29601a2c35f.png)
+3. **Primary Color/Button Default:** Update the primary color code to define the primary button's default background and its hover-state text color.
+4. **Secondary Color/Hover State:** Update the secondary color code to define the primary button's hover background and its default text color.
+5. **Widget Header/Footer Color:** Update the background color for the Widget's header and footer.
+6. **Footer Text Color:** Update the footer text color code in Login App. ![](/images/10800135/fed3b95b8e3b.png)
+
+1. (Optional) In the **Preview** section, select one of the following tabs to preview the theme configuration:**Identity Selection:**Preview the appearance of the identity selection screen displayed before user authentication.**Authentication:** Preview the authentication screen displayed when users authenticate using their configured credentials.**Error:** Preview how error messages and error screens are displayed to users during authentication failures.
+
+### Edit Welcome Screen Image
+
+1. Edit **Welcome screen image.**Use this setting to customize the image displayed on the app’s welcome screen.**Default**Select this option to use the system-provided default image.**Custom Image/App Logo**Select this option to upload your own image or app logo.Click or drag an image into the upload area.Supported file types: SVG or PNGMaximum dimensions: 436 x 165 pixelsMaximum file size: 2 MB ![](/images/10800135/b5b389725685.png)
+
+### Edit Language Support
+
+1. Select **Default App Language**from the dropdown.
+2. Select the **Use Browser Language as Display Language** checkbox.If Browser language is not supported, UI will be displayed in the default language
+3. Select the **Allow Language Selection on Login Page** checkbox.Language dropdown will be available only on the Login screen if checkbox is selected. ![](/images/10800135/c3a0b9b2147b.png)
+
+### Enable** **Help URL
+
+1. Select **Enable** **Help URL** checkbox to enable the Help URL feature.
+2. Enter a valid URL in the text box. This URL will be displayed as a clickable **Help** link on the login page.**Note:**users can click the Help link on the login screen to open the specified URL in a browser. Use this link to direct users to support documentation, system requirements, or troubleshooting instructions.
+
+<Frame>
+  <img src="/images/10800135/8858dec9aa5e.png" alt="Screenshot" />
+</Frame>
+
+### Configure Messages
+
+1. Turn on the **Enable Face Capture Instruction**toggle.Enable this toggle to displays instructions to the user during face authentication.
+2. Enable the **Customize Face Authentication Failure Message**toggle.Enable this toggle to show a fixed error message instead, regardless of error reason.
+3. Click **Deploy Changes**. ![](/images/10800135/b3aa42398347.png) The**Confirm Update** pop-up box is displayed.
+4. Click **Update**.
+
+<Frame>
+  <img src="/images/10800135/45f0c6c4779a.png" alt="Screenshot" />
+</Frame>
+
+The Theme tab for Webkey is configured.
+
+<Frame>
+  <img src="/images/10800135/b47f00552e1c.png" alt="Screenshot" />
+</Frame>
+
+The theme customization is set for Webkey Application successfully. You can see the changes in the preview screen
+
+<Frame>
+  <img src="/images/10800135/74d04cb146dc.png" alt="Screenshot" />
+</Frame>
+
+---
+
+**Keywords**
+
+| WebKey theme configuration| Customize WebKey theme| Configure WebKey colors|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey – How to Create and Configure a Webkey Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure Theme Tab for DeviceLock App" icon="arrow-right" href="/passwordless/android/devicelock/tenant-admin-portal-how-to-configure-theme-tab-for-devicelock-app" />
+  <Card title="Windows Login - How to Edit Theme tab for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-edit-theme-tab-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to edit Configure tab" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-edit-configure-tab" />
+  <Card title="Webkey - How to login to Tenant Admin Portal with Oloid Webkey SSO" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-login-to-tenant-admin-portal-with-oloid-webkey-sso" />
+</CardGroup>

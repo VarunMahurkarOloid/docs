@@ -1,0 +1,78 @@
+---
+title: "Windows Login 1.0 – Network URL Whitelisting Requirements for PROD (US) Environment"
+sidebarTitle: "1.0 – Network URL Whitelisting Requirements for PROD (US)…"
+description: "Windows Login 1.0 – Network URL Whitelisting Requirements for PROD (US) Environment"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "15132277"
+  url: "https://oloid.help/en/articles/15132277-windows-login-1-0-network-url-whitelisting-requirements-for-prod-us-environment"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v1.0"
+  updatedAt: "2026-06-05T04:10:00Z"
+  migratedAt: "2026-08-13T09:16:17.383510+00:00"
+---
+## Introduction
+
+This document lists the **domain URLs that must be whitelisted** in the customer network to allow Oloid products to function correctly.
+
+Whitelisting these URLs ensures proper connectivity for the **Oloid platform.**
+
+Allow **outbound HTTPS traffic (Port 443)** to the domains listed below.
+
+---
+
+## Product Information
+
+| **Field** | **Value** |
+|---|---|
+| Product Name | Windows Authenticator App 1.0 |
+| Protocol | HTTPS |
+| Port | 443 |
+| Direction | Outbound |
+
+---
+
+Use the following table for URL whitelisting.
+
+| **Service** | **PROD (US)** | **Description** |
+|---|---|---|
+| Admin API | api.oloid.cloud | Admin API used for Authentication. |
+| Tenant User API | api.myoloid.com | The Tenant User API used for Enrollment |
+| Tenant S3 bucket | \<tenantname>\<tenantid>.s3.us-east-1.amazonaws.com | Tenant S3 bucket URL used to download the Customer Logo. |
+| Oloid document bucket | oloiddocument-prod.s3.us-east-1.amazonaws.com | Oloid document bucket URL is used for Consent document. |
+
+---
+
+#### Notes
+
+- Replace **\<tenantname>** and **\<tenantid>** with your organization's Tenant name and Tenant ID.
+- Enter the **\<tenantname>** and **\<tenantid>** values in lowercase only.
+- Contact [Oloid Support](mailto:support@oloid.ai), if you do not have the **\<tenantname>** and **\<tenantid>** details.
+
+#### Related Document
+
+[Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (US) Environment | Oloid Help Center](/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-us-environment)
+
+---
+
+<Tip>
+  **Keywords:** Windows Login 1.0 Whitelisting URLs · Windows Login 1.0 Whitelisting URLs for PROD (US) Environment
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Windows Login v1.0 - Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v1-0-network-url-whitelisting-requirements-for-preview-uat-environment" />
+  <Card title="Windows Login 1.0 – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-1-0-network-url-whitelisting-requirements-for-prod-eu-environment" />
+  <Card title="Windows Login v2.0 - Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Windows Login v2.0 - Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-prod-eu-environment" />
+</CardGroup>

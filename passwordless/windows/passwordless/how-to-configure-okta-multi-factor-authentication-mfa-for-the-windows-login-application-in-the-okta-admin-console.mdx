@@ -1,0 +1,74 @@
+---
+title: "How to Configure OKTA Multi-Factor Authentication (MFA) for the Windows Login Application in the OKTA Admin Console"
+sidebarTitle: "Configure OKTA Multi-Factor Authentication (MFA) for the…"
+description: "This document provides step-by-step instructions to configure OKTA Multi-Factor Authentication (MFA) in OKTA Admin Console."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "13157388"
+  url: "https://oloid.help/en/articles/13157388-how-to-configure-okta-multi-factor-authentication-mfa-for-the-windows-login-application-in-the-okta-admin-console"
+  collection: "Multi Factor Authentication (MFA) Configuration for Windows Login"
+  section: "OKTA MFA - Configuration Guides"
+  updatedAt: "2026-01-21T08:05:57Z"
+  migratedAt: "2026-08-13T09:16:12.367830+00:00"
+---
+## Introduction
+
+OKTA provides authentication and MFA capabilities that can be integrated with Oloid applications. Configuring OKTA allows admin to establish a secure environment, create applications, and enable MFA for users.
+
+## Prerequisite
+
+You must have **admin access** to the **OKTA Administrator Console**.
+
+## Steps to Add User in OKTA
+
+1. Login to the Okta Admin Account.Okta Dashboard screen is displayed. ![](/images/13157388/e967da8c7923.png)
+2. Click **Directory > People > Add Person.** ![](/images/13157388/9f4183f426bd.png) Add Person pop-up box is displayed.
+3. Do the following:Select **User Type**.Enter **First name**.Enter **Last name**.Enter **Username**.Enter **Email ID**.Groups (Optional)Select **Password**.**Select** the send user activation email now.
+4. Click **Save.** ![](/images/13157388/384189ba28a9.png) The user added successfully, and user screen is displayed.
+5. Click on the user. ![](/images/13157388/dd3e4eff4d65.png) The user detail page is displayed.
+6. On the address bar, after the **/Users/profile/** in the URL, copy the user ID. ![](/images/13157388/d07e34be1710.png)For Example: https://your-domain-admin.okta.com/admin/user/profile/00u1abcdEFGHijkLM5d7
+7. Enter this ID in the **OKTA ID** field in the **Tenant Admin Portal**.To navigate the OKTA ID field, go to **Directory > Users > Select User > Other Identifier** section, enter the ID in the **OKTA ID** field.​![](/images/13157388/539691cc2555.png) The **OKTA** **ID** added successfully.
+8. User receives an Okta Activation Email on registered email ID, click **Activate Okta Account.** ![](/images/13157388/ee138a3dd1c2.png) The OKTA Change password screen is displayed.
+9. Do the following:Enter **Old Password** in the Old Password field.Enter **New Password** in the New Password field.Enter **New Password** in the Repeat password field.**Note:** Keep New Password same in **New Password** and **Repeat Password** fields.Click **Change Password**. ![](/images/13157388/83afe675884b.png) The Password is changed successfully, and you will be redirected to the OKTA user dashboard screen.
+10. Go to **User Profile > Settings**. ![](/images/13157388/f3c642f91091.png) The Settings page is displayed.
+11. Click **Set up**. ![](/images/13157388/2b1868b2e155.png) The Set up multifactor authentication screen is displayed.
+12. Click **Setup**. ​![](/images/13157388/bc094053460a.png) The Setup OKTA Verify screen is displayed.
+13. Select the device i.e., **iPhone** or **Android**. ![](/images/13157388/c79c529caf02.png) The QR code screen is displayed.
+14. Open the OKTA verify application from your device and scan the QR code. **Note:** Make sure that OKTA Verify application is installed in your device.OKTA Verify is configured successfully.
+
+## Related Articles
+
+[How to Enable OKTA MFA Credential for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal).
+
+[How to Configure OKTA Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Okta User Creation · Add User in Okta Admin Console · Okta MFA Configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enable OKTA Multi-Factor Authentication (MFA) Credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="How to Configure PingOne Multi-Factor Authentication (MFA) for Windows Login Application in the PingOne Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console" />
+  <Card title="How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="How to Create Token ID for Windows Login Application in OKTA Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-create-token-id-for-windows-login-application-in-okta-admin-console" />
+</CardGroup>

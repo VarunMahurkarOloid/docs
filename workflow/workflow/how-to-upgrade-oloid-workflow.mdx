@@ -1,0 +1,121 @@
+---
+title: "How to upgrade Oloid Workflow ?"
+sidebarTitle: "Upgrade Oloid Workflow ?"
+description: "How to upgrade Oloid Workflow ?"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "9717036"
+  url: "https://oloid.help/en/articles/9717036-how-to-upgrade-oloid-workflow"
+  collection: "Oloid Workflow"
+  section: "Getting Started"
+  updatedAt: "2025-03-07T10:29:35Z"
+  migratedAt: "2026-08-13T09:16:28.106936+00:00"
+---
+**To upgrade Oloid Workflow, follow the below steps:**
+
+1. Take a back up of **Flows** via export feature. See, [How to export Flows](#h_01d7f663b6)
+2. Stop the Oloid Workflow Service. See, [How to stop the Service](#h_4a1da69c0c)
+3. Uninstall the Oloid Workflow Software. See, [How to uninstall Oloid Workflow](#h_a32907354d) ![](/images/9717036/60fe38b4c83c.png)Do not delete the folder C:\Oloid
+4. Install new version of Oloid workflow. See, [How to install Oloid Workflow](#h_ef2ab1740b)
+5. Restart Oloid Workflow Services.
+6. Import the Flows that were taken as backup. See, [How to import Flows](#h_0b6d6aebba)
+
+<Note>
+  :
+</Note>
+
+**Windows Upgrades** :
+
+- Oloid Workflow application is supported across Windows Server upgrades. Windows upgrades typically occur once every 3-5 years. The application is designed to maintain compatibility through these upgrades with minimal disruptions.
+
+**Integration Application Upgrades :**
+
+- Oloid Workflow application is supported across integration application upgrades, including systems like **ProWatch**, **Lenel OnGuard**, **S2 NetBox** and others. The application manages forward and backward compatibility to ensure seamless operation across different versions of these integrated systems.
+
+## Reference Documents
+
+## How to export Flows
+
+### Steps to export a Flow:
+
+1. Launch the workflow on prem machine.
+2. Navigate to the localhost URLin your browser address bar. Then, press Enter on your keyboard.The Workflow Login page is displayed. ![](/images/9717036/28f9011331a6.png)
+3. Enter username and password in the appropriate fields.
+4. Click **Login**.The Oloid Workflow application page is displayed. ![](/images/9717036/e14d1c3e0bf7.png)
+5. Click navigation menu ![](/images/9717036/7f59a69b49ae.png) icon on the top right corner.The list of options is displayed.
+6. Select **Export**to export the flows. ![](/images/9717036/fbcd8d81d6e9.png) The **Export Nodes** pop-up box is displayed. ![](/images/9717036/b5c11453e3c1.png)
+7. Select **All Flows**tab, then click **Download**. ![](/images/9717036/678e9e3c0cb3.png) The json flow is downloaded to your local device.
+
+---
+
+## How to stop the Service
+
+### Steps to stop the Service
+
+1. Search **Services** in the Start menu and select it from the corresponding result.The Services window is displayed.
+2. Select Oloid Workflow.
+3. Then right-click on the service, select **Stop**, and wait for the service to stop.![](/images/9717036/d6e2ce045770.png) The Oloid Workflow Services will be stopped.
+
+---
+
+## How to uninstall Oloid Workflow
+
+### To uninstall:
+
+1. Right click & open **Oloid Workflow Installer** with **Run as Administrator** option.The installer will auto detect existing installation and requests for **Uninstall**.
+2. Click **Uninstall** to proceed. ![](/images/9674338/b266de82522b.png)
+3. A windows pops up to show the uninstallation progress. ![](/images/9674338/f1367553e7ad.png)
+4. Once the installation is complete, a confirmation message will appear. To close the installer, click **Finish & Close Installer**. ![](/images/9674338/113b6e6421fa.png)
+
+---
+
+## How to install Oloid Workflow
+
+### Steps to Install Oloid-Workflow
+
+1. Right-click & open **Oloid Workflow Installer** with **Run as Administrator** option.
+2. Select **Installation mode** and click **Initiate Installation**.(In Online mode, the installer will fetch necessary install files from internet)(In Offline mode, the installer will fetch necessary install files from build.zip file shared by Oloid executive) ![](/images/8052890/d7ca3cc71e10.png)
+3. Click **Continue**. **Note:**The installer will do various checks and show the status here. In case, installer detects any failure, please contact Oloid executive with screenshot. ![](/images/8052890/eb7f42dd0ccd.png)
+4. Fill in the required details – Please talk to Oloid executive for this information.Tenant Name – Please talk to Oloid executive for this informationTenant ID – Please talk to Oloid executive for this informationChoose Installer version – Please talk to Oloid executive for this informationInstallation Path – local path where application will be installedPort – default is 80Installation environment – UAT for sandbox, Prod for Production ![](/images/8052890/fc3cb3ff7c94.png) ![](/images/8052890/1d6545fcce8b.png)
+5. Check the license agreement and Click **Install**. ![](/images/8052890/06967f9a77c2.png)
+6. Wait till the installation is complete. ![](/images/8052890/eb9ac70c2901.png)
+7. Installation Progress will be shown here. ![](/images/8052890/e512b99b2c30.png)
+8. Installation is complete.
+9. Click **Finish and Open Application**. ![](/images/8052890/b8c0b55f49e3.png)
+
+Post Installation
+
+To pair Oloid Workflow instance with Oloid Cloud Platform, refer [How to pair Oloid Workflow instance with Oloid Cloud Platform](/workflow/workflow/how-to-pair-oloid-workflow-instance-with-oloid-cloud-platform)
+
+---
+
+## How to import Flows
+
+### Steps to import a Flow
+
+1. Launch the workflow on prem machine.
+2. Navigate to the localhost URLin your browser address bar. Then, press Enter on your keyboard.The Workflow Login page is displayed.![](/images/9717036/28f9011331a6.png)
+3. Enter username and password in the appropriate fields.
+4. Click **Login**.The Oloid Workflow application page is displayed.![](/images/8574815/a4d4932ed68b.png)
+5. Click **Import**on the top menu.The **Import Nodes** pop-up box is displayed.
+6. Click **Import from file** in the pop-up box.![](/images/8574815/f4ea0280cbb5.png)
+7. Select the json file to be imported from your system.![](/images/8574815/cfec6cf926a1.png) The json flow data is displayed in the **Import Nodes** window.
+8. Verify the json flow data and Click **Import.** The file import success message is displayed. It shows the number of flows and nodes imported.![](/images/8574815/0bb9080bbadd.png)
+9. Click Deploy.The file is successfully deployed and displayed as a tab in the Workflow Application.![](/images/8574815/3b1a66c0c26b.png)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Workflow - Overview" icon="arrow-right" href="/workflow/workflow/oloid-workflow-overview" />
+  <Card title="Getting Started with Oloid Workflow" icon="arrow-right" href="/workflow/workflow/getting-started-with-oloid-workflow" />
+  <Card title="Instruction for Workflow Instance Setup" icon="arrow-right" href="/workflow/workflow/instruction-for-workflow-instance-setup" />
+  <Card title="Set up C-Cure 9000 for Oloid Workflow integrations" icon="arrow-right" href="/resources/integrations/pacs/set-up-c-cure-9000-for-oloid-workflow-integrations" />
+  <Card title="How to uninstall Oloid Workflow" icon="arrow-right" href="/workflow/workflow/how-to-uninstall-oloid-workflow" />
+</CardGroup>

@@ -1,0 +1,84 @@
+---
+title: "Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using ManageEngine Endpoint Central (MDM)"
+sidebarTitle: "ManageEngine Endpoint Central (MDM)"
+description: "This document provides step by step instruction to deploy Oloid Vault using ManageEngine Endpoint Central (MDM)."
+icon: "tablet-screen-button"
+tags:
+  - "Administration"
+  - "Device Admin Apps"
+  - "Passwordless"
+  - "Web"
+  - "Chrome Vault"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "administration/device-admin-apps"
+  - "passwordless/web/chrome-vault"
+  - "resources/integrations/sso"
+primaryCategory: "administration/device-admin-apps"
+navPath: "Administration > Device Admin Apps"
+source:
+  system: "intercom"
+  articleId: "15189497"
+  url: "https://oloid.help/en/articles/15189497-oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-manageengine-endpoint-central-mdm"
+  collection: "Oloid Chrome Vault"
+  section: "Chrome Vault - Getting Started"
+  updatedAt: "2026-08-03T09:52:09Z"
+  migratedAt: "2026-08-13T09:16:17.530631+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions to install, configure and auto-pair the Oloid Vault chromium-based extension on managed Windows endpoints using ManageEngine Endpoint Central.
+
+## Prerequisites
+
+- You must have admin access to the ManageEngine Endpoint Central console.
+- You must download the **AutoPairConfig.txt** file from the Tenant Admin Portal. For more information, refer to [Oloid Vault (Chrome / Chromium)- How to Generate Auto-Pair Config File in the Tenant Admin Portal](/administration/admin-portal/oloid-vault-chrome-chromium-how-to-generate-and-download-auto-pair-config-file-in-the-tenant-admin-portal)**Note:** Download the AutoPairConfig file in `.txt` format only.
+
+## Steps to Deploy Oloid Vault (Chrome/Chromium) via ManageEngine Endpoint Central
+
+1. [Configure Chrome Extension Policy for Oloid Vault](#h_e3fcedccdd)
+2. [Configure Auto-pair for Oloid Vault](#h_02c99b2c03)
+3. [Configure Target and Deploy the Oloid Vault App](#h_479483e76e)The Chrome Vault is deployed successfully.
+
+## Configure Chrome Extension Policy for Oloid Vault
+
+1. Log in to the ManageEngine Endpoint Central.The ManageEngine Endpoint Central home screen is displayed.
+2. Go to **Configurations** > **Create Configuration**>**Windows.** ![](/images/15189497/97a1e23c8b81.png) The **Windows Configuration** screen is displayed.
+3. Click **Registry > Computer Configuration**. ![](/images/15189497/d125ab35feea.png) The Registry configuration screen is displayed.
+4. In the **Name and Description** section, do the following:Enter the configuration name.Click **Add** **Description** and then enter the description in the displayed text box. (Optional)
+5. Ensure **Manually** is selected under **Registry Configuration**.
+6. Ensure **Write Value** is selected under **Action**.
+7. Ensure **HKEY_LOCAL_MACHINE** is selected under **Header Key**.
+8. In the **Sub-Key** field, enter `SOFTWARE\Policies\Google\Chrome` as the registry sub-key path.
+9. Ensure **REG_SZ** is selected under **Data Type**.
+10. In the **Value Name** field, enter `ExtensionSettings` as the value name.
+11. In the **Value Data** field, enter the registry value data. Use the following data value.\{ "peeofnhcbenipokkdfpiocdbbapphnje": \{ "installation_mode": "force_installed", "toolbar_pin": "force_pinned", "update_url": "https://clients2.google.com/service/update2/crx", "override_update_url": true \} \} ![](/images/15189497/f6d4d386b888.png) The Chrome extension policy is configured successfully. Click **Add More Registry Settings** to configure auto-pair for Oloid Vault.
+
+## Configure Auto-pair for Oloid Vault
+
+1. Click **Add More Registry Settings**.The Registry Entry screen is displayed.
+2. In the **Name and Description** section, do the following:Enter the configuration name.Click **Add** **Description** and then enter the description in the displayed text box. (Optional)
+3. Ensure **Manually** is selected under **Registry Configuration**.
+4. Ensure **Write Value** is selected under **Action**.
+5. Ensure **HKEY_LOCAL_MACHINE** is selected under **Header Key**.
+6. In the **Sub-Key** field, enter `SOFTWARE\Policies\Google\Chrome\3rdparty\extensions\peeofnhcbenipokkdfpiocdbbapphnje\policy` as the registry sub-key path.
+7. Ensure **REG_SZ** is selected under **Data Type**.
+8. In the **Value Name** field, enter `Config` as the value name.
+9. In the **Value Data** field, paste the auto-pair config. plain text from the downloaded file.**Note:** You can download the auto-pair config. plain text from your Oloid Portal. ![](/images/15189497/ebcd8b63d2a2.png) The auto-pair is configured successfully. Scroll down to configure and deploy the Oloid Vault extension.
+
+## Configure Target and Deploy the Oloid Vault App
+
+1. Under **Define Target**, configure **Target 1**:Select the required **Target Type** from the drop-down.Configure the **Target settings**. ![](/images/15189497/8bc04f12676d.png) **Note:** The **Execution Settings** section is preconfigured with the recommended default settings. Do not change any options in this section.
+2. Click **Deploy.****Note:** Changes may take a few minutes to apply. To deploy the changes immediately, click **Deploy Immediately**. ![](/images/15189497/880112e2a4f1.png) The deployment is initiated and the configuration is pushed to target machines. ![](/images/15189497/67024f31da44.png) Keywords| Chrome Vault installation via MDM | Chrome Vault installation using MDM |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Vault (Chrome / Chromium) - How to unpair endpoint" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-unpair-endpoint" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to manually pair an endpoint" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-manually-pair-an-endpoint" />
+  <Card title="Oloid Vault (Chrome / Chromium)- How to Set Up and Use" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-set-up-and-use" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using ManageEngine Endpoint Central (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-manageengine-endpoint-central-mdm" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using Microsoft Intune (MDM)" icon="arrow-right" href="/administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-microsoft-intune-mdm" />
+</CardGroup>

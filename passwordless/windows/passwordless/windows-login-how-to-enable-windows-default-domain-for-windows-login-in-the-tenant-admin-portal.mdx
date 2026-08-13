@@ -1,0 +1,50 @@
+---
+title: "Windows Login - How to enable Windows Default Domain for Windows Login in the Tenant Admin Portal"
+sidebarTitle: "Windows Login - How to enable Windows Default Domain for…"
+description: "This document provides step-by-step instruction to enable Windows default domain for Windows Login application in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "12266470"
+  url: "https://oloid.help/en/articles/12266470-windows-login-how-to-enable-windows-default-domain-for-windows-login-in-the-tenant-admin-portal"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:48:37Z"
+  migratedAt: "2026-08-13T09:16:10.325364+00:00"
+---
+## Introduction
+
+The Oloid Windows Login application enables secure, passwordless sign-in. Tenant Admins can configure a default Windows domain in the Tenant Admin Portal to streamline logins in domain-connected environments. Once set, users are automatically directed to the specified domain, making the login process faster and error-free.
+
+## Prerequisites
+
+The **Allow Credential Updates and Enrollment** toggle must be enabled for the application. For more details refer the **configure** section of this document [How to create and configure Windows Login application](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal).  
+​
+
+## Steps to enable Windows default domain
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/12266470/5d695228eb0c.png) The user profile menu is displayed.
+3. Go to **Tenant** **Settings**. ![](/images/12266470/fb5a25fc9f1c.png) The **Tenant Settings** page is displayed.
+4. Go to **App Settings** tab > **others**> **Windows App**. ![](/images/12266470/4faab624b639.png)
+5. Do the following:Turn on **Enable Windows default domain**toggle.Enter Domain name in the text field.Click **Save**. ![](/images/12266470/6bae87ab7768.png) The Windows default domain is enabled successfully. ![](/images/12266470/8298b157e2f3.png) Sync Configuration to Apply ChangesAfter enabling the **Windows Default Domain**, you must sync the configuration in the **Supervisor App** to apply the changes. For detailed steps, see [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app).Once the configuration is synced, you can view the changes during login. A sample preview screen is shown below for reference. ![](/images/12266470/bc4b61989c8b.png) Keywords| Windows default Domain Configuration | Enable Default Domain for Windows Login |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Configure Face Credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-face-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Configure PIN Credential in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pin-credential-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Duo MFA credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-duo-mfa-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enable PingOne Multi Factor Authentication (MFA) for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enable OKTA Multi-Factor Authentication (MFA) Credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal" />
+</CardGroup>

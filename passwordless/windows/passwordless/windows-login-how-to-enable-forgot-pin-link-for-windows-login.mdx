@@ -1,0 +1,53 @@
+---
+title: "Windows Login - How to Enable Forgot PIN Link for Windows Login"
+sidebarTitle: "Windows Login - How to Enable Forgot PIN Link for Windows…"
+description: "This document provides step-by-step instructions to Enable Forgot PIN Link in Windows Login Application in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "14015958"
+  url: "https://oloid.help/en/articles/14015958-windows-login-how-to-enable-forgot-pin-link-for-windows-login"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:52:56Z"
+  migratedAt: "2026-08-13T09:16:15.538892+00:00"
+---
+## Introduction
+
+This **document** explains how to enable the **Forgot PIN link** in Windows Login in the Tenant Admin Portal and configure the settings that allow users to recover or manage their PIN from the Windows Login screen.
+
+## Prerequisites
+
+- You must have **Admin access to the Tenant Admin Portal**.
+- The **Windows Login application** must be created and configured. For more, refer to [How to create and configure Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+- You must enable **Allow Login Through Local Credentials**toggle in Windows Login application. For more, refer to [How to Configure Allow Login Through Local Credentials](/passwordless/windows/passwordless/windows-login-how-to-configure-allow-login-through-local-credentials)
+
+## Steps to Enable the Forgot PIN Link
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, select the **Windows Login application**. ![](/images/14015958/ca340dba5264.png) The **Details** page is displayed. ![](/images/10900687/479f82ca733c.png)
+3. Go to**Authenticato**r tab.
+4. Under **MFA Credentials**, enable the **PIN** toggle. ![](/images/11484425/e9c57d1e2182.png)
+5. **Enable Forgot PIN link** toggle.
+6. Select one of the following options:Select **Show Popup** to display a popup message with instructions when users click the Forgot PIN link. See, [Sample screen](#h_1f7c687912).Do the following:Enter the **Heading**.Enter the **Description**.ORSelect**Allow PIN enrollment using 'Windows credential verification'** to redirects users to the Windows credentials management page. See, [Sample screen](#h_512dd11aa8).
+7. Click **Save.** ![](/images/14015958/16c0da5c511f.png) The **Forgot PIN link** is enabled successfully. ![](/images/14015958/a28e792332a5.png) Sample Application Screen Showing Popup Message![](/images/14015958/dc63095a4ac0.png) Application Screen Redirecting User to Windows Manage Credentials Page![](/images/14015958/98e304d05391.png) Sync Configuration to Apply ChangesYou must sync the configuration in the **Supervisor App** to apply the changes. For detailed steps, see [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app). Keywords|Forgot PIN Windows Login |Enable Forgot PIN link |Forgot PIN configuration Windows Login|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Configure PIN Credential in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pin-credential-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Username for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-username-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Windows Default Domain for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-windows-default-domain-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enroll Face and PIN Credential" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enroll-face-and-pin-credential" />
+</CardGroup>

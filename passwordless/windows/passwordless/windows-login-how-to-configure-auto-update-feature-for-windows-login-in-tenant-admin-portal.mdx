@@ -1,0 +1,51 @@
+---
+title: "Windows Login - How to configure Auto Update feature for Windows Login in Tenant Admin Portal"
+sidebarTitle: "Windows Login - How to configure Auto Update feature for…"
+description: "Windows Login - How to configure Auto Update feature for Windows Login in Tenant Admin Portal"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "11114161"
+  url: "https://oloid.help/en/articles/11114161-windows-login-how-to-configure-auto-update-feature-for-windows-login-in-tenant-admin-portal"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:33:24Z"
+  migratedAt: "2026-08-13T09:16:07.328720+00:00"
+---
+## Introduction
+
+Auto update features keep all Windows Device Agents up to date without manual effort. It allows the tenant admin to install the latest version or select a specific version. They can also schedule updates to run at a set time, with options to retry if an update fails.
+
+## Prerequisite
+
+You must create and configure Windows Login Application in the Tenant Admin Portal. For more details, refer [How to create and configure Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal).
+
+## Steps to configure Auto Update
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, select the application paired in the Supervisor App (Windows Authenticator App). ![](/images/11114161/ca340dba5264.png) The application page is displayed.
+3. Go to **Configure** > **Auto Update**tab. ![](/images/11114161/5396c7ae819d.png)
+4. Turn on **Enable Scheduled Auto-updates on all Endpoints**toggle to automatically update Windows Device Agents based on the selected settings.**Note:**If MDM auto-updates are already available or in use, this setting should be left disabled. ![](/images/11114161/b93533d1b901.png) Select one of the following:**Latest Version** – Always install the latest available version.**Select Version** – Manually select a specific version from the dropdown list.
+5. Select any of the following options to schedule auto-update:Select **Default Schedule**to define a schedule update.Updates are triggered automatically at **2:00 AM local time** on the endpoint.If the update fails, retries will occur **every hour** up to **5 times**. ![](/images/11114161/690e470adc93.png) Select **Custom Schedule**to define a custom updateSet the **Start Time** and **End Time** using the calendar and time picker options.Configure retry settings:**Retry Frequency** – Maximum number of retry attempts during the update window.**Retry Interval** – Time (in minutes) between each retry attempt.**Example:** Retry Frequency = 5 and Retry Interval = 60 mins → The update will retry every hour, up to 5 times. ![](/images/11114161/6516672df02d.png) Select **Staggered Update Schedule** to distribute updates in phases Select Batch 1, and do the following:**Select Groups** – Choose group(s) to include in the batch from the dropdown list.Define **Start Time** and **End Time**.Configure retry settings:**Retry Frequency** – Maximum number of retry attempts during the update window.**Retry Interval** – Time (in minutes) between each retry attempt.**Note:**You can select **+Add Batch**to add more batches as required. ![](/images/11114161/a976b73bd5de.png) **Send Daily consolidated reports:**_Coming Soon_Click **Save**.The auto update is configured successfully. ![](/images/11114161/0c24f1e9146c.png) **Note:**Make sure to sync the configuration in the Supervisor App to apply the changes. For more, refer to [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app) Keywords|Windows Device Agent auto update |Configure auto update Windows agent|Auto update configuration Tenant Admin Portal|
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Configure PIN" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-pin" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="How to configure Auto Update feature in Windows Login Endpoint in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-auto-update-feature-in-windows-login-endpoint-in-tenant-admin-portal" />
+</CardGroup>

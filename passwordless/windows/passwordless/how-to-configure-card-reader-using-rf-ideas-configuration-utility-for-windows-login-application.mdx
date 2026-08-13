@@ -1,0 +1,54 @@
+---
+title: "How to configure Card Reader Using RF IDEAS Configuration Utility for Windows Login application"
+sidebarTitle: "Configure Card Reader Using RF IDEAS Configuration…"
+description: "How to configure Card Reader Using RF IDEAS Configuration Utility for Windows Login application"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Resources"
+  - "Integrations"
+  - "PACS"
+categories:
+  - "passwordless/windows/passwordless"
+  - "resources/integrations/pacs"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "11087967"
+  url: "https://oloid.help/en/articles/11087967-how-to-configure-card-reader-using-rf-ideas-configuration-utility-for-windows-login-application"
+  collection: "Supporting Documents"
+  section: "Supporting Documents"
+  updatedAt: "2025-06-13T07:54:20Z"
+  migratedAt: "2026-08-13T09:16:07.224694+00:00"
+---
+**Introduction**
+
+This document provides step-by-step instructions for configuring the Card Reader using the RF IDEAS Configuration Utility for Windows Login app.
+
+**Pre-requisite:**
+
+- You must configure the badge card. For further details, refer [How to configure rf IDEAS readers for badge card](/passwordless/windows/passwordless/windows-login-how-to-configure-rf-ideas-readers-for-badge-card)
+- You must identify the card type and card format. For further details, refer [How to find the Card Type and Card Format using the RF IDeas Configurator Tool](/resources/guides/how-to-find-the-card-type-and-card-format-using-the-rf-ideas-configurator-tool)
+
+To configure rfIDEAS for SDK Type Reader:
+
+1. Launch the **rf IDEAS Configuration Utility** app. ![](/images/11079712/1d8374afcfa1.png) The app opens. ![](/images/11079712/60b92e57eb67.png)
+2. Connect the card reader to the system.
+3. Click**Connect**from the top left menu bar. ![](/images/11079712/a747658453e5.png)The DEVICE LIST is configured and displayed. ![](/images/11079712/b84c61236178.png)
+4. In the left menu panel, select **SDK**. ![](/images/11087967/fdc2d8eca3c8.png)**Note:** It is not always necessary for the card reader to support both SDK and keyboard types. Some readers may support only one of the types. Turn on the **Disable Keystrokes for SDK** toggle button to disable keystrokes for the SDK-type readers. ![](/images/11087967/4c73ae00dc5a.png)**Note**: If this option is turned off, keystrokes will be enabled. This option applies only to keystroke-type readers. Click **Write**, and then click **Connect** to apply the configuration.**Note**: Make sure the **Disable Keystrokes for SDK** setting remains as configured (enabled or disabled) after applying the action. This ensures that the card reader works correctly based on your intended use case, whether supporting SDK, keystrokes, or both. ![](/images/11079712/314ba5c188ed.png) In the **Card ID** section, click **GetID** to retrieve the card ID.**Note:**You need toscan the badge card using the card reader for the card ID to get displayed. ![](/images/11079712/58263b59e08a.png)Select the **Test Area**to scan your badge card with the card reader.The badge number is displayed in the Test Area.**Note:**Make sure the badge number matches the card number. To calculate the card number, see [Facility Code Calculation](https://oloid.help/en/articles/10229274-how-to-use-data-from-configurator-tool-to-create-wiegand-format-definition-in-oloid).
+5. In the left menu panel, select **Format**.
+6. In the **Data Format** tab, do the following:Set **Strip leading bit count** and **Strip trailing bit count** to **0**.Disable both **Send FAC** and **Send ID** options.**Note:**In the **Wiegand to keystroke data format** section, select the **Send ID as hexadecimal number** checkbox.In the **Advanced Settings** section, select the **ID extended precision math on**checkbox. ![](/images/11087967/f8e0742a3185.png)
+7. Go to **Delimiters**tab, and do the following:In the **Pre-data delimiters (ABC)** section, select **Insert Keystroke 1**. ![](/images/11087967/87725ef4d58c.png) The **Virtual keyboard - select keycode and modifier(s)**is displayed.Select **\<NONE>** and press **Enter**on your keyboard. ![](/images/11079712/6ab7d295798e.png)
+8. Click **Write** to apply the changes. ​ ​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to configure rf IDEAS readers for badge card" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-rf-ideas-readers-for-badge-card" />
+  <Card title="Windows Login - How to configure rf IDEAS readers for NFC tag" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-rf-ideas-readers-for-nfc-tag" />
+  <Card title="How to find the Card Type and Card Format using the RF IDeas Configurator Tool" icon="arrow-right" href="/resources/guides/how-to-find-the-card-type-and-card-format-using-the-rf-ideas-configurator-tool" />
+  <Card title="How to configure Card Reader Using RF IDEAS Configuration Utility for Oloid Applications" icon="arrow-right" href="/resources/integrations/pacs/how-to-configure-card-reader-using-rf-ideas-configuration-utility-for-oloid-applications" />
+  <Card title="Windows Login - How to Configure Badge ID for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-badge-id-for-windows-login" />
+</CardGroup>

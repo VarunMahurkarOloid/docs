@@ -1,0 +1,47 @@
+---
+title: "How to add Policy Rules for factor Sequencing"
+sidebarTitle: "Add Policy Rules for factor Sequencing"
+description: "How to add Policy Rules for factor Sequencing"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "9749330"
+  url: "https://oloid.help/en/articles/9749330-how-to-add-policy-rules-for-factor-sequencing"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Factor Sequence"
+  updatedAt: "2024-09-03T09:46:41Z"
+  migratedAt: "2026-08-13T09:16:28.256695+00:00"
+---
+To add policy rules:
+
+1. Log in to Oloid Portal.
+2. Go to **Auth Policies** > **Factor Sequencing**
+3. Select the **Factor Sequence Name** to edit. ![](/images/9749330/b11eaddfb828.png)
+4. Select **Policy Rules** tab. ![](/images/9749330/eca9e01d2786.png)
+5. Click **Add Rule.**The screen to choose factors is displayed. ![](/images/9749330/6125ad28ae31.png)
+6. Select Factor 1 and Factor 2 credentials for the first rule.**Note :** You cannot select same credentials as both Factor 1 and Factor 2.
+7. Click **Add Rule**to create next rule. ![](/images/9749330/8669fca33eaa.png) **Note:** You can create as many rules as per your requirement. The first rule gets the first priority followed by the next rule. You can change the priority using the drag and drop functionality. ![](/images/9749330/cb269a6abcf2.png) You may also duplicate or delete the rules using the options. ![](/images/9749330/b3a3441eb791.png)
+8. Click **Save**.The rule(s) are saved. The application follows the set rules for Multi-factor authentication. You can view the below table on how the MFA functions for set rules with factor 1 and factor 2.
+
+|  | Factor 1 | Factor 2 | MFA |
+|---|---|---|---|
+| Scenario 1 | Rule 1 : **All credentials** ![](/images/9749330/e3bdcff38463.png) | Rule 1:**No credential**![](/images/9749330/6d1a36760225.png) | Application behaves as Single factor authenticator |
+| Scenario 2 | Rule 1 : **Face, Badge, QR Code, NFC/ID**![](/images/9749330/35052f28a2a6.png) | Rule 1: **PIN** ![](/images/9749330/ab5e1fbf2ae5.png) | Face +PINBadge +PINQR Code+PINNFC/ID +PIN |
+| Scenario 3 | Rule 1 : **Face, QR Code** ![](/images/9749330/77435533927b.png) Rule 2: **Badge** ![](/images/9749330/66bf4db0ee11.png) | Rule 1: **PIN** ![](/images/9749330/ab5e1fbf2ae5.png) Rule 2: **QR Code** ![](/images/9749330/9ea7ff03c5cb.png) | Face +PINQR Code +PINBadge +QR Code |
+| Scenario 4 | **No credential** | **All credentials**![](/images/9749330/e3bdcff38463.png) | Shows error. First factor cannot be left empty. |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to log in to Workforce/ HRMS system using Single Factor Authenticators through Oloid Connect Passwordless App" icon="arrow-right" href="/passwordless/ios/connect/how-to-log-in-to-workforce-hrms-system-using-single-factor-authenticators-through-oloid-connect-passwordless-app" />
+  <Card title="Webkey – How to Set Up and Use Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-set-up-and-use-webkey" />
+  <Card title="Webkey – How the Webkey Application Works" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-the-webkey-application-works" />
+  <Card title="WebKey - Credential Setup" icon="arrow-right" href="/passwordless/web/webkey/webkey-credential-setup" />
+  <Card title="Oloid Connect - Credential Onboarding" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-credential-onboarding" />
+</CardGroup>

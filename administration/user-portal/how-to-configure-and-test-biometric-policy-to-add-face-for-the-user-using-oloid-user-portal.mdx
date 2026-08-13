@@ -1,0 +1,65 @@
+---
+title: "How to configure and test Biometric Policy to add face for the user using Oloid User Portal"
+sidebarTitle: "Configure and test Biometric Policy to add face for the…"
+description: "How to configure and test Biometric Policy to add face for the user using Oloid User Portal"
+icon: "user"
+tags:
+  - "Administration"
+  - "User Portal"
+categories:
+  - "administration/user-portal"
+primaryCategory: "administration/user-portal"
+navPath: "Administration > User Portal"
+source:
+  system: "intercom"
+  articleId: "11324573"
+  url: "https://oloid.help/en/articles/11324573-how-to-configure-and-test-biometric-policy-to-add-face-for-the-user-using-oloid-user-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Consent Documents"
+  updatedAt: "2025-05-09T06:55:32Z"
+  migratedAt: "2026-08-13T09:16:07.650926+00:00"
+---
+## Introduction
+
+You can configure the biometric policy (also known as the consent form) from the Connection Details page in the Tenant Admin Portal. When enabled, this feature prompts users to accept the biometric policy before they can add their face in the Oloid User Portal.
+
+This document comprises the following:
+
+- [To configure biometric policy in the Tenant Admin Portal](#h_b9cd9cdfe3)
+- [To test biometric policy in the Oloid User Portal](#h_f2ba60fb0d)
+
+## To configure biometric policy in the Tenant Admin Portal
+
+Steps to configure biometric policy:
+
+1. Log in to Tenant Admin Portal.
+2. On the home page of the portal, click **Connections** on the left menu panel. ![](/images/11324573/b3e7d2e9608b.png) The **Connections** page is displayed.
+3. Click connection name to be configured from the listed connections. ![](/images/11324573/a7514919527b.png)The Connection detail page is displayed. ![](/images/11324573/bf4f25bd510e.png)
+4. Go to **Settings**tab.
+5. Turn on **User Consent Required** toggle > Select a Template from the **User Consent Required**dropdown list. **Note**: Enabling this toggle will prompt users to provide consent to store and use their face for different applications within the workplace during face-onboarding.**Note:**To create a consent template, refer [How to create a Consent Template](/administration/admin-portal/how-to-create-and-configure-consent-template). ![](/images/11324573/6d9173dc5f2f.png)
+6. Click **Save**. The connection is successfully configured.
+
+## To test biometric policy in the Oloid User Portal
+
+**Pre-requisite:**
+
+- A user must be created in the Tenant Admin Portal.
+- In the paired connection, enable the **User Consent Required** toggle button.
+
+Steps to test biometric policy:
+
+1. Log in to the **Oloid User Portal**.The Oloid User Portal login page is displayed. ![Image](/images/11324573/ca646a3ca4b2.png)
+2. Select **Login with Email**.The **Login with Email** page is displayed. ![](/images/11324573/3f667b3e1bf6.png)
+3. Do the following:Enter your email address in the **Email ID** field.Click **Get Verification Code**.A verification code is sent to your registered email ID.Enter the Verification code.**Note:**The One Time Verification Code expires after 60 seconds. ![](/images/11324573/efa8120662ad.png) Click **Login**.The Oloid User Portal is displayed.
+4. On the homepage, click**Face**. ![Image](/images/11324573/f15168b91b68.png) The **Face Credential**page is displayed.**Note**: The user must provide their consent to proceed to the next steps if consent is enabled in the Tenant Admin Portal. ![](/images/11324573/ab515e55e573.png)
+5. Select **Add Face** to complete facial enrollment. ![](/images/11324573/a9146592f49e.png)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Configure a Connection in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-a-connection-in-the-tenant-admin-portal" />
+  <Card title="How to Add a Face Using Invite Link in Oloid User Portal" icon="arrow-right" href="/administration/user-portal/how-to-add-a-face-using-invite-link-in-oloid-user-portal" />
+  <Card title="Oloid Verify - Add Faces" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-faces" />
+  <Card title="Oloid User Portal - How to Configure Oloid User Portal in Tenant Admin Portal" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-configure-oloid-user-portal-in-tenant-admin-portal" />
+  <Card title="How to add Face credential using invite link in the Oloid User Portal - Video Tutorial" icon="arrow-right" href="/administration/user-portal/how-to-add-face-credential-using-invite-link-in-the-oloid-user-portal-video-tutorial" />
+</CardGroup>

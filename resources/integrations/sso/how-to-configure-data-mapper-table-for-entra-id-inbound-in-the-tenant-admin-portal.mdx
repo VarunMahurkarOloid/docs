@@ -1,0 +1,122 @@
+---
+title: "How to Configure Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal"
+sidebarTitle: "Configure Data Mapper Table for Entra ID - Inbound"
+description: "This document provides step-by-step instructions to configure Data Mapper Table for Entra ID - Inbound in Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "13598105"
+  url: "https://oloid.help/en/articles/13598105-how-to-configure-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Data Tables"
+  updatedAt: "2026-02-27T06:00:03Z"
+  migratedAt: "2026-08-13T09:16:13.830814+00:00"
+---
+## Introduction
+
+This document provides instructions on how to configure a Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- Data Mapper Table for Entra ID - Inbound must be created.
+- You must have access to the **Tenant Admin Portal.**
+
+## Steps to Configure Data Mapper Table for Entra ID - Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, go to **Agents > Data Tables**. ![](/images/13598105/e7a76c5f5d53.png) The **Data Tables** page is displayed.
+3. Click preferred data table. ![](/images/13524078/1ca2b84acf09.png) The data table details page is displayed.
+4. Do the Following:[Configure Details Tab](#h_9e348fbe6e)[Setup Configure Tab](#h_b127af9ed2) ![](/images/13598105/f4c6f41c62e0.png) After saving your changes, the Data Mapper Table for **Entra ID – Inbound** is configured successfully.
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the data mapper table.
+
+Do the following:
+
+1. Update the **Table Name** (if required).
+2. Enter **Description** (Optional).
+3. Click **Save**. ![](/images/13598105/46f2be08ae31.png) The details tab is configured successfully.
+
+## Setup Configure Tab
+
+This tab is used to configure data field mappings between Entra ID and Oloid.
+
+**Note:** The **FullName, DisplayName, PrimaryID, and Status** fields are mandatory and must be mapped to corresponding source fields or expressions before saving the configuration.
+
+Do one of the following:
+
+- [Inline](#h_d7739b8565)**OR**
+- [Upload File](#h_84ce769851) ![](/images/13598105/ec5353a97259.png) The Configure tab is set up successfully.
+
+### Inline
+
+In the **Inline** section, define the fields as follows:
+
+1. **Source - Entra ID Field / Expression:**Enter the Entra ID field name or expression that provides the source value.
+2. **Destination – Oloid Field:**Enter the Oloid field name to which the source value is mapped.
+3. **Data Type:** Select the data type from the drop-down.
+4. Click **Add field** to add more fields. **Note:** For mapping the table, refer **[Data Mapping Table](#h_530bf9fe37)**.
+5. Click **Save**. ![](/images/13598105/26d54da00a45.png) The Inline section is configured successfully.
+
+### Upload File
+
+In the **Upload File** section, do the following:
+
+1. Select **Upload File** and upload the mapping file.**Note:** The file format must be in **.XLSX** or **.CSV**.
+2. Click **Save**. ​![](/images/13598105/a739aa0bb75d.png) The Upload File section is configured successfully. The configure tab is set up successfully. ![](/images/13598105/d0c3015bd3e2.png)
+
+## Additional Information
+
+## Data Mapping Table
+
+Use the following fields to define data mappings when configuring the Data Mapper Table.
+
+| **Entra ID Use Field** | **Oloid User Field** | **Data Type** |
+|---|---|---|
+| id | PrimaryID | String |
+| displayName | DisplayName | String |
+| mail | Email | String |
+| jobTitle | \{UserMetadata.Title\} | String |
+| mobilePhone | \{UserMetadata.MobilePhone\} | String |
+| officeLocation | \{UserMetadata.Office\} | String |
+| userPrincipalName | \{UserMetadata.UPN\} | String |
+| \{accountEnabled == false ? 'INACTIVE' : 'ACTIVE'\} | Status | String |
+| \{‘EntraID’\} | Source | String |
+| \{‘OloidTenantID’\} | TenantID | String |
+| displayName | FullName | String |
+
+**Note:** Contact **[Oloid support](mailto:support@oloid.ai)** if you need assistance while configuring the Data Mapper table.
+
+---
+
+#### Related Articles
+
+[How to Create Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-create-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Data Mapper Table for Entra ID Inbound · Entra ID Inbound Data Mapper Configuration · Entra ID Data Mapping in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure Data Mapper Table for Workday - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-create-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

@@ -1,0 +1,102 @@
+---
+title: "Webkey - How to edit Configure tab"
+sidebarTitle: "How to edit Configure tab"
+description: "This document provides step-by-step instructions to edit Configure tab in Webkey Application."
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "10800566"
+  url: "https://oloid.help/en/articles/10800566-webkey-how-to-edit-configure-tab"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-08-10T06:34:08Z"
+  migratedAt: "2026-08-13T09:16:06.804411+00:00"
+---
+## Introduction
+
+The Configure tab in the Webkey Passwordless application allows Tenant Admins to customize authentication behavior.
+
+## Prerequisites
+
+- You must have a Tenant Admin account.
+- Webkey Application must be created. For further details, refer [How to create a Webkey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+## Steps to edit Configure tab
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click on the Webkey application to edit. ![](/images/10800135/d5355d7e2b98.png) The application page is displayed. ![](/images/10800566/ad0013bfda59.png)
+3. Go to **Configure tab**> Click **Settings**. ![](/images/10800566/18cfdcc6de9b.png) The Configure page is displayed.
+4. Do the following.**Enable Inactivity Session Time Out:** Webkey will automatically return to the previous screen if credential capture fails within the set limit.Enable **Inactivity Session Time Out**toggle.Set **Time Out Duration.**(Unit is in seconds)Enable **Custom Time-out Redirect URL.**Enter **Custom Time-out Redirect URL.****Note:**Enabling the custom timeout redirect URL will redirect the browser to the specified URL after a period of inactivity session time-out, instead of returning the user to the default login home page. ![](/images/10800566/4b89a1358899.png) Turn on **Enable Auto-Authentication using Windows Oloid Session**toggle button. This will allow user to auto-authenticate into Webkey after device login.Turn on **Enable Continue Without Oloid Session**toggle button.This will allow user to authenticate manually without giving an error if local authentication transaction is not found.Click **Save.** ![](/images/10800566/3518ebbf5d33.png)
+
+## Client Authentication
+
+### Enable **Custom User Agent**
+
+1. Enable **Custom User Agent** To allow users to log in to Webkey app from custom browsers.
+2. Enter the custom browser’s user agent string in **Add user agent header**field. ![](/images/10800566/797533c607fc.png)
+3. **Add Device**enables the configuration of custom user agents.For more detail, refer to [How to configure Custom User Agent in Webkey Application](/passwordless/web/webkey/webkey-how-to-configure-a-custom-user-agent-for-webkey)**Note:**Agent browser should be configured for User agent. Reach out to [Oloid Support](mailto:support@oloid.ai) for details.
+
+### Enable Browser Fingerprint
+
+Select **Enable Browser Fingerprint** to allow Webkey login to function only on registered browsers.
+
+Do the following:
+
+- Enable **+ Browser Fingerprint** toggle to manually add browser fingerprint.
+- Select **Transactions** > **Action** dropdown > **Add Browser Fingerprint to Application**. For more information, see [How to configure Browser Fingerprint for Webkey](/administration/admin-portal/webkey-how-to-configure-browser-fingerprint-from-failed-transactions-in-the-tenant-admin-portal)
+- Click **Save**. ![](/images/10800566/a4cf74703676.png) Webkey is accessible after permission is provided.
+
+## Configure Customize Buttons tab
+
+To configure customize buttons tab, do the following:
+
+1. Enter customized**Button Label**to display on the Webkey application.
+2. **Enable Enrollment**: Enabling this option will add a button to enroll face credential.Select **Enable Enrollment**checkbox Enter Customized **Button Label**.Enter **Enroll URL** to the login page of the Webkey application.Select **Show Option Only on Face Login Failure** to display the selected option only when face authentication fails.
+3. Select **Enable Custom Button** option to add a customized button.Enter Customized **Button Label**.Enter **Redirect URL** to the login page of the Webkey application.
+4. Click **Save.****Note:** Click **Save**after each action to save your configuration.
+
+<Frame>
+  <img src="/images/10800566/eaddde7c73c6.png" alt="Screenshot" />
+</Frame>
+
+## Configure Enable Custom Button in Authentication Flow
+
+Tenant Admin can configure a **Custom Button** in the Authentication Flow that redirects users to a specified URL.
+
+To configure Enable Custom Button in Authentication Flow do the following:
+
+1. Turn on **Enable Custom button in Authentication Flow** toggle button.
+2. Enter **Button Label**.This text will show up as button label on the Login page. Default label is back.**Note:**The default label is **Back**.
+3. Enter **Redirect URL**On clicking this custom button, the user will be redirected to the URL configured above.
+4. Select **Show button only on authentication failure page** to display the button only when NFC or Badge authentication fails. (Optional)
+5. Click **Save** to apply the changes.
+
+<Frame>
+  <img src="/images/10800566/52712b809576.png" alt="Screenshot" />
+</Frame>
+
+The Tab is successfully configured.
+
+---
+
+<Tip>
+  **Keywords:** Configure Webkey application · Webkey application configuration · How to Edit Configure Tab
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey – How to Create and Configure a Webkey Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal" />
+  <Card title="Webkey - How to Enroll Face using Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-enroll-face-using-webkey" />
+  <Card title="Webkey - How to Configure Theme tab for Webkey Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-theme-tab-for-webkey-application-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to configure PIN credential for Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-configure-pin-credential-for-webkey" />
+  <Card title="Webkey – How to Configure a Custom User Agent for Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-configure-a-custom-user-agent-for-webkey" />
+</CardGroup>

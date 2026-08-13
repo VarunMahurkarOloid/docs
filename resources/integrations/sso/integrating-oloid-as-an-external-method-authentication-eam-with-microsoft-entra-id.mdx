@@ -1,0 +1,147 @@
+---
+title: "Integrating Oloid as an External Method Authentication (EAM) with Microsoft Entra ID"
+sidebarTitle: "Integrating Oloid as an External Method Authentication…"
+description: "This document provides step-by-step instructions to integrate Oloid as an EAM with Microsoft Entra ID IDP Profile for SAML in the Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "10299916"
+  url: "https://oloid.help/en/articles/10299916-integrating-oloid-as-an-external-method-authentication-eam-with-microsoft-entra-id"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-07-23T06:10:36Z"
+  migratedAt: "2026-08-13T09:16:04.965005+00:00"
+---
+## Introduction
+
+This document describes how to configure **Oloid External Authentication Method (EAM)** in **Microsoft Entra ID**. The integration allows Oloid’s passwordless authentication to work with Microsoft Entra ID, enabling Oloid to act as an **external MFA provider** for secure and seamless access to enterprise applications.
+
+## Key highlights of this document include
+
+## Obtaining Essential Oloid Tenant Details
+
+- Client ID.
+- OpenID Configuration.
+- Authorization Endpoints.
+
+## Configuring Microsoft Entra ID
+
+- [Register and configure the application.](#h_d0070c08a5)
+- [Configure External Authentication Methods (EAM)](#h_d20011ac6a).
+- [Configure Conditional Access Policies (Optional).](#h_87c661553d)
+
+## Testing the Integration
+
+Verify the authentication flow by testing user access to integrated applications, such as ServiceNow. This configuration integrates Oloid’s passwordless authentication with Microsoft Entra ID (Azure AD) to enhance security and improve the user experience.
+
+## Step 1: Obtain Oloid Tenant Configuration
+
+To configure Oloid as an External Authentication Method in Microsoft Entra ID, gather the following details from your Oloid tenant:
+
+| **Client ID** | \<\<################################>> |
+|---|---|
+| **OIDC Endpoint** | [https://api.oloidpreview.com/oidc/showcase/eam/oauth2/.well-known/openid-configuration](https://api.oloidpreview.com/oidc/showcase/eam/oauth2/.well-known/openid-configuration) |
+| **Authorization Endpoint** | [https://api.oloidpreview.com/oidc/showcase/eam/oauth2/authorize](https://api.oloidpreview.com/oidc/showcase/eam/oauth2/authorize) |
+
+## Step 2: Register and Configure an Application in Microsoft Entra ID
+
+## Register an application
+
+1. Log in to the Microsoft Entra ID**Portal** with an account that has **Global Administrator** permissions or sufficient access to create applications.
+2. Navigate to **Microsoft Entra ID > App registrations > New registration**. ![](/images/10299916/9a5c6c499cf4.png) The Register an application page is displayed.
+3. Provide the following details:Enter **Name.**Enter **Redirect URI:**Select **Web** from the drop-down list and Use the **Authorization Endpoint** from [Step 1](#h_c9abe11a4b) in the redirected URL field.**Note:** The **Authorization Endpoint**from theTenant Admin Portalis the **Redirect URL**.Click **Register**. ![](/images/10299916/81d7d75d6925.png) The application is registered successfully. After registration, Copy the **Application ID** of the newly registered application. ![](/images/10299916/7bd51261607c.png)
+
+## Configure the Application
+
+1. Navigate to the **newly registered app >** **Manage >** **Token Configuration** > Click **+ Add optional claim**. ![](/images/10299916/c6f8c9363ca7.png) The **Add optional claim** page is displayed.
+2. Select **ID** as a Token type and do the following:Select **email.**Select**upn.**Click **Add**. ![](/images/10299916/c7e4cda04ca7.png) The **Add optional claim** pop-up box is displayed.
+3. Select **Turn on the Microsoft Graph** checkbox and click **Add** to save the claims. ![](/images/10299916/4169b428faed.png)
+4. Go to **Manage** > **API permissions**> **Grant required permissions.** ![](/images/10299916/27c92441f2de.png) The **Grant admin consent confirmation** pop-up box is displayed.
+5. Click **Yes**. ![](/images/10299916/d871b390c771.png) The API permission is configured successfully. ![](/images/10299916/1dec3e8e2375.png)
+
+## Create Client Secret
+
+1. Navigate to **newly registered app >**Click **Client Credentials.** ​![](/images/10299916/27eede132fdf.png) The Certificates & secrets page is displayed.
+2. Click **New client secret**. ![](/images/10299916/fd83b5855979.png) The **Add a client secret** screen is displayed.
+3. Do the following:Enter **Description**.Select the **secret expires** duration from the drop-down list.Click **Add**. ![](/images/10299916/0c69875d2d93.png) The **Client Secret** is added successfully and listed on Client Secret tab. ![](/images/10299916/6e36460a5b54.png)
+
+## Step 3: Configure External Authentication Method in Microsoft Entra ID
+
+1. Navigate to **Application > Manage > Security.** ![](/images/10299916/d8e9224cb6ba.png) The Security page is displayed.
+2. Go to**Manage > Authentication Methods.** ![](/images/10299916/a9ce78b30717.png) The **Authentication methods** page is displayed.
+3. Click **+Add external method (Preview)**. ![](/images/10299916/e35c51079a47.png) The **Add external method (Preview)** screen is displayed.
+4. Do the following:Enter **Name**.Enter **Client ID**.**Note:** Enter the **Oloid Client ID** in the **Client ID** field.Enter **Discovery Endpoint.****Note:** Enter the **OpenID Configuration Endpoint** in the **Discovery Endpoint** field.Enter **App ID**.Click **Request Permission**. ![](/images/10299916/41669e6a8234.png) **Note:** You can view the **Oloid** **Client ID** and **OpenID Configuration** **Endpoint** in the **Metadata** tab in the Tenant Admin Portal. To see the Metadata tab, go to **Tenant Admin Portal > Auth Policies > Identity Provider > Select applicable OIDC (Entra ID) idP** **>** Oloid Metadata. ![](/images/10299916/869f27fa7f03.png)
+5. Accept the required permissions. ![](/images/10299916/a6a67c0523fd.png)
+6. Click **Save** and enable the configuration.**Note:** Ensure that you select only the users who require Oloid as MFA. Do not apply this setting to all users. ![](/images/10299916/575414be7efa.png)
+
+## Step 4: Provide Microsoft Entra ID Information to Oloid
+
+Share the following details of your Microsoft Entra ID tenant with Oloid for final configuration:
+
+| **Configuration Detail** | **Value** |
+|---|---|
+| **Tenant ID** | Obtain from Microsoft Entra ID. |
+| **Application ID** | Found under [Register an Application (Step 2)](#h_950fcb595a). |
+| **OIDC Endpoint** | Found under Azure App **Endpoints** section. |
+| **Redirect URL** | Enter the Redirect URL [(Step 2)](#h_d0070c08a5). |
+| **Callback URL** | Optional |
+| **Secret** | Found under [Create Client Secret (Step 2).](#h_9372d61da0) |
+
+The Tenant ID can be obtained from the following screen:
+
+<Frame>
+  <img src="/images/10299916/fbe592a965ca.png" alt="Screenshot" />
+</Frame>
+
+## Instructions to Obtain Endpoints
+
+1. Navigate to **App Registrations** > Select the registered application > **Endpoints**. ![](/images/10299916/a492cb245253.png) The endpoints list is displayed.
+2. Copy the **OpenID Connect Meta data document URL**. ![](/images/10299916/082151e68d12.png) **Note:** Use OpenID Connect Meta data document URL in the Authorize URL field. To see the Authorize URL field, go to **Tenant Admin Portal > Auth Policies > Identity Provider > Select OIDC tab > IDP Settings.** ![](/images/10299916/af19e7a1cdf2.png)
+
+## Step 5: Apply Conditional Access Policies (Optional)
+
+**Note:** Perform this step only if you need to protect a specific application by using Oloid as MFA or for selected user(s) group(s).
+
+1. Navigate to **Oloid-AzureAD > Security.** ![](/images/10299916/d8e9224cb6ba.png) The security page is displayed.
+2. Go to**Protect > Conditional Access.** ![](/images/10299916/24e75a961d7b.png) The **Conditional Access** page is displayed.
+3. Click **Policy Snapshot**. ![](/images/10299916/60505ba9082d.png) The **Policies** page is displayed.
+4. Click **+New Policy**. ![](/images/10299916/0bce15eab8a9.png)
+5. Click **users or agents > Select Users and groups >**select **Users and Groups > Select the Preferred Group** from the list e.g. oloid. ![](/images/10299916/9aa161c0bdfd.png)
+6. On **Target Resources**, select an application e.g. Service Now. ![](/images/10299916/ac50c5965cf0.png)
+7. Click **Access Control** > Select **Grant access** > Click **Select**.**Note:** Select **Require multifactor authentication** checkbox. ![](/images/10299916/ec4228eec5a8.png)
+8. On Grant section, select **Require one of the selected controls**. ![](/images/10299916/1ef2e7a045ae.png)
+9. On **Enable Policy**, click **On > Save.** ![](/images/10299916/e4f9588c92cf.png) The policy is configured successfully.
+
+## Step 6: Test the Integration
+
+Test the integration using an application managed by Microsoft Entra ID e.g. ServiceNow
+
+1. Open the ServiceNow application URL: [https://\<\<servicenow_tenant>>.service-now.com](https://dev270331.service-now.com)
+2. Log in with a user account that meets the following criteria:Belongs to the **snow-users** group.Has access to the ServiceNow application.
+3. After entering the password, the user will be prompted for **Oloid EAM**. ![A screenshot of a computer error Description automatically generated](/images/10299916/f3550d937f3a.png)
+4. Authenticate using Oloid MFA (ensure the user’s Oloid account has the same email as the Microsoft Entra ID UPN).
+5. Upon successful authentication, the user will be logged into ServiceNow. ![A screenshot of a computer Description automatically generated](/images/10299916/3dca828af3c7.png)
+
+---
+
+<Tip>
+  **Keywords:** Integrate Oloid with Entra - ID · How to Integrate Oloid with Entra - ID
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="How to Configure User Sync in Microsoft Entra ID Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-user-sync-in-microsoft-entra-id-admin-console" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-oidc-entra-id" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+  <Card title="How to Configure Advanced User Sync in Microsoft Entra ID Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console" />
+</CardGroup>

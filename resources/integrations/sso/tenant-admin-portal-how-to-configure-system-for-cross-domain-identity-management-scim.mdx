@@ -1,0 +1,66 @@
+---
+title: "Tenant Admin Portal - How to Configure System for Cross-Domain Identity Management (SCIM)"
+sidebarTitle: "Tenant Admin Portal - How to Configure System for…"
+description: "This document provides step-by-step instructions to configure System for Cross-Domain Identity Management (SCIM) in Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "12740850"
+  url: "https://oloid.help/en/articles/12740850-tenant-admin-portal-how-to-configure-system-for-cross-domain-identity-management-scim"
+  collection: "Manage Agents"
+  section: "System for Cross-Domain Identity Management (SCIM) - Configuration Guide"
+  updatedAt: "2026-07-21T04:33:22Z"
+  migratedAt: "2026-08-13T09:16:11.436035+00:00"
+---
+## Introduction
+
+The **SCIM integration** in **Oloid** helps to automate user provisioning and management between identity providers (IDPs) and connected applications. It ensures that user accounts, roles, and attributes stay synchronized automatically across platforms.
+
+## Prerequisite
+
+You have **access** to the **Tenant Admin Portal**.
+
+## Steps to Enable and Map the Inbound SCIM
+
+1. Log in to the **Oloid Tenant Admin Portal**.
+2. On theTenant Admin Portal, click the **Agent**dropdown > **SCIM**. ![](/images/12740850/3ae78fce8000.png) The **System For Cross-Domain Identify Management (SCIM)** page is displayed.
+3. Turn on the **Enable Inbound SCIM** toggle.
+4. Select one of the following Authentication modes:[Configure API Token](#h_eb57b759ac)[Configure OAuth 2.0](#h_956949cfc4)The System for Cross-Domain Identify Management (SCIM) is successfully configured.
+
+### Configure API Token
+
+An API Token is a unique secret key used to verify the identity of an application. The application includes the token with each SCIM request to securely access Oloid.
+
+1. Select **API Token**.
+2. In **Mapping** section, select the applicable **Connection** from the Connection drop-down. ![](/images/12740850/39af273dbaca.png)
+3. Click **Save**.The **Endpoint**details are generated successfully. These details are required to configure SCIM integration.**Base URL:** It is the endpoint URL used for SCIM integration.**Token:** It is the authentication token used to authorize SCIM requests.**Note:** Use the **Base URL** and **Token** keys when configuring the OKTA SCIM or Microsoft Entra ID SCIM. For more information, refer [Oloid Configuration Guide for Okta SCIM Client | Oloid Help Center](/resources/integrations/sso/oloid-configuration-guide-for-okta-system-for-cross-domain-identity-management-scim-client) and [Microsoft Entra ID - How to Configure Cross-Domain Identity Management (SCIM) Provisioning for Oloid | Oloid Help Center](https://oloid.help/en/articles/15652452-microsoft-entra-id-how-to-configure-cross-domain-identity-management-scim-provisioning-for-oloid). ![](/images/12740850/24beaae23ca6.png)
+
+### Configure OAuth 2.0
+
+OAuth 2.0 is a secure authentication standard that uses temporary access tokens to authenticate applications. The application obtains an access token using the client credentials and uses it to authorize SCIM requests.
+
+1. Select **OAuth 2.0**.
+2. Click **Generate**. ![](/images/12740850/a67dedcd11ae.png) The client credentials generated successfully.**Note:** Use the **Enter Base URL**, **Endpoint Token**, **Client ID** and **Client Secret** when configuring the OKTA SCIM. Use the **Base URL, Endpoint Token, Client ID**and **Client Secret** when configuring the Microsoft Entra ID SCIM. For more information, refer [Microsoft Entra ID - How to Configure Cross-Domain Identity Management (SCIM) Provisioning for Oloid | Oloid Help Center](https://oloid.help/en/articles/15652452-microsoft-entra-id-how-to-configure-cross-domain-identity-management-scim-provisioning-for-oloid). ![](/images/12740850/a0c90ec4f23e.png)
+3. In **Mapping** section, select the applicable **Connection** from the Connection drop-down.
+4. Click **Save**. ![](/images/12740850/2839ae689b8f.png) The OAuth 2.0 is configured successfully. ![](/images/12740850/146239754526.png) Keywords| Oloid Inbound SCIM Integration | Enable Inbound SCIM in Oloid | Oloid SCIM configuration |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Okta SSO in Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-okta-sso-in-tenant-admin-portal" />
+  <Card title="How to Configure PingOne SSO in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+</CardGroup>

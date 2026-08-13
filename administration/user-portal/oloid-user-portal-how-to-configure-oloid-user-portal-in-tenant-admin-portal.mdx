@@ -1,0 +1,136 @@
+---
+title: "Oloid User Portal - How to Configure Oloid User Portal in Tenant Admin Portal"
+sidebarTitle: "Oloid User Portal - How to Configure Oloid User Portal"
+description: "This document provides step-by-step instructions to configure and access the Oloid User Portal."
+icon: "user"
+tags:
+  - "Administration"
+  - "User Portal"
+categories:
+  - "administration/user-portal"
+primaryCategory: "administration/user-portal"
+navPath: "Administration > User Portal"
+source:
+  system: "intercom"
+  articleId: "9969120"
+  url: "https://oloid.help/en/articles/9969120-oloid-user-portal-how-to-configure-oloid-user-portal-in-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Accounts and Settings"
+  updatedAt: "2026-07-28T10:34:23Z"
+  migratedAt: "2026-08-13T09:16:30.272147+00:00"
+---
+## Introduction
+
+You can configure the Oloid User Portal from the Tenant Admin Portal by selecting preferred login options, enabling Single Sign-On (SSO) providers, customizing the visual theme to enhance the end-user experience, and accessing the Oloid User Portal directly by clicking the User Portal link within the Tenant Admin Portal.
+
+## ​**Prerequisite**
+
+You must select the preferred credentials to be displayed in Oloid User Portal. Refer **Tenant Settings** > **[Preferences](/administration/admin-portal/how-to-create-credential-preferences-in-oloid-portal)**
+
+## Steps to configure Oloid User Portal
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage, click **user profile** icon from the bottom left. ![](/images/11659590/622566f65850.png) The **User profile menu** is displayed.
+3. Click **Tenant Settings**. ![](/images/11659590/fb5a25fc9f1c.png) The **Tenant Settings** page is displayed.
+4. Go to **App Settings** > **User Portal**. ![](/images/9969120/764b583e47e1.png) The **Settings** and **Theme** sections are displayed. By default, **Settings** section is selected.
+5. Do the following:[Login Page](#h_2c6f9cf287)[Post Login Page](#h_a4b36b1a94)[Configure Settings section.](#h_f0b7436728)[Configure Theme section](#h_95aacd344e). The Oloid User Portal is configured. You can now view the Oloid User Portal and validate your changes. For more details refer [View Oloid User Portal](#h_00ed2e5d2b)
+
+## Login Page
+
+You can select the preferred login options to be displayed on the Oloid User Portal login screen:
+
+1. Enable **Login with Face** toggle.
+2. Enter the **Label for user's unique ID**field.**Note:** **User unique ID** is displayed if **Face** is selected as a Login option. You can enter Employee ID, Primary ID, Username, Email as **user's unique ID**. ![](/images/9969120/d358ed52e973.png)
+3. Enable **Email** / **Phone**to allow users to authenticate via an email ID, SMS or phone-based authentication.The selected option(s) is(are) displayed on the Oloid User Portal login screen. ![](/images/9969120/d49c5536ed2c.png)
+4. Enable **SSO options**toggle to log in to the Oloid User Portal.
+5. Select one or more SSO providers for the Oloid User Portal by selecting the corresponding boxes. Once enabled, users can log in using their selected SSO provider(s). ![](/images/9969120/529488ea0ef1.png)
+6. Select **Custom Button** to add any specific URL to log into the Oloid User Portal.Enter **Custom Label**. Enter **Add Redirect URL**.
+7. **HR Picture Verification**enables the Verify button on the User Portal Login screen. This enables facial verification against HR-uploaded images. This option can also be used for self-onboarding of face credential by enabling the auto-enroll-face option. For more Information, refer: [How to Enable HR Picture Verification for User Portal](/administration/user-portal/tenant-admin-portal-how-to-enable-hr-picture-verification-for-oloid-user-portal)
+
+## Post Login Page
+
+The Custom Post-Login Page setting allows Tenant Admins to define the landing page users see after logging into the User Portal. For More information refer: [How to Configure Custom Post-Login Landing page for Oloid User Portal](/administration/user-portal/how-to-configure-custom-post-login-landing-page-for-oloid-user-portal)
+
+<Frame>
+  <img src="/images/9969120/43820c0f4aeb.png" alt="Screenshot" />
+</Frame>
+
+## Configure Theme section
+
+The Customize Theme settings allow you to personalize the appearance of the User Portal by configuring branding elements such as the logo, colours, and header styles to match your organization's identity.
+
+Do the following:
+
+[Customize Theme](#h_5180ee02c8)
+
+[Configure Language Support](#h_d6844f011c).  
+Theme section is configured successfully.
+
+#### Configure Customize Theme
+
+Go to **Customize Theme** section and do the following:
+
+1. Upload logo in **Customer Logo**.
+2. Enter color code in **Widget Header/Footer Color**.
+3. Enter color code for **Header Text Color.**
+4. Enter color code for **Primary Color**.
+5. Enter color code for **Secondary Color**.
+6. Click **Deploy Changes**. ![](/images/9969120/ae14267a625e.png) The Confirm Update pop-up box is displayed.
+7. Click **Update**.**Note**: You can see all your customized changes in the preview screen as well as in the User Portal. Follow next section for more details.
+
+<Frame>
+  <img src="/images/9969120/15516b72a1cb.png" alt="Screenshot" />
+</Frame>
+
+#### Configure Language Support
+
+**Note:**The following Languages are currently supported: French, English, German, Portugese, and Spanish.
+
+1. Click **Language Support.** ![](/images/9969120/37d6fe0aef33.png)
+2. Select the **Default App Language**from dropdown.Choose the language that the application uses by default for all users unless another language is selected.
+3. Select the **Use Browser Language as Default Language** checkbox. (Optional)Enable this option to automatically use the language configured in the user's web browser as the application's default language.
+4. Select the **Show Language selection dropdown** checkbox. (Optional)Enable this option to display a language selector in the application, allowing users to switch between the configured languages.
+5. Click **Deploy Changes**. ![](/images/9969120/e04bf25f7487.png) The Confirm Update pop-up box is displayed. ![](/images/9969120/4b0baae22cc6.png)
+6. Click **Update**.
+
+The Theme tab is customized successfully.
+
+<Frame>
+  <img src="/images/9969120/1480cbf0393c.png" alt="Screenshot" />
+</Frame>
+
+## Customize Settings Tab
+
+<Frame>
+  <img src="/images/9969120/1f2cfe0098cb.png" alt="Screenshot" />
+</Frame>
+
+To Configure settings do the following:
+
+1. Select credential(s) for **Allow Credential Creation**. ![](/images/9969120/efe7b9ec797f.png) The user can create or update the selected credential from the Oloid User Portal.
+2. Enable Login Timeout: User will be logged out of the user portal after the defined timeout duration.
+3. Click **Deploy Changes**. ![](/images/9969120/c28c3a71bfb2.png) The **Confirm Update** pop-up box is displayed.
+4. Click **Update**. ![](/images/9969120/4ffa3298cf26.png) The Settings tab is configured successfully.
+
+## View Oloid User Portal
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage, click **user profile** icon from the bottom left.
+3. Click **Tenant Settings**.
+4. Select **Oloid Apps**> **User Portal**app link. ![](/images/9969120/791a604b9608.png)The Oloid User Portal is displayed successfully. ![](/images/9969120/d05b39e0058f.png)
+
+---
+
+### Keywords
+
+Oloid User Portal Configuration, Oloid User Portal Setup, Configure Oloid User Portal Settings, Oloid User Portal Theme Customization, Oloid User Portal Login Methods, Enable SSO in Oloid User Portal.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid User Portal - How to log in Oloid User Portal with Okta SSO" icon="arrow-right" href="/resources/integrations/sso/oloid-user-portal-how-to-log-in-oloid-user-portal-with-okta-sso" />
+  <Card title="How to log in to Oloid User Portal with Ping SSO" icon="arrow-right" href="/administration/user-portal/how-to-log-in-to-oloid-user-portal-with-ping-sso" />
+  <Card title="Oloid User Portal - How to log in to Oloid User Portal using Auth0 SSO" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-using-auth0-sso" />
+  <Card title="Webkey - How to login to Tenant Admin Portal with Oloid Webkey SSO" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-login-to-tenant-admin-portal-with-oloid-webkey-sso" />
+  <Card title="Tenant Admin Portal - How to Log in to the Tenant Admin Portal using Oloid Passkey (Webkey) SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-the-tenant-admin-portal-using-oloid-passkey-webkey-sso" />
+</CardGroup>

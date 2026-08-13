@@ -1,0 +1,107 @@
+---
+title: "ProWatch <> ServiceNow Integration"
+sidebarTitle: "ProWatch <> ServiceNow Integration"
+description: "ProWatch <> ServiceNow Integration"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "7041159"
+  url: "https://oloid.help/en/articles/7041159-prowatch-servicenow-integration"
+  collection: "Oloid Workflow"
+  section: "Pre-built Flow Templates"
+  updatedAt: "2023-06-02T08:22:37Z"
+  migratedAt: "2026-08-13T09:16:19.465372+00:00"
+---
+Integrating **Honeywell Pro-watch** with **ServiceNow** using **Oloid Workflow** can offer several benefits to organizations, including:
+
+1. **Improved Security**: Honeywell Pro-watch is a comprehensive security management system that provides real-time monitoring and control of access, video, and intrusion events. By integrating it with ServiceNow, organizations can automate security incident response and reduce response times, which can help prevent or mitigate security breaches.
+2. **Increased Efficiency:** By integrating Pro-watch with ServiceNow, organizations can streamline their security operations and improve operational efficiency. For example, security incidents can be automatically logged and routed to the appropriate security team member for resolution. This can help reduce manual processes and errors, and enable faster resolution times.
+3. **Enhanced Visibility:** The integration of Pro-watch with ServiceNow provides enhanced visibility into security events and incidents, enabling security teams to identify and respond to issues more quickly. This can help reduce the impact of security incidents and improve overall security posture.
+4. **Centralized Management:** The integration of Pro-watch with ServiceNow provides a centralized location for managing security incidents, which can help reduce complexity and improve communication between security teams. This can help ensure that all relevant stakeholders are informed of security incidents, enabling faster resolution times.
+5. **Increased Compliance:** ServiceNow offers a range of compliance management features, including audit trails, reporting, and risk assessments. By integrating Pro-watch with ServiceNow, organizations can improve compliance management by automating compliance-related processes, such as incident response and reporting.
+
+Oloid workflow has a common integration pattern which allows users to integrate **ProWatch** with **ServiceNow** application instance.
+
+<Frame>
+  <img src="/images/7041159/6bf837d73c9f.png" alt="Screenshot" />
+</Frame>
+
+## Usecase
+
+Create ServiceNow ticket when desired ProWatch Event happens,
+
+-         **_[Trigger]_**Oloid workflow subscribes to listen to new events happening on ProWatch.
+
+-         **_[Action]_** Oloid Workflow creates an incident ticket for ProWatch Event and assigns it to right user.
+
+## High Level Data Flow
+
+<Frame>
+  <img src="/images/7041159/13d1f8c33fd0.png" alt="Screenshot" />
+</Frame>
+
+## Steps to deploy
+
+## 1. Add ProWatch Account
+
+To add a ProWatch account, go to **Accounts** and click **Add Account** and fill up ProWatch Account form and save it.
+
+<Frame>
+  <img src="/images/7041159/925e3f2aa7b1.png" alt="Screenshot" />
+</Frame>
+
+## 2. Add ServiceNow Account
+
+To add a **ServiceNow** account, go to **Accounts** and click **Add Account** and fill up ServiceNow Account form and save it.
+
+<Frame>
+  <img src="/images/7041159/a396241f29d0.png" alt="Screenshot" />
+</Frame>
+
+## 3. Import Pre-built Flow
+
+To import a flow, Click on**Import** and browse the shared **flow Json** file and import it into the application.
+
+<Frame>
+  <img src="/images/7041159/51f2dcd719de.png" alt="Screenshot" />
+</Frame>
+
+<Frame>
+  <img src="/images/7041159/fb4c0e3a4f1c.png" alt="Screenshot" />
+</Frame>
+
+## 4. Update Account associations in the Trigger & Action node
+
+**Double-click** to open **ProWatch Trigger** node for edit, and go to **Account zone** and select the account created in step-1. **Double-click** to open **ServiceNow** Action node for edit, go to **Account zone** and select the account created in step-2.
+
+<Frame>
+  <img src="/images/7041159/bc68e9ecb3af.png" alt="Screenshot" />
+</Frame>
+
+<Frame>
+  <img src="/images/7041159/cd7bd2bbedcd.png" alt="Screenshot" />
+</Frame>
+
+## 5.Deploy
+
+Hit **Deploy** to start the flow. The flow will capture all trigger events and will perform intended actions.
+
+<Frame>
+  <img src="/images/7041159/de301b19fc66.png" alt="Screenshot" />
+</Frame>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Workflow - Core Features" icon="arrow-right" href="/workflow/workflow/oloid-workflow-core-features" />
+  <Card title="Oloid Workflow Guides List" icon="arrow-right" href="/workflow/workflow/oloid-workflow-guides-list" />
+  <Card title="Pro-Watch to ServiceNow Incident Automation and Ticketing Integration" icon="arrow-right" href="/workflow/workflow/pro-watch-to-servicenow-incident-automation-and-ticketing-integration" />
+  <Card title="Pro-Watch to Everbridge Critical Event Response Automation" icon="arrow-right" href="/workflow/workflow/pro-watch-to-everbridge-critical-event-response-automation" />
+  <Card title="ServiceNow to Pro-Watch Access Management Automation" icon="arrow-right" href="/workflow/workflow/servicenow-to-pro-watch-access-management-automation" />
+</CardGroup>

@@ -1,0 +1,94 @@
+---
+title: "Webkey - How to log into OKTA Workforce /HRMS platforms using QR Code and PIN through Webkey"
+sidebarTitle: "Webkey - How to log into OKTA Workforce /HRMS platforms…"
+description: "Webkey - How to log into OKTA Workforce /HRMS platforms using QR Code and PIN through Webkey"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+  - "SSO"
+categories:
+  - "passwordless/web/webkey"
+  - "resources/integrations/hrms"
+  - "resources/integrations/sso"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "10454981"
+  url: "https://oloid.help/en/articles/10454981-webkey-how-to-log-into-okta-workforce-hrms-platforms-using-qr-code-and-pin-through-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Using WebKey"
+  updatedAt: "2026-08-10T10:11:38Z"
+  migratedAt: "2026-08-13T09:16:05.622276+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions for logging in with QR Code and PIN to Workforce /HRMS platform.
+
+## Prerequisites
+
+- You must have an Okta account.
+- The Okta credential must be added to the user detail page. For more details, refer [How to configure user details](/administration/admin-portal/tenant-admin-portal-how-to-configure-user-details)
+- In the Tenant Admin Portal, you must do the following:Create QR Code for the user. For more details, refer [How to create QR code as credential for User](/administration/admin-portal/tenant-admin-portal-how-to-create-and-assign-qr-code-credential-for-a-user)Enable QR Code option under the WebKey Application. For more details, refer [How to create and configure WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)Add PIN for the user. For more details, refer[How to add PIN as credential to users](/administration/admin-portal/how-to-add-pin-as-a-credential-for-users)Enable QR and PIN under the WebKey Application. For more details, refer [How to create and configure WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)If you are using iOS or Android devices, you can select camera options (front/rear). To configure camera options, refer to [Show Camera Flip button](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+## Steps to Login using the QR Code and PIN:
+
+1. Launch the **Webkey**application URL in your browser.
+2. On the home page of the application, select **Login with QR Code**.**Note:**You can select preferred display language from the **Language Dropdown Selector**. For more information, refer [Additional information section](#h_53d617357d). ![](/images/10454981/ad6754ccc0dd.png) By default, the front camera opens for QR code scanning.
+3. Hold your mobile device or tablet with the QR code facing the preview screen. Next, scan QR Code for QR Code authentication. ![](/images/10454981/a90c754cd219.png)
+4. If your device supports multiple cameras, then do the following:Tap the **Camera Flip Button** in the preview screen.Select **Front Camera** or **Back Camera** as needed.Scan the QR code.**Note:**The Camera Flip option must be configured for WebKey application. ![](/images/10454981/edd98439f89c.png)
+5. Scan QR Code for QR Code authentication. ![](/images/10454981/a90c754cd219.png) On QR Code authentication, the **Type or Scan PIN**screen is displayed.
+6. Do any of the following:Tap the card that contains the PIN on the **Reader** to scan it.**Note:**The Reader should be connected to your system.**(OR)**Enter the **PIN**.Click **Submit**.
+
+<Frame>
+  <img src="/images/10454981/2828f39a0c9b.png" alt="Screenshot" />
+</Frame>
+
+On PIN authentication, you are signed in to the **Workforce /HRMS** platform.
+
+<Frame>
+  <img src="/images/10454981/fdf1820138c5.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### Additional Information
+
+**WebKey** now supports multiple language versions, allowing users to select their preferred display language from the **Language Dropdown Selector** on the Login screen.
+
+**Note:** Languages supported: English, Spanish, French, German, and Portuguese language.
+
+#### Sample Screen
+
+The display language updates based on the selected language. The following sample shows the WebKey application in German.
+
+<Frame>
+  <img src="/images/10454981/c6ed690f89db.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch the video [How to log into Workforce Management platforms using QR Code and PIN through WebKey- Video Tutorial](/passwordless/web/webkey/how-to-log-into-workforce-management-platforms-using-qr-code-and-pin-through-webkey-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** Webkey QR Code login · QR Code and PIN authentication · Login with QR Code · Workforce HRMS login · Webkey authentication
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Face and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-face-and-pin-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using Badge and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-badge-and-pin-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using QR Code through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-qr-code-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using NFC/ID and PIN in Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-nfc-id-and-pin-in-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Face through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-face-through-webkey" />
+</CardGroup>

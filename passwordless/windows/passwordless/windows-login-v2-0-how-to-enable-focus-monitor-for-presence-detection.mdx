@@ -1,0 +1,73 @@
+---
+title: "Windows Login v2.0 - How to Enable Focus Monitor for Presence Detection"
+sidebarTitle: "V2.0 - How to Enable Focus Monitor for Presence Detection"
+description: "This document provides step-by-step instructions to configure Focus Monitor for Windows Login endpoints in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "16012060"
+  url: "https://oloid.help/en/articles/16012060-windows-login-v2-0-how-to-enable-focus-monitor-for-presence-detection"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v2.0"
+  updatedAt: "2026-07-27T07:09:01Z"
+  migratedAt: "2026-08-13T09:16:18.918179+00:00"
+---
+## Introduction
+
+Focus Monitor helps ensure that users remain attentive while using a Windows device. It monitors whether the authenticated user looks away from the screen beyond a configured angle for a specified duration and triggers the configured action when the defined threshold is exceeded.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- Ensure the endpoint is paired with the Windows Login application. refer: [How to pair endpoint using Pair as Supervisor in Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-manually-pair-the-supervisor-app)
+- Ensure that your system is unlocked
+- Ensure that your system's camera is working properly
+
+## Steps to**configure **Focus Monitor
+
+1. Log in to Tenant Admin Portal.
+2. On the home page of the portal, click **Endpoints** on the left menu panel. ![](/images/15701076/9657959fb760.png) The Endpoints page is displayed.
+3. Click endpoint name (Windows Login) to edit from the listed endpoints. ![](/images/15701076/755d93a19b4b.png) The Endpoint details page is displayed.
+4. Go to **Windows Alert** tab. ![](/images/15701076/06b64fc55af2.png)
+5. Do the following:Enable the **Focus Monitor** toggle button.Enter the **Look-away angle**.The **Look-away Angle** defines the maximum angle (in Degrees) a user can turn away from the screen before focus is considered lost.Enter the duration for **Focus Lost**.This defines how long the user must remain outside the allowed angle before an alert is triggered.Select **Action**from drop down.Click **Save.**
+
+<Frame>
+  <img src="/images/16012060/24e141529468.png" alt="Screenshot" />
+</Frame>
+
+Windows Alerts for presence detection is configured.
+
+<Frame>
+  <img src="/images/16012060/5b5749c0ea29.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Sample Screen
+
+<Frame>
+  <img src="/images/16012060/290a762c832c.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Configure Focus Monitor · Windows Login Focus Monitor · Focus Monitor settings · Windows Alert Focus Monitor · Presence Detection
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to configure endpoint for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-endpoint-for-windows-login" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enable PingOne Multi Factor Authentication (MFA) for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login v2.0 - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-configure-windows-alert-for-presence-detection" />
+</CardGroup>

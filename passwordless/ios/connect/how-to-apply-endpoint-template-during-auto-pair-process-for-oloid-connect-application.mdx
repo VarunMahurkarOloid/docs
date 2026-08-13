@@ -1,0 +1,65 @@
+---
+title: "How to apply Endpoint Template during Auto-pair process for Oloid Connect application"
+sidebarTitle: "Apply Endpoint Template during Auto-pair process for…"
+description: "How to apply Endpoint Template during Auto-pair process for Oloid Connect application"
+tags:
+  - "Passwordless"
+  - "iOS"
+  - "Oloid Connect"
+categories:
+  - "passwordless/ios/connect"
+primaryCategory: "passwordless/ios/connect"
+navPath: "Passwordless > iOS > Oloid Connect"
+source:
+  system: "intercom"
+  articleId: "12750269"
+  url: "https://oloid.help/en/articles/12750269-how-to-apply-endpoint-template-during-auto-pair-process-for-oloid-connect-application"
+  collection: "Oloid Connect"
+  section: "Oloid Connect: Platform Configuration"
+  updatedAt: "2025-11-20T08:39:02Z"
+  migratedAt: "2026-08-13T09:16:11.531528+00:00"
+---
+## Introduction
+
+This document explains how to apply an Endpoint Template during the auto-pair configuration process for the Oloid Connect application. Applying the Endpoint Template ensures that predefined settings are automatically assigned to endpoint as part of the pairing process.
+
+## Prerequisites
+
+1. You have **Tenant Admin** access to the **Tenant Admin Portal**.
+2. An **Endpoint Template** has been created. To create refer[How to create and configure Oloid Connect endpoint template](/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template)
+
+## Steps at a Glance
+
+1. Create the Oloid Connect application in the Tenant Admin Portal and select the desired endpoint template in the**“Apply Endpoint Template”**field.
+2. Generate and download the auto-pair config file; ensure it is mapped to the application with the predefined template.
+3. Pair the Oloid Connect endpoint using the auto-pair option. The endpoint template is applied automatically.
+
+## Steps to Apply Endpoint Template During Auto-Pair Process
+
+## Step 1: Create and Configure the Oloid Connect Application
+
+1. Log in to the **Tenant Admin Portal**.
+2. Create the **Oloid Connect** application. Refer[How to create and configure Oloid Connect Application in Tenant Admin Portal](/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal)**Note:** If Oloid Connect application is already created then select the desired application from the application list.
+3. In the **Settings section**, select the applicable template from [Apply Endpoint Template](/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal) dropdown.**Note:** Endpoint template must be added to apply template when using auto-pair option to pair the endpoint. ![](/images/12750269/902ac3050434.png) The endpoint template is selected.
+4. Select **Save**. ![](/images/12750269/11a341753832.png)
+
+The Endpoint Template is successfully applied to the selected Oloid Connect Application.
+
+## Step 2: Generate and Download the Auto-config File
+
+1. Generate and download the auto-pair config file. Refer [How to generate Auto-Pair config file for Oloid Connect in Tenant Admin Portal](/administration/admin-portal/how-to-generate-auto-pair-config-file-for-oloid-connect-in-tenant-admin-portal)**Note:** Ensure that the **Application Mapping** includes the application where the **Endpoint Template** is specified. This mapping ensures that auto-pair applies the correct endpoint configuration. ![](/images/12586251/97a72e3e3bbe.png)
+
+## Step 3: Pair Oloid Connect endpoint with Auto-config File
+
+1. On the target iPad, launch the **Oloid Connect App.**
+2. Pair the endpoint using auto-pair option. To auto-pair refer [How to pair Oloid Connect App using Auto config file](/administration/admin-portal/how-to-pair-oloid-connect-app-using-auto-config-file)**Note:** Once the auto-pair process completes, the **Endpoint Template** settings is automatically applied to the paired endpoint. Keywords|Apply Endpoint Template in Oloid Connect| Oloid Connect auto-pair configuration| Oloid Connect endpoint template setup| Auto-pair Oloid Connect application|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Connect – How to Pair an Endpoint" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-how-to-pair-an-endpoint" />
+  <Card title="How to Pair Oloid Connect App using Auto config file" icon="arrow-right" href="/administration/admin-portal/how-to-pair-oloid-connect-app-using-auto-config-file" />
+  <Card title="Windows Login - How to apply Endpoint Template during Auto-pair process for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-apply-endpoint-template-during-auto-pair-process-for-windows-login" />
+  <Card title="How to apply Endpoint Template after Auto-pair for the Oloid Connect application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-apply-endpoint-template-after-auto-pair-for-the-oloid-connect-application-in-the-tenant-admin-portal" />
+  <Card title="Oloid Connect iPhone - Platform Configuration" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-iphone-platform-configuration" />
+</CardGroup>

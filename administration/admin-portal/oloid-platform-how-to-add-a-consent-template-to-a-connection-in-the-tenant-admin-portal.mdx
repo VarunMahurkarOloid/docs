@@ -1,0 +1,54 @@
+---
+title: "Oloid Platform - How to add a Consent Template to a Connection in the Tenant Admin Portal"
+sidebarTitle: "Oloid Platform - How to add a Consent Template to a…"
+description: "This document provides step by step instructions to add a Consent Template to a Connection in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8237994"
+  url: "https://oloid.help/en/articles/8237994-oloid-platform-how-to-add-a-consent-template-to-a-connection-in-the-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Consent Documents"
+  updatedAt: "2026-04-27T12:16:29Z"
+  migratedAt: "2026-08-13T09:16:20.361847+00:00"
+---
+## Introduction
+
+The Tenant Admin Portal allows admins to configure a consent template to obtain user approval before capturing and storing facial data.
+
+## Prerequisites
+
+- You must create a Consent template. To create refer **[How to create a Consent Template](/administration/admin-portal/how-to-create-and-configure-consent-template)**.
+- You must have a Tenant Admin Account.
+
+## Steps to add Consent
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Connections** on the left menu panel. ![](/images/13407101/578f16962cec.png)The **Connections** page is displayed.
+3. Select a connection name to edit. ![](/images/13407101/b1a31ec4b283.png) The Connection detail page is displayed. ![](/images/8237994/061907af2378.png)
+4. Click **Configure** tab then select **Consent**tab. ![](/images/8237994/584f08015699.png)
+5. Click **Enable Consent**. ![](/images/8237994/c1f20ea94402.png) Enable Consent popup-box is displayed.
+6. Do the following:Select the applicable **Consent Template** from the dropdown list.**Note:**To create a consent template, refer [How to create a Consent Template](/administration/admin-portal/how-to-create-and-configure-consent-template).Click **Next**. ![](/images/8237994/7494749de491.png) Applicable User Set screen is displayed.Select **All Users** > Click **Next**. ![](/images/8237994/4fde1f3a7d0a.png) Authentication validity pop-up box is displayed.Do one of the following:**No end-date:**Select this option to allow authentication without a defined end date. Face images and biometric data for all users in the connection whether they have already provided consent or have not yet provided will remain valid, and users will continue to authenticate using face biometrics after signing the re-consent document.OR**Permit authentication until the Set Date:** Select this option and enter the preferred date.**Note**: If consent is not provided by the selected date, the face data and associated biometric information will be deleted.Click **Confirm**. ![](/images/8237994/62abddaae60b.png) **Consent Updated** popup box is displayed.Click **Okay**. ![](/images/8237994/ea8323fce375.png) Consent is enabled for the connection. ![](/images/8237994/54d8f592f999.png)
+
+---
+
+#### Keywords
+
+Add Consent Template | Configure User Consent | Consent Template Setup| Add consent to connection|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to create and configure consent template" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-consent-template" />
+  <Card title="Tenant Admin Portal - How to Configure a Connection in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-a-connection-in-the-tenant-admin-portal" />
+  <Card title="How to configure Consent Template for user face onboarding in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-consent-template-for-user-face-onboarding-in-the-tenant-admin-portal" />
+  <Card title="Oloid Platform - How to Revoke Consent of a User" icon="arrow-right" href="/administration/admin-portal/oloid-platform-how-to-revoke-consent-of-a-user" />
+  <Card title="How to Customize Email Invite Template to Add Face in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-customize-email-invite-template-to-add-face-in-the-tenant-admin-portal" />
+</CardGroup>

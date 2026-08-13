@@ -1,0 +1,76 @@
+---
+title: "Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal"
+sidebarTitle: "Windows Login - How to generate Auto-Pair config file for…"
+description: "This document provides step-by-step instructions to generate an Auto-Pair Config File from the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "10441578"
+  url: "https://oloid.help/en/articles/10441578-windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Accounts and Settings"
+  updatedAt: "2026-08-11T07:32:45Z"
+  migratedAt: "2026-08-13T09:16:05.544224+00:00"
+---
+## Introduction
+
+The **Auto-Pair Config File** allows the Tenant Admin to streamline the process of pairing Windows endpoints with a configured application. By generating this file from the Tenant Admin Portal, admins can automatically connect multiple endpoints.
+
+## Prerequisites
+
+- You must have access to a Tenant Admin Account.
+- Ensure that a **Windows Login** application is already created in the Tenant Admin Portal. Refer: Windows Login - [How to create and configure Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+
+## Steps to generate auto-pair config file
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/10441578/b90c325f9cf8.png) The user profile menu is displayed.
+3. Click **Tenant Settings**. ![](/images/10441578/e184a5672785.png) The **Tenant Settings** page is displayed.
+4. Go to **Security** tab >**API Token** > **API Key**. ![](/images/10441578/f17408aa6124.png)
+5. In the**Generate Temporary Access Token**section, do the following:In the **Generate Temporary Access Token** section, select the **Start Date/Time** field.To set the start date and time, click the date picker or select **Now**.Select the **End Date/Time** field.Click the date picker, choose when the token will expire, and then click **OK**.Specify **Number of Endpoints** that can be created using the endpoint. (Optional)Click **Generate**. ![](/images/10441578/2f757f45c451.png) The auto-pair config file is generated.
+6. Click **Auto-pair config file**. ![](/images/10441578/c78eb07337d7.png) The Auto-pair config file pop-up box is displayed.
+7. Do the following:Select **Application Type**as**Passwordless - Windows Login**from dropdown.From the **Select Application** drop-down list, select the application that you want the endpoints to pair with.**Note:**Select **Skip user confirmation for pairing**option to auto-pair endpoints without requiring user confirmation.Select **TEXT**as download file format > click **Copy Config Text.** (optional)**Note:**This button will copy (to clipboard) the config file in the selected download file format.Click **Download**.
+
+<Frame>
+  <img src="/images/10441578/32bfdc16eaa7.png" alt="Screenshot" />
+</Frame>
+
+**Note:**Select JSON as **Download File format**for manual pairing. Refer below image.
+
+<Frame>
+  <img src="/images/10441578/df160b1d2f92.png" alt="Screenshot" />
+</Frame>
+
+The Autopair Config file is downloaded to the local device.
+
+---
+
+## Video Tutorial
+
+Watch the video: [Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal - Video Tutorial](/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** Auto-Pair Config File · Generate Auto-Pair Config · Windows Login Endpoint pairing · Automatic endpoint pairing
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to generate Auto-Pair config file for Oloid Connect in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-generate-auto-pair-config-file-for-oloid-connect-in-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Update Auto-Pair Config File for Oloid DeviceLock App" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-update-auto-pair-config-file-for-oloid-devicelock-app" />
+  <Card title="DeviceLock App - How to Generate Auto-Pair Config File in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/devicelock-app-how-to-generate-auto-pair-config-file-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium)- How to Generate and Download Auto-Pair Config File in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-generate-and-download-auto-pair-config-file-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to generate Auto-Pair config file for Webkey in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-generate-auto-pair-config-file-for-webkey-in-tenant-admin-portal" />
+</CardGroup>

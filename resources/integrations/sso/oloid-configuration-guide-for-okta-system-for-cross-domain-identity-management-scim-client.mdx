@@ -1,0 +1,78 @@
+---
+title: "Oloid Configuration Guide for Okta System for Cross-domain Identity Management (SCIM) Client"
+sidebarTitle: "Oloid Configuration Guide for Okta System for…"
+description: "Learn how to setup and use user provisioning to sync users from Okta to Oloid."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "9822466"
+  url: "https://oloid.help/en/articles/9822466-oloid-configuration-guide-for-okta-system-for-cross-domain-identity-management-scim-client"
+  collection: "Manage Agents"
+  section: "System for Cross-Domain Identity Management (SCIM) - Configuration Guide"
+  updatedAt: "2026-02-04T04:39:23Z"
+  migratedAt: "2026-08-13T09:16:28.799590+00:00"
+---
+## Overview
+
+You can provision users from Okta to Oloid to reduce manually adding each employee to Oloid. The provisioning process reduces administrative errors and is a great way to save time and efforts.
+
+With Okta to Oloid provisioning features, you can automate these tasks
+
+- **Push new users**– Any users you create into Okta can be provisioned / created into Oloid.
+- **Push profile updates**– Profile updates done in Okta are pushed to Oloid.
+- **Push user deactivation** – Deactivating or removing a user in Okta terminates the user in Oloid.
+
+## How to configure SCIM provisioning from Okta to Oloid
+
+## Prerequisite
+
+You must have permission to create application in Okta Console.
+
+## Steps to Configure SCIM in OKTA
+
+1. Log in to Okta Tenant Administration console.
+2. Go to **Applications** > **Applications** and click **Browse App Catalog.** ![](/images/9822466/059cb90bf7a4.png)
+3. Search **SCIM 2.0 Test App (Header Auth).** ![](/images/9822466/e0e677d5df77.png) The **SCIM 2.0 Test App (Header Auth).**
+4. Click **Add Integration**. ![](/images/9822466/435b43802560.png)
+5. Enter Application Labeland click**Next.** ![](/images/9822466/3ce44afffd9e.png) The Sign-On Options is displayed.
+6. Click **Done.** ![](/images/9822466/4d9bd359ce19.png) The General settings tab is configured successfully.
+7. Go to **Provisioning** tab and click **Configure API Integration.** ![](/images/9822466/1b0378a2e55d.png)
+8. Do the following:Select **Enable API integration**.Enter **Base URL.**Enter **API Token**. **Note:** To enter the **Base URL** and **API Token**, go to **Oloid Tenant Admin Portal** > **Agents > SCIM** and copy the **Base URL**and**API Token**. ![](/images/9822466/391b43232638.png) Click **Test API Credentials**. **Note:** Validation should succeed and you should see the message "Okta-SCIM was verified successfully".Click **Save.** ![](/images/9822466/00b43097bcce.png)
+9. Go to **Provisioning** **>** **Settings** **>** **To App.**
+10. Enable the following sections:Create UsersUpdate User AttributesDeactivate Users. ![](/images/9822466/79df846e4f40.png) Under attribute mapping, map following attributes: ![](/images/9822466/720c7faa977a.png)![](/images/9822466/55bee595b649.png) **Note**: Email is case insensitive attribute in Oloid.
+11. Go to **Assignments** tab and click **Assign**. ![](/images/9822466/26040592e10a.png) The Assignment tab is displayed.
+12. Do the following:**Assign to People**: Go to **Assign > Assign to People**. ![](/images/9822466/5cf3628a8ec7.png) The **List of People** is displayed.Click **Assign**. ![](/images/9822466/ed36a183fd58.png) The **Assign SCIM 2.0 Test App** pop-up is displayed.Click **Save and Go Back**. ![](/images/9822466/513dcf8672af.png) The user is assigned successfully and listed on the User. ![](/images/9822466/20ad11ee65a8.png) **Assign to Groups**Go to **Assign > Assign to Groups.** ![](/images/9822466/5db070b39243.png) The list of groups is displayed.Click **Assign**. ![](/images/9822466/24f0af26b70e.png) The Group is assigned successfully. ![](/images/9822466/bbea082a9bc5.png)
+
+The Okta SCIM client is configured.
+
+## Troubleshooting
+
+If you have any questions or difficulties with your Oloid / Okta SCIM integration, please contact [Oloid Support](mailto:support@oloid.ai)
+
+## Related Documents
+
+## [How to Configure System for Cross-Domain Identity Management (SCIM) in Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/tenant-admin-portal-how-to-configure-system-for-cross-domain-identity-management-scim)
+
+---
+
+<Tip>
+  **Keywords:** SCIM 2.0 integration with Okta · Configure SCIM in Okta · Okta SCIM 2.0 Test App (Header Auth)
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="Oloid User Portal - How to log in Oloid User Portal with Okta SSO" icon="arrow-right" href="/resources/integrations/sso/oloid-user-portal-how-to-log-in-oloid-user-portal-with-okta-sso" />
+  <Card title="Tenant Admin Portal - How to Configure System for Cross-Domain Identity Management (SCIM)" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-system-for-cross-domain-identity-management-scim" />
+  <Card title="Add a Custom Login with OLOID Button Using Okta Federation" icon="arrow-right" href="/resources/integrations/sso/add-a-custom-login-with-oloid-button-using-okta-federation" />
+</CardGroup>

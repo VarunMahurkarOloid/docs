@@ -1,0 +1,152 @@
+---
+title: "Windows Login - How to configure Windows Alert for presence detection"
+sidebarTitle: "Windows Login - How to configure Windows Alert for…"
+description: "Windows Login - How to configure Windows Alert for presence detection"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "9909336"
+  url: "https://oloid.help/en/articles/9909336-windows-login-how-to-configure-windows-alert-for-presence-detection"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-30T08:02:05Z"
+  migratedAt: "2026-08-13T09:16:29.711624+00:00"
+---
+## Introduction
+
+The presence detection feature in Windows devices helps to monitor user activity. This feature only works when the system is unlocked.   
+​**Note:**If you cannot find the Windows Alert tab on the Windows endpoint in the Oloid Portal, contact [Oloid Support](mailto:support@oloid.ai) for assistance.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- Ensure that your system is unlocked
+- Ensure that your system's camera is working properly
+
+## Steps to configure Windows Alert
+
+1. Log in to Tenant Admin Portal.
+2. On the home page of the portal, click **Endpoints** on the left menu panel. ![](/images/15701076/9657959fb760.png) The Endpoints page is displayed.
+3. Click endpoint name (Windows Login) to edit from the listed endpoints. ![](/images/15701076/755d93a19b4b.png) The Endpoint details page is displayed.
+4. Go to **Windows Alert** tab. ![](/images/15701076/06b64fc55af2.png)
+5. Do the following:**Enable Windows Alerts:**Turn on this button to track the user's face based on Windows Lock settings. It generates alerts when captured images fail to meet preset requirements.**Note:**Turn on this feature to enable the rest of the settings on the Windows tab.**Enable Camera-based Alerts for Non-Oloid Windows Login:**Select this option to generate alerts for Non-Oloid Windows Logins.**Allow Self-Unblock**: Select this option to let users automatically unblock their screen after a specified duration, without supervisor approval. **Set Self-Unblock Duration**: Set the duration (in minutes and seconds) after which the screen is automatically unblocked.**Default Setting**: 5 minutes and 0 seconds ![](/images/15701076/b4904e828574.png) **Non Oloid Windows Login Detected:**Turn on this button to generate alerts when users log in to the Windows device using their Windows username and password without authenticating through Oloid credentials. Do any of the following:**Screen Block:**The user’s screen is blocked, but they are not logged out of their session. See [Sample screen for a blocked user](#h_b0c31319a7) **Windows Lock:**The user's screen is locked, but they are not logged out of their session. See, [Sample screen for a locked user](#h_6bd1686369)**No Action:**No immediate response from the system, but a desktop notification is sent if notifications are enabled in the browser settings. See ![](/images/15701076/8e171f4b2e53.png) **Camera Block Detected:**Turn on this button to monitor the device's camera and detect if it's blocked. You can also configure face tracking, multi-face detection, and gadget detection.**Note:**Ensure that the system (endpoint) camera is not blocked. ![](/images/15701076/f3d2e55b5bed.png) Do the following:**Trigger 'Camera Blocked' alert after:** Set the number of seconds after which an alert will be triggered.**Action:** Choose from the dropdown list of actions upon detecting a camera block.**Screen Block:** The user’s screen is blocked, but they are not logged out of their session. See, [Sample screen for a blocked user](#h_8052e48f40)**Windows Lock:**The user's screen is locked, but they are not logged out of their session. See, [Sample screen for a locked user](#h_6bd1686369)**No Action:** No immediate response from the system, but a desktop notification is sent if notifications are enabled in the browser settings.
+6. Configure the following section:[Face Tracking Violation](#h_0cadc86771)[Multiple Faces Detected](#h_d2faefaebd)[Gadget Detected](#h_9ef1e7b8f7)
+7. Click **Save**to apply your changes.The presence detection is configured.
+
+### Face Tracking Violation
+
+**Face Tracking Violation:** Turn on this button to detect if the system cannot track a face, which may indicate a security issue.
+
+<Frame>
+  <img src="/images/9909336/41a25b262117.png" alt="Screenshot" />
+</Frame>
+
+Do the following:
+
+1. **Min required Face Landmark config:** Set the required percentage of face visibility for face detection.
+2. **Trigger 'No Face Found' alert after:** Define the time (in seconds) after which an alert will be generated if no face is found.
+3. **Action:** Select a predefined action to take when a face tracking violation occurs.**Screen Block:** The user’s screen is blocked, but they are not logged out of their session. See, [Sample screen for a blocked user](#h_6dcc9de22b)**Windows Lock:**The user's screen is locked, but they are not logged out of their session. See, [Sample screen for a locked user](#h_6bd1686369)**No Action:** No immediate response from the system, but a desktop notification may be sent if notifications are enabled in the browser settings.
+
+### Multiple Faces Detected
+
+**Multiple Faces** **Detected:** Turn on this button to set an alert when more than one face is detected.
+
+<Frame>
+  <img src="/images/9909336/176c3432b62a.png" alt="Screenshot" />
+</Frame>
+
+Do the following:
+
+1. **Multiple Face Detection Threshold:**Set the threshold level required to confirm the detection of multiple faces.
+2. **Trigger 'Multiple Faces' alert after:** Set the number of seconds after which an alert is triggered when multiple faces are detected.
+3. **Action:** Choose an action from a drop-down list in response to multiple face detection.**Screen Block:** The user’s screen is blocked, but they are not logged out of their session. See, [Sample screen for a blocked user](#h_e053577318)**Windows Lock:**The user's screen is locked, but they are not logged out of their session. See, [Sample screen for a locked user](#h_6bd1686369)**No Action:** No immediate response from the system, but a desktop notification may be sent if notifications are enabled.
+
+### Gadget Detected
+
+**Gadget Detected:** Turn on this button to set an alert when an unauthorized gadget is detected.
+
+<Frame>
+  <img src="/images/9909336/1e39a45f72dc.png" alt="Screenshot" />
+</Frame>
+
+Do the following:
+
+1. **Gadget Detection Threshold config:**Set the threshold level based on the desired detection sensitivity for detecting gadgets.
+2. **Trigger 'Gadget Detected' Alert After:** Define the time (in seconds) after which an alert is generated when a gadget is detected.
+3. **Action:** Select the action to perform when an unauthorized gadget is detected.**Screen Block:** The user’s screen is blocked, but they are not logged out of their session. See, [Sample screen for a blocked user](#h_ba42a46b96)**Windows Lock:**The user's screen is locked, but they are not logged out of their session. See, [Sample screen for a locked user](#h_6bd1686369)**No Action:** No immediate response from the system, but a desktop notification may be sent if notifications are enabled.
+
+---
+
+### Video Tutorial
+
+Watch the video [How to configure Windows alert for presence detection in Oloid Platform](/passwordless/windows/passwordless/how-to-configure-windows-alert-for-presence-detection-in-oloid-platform-video-tutorial)
+
+---
+
+### Sample User Screens
+
+**Scenario 1:** User Blocked screen
+
+#### Screen block as Non-Oloid Login detected
+
+<Frame>
+  <img src="/images/9909336/ccb63e5656ed.png" alt="Screenshot" />
+</Frame>
+
+#### Screen block as Camera issue detected
+
+<Frame>
+  <img src="/images/9909336/2c34a70d2bbf.png" alt="Screenshot" />
+</Frame>
+
+#### Screen block on Multiple faces detected
+
+<Frame>
+  <img src="/images/9909336/71a5a56de65f.png" alt="Screenshot" />
+</Frame>
+
+#### Screen block on Face Tracking Violation
+
+<Frame>
+  <img src="/images/9909336/95af664500aa.png" alt="Screenshot" />
+</Frame>
+
+#### Screen block on Gadgets detected
+
+<Frame>
+  <img src="/images/9909336/16ed4bc5a43d.png" alt="Screenshot" />
+</Frame>
+
+**Scenario 2:** User Locked screen
+
+#### ​ Windows Lock Screen
+
+<Frame>
+  <img src="/images/9909336/0ce13ef88ed0.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Configure Windows Alert Oloid · How to set up Windows Alerts · Windows endpoint security alerts · Windows lock alert configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - Screen block on Gadgets detected" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-screen-block-on-gadgets-detected" />
+  <Card title="Oloid's Presence Detection Feature for Windows Login Application" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-s-presence-detection-feature-for-windows-login-application" />
+  <Card title="Window Login (Presence Detection) - Setting up windows endpoint for Presence Detection" icon="arrow-right" href="/passwordless/windows/passwordless/window-login-presence-detection-setting-up-windows-endpoint-for-presence-detection" />
+  <Card title="How the Self-Unblock Feature Works in Windows Login Presence Detection" icon="arrow-right" href="/passwordless/windows/passwordless/how-the-self-unblock-feature-works-in-windows-login-presence-detection" />
+  <Card title="Windows Login v2.0 - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-configure-windows-alert-for-presence-detection" />
+</CardGroup>

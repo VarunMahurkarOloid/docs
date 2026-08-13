@@ -1,0 +1,84 @@
+---
+title: "How to view Activity Log in Tenant Admin Portal"
+sidebarTitle: "View Activity Log"
+description: "This document provides step-by-step instructions to view the Activity Log in Tenant Admin portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10673538"
+  url: "https://oloid.help/en/articles/10673538-how-to-view-activity-log-in-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Accounts and Settings"
+  updatedAt: "2026-04-01T08:22:25Z"
+  migratedAt: "2026-08-13T09:16:06.610623+00:00"
+---
+## Introduction
+
+The Activity Log is a detailed record of login events and actions performed by the Tenant Admin in the Tenant Admin Portal. It also shows time-specific log data that you select from the calendar option.
+
+## Prerequisite
+
+You must have access to Tenant Admin account.
+
+## Steps to view Activity Log
+
+1. Log in to the**Tenant Admin Portal**.
+2. On the homepage, do one of the following:Click **user profile icon** from the bottom left > select **Activity Log**from the menu. ![](/images/10673538/e6260da26802.png) Select **Monitoring** > **Activity Log**. ![](/images/10673538/57aed60124fe.png) The **Activity Log** page is displayed.
+3. To select the desired date and time range for a specific time period, use the **calendar** option at the top left. ![](/images/10673538/30753b23d197.png) The selected date and time range is displayed.
+4. Click **OK.**The Activity Log data table is displayed for the selected timeline, allowing you to view the Log data. ![](/images/10673538/f7a515187bdb.png) The types of data you get to view in activity log are:
+
+- **Event Type**- This column displays the actions performed on admin portal and also shows logs for endpoints (such as login to admin mode, repair the endpoint, etc.)
+- **Target Type**- This column displays the name of the module on which the event occurred.
+- **Action By**- This column displays the name and email ID of the Tenant Admin and Supervisor along with their browser and device details that are used to perform the event.
+- **Action/Changes**- This column displays the status of the event/action that is performed.
+- **Created Date**- This column displays the date on which the activity is performed.
+
+## Activity Log – Add Filters
+
+<Frame>
+  <img src="/images/10673538/7564a6703459.png" alt="Screenshot" />
+</Frame>
+
+1. On the Activity Log page click **+** **Add** **Filter**.
+2. Select the **filter type**. (see table below for filter type)
+3. Select the **User, Application, Endpoint, Credential, Action By, or Group** to filter.The Activity Log data table is displayed for the selected filter. ![](/images/10673538/b72c2141aee8.png)
+
+Use the following filters to refine and to view specific activity records on the **Activity Log** page:
+
+| **Filter** | **Description** |
+|---|---|
+| **User** | Displays activity logs for the selected user, searchable by entering Name or ID. |
+| **Application** | Displays activity logs for the selected application, searchable by entering Name or ID. |
+| **Endpoint Name** | Displays activity logs for the selected endpoint device, searchable by entering Name or ID. |
+| **Credential** | Displays activity logs based on the selected credential type used. |
+| **Action By** | Displays activity logs based on the admin or user who performed the action, searchable by entering Name or ID. |
+| **Group** | Displays activity logs for the selected user group, searchable by entering Name or ID. |
+
+**Note:**Each selected filter updates the Activity Log page to display only the records that match the applied criteria.
+
+<Frame>
+  <img src="/images/10673538/9b25b402c87c.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Tenant Admin Activity Log · View Activity Log in Tenant Admin Portal · Filter Activity Logs in Tenant admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to log in to the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-log-in-to-the-tenant-admin-portal" />
+  <Card title="How to deactivate Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-deactivate-endpoint-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Log in to Tenant Admin Portal with Microsoft SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-microsoft-sso" />
+  <Card title="Tenant Admin Portal - How to Log in to Tenant Admin Portal with Google SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-google-sso" />
+  <Card title="Tenant Admin Portal - How to log into Tenant Admin Portal using Personal Passkey" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-into-tenant-admin-portal-using-personal-passkey" />
+</CardGroup>

@@ -1,0 +1,76 @@
+---
+title: "How the Self-Unblock Feature Works in Windows Login Presence Detection"
+sidebarTitle: "Self-Unblock Feature Works in Windows Login Presence…"
+description: "How the Self-Unblock Feature Works in Windows Login Presence Detection"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "10319146"
+  url: "https://oloid.help/en/articles/10319146-how-the-self-unblock-feature-works-in-windows-login-presence-detection"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login- Presence Detection Guides"
+  updatedAt: "2025-05-07T05:20:44Z"
+  migratedAt: "2026-08-13T09:16:05.091538+00:00"
+---
+## Introduction
+
+The self-unblock feature in Windows Login Presence Detection offers a seamless and secure way to manage user interactions by automatically unlocking a blocked screen after a specified period. This guide explains how the feature works and the customizable options available for its configuration.
+
+## Presence Detection Overview
+
+The Presence Detection feature in Oloid’s Windows Login Application monitors user presence at a defined endpoint. Using a camera, the system continuously evaluates conditions to ensure compliance with security protocols. Key aspects include:
+
+- **Face Detection:** If the camera fails to detect a user’s face, an alert is triggered.
+- **Violation Detection:** The system can be customized to detect various violations, such as:Face tracking issuesUse of prohibited devicesDetection of multiple facesOther predefined events and actions
+
+When violations are detected, the system blocks the Windows screen, disabling all interactions except for specific buttons displayed on the blocked screen.
+
+## Self-Unblock Feature
+
+## How It Works
+
+1. **Screen Blocking:** When a violation is detected or a non-Oloid user logs in:The Windows screen is immediately blocked.Alerts are sent to supervisors to notify them of the detected event.
+2. **Auto Timer Activation:** If the self-unblock feature is enabled:A countdown timer starts running simultaneously when the screen is blocked.The timer’s duration is configurable based on organizational requirements.
+3. **Screen Unblocking:**After the timer elapses, the screen is automatically unblocked without requiring supervisor approval.The user can resume their activities seamlessly.
+
+## Additional Use Cases
+
+- **Non-Oloid User Logins:**If a user logs in with credentials other than Oloid’s, the system blocks the screen and starts the auto-timer.After the timer expires, the screen is unlocked, granting access.**Note:** The screen block pop-up will reappear after a specific interval and persists until the user logs in with their Oloid credentials.
+
+## Benefits
+
+- **Enhanced Security:** Continuous monitoring ensures unauthorized actions or presence are promptly addressed.
+- **Customizable Configurations:** Organizations can tailor the feature to detect and respond to specific violations.
+- **Improved User Experience:** The self-unblock feature minimizes downtime and reduces the need for supervisors to manually intervene.
+
+## Configuring the Self-Unblock Feature
+
+1. **Enable Presence Detection:** Ensure the presence detection feature is active in Oloid’s Windows Login Application.
+2. **Customize Violation Settings:** Configure the system to detect the desired conditions, such as face-tracking violations or multiple faces.
+3. **Set Auto Timer Duration:** Define the duration for the auto timer based on organizational policies.
+4. **Enable for Non-Oloid Users (Optional):** Configure the system to block and self-unblock screens for non-Oloid credential logins.
+
+For detailed information , see [How to configure windows alert for presence detection](/passwordless/windows/passwordless/windows-login-how-to-configure-windows-alert-for-presence-detection)
+
+The self-unblock feature in Windows Login Presence Detection ensures a balance between security and usability. Automatically unblocking screens after a predefined time allows users to resume their tasks quickly while maintaining robust monitoring and violation handling. With customizable settings, the feature caters to diverse security needs and operational requirements.
+
+## Video Tutorial
+
+Watch the video[How the Self unblock feature works in Windows Login Presence Detection- Video Tutorial](/passwordless/windows/passwordless/how-the-self-unblock-feature-works-in-windows-login-presence-detection-video-tutorial)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-windows-alert-for-presence-detection" />
+  <Card title="Windows Login - Screen block on Face Tracking Violation" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-screen-block-on-face-tracking-violation" />
+  <Card title="Oloid's Presence Detection Feature for Windows Login Application" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-s-presence-detection-feature-for-windows-login-application" />
+  <Card title="Window Login (Presence Detection) - Setting up windows endpoint for Presence Detection" icon="arrow-right" href="/passwordless/windows/passwordless/window-login-presence-detection-setting-up-windows-endpoint-for-presence-detection" />
+  <Card title="Windows Login v2.0 - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-configure-windows-alert-for-presence-detection" />
+</CardGroup>

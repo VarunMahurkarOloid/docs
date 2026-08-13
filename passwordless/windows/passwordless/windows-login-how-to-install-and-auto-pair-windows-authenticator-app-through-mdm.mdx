@@ -1,0 +1,73 @@
+---
+title: "Windows Login - How to Install and Auto-Pair Windows Authenticator App through MDM"
+sidebarTitle: "Windows Login - How to Install and Auto-Pair Windows…"
+description: "Windows Login - How to Install and Auto-Pair Windows Authenticator App through MDM"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Device Admin Apps"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/device-admin-apps"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "10449230"
+  url: "https://oloid.help/en/articles/10449230-windows-login-how-to-install-and-auto-pair-windows-authenticator-app-through-mdm"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:28:33Z"
+  migratedAt: "2026-08-13T09:16:05.573515+00:00"
+---
+## Introduction
+
+Oloid's Windows Authenticator App is a secure and user-friendly authentication method that allows Enterprise employees to log into Windows Laptops/Desktops/Servers using physical identity factors (like Face, Badge, NFC tags, and PIN). The Physical Identity factors can be combined in any order using factor sequencing for Multi-factor Authentication.
+
+## Preparation Steps:
+
+1. Generate the AutoPairConfig file in the Oloid Platform, then download and save it to your local device as **AutoPairConfig.json**.For more details, see [How to generate auto-pair config file for Windows Login in Oloid Portal](/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal)
+2. Download **OloidPasswordlessSupervisor.Setup.zip** file on your device.**Note:**Select the version as advised by your Oloid Rep. For instructions to download the file, refer **How to download Supervisor App** > [Steps to download from Tenant](/passwordless/windows/supervisor/how-to-download-supervisor-app) If any previous version of Windows Authenticator app is installed, you need to remove it before installing the new version. ![](/images/10449230/add8c58d4137.png)
+3. Right-click and select **Extract All** >**OloidPasswordlessSupervisor.Setup.zip**folder. ![](/images/10449230/f21f194213da.png) The extracted files will be saved in the same folder as the original zipped file. ![](/images/10449230/85d66127bd21.png)
+4. Copy the **AutoPairConfig.json**file to the extracted folder. ![](/images/10449230/d6bc7d876eb1.png)
+5. Right-click and select **OloidPasswordlessSupervisor.Setup.1.0.18**folder > **Compress to** > **ZIP File**.
+
+<Frame>
+  <img src="/images/10449230/06326fe709f0.png" alt="Screenshot" />
+</Frame>
+
+The folder is zipped and ready to be shared.
+
+## Steps to install and auto-pair the Windows Authenticator app on end-user machines:
+
+1. Push the zipped file (**OloidPasswordlessSupervisor.Setup.1.0.18.zip**) through the MDM for the end-user machines. ![](/images/10449230/55a22015cea0.png)
+2. Right-click and select **Extract All** > **OloidPasswordlessSupervisor.Setup.zip**folder. ![](/images/10449230/f21f194213da.png) The unzipped OloidPasswordlessSupervisor.Setup1.0.18 folder is displayed. ![](/images/10449230/f47bb2048dbd.png) **Note:**Make sure the AutoPairConfig.json file is present in the folder.
+3. Double-click on **setup.exe** file. ![](/images/10449230/1f337c8a2d7f.png)The **Oloid Passwordless Supervisor Setup** window is displayed. ![](/images/10449230/64ff398aba22.png)
+4. Review the listed components and click **Install** to proceed.**Note:**If any of the files are missing, the application prompts to install the missing component.
+5. On the **Oloid Passwordless Supervisor** Setup wizard, click **Next**. ![](/images/10449230/ae32b2c51922.png)
+6. Use the default path to install the application and click **Next**. ![](/images/10449230/5dcdec4acd1d.png)
+7. Click **Next**to confirm the installation. ![](/images/10449230/d5f6ee51e3be.png)
+8. Click **Close**after the installation is complete. ![](/images/10449230/999dd18926f3.png)You can find the app icon on your desktop.
+9. You must restart your system.
+10. After restarting, on the Windows lock screen, click **Login with OLOID**. ![](/images/10449230/e0bb0f5125d1.png)The Windows login app opens.
+11. Select **Yes, pair my device**to auto-pair the device. ![](/images/10449230/6b6d30c74a64.png) The device is paired successfully. Now, the device is ready to be used.
+
+## Video Tutorial
+
+Watch the video[How to Install and Auto-Pair Windows Authenticator App through MDM- Video Tutorial](/administration/device-admin-apps/how-to-install-and-auto-pair-windows-authenticator-app-through-mdm-video-tutorial)
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to install Windows Authenticator App" icon="arrow-right" href="/passwordless/windows/supervisor/how-to-install-windows-authenticator-app" />
+  <Card title="How to download, install, and configure Windows Authenticator App" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-download-install-and-configure-windows-authenticator-app" />
+  <Card title="Windows Login v2.0 - How to Install, and Auto-Pair Windows Login v2.0 App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-install-and-auto-pair-windows-login-v2-0-app" />
+  <Card title="Windows Login (Healthcare) - How to Download and Install Windows Login App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-download-and-install-windows-login-app" />
+  <Card title="Windows Login (Healthcare) - How to Install Epic Hyperspace for Epic EHR" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-install-epic-hyperspace-for-epic-ehr" />
+</CardGroup>

@@ -1,0 +1,99 @@
+---
+title: "Webkey - How to Re-submit consent"
+sidebarTitle: "Webkey - How to Re-submit consent"
+description: "This document provides a step by step guide on how to re-submit consent if the consent document has been changed"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "13165653"
+  url: "https://oloid.help/en/articles/13165653-webkey-how-to-re-submit-consent"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Using WebKey"
+  updatedAt: "2026-08-10T10:12:14Z"
+  migratedAt: "2026-08-13T09:16:12.436426+00:00"
+---
+## Introduction
+
+Re-submit Consent ensures that users explicitly acknowledge and accept updated consent documents before continuing with face-based authentication or enrollment. When the consent content is modified, users are prompted to re-consent.
+
+## Prerequisite
+
+Resubmit-consent pop-up will only appear if the consent document is updated.
+
+## Steps to re-submit consent
+
+Reconsent Document must be submitted for the following cases:
+
+1. [For login using face authentication](#h_06c1347f87)(if the consent document has been updated)
+2. [For Enrolling Face](#h_094b76baac) (if the consent document has been updated)
+
+## Re-submit consent for login using face authentication
+
+1. Launch the **Webkey**Application URL in your browser.
+2. Select **Login with Face**.**Note:**You can select preferred display language from the **Language Dropdown Selector**. For more information, refer [Additional information section](#h_35f2e41fcc). ![](/images/13165653/c0c9d60a8497.png) The camera opens.
+3. Position your face in front of the camera and tap the Capture button to authenticate face.**Note**: If you do not tap the Capture button, the app automatically captures your face after a few seconds. ![](/images/13165653/f305ad525756.png)
+4. The re-submit consent screen appears.
+5. Click **Agree.** ![](/images/13165653/0eccc0fe4330.png) **Note:** You need to provide your consent to proceed to next steps if consent is enabled for you. Face is successfully authenticated and user is taken to their organization account.
+
+---
+
+## Re-submit consent  to Enroll for Face
+
+1. Launch the WebKey Application URL in your browser.
+2. Select **Enroll for Face Login**. ![](/images/13165653/1cd381da1fbe.png) The **Enroll For Face Login**pageisdisplayed.
+3. Enter the Employee ID (primary ID) > click **Continue**. ![](/images/13165653/c379d54c1b6a.png) The camera opens.
+4. Position your face in front of the camera to capture your face for enrollment. If auto capture is enabled the system captures user image directly. **Note:** If auto capture is not configured press **Enter or Spacebar** to capture face. ![](/images/13165653/f305ad525756.png) The Picture confirmation screen is displayed.
+5. Click **Yes** to Submit. ![](/images/13165653/fe66a51e5872.png) The Re-submit consent page is displayed.
+6. Click **Agree**.
+
+**Note:** You need to provide your consent to proceed to next steps if consent is enabled for you.
+
+<Frame>
+  <img src="/images/13165653/0eccc0fe4330.png" alt="Screenshot" />
+</Frame>
+
+Face enrollment is complete. You can now use Face Authentication to sign in to the workplace platform.
+
+<Frame>
+  <img src="/images/13165653/f7d71730759b.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### Additional Information
+
+**WebKey** now supports multiple language versions, allowing users to select their preferred display language from the **Language Dropdown Selector** on the Login screen.
+
+**Note:** Languages supported: English, Spanish, French, German, and Portuguese language.
+
+#### Sample Screen
+
+The display language updates based on the selected language. The following sample shows the WebKey application in German.
+
+<Frame>
+  <img src="/images/13165653/c6ed690f89db.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Re-submit Consent for Webkey · How to Submit reconsent · Face Enrollment Consent · How to Provide WebKey Re-consent
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey – How to Create and Configure a Webkey Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal" />
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Face through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-face-through-webkey" />
+  <Card title="Webkey - How to Enroll Face using Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-enroll-face-using-webkey" />
+  <Card title="Webkey - How to edit Configure tab" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-edit-configure-tab" />
+  <Card title="WebKey - How to configure Face credential in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-face-credential-in-tenant-admin-portal" />
+</CardGroup>

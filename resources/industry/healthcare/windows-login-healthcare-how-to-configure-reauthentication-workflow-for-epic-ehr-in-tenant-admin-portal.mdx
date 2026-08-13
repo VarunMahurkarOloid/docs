@@ -1,0 +1,118 @@
+---
+title: "Windows Login (Healthcare) - How to Configure Reauthentication Workflow for Epic EHR in Tenant Admin Portal"
+sidebarTitle: "Configure Reauthentication Workflow for Epic EHR"
+description: "Windows Login (Healthcare) - How to Configure Reauthentication Workflow for Epic EHR in Tenant Admin Portal"
+icon: "hospital"
+tags:
+  - "Resources"
+  - "Industry"
+  - "Healthcare"
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/industry/healthcare"
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "resources/industry/healthcare"
+navPath: "Resources > Industry > Healthcare"
+source:
+  system: "intercom"
+  articleId: "14650126"
+  url: "https://oloid.help/en/articles/14650126-windows-login-healthcare-how-to-configure-reauthentication-workflow-for-epic-ehr-in-tenant-admin-portal"
+  collection: "Windows Login (Healthcare )"
+  section: "Windows Login (Healthcare) - Tenant Admin Configuration"
+  updatedAt: "2026-05-15T05:41:30Z"
+  migratedAt: "2026-08-13T09:16:16.165645+00:00"
+---
+## Introduction
+
+The **Reauthentication Workflow** allows Tenant Admins to enforce additional authentication during an active Windows session for applications integrated with Epic EHR. This ensures that user identity is re-verified before performing sensitive actions or continuing access.
+
+## Prerequisites
+
+- You must have access to Tenant Admin account.
+- The Windows Login application must be created in the Tenant Admin Portal, for more information refer: [How to create and configure Application Type - Passwordless](/administration/admin-portal/how-to-create-and-configure-application-type-passwordless)
+
+## Steps to Configure Re-authentication Workflow
+
+1. Log in to the Tenant Admin Portal.
+2. On the **Applications** page, select the preferred **Windows Login application**. ![](/images/13713982/7dacbe1e90eb.png) The application details page is displayed. ![](/images/13713982/b89e4448e051.png)
+3. Click **Configure**tab> **Epic EHR**. ![](/images/13713982/09fe4e8dbdcc.png) The Epic EHR page is displayed.
+4. Configure the following:**[Enable Reauthentication Workflow](#h_144d907173)****[Configure Two User Authentication](#h_511f13b2c7)****[Reauthentication Current User (Second Factor)](#h_19e422b859)**
+5. Click **Save.**The Reauthentication workflow is successfully configured.
+
+### Enable Reauthentication Workflow
+
+1. Turn on **Enable Reauthentication Workflow**toggle button.
+2. Select one of the available reauthentication modes from dropdown: ​**Application Factors**: Uses authentication factors assigned at application level. ​**First Factor Only**: only reauthenticates using the first authentication factor configured. ​**Second Factor Only**: only reauthenticates using the second authentication factor configured.
+3. Click **Save**. ![](/images/14650126/3819558bc32d.png) Reauthenticate Current User: Reauthenticates the currently logged-in Windows user using the configured authentication device.
+4. Do the following:Select **Reauthenticate Current User**.From the Application Factor dropdown, choose the authentication factor assigned at the application level.Click **Save**.
+
+### Current User Editable
+
+Reauthenticates the currently logged-in user but allows the authentication device to submit a different user if required.
+
+**Note:**The default factor for this authentication is set to application factor and cannot be changed.
+
+<Frame>
+  <img src="/images/14650126/9667b9104fc4.png" alt="Screenshot" />
+</Frame>
+
+### Configure Two User Authentication
+
+1. Under Mode for 1st user, select the **authentication factor** from dropdown.
+2. Under Mode for 2nd user, select the **authentication factor** from dropdown.
+3. Click **Save**.
+
+<Frame>
+  <img src="/images/14650126/4af940190d1f.png" alt="Screenshot" />
+</Frame>
+
+### Reauthenticate Current User - Second Factor
+
+1. Select **Reauthenticate Current User - Second Factor**.
+2. From the Application Factor dropdown, choose the authentication factor assigned at the application level: OLOID is Used as Primary and Secondary Auth DeviceOLOID is Used as Primary Authentication DeviceOLOID is Used as Secondary Authentication Device
+3. Click **Save**.
+
+<Frame>
+  <img src="/images/14650126/233b14f44238.png" alt="Screenshot" />
+</Frame>
+
+### Configure Factors
+
+Configure the appropriate Primary and Secondary factors for second-factor reauthentication through Oloid.   
+To configure factors, do the following:
+
+1. Under **Select Primary Factor**, select the **authentication factor** from dropdown.
+2. Under **Select Secondary Factor**, select the **authentication factor** from dropdown.
+3. Click **Save**.
+
+**Note:**When both options are enabled, ensure that the Primary and Secondary factors must be different.
+
+<Frame>
+  <img src="/images/14650126/40b8c0b102cd.png" alt="Screenshot" />
+</Frame>
+
+Reauthentication workflow successfully configured.
+
+<Frame>
+  <img src="/images/14650126/e06c2ce0713b.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Configure reauthentication workflow · Windows reauthentication Epic EHR · Reauthenticate current user Windows · Epic EHR reauthentication configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login (Healthcare) - How to Configure Epic EHR in the Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-configure-epic-ehr-in-the-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare) - How to Configure Two User Authentication Workflow for Epic EHR in Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-configure-two-user-authentication-workflow-for-epic-ehr-in-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare) - How to Configure Reauthenticate Current User for Epic EHR in Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-configure-reauthenticate-current-user-for-epic-ehr-in-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare) - How to Enable Current User Editable for Epic EHR in Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-enable-current-user-editable-for-epic-ehr-in-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare) - How to Configure Reauthenticate Current User - Second Factor in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-configure-reauthenticate-current-user-second-factor-in-tenant-admin-portal" />
+</CardGroup>

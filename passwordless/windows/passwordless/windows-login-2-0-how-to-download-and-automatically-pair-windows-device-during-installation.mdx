@@ -1,0 +1,67 @@
+---
+title: "Windows Login 2.0 - How to Download and Automatically Pair Windows Device during Installation"
+sidebarTitle: "2.0 - How to Download and Automatically Pair Windows…"
+description: "This document provides step-by-step instructions to automatically pair the Windows Login application using an Auto-pair configuration string during installation."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "15653468"
+  url: "https://oloid.help/en/articles/15653468-windows-login-2-0-how-to-download-and-automatically-pair-windows-device-during-installation"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v2.0"
+  updatedAt: "2026-07-20T08:45:21Z"
+  migratedAt: "2026-08-13T09:16:18.489231+00:00"
+---
+## Introduction
+
+Automatic pairing simplifies the deployment of Windows Login by pairing the endpoint with a Windows Login application during installation. Instead of manually pairing each device after installation, administrators can use an Auto-pair configuration string generated from the Tenant Admin Portal to automatically register the endpoint when the system restarts.
+
+## Prerequisites
+
+- You have local administrator access on the Windows machine.
+- Check System Requirements. For more information, refer: [Windows Login Version 2 - Hardware and Software Requirements](/passwordless/windows/passwordless/windows-login-v2-0-hardware-and-software-requirements).
+- Download the Windows Login v2.0 Installer file. For more details, see: [Windows Login v 2.0 - How to download Windows Login v 2.0 installer file from Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-v2-0-how-to-download-windows-login-v2-0-installer-file-from-tenant-admin-portal)
+
+## Steps to Automatically pair Windows Login App
+
+There are two steps to required to Automatically pair Windows Login App:
+
+- [Generate Config Text](#h_947954d95c)
+- [Install Windows Login v2.0](#h_56f9b6e67c)
+
+## Generate Config Text
+
+1. Generate Autopair Config file. For more information, refer: [Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal) The Auto-pair config file pop-up box is displayed.
+2. Do the following:Select **Application**as**Passwordless - Windows Login**from **Application Type**dropdown list.From the **Select Application** drop-down list, select the application that you want the endpoints to pair with.**Note:**Select **Skip user confirmation for pairing**option to auto-pair endpoints without requiring user confirmation.Select **TEXT**as the Download file format.Click **Copy Config Text.** ![](/images/15653468/00eae93303c7.png)
+
+## Install Windows Login v2.0
+
+Automatic Pairing can be done only at the time of installation of Windows Login v2.0 application for more details refer: [Windows Login v2.0 - How to Install, and Auto-Pair Windows Login v2.0 App](/passwordless/windows/passwordless/windows-login-v2-0-how-to-install-and-auto-pair-windows-login-v2-0-app)
+
+1. When the Autopair Settings screen is displayed. Do the following: Select **Automatic**> Enter **Encoded String** in Text Box> click **Next.****Note:**Enter the **Copied Config text**in the **Enconded String**field. ![](/images/15653468/b7a7fd258596.png) The **Ready to Install** screen is displayed.
+2. Click **Install**. ![](/images/15653468/514fe7275911.png) The **Completing the Oloid Passwordless Login Setup Wizard** screen is displayed.
+3. Click **Finish**. ![](/images/13670102/e006cf5fd5fb.png) The **Oloid Passwordless Login** pop-up box is displayed.
+4. Click **Yes** to restart the system.**Note:** You must restart your system after successful installation. ![](/images/13670102/b7e6ea14740f.png) After successful installation, you can find the Oloid app icon ![](/images/10568115/588054bd1a5a.png) on your desktop.**Note:** The **Apache CouchDB** is installed on the system by default.
+
+---
+
+<Tip>
+  **Keywords:** Automatically pair Windows Login · Windows Login auto pairing · Auto-pair Windows Login application · Windows Login installation
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal" />
+  <Card title="Windows Login - How to apply Endpoint Template during Auto-pair process for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-apply-endpoint-template-during-auto-pair-process-for-windows-login" />
+  <Card title="Windows Login v2.0 - How to Install, and Auto-Pair Windows Login v2.0 App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-install-and-auto-pair-windows-login-v2-0-app" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using ManageEngine Endpoint Central (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-manageengine-endpoint-central-mdm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Passwordless 2.0 using Command Line" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-passwordless-2-0-using-command-line" />
+</CardGroup>

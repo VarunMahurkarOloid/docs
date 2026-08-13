@@ -1,0 +1,58 @@
+---
+title: "Tenant Admin Portal - How to Create IDP Profile for OIDC-Entra ID"
+sidebarTitle: "Tenant Admin Portal - How to Create IDP Profile for OIDC-Entra ID"
+description: "This document provides step-by-step instructions to create IDP Profile for Entra ID in Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "13349621"
+  url: "https://oloid.help/en/articles/13349621-tenant-admin-portal-how-to-create-idp-profile-for-oidc-entra-id"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-08-05T09:44:35Z"
+  migratedAt: "2026-08-13T09:16:13.149528+00:00"
+---
+## Introduction
+
+Identity Providers (IDPs) are used to manage and verify user identities for authentication. This document explains how to create an **Entra ID Identity Provider (IDP) profile** in the Tenant Admin Portal using **OIDC authentication**.
+
+## Prerequisite
+
+You must have access to the Tenant Admin Portal.
+
+## Steps to Create Entra ID IDP Profile
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, select **Security** > **Identity Provider**. ![](/images/13349621/1dce6a6624c0.png) The **Identity Provider Profiles** page is displayed.
+3. Click **Create IDP**in the top right corner. ![](/images/13349621/00fd9dc6db08.png) **Note**: You cannot create a new IDP unless a default IDP is already set. Please open an existing IDP and mark it as default before proceeding. For more details refer [How to make an IDP default](/resources/integrations/sso/webkey-how-to-link-webkey-with-an-identity-provider-idp-in-tenant-admin-portal). ![](/images/10822772/689d9d6dba89.png) The **Create New IDP Profile** pop-up box is displayed.
+4. Do the following:Enter **IDP Name**.Select**OIDC**asAuth Protocol.Click **Next**.Select **Entra ID**as IDP Provider for OIDC.Click **Create**. ![](/images/13349621/8b83ad84c37c.png) The IDP Profile for OIDC Entra ID is created successfully. ![](/images/13349621/36aff37a9a2d.png)
+
+#### Related Articles
+
+[Integrating Oloid as an EAM with Microsoft Entra ID | Oloid Help Center](/resources/integrations/sso/integrating-oloid-as-an-external-method-authentication-eam-with-microsoft-entra-id)
+
+---
+
+**Keywords**  
+​| Entra ID IDP | Create Entra ID IDP Profile in Tenant Admin Portal |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Create an OIDC-Okta IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for OIDC-PingOne" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-oidc-pingone" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+</CardGroup>

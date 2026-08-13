@@ -1,0 +1,155 @@
+---
+title: "How to Configure Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal"
+sidebarTitle: "Configure Advanced User Sync for ADP Vantage HCM - Inbound"
+description: "This document provides step-by-step instructions to configure Advanced User Sync for ADP Vantage HCM - Inbound in Tenant Admin Portal."
+icon: "users-gear"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/hrms"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/hrms"
+navPath: "Resources > Integrations > HRMS"
+source:
+  system: "intercom"
+  articleId: "13843605"
+  url: "https://oloid.help/en/articles/13843605-how-to-configure-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Advanced User Sync"
+  updatedAt: "2026-02-27T06:14:20Z"
+  migratedAt: "2026-08-13T09:16:15.033203+00:00"
+---
+## Introduction
+
+This document describes how to configure Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- An **Advanced User Sync profile for ADP Vantage HCM** **- Inbound** is created.
+- A **Data Mapper Table** is created and available for user attribute mapping.
+
+## Steps to Configure Advanced User Sync for ADP Vantage HCM - Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. Go to **Agents > Advanced User Sync**. ![](/images/13569620/096adf4607aa.png) The **Advanced User Sync** page is displayed.
+3. Select the preferred **ADP Vantage HCM - Inbound** Advanced User Sync. ![](/images/13843605/e668691b0346.png) The **Advanced User Sync** detail page is displayed.
+4. Do the following:[Configure Details Tab](#h_55f9fbceae)[Setup Configuration Tab](#h_b957684d66)[Configure Account Tab](#h_f47331bbfa)[Configure Schedule Tab](#h_e332315cae)
+5. Click **Activate**. ![](/images/13843605/1141582fe2ab.png) The **Confirm Activation** pop-up box is displayed.
+6. Click **Confirm**. ![](/images/13843605/6f9dbed6021b.png) The Advanced User Sync is configured and activated successfully. ![](/images/13843605/c536bfac2d45.png)
+7. (Optional) Go to **Action >** **User Sync**.**Note:** Selecting **Sync Now** immediately triggers a manual synchronization. ![](/images/13843605/a0d84587515f.png) The **Sync Now?** pop-up box is displayed.
+8. Click **Confirm**. ![](/images/13843605/9704763cb7ce.png) The **Success** pop-up box is displayed. ![](/images/13843605/c5f262056219.png) The Advanced User Sync for ADP Vantage HCM - Inbound is configured successfully. ![](/images/13843605/17ddb242a773.png)
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the Advanced User Sync.
+
+Do the following:
+
+1. Update the **User Sync Name** (if required).
+2. Enter the **User Sync Description** (Optional).
+3. Click **Save**. ![](/images/13843605/64fbb42ba919.png) The Details tab is configured successfully.
+
+## Setup Configuration Tab
+
+This tab is used to map user data from **ADP Vantage HCM - Inbound** to **Oloid**.
+
+Do the following:
+
+1. Select the **Data Mapper Table** from the drop-down.**Note:** Click **View Tables** to review or create a data mapper table, if required.
+2. Select **Connection** from the drop-down.
+3. Click **Save**. ![](/images/13843605/e2dd2a67d27c.png) The Configuration tab is configured successfully. ![](/images/13843605/35049835801c.png)
+
+## Configure Account Tab
+
+This tab is used to add and configure the **ADP Vantage HCM - Inbound** account details required for inbound user synchronization with **Oloid**.
+
+Do the following:
+
+1. Enter **Account Name**.
+2. Enter **Token Endpoint**.
+3. Enter **Organization ID (OOID)**.
+4. Enter **Read Credential Endpoint**.
+5. Enter **API URL**.
+6. Enter **Client ID**.
+7. Enter **Client Secret**.**Note:** Contact Oloid support for **Organization ID,** **Client ID** and **Client Secret**. ![](/images/13843605/870f3af15fca.png) The Account tab is configured successfully.
+8. Click **Test**. ![](/images/13843605/a6e951a81105.png) The **Success** pop-up box is displayed. ​![](/images/13843605/afb99238dec1.png)
+
+## Configure Schedule Tab
+
+This tab is used to define when the **ADP Vantage HCM - Inbound** user sync runs. You can configure the sync to run on a recurring schedule or run once when the sync is activated.
+
+Do one of the following:
+
+[Repeat Every](#h_c1df3a4ba0)
+
+**OR**
+
+[Run Once When Activated](#h_e8d8c74af2)
+
+<Frame>
+  <img src="/images/13843605/4e02c098fc42.png" alt="Screenshot" />
+</Frame>
+
+The Schedule tab is configured successfully.
+
+## Repeat Every
+
+The **Repeat Every**section is used torun the user sync on selected days and times.
+
+Do the following:
+
+1. Select **Repeat Every**.
+2. Select the required day(s).**Note:** You can select multiple days (if needed).
+3. Select the run time in the **Runs at** field.**Note:** You can add multiple execution time. To do, click **+Add** to configure additional run times, if required.
+4. Select **Time Zone**from the drop-down.
+5. Enter email address(es) in the **Send failed job-run alerts to** field.**Note:** Separate multiple email addresses with commas.
+6. Click **Save**. ![](/images/13843605/fb18a7c74843.png) The **Repeat Every** section is configured successfully. ![](/images/13843605/1a2ac2bea21d.png)
+
+## Run Once When Activated
+
+The **Run Once When Activated** section is used to run the sync only once.
+
+Do the following:
+
+1. Select **Run Once When Activated**.
+2. Select the date and time in the **Select Date & Time** field.
+3. Select **Time Zone**from the drop-down.
+4. Enter email address(es) in the **Send failed job-run alerts to** field.**Note:** Separate multiple email addresses with commas.
+5. Click **Save**.
+
+<Frame>
+  <img src="/images/13843605/395921a57b22.png" alt="Screenshot" />
+</Frame>
+
+The **Run Once When Activated** section is configured successfully.
+
+<Frame>
+  <img src="/images/13843605/507376d83493.png" alt="Screenshot" />
+</Frame>
+
+#### Related Articles
+
+[How to Configure Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal)
+
+[How to Create Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/hrms/how-to-create-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Advanced User Sync for ADP Vantage HCM - Inbound · How to Edit Advanced User Sync for ADP Vantage HCM - Inbound
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Configure Advanced User Sync for Workday - Inbound" icon="arrow-right" href="/resources/integrations/hrms/tenant-admin-portal-how-to-configure-advanced-user-sync-for-workday-inbound" />
+  <Card title="How to Configure Advanced User Sync for Okta - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Advanced User Sync for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-advanced-user-sync-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to create Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal - Video Tutorial" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal-video-tutorial" />
+</CardGroup>

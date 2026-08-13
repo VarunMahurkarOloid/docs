@@ -1,0 +1,54 @@
+---
+title: "Tenant Admin Portal - How to Update Auto-Pair Config File for Oloid DeviceLock App"
+sidebarTitle: "Tenant Admin Portal - How to Update Auto-Pair Config File…"
+description: "This document provides step by step instruction to update the Auto-Pair config file for Oloid DeviceLock App in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/android/devicelock"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "12105399"
+  url: "https://oloid.help/en/articles/12105399-tenant-admin-portal-how-to-update-auto-pair-config-file-for-oloid-devicelock-app"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Device Lock - Admin Settings"
+  updatedAt: "2026-08-04T10:53:08Z"
+  migratedAt: "2026-08-13T09:16:09.917655+00:00"
+---
+## Introduction
+
+The Tenant Admin Portal allows the admin to update an Auto-Pair configuration file that simplifies the process of pairing endpoints with the Oloid DeviceLock application. By updating this file, admins can securely define token validity, pairing rules, and endpoint limits, ensuring a seamless and controlled setup experience for end users.
+
+## Prerequisite
+
+You have **Admin access** to the **Tenant Admin Portal**.  
+​
+
+## Steps to Update Auto-Pair config file
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/12105399/1e6a03acb25c.png) The user profile menu is displayed.
+3. Click **Tenant Settings**. ![](/images/12105399/e47a00e2c73d.png) The **Tenant Settings** page is displayed.
+4. Go to **Security** tab >**API Token** dropdown > **API Key**. ![](/images/12105399/570d45fa55f5.png) The API key screen is displayed.
+5. In the**Generate Temporary Access Token**section, click **Edit.** ![](/images/12105399/3207c63813b5.png)
+6. Do the following:Select the **Start Date/Time** field.To set the start date and time, click the date picker or select **Now**.Select the **End Date/Time** field.Click the date picker, choose when the token will expire, and then click **OK**.**Note**: **Token Expiry Alert** appears when the Auto-pair configuration file is set to expire within the next 10 days.Specify **Total Number of Endpoints** (Allowed) that can be created with the generated config file. **Note:**Once the **Number of Endpoints Paired** reaches this limit, the configuration file cannot be used to pair additional endpoints. Increase the allowed limit to continue pairing new endpoints.If total number of Endpoints (Allowed) below 20, then an **Attention Alert** pop-up will display.Click **Save**. ![](/images/12105399/a18529cbe126.png) The **Generate Temporary Access Token** section is updated successfully. ![](/images/12105399/7222bb7c763d.png)
+7. Click **Auto-pair config file**download option. ![](/images/12105399/8140ff043094.png) The Auto-pair config file pop-up box is displayed.
+8. Do the following:Select **Application**as**Passwordless - DeviceLock**from **Application Type**drop-down list.From the **Select Application** drop-down list, select the application that you want the endpoints to pair with.Select **Skip user confirmation for pairing**option to auto-pair endpoints without requiring user confirmation (optional but recommended).**If selected:** When the configuration file is uploaded to the endpoint, the system will pair automatically without prompting the user for confirmation.**If not selected:** The system will display a confirmation pop-up to the user before completing the pairing process.Click **Download**. ![](/images/12105399/f9414c993416.png) The **Autopair Config file** is downloaded to the local device successfully. Keywords| Update Auto-pair Configuration File | Edit Auto-pair Configuration File | Auto-pair Configuration File Update |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to generate Auto-Pair config file for Oloid Connect in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-generate-auto-pair-config-file-for-oloid-connect-in-tenant-admin-portal" />
+  <Card title="How to Pair Oloid DeviceLock App using the “Auto-Pair using Config File” option" icon="arrow-right" href="/passwordless/android/devicelock/how-to-pair-oloid-devicelock-app-using-the-auto-pair-using-config-file-option" />
+  <Card title="How to Pair Oloid DeviceLock App using &quot;Auto-Pair&quot; option" icon="arrow-right" href="/passwordless/android/devicelock/how-to-pair-oloid-devicelock-app-using-auto-pair-option" />
+  <Card title="DeviceLock App - How to Generate Auto-Pair Config File in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/devicelock-app-how-to-generate-auto-pair-config-file-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium)- How to Generate and Download Auto-Pair Config File in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-generate-and-download-auto-pair-config-file-in-the-tenant-admin-portal" />
+</CardGroup>

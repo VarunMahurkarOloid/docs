@@ -1,0 +1,48 @@
+---
+title: "How to configure Auto Update feature in Windows Login Endpoint in Tenant Admin Portal"
+sidebarTitle: "Configure Auto Update feature in Windows Login Endpoint"
+description: "This document provides step-by-step instructions to configure Auto Update feature in Windows Login Endpoint in Tenant Admin Portal"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "11196020"
+  url: "https://oloid.help/en/articles/11196020-how-to-configure-auto-update-feature-in-windows-login-endpoint-in-tenant-admin-portal"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2025-12-30T06:00:24Z"
+  migratedAt: "2026-08-13T09:16:07.538063+00:00"
+---
+### Introduction
+
+You can configure the auto-update feature in Windows application endpoint from the Auto Update tab. This feature allows you to override the default auto-update configuration inherited from the application level.
+
+Based on your requirement, you can disable auto-updates entirely for a specific endpoint or define a custom update schedule.
+
+### Steps to Configure Auto Update:
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **Endpoints** on the left panel menu. ![](/images/11196020/37e34703983c.png) The **Endpoints** page is displayed.
+3. Click **Endpoint Name** to edit. ![](/images/11196020/0488318552bf.png) The Endpoint detail page is displayed.
+4. Go to **Configure**tab > **Auto Update** section. ![](/images/11196020/9f4928a73796.png) The **Scheduled auto-updates**section is displayed.
+5. Select one of the following options:**Inherited from Application (default)**: Select this option to use the application's auto-update configuration. **Disable updates for this endpoint**: Select this option to stop automatic updates on the endpoint, even if automatic updates are enabled at the application level.**Custom Schedule**: Select this option to define a specific update schedule and select the latest or specific version. ![](/images/11196020/75fc7cced9f5.png) To configure a custom update schedule, select one of the following: Select **Latest Version** to install the latest available version.**Select Version**: Select this option to choose a specific version that differs from the custom source version.Select **Custom Source** option only if at least one custom source file is listed in the dropdown. If no file is available on the backend, the option remains disabled.Set the **Start Time** and **End Time** to define the auto update window.Configure retry settings:**Retry Frequency**: Number of retry attempts if an update fails.**Retry Interval**: Time interval between each retry attempt.**Note:**The endpoint will attempt to update only within the defined time window. If an update fails, the retry logic is applied based on the frequency and interval specified.
+6. Click **Save** to apply the configuration. ![](/images/11196020/a54a36b0f638.png) The auto-update configuration is saved successfully. ![](/images/11196020/d43c6fd68d09.png) **Note:**Make sure to sync the configuration in the Supervisor App to apply the changes. For more, refer to [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to configure endpoint for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-endpoint-for-windows-login" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to configure Auto Update feature for Windows Login in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-auto-update-feature-for-windows-login-in-tenant-admin-portal" />
+  <Card title="Windows Login - How to apply Endpoint Template after Auto-pair for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-apply-endpoint-template-after-auto-pair-for-windows-login-in-the-tenant-admin-portal" />
+</CardGroup>

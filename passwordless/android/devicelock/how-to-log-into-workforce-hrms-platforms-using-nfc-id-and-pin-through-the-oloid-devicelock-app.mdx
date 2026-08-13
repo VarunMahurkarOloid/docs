@@ -1,0 +1,69 @@
+---
+title: "How to Log into Workforce/HRMS Platforms using NFC ID and PIN through the Oloid DeviceLock App"
+sidebarTitle: "Log into Workforce/HRMS Platforms using NFC ID and PIN…"
+description: "This document provides step by step instructions to log into Workforce/HRMS platforms using NFC ID and PIN through the DeviceLock App."
+icon: "lock-keyhole"
+tags:
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+categories:
+  - "passwordless/android/devicelock"
+  - "resources/integrations/hrms"
+primaryCategory: "passwordless/android/devicelock"
+navPath: "Passwordless > Android > Devicelock"
+source:
+  system: "intercom"
+  articleId: "8707192"
+  url: "https://oloid.help/en/articles/8707192-how-to-log-into-workforce-hrms-platforms-using-nfc-id-and-pin-through-the-oloid-devicelock-app"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "User Guide"
+  updatedAt: "2025-12-30T08:29:56Z"
+  migratedAt: "2026-08-13T09:16:24.108214+00:00"
+---
+## Introduction
+
+The **Login with NFC and PIN** feature in the **Oloid DeviceLock App** allows users to securely access their **Workforce/HRMS platform** through a two-step authentication process. Users first tap their **NFC tag** on the device to verify their identity, followed by entering their **PIN** to complete the login.
+
+## Prerequisites
+
+- Android device must be connected to an external NFC reader/card reader.**Note:** If the Android device has a **built-in NFC reader**, you can scan the tag directly on the device.
+- You must have a valid Okta account.
+- You must have your assigned NFC ID.
+- You must have your assigned PIN.
+
+## Steps to Log in with NFC and PIN
+
+1. Press the **Power** button or tap the screen on your device.**Note:** The Device Lock app is displayed automatically, as it always runs in Kiosk Mode.The Welcome screen is displayed.
+2. Tap **Login with NFC Tag**.**Note**: You will only see the authentication methods (Face, Badge, PIN, QR Code, Password and NFC/ID) enabled for you. Button names may vary based on configuration. Contact [Support](mailto:Support@oloid.ai) if no authentication method appears. ![](/images/12779720/c1363931d6f8.png) **Tap NFC Tag at the device**pageis displayed.
+3. Scan the NFC Tag. ![](/images/12779720/b1d944d330c2.png) After successful NFC authentication, the **Enter PIN**page is displayed.
+4. Enter the **PIN**.
+
+<Frame>
+  <img src="/images/8707192/8754fa12bb25.png" alt="Screenshot" />
+</Frame>
+
+After successful PIN authentication, you are signed in to the Okta system.
+
+<Frame>
+  <img src="/images/8707192/db3e6ae9fb7a.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Login with NFC and PIN in DeviceLock · HRMS login using NFC and PIN · DeviceLock multi-factor authentication
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Log in to Workforce/HRMS Platforms using Badge ID and PIN Credentials through Oloid DeviceLock app" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-in-to-workforce-hrms-platforms-using-badge-id-and-pin-credentials-through-oloid-devicelock-app" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using Badge and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-badge-and-pin-through-webkey" />
+  <Card title="How to Log into Workforce/HRMS Platforms using Face Credential through Oloid DeviceLock App" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-into-workforce-hrms-platforms-using-face-credential-through-oloid-devicelock-app" />
+  <Card title="How to Log into Workforce/HRMS Platforms using Password through Oloid Device Lock app" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-into-workforce-hrms-platforms-using-password-through-oloid-device-lock-app" />
+  <Card title="How to Log into Workforce/HRMS Platforms using QR Code Credential through Device Lock app" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-into-workforce-hrms-platforms-using-qr-code-credential-through-device-lock-app" />
+</CardGroup>

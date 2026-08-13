@@ -1,0 +1,71 @@
+---
+title: "Integrating Oloid tenant to your PingOne (OIDC) instance"
+sidebarTitle: "Integrating Oloid tenant to your PingOne (OIDC) instance"
+description: "Integrating Oloid tenant to your PingOne (OIDC) instance"
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "10796370"
+  url: "https://oloid.help/en/articles/10796370-integrating-oloid-tenant-to-your-pingone-oidc-instance"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-01-22T03:29:52Z"
+  migratedAt: "2026-08-13T09:16:06.742609+00:00"
+---
+**Introduction**
+
+This document provides step-by-step instructions on how Oloid's WebKey application integrates with PingOne as an external OpenID Connect (OIDC) Identity Provider (IdP).
+
+1. Sign in to the Ping Identity Administrator Console with your PingOne account credentials
+2. Select **Create Environment**, then select **Create a Customer Solution**. ![](/images/10796370/5ee23f4f1d98.png) ![](/images/10796370/66167770ccf5.png)
+3. Go to the newly created environment and select **Manage Environment**. ![](/images/10796370/b89acaeb5e71.png)
+4. On the left menu panel, select **Integrations > External IdPs**. ![](/images/10796370/ac3917204822.png) The Identity Providers page is displayed.
+5. Select**+Add Provider**. ![](/images/10796370/049d3b924c3f.png)
+6. Select **OpenID Connect** under Custom. ![](/images/10796370/aeb1262702d4.png)
+7. Do the following:Enter a unique name for the Identity Provider profile in the**NAME**field.Enter a description to help identify the purpose of this profile in the **DESCRIPTION** field.Click **Continue**. ![](/images/10796370/ab4125afb654.png) The Configure OpenID Connect Connection section is displayed.Enter **ClientID** and **Client Secret** provided by Oloid Admin. ![](/images/10796370/d88b0fb54805.png) Enter **OpenID Configuration Endpoint** from Oloid Tenant Admin Portal in the **Discovery Document URI** field. **Note:**To find the **OpenID Configuration Endpoint** in the Oloid Tenant Admin Portal, go to **Auth Policies**> **Identity Provider** > select**IDP Profile** > **Meta Data**tab > **OpenID Configuration Endpoint**. ![](/images/10796370/5b03cd72f560.png) ![](/images/10796370/031390d96487.png) Next, select **Use Discovery Document**. This auto-fills the remaining endpoints. ![](/images/10796370/d1055b51bcfc.png) Select **Client Secret Basic**as **TOKEN ENDPOINT AUTHENTICATION METHOD**. ![](/images/10796370/4b5edd7f5802.png) Click **Save and Continue**. ![](/images/10796370/1f3b1397733f.png) The Map Attributes section is displayed.Click **+ADD ATTRIBUTE**. ![](/images/10796370/49ef4f96918f.png) Select **Email Address**from **PINGONE USER PROFILE ATTRIBUTE** dropdown list. ![](/images/10796370/f2212402666f.png) Set **providerAttributes.Email** in **OIDC ATTRIBUTE**field. ![](/images/10796370/65c5dc95face.png) Select **Empty Only** from **UPDATE CONDITION**dropdown list. ![](/images/10796370/a328662782c9.png) Select **Save and Finish**. ![](/images/10796370/1b9e96e5596e.png)
+8. Enable the newly created IDP from the External IdPs list. ![](/images/10796370/1f6d8ca4c416.png)
+9. Go to the **Connection** tab, copy the **CALLBACK URL,** and paste it in the Oloid Tenant Admin Portal in**Callback URL** field. **Note:**To find the **Callback URL**field in the Oloid Tenant Admin Portal, go to **Auth Policies**> **Identity Provider** > select**IDP Profile** > **IDP Settings**tab > **Callback URL**. ![](/images/10796370/e02f36beb96c.png) ![](/images/10796370/9fde30a62b6f.png)
+10. Update the Authentication Policies to use the new IDP. On the left navigation menu panel, go to **Authentication** > **Policies** > **Authentication**.![](/images/10796370/f285a423c431.png) The Authentication Policies page is displayed.Select **+Add Policy**to create a new authentication policy. ![](/images/10796370/dda00d104639.png) The Policy page is displayed.Enter policy name in the**POLICY NAME**field.Under **STEP TYPE,** select **External Identity Provider** from dropdown. ![](/images/10796370/d5c1bb819198.png) The EXTERNAL IDENTITY PROVIDER section is displayed.Select the created external identity provider from the**EXTERNAL IDENTITY PROVIDER** section. ![](/images/10796370/655b1ab5c66d.png)Click **Save**.The policy is created successfully. ![](/images/10796370/db3dc646b166.png)
+11. Next, go to the left menu navigation panel and select **Applications**> **Applications**.![](/images/10796370/7190f3118436.png)
+12. On the Application page, select **PingOne Application Portal** > copy the **Home Page URL**. ![](/images/10796370/62c529a70ac4.png) ![](/images/10796370/c74fe158586b.png)
+13. Select **Applications** from the left menu, and click the Add ![](/images/10796370/a9e870fb98b2.png) icon to add a new application. ![](/images/10796370/60854e80b821.png)The add application page is displayed.
+14. Do the following:Enter **Application Name**, then select **OIDC Web App**from Application Type.Click **Save**. ![](/images/10796370/09eacba0c961.png) The application is created successfully.
+15. Select the newly created application from the application list to edit.![](/images/10796370/7e5c6871cbe8.png)
+16. On the application **Profile** page, enable the app using the toggle button next to the application name. ![](/images/10796370/7e18b7152a7a.png)
+17. Paste the copied URL in the **Configuration tab**> **Redirect URL** field of the created application.**Note:**Create an application. ![](/images/10796370/1a2e9309d009.png)
+18. In the Oloid Tenant Admin Portal, go to **IDP Settings > Redirect URL** and paste the same Home Page URL in the **Redirect URL** field. ![](/images/10796370/2797bb750ff9.png) **Note:** Ensure that the Redirect URL in both PingOne and the Oloid Tenant Admin Portal match exactly to enable successful authentication.
+19. Select the created application.The application details page is displayed.
+20. Go to **Resources** > edit **ALLOWED SCOPES**. ![](/images/10796370/e482c2118de1.png)
+21. Select**email**, and then click **Save**. ![](/images/10796370/ed0f96e19cc8.png)
+22. Then, go to **Access and edit > add groups >**click **Save**.
+23. Under **Policies** tab, click **+Add Policies**. ![](/images/10796370/4de340992632.png)
+24. Select the created policy, then click **Save**. ![](/images/10796370/a4adbbbb028a.png)
+25. Under Access tab, click the edit![](/images/10796370/28cd404aec23.png)icon. ![](/images/10796370/ecf6f5c0d6ad.png)
+26. Select the created group, then click **Save**.**Note:**To create a group, go to **Directory** >**Groups**. ![](/images/10796370/f84045669ba9.png)
+
+**Related Document**
+
+[How to configure OIDC - PingOne IDP Profile](/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile)
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="Configure Oloid as OIDC IDP in Auth0" icon="arrow-right" href="/resources/integrations/sso/configure-oloid-as-oidc-idp-in-auth0" />
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for OIDC-PingOne" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-oidc-pingone" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+</CardGroup>

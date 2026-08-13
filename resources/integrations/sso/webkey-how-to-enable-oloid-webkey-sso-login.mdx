@@ -1,0 +1,52 @@
+---
+title: "Webkey - How to Enable Oloid (Webkey) SSO login"
+sidebarTitle: "How to Enable Oloid (Webkey) SSO login"
+description: "This document provides steps on how to set up Webkey Single Sign-On (SSO) in the Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "resources/integrations/sso"
+  - "passwordless/web/webkey"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "13597272"
+  url: "https://oloid.help/en/articles/13597272-webkey-how-to-enable-oloid-webkey-sso-login"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-06-09T10:27:47Z"
+  migratedAt: "2026-08-13T09:16:13.747659+00:00"
+---
+## Introduction
+
+By enabling Oloid (WebKey) SSO from the Tenant Admin Portal and selecting the appropriate IDP, admins can provide users with secure single sign-on (SSO) authentication using an external Identity Provider (IDP).
+
+## Prerequisite
+
+- You must have a Tenant Admin account.
+- OKTA IDP must be created for the application. To create, refer [How to create IDP Profile for OIDC-Okta in the Tenant Admin Portal](/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile)
+
+## Steps to configure Webkey SSO
+
+1. Login to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click**Profile icon**on the bottom left corner of the menu panel. ![](/images/13597272/41c2bc01017a.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![](/images/13597272/0ed9e08eb1f7.png) The **Tenant Settings** page is displayed.
+4. On Tenant Settings page, go to **Security**tab, and click **Webkey SSO.** ![](/images/13597272/afd9a9a18395.png) The Webkey SSO configuration page is displayed.
+5. Do the following:Turn on **Enable Oloid (WebKey) SSO**toggle.Select **IDP** from the dropdown.Click **Save**. ![](/images/13597272/3b2525f61911.png) The Oloid Webkey SSO is configured. Keywords| WebKey SSO setup| Enable Oloid WebKey SSO| Tenant Admin Portal SSO settings| Single Sign-On for WebKey|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to login to Tenant Admin Portal with Oloid Webkey SSO" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-login-to-tenant-admin-portal-with-oloid-webkey-sso" />
+</CardGroup>

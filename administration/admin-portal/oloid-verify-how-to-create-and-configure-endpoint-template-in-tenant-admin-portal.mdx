@@ -1,0 +1,175 @@
+---
+title: "Oloid Verify - How to Create and Configure Endpoint Template in Tenant Admin Portal"
+sidebarTitle: "Create and Configure Endpoint Template"
+description: "This document provides step by step instructions to create and configure Oloid Verify endpoint template in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10506225"
+  url: "https://oloid.help/en/articles/10506225-oloid-verify-how-to-create-and-configure-endpoint-template-in-tenant-admin-portal"
+  collection: "Oloid Verify"
+  section: "Oloid Verify: Platform Configuration"
+  updatedAt: "2026-04-07T11:41:14Z"
+  migratedAt: "2026-08-13T09:16:05.822274+00:00"
+---
+## Introduction
+
+The Tenant Admin Portal allows Tenant Admin to create and configure Oloid Verify Endpoint Templates to standardize the setup and deployment of Oloid Verify endpoints. These templates streamline configuration by letting administrators predefine endpoint details, settings, groups, web buttons, integrations, and health monitoring options.
+
+## Prerequisite
+
+You must have a Tenant Admin Account.
+
+## Steps to create Endpoint Template
+
+1. Log in to the **Tenant Admin Portal**.The **Application** page is displayed.
+2. Select **Endpoint** from the left menu panel. ![](/images/10506225/ffabc347b873.png) The **Endpoint** page is displayed.
+3. On the top right, click **Endpoint Template**. ![](/images/10345475/0ae73a42b1fc.png) The **Endpoint Template** page is displayed.
+4. On the top right, click **Create Template**. ![](/images/10345475/74b771540314.png) The **Create New Template** pop-up box is displayed.
+5. Do the following:Enter **Template Name**.Select **Application Type** as **Oloid Verify** from the dropdown list.Select **Endpoint Type**as**Oloid Verify** from the dropdown list.Click **Create**. ![](/images/10506225/4e797d1d4678.png) The Endpoint is created and listed successfully in Endpoint Template page. ![](/images/10506225/4c593f038216.png)
+
+## Steps to Configure Endpoint Template
+
+1. Click **Endpoint Template** to be configured from the listed templates. ![](/images/10506225/c236840a9d59.png)
+2. Configure the following:[Details tab](#h_60d27dd031)[Configure tab](#h_727e6be56c)
+
+## Configure Details tab
+
+<Frame>
+  <img src="/images/10506225/fa17bb1731d7.png" alt="Screenshot" />
+</Frame>
+
+1. Edit **Template Name** (If required).
+2. Enter **Template Description**. (Optional)
+3. Select **Endpoint Type** from the dropdown list.
+4. Select **Time Zone** from the dropdown list. (Optional)**Note:** In case the Endpoint time zone is not specified, by default the endpoint inherits the time zone specified for the application.
+5. Enter name in **Name Endpoint As**text field. (Optional)
+6. Select **Location** from the dropdown list. Once selected, this activates the **Building** field. For more information on creating a location, refer [How to create a new location and add location details](/administration/admin-portal/how-to-create-a-new-location-and-add-location-details). (Optional)
+7. Select **Building**associated with the chosen locationfrom the dropdown list. Once selected, this activates the **area** field. (Optional)
+8. Select **area**within the building from the dropdown list. (Optional)
+9. Click **Save**.**Note:** The **Building** and **Area** fields remain disabled until a valid **Location** is selected.​**Note:** Configure settings only if they are applicable. Consult your Oloid representative before making any changes. The **Details tab** is configured successfully. ![](/images/10506225/cfa73ccf6f8e.png)
+
+## Setting up Configure tab
+
+1. [Endpoint Settings](/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template)
+2. [Group tab](/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template)
+3. [Web Button tab](/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template)
+4. [Integration tab](/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template)
+5. [Health Setup tab](/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template)
+
+### Configure Endpoint Setting
+
+<Frame>
+  <img src="/images/10506225/17c8d5bda256.png" alt="Screenshot" />
+</Frame>
+
+1. **Use Endpoint in Admin Mode Only:**_Coming Soon_
+2. **Capture Location:** Turn on this toggle to capture location on the endpoint for each transaction.**Note: Location Permission**on the Endpoint device must be enabled to Capture Location.
+3. **Generate Debug Logs:** Turn on this toggle to generate and send debug logs from the endpoint to the backend.
+4. **Enable Landscape Mode for Preview Screen:**_Coming Soon_
+5. Click **Save**.**Note:** Configure settings only if they are applicable. Consult your Oloid representative before making any changes.
+
+The **Endpoint Settings**is configured successfully.
+
+<Frame>
+  <img src="/images/10506225/ed29ba7afda2.png" alt="Screenshot" />
+</Frame>
+
+### Groups
+
+<Frame>
+  <img src="/images/10506225/4e5d537dea86.png" alt="Screenshot" />
+</Frame>
+
+1. Click **+Add Group**.The **Add Group** pop-up box is displayed. ![](/images/10345475/65f82acbdf61.png)
+2. Select **Group(s)**from the dropdown list.
+3. Click **Add**. **Note:** Configure settings only if they are applicable. Consult your Oloid representative before making any changes.
+
+The group is added successfully.
+
+<Frame>
+  <img src="/images/10506225/b9b336203461.png" alt="Screenshot" />
+</Frame>
+
+### Configure Web Button
+
+<Frame>
+  <img src="/images/10506225/7c146fbb5680.png" alt="Screenshot" />
+</Frame>
+
+1. **Enable Web Button** toggle to activate the web button on the endpoint preview screen to view transaction.Enter **URL**.**Note:** You have to enter the URL of the website where the user will review the punches. Enter **Timeout** duration.
+2. Turn on **Show only on Auth**toggle to allow the web button to appear only after successful authorization.
+3. Turn on **Auto Launch** toggle to automatically launch the web button and view transaction.
+4. Click **Save**.​**Note:** Configure settings only if they are applicable. Consult your Oloid representative before making any changes.
+
+The **Web Button**is configured successfully.
+
+<Frame>
+  <img src="/images/10506225/d4c7edcfcfde.png" alt="Screenshot" />
+</Frame>
+
+### Configure Integration
+
+<Frame>
+  <img src="/images/10506225/9300f4f8a6a1.png" alt="Screenshot" />
+</Frame>
+
+The Integration section allows the Oloid Admin to configure post-authentication actions after successful authentication. These actions can include API calls, relay triggers, or updates to external systems, triggered after user authentication. (Optional)
+
+### Configure Health Setup
+
+<Frame>
+  <img src="/images/10506225/d47636ed0f3a.png" alt="Screenshot" />
+</Frame>
+
+**Enable Health Alerts**
+
+Do the following:
+
+1. Turn on **Enable Health Alerts**toggle to monitor the health of the paired endpoints.
+2. Enter email ID(s) in **Add recipients for Endpoint Health Alerts** whom you want to share the health alert notifications.
+3. Set**Email frequency**in Hours and Mins to adjust the frequency of email notifications.
+4. Click **Save**to apply your changes. The Health Alert is configured for the endpoint. ![](/images/10506225/d0dd6fae83ba.png)
+
+**Add URLs to Monitor**
+
+Do the following:
+
+1. Enter **Server Name**.
+2. Enter URL in **Add URL that needs to be monitored** field.
+3. Click **Add**.
+
+<Frame>
+  <img src="/images/10506225/4feccfdbfa9d.png" alt="Screenshot" />
+</Frame>
+
+The health check server URL is added successfully.
+
+<Frame>
+  <img src="/images/10506225/474dc6cdb45f.png" alt="Screenshot" />
+</Frame>
+
+The Endpoint Template is created and configured successfully.
+
+---
+
+### Keywords
+
+Oloid Verify Endpoint Template | Create Oloid Verify endpoint template | Configure Oloid Verify template | Oloid Verify template setup guide
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - How to Create and Configure Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure DeviceLock Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-devicelock-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How Configure Endpoint Templates in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-configure-endpoint-templates-in-the-tenant-admin-portal" />
+</CardGroup>

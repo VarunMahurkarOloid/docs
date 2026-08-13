@@ -1,0 +1,78 @@
+---
+title: "Okta Settings for Oloid SSO"
+sidebarTitle: "Okta Settings for Oloid SSO"
+description: "This document provides step-by-step instructions to configure Okta SSO login in the Okta Admin Console for Oloid Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "8158793"
+  url: "https://oloid.help/en/articles/8158793-okta-settings-for-oloid-sso"
+  collection: "SSO Login Configuration"
+  section: "Okta SSO Setup"
+  updatedAt: "2025-12-18T10:50:59Z"
+  migratedAt: "2026-08-13T09:16:19.965451+00:00"
+---
+## Introduction
+
+Okta Single Sign-On (SSO) enables secure authentication for users accessing the Oloid Portal and Oloid Applications. To complete the integration, admin first configure policies and applications in the Okta Admin Console and then share the required parameters with Oloid. This setup ensures that authentication requests are validated through Okta using the appropriate authorization policies and client configurations.
+
+## Prerequisite
+
+You must have Admin access to the Okta Admin Console.
+
+## Steps to Configure Okta SSO login in the Okta Admin Console for Oloid Portal
+
+**[Step 1:](#h_3b0583f165)**Configure Client Application for Oloid Portal and Oloid Application
+
+**[Step 2:](#h_702279ce22)** Create and Configure Default Policy in an authorization server in the Okta Admin Console
+
+## Steps to Create and Configure Client Application for Oloid Portal and Oloid Application:
+
+1. In the Okta Admin Console, go to **Applications > Applications > Create App Integration.** ![](/images/8158793/0dde4e578811.png) The Create a new app integration pop-up box is displayed.
+2. Do the following:Select **OIDC - OpenID Connect** as the **Sign-in method.**Select **Single-Page Application** as **Application type**.Click**Next**. ![](/images/8158793/ff491185a7d3.png) The New Single-Page App Integration page is displayed.
+3. Enter a name for the application in the **App integration name** field. ![](/images/8158793/d1c25facec8a.png)
+4. Select **Authorization Code** as **Grant type**(If not already selected). ![](/images/8158793/e4b68f06a264.png)
+5. Add the redirected URLs to **Sign-in redirect URIs**field. ![](/images/8158793/970239f1ca23.png) To copy the redirected URL, go to **Oloid Portal** > **Tenant Settings** > **Security** > **OKTA** and copy the following **Redirect URLs**. ![](/images/8158793/ad7667284a07.png)
+6. Select**Allow everyone in your organization to access** under **Assignments**. ![](/images/8158793/d356fbff5cd4.png)
+7. Click **Save**.The newly created application page is displayed.
+8. Go to **General** tab, share the **ClientID** of the new app with Oloid. ![](/images/8158793/7b7ace5606e6.png) You can use the client ID in the Web Client ID field. You can find the web client ID field in the Oloid portal under **User Profile > Tenant Settings > Security > Okta**. ![](/images/8158793/fb76cdd5b7a4.png)
+9. Go to **User Profile** icon and share the domain ID with Oloid. ![](/images/8158793/46c9497fafe0.png) You can use the Domain ID in the Domain field. You can find the Domain ID field in the Oloid portal under **User Profile > Tenant Settings > Security > Okta**. ![](/images/8158793/42ff06b5197d.png)
+10. On the left panel, select **Security** > **API**. ![](/images/8158793/c2f0360cf98d.png)
+11. Under **Authorization Server** tab, share the **Default** **Issuer URL** with Oloid Admin. ![](/images/8158793/5e191b86c9bf.png) You can use the Default Issuer URL in the Web Client ID field. You can find the web client ID field in the Oloid portal under **User Profile > Tenant Settings > Security > Okta**. ![](/images/8158793/05c18af05d4a.png)
+
+## Steps to Create Default Policy
+
+1. On the left menu panel, go to **Security**>**API**> **Authorization Servers**tab > Select **default**. ![](/images/10299914/79fa9b8390c4.png)
+2. On the default page, select **Access Policies** > **Add Policy**. ![](/images/8158793/74fdd4067bf7.png) The Add Policy pop-up box is displayed.
+3. On the pop-up box, do the following:Enter **Name** and **Description**in respective fields.Select **The following clients**as Assign toand then enter the preferred application name in the respective field.**Note:** Assign the policy only to the specific client application that you created in the first step.Click **Create Policy**. ![](/images/8158793/1a8602f3830d.png) The access policy is created successfully. ![](/images/8158793/b4cebd52f342.png)
+4. Next, select **Add rule**. ![](/images/8158793/ba64f4790dc2.png)
+5. On the **Add Rule** pop-up box, configure the details as required. ![](/images/8158793/c4f5e9eb385a.png)
+6. Click **Create rule**. ![](/images/8158793/5e942ff7b036.png) The rule is added successfully.
+
+**Related Document**
+
+[How to configure OKTA-SSO in Oloid Portal](/resources/integrations/sso/how-to-configure-okta-sso-in-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Okta SSO Configuration · Oloid Okta SSO Setup · Okta Access Policy Setup
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="How to Configure Okta SSO in Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-okta-sso-in-tenant-admin-portal" />
+  <Card title="Oloid Verify - Login using Okta SSO" icon="arrow-right" href="/resources/integrations/sso/oloid-verify-login-using-okta-sso" />
+  <Card title="Duo Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/duo-settings-for-oloid-sso" />
+</CardGroup>

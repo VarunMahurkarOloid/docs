@@ -1,0 +1,49 @@
+---
+title: "Windows Login - How to configure Badge Auth Source"
+sidebarTitle: "Windows Login - How to configure Badge Auth Source"
+description: "Windows Login - How to configure Badge Auth Source"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "11274692"
+  url: "https://oloid.help/en/articles/11274692-windows-login-how-to-configure-badge-auth-source"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:37:13Z"
+  migratedAt: "2026-08-13T09:16:07.595501+00:00"
+---
+**Introduction:**
+
+Set up the _Badge Auth Source_ in the Tenant Admin Portal to define whether badge credentials for the Windows Login application are verified using local storage or cloud-based data.
+
+**Pre-requisite:**
+
+In the Tenant Admin Portal, you must enable Validate Windows Credential option in the Windows Login Application. For further details, refer [How to enable Validate Windows Credential in Windows Login application](/passwordless/windows/passwordless/windows-login-how-to-enable-validate-windows-credential-for-windows-login)
+
+Steps to enable Badge Auth Source:
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click on the Windows application to edit. ![](/images/10900687/ca340dba5264.png) The application page is displayed. ![](/images/10900687/479f82ca733c.png)
+3. Go to**Authenticator** > **Badge ID** > **Badge Auth Source**. ![](/images/11274692/3529276e7de2.png) The Badge Auth Source section is displayed. ![](/images/11274692/76ff9e26746f.png)
+4. Select the following:**Hybrid: Online First (default)-**This option allows the Windows Login application to check the cloud first for badge authentication. You must use this option when real-time cloud data is preferred.**Hybrid: On-device First-**This option allows the Windows Login application to check the local device storage first. If the badge is not found, it then checks the cloud. This option also updates and validates user data on the device after authentication.
+5. Click **Save**to save the configuration successfully.**Note:**In **Windows Authenticator** app, you must sync the configuration to Validate Windows Credential to work properly. For more details, refer [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to configure Password credential for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-password-credential-for-windows-login" />
+  <Card title="Windows Login - How to log in to Windows device using Badge and Password" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-and-password" />
+  <Card title="Windows Login - How to Reset PIN in Windows Login Using Badge and Forgot PIN" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-reset-pin-in-windows-login-using-badge-and-forgot-pin" />
+  <Card title="Windows Login - How to Configure Badge ID for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-badge-id-for-windows-login" />
+</CardGroup>

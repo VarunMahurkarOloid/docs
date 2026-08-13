@@ -1,0 +1,132 @@
+---
+title: "Guide to Retrieving Events and Transactions"
+sidebarTitle: "Retrieving Events and Transactions"
+description: "Guide to Retrieving Events and Transactions"
+tags:
+  - "API Reference"
+categories:
+  - "api-reference"
+primaryCategory: "api-reference"
+navPath: "API Reference"
+source:
+  system: "intercom"
+  articleId: "9827859"
+  url: "https://oloid.help/en/articles/9827859-guide-to-retrieving-events-and-transactions"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "API Guides"
+  updatedAt: "2024-09-06T14:58:21Z"
+  migratedAt: "2026-08-13T09:16:28.938004+00:00"
+---
+This guide provides an overview of how to authenticate and retrieve events and transactions from our API. It covers the login process, fetching transactions, and retrieving activity events.
+
+## Table of Contents
+
+1. [Authentication](/api-reference/login-api-documentation)
+2. [Retrieving Transactions](/api-reference/list-transactions-api)
+3. [Retrieving Activity Events](/api-reference/list-activity-logs-api)
+
+## 1. Authentication
+
+Before you can access any data, you need to authenticate with our API. We use a token-based authentication system.
+
+## Login API
+
+To obtain an access token, use the Login API:
+
+**Endpoint:** `POST /login`
+
+**Request Body:**
+
+```
+{  "UserName": "your_username",  "TenantName": "your_tenant_name",  "Password": "your_password"}
+```
+
+**Response:**
+
+```
+{  "cognitoToken": {    "IdToken": "your_id_token",    "AccessToken": "your_access_token",    "RefreshToken": "your_refresh_token",    "ExpiresIn": 3600  },  "user": {    "OloID": "user_olo_id",    "TenantID": "tenant_id",    "TenantName": "tenant_name"  }}
+```
+
+Store the `AccessToken` securely. You'll need to include it in the `Authorization` header for subsequent API calls.
+
+For more details on the Login API, see the [full Login API documentation](/api-reference/login-api-documentation).
+
+## 2. Retrieving Transactions
+
+To fetch transactions, use the List Transactions API:
+
+**Endpoint:** `POST /transactions`
+
+**Headers:**
+
+- `Authorization: Bearer your_access_token`
+- `Content-Type: application/json`
+
+**Request Body:**
+
+```
+{  "PageSize": 50,  "FromDate": "2023-09-01T00:00:00Z",  "ToDate": "2023-09-30T23:59:59Z",  "ApplicationID": "app_id_here"}
+```
+
+**Response:**
+
+```
+{  "data": {    "NextPageToken": "next_page_token_here",    "transactions": [      {        "ApplicationName": "AccessControl",        "EndpointName": "Main Entrance",        "CreatedOn": 1662364800,        "TransactionID": "trans-123",        // ... other transaction fields ...      }      // ... more transactions ...    ]  },  "message": "Transactions retrieved successfully"}
+```
+
+To fetch subsequent pages, include the `NextPageToken` in your next request.
+
+For more details on the List Transactions API, see the [full List Transactions API documentation](/api-reference/list-transactions-api).
+
+## 3. Retrieving Activity Events
+
+To fetch activity events, use the Filter Activity API:
+
+**Endpoint:** `POST /filterActivity`
+
+**Headers:**
+
+- `Authorization: Bearer your_access_token`
+- `Content-Type: application/json`
+
+**Request Body:**
+
+```
+{  "start": 1662364800000,  "end": 1664956799000,  "limit": 50}
+```
+
+**Response:**
+
+```
+{  "data": {    "activities": [      {        "id": "act-123",        "timestamp": 1662388800000,        "activityType": "LOGIN",        "details": {          "userId": "user-456",          "userName": "John Doe"        }      }      // ... more activities ...    ],    "nextToken": "next_token_here"  },  "message": "Activity logs retrieved successfully"}
+```
+
+To fetch subsequent pages, include the `nextToken` in your next request.
+
+For more details on the Filter Activity API, see the [full Filter Activity API documentation](/api-reference/list-activity-logs-api).
+
+## Best Practices
+
+1. Implement token refresh logic to maintain uninterrupted access.
+2. When fetching large amounts of data, use pagination to improve performance.
+3. Consider implementing rate limiting in your application to avoid hitting API limits.
+
+## Error Handling
+
+All APIs may return error responses. Always check the HTTP status code and error message in the response body. Common error codes include:
+
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 500: Internal Server Error
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Login API Documentation" icon="arrow-right" href="/api-reference/login-api-documentation" />
+  <Card title="List Transactions API" icon="arrow-right" href="/api-reference/list-transactions-api" />
+  <Card title="Windows Login 1.0 – Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-1-0-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Windows Login v2.0 - Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-preview-uat-environment" />
+  <Card title="Windows Login v2.0 - Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-prod-us-environment" />
+</CardGroup>

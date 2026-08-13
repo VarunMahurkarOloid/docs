@@ -1,0 +1,44 @@
+---
+title: "Auth0 Settings for Oloid SSO"
+sidebarTitle: "Auth0 Settings for Oloid SSO"
+description: "Auth0 Settings for Oloid SSO"
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "11103554"
+  url: "https://oloid.help/en/articles/11103554-auth0-settings-for-oloid-sso"
+  collection: "SSO Login Configuration"
+  section: "Auth0 SSO Setup"
+  updatedAt: "2026-08-10T05:57:16Z"
+  migratedAt: "2026-08-13T09:16:07.304558+00:00"
+---
+Steps to configure Auth0 SSO log in the Auth0 for Oloid Portal:
+
+1. Sign in to the Auth0 dashboard using your Auth0 account credentials.
+2. In the left menu panel, select **Applications** > **Applications**. ![](/images/11103554/92c635dbd56a.png)The Applications page is displayed.
+3. Select **+ Create Application**. ![](/images/11103554/16f708a578c8.png)The Create Application dialog box is displayed.
+4. In the dialog box, do the following:Edit the **Name** field, if needed.Select **Regular Web Applications**, and then select **Create**. ![](/images/11103554/c7894b56fc6d.png)The application is created successfully.
+5. Select the **Settings** tab, and then do the following:In the **Application URIs** section, enter the following Redirect URLs from Oloid Tenant Admin Portal in the **Allowed Callback URLs** field. ![](/images/11103554/d760623296d7.png) ![](/images/11103554/e90e1726355b.png) In the **Basic Information** section, share the **Client ID** and **Client Secret** with [Oloid Support](mailto:support@oloid.ai).![](/images/11103554/545d48834194.png)
+6. Auth0 endpoint parameters can be obtained from the following location - ​`https://<your-auth0-domain>/.well-known/openid-configuration`Example: ​[https://dev-1hnsh6lb8jg6s16v.us.auth0.com/.well-known/openid-configuration](https://dev-1hnsh6lb8jg6s16v.us.auth0.com/.well-known/openid-configuration)
+
+**Related Document**
+
+[How to configure Auth0 SSO in Oloid Portal](/resources/integrations/sso/how-to-configure-auth0-sso-in-oloid-portal)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="Configure Oloid as OIDC IDP in Auth0" icon="arrow-right" href="/resources/integrations/sso/configure-oloid-as-oidc-idp-in-auth0" />
+  <Card title="How to configure Auth0 SSO in Oloid Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-auth0-sso-in-oloid-portal" />
+  <Card title="Oloid User Portal - How to log in to Oloid User Portal using Auth0 SSO" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-using-auth0-sso" />
+</CardGroup>

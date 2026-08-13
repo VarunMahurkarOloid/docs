@@ -1,0 +1,84 @@
+---
+title: "Updating OLOID DeviceLock MFA"
+sidebarTitle: "Updating OLOID DeviceLock MFA"
+description: "Workspace ONE UEM – Update & Troubleshooting Guide"
+icon: "lock-keyhole"
+tags:
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "passwordless/android/devicelock"
+primaryCategory: "passwordless/android/devicelock"
+navPath: "Passwordless > Android > Devicelock"
+source:
+  system: "intercom"
+  articleId: "11867982"
+  url: "https://oloid.help/en/articles/11867982-updating-oloid-devicelock-mfa"
+  collection: "Passwordless Authenticator"
+  section: "Oloid Android Passwordless Authenticator -DeviceLock"
+  updatedAt: "2025-07-28T14:35:15Z"
+  migratedAt: "2026-08-13T09:16:09.541687+00:00"
+---
+## 1. Quick‑Start Update Checklist
+
+| Step | Action | Notes |
+|---|---|---|
+| **1** | **Publish new APK/IPA** to **Resources › Native Apps › Internal** | Use _Edit › Upload_ in the existing app entry. |
+| **2** | **Push to target Smart Groups** with **Save & Assign** | Keep the same groups & push mode (Auto / On Demand). |
+| **3** | **Verify permissions** | Device Admin, Overlay, and Accessibility persist automatically. |
+| **4** | **Restart the device** | Mandatory – reloads kiosk bindings & clears stale caches. |
+| **5** | **User re‑signs into Workspace ONE Launcher** | Restores normal operation with updated app version. |
+
+**Why restart?**
+
+- Reloads Lock Task Mode with the new package signature.
+- Ensures Workspace ONE SDK re‑attests the updated binary.
+- Flushes obsolete shared libraries that can cause crashes.
+
+---
+
+## 2. Troubleshooting Matrix
+
+| Symptom | Root Cause | Fix |
+|---|---|---|
+| **App not recognized as trusted** | SDK profile **missing** or removed | Assign (or re‑assign) an SDK profile → _Save & Publish_. |
+| **App not installing / icon missing** | • Wrong Smart Group• Launcher layout not updated• Push mode set to _On Demand_ | 1) Check group assignment.2) Ensure icon is in launcher layout and republish.3) Switch to _Auto_ or push manually from console. |
+| **App not functioning after update** | • New APK signed with a **different key**• Device **not restarted** | 1) Re‑sign APK with original certificate.2) Reboot device, then re‑login to Launcher. |
+| **Stuck on permission request screen** | Required permissions not fully granted while in admin mode | While the prompt is displayed:1) Tap in‑app shortcuts to Settings.2) Enable **Device Admin**, **Display over other apps**, **Accessibility**.3) Relaunch app. |
+| **Permissions screen keeps reappearing** | One or more permissions toggled off later | Manually verify each permission in Android Settings; enable any that are off. |
+| **Lock Task Mode not working** | • App not in **Allowlisted Apps**• System buttons allowed | Add package name to allowlist; disable Home & Global Actions if kiosk behaviour is required. Reboot if device boots into pinned mode. |
+| **App crashes / unexpected behaviour** | • Conflicting UEM device policies• OS‑specific issue | 1) Collect device logs (`adb logcat` or console logs).2) Test on alternate OS versions/hardware.3) Review other profiles for policy conflicts. |
+
+🛠 **Still stuck?**  
+Email **[support@oloid.com](mailto:support@oloid.com)** with:
+
+- Console deployment logs (Apps & Books › Internal Apps › More › _View Logs_)
+- Device model & Android version
+- App version code
+- Screenshots or crash logs
+
+Providing these details helps us resolve your issue faster.
+
+---
+
+## 3. Best‑Practice Tips
+
+1. **Stage roll‑outs** – pilot with a small Smart Group before fleet‑wide deployment.
+2. **Automate reboots** – use the UEM _Reboot_ command to guarantee compliance.
+3. **Keep a rollback APK** – retain the last working build in case immediate downgrade is needed.
+4. **Document change history** – track version numbers, push dates, and issues observed for auditability.
+
+---
+
+_Document version: July 28 2025_
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="OloID CloudKey App Installation and Login" icon="arrow-right" href="/passwordless/cloudkey/oloid-cloudkey-app-installation-and-login" />
+  <Card title="Windows Login - How to Install and Auto-Pair Windows Authenticator App through MDM" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-install-and-auto-pair-windows-authenticator-app-through-mdm" />
+  <Card title="Setting Up OLOID DeviceLock MFA" icon="arrow-right" href="/passwordless/android/devicelock/setting-up-oloid-devicelock-mfa" />
+  <Card title="Android Passwordless Device Unlock with Automatic Okta Login" icon="arrow-right" href="/passwordless/android/devicelock/android-passwordless-device-unlock-with-automatic-okta-login" />
+  <Card title="Windows Login v2.0 - Overview" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-overview" />
+</CardGroup>

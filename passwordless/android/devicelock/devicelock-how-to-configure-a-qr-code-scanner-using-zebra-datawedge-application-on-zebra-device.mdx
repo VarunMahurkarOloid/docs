@@ -1,0 +1,65 @@
+---
+title: "DeviceLock - How to Configure a QR Code Scanner using Zebra DataWedge Application on Zebra Device"
+sidebarTitle: "DeviceLock - How to Configure a QR Code Scanner using…"
+description: "This document provides step-by-step instructions to configure QR Code Scanner for Data Wedge Application on Zebra Device."
+icon: "lock-keyhole"
+tags:
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "passwordless/android/devicelock"
+primaryCategory: "passwordless/android/devicelock"
+navPath: "Passwordless > Android > Devicelock"
+source:
+  system: "intercom"
+  articleId: "15585377"
+  url: "https://oloid.help/en/articles/15585377-devicelock-how-to-configure-a-qr-code-scanner-using-zebra-datawedge-application-on-zebra-device"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Oloid Device Lock - Supporting Documents"
+  updatedAt: "2026-07-07T08:52:07Z"
+  migratedAt: "2026-08-13T09:16:18.339968+00:00"
+---
+## Introduction
+
+This document provides instructions to configure a QR code scanner in the Zebra DataWedge application for use with the Oloid DeviceLock application.
+
+**Note:** This configuration is supported **only on Zebra Android devices** that use the **Zebra DataWedge** application. It is not applicable to non-Zebra devices.
+
+## Prerequisites
+
+- A **Zebra Android device** with the **Zebra DataWedge** application installed.
+- The **Oloid DeviceLock** application is installed on the Zebra device.
+- The **DataWedge** service is enabled and running.
+
+## Steps to Configure QR Code Scanner for Data Wedge Application
+
+1. Launch the **DataWedge** application.The **DataWedge** application page is displayed.
+2. Tap the **Menu** (three dots) icon. ![](/images/15585377/c8c91954e40b.png) The pop-up box is displayed.
+3. Select **New Profile**. ![](/images/15585377/2534b564882b.png) The **New Profile** pop-up box is displayed.
+4. Enter the **Profile Name** > tap **OK**. ![](/images/15585377/48b0e2dcdd6f.png) The Profile name is listed on the DataWedge Profiles home screen.
+5. Tap the **Profile Name**. ![](/images/15585377/bb64cf05b251.png) The Profile details screen is displayed.
+6. Tap **Associated apps**. ![](/images/15585377/6eba92f39d28.png) The Profile **associations** screen is displayed.
+7. Tap the **Menu** **(Three dots) icon** at the top right corner of the screen. ![](/images/15585377/96ce3999c589.png) The **New app/activity** pop-up box is displayed.
+8. Select **New app/activity**. ![](/images/15585377/b2131175ad48.png) The List of Apps are displayed.
+9. Select the app. **Note:** Select **com.oloid.devicelock**. ![](/images/15585377/cb8af6e116c2.png) The **select activity** pop-up box is displayed.
+10. Select the **asterisk (*)** to associate it with all activities. ![](/images/15585377/47b96c5988e2.png) The app is selected and listed on the Profile associations screen. ![](/images/15585377/fdae73e59e42.png)
+11. Go back to the Profile page.The Profile page is displayed and do the following:Ensure the **Enabled** checkbox is checked for Barcode input. ![](/images/15585377/bbd849b87b05.png) Ensure the Enabled checkbox is UNCHECKED for Keystroke output to prevent scanner data from being injected as text. ![](/images/15585377/297256e795cc.png) Go to **Intent Output** section and do the following.Select the **Enabled** checkbox. ![](/images/15585377/ddd7415ef659.png) Tap **Intent action**. ![](/images/15585377/811a6284ca3f.png) The **Enter intent action name** is displayed.Enter the intent action name > tap **OK**.**Note:** Ensure the Intent Action name must be **com.devicelock.QR_CODE_SCAN_ACTION**. ![](/images/15585377/41ce7719e001.png) Tap **Intent Delivery**. ![](/images/15585377/51bd733eb0e5.png) The **Choose mechanism** pop-up box is displayed.Tap **Broadcast intent**. ![](/images/15585377/34ead7ae2851.png)
+
+The QR Code Scanner for Data Wedge Applications is successfully configured.
+
+---
+
+<Tip>
+  **Keywords:** DeviceLock QR code scanner configuration · Configure Zebra DataWedge for Oloid DeviceLock · Zebra DataWedge QR scanner setup
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Oloid DeviceLock App after Installation" icon="arrow-right" href="/passwordless/android/devicelock/how-to-configure-oloid-devicelock-app-after-installation" />
+  <Card title="DeviceLock App - How to Assign QR Code for Users in the DeviceLock App through Admin Mode" icon="arrow-right" href="/passwordless/android/devicelock/devicelock-app-how-to-assign-qr-code-for-users-in-the-devicelock-app-through-admin-mode" />
+  <Card title="How to Unlock the Device Screen using the Oloid DeviceLock App with QR Credential" icon="arrow-right" href="/passwordless/android/devicelock/how-to-unlock-the-device-screen-using-the-oloid-devicelock-app-with-qr-credential" />
+  <Card title="How to Login to Windows Device using QR Code and PingOne Credentials" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-login-to-windows-device-using-qr-code-and-pingone-credentials" />
+</CardGroup>

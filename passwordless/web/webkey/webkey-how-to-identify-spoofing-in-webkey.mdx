@@ -1,0 +1,44 @@
+---
+title: "Webkey – How to Identify Spoofing in Webkey"
+sidebarTitle: "How to Identify Spoofing in Webkey"
+description: "Webkey – How to Identify Spoofing in Webkey"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "10469404"
+  url: "https://oloid.help/en/articles/10469404-webkey-how-to-identify-spoofing-in-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-06-09T10:19:54Z"
+  migratedAt: "2026-08-13T09:16:05.657039+00:00"
+---
+Tenant Admin/Supervisor can detect spoofing attempts in WebKey application by checking if a user has logged in using a virtual camera instead of a real face scan.
+
+**Pre-requisite:**
+
+You must turn on**Enable Virtual Camera**in Webkey application. For more information, refer  [How to create and configure WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal) > [Enable Virtual Camera](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+To identify spoofing:
+
+1. Log in to **Oloid Portal**.
+2. Go to **Transactions** in the left menu panel. ![](/images/10469404/9ef195709b81.png) The User Transaction page is displayed.
+3. Select the login transaction. ![](/images/10469404/a1dce8ac728e.png)
+4. Go to **Details** tab, check **Virtual Camera**status. ![](/images/10469404/49d29c61718a.png) If Virtual Camera is **True**, the user has used a spoofing method to log in.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey – How to Create and Configure a Webkey Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal" />
+  <Card title="Webkey - How to Enroll Face using Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-enroll-face-using-webkey" />
+  <Card title="WebKey - How to configure Face credential in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-face-credential-in-tenant-admin-portal" />
+  <Card title="Webkey - How to login to Tenant Admin Portal with Oloid Webkey SSO" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-login-to-tenant-admin-portal-with-oloid-webkey-sso" />
+  <Card title="Webkey - How to Enable Oloid Session in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-enable-oloid-session-in-the-tenant-admin-portal" />
+</CardGroup>

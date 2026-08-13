@@ -1,0 +1,53 @@
+---
+title: "Network architecture of Oloid Connect"
+sidebarTitle: "Network architecture of Oloid Connect"
+description: "Network architecture of Oloid Connect"
+tags:
+  - "Passwordless"
+  - "iOS"
+  - "Oloid Connect"
+categories:
+  - "passwordless/ios/connect"
+primaryCategory: "passwordless/ios/connect"
+navPath: "Passwordless > iOS > Oloid Connect"
+source:
+  system: "intercom"
+  articleId: "8644251"
+  url: "https://oloid.help/en/articles/8644251-network-architecture-of-oloid-connect"
+  collection: "Oloid Connect"
+  section: "Getting Started with Oloid Connect App"
+  updatedAt: "2025-11-20T10:47:44Z"
+  migratedAt: "2026-08-13T09:16:23.571584+00:00"
+---
+Oloid Connect **Network architecture**refers to the way **network**devices and services are structured to serve the connectivity needs of client devices.
+
+Please ensure tablet network ( wifi or ethernet ) is able to communicate with below servers. All calls are outbound
+
+| 1 | oloid.cloud | 80, 443 | Production Oloid Face VaultPlatform Root Domain |
+|---|---|---|---|
+| 2 | *.oloid.cloud | 80, 443 | Production Flex Tenant SubDomains |
+| 3 | oloiddev.com | 80, 443 | Development Oloid Face ValutPlatform Root Domain |
+| 4 | *.oloiddev.com | 80, 443 | Development Flex Tenant SubDomains |
+| 5 | fr.proxce.co | 80, 443 | Legacy Development Server (Used for telemetry ) |
+| 6 | Auth.Face-vault.co | 80, 443 | Legacy Production Server (Used for telemetry ) |
+| 7 | *.crashlytics.co | 80, 443 | Capturing Crash Logs |
+| 8 | *.amazonaws.com | 80, 443 | Accessing AWS Resourcesdirectly ( e.g S3 ) |
+| 9 | pce.proxce.co | 80, 443 | Rule Engine ( for Email Alerts ) |
+| 10 | cv.proxce.co | 80, 443 | Legacy Computer Vision Server |
+| 11 | *.googleapis.com | 80, 443 | Firebase Pub Sub ProductionInterface |
+| 12 | visionlabsbv.prod.sentinelcloud.com | 80, 443 | On Device FR LicenseManagement Server |
+| 13 | google.com | 80, 443 | Google Cloud Platform relatedAPIs |
+
+<Frame>
+  <img src="/images/8644251/dc41c98cd7f2.png" alt="Screenshot" />
+</Frame>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - Network architecture" icon="arrow-right" href="/passwordless/verify/oloid-verify-network-architecture" />
+  <Card title="Oloid Vault (Chrome / Chromium) – Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Oloid Connect – Network URL Whitelisting Requirements for Prod (US) Environment" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Oloid Connect – Network URL Whitelisting Requirements for Prod (EU) Environment" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-prod-eu-environment" />
+  <Card title="Oloid Connect – Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-preview-uat-environment" />
+</CardGroup>

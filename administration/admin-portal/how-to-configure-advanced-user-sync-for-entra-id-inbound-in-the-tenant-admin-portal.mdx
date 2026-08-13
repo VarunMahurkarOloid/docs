@@ -1,0 +1,162 @@
+---
+title: "How to Configure Advanced User Sync for Entra ID - Inbound in the Tenant Admin Portal"
+sidebarTitle: "Entra ID - Inbound"
+description: "This document provides step-by-step instructions to configure Advanced User Sync for Entra ID - Inbound in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "13598396"
+  url: "https://oloid.help/en/articles/13598396-how-to-configure-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Advanced User Sync"
+  updatedAt: "2026-07-21T08:29:05Z"
+  migratedAt: "2026-08-13T09:16:13.919987+00:00"
+---
+## Introduction
+
+This document describes how to configure Advanced User Sync for Microsoft Entra ID - Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- An **Advanced User Sync profile for Entra ID (Inbound)** is already created. To create refer, [How to Create Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-create-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal).
+- Ensure Advanced User Sync for Microsoft Entra ID is configured in the Microsoft Entra ID Admin Console. To know more, refer [How to Configure Advanced User Sync in Microsoft Entra ID Admin Console | Oloid Help Center](/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console).
+- A **Data Mapper Table** is created and available for user attribute mapping.
+- A **Data Filter** table is created and available for mapping the Entra ID - Inbound.
+
+## Steps to Configure Advanced User Sync for Entra ID - Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. Go to **Agents > Advanced User Sync**. ![](/images/13598396/096adf4607aa.png) The **Advanced User Sync** page is displayed.
+3. Select the preferred Entra ID Advanced User Sync. ![](/images/13598396/dcd35102177c.png) The Advanced User Sync detail page is displayed.
+4. Do the following:[Configure Details Tab](#h_1d0a701c50)[Setup Configuration Tab](#h_0f3c1dead3)[Configure Account Tab](#h_e708f45d65)[Configure Schedule Tab](#h_14b7209561)
+5. Click **Activate**. ![](/images/13598396/0d7b301e0785.png) The **Confirm Activation** pop-up box is displayed.
+6. Click **Confirm**. ![](/images/13598396/b0d139bdc404.png) The Advanced User Sync is configured and activated successfully. ![](/images/13598396/62a411704cea.png)
+7. (Optional) Go to **Action >** **User Sync**.**Note:** Selecting **Sync Now** immediately triggers a manual synchronization. ![](/images/13598396/5c7fff1309f3.png) The **Sync Now?** pop-up box is displayed.
+8. Click **Confirm**. ![](/images/13598396/3f6082dd1713.png) The **Success** pop-up box is displayed. ![](/images/13598396/eaf03c660f3e.png) The user sync completes successfully. ![](/images/13598396/b80cb3d7c654.png)
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the Advanced User Sync.
+
+Do the following:
+
+1. Update the **User Sync Name** (Optional).
+2. Enter the **User Sync Description** (Optional).
+3. Click **Save**. ![](/images/13598396/fe9cbd34f8d2.png) The Details tab is configured successfully. ![](/images/13598396/a31edd4b32c7.png)
+
+## Setup Configuration Tab
+
+This tab is used to map user data from **Microsoft Entra ID** to **Oloid** and select the Oloid connection where users are added during the inbound user sync.
+
+Do the following:
+
+1. Select the data mapper table from the drop-down.**Note:** Click **View Tables** to review or create a data mapper table, if required.
+2. On **Add Users to Selected Connection**, do one of the following:Select the **Connection** option, and then select the required **Connection** from the drop-down list.ORSelect the **Data Filter Table** option, and then select the required **Data Filter Table** from the drop-down list.**Note:** Click **View Tables** to review or create a data filter table, if required.
+3. Enable the **Sync FIDO2 Passkeys** toggle.**Note:** Only one Microsoft Entra ID account can synchronize FIDO2 passkeys at a time. If another account is already synchronizing FIDO2 passkeys, this option is unavailable.
+4. Click **Save**. ![](/images/13598396/d885f07589a4.png) The Configuration tab is setup successfully. ![](/images/13598396/08344ea63b24.png)
+
+## Configure Account Tab
+
+This tab is used to add and configure the **Microsoft Entra ID** account details required for inbound user synchronization with **Oloid**.
+
+Do the following:
+
+1. Enter **Account Name**.
+2. Enter **API URL**.**Note:** The API URL must be set to `https://graph.microsoft.com/v1.0/users` for Microsoft Entra ID – Inbound user synchronization.
+3. Enter **Directory ID**.
+4. Enter **Client ID**.**Note:** You can find the **Directory (tenant) ID** and **Application (client) ID** on the **Overview** page of the application in the Microsoft Entra ID Admin Console. ![](/images/13598396/49385a5fa316.png)
+5. Enter **Client Secret**.**Note:** You can find the **Client Secret** on the **Certificates & secrets** page in the Microsoft Entra ID Admin Console. ![](/images/13598396/ee7bb27dc212.png)
+6. Enter **Group**.**Note:** To add multiple groups, separate each group with a comma. ![](/images/13598396/6bb937aedf3a.png)
+7. Select **Columns**from theSelected Columns drop-down list to select the Microsoft Entra ID user attributes to synchronize with Oloid.**Note:** Select one or more attributes.
+8. In the **Filter Query** field, enter a Microsoft Graph filter expression to synchronize only the required user records.**Example:** accountEnabled eq true and department eq 'Engineering'.
+9. In the **Expand Query** field, enter related attributes to retrieve additional user information during synchronization.**Example:** manager($select=displayName,mail,userPrincipalName).
+10. In the **Max Records** field, specify the maximum number of user records to retrieve.**Note:**Enter a positive number to limit the number of records retrieved.Enter **0** or leave the field blank to retrieve all available records.
+11. Click **Save**. ![](/images/13598396/47bd427224d3.png) The Account tab details section is configured successfully.
+12. Click **Test**. ![](/images/13598396/f45585c2c367.png) The **Success** pop-up box is displayed. ​![](/images/13598396/6082e76d69d8.png)
+
+## Configure Schedule Tab
+
+This tab is used to define when the **Entra ID – Inbound** user sync runs. You can configure the sync to run on a recurring schedule or run once when the sync is activated.
+
+Do one of the following:
+
+[Repeat Every](#h_22ebec7ed1)
+
+**OR**
+
+[Run Once When Activated](#h_e541b06e27)
+
+<Frame>
+  <img src="/images/13598396/ea5b293fe0a2.png" alt="Screenshot" />
+</Frame>
+
+The Schedule tab is configured successfully.
+
+### Repeat Every
+
+The **Repeat Every**section is used torun the user sync on selected days and times.
+
+Do the following:
+
+1. Select **Repeat Every**.
+2. Select the required day(s).**Note:** You can select multiple days (if needed).
+3. Select the run time in the **Runs at** field.**Note:** You can add multiple execution time. To do, click **+Add** to configure additional run times, if required.
+4. Select **Time Zone**from the drop-down.
+5. Enter email address(es) in the **Send failed job-run alerts to** field.**Note:** Separate multiple email addresses with commas.
+6. Click **Save**. ![](/images/13598396/5b230c9523bb.png) The **Repeat Every** section is configured successfully. ![](/images/13598396/dc119b50772a.png)
+
+### Run Once When Activated
+
+The **Run Once When Activated** section is used to run the sync only once.
+
+Do the following:
+
+1. Select **Run Once When Activated**.
+2. Select the date and time in the **Select Date & Time** field.
+3. Select **Time Zone**from the drop-down.
+4. Enter email address(es) in the **Send failed job-run alerts to** field.**Note:** Separate multiple email addresses with commas.
+5. Click **Save**.
+
+<Frame>
+  <img src="/images/13598396/4240877d570c.png" alt="Screenshot" />
+</Frame>
+
+The **Run Once When Activated** section is configured successfully.
+
+<Frame>
+  <img src="/images/13598396/8a7038182e97.png" alt="Screenshot" />
+</Frame>
+
+#### Related Articles
+
+[How to Create Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-create-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal)
+
+[How to Configure Advanced User Sync in Microsoft Entra ID Admin Console | Oloid Help Center](/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console)
+
+---
+
+<Tip>
+  **Keywords:** Configure Advanced User Sync for Entra ID - Inbound · How to Edit Advanced User Sync for Entra ID - Inbound
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Configure Advanced User Sync for Workday - Inbound" icon="arrow-right" href="/resources/integrations/hrms/tenant-admin-portal-how-to-configure-advanced-user-sync-for-workday-inbound" />
+  <Card title="How to Create Advanced User Sync for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-create-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Advanced User Sync in Microsoft Entra ID Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console" />
+  <Card title="How to Configure Advanced User Sync for Okta - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

@@ -1,0 +1,81 @@
+---
+title: "How to Configure User Sync in Microsoft Entra ID Admin Console"
+sidebarTitle: "Configure User Sync in Microsoft Entra ID Admin Console"
+description: "This document provides step-by-step instructions to configure User Sync for Entra ID in Entra ID Admin Console."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+  - "Workflow"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+  - "workflow/workflow"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "9807063"
+  url: "https://oloid.help/en/articles/9807063-how-to-configure-user-sync-in-microsoft-entra-id-admin-console"
+  collection: "Oloid Workflow"
+  section: "Accounts"
+  updatedAt: "2026-07-30T10:13:50Z"
+  migratedAt: "2026-08-13T09:16:28.691986+00:00"
+---
+## Introduction
+
+This document provides instructions to configure Microsoft Entra ID for user synchronization with Oloid.
+
+## Prerequisite
+
+You must have admin access for Microsoft Entra ID Admin console.
+
+## Steps to Configure Microsoft Entra ID for User Sync
+
+1. [Register an Application](#h_124ba484ca)
+2. [Configure the Application](/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console)
+3. [Create Client Secret](#h_a7106b964d)Microsoft Entra ID is configured Successfully.
+
+## Register an Application
+
+1. Log in to Azure Portal and select **Microsoft Entra ID** on the home page. ![](/images/13607433/c59e9f199b4f.png) The Microsoft Entra ID page is displayed.
+2. Go to **Overview >** **Manage** **> App registrations > New registration**. ![](/images/13607433/428b5534ff8f.png) The Register an application page is displayed.
+3. Do the following.Enter **Name**.Select Supported account types as **Single tenant only - Oloid AzureAD**.Click **Register**. ![](/images/9807063/bdc8dfdaee7c.png) The application is registered successfully.
+
+## Configure the Application
+
+1. Navigate to the **newly registered app >** **API permissions >** **Add a permission > Microsoft Graph.** ![](/images/13607433/df5fb3f03372.png) The **Request API permissions** pop-up box is displayed.
+2. Select **Application permissions**. ![](/images/13607433/1a32b679a439.png) The **Request API permissions** screen is displayed.
+3. On **User** drop-down, select **User.Read.All.**
+4. Click **Add permissions**. ![](/images/9807063/3134b61faf6e.png) The API is added in the list.
+5. Click **Grant admin consent for Oloid-AzureAD.** ![](/images/9807063/ff5630e2b38c.png) The **Grant admin consent confirmation** pop-up box is displayed.
+6. Click **Yes**. ![](/images/9807063/63857580db14.png) The API is added successfully. ![](/images/9807063/9b59eaf3ab88.png)
+
+## Create Client Secret
+
+1. Go to **Certificates & secrets** > **Client Secrets > + New client secret**. ![](/images/9807063/0cad779e9188.png) The **Add a client secret** screen is displayed.
+2. Do the following:Enter **Description**.Select the **Expires** duration from the drop-down list.**Note:** Select a key duration (preferably the max available).Click **Add**. ![](/images/9807063/6b96a0029fb6.png) The **Client Secret** is added successfully and listed on **Client Secret** tab.**Note:** Click on the **Copy to Clipboard**icon next to the value field to copy the secret. This option is available only at the time of creation. ![](/images/9807063/66b8b8076396.png) The application is configured successfully.
+3. Share the **Application (client) ID**, **Directory (tenant) ID,** and **Client Secret** with Oloid support. ![](/images/9807063/dc88544eca1a.png)
+
+### Related Article
+
+[Tenant Admin Portal - How to Configure User Sync for Azure | Oloid Help Center](https://oloid.help/en/articles/16107870-tenant-admin-portal-how-to-configure-user-sync-for-azure)
+
+---
+
+<Tip>
+  **Keywords:** Microsoft Entra ID User Sync Configuration · Azure User Sync
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Integrating Oloid as an External Method Authentication (EAM) with Microsoft Entra ID" icon="arrow-right" href="/resources/integrations/sso/integrating-oloid-as-an-external-method-authentication-eam-with-microsoft-entra-id" />
+  <Card title="Tenant Admin Portal - How to Configure System for Cross-Domain Identity Management (SCIM)" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-system-for-cross-domain-identity-management-scim" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+  <Card title="How to Configure Advanced User Sync for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Advanced User Sync in Microsoft Entra ID Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console" />
+</CardGroup>

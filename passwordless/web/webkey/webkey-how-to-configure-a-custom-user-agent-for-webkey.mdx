@@ -1,0 +1,61 @@
+---
+title: "Webkey – How to Configure a Custom User Agent for Webkey"
+sidebarTitle: "How to Configure a Custom User Agent for Webkey"
+description: "This document provides step-by-step instructions to configure Custom User Agent in WebKey Application."
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "11659241"
+  url: "https://oloid.help/en/articles/11659241-webkey-how-to-configure-a-custom-user-agent-for-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-06-09T10:21:27Z"
+  migratedAt: "2026-08-13T09:16:09.034198+00:00"
+---
+**Pre-requisite:**
+
+You must create a Passwordless application of type WebKey. For further details, refer [How to create a WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal).
+
+## Steps to configure Custom User Agent:
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click on the Webkey application to edit. ![](/images/10800135/d5355d7e2b98.png) The application page is displayed. ![](/images/10800566/ad0013bfda59.png)
+3. Go to **Configure tab**> **Settings** > **Browser** **Settings**. ![](/images/11659241/48d77312e813.png)
+4. Enable **Custom User Agent** to allow users to log in to WebKey app from custom browsers.
+5. Enter the custom browser’s user agent name in **Type user agent header** field.
+6. Click **Save**.**Note:**Agent browser should be configured for User agent. Reach out to [Oloid Support](mailto:support@oloid.ai) for details. ![](/images/11659241/342660e314ac.png)
+7. Click **Add Device**. ![](/images/11659241/c501facb445f.png) The**Upload File to Add Device** Pop up box is displayed. ![](/images/11659241/2f56fdcf867a.png)
+8. Do the following:[Bulk upload the devices](#h_9b8dea7d83)[Add individual devices](#h_ed9704551b)The Custom User Agent is configured for the added devices.
+
+## Bulk upload the devices.
+
+1. Drag and drop the**.XLSX** or **.CSV**file to bulk upload the devices.**Note:**You can download the templates by clicking on the respective download links. ![](/images/11659241/2f6ba90c679c.png) The XLSX or CSV template file is downloaded to your system.
+2. Prepare the XLSX or CSV template file for upload.**Note:**To prepare the user upload template, refer [How to prepare User Upload Template](/administration/admin-portal/tenant-admin-portal-how-to-prepare-user-upload-template).
+3. Drag and drop the file or click on the **Import .XLSX** or**.CSV file** area to upload your prepared XLSX or CSV file. ![](/images/11659241/0c7753ff4d94.png)
+4. Select **Upload** **File**. ![](/images/11659241/13f96613fa82.png)
+
+The file is uploaded in the **Upload** section.
+
+## Add individual devices
+
+1. Enter**Device ID (Kiosk/Terminal ID)**.
+2. Enter**Mac Address**.
+3. Click**Add**. ![](/images/11659241/7f1d5122c03f.png) The device is added successfully in the list with their Device ID and MAC Address. You can update deviceinformation or remove the device:**Edit Device information** – Select the pencil icon to update the device information.**Remove Device** – Select the trash icon to remove the device from the list. ![](/images/11659241/acadcc34ed22.png)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey - How to Configure Theme tab for Webkey Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-theme-tab-for-webkey-application-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to edit Configure tab" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-edit-configure-tab" />
+  <Card title="WebKey - How to configure Face credential in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-face-credential-in-tenant-admin-portal" />
+  <Card title="Webkey - How to configure QR Code credential for Webkey in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-qr-code-credential-for-webkey-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to configure PIN credential for Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-configure-pin-credential-for-webkey" />
+</CardGroup>

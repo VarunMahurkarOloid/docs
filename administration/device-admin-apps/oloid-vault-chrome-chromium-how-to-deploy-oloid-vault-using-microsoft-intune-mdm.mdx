@@ -1,0 +1,78 @@
+---
+title: "Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using Microsoft Intune (MDM)"
+sidebarTitle: "Microsoft Intune (MDM)"
+description: "This document provides step-by-step instructions to deploy Oloid Vault using Microsoft Intune (MDM)."
+icon: "tablet-screen-button"
+tags:
+  - "Administration"
+  - "Device Admin Apps"
+  - "Passwordless"
+  - "Web"
+  - "Chrome Vault"
+categories:
+  - "administration/device-admin-apps"
+  - "passwordless/web/chrome-vault"
+primaryCategory: "administration/device-admin-apps"
+navPath: "Administration > Device Admin Apps"
+source:
+  system: "intercom"
+  articleId: "15689334"
+  url: "https://oloid.help/en/articles/15689334-oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-microsoft-intune-mdm"
+  collection: "Oloid Chrome Vault"
+  section: "Chrome Vault - Getting Started"
+  updatedAt: "2026-07-22T09:58:07Z"
+  migratedAt: "2026-08-13T09:16:18.569610+00:00"
+---
+## Introduction
+
+This document explains how to deploy **Oloid Vault for Chrome/Chromium** using **Microsoft Intune (MDM)**. It covers importing the required ADMX administrative template, creating a configuration profile, configuring the Oloid Vault extension settings, applying the managed configuration (Autopair key), and assigning the profile to target devices.
+
+## Prerequisites
+
+- You must have admin access to the Microsoft Intune Admin Center.
+- You must have **ADMX** and **ADML** template files.**Note:** Contact [Oloid Support](mailto:support@oloid.ai) to get ADMX and ADML files.
+- You must download/copy the **AutoPairConfig.txt** file from the Tenant Admin Portal. For more information, refer [Oloid Vault (Chrome / Chromium)- How to Generate and Download Auto-Pair Config File in the Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/oloid-vault-chrome-chromium-how-to-generate-and-download-auto-pair-config-file-in-the-tenant-admin-portal).
+
+## Steps to Deploy Oloid Vault (Chrome/Chromium) via Microsoft Intune
+
+1. [Import ADMX Template](#h_4ab1d441c3)
+2. [Create Configuration Profile](#h_c3ea3cea27)
+
+## Import ADMX Template
+
+1. Log in to **Microsoft Intune Admin Account**.The Microsoft Intune home page is displayed.
+2. Select **Devices**. ![](/images/15689334/bb1d9214b977.png) The **Devices** page is displayed.
+3. Click **Windows**. ![](/images/15689334/eb5e5bfab645.png) The **Windows devices** screen is displayed.
+4. Go to **Manage devices**>click**Configuration**. ![](/images/15689334/24bddff03bd7.png) The **Configuration** screen is displayed.
+5. Click **Import ADMX**. ![](/images/15689334/0b7e70a3fa5e.png) The **Import ADMX** screen is displayed.
+6. Click **+Import**. ![](/images/15689334/556b99920417.png) The Import settings screen is displayed.
+7. On **ADMX file upload**tab, do the following:Select **ADMX file**.Select **ADML file for the default language**.**Note:** Contact [Oloid Support](mailto:support@oloid.ai) to get the ADML and ADML files.Click **Next**. ![](/images/15689334/ab403c85f7bc.png) The **Review + create** tab is displayed.
+8. On **Review + create** tab, click **Create**. ![](/images/15689334/39869cdb1991.png) The ADMX file is created and added in the Import ADMX list.
+
+## Create Configuration Profile
+
+1. Navigate to **Devices > Windows > Manage devices > Configuration**.The Configuration page is displayed.
+2. Click **Create** > **New Policy**. ![](/images/15689334/3196354896db.png) The **Create a profile** screen is displayed.
+3. Do the following:Select **Windows 10 and later** as Platform.Select **Templates** as Profile type.Select **Imported Administrative templates** as Template.Click **Create**. ![](/images/15689334/47e195f1da17.png) The **Create Profile** screen is displayed.
+4. On **Basics** tab, do the following:Enter **Name**.Enter **Description** (Optional).Click **Next**. ![](/images/15689334/24e11bf1bddb.png) The **Configuration settings** tab is displayed.
+5. On **Configuration settings** tab, do the following:Select **Computer Configuration**>**Oloid Vault**. ![](/images/15689334/539701ee3125.png) Select **Google Chrome** > **Settings**.**Note:** To deploy Oloid Vault for **Microsoft Edge**, select **Microsoft Edge**. ![](/images/15689334/69d4a8512310.png) Configure both the settings as follows:Click **AutoPair Configuration**.**Note:** This setting is used to automatically pair Oloid Vault with the Oloid tenant during deployment.The **AutoPair Configuration** pop-up box is displayed.Select one of the following:Enabled**Note:** If enabled is selected, in the **Configuration (base64)** field, enter the Base64-encoded AutoPair configuration key. To generate and download the Auto-Pair configuration key, refer to [Oloid Vault (Chrome / Chromium)- How to Generate and Download Auto-Pair Config File in the Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/oloid-vault-chrome-chromium-how-to-generate-and-download-auto-pair-config-file-in-the-tenant-admin-portal). DisabledNot configured**Note:** If you select **Disabled** or **Not Configured**, you must manually pair the Oloid Vault application after installation.Click **OK**. ![](/images/15689334/93da2bbc7fc2.png) Click **Extension**.**Note:** This setting is used to automatically install and pin the Oloid Vault extension in Google Chrome/Chromium during deployment.The **Extension** pop-up box is displayed.Select one of the following:EnabledDisabledNot configuredClick **OK**. ![](/images/15689334/5066848ce8a1.png) Click **Next**. ![](/images/15689334/3d58d157f18e.png) The **Scope tags** tab is displayed.
+6. On **Scope tags**, click **Next**. ![](/images/15689334/9b5bed350235.png) The **Assignments** tab is displayed.
+7. On **Assignments** tab, do the following.Click **Add groups** to assign this profile to your target device groups.**Note:** Click **+ Add all devices** to apply to all enrolled devices. ![](/images/15689334/329dd65c37d0.png) The **Select groups to include** pop-up box is displayed.Do the following.Select the **group(s**) from the list.**Note:** You can select multiple groups.Click **Select**. ![](/images/14685443/68e25eddea89.png) The **Group** is added in the list.Click **Next**. ![](/images/15689334/324e29922fe7.png) The Assignment tab is configured successfully and Review + create tab is displayed.
+8. On the Review + create tab, review the summary and confirm the following:**Force-install and pin settings (Google Chrome)** is Enabled.**Managed configuration (Google Chrome)** is Enabled.Correct group is assigned.
+9. Click **Create**. ![](/images/15689334/7f8a57258712.png) The Configuration profile is created successfully.
+
+---
+
+<Tip>
+  **Keywords:** Deploy Oloid Vault through Microsoft Intune
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Vault (Chrome / Chromium)- How to Set Up and Use" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-set-up-and-use" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Add Connections in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-add-connections-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Lock the Browser" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-lock-the-browser" />
+  <Card title="Set up Oloid DeviceLock on Android using Microsoft Intune (MDM)" icon="arrow-right" href="/passwordless/android/devicelock/set-up-oloid-devicelock-on-android-using-microsoft-intune-mdm" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using ManageEngine Endpoint Central (MDM)" icon="arrow-right" href="/administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-manageengine-endpoint-central-mdm" />
+</CardGroup>

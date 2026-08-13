@@ -1,0 +1,77 @@
+---
+title: "Setting up and using Windows Login"
+sidebarTitle: "Setting up and using Windows Login"
+description: "Setting up and using Windows Login"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "9382300"
+  url: "https://oloid.help/en/articles/9382300-setting-up-and-using-windows-login"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v1 - Installation and Deployment"
+  updatedAt: "2025-01-31T10:17:18Z"
+  migratedAt: "2026-08-13T09:16:26.406516+00:00"
+---
+Oloid's Windows login is a secure and user-friendly application that allows Enterprise employees to log into Windows Laptops/Desktops/Servers and Workforce/HRMS Platform using physical identity factors (like Face, Badge, NFC tags, and PIN). The Physical Identity factors can be combined in any order using factor sequencing for Multi-factor Authentication.
+
+This application is especially useful for factory workers, warehousing staff, supply chain operations, pharmacy chains, etc. where large number of employees use shared devices using shared credentials. These credentials are shared among all employees and even after the employee leaves remain the same. This creates security threat. With Oloid’s Passwordless solution for Windows, employees do not need to know their username and password, and their access is immediately deactivated, the day they leave. The access can be easily enabled on the day a new employee joins.
+
+## Installation and Configuration
+
+The Windows Device Login is installed and configured in the device using the Supervisor app.
+
+- Download and Install the Supervisor App
+- Configure the Supervisor App
+
+For details see, [Setting up and using Supervisor App](/passwordless/windows/supervisor/setting-up-and-using-supervisor-app) guide.
+
+## Platform Configuration
+
+## Initial Set up
+
+- Set up Application and Connection
+- Create user and assign user to connection.
+
+Refer to [Platform Configuration for initial Windows Login Set up](/passwordless/windows/passwordless/windows-login-platform-configuration-for-initial-windows-login-set-up)
+
+## Credential Set up
+
+This is based on client requirements. Oloid's Windows login functions with a single factor (like Face, Badge, NFC tags, and PIN) or a combination of factors ( **Badge +PIN** and **NFC +PIN**).
+
+Set up the following based on your need:
+
+- Onboard User Faces. Refer [Face Onboarding](/administration/user-portal/face-onboarding) guide.
+- Create Badges and assign it to users. Refer [Badge Onboarding](/administration/user-portal/badge-onboarding) guide.
+- Create NFC and assign it to users. Refer [NFC Onboarding](/administration/user-portal/nfc-onboarding) guide.
+- Create PIN and assign it to users. Refer [PIN Onboarding](/administration/user-portal/pin-onboarding) guide.
+- Create Passwords ( Individual Domain and Individual Local). Refer [How to create Password for Windows Login](/passwordless/windows/passwordless/how-to-create-password-for-windows-login) guide
+- Create Shared Credentials (Shared Domain and Shared Local) and assign it to users. Refer [How to create Shared credentials and assign it to users](https://oloid.help/en/articles/8644776-how-to-create-shared-credentials-and-assign-it-to-users) guide.
+
+Refer to  [Credential set up using Oloid Platform - Windows Login](/passwordless/windows/passwordless/windows-login-credential-set-up-using-oloid-platform) guide.
+
+The credential setup is also done using the Supervisor App. Refer to [Credential Management - Supervisor App](https://oloid.help/en/collections/8743863-credential-management-supervisor-app)
+
+## Use
+
+- [How to log in to Windows device using Badge through Windows Login app](/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge)
+- [How to log in to Windows device using face through Windows Login app](/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-face)
+- [How to log in to Windows device using Badge and PIN through Windows Login app](/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-and-pin)
+- [How to log in to Windows device using Username and Face](/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-username-and-face)
+- [How to log in to Windows device using NFC and PIN through Windows Login app](/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-nfc-and-pin)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Setting up and using Oloid Device Lock" icon="arrow-right" href="/passwordless/android/devicelock/setting-up-and-using-oloid-device-lock" />
+  <Card title="Windows Login - Credential set up using Oloid Platform" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-credential-set-up-using-oloid-platform" />
+  <Card title="Windows Login - How to log in to Windows device using NFC and PIN" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-nfc-and-pin" />
+  <Card title="Setting up and using Oloid Connect for Passwordless" icon="arrow-right" href="/passwordless/ios/connect/setting-up-and-using-oloid-connect-for-passwordless" />
+  <Card title="Windows Login - Credential Onboarding" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-credential-onboarding" />
+</CardGroup>

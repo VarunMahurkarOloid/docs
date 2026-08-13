@@ -1,0 +1,72 @@
+---
+title: "Windows Login - How to create device-admin passcode for Supervisor App"
+sidebarTitle: "Windows Login - How to create device-admin passcode for…"
+description: "This document provides step-by-step instructions to create a Device-Admin Passcode for the Supervisor App in the Tenant Admin Portal."
+icon: "tablet-screen-button"
+tags:
+  - "Administration"
+  - "Device Admin Apps"
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "administration/device-admin-apps"
+  - "passwordless/windows/supervisor"
+primaryCategory: "administration/device-admin-apps"
+navPath: "Administration > Device Admin Apps"
+source:
+  system: "intercom"
+  articleId: "9244629"
+  url: "https://oloid.help/en/articles/9244629-windows-login-how-to-create-device-admin-passcode-for-supervisor-app"
+  collection: "Supervisor App"
+  section: "Platform Configuration - Supervisor App"
+  updatedAt: "2026-08-07T07:43:52Z"
+  migratedAt: "2026-08-13T09:16:25.702908+00:00"
+---
+## Introduction
+
+The Device-Admin Passcode (Master Admin Override Passcode) provides an administrative override that allows authorized personnel to access administrative functions on a Windows endpoint when standard authentication is unavailable. This passcode is configured at the application level and is used by the Supervisor App when required.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- Ensure Windows Login application is created in the Tenant Admin Portal.
+
+## Steps to Create Device-admin Passcode:
+
+1. Log in to the Tenant Admin Portal.The Application Detail page is displayed.
+2. Select the application that is configured in the Supervisor App. ![](/images/9215874/ab1f40d15779.png) The Application Details page is displayed.
+3. Select **Configure**tab> click **Settings**. ![](/images/9244629/a8fbc64877d1.png) The configuration page is displayed.
+4. Do the following:Enter the **Master Admin Override Passcode**.Click **Save**.
+
+<Frame>
+  <img src="/images/9244629/643a633be8bd.png" alt="Screenshot" />
+</Frame>
+
+The Device-Admin Passcode is created successfully and the application settings are updated.
+
+<Frame>
+  <img src="/images/9244629/e1ad05307589.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch our video **[How to create device-admin passcode for Supervisor App- Video Tutorial.](/administration/device-admin-apps/how-to-create-device-admin-passcode-for-supervisor-app-video-tutorial)**
+
+---
+
+<Tip>
+  **Keywords:** Device-Admin Passcode · Master Admin Override Passcode · Supervisor App · Windows Login Configure passcode
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Set credential preferences for Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-set-credential-preferences-for-supervisor-app" />
+  <Card title="Windows Login - How to Enable Add/Delete Users in Tenant Admin Portal for Supervisors" icon="arrow-right" href="/administration/admin-portal/windows-login-how-to-enable-add-delete-users-in-tenant-admin-portal-for-supervisors" />
+  <Card title="Windows Login - How to Enable Enroll Badge Option for Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enable-enroll-badge-option-for-supervisor-app" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to delete users using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-delete-users-using-supervisor-app" />
+</CardGroup>

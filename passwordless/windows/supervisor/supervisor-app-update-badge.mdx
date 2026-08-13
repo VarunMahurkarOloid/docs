@@ -1,0 +1,64 @@
+---
+title: "Windows Login - How to Update Badge"
+sidebarTitle: "Windows Login - How to Update Badge"
+description: "This document provides step-by-step instructions to update Badge in Windows Login Supervisor App."
+icon: "eye"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "passwordless/windows/supervisor"
+primaryCategory: "passwordless/windows/supervisor"
+navPath: "Passwordless > Windows > Supervisor"
+source:
+  system: "intercom"
+  articleId: "11580899"
+  url: "https://oloid.help/en/articles/11580899-supervisor-app-update-badge"
+  collection: "Supervisor App"
+  section: "Credential Management - Supervisor App"
+  updatedAt: "2026-08-13T08:10:08Z"
+  migratedAt: "2026-08-13T09:16:08.843944+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions for updating a user's badge in the Supervisor App. You can update the badge number manually or scan a badge using a connected badge reader.
+
+## Prerequisites
+
+- Ensure the endpoint is paired with the Windows Login application. For more information, refer: [Windows Login - How to manually pair the Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-manually-pair-the-supervisor-app)
+- Log in to the Supervisor App using an Admin or Supervisor account. For more, refer [How to log in to Supervisor App](/passwordless/windows/supervisor/how-to-log-in-to-supervisor-app)
+- Ensure the Badge option is enabled for the application in the Tenant Admin Portal to make the Enroll Badge option available in the Supervisor App. Refer to **[How to enable badge option for Supervisor App.](/passwordless/windows/supervisor/windows-login-how-to-enable-enroll-badge-option-for-supervisor-app)**
+- Ensure a supported badge reader is connected to the system.
+- Ensure the user exists in the Tenant Admin Portal. Refer: [Windows Login - How to Add a User](/passwordless/windows/supervisor/windows-login-how-to-add-a-user)
+- The badge must be assigned to the user. For more details, refer [Supervisor App: Assign Badge](/passwordless/windows/supervisor/windows-login-how-to-enroll-assign-badge).
+
+## Steps to Update Badge:
+
+1. Log in to **Supervisor App**. For more, refer [How to log in to Supervisor App](/passwordless/windows/supervisor/how-to-log-in-to-supervisor-app)The **Admin Home** screen is displayed.
+2. On the Admin Home screen, select **User Management**. ![](/images/11580899/b7be252b2708.png) The**Users**screen is displayed.
+3. Select the user to view details. ![](/images/11580899/508a929190e0.png) The User details screen is displayed.
+4. Select **Badge**tab.
+5. Do one of the following: Click the **Edit Icon** to update badge. ![](/images/11580899/94098c91e845.png) The Edit Badge pop-up box is displayed. Do the following: Edit or Enter the **Badge number**Select **Weigand format** from dropdown. Click **Save.** ![](/images/11580899/2590d8d7fa56.png) **(OR)** Click **Scan Badge to Edit.** ![](/images/11580899/5d5b63cc1493.png) The **Scan Badge to Edit** pop-up box is displayed.Do the following: Tap the **Badge** on the **Reader** to scan it.**Note:**Badge reader must be connected to the system.Click **Save.** ![](/images/11580899/2a42bf088c23.png)
+
+The **Badge**is updated successfully.
+
+<Frame>
+  <img src="/images/11580899/4cb3101193fd.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Windows Login update badge · Edit badge · Assign badge · How to update user badge
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enroll Badge and PIN using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll / Assign Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-assign-badge" />
+  <Card title="Windows Login - How to Enroll Badge using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge" />
+  <Card title="Windows Login - How to log in to Windows device using Badge and Password" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-and-password" />
+</CardGroup>

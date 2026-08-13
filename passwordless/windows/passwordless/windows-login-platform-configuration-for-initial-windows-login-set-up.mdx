@@ -1,0 +1,56 @@
+---
+title: "Windows Login - Platform Configuration for initial Windows Login Set up"
+sidebarTitle: "Windows Login - Platform Configuration for initial…"
+description: "Windows Login - Platform Configuration for initial Windows Login Set up"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "9413193"
+  url: "https://oloid.help/en/articles/9413193-windows-login-platform-configuration-for-initial-windows-login-set-up"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:23:02Z"
+  migratedAt: "2026-08-13T09:16:26.456112+00:00"
+---
+For Oloid's Windows Login to function, it needs to be configured in the Oloid Platform.
+
+## Initial set up
+
+## Step 1: Set up Application and Connection
+
+1. Create and Configure Windows Login Application. Refer to [How to create and configure Windows Login application](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal) guide.
+2. Create Connections. Refer to [How to create Connections](/administration/admin-portal/tenant-admin-portal-how-to-create-connection)
+
+## Step 2: Map Connections to Applications.
+
+Once both Application and Connection are created, you need to map the Connection to the Application.
+
+Refer to [How to Map Connection to Application](/administration/admin-portal/how-to-map-connections-to-an-application-in-the-tenant-admin-portal)
+
+## Step 3: Create user and assign user to connection.
+
+Create users and assign users to connections in Oloid Portal. Refer to [User Onboarding](/resources/guides/user-onboarding-for-oloid-portal) guide.
+
+## Step 4: Enable Authenticator factors
+
+Based on the requirement , enable authenticator factors in the tenant application. Refer to [How to create and configure Windows Login application](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal) > [Configure Authenticator tab](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Setting Up Application and Connections for Passwordless Login in the Oloid Connect Application" icon="arrow-right" href="/passwordless/ios/connect/setting-up-application-and-connections-for-passwordless-login-in-the-oloid-connect-application" />
+  <Card title="Webkey – How to Configure Platform Settings for Initial Webkey Setup" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-configure-platform-settings-for-initial-webkey-setup" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Setting up and using Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/setting-up-and-using-windows-login" />
+  <Card title="Windows Login - How to Configure Badge ID for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-badge-id-for-windows-login" />
+</CardGroup>

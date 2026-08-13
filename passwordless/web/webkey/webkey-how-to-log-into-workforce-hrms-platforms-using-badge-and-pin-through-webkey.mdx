@@ -1,0 +1,92 @@
+---
+title: "Webkey - How to log into Workforce /HRMS platforms using Badge and PIN through Webkey"
+sidebarTitle: "Webkey - How to log into Workforce /HRMS platforms using Badge and PIN through…"
+description: "This document provides step-by-step instructions for logging in with badge and PIN to Workforce / HRMS platform."
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+categories:
+  - "passwordless/web/webkey"
+  - "resources/integrations/hrms"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "8611424"
+  url: "https://oloid.help/en/articles/8611424-webkey-how-to-log-into-workforce-hrms-platforms-using-badge-and-pin-through-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Using WebKey"
+  updatedAt: "2026-08-10T09:08:56Z"
+  migratedAt: "2026-08-13T09:16:23.262426+00:00"
+---
+## Introduction
+
+Users must first authenticate by scanning their registered badge and then verify their identity using their PIN before being signed in to the configured Workforce or HRMS platform.
+
+## Prerequisites
+
+- You must have an Okta account.
+- The Okta credential must be added to the user detail page. For more details, refer [How to configure user details](/administration/admin-portal/tenant-admin-portal-how-to-configure-user-details)
+- In the Tenant Admin Portal, you must do the following:Assign badge to the user. For more details, refer [How to assign Badge ID as credential to users](/administration/admin-portal/how-to-assign-badge-id-as-credential-to-users)Add a PIN for the user. For more details, refer [How to add PIN as credential to users](/administration/admin-portal/how-to-add-pin-as-a-credential-for-users)Enable Badge and PIN options under the WebKey Application. For more details, refer [How to create and configure Webkey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+## Steps to Log in using Badge
+
+1. Launch the **Webkey**Application URL in your browser.
+2. On the home page of the app, select **Login with Badge**.**Note:**You can select preferred display language from the **Language Dropdown Selector**. For more information, refer [Additional information section](#h_438997cbf4). ![](/images/13597429/1b691d7608ac.png) The **Scan Badge at the Reader**screen is displayed.
+3. Tap the **Badge** on the **Reader** to scan it. ![](/images/13597429/a277175b585b.png) On Badge authentication, the **Type or Scan PIN**screen is displayed.
+4. Do any of the following:Enter **PIN**.Tap the card that contains the PIN on the **Reader** to scan it.**Note:**The Reader should be connected to your system.
+5. Enter the **PIN**.
+6. Click **Submit**.
+
+<Frame>
+  <img src="/images/8611424/2828f39a0c9b.png" alt="Screenshot" />
+</Frame>
+
+On PIN authentication, you are signed in to the **Workforce /HRMS** platform.
+
+<Frame>
+  <img src="/images/10454981/fdf1820138c5.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### Additional Information
+
+**WebKey** now supports multiple language versions, allowing users to select their preferred display language from the **Language Dropdown Selector** on the Login screen.
+
+**Note:** Languages supported: English, Spanish, French, German, and Portuguese language.
+
+#### Sample Screen
+
+The display language updates based on the selected language. The following sample shows the WebKey application in German.
+
+<Frame>
+  <img src="/images/8611424/c6ed690f89db.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch the video [How to log into Workforce Management platforms using Badge and PIN through WebKey - Video Tutorial](/passwordless/web/webkey/how-to-log-into-workforce-management-platforms-using-badge-and-pin-through-webkey-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** Login with Badge and PIN · Badge and PIN authentication · Webkey Badge and PIN login · Workforce login using Badge and PIN
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Log in to Workforce/HRMS Platforms using Badge ID and PIN Credentials through Oloid DeviceLock app" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-in-to-workforce-hrms-platforms-using-badge-id-and-pin-credentials-through-oloid-devicelock-app" />
+  <Card title="How to Log into Workforce/HRMS Platforms using NFC ID and PIN through the Oloid DeviceLock App" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-into-workforce-hrms-platforms-using-nfc-id-and-pin-through-the-oloid-devicelock-app" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using Password through WebKey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-password-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using NFC/ID and PIN in Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-nfc-id-and-pin-in-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Badge through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-badge-through-webkey" />
+</CardGroup>

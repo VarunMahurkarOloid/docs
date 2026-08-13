@@ -1,0 +1,84 @@
+---
+title: "Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (EU) Environment"
+sidebarTitle: "PROD (EU) Environment"
+description: "Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (EU) Environment"
+icon: "user"
+tags:
+  - "Administration"
+  - "User Portal"
+categories:
+  - "administration/user-portal"
+primaryCategory: "administration/user-portal"
+navPath: "Administration > User Portal"
+source:
+  system: "intercom"
+  articleId: "15128135"
+  url: "https://oloid.help/en/articles/15128135-platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-eu-environment"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Getting Started"
+  updatedAt: "2026-05-18T05:24:06Z"
+  migratedAt: "2026-08-13T09:16:17.287208+00:00"
+---
+## Introduction
+
+This document lists the **domain URLs that must be whitelisted** in the customer network to allow Oloid products to function correctly.
+
+Whitelisting these URLs ensures proper connectivity for the **Oloid platform, authentication services, APIs, and supporting infrastructure**.
+
+Allow **outbound HTTPS traffic (Port 443)** to the domains listed below.
+
+---
+
+## Product Information
+
+| **Field** | **Value** |
+|---|---|
+| Product Name | Platform Portal and User Portal |
+| Protocol | HTTPS |
+| Port | 443 |
+| Direction | Outbound |
+
+---
+
+Use the following table for URL whitelisting.
+
+| **Service** | **PROD (EU)** |
+|---|---|
+| Admin API & Platform Portal | oloid-eu.com |
+| Tenant platform portal | \<tenantname>.oloid-eu.com |
+| Admin API | api.oloid-eu.com |
+| System Admin API | sysadminapi.oloid-eu.com |
+| Tenant S3 bucket | \<tenantname>\<tenantid>.s3.eu-west-1.amazonaws.com |
+| Oloid document bucket | oloiddocument-eu-prod.s3.eu-west-1.amazonaws.com |
+| Amazon Cognito IDP | cognito-idp.eu-west-1.amazonaws.com​ |
+| Amazon Cognito Identity | cognito-identity.eu-west-1.amazonaws.com |
+| Google Maps API | maps.googleapis.com |
+| Oloid Help | oloid.help |
+| GraphQL API | graphql-\<tenantname>.oloid-eu.com |
+| Passwordless Authentication | \<tenantname>.oloidsso-eu.com |
+| User API & Portal | api.myoloid-eu.com |
+| Tenant User Portal | \<tenantname>.myoloid-eu.com |
+
+---
+
+#### Notes
+
+- Replace **\<tenantname>** and **\<tenantid>** with your organization's Tenant name and Tenant ID.
+- Enter the **\<tenantname>** and **\<tenantid>** values in lowercase only.
+- Contact [Oloid Support](mailto:support@oloid.ai), if you do not have the **\<tenantname>** and **\<tenantid>** details.
+
+---
+
+<Tip>
+  **Keywords:** Platform Portal/User Portal Whitelisting URLs · Oloid network Whitelisting for PROD (EU) Environment
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - Network URL Whitelisting Requirements" icon="arrow-right" href="/passwordless/verify/oloid-verify-network-url-whitelisting-requirements" />
+  <Card title="Platform Portal and User Portal – Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-preview-uat-environment" />
+  <Card title="Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Windows Login 1.0 – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-1-0-network-url-whitelisting-requirements-for-prod-eu-environment" />
+  <Card title="Webkey – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-eu-environment" />
+</CardGroup>

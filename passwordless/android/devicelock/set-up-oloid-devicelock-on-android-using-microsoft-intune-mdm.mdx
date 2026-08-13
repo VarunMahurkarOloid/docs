@@ -1,0 +1,237 @@
+---
+title: "Set up Oloid DeviceLock on Android using Microsoft Intune (MDM)"
+sidebarTitle: "Set up Oloid DeviceLock on Android using Microsoft Intune…"
+description: "This document provides step-by-step instructions to setup the Devicelock app using Microsoft Intune (MDM)."
+icon: "lock-keyhole"
+tags:
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+  - "Administration"
+  - "Device Admin Apps"
+categories:
+  - "passwordless/android/devicelock"
+  - "administration/device-admin-apps"
+primaryCategory: "passwordless/android/devicelock"
+navPath: "Passwordless > Android > Devicelock"
+source:
+  system: "intercom"
+  articleId: "14685443"
+  url: "https://oloid.help/en/articles/14685443-set-up-oloid-devicelock-on-android-using-microsoft-intune-mdm"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Oloid Device Lock - Supporting Documents"
+  updatedAt: "2026-05-06T05:24:06Z"
+  migratedAt: "2026-08-13T09:16:16.340551+00:00"
+---
+## Introduction
+
+This document explains how to set up the **Oloid DeviceLock app** on Android devices using **Microsoft Intune (MDM)**. It covers device enrollment, app installation, auto-pair configuration, and kiosk mode setup to enable secure and managed device usage.
+
+Once configured, devices are enrolled in Intune, the DeviceLock app is installed and paired automatically, and kiosk mode ensures the device runs only the configured application.
+
+## Prerequisites
+
+- You must have access to the **Microsoft Intune Admin Center**.
+- The **AutoPairConfig.json** file must be downloaded from the Tenant Admin Portal, to generate refer [How to Generate Auto-Pair Config File for Oloid DeviceLock App in the Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/devicelock-app-how-to-generate-auto-pair-config-file-in-the-tenant-admin-portal).
+- The **Oloid DeviceLock application** must be created and configured in the Tenant Admin Portal.
+
+## Steps to Enroll and Set up the Oloid DeviceLock app using Microsoft Intune (MDM)
+
+1. [Enroll Device and Install Oloid DeviceLock App](#h_3818198c3f)
+2. [Configure AutoPair](#h_6ea43fa5c6)
+3. [Configure Managed Home Screen in Kiosk Mode](#h_61dfbc7460)The DeviceLock app is successfully setup through Microsoft Intune.
+
+## Enroll Device and Install Oloid DeviceLock App
+
+1. [Create an Intune Device Group](#h_01a42db067)
+2. [Create Device Enrolment Profile](#h_8aedbab8f4)
+3. [Add the DeviceLock Android App](#h_51884cc9fb)
+4. [Add the DeviceLock Private App to Managed Google Store](#h_f8e73dee4a)The DeviceLock is successfully enrolled and installed.
+
+### Create an Intune Device Group
+
+This section explains how to create a dynamic device group in Microsoft Intune. The group automatically includes devices enrolled using a specific enrollment profile, enabling easier app and configuration assignment for DeviceLock setup.
+
+Do the following.
+
+1. Log in to **Microsoft Intune Admin Account**.The Microsoft Intune home page is displayed.
+2. Select **Groups**. ![](/images/14685443/8edafc1af628.png) The **Groups|Overview** page is displayed.
+3. Click **New group** to create a new group for Intune users and devices. ![](/images/14685443/e7b3c8b05d06.png) The **New Group** page is displayed.
+4. Do the following.In Grouptype, select **Security**.Enter**Group name.**Enter**Group Description**(Optional). In Membership type, select **Dynamic Device.** **Note:** Anyone can scan the QR code and enroll device.Click **Add dynamic query**. ![](/images/14685443/a4ab74fdbfc6.png) The **Dynamic Membership rules** page is displayed.
+5. Click Configure rules and do the following:In Property, select **enrollmentProfileName**.In Operator, select **Equals**.Enter **Value**.**Note:** This will be the name of the Device Enrollment Profile which we will create in the next step.Click **Save**. ![](/images/14685443/4c7501d11b2e.png) The **New Group** page is displayed.
+6. Click **Create**. ![](/images/14685443/f6f6db640c71.png) The Group is created successfully.
+7. Go to **Groups | Overview**, click the **number** to the right of **Dynamic groups** to view all the Dynamic groups. ![](/images/14685443/8ef97d94620e.png) The **All groups** page is displayed.
+8. The newly group is added in the list. ![](/images/14685443/dff943975ba0.png) The Device Group is successfully created.
+
+### Create Device Enrolment Profile
+
+This section explains how to create an Android enrollment profile in Microsoft Intune for corporate-owned dedicated devices.
+
+Do the following.
+
+1. Go to **Microsoft Intune Admin Centre** home page.
+2. Select **Devices**. ![](/images/14685443/2c648cc36267.png) The **Devices | Overview** screen is displayed.
+3. Go to **Device onboarding** > **Click** Enrollment**.** ![](/images/14685443/22043663dfd8.png) The **Devices | Enrollment** page is displayed.
+4. Click **Android**> Select **Corporate-owned dedicated devices**. ![](/images/14685443/10d63a98cca0.png) The **Corporate-owned dedicated devices** page is displayed.
+5. Click + **Create policy**. ![](/images/14685443/b42200eb0378.png) The **Create profile** page is displayed.
+6. Click**Basics**tab and do the following.Enter **Name**.Enter **Description** (Optional).In Token Type, select **Corporate - owned dedicated device (default)**.Select **Token Expiration Date**.In Apply Device name template, select **Yes**or**No**.(Optional) If you select **Yes**, enter the device name template.**Note**: The value entered in **Device name template** must match the name used in the dynamic query rule for the device group created in the previous steps.Click **Next**. ![](/images/14685443/bb3cd059b133.png) The **Device Group** screen is displayed.
+7. Click **Next**.**Note:** Ensure that **None** is selected. ![](/images/14685443/908289721098.png) The **Review + create** screen is displayed.
+8. Review the details and click **Create.** ![](/images/14685443/c6701c1bffcc.png) The **Create profile** page is configured successfully.
+9. Go to **Corporate-owned dedicated devices >**select **Enrollment Profile****Note:** Select the enrollment profile that you created in above step.
+10. Select **Token**> click **Show token**to view enrolment QR code. ![](/images/14685443/390a538a522d.png) The QR code is displayed.
+11. Scan the QR code after factory resetting your Android device to enroll.**Note:** The device automatically becomes a member of the **Oloid_DeviceLock_Kiosk** group created earlier. ![](/images/14685443/f8f529e9be99.png) The Device Enrolment Profile is created successfully.
+
+### Add DeviceLock Android App
+
+This section explains how to add and assign the Oloid DeviceLock app from Managed Google Play in Microsoft Intune. The app is configured as required so that it is automatically installed on enrolled Android devices.
+
+Do the following.
+
+1. Go to **Microsoft Intune Admin Centre** home page.
+2. Click **Apps**. ![](/images/14685443/dc297521ea4d.png) The **App | Overview** page is displayed.
+3. Click **Android**. ![](/images/14685443/b51b4036feaa.png) The **Android | Android Apps** page is displayed.
+4. Click + **Create**. ![](/images/14685443/9568b3a8c283.png) The **Select app type**pop-up is displayed.
+5. In App type, select **Managed Google Play app**> Click **Select**. ![](/images/14685443/ecb20ea7cbf5.png) The **Managed Google Play** page is displayed.
+6. Enter **com.oloid.devicelock** in the **Search**bar > Select **Oloid DeviceLock** app. ![](/images/14685443/cad278539db2.png) The app is selected successfully.
+7. Click **Select**> Click **Sync**. ![](/images/14685443/f7609f7d313c.png) The **Android apps** page is displayed.**Note:** If you do not see **Oloid DeviceLock** in the app list, click **Refresh** and wait for some time. ![](/images/14685443/ceeb1a06aaac.png)
+8. Click on app **Name**to assign the app to a group or all devices. ![](/images/14685443/90a8571fbe55.png) The **DeviceLock app** page is displayed.**Note:** You will find **Assigned: No**status.
+9. Click **Manage** > **Properties**. ![](/images/14685443/bea438a2b39e.png) The **App Information** page is displayed.
+10. Click **Edit**. ![](/images/14685443/db8e196893f8.png) The **Edit application** page is displayed.
+11. Click **Assignments** tab > click **+ Add all devices** to make the app installation **required** across all enrolled Android devices and then click **Review + Save**. ​**Note**: App can be assigned to appropriate device groups as well. ![](/images/14685443/f45be419a976.png) The **Review + save** screen is displayed.
+12. Click **Save**. ![](/images/14685443/884a9fc09a77.png) The Edit application page is configured successfully.
+13. Go to **Monitor > Device install status**. If the list is empty, open **Google Play Store**in your enrolled Android device. The **Oloid DeviceLock**app should start installing. Click **Refresh** to update the Device list. **Note:**It may take some time to reflect here. ![](/images/14685443/b4851f34b582.png) ![](/images/14685443/e26e88c87cb5.png)
+
+### Add DeviceLock Private App to Managed Google Store
+
+This section explains how to upload and add the DeviceLock APK as a private app in Managed Google Play. Once added, the app is synced with Intune and installed on enrolled devices.
+
+Do the following.
+
+1. Repeat steps **a**to**c**in the previous section.
+2. In the **Managed Google Play** page, click **Private apps** icon. ![](/images/14685443/cdd026b8c444.png) The **Private apps** are displayed.
+3. Click **+**icon. (Update this screenshot to not show Intune DeviceLock) ![](/images/14685443/4b415a0e61a7.png)
+4. Do the following.Enter **Title.**Click **Upload App**. Click **Create**. ![](/images/14685443/f35c6632895f.png) The private app is created successfully.
+5. Click on the app icon you just created. ![](/images/14685443/d295950dd816.png) The app details page is displayed.
+6. Click **Select app** > click **Sync**. ![](/images/14685443/6aafb0991e99.png)
+7. Click **Refresh**on the **Android apps**page to find the private app in the list. ![](/images/14685443/32a98c314db3.png) The DeviceLock app is successfully added to the list of Android apps.
+
+## Configure Auto-pair
+
+This section explains how to configure auto-pairing for the DeviceLock app using an Intune app configuration policy.
+
+Do the following.
+
+1. Download AutoPairConfig.json for your DeviceLock app from your Oloid tenant admin portal. To download refer [How to Generate Auto-Pair Config File for Oloid DeviceLock App in the Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/devicelock-app-how-to-generate-auto-pair-config-file-in-the-tenant-admin-portal).
+2. In Microsoft Intune Admin Centre home page, go to **Apps**> **Manage Apps > Configuration**. The **Apps | Configuration** page is displayed.
+3. Click **Create** > Select **Managed Devices**. ![](/images/14685443/ff37bc470a51.png) The Create app configuration policy is displayed.
+4. In **Basics** tab, do the following.Enter **Name**.Enter **Description** (Optional).In Platform, select **Android Enterprise**. In Profile Type, select **All Profiles**. Click **Select app**. ![](/images/14685443/6fd832e5f88a.png) The **Associated app** popup is displayed.Select **Oloid Device Lock**.Click **Ok.** ![](/images/14685443/1ea23544c04d.png) The DeviceLock app is added in the Targeted app.Click **Next.** ![](/images/14685443/ae8508c1d972.png) The **Settings** tab is displayed.
+5. In Settings tab, do the following.In Configuration settings format**,**select **Enter JSON data**.In the JSON Template editorthat is visible, copy values from the **AutoPairConfig.json**you downloadedto **“valueString”** or **“valueBool”** fields. Use the following mapping: ![](/images/14685443/c41c1cdc52fe.png) Refer below Data Table.
+
+| **AutoPairConfig.json** | **Intune App Configuration** |
+|---|---|
+| ApiKey | ApiKey |
+| TenantName | TenantName |
+| TenantID | TenantID |
+| Environment | Environment |
+| ApplicationID | ApplicationID |
+| SkipUserConfirmation | SkipUserConfirmation |
+
+c. Click **Next**.
+
+<Frame>
+  <img src="/images/14685443/597dd5ac6892.png" alt="Screenshot" />
+</Frame>
+
+The **Assignments** tab is displayed.
+
+6. In Assignments tab, do the following.
+
+a. Click **+ Add all devices**.
+
+**Note:** To make the app configuration available to all enrolled Android devices.
+
+You can also select specific device groups by clicking **Add groups**if needed.  
+      b. Click **Next**.
+
+<Frame>
+  <img src="/images/14685443/408d7b6cfe21.png" alt="Screenshot" />
+</Frame>
+
+The **Review + create** tab is displayed.
+
+7. Click **Create**.
+
+<Frame>
+  <img src="/images/14685443/1a71cfe94fb6.png" alt="Screenshot" />
+</Frame>
+
+The Create app configuration policy is successfully configured.
+
+## Configure Managed Home Screen in Kiosk Mode
+
+This section explains how to set up kiosk mode for the DeviceLock app using Managed Home Screen in Intune.
+
+1. In the **Microsoft Intune Admin Centre**home page, go to **Devices > Manage apps > Configuration**.The Configuration page is displayed.
+2. Click **+ Create** > select **Managed devices**. ![](/images/14685443/78e2bb1dca44.png) The **Create app configuration policy** page is displayed.
+3. Do the following.[Configure Basics](#h_f6de544e92)[Setup Setting](#h_320a0fd2ed)[Configure Assignment](#h_69920194b0)[Configure Review + Create](#h_157950af51)The Managed Home screen is configured successfully.
+
+### Configure Basics
+
+This tab explains how to define the basic details for the device restrictions profile, including name, platform, and profile type required for kiosk mode setup.
+
+Do the following.
+
+1. Enter **Name**.
+2. Enter **Description** (Optional).
+3. In Platform, select **Android Enterprise**.
+4. In Profile Type, select **Fully Managed, Dedicated, and corporate-Owned Work Profile Only**.
+5. Click **Select app**. ![](/images/14685443/352c64bd6565.png) The **Associated app** pop-up is displayed.
+6. Select **Managed Home Screen**.
+7. Click **Ok.** ​![](/images/14685443/f50ec8f27506.png)
+8. Click **Next**. ![](/images/14685443/76bb5c27e031.png) The Basic tab is configured successfully, and Settings tab is displayed.
+
+### Setup Settings
+
+This tab explains how to configure kiosk mode settings by selecting the device experience type and assigning the DeviceLock app to run in single-app mode.
+
+Do the following.
+
+1. In **Configuration Settings > Configuration Settings format >**select **Enter JSON data**.**Note:** If you do not have JSON data Contact Oloid Support.
+2. Enter the JSON Data in the JSON data field.
+3. Click **Next**. ![](/images/14685443/1b5714a65faa.png) The setting tab is configured successfully, and the **Assignments** tab is dispalyed.
+
+### Configure Assignments
+
+This tab explains how to assign the device restrictions profile to target device groups or all enrolled devices in Intune.
+
+Do the following.
+
+1. Click **Add groups** to assign this profile to your target device groups.**Note:** Click **+ Add all devices** to apply to all enrolled devices. ![](/images/14685443/bb58cfe4e7d4.png) The Select groups to include pop-up is displayed.
+2. Do the following.Select the **group(s**) from the list.**Note:** You can select multiple groups.Click **Select**. ![](/images/14685443/68e25eddea89.png) The Group is added in the list.
+3. Click **Next**. ![](/images/14685443/37f7ea61e89e.png) The Assignment tab is configured successfully and Review + create tab is displayed.
+
+### Configure Review + create
+
+This tab explains how to review the configuration details and create the profile to complete the kiosk mode setup.
+
+<Frame>
+  <img src="/images/14685443/58ac313639de.png" alt="Screenshot" />
+</Frame>
+
+The Kiosk mode is configured successfully.
+
+---
+
+<Tip>
+  **Keywords:** Oloid DeviceLock Intune setup · DeviceLock Android Intune deployment · Oloid DeviceLock MDM configuration · Microsoft Intune DeviceLock setup guide
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to add user in Oloid DeviceLock App" icon="arrow-right" href="/passwordless/android/devicelock/how-to-add-user-in-oloid-devicelock-app" />
+  <Card title="Oloid DeviceLock App – How to Reset Tenant" icon="arrow-right" href="/passwordless/android/devicelock/oloid-devicelock-app-how-to-reset-tenant" />
+  <Card title="How to Configure Oloid DeviceLock App after Installation" icon="arrow-right" href="/passwordless/android/devicelock/how-to-configure-oloid-devicelock-app-after-installation" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using Microsoft Intune (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-microsoft-intune-mdm" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using Microsoft Intune (MDM)" icon="arrow-right" href="/administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-microsoft-intune-mdm" />
+</CardGroup>

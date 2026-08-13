@@ -1,0 +1,123 @@
+---
+title: "How to Create and Configure DeviceLock Endpoint Template in Tenant Admin Portal"
+sidebarTitle: "Create and Configure DeviceLock Endpoint Template"
+description: "This document provides step-by-step instructions to create and configure DeviceLock Endpoint Template in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/android/devicelock"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10489271"
+  url: "https://oloid.help/en/articles/10489271-how-to-create-and-configure-devicelock-endpoint-template-in-tenant-admin-portal"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Device Lock - Admin Settings"
+  updatedAt: "2025-11-12T09:56:50Z"
+  migratedAt: "2026-08-13T09:16:05.714123+00:00"
+---
+## Introduction
+
+The DeviceLock Endpoint Template in the Tenant Admin Portal allows admin to create and manage standardized configurations for DeviceLock endpoints, including access controls, logging preferences, integrations, and health alerts.
+
+## Prerequisite
+
+You must have a Tenant Admin Account.
+
+## Steps to Create Endpoint Template
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage, select **Endpoint** from the left menu panel. ![](/images/10489271/afb9eb72a54b.png) The **Endpoints** page is displayed.
+3. Click**Endpoint Templates** from the top right. ![](/images/10489271/213fe46ef1ef.png) The **Endpoints Templates** page is displayed.
+4. Click **Create Template** from the top right. ![](/images/10489271/30ad357cacaa.png) The **Create New Template** pop-up box is displayed.
+5. Do the following:Enter **Template Name**.Select **Passwordless** in **Application type** from the dropdown list.Select **DeviceLock** for **Endpoint Type** from the dropdown list.Click **Create**.
+
+<Frame>
+  <img src="/images/10489271/f940e37a6722.png" alt="Screenshot" />
+</Frame>
+
+The DeviceLock endpoint template is created and listed in Endpoint Template page.
+
+<Frame>
+  <img src="/images/10489271/8c7427e34867.png" alt="Screenshot" />
+</Frame>
+
+## Steps to Configure Endpoint Template
+
+1. Select **DeviceLock endpoint**name to configure. ![](/images/10489271/923035ce559e.png) The **Template Details** page is displayed. ![](/images/10489271/7a6ea130a20d.png)
+2. Configure the following tabs:[Details tab](#h_f962c37438)[Configure tab](#h_a451737b60)
+
+## Configure Details Tab
+
+1. Edit **Template Name** (If required).
+2. Enter **Template Description**. (Optional)
+3. Enter name in **Name Endpoint As**text field. (Optional)
+4. Select **Time Zone** from the dropdown list. (Optional)
+5. Click **Save**. ![](/images/10489271/727fbc33fc73.png) The Details tab is configured successfully. ![](/images/10489271/be29c1b0f7c2.png)
+
+## Setup Configure tab
+
+Go to configure tab and do the following:
+
+[Endpoint Setting](#h_037a8b0956)
+
+[Groups](#h_a5021cc9f9)
+
+[Integration](#h_a22da4cb2b)
+
+[Health Setup](#h_2e26571c16)
+
+### Endpoint Setting
+
+1. Turn on **Use Endpoint in Admin Mode Only**toggleto disable user's access control.
+2. Turn on **Capture Location**toggle to activate the location capture on the endpoint for every transaction.**Note**: Enable the location permission of the device to make **Capture Location**feature functional.
+3. Turn on **Generate Debug Logs** toggle to activate log generation for endpoint until disabled.
+4. Click **Save**. ![](/images/10489271/307e9c4cdd67.png) The Endpoint setting is configured successfully. ![](/images/10489271/e363df099ce8.png)
+
+### Groups
+
+1. Select **Groups** option from left menu panel > click **Add Group**. ![](/images/10489271/34fa72ef09a2.png)
+2. The **Add Group** pop-up box is displayed.
+3. Select **Group(s)**from the dropdown list.
+4. Click**Add**. ![](/images/10489271/d5453310f109.png)
+
+The group is added successfully.
+
+<Frame>
+  <img src="/images/10489271/851435061d13.png" alt="Screenshot" />
+</Frame>
+
+### Integration
+
+You can enable those**Integrations**which are requiredto perform local actions or on-premises processing.
+
+<Frame>
+  <img src="/images/10489271/eb8aa9c9b196.png" alt="Screenshot" />
+</Frame>
+
+### Health Setup
+
+1. Turn on**Enable Health Alerts**toggle to get endpoint health notification. (Optional)
+2. Enter Email ID to whom you want to share the health alerts in **Add recipients for Endpoint health Alerts** fields. (Optional)
+3. Set **alert email frequency** in hours and minutes.
+4. Click **Save**.
+5. Enter **Server Name**.
+6. Enter URL in **Add URL that needs to be monitored**.
+7. Click **Add**. ![](/images/10489271/5e0df120a374.png) You have successfully configured health setup. ![](/images/10489271/04288f0fda69.png) Keywords| DeviceLock Endpoint Template | Configure DeviceLock Endpoint | Create DeviceLock Endpoint Template |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Oloid Verify - How to Create and Configure Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+  <Card title="DeviceLock App - How to Configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/devicelock-app-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

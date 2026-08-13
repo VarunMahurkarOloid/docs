@@ -1,0 +1,125 @@
+---
+title: "Enabling Oloid as SAML Identity Provider (IDP) in ADFS"
+sidebarTitle: "Enabling Oloid as SAML Identity Provider (IDP) in ADFS"
+description: "This document guides you through enabling Oloid as a SAML Identity Provider (IDP) with Active Directory Federation Services (ADFS)."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "resources/integrations/sso"
+  - "passwordless/web/webkey"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "11068103"
+  url: "https://oloid.help/en/articles/11068103-enabling-oloid-as-saml-identity-provider-idp-in-adfs"
+  collection: "Passwordless Authenticator"
+  section: "Oloid Web Passwordless Login -WebKey"
+  updatedAt: "2025-04-10T22:39:28Z"
+  migratedAt: "2026-08-13T09:16:07.138987+00:00"
+---
+## Prerequisites
+
+- Administrator access to Oloid
+- Administrator access to ADFS Management Console
+- Oloid-provided SAML Metadata containing:`entityID``SingleSignOnService` URLOloid Certificate
+
+---
+
+## Step-by-Step Guide
+
+## Step 1: Create SAML Connection for ADFS in Oloid
+
+1. Log in to your Oloid administrative portal.
+2. Navigate to the SAML connections setup.
+3. Create a new SAML connection specifically for ADFS.
+4. Complete the necessary fields and save the connection.
+
+## Step 2: Share Metadata with ADFS Team
+
+Provide the following values from the Oloid Metadata file to the ADFS administrator:
+
+- **entityID** (also known as Identifier)
+- **SingleSignOnService URL** (also known as SSO endpoint)
+- **Oloid Certificate** (used for signing authentication requests)
+
+<Frame>
+  <img src="/images/11068103/dc1a2deb2f7a.png" alt="Screenshot" />
+</Frame>
+
+## Step 3: Configure Claims Provider Trust in ADFS
+
+Perform these actions in the ADFS Management Console:
+
+1. Open **ADFS Management Console**.
+2. Navigate to **Trust Relationships** > **Claims Provider Trusts**.
+3. Click **Add Claims Provider Trust** and select **Start**.
+4. Choose **Enter data about the claims provider manually** and click **Next**.
+5. Enter a recognizable display name, such as "Oloid IDP", and click **Next**.
+6. Enter the **entityID** provided by Oloid into the **Claims provider trust identifier** field and click **Next**.
+7. On the next page, select **Permit all users to access this claims provider** and click **Next**.
+8. Review the settings and click **Next** to finalize.
+
+<Frame>
+  <img src="/images/11068103/5bbcdd8bac96.png" alt="Screenshot" />
+</Frame>
+
+## Step 4: Add Oloid Certificate in ADFS
+
+1. Right-click the newly created Claims Provider Trust ("Oloid IDP") and select **Properties**.
+2. Navigate to the **Signature** tab.
+3. Click **Add**, and import the certificate provided by Oloid.
+4. Click **Apply** and then **OK**.
+
+## Step 5: Configure Single Sign-On Endpoint
+
+1. Within the **Properties** of the Claims Provider Trust, select the **Endpoints** tab.
+2. Click **Add SAML** and set the following:Endpoint type: **SAML Single Sign-On**Binding: **Redirect** or **POST** (as recommended by Oloid)URL: Paste the **SingleSignOnService URL** provided by Oloid
+3. Click **OK** to save.
+
+## Step 6: Add Claims Rule
+
+1. Still within the Claims Provider Trust properties, navigate to the **Issuance Transform Rules** tab.
+2. Click **Add Rule**.
+3. Select **Pass Through or Filter an Incoming Claim** and click **Next**.
+4. Configure the claims rule as follows:Incoming claim type: **Name ID**Incoming Name ID format: **Unspecified**Select "Pass through all claim values"
+5. Click **Finish**.
+
+<Frame>
+  <img src="/images/11068103/0692c0f963ad.png" alt="Screenshot" />
+</Frame>
+
+## (Optional) Additional Claims
+
+If additional claims are required:
+
+1. Add another rule and choose the appropriate claim template based on your organization's needs.
+2. Define claim rules accordingly.
+
+---
+
+## Verification
+
+Perform a test login from an Oloid-authenticated user to ensure successful integration.
+
+---
+
+## Support
+
+For further assistance, please contact your Oloid administrator or support team.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Integrating Oloid as an External Method Authentication (EAM) with Microsoft Entra ID" icon="arrow-right" href="/resources/integrations/sso/integrating-oloid-as-an-external-method-authentication-eam-with-microsoft-entra-id" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for Security Assertion Markup Language (SAML)" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) IDP in OKTA Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Configuring Security Assertion Markup Language (SAML) SSO with Workday and Oloid" icon="arrow-right" href="/resources/integrations/sso/configuring-security-assertion-markup-language-saml-sso-with-workday-and-oloid" />
+</CardGroup>

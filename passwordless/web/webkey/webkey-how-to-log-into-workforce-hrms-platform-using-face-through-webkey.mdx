@@ -1,0 +1,97 @@
+---
+title: "Webkey - How to log into Workforce /HRMS platform using Face through Webkey"
+sidebarTitle: "Webkey - How to log into Workforce /HRMS platform using Face through Webkey"
+description: "Webkey - How to log into Workforce /HRMS platform using Face through Webkey"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+categories:
+  - "passwordless/web/webkey"
+  - "resources/integrations/hrms"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "9259082"
+  url: "https://oloid.help/en/articles/9259082-webkey-how-to-log-into-workforce-hrms-platform-using-face-through-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Using WebKey"
+  updatedAt: "2026-08-10T09:42:02Z"
+  migratedAt: "2026-08-13T09:16:25.771475+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions for logging in with face to Workforce /HRMS platform.
+
+## Prerequisites
+
+- You must have an Okta account.
+- The Okta credential (user email ID) must be added to the user detail page.
+- In the Tenant Admin Portal, you must do the following:Add Face to the user. For more details, refer [How to onboard face of a single user](/administration/admin-portal/how-to-onboard-face-of-a-single-user)Enable Face under the WebKey Application. For more details, refer [How to create and configure WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)Manual face capture (as per the requirement) must be configured in Oloid Portal. You need to turn on [Enable Manual Capture Accessibility](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)toggle buttonin WebKey Configuration. For detailed instruction see, [WebKey: Platform Configuration for manual capture of face](/passwordless/web/webkey/webkey-how-to-configure-manual-face-capture-for-webkey)
+
+## Steps to Login using Face
+
+1. Launch the **Webkey**Application URL in your browser.
+2. On the home page of the app, select **Login with Face**.**Note:**You can select preferred display language from the **Language Dropdown Selector**. For more information, refer [Additional information section](#h_12ebca9489). ![](/images/9259082/4ef379271f00.png) Place your face in front of the camera for facial authentication.
+3. The camera auto-captures the user's face. If manual capture is enabled, press **Enter or Spacebar,**or click on the camera icon.
+
+<Frame>
+  <img src="/images/9259082/f305ad525756.png" alt="Screenshot" />
+</Frame>
+
+Authentication in progress.
+
+<Frame>
+  <img src="/images/9259082/7772b5b4c9b9.png" alt="Screenshot" />
+</Frame>
+
+You are signed in to the **Workforce / HRMS** platform when facial authentication is done.
+
+<Frame>
+  <img src="/images/9259082/fdf1820138c5.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### Additional Information
+
+**WebKey** now supports multiple language versions, allowing users to select their preferred display language from the **Language Dropdown Selector** on the Login screen.
+
+**Note:** Languages supported: English, Spanish, French, German, and Portuguese language.
+
+#### Sample Screen
+
+The display language updates based on the selected language. The following sample shows the WebKey application in German.
+
+<Frame>
+  <img src="/images/9259082/c6ed690f89db.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch the video [How to log into Workforce /HRMS platform using Face through WebKey - Video Tutorial](/passwordless/web/webkey/how-to-log-into-workforce-hrms-platform-using-face-through-webkey-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** Webkey face login · Face authentication · Login with Face · Workforce HRMS login
+</Tip>
+
+Language Dropdown Selector |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Face and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-face-and-pin-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using QR Code through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-qr-code-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using Password through WebKey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-password-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Badge through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-badge-through-webkey" />
+  <Card title="Webkey - How to log into OKTA Workforce /HRMS platforms using QR Code and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-okta-workforce-hrms-platforms-using-qr-code-and-pin-through-webkey" />
+</CardGroup>

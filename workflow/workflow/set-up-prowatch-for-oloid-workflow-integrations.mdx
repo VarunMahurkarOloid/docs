@@ -1,0 +1,122 @@
+---
+title: "Set up ProWatch for Oloid Workflow Integrations"
+sidebarTitle: "ProWatch for Oloid Workflow Integrations"
+description: "Set up ProWatch for Oloid Workflow Integrations"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "7978577"
+  url: "https://oloid.help/en/articles/7978577-set-up-prowatch-for-oloid-workflow-integrations"
+  collection: "Oloid Workflow"
+  section: "Set up 3rd party Applications"
+  updatedAt: "2023-06-05T11:21:47Z"
+  migratedAt: "2026-08-13T09:16:19.715161+00:00"
+---
+Here are the steps to set up ProWatch for Oloid workflow integrations.
+
+## Step 1 : Install license to use ProWatch Web API
+
+Please get in touch with official Honeywell representative to acquire license to use ProWatch Web API.
+
+## Step 2 : Install ProWatch Web API
+
+## Configure ProWatch Web API
+
+- Open ‘PW-DTU-WinService.exe.config’ file.
+- Make below changes to the file.
+
+<Frame>
+  <img src="/images/7978577/ed187c7b0e04.png" alt="Screenshot" />
+</Frame>
+
+- Save the file.
+
+## Install ProWatch Web API as a Windows Service
+
+- Open **Command** window in administrator mode.
+- Go to **ProWatch Web API** installation folder.
+- Run this command – **Install_PW_API_Service.bat**
+
+<Frame>
+  <img src="/images/7978577/c18a9243e24b.png" alt="Screenshot" />
+</Frame>
+
+## Configure ProWatch Web API Service
+
+- Open **Windows Services**application (type “services.msc” in RUN window).
+
+<Frame>
+  <img src="/images/7978577/af83a53eef22.png" alt="Screenshot" />
+</Frame>
+
+- Search for “**ProWatch Web API**” service.
+
+<Frame>
+  <img src="/images/7978577/ee67a0d0e296.png" alt="Screenshot" />
+</Frame>
+
+- Right click the entry and select **Properties**.
+
+<Frame>
+  <img src="/images/7978577/04f0dadae7d5.png" alt="Screenshot" />
+</Frame>
+
+- Go to **Log On** tab and set windows admin user for “**This account**” option.
+
+<Frame>
+  <img src="/images/7978577/f214e6d4bb63.png" alt="Screenshot" />
+</Frame>
+
+- Start the service.
+
+## Step 3 Create ProWatch User for Web API Access
+
+- Open **ProWatch** application.
+- Go to **Administration > Users.**
+- Right click and select **New Users.**
+
+<Frame>
+  <img src="/images/7978577/aebb25dc4413.png" alt="Screenshot" />
+</Frame>
+
+- Fill up user form as shown below.
+
+<Frame>
+  <img src="/images/7978577/f3b95fc99b6e.png" alt="Screenshot" />
+</Frame>
+
+- Select “**Add All**” to add all available workstations and click **Finish.**
+
+<Frame>
+  <img src="/images/7978577/759501638669.png" alt="Screenshot" />
+</Frame>
+
+- Right click on the user entry and select **Properties.**
+
+<Frame>
+  <img src="/images/7978577/8e249faea065.png" alt="Screenshot" />
+</Frame>
+
+- Set “**Web Password**” in User Information tab.
+
+<Frame>
+  <img src="/images/7978577/cad38bb0fa08.png" alt="Screenshot" />
+</Frame>
+
+- Click **OK**.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Account" icon="arrow-right" href="/workflow/workflow/oloid-account" />
+  <Card title="Set up S2 NetBox for Oloid Workflow integrations" icon="arrow-right" href="/workflow/workflow/set-up-s2-netbox-for-oloid-workflow-integrations" />
+  <Card title="Set up C-Cure 9000 for Oloid Workflow integrations" icon="arrow-right" href="/resources/integrations/pacs/set-up-c-cure-9000-for-oloid-workflow-integrations" />
+  <Card title="Set up Microsoft Entra ID for Oloid Workflow Integration" icon="arrow-right" href="/resources/integrations/sso/set-up-microsoft-entra-id-for-oloid-workflow-integration" />
+  <Card title="How to upgrade Oloid Workflow ?" icon="arrow-right" href="/workflow/workflow/how-to-upgrade-oloid-workflow" />
+</CardGroup>

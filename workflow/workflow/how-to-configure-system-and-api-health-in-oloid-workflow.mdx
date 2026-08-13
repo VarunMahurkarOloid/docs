@@ -1,0 +1,59 @@
+---
+title: "How to configure System and API Health in Oloid Workflow"
+sidebarTitle: "Configure System and API Health in Oloid Workflow"
+description: "How to configure System and API Health in Oloid Workflow"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "7041094"
+  url: "https://oloid.help/en/articles/7041094-how-to-configure-system-and-api-health-in-oloid-workflow"
+  collection: "Oloid Workflow"
+  section: "On-Prem Application Health"
+  updatedAt: "2023-06-02T08:12:31Z"
+  migratedAt: "2026-08-13T09:16:19.412145+00:00"
+---
+Each Oloid Workflow instance can be configured for health monitoring. This keeps the users updated with the status of application instance.
+
+Health monitoring can be of two types - basic and detailed. It can be configured from the Health Setup section in Oloid Workflow instance UI.
+
+1. Basic health runs every 5 min intervals and it checks the following parameters. Basic health configurations cannot be customized.
+
+a.       Application – Core URL set connectivity
+
+b.       System – CPU, Memory Usage
+
+c.       Network – Interface IP & Connectivity
+
+2.  Detailed health runs every 30 min interval and it checks connectivity for a list of user-defined URLs.
+
+## Health Alerts
+
+Health alerts are email notifications that are sent to intended users if the application's health status is not healthy. Users can enable/disable health alerts. Users can also configure recipients for health alerts.
+
+## Detailed Health URLs
+
+Users can define URLs for detailed health check. Every URL is given a name called integration. These URLs are checked for connectivity every 30 min as part of the detailed health check.
+
+## Health Configuration UI
+
+The below snapshot shows the health configuration section in Oloid Cloud platform.
+
+<Frame>
+  <img src="/images/7041094/e6e3070e352e.png" alt="Screenshot" />
+</Frame>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal" />
+  <Card title="How to Create and Configure Oloid Connect Endpoint Template" icon="arrow-right" href="/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template" />
+  <Card title="Oloid Verify - How to Create and Configure Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Verify - How to Configure Endpoint in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-configure-endpoint-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

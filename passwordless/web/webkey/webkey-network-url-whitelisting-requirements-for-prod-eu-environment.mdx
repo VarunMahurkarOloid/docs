@@ -1,0 +1,77 @@
+---
+title: "Webkey – Network URL Whitelisting Requirements for PROD (EU) Environment"
+sidebarTitle: "Network URL Whitelisting Requirements for PROD (EU)…"
+description: "Webkey – Network URL Whitelisting Requirements for PROD (EU) Environment"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "15372908"
+  url: "https://oloid.help/en/articles/15372908-webkey-network-url-whitelisting-requirements-for-prod-eu-environment"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Getting Started with WebKey"
+  updatedAt: "2026-06-05T04:08:14Z"
+  migratedAt: "2026-08-13T09:16:17.730773+00:00"
+---
+## Introduction
+
+This document lists the **domain URLs that must be whitelisted** in the customer network to allow Oloid products to function correctly.
+
+Whitelisting these URLs ensures proper connectivity for the **Oloid platform.**
+
+Allow **outbound HTTPS traffic (Port 443)** to the domains listed below.
+
+---
+
+## Product Information
+
+| **Field** | **Value** |
+|---|---|
+| Product Name | Webkey |
+| Protocol | HTTPS |
+| Port | 443 |
+| Direction | Outbound |
+
+---
+
+Use the following table for URL whitelisting.
+
+| **Service** | **PROD (EU)** | **Description** |
+|---|---|---|
+| Passwordless Authentication | \<tenantname>.oloidsso-eu.com | Passwordless Authentication used for secure user authentication without passwords. |
+| Admin API | api.oloid-eu.com | The Admin API is used for Authentication. |
+| Tenant User API**(Optional** **- Required only for Enrollment)** | api.myoloid-eu.com | The Tenant User API is used for Enrollment. |
+| Oloid Document Bucket**(Optional)** | oloiddocument-eu-prod.s3.eu-west-1.amazonaws.com | This URL is required when a theme is configured. |
+
+#### Notes
+
+- Replace **\<tenantname>** and **\<tenantid>** with your organization's Tenant name and Tenant ID.
+- Enter the **\<tenantname>** and **\<tenantid>** values in lowercase only.
+- Contact [Oloid Support](mailto:support@oloid.ai), if you do not have the **\<tenantname>** and **\<tenantid>** details.
+
+#### Related Document
+
+[Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (EU) Environment | Oloid Help Center](/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-eu-environment)
+
+---
+
+<Tip>
+  **Keywords:** Webkey Whitelisting URLs · Webkey Whitelisting URLs for PROD (EU) Environment
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-eu-environment" />
+  <Card title="Platform Portal and User Portal – Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Windows Login 1.0 – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-1-0-network-url-whitelisting-requirements-for-prod-eu-environment" />
+  <Card title="Webkey – Network URL Whitelisting Requirements for PROD (US) Environment" icon="arrow-right" href="/passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Webkey – Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-preview-uat-environment" />
+</CardGroup>

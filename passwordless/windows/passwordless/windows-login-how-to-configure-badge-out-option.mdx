@@ -1,0 +1,71 @@
+---
+title: "Windows Login - How to Configure Badge Out option"
+sidebarTitle: "Windows Login - How to Configure Badge Out option"
+description: "This document provides step-by-step instructions to Configure and Enable Badge Out option."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "10616183"
+  url: "https://oloid.help/en/articles/10616183-windows-login-how-to-configure-badge-out-option"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-04-27T09:57:19Z"
+  migratedAt: "2026-08-13T09:16:06.447226+00:00"
+---
+## Introduction
+
+The **Enable Badge Out** option allows users to securely lock or sign out of a Windows system using a badge.
+
+**Note:** This feature is available only in healthcare and presence detection build.
+
+## Prerequisites
+
+- You must create and configure Windows Login application. For more, refer to [How to create and configure Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+- The badge reader must be connected to the Windows system.
+
+## Steps to Configure Badge Out Option
+
+1. Log in to the **Tenant Admin Portal.**
+2. Select the application that is configured in the Supervisor App (Windows Authenticator App). ![](/images/10616183/ab1f40d15779.png) The application details page is displayed. ![](/images/10616183/8ef8caf47e77.png)
+3. Click **Configure**tab> **Settings**. ![](/images/10616183/ab9972321b56.png) The Settings page is displayed.
+4. Turn on **Enable Badge Out** toggle button. This option allows user to lock or sign out of a Windows system using a badge, either by **tapping the badge on the reader** or by **removing the badge from the reader**.
+5. Do one of the following: Select **Tap to Badge Out** option to badge out by tapping the badge on the reader. Select **Remove Badge to Badge Out** option to badge out.**Note:** When enabled, the user is logged in by placing their badge on the reader. Removing the badge from the reader automatically locks or signs out of the system. ![](/images/10616183/12507d648c1e.png)
+6. Click **Save.** ![](/images/10616183/d1431ba970ad.png) The options are enabled. ​
+
+## Configure Windows Badge Out Options
+
+1. Select one of the following options based on your requirement: **Lock Windows PC:**Select this option to **lock the Windows system** when a user badges out. The user session remains active in the background.**Tap to Badge Out + Lock Windows PC** When the user taps the badge on the reader, Windows is locked. ![](/images/10616183/1c38e4c2df75.png) **Note:**To enable **User Switch**, select **Tap to Badge out** and **Lock Windows PC**, then select **User Switch**. When this is configured, if one user is already signed in to the Windows system and another user taps their badge on the reader, the first user’s session is locked automatically, and the second user is signed in successfully to use the system. **Remove Badge to Badge Out + Lock Windows PC** When the user removes the badge from the reader, Windows is locked. ![](/images/10616183/225e63f4eb5e.png) **Sign-out of Windows** Select this option to **sign the user out of Windows** when a user badges out. All open applications are closed, and the user session ends.**Tap to Badge Out + Sign out of Windows** When the user taps the badge on the reader, all running applications are closed and the user is signed out of Windows. ![](/images/10616183/f9424031b308.png) **Remove Badge to Badge Out + Sign out of Windows** When the user removes the badge from the reader, all running applications are closed and the user is signed out of Windows. ![](/images/10616183/5000a7c7c5a8.png) Select the required Epic logout behavior:**Secure Epic EHR**Secures the Epic session without fully signing outAllows quick reauthentication**Sign-out of Epic EHR**Completely logs the user out of EpicEnds all active sessions ![](/images/10616183/11175ca20b4d.png)
+2. Click **Save** to apply the configuration. ![](/images/10616183/147e5bd18776.png) The **Badge Out** configuration is saved successfully.
+
+---
+
+### Sync Configuration to Apply Changes
+
+You must sync the configuration in the **Supervisor App** to apply the changes. For detailed steps, see [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app).  
+​**Note:**After syncing the configuration, you must close the Supervisor App.
+
+---
+
+#### ​**Keywords**
+
+|Enable Badge Out |Badge Out configuration |Windows Badge Out option | How to Configure Epic Badge Out options|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enroll Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge" />
+  <Card title="Windows Login - How to Update Badge" icon="arrow-right" href="/passwordless/windows/supervisor/supervisor-app-update-badge" />
+  <Card title="Windows Login - How to log in to Windows device using Badge and Password" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-and-password" />
+  <Card title="How to Login to Windows Device using Badge ID and PingOne Credentials" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-login-to-windows-device-using-badge-id-and-pingone-credentials" />
+  <Card title="Windows Login (Healthcare) - How to Switch User + Sign Out of Windows using Badge out in Epic Hyperspace" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-switch-user-sign-out-of-windows-using-badge-out-in-epic-hyperspace" />
+</CardGroup>

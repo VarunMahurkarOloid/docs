@@ -1,0 +1,74 @@
+---
+title: "How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console"
+sidebarTitle: "Create and Configure Okta (OIDC) as an Identity Provider…"
+description: "This document provides information on how to configure Okta (OIDC) for Oloid SSO"
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "9154143"
+  url: "https://oloid.help/en/articles/9154143-how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-02-19T08:01:17Z"
+  migratedAt: "2026-08-13T09:16:25.421963+00:00"
+---
+## Introduction
+
+This document provides instructions to configure **Okta (OIDC)** as an Identity Provider for **Oloid Single Sign-On (SSO)**.
+
+## Prerequisites
+
+- You must have admin access to the **Okta Admin Console**
+- Okta **OIDC (OpenID Connect)** support enabled.
+
+## Steps to add Identity Provider
+
+1. On the home page of the Okta Admin Console, go to **Security**> **Identity Providers**. ![](/images/9154143/b1fb495e75a1.png)
+2. Select **Add Identity Provider**. ![](/images/9154143/8675637e1876.png) The identity provider list is displayed.
+3. Select **OpenID Connect**and click**Next**.![](/images/9154143/05500a1cd3b2.png) The **Configure OpenID Connect IdP** dialog box is displayed.
+4. Do the following Under **General settings**section:**Name:** Enter a namefor the Identity Provider configuration.**Scopes**: Leave the defaults. These scopes are included when Okta makes an OpenID Connect request to the Identity Provider. ![](/images/9154143/e71a554bacd3.png) Under**Client details**section:Enter **Client ID.**Enter **Client Secret**. ![](/images/9154143/e43b41083ae3.png) **Note:** You can find the **Client ID** and **Client Secret** in the Tenant Admin Portal. On the Tenant Admin Portal, go to**Identity Provider > IDP Details > Meta Data**tab. ![](/images/9154143/9128929cd501.png) Under **Endpoints section:**Enter **Issuer**. Enter **Authorization endpoint**.Enter **Token endpoint**.Enter**JWKS endpoint**. ![](/images/9154143/512627e35d3e.png) **Note:** You can find the **Issuer, Authorization Endpoint, Token Endpoint**and **JWKS Endpoint** in the Tenant Admin Portal. On the Tenant Admin Portal, go to**Identity Provider > IDP Details > Meta Data**tab. ![](/images/9154143/19a1f9fd0f77.png)
+5. Under **Authentication Settings**section,Select **Enable automatic linking**from **Account Link Policy**.If no match is found, select **Reject the authentication responses from IdP**. ![](/images/9154143/35af058839af.png)
+6. Click **Finish**.The newly created IDP is listed under **Security**> **Identity Providers.****Note**: In the search bar, you can search using identity provider name. ![](/images/9154143/2f52d6a5b744.png)
+7. Go to IDP details and do the following:Copy **IDP ID**and enter it in **Tenant Admin Portal > Identity Provider > IDP Settings > IDP ID**.Copy **Redirect URl**and enter it in **Tenant Admin Portal > Identity Provider > IDP Settings** > **Callback URL**.Enter **[https://\{user-id\}.okta.com/](https://{user-id}.okta.com)** in the **Authorize URL** and **Redirect URL** fields under **Tenant Admin Portal > Identity Provider > IDP Settings**. For example, `https://dev-10453970.okta.com/` ![](/images/9154143/3723747959c1.png) ![](/images/9154143/f9d90011c5a0.png)
+
+## Add Client Application
+
+1. In the Okta Admin Console, go to **Applications**> **Applications**. ![](/images/9154143/94fcebf07227.png)
+2. Select **Create App Integration**. ![](/images/9154143/b8fd69207cd2.png) The **Create a new app integration** pop-up box is displayed. ![](/images/9154143/5d92cecc4de7.png)
+3. Do the following:Select **OIDC - OpenID Connect**as the **Sign-in method**and **Web Application**as **Application type**.Select**Next**. ![](/images/9154143/306920b3e3d9.png)
+4. In the next screen, configure the application. Under **General Settings**section,Enter **App integration name**.Select **Authorization Code**as **Grant type**(If not already selected). ![](/images/9154143/5a1fab984335.png) Enter **Sign-in** **redirect URIs.****Note:** The Sign-in redirect URls must be set to **[https://\{yourOrg\}.okta.com](https://{yourOrg}.okta.com)**. ![](/images/9154143/65cc40433344.png) Enter **Sign-out** **redirect URIs**(Optional)**.****Note:** The Sign-out redirect URls must be set to **[https://\{yourOrg\}.okta.com](https://{yourOrg}.okta.com)**. ![](/images/9154143/abd0bbeea4f6.png) Under **Assignments** section, select **Allow everyone in your organization to access**. ![](/images/9154143/119279205611.png)
+5. Click **Save**. Add the **ClientID**and **Client Secret**of the new app in **Tenant Admin** **Portal > Identity Provider > IDP Details > IDP Settings**tab**.** ![](/images/9154143/46938f64c118.png) ![](/images/9154143/d7edabb9f5a0.png)
+6. Configure the IDP Profile in the Tenant Admin Portal:On the homepage of the portal, select the preferred IDP to edit.On the IDP details page, select the **WebKey** Application from **Select WebKey Application**dropdown. ![](/images/12838654/62b1f2123494.png)
+7. Click **Save**.
+8. On the top-right corner of the preferred WebKey application, select **Open login URL** to view the configured WebKey application in your browser.
+
+#### Related Document
+
+[How to configure OIDC - Okta IDP Profile](/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Oloid Okta SSO configuration · Configure Okta OIDC for Oloid · Okta OpenID Connect Oloid · Oloid Identity Provider Okta
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Create an OIDC-Okta IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) IDP in OKTA Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+</CardGroup>

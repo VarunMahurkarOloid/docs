@@ -1,0 +1,84 @@
+---
+title: "Configure Oloid as OIDC IDP in Auth0"
+sidebarTitle: "Configure Oloid as OIDC IDP in Auth0"
+description: "Configure Oloid as OIDC IDP in Auth0"
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "8950518"
+  url: "https://oloid.help/en/articles/8950518-configure-oloid-as-oidc-idp-in-auth0"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2024-02-14T19:37:49Z"
+  migratedAt: "2026-08-13T09:16:24.737494+00:00"
+---
+Configuring Oloid as an OpenID Connect (OIDC) Identity Provider (IdP) customers can utilize Oloid's diverse authentication factors, such as face, badge , NFC and others, across their digital platforms. The flexibility and security provided by Oloid's authentication factors, when coupled with OIDC's standards for identity verification, ensure that organizations can maintain a high level of security while also catering to the modern user's expectations for quick and easy access.
+
+Configuring OLOID as an OpenID Connect (OIDC) Identity Provider (IdP) within Auth0 involves several steps to integrate Oloid's passwordless authentication capabilities with Auth0's authentication and authorization services.
+
+## Prerequisites:
+
+#### Before you start, ensure you have the following:
+
+- An active Oloid account with administrative access.
+- An Auth0 account with permissions to configure identity providers.
+
+## Step 1: Register Oloid as an OIDC Provider in Auth0
+
+1. **Log in to your Auth0 Dashboard**: Access your Auth0 management dashboard by logging in at [https://manage.auth0.com/](https://manage.auth0.com).
+2. **Navigate to Authentication Sources**: Go to the "Connections" section in the left-hand navigation menu, then select "Enterprise".
+3. **Create a New OIDC Connection**: Click on the "+ Create Connection" button and select "OIDC". This will open a form to configure the new connection.
+
+<Frame>
+  <img src="/images/8950518/66a248d168b7.png" alt="Screenshot" />
+</Frame>
+
+**Configure Connection Settings**:
+
+- **Connection Name**: Enter a unique name for your Oloid connection.
+- **Issuer URL**: Enter the Oloid Issuer URL (provided by Oloid). This URL is typically in the format of **[https://\<oloid-domain>/\<customer>-idp/.well-known/openid-configuration](https://\<oloid-domain>/\<customer>-idp/.well-known/openid-configuration)**
+- **Client ID**: Enter the Client ID provided by Oloid.
+- **Client Secret**: Enter the Client Secret provided by Oloid.
+- **Scopes**: Ensure the scopes you require are included. At minimum, you should include **openid**, **profile**, **email**, etc.
+- **Sync user profiles at each login**: Turn this off, unless advised otherwise by Oloid
+
+## Step 2: Configure Callback URLs, Identifier in Oloid
+
+Provide Callback URL and Identifier in the OIDC Document from Step 1 to Oloid
+
+## Step 3: Testing the Integration
+
+**SAML Apps**
+
+<Frame>
+  <img src="/images/8950518/af3922820d3b.png" alt="Screenshot" />
+</Frame>
+
+Click on Addon -> Usage to find the Login URL
+
+**OIDC Apps**
+
+Once connection is enabled, OIDC button should appear in Auth0 Lock Screen
+
+## Troubleshooting
+
+- If you encounter issues, verify that the Issuer URL, Client ID, and Client Secret are correctly configured.
+- Check that the callback URLs are correctly registered in both Auth0 and Oloid.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="How to Add Oloid as an Identity Provider (IDP) in PingFederate" icon="arrow-right" href="/resources/integrations/sso/how-to-add-oloid-as-an-identity-provider-idp-in-pingfederate" />
+  <Card title="Integrating Oloid tenant to your PingOne (OIDC) instance" icon="arrow-right" href="/resources/integrations/sso/integrating-oloid-tenant-to-your-pingone-oidc-instance" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+</CardGroup>

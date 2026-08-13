@@ -1,0 +1,60 @@
+---
+title: "Oloid Verify - Add Faces"
+sidebarTitle: "Add Faces"
+description: "This document provides step-by-step instructions to add face in Oloid Verify App."
+tags:
+  - "Passwordless"
+  - "Oloid Verify"
+categories:
+  - "passwordless/verify"
+primaryCategory: "passwordless/verify"
+navPath: "Passwordless > Oloid Verify"
+source:
+  system: "intercom"
+  articleId: "8535373"
+  url: "https://oloid.help/en/articles/8535373-oloid-verify-add-faces"
+  collection: "Oloid Verify"
+  section: "Oloid Verify - Credential Management"
+  updatedAt: "2026-04-02T07:44:52Z"
+  migratedAt: "2026-08-13T09:16:22.686951+00:00"
+---
+## Introduction
+
+The Add Faces feature in the Oloid Verify app allows Tenant Admins and Supervisors to register a user’s face as a credential.
+
+<Note>
+  If consent option is enabled for connection to take consent for user, it will ask for consent before uploading the picture. To enable refer [How to add a Consent Template to a Connection in the Tenant Admin Portal](/administration/admin-portal/oloid-platform-how-to-add-a-consent-template-to-a-connection-in-the-tenant-admin-portal).
+</Note>
+
+## Prerequisite
+
+- You must have a Tenant Admin or Supervisor account.
+- You must add the user. To add user refer [Oloid Verify-Add User](/passwordless/verify/oloid-verify-add-user).
+- The Oloid Verify endpoint must be paired. To pair, refer [How to pair an Oloid Verify endpoint](/passwordless/verify/oloid-verify-how-to-pair-an-endpoint)
+
+## Steps to add faces
+
+1. Launch the **Oloid Verify** app. ![](/images/10198654/65448eab37c7.png)
+2. Log in to Admin mode in Oloid Verify app. To login, refer [How to log in to the admin mode of Oloid Verify App as an Admin or Supervisor.](/administration/admin-portal/oloid-verify-how-to-log-in-to-admin-mode-as-an-admin-or-supervisor) The **Users** page is displayed with the list of users.
+3. Select the preferred user to add a face. ![](/images/8535373/ac748d345a67.png) The user details page is displayed. ![](/images/8535373/21c006f76129.png)
+4. Go to **Face**tab > tap **Submit Consent.** ![](/images/8535373/aec622f6c61b.png) The Consent form is displayed.
+5. Tap **Accept.** ![](/images/8535373/5cb2842b3c24.png) The Consent is collected successfully. ![](/images/8535373/b0cd4b092eee.png)
+6. Tap **+Add Face**.This opens the camera on your device. ![](/images/8535373/65efeafee7d9.png)
+7. Look at the camera to confirm your identity.The pop-up screen appears with the captured image.
+8. Do one of the following: Tap **Yes- Submit** to submit the image.The face is submitted successfully and is displayed on the details screen.Tap **No- Retake** to take the photo again.The camera turns on to retake photo. ![](/images/8535373/8641cf1c0297.png) The face credential is added successfully. ![](/images/8535373/a092d4048728.png) **Note**: You can add a maximum of five faces per user.Ensure your face is clearly visible to avoid rejection. Avoid wearing items that cover facial features, such as sunglasses, masks, or headbands. For more details, refer to [Oloid’s Image Reference Guide](https://oloid.help/en/articles/9886279-guidelines-for-face-enrollment-onboarding-images) for face onboarding guidelines.
+
+---
+
+#### SEO Keywords
+
+|Oloid Verify face credential setup | Add face in Oloid Verify app | register face in Oloid Verify|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Connect - Add Face" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-add-face" />
+  <Card title="Oloid Verify - Add User" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-user" />
+  <Card title="Oloid Verify - How to Log In to Admin Mode as an Admin or Supervisor" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-log-in-to-admin-mode-as-an-admin-or-supervisor" />
+  <Card title="Oloid DeviceLock App - How to Enroll Face" icon="arrow-right" href="/passwordless/android/devicelock/oloid-devicelock-app-how-to-enroll-face" />
+  <Card title="Oloid Verify - Add QR Code" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-qr-code" />
+</CardGroup>

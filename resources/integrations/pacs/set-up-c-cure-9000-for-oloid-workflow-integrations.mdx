@@ -1,0 +1,68 @@
+---
+title: "Set up C-Cure 9000 for Oloid Workflow integrations"
+sidebarTitle: "C-Cure 9000 for Oloid Workflow integrations"
+description: "Set up C-Cure 9000 for Oloid Workflow integrations"
+icon: "door-closed"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "PACS"
+  - "Workflow"
+categories:
+  - "resources/integrations/pacs"
+  - "workflow/workflow"
+primaryCategory: "resources/integrations/pacs"
+navPath: "Resources > Integrations > PACS"
+source:
+  system: "intercom"
+  articleId: "8495939"
+  url: "https://oloid.help/en/articles/8495939-set-up-c-cure-9000-for-oloid-workflow-integrations"
+  collection: "Oloid Workflow"
+  section: "Set up 3rd party Applications"
+  updatedAt: "2023-10-19T16:37:30Z"
+  migratedAt: "2026-08-13T09:16:22.532423+00:00"
+---
+To seamlessly integrate C-Cure 9000 APIs into the Oloid workflow, there are several prerequisites and steps that need to be undertaken. Here is a step-by-step guide to help you through the process.
+
+## C-Cure 9000
+
+## 1. API Installation:
+
+- The Oloid Workflow Integration utilizes C-Cure’s **Victor Web Services API.**
+- If Victor Web Services is not yet installed on your system, refer to the Software House documentation and follow their instructions for installation.
+
+## 2. Licensing:
+
+- The license for Victor Web Services is application-specific.
+- For the Oloid Workflow Integration to function correctly, you must purchase the license feature titled: **“Oloid Workflow Integration”**.
+- The License GUID for this feature is: **“d6c59203-d7f9-48e8-a04f-8da3464c1ce4“**.
+
+## 3. License Installation:
+
+- _Prior to installation of the license (though it can be done after), you must run the command below in an administrator Command Prompt on the CCure__license server in order to update the C-Cure database to be aware of the Oloid Workflow Engine license feature._
+
+```
+"C:\\Program Files (x86)\\Tyco\\CrossFire\\InsertLicenseOption" /U /V/S:"LOCALHOST" /N:"Oloid Workflow Integration" /A:"Oloid" /G:d6c59203-d7f9-48e8-a04f-8da3464c1ce4 /C:2 /P:0
+```
+
+<Info>
+  _⚠️ The command example above assumes that C-Cure installed in the default location and that the C-Cure SQL Server database is at_
+
+  _“LOCALHOST” in the default instance of SQL Server. If that is not the case in your environment, replace /S:”LOCALHOST” with the name_
+
+  _/port/instance of your SQL Server_
+</Info>
+
+<Warning>
+  _‼️ The Crossfire services must be restarted after running the license feature database installation script and installation of the license._
+</Warning>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Workflow - Overview" icon="arrow-right" href="/workflow/workflow/oloid-workflow-overview" />
+  <Card title="Set up Lenel OnGuard for Oloid Workflow integrations" icon="arrow-right" href="/resources/integrations/pacs/set-up-lenel-onguard-for-oloid-workflow-integrations" />
+  <Card title="Set up ProWatch for Oloid Workflow Integrations" icon="arrow-right" href="/workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations" />
+  <Card title="Oloid Workflow Guides List" icon="arrow-right" href="/workflow/workflow/oloid-workflow-guides-list" />
+  <Card title="How to upgrade Oloid Workflow ?" icon="arrow-right" href="/workflow/workflow/how-to-upgrade-oloid-workflow" />
+</CardGroup>

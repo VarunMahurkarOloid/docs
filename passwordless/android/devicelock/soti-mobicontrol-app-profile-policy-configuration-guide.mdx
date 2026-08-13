@@ -1,0 +1,100 @@
+---
+title: "SOTI MobiControl - App Profile Policy Configuration Guide"
+sidebarTitle: "SOTI MobiControl - App Profile Policy Configuration Guide"
+description: "SOTI MobiControl - App Profile Policy Configuration Guide"
+icon: "lock-keyhole"
+tags:
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "passwordless/android/devicelock"
+primaryCategory: "passwordless/android/devicelock"
+navPath: "Passwordless > Android > Devicelock"
+source:
+  system: "intercom"
+  articleId: "12117772"
+  url: "https://oloid.help/en/articles/12117772-soti-mobicontrol-app-profile-policy-configuration-guide"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Oloid Device Lock - Supporting Documents"
+  updatedAt: "2025-09-02T04:16:01Z"
+  migratedAt: "2026-08-13T09:16:10.136640+00:00"
+---
+## Introduction
+
+This guide provides step-by-step instructions to configure Managed App Configurations for the Oloid DeviceLock application within SOTI MobiControl.
+
+## Steps to Configure Managed App Configurations
+
+Follow the steps along with the screenshots provided.
+
+## Step 1: Navigate to **Device Groups**
+
+Go to the **Device Groups** section in SOTI MobiControl and select the relevant group (e.g., Oloid-On-Microsoft).
+
+<Frame>
+  <img src="/images/12117772/9296ac94fc0b.png" alt="Screenshot" />
+</Frame>
+
+## Step 2: Open **Profiles & Policies**
+
+Under the selected group, click on **Profiles & Policies** to view all assigned app policies.
+
+<Frame>
+  <img src="/images/12117772/99e50c1d2dd1.png" alt="Screenshot" />
+</Frame>
+
+## Step 3: Select the App Policy
+
+Click on the desired app policy (e.g., Device-Lock-Latest-Release) to open its details.
+
+<Frame>
+  <img src="/images/12117772/c791e1b22835.png" alt="Screenshot" />
+</Frame>
+
+## Step 4: Edit App Policy
+
+Inside the policy, go to the **Apps**tab. Select the Oloid DeviceLock app and choose **Configure**.
+
+<Frame>
+  <img src="/images/12117772/1969e385566f.png" alt="Screenshot" />
+</Frame>
+
+## Step 5: App Details
+
+Review the application details such as package name and version.
+
+<Frame>
+  <img src="/images/12117772/0de9279ccab7.png" alt="Screenshot" />
+</Frame>
+
+## Step 6: Managed App Config
+
+Go to **Managed App Config** and fill in the configuration details required for auto pairing:
+
+- **Tenant Name**
+- **Tenant ID**
+- **Environment**
+- **Application ID**
+- **Template ID**
+- **Device Name** (auto-filled using `%DEVICENAME%`)
+- **Serial Number** (auto-filled using `%IMEI%`)
+- **Device IP Address** (auto-filled using `%IP%`)
+
+<Frame>
+  <img src="/images/12117772/5e8a8a709111.png" alt="Screenshot" />
+</Frame>
+
+## Step 7: Click **Sa**ve
+
+The configuration is saved successfully.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid DeviceLock App – How to Reset Tenant" icon="arrow-right" href="/passwordless/android/devicelock/oloid-devicelock-app-how-to-reset-tenant" />
+  <Card title="Oloid + SOTI MobiControl Integration: Required Credentials and Prerequisites" icon="arrow-right" href="/passwordless/android/devicelock/oloid-soti-mobicontrol-integration-required-credentials-and-prerequisites" />
+  <Card title="Installation, Setup and Regression Test Case Guide for Oloid Device Lock and Oloid Vault on an Android Device via SOTI" icon="arrow-right" href="/passwordless/android/devicelock/installation-setup-and-regression-test-case-guide-for-oloid-device-lock-and-oloid-vault-on-an-android-device-via-soti" />
+  <Card title="How to install and set up the Oloid DeviceLock app - Video Tutorial" icon="arrow-right" href="/passwordless/android/devicelock/how-to-install-and-set-up-the-oloid-devicelock-app-video-tutorial" />
+  <Card title="Android Passwordless Device Unlock with Automatic Okta Login" icon="arrow-right" href="/passwordless/android/devicelock/android-passwordless-device-unlock-with-automatic-okta-login" />
+</CardGroup>

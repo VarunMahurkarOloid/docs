@@ -1,0 +1,52 @@
+---
+title: "Tenant Admin Portal - How to Enable HR Picture Verification for Oloid User Portal"
+sidebarTitle: "Tenant Admin Portal - How to Enable HR Picture…"
+description: "This document is a step by step guide on how to configure and enable HR Picture verification for users from the Tenant Admin Portal."
+icon: "user"
+tags:
+  - "Administration"
+  - "User Portal"
+categories:
+  - "administration/user-portal"
+primaryCategory: "administration/user-portal"
+navPath: "Administration > User Portal"
+source:
+  system: "intercom"
+  articleId: "13570122"
+  url: "https://oloid.help/en/articles/13570122-tenant-admin-portal-how-to-enable-hr-picture-verification-for-oloid-user-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Accounts and Settings"
+  updatedAt: "2026-08-12T11:09:24Z"
+  migratedAt: "2026-08-13T09:16:13.659964+00:00"
+---
+## Introduction
+
+The **HR Picture Verification** feature enables Tenant Admins to verify employee identities by comparing uploaded HR images with user-submitted photos for enrollment and authentication.
+
+## Prerequisites
+
+- You must have Tenant Admin access to Tenant Admin Portal.
+- The user’s picture must be added under HR Picture Verification. For more, refer to [How to Import Faces for HR Picture Verification](/administration/admin-portal/how-to-import-faces-for-hr-picture-verification)
+
+## Steps to Configure HR PictureVerification
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/10660395/cf3ebe1f2be0.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![](/images/13570122/5dbfea67c0e6.png) The **Tenant Settings** page is displayed.
+4. Select **App Settings** > select **User Portal** > select **Login Page** ![](/images/13570122/b91171d9b2c8.png)
+5. Do the following:Enable the **HR Picture Verification**toggle. Select the **Auto Enroll Face** checkbox. (Optional)**Note:** Enabling **Auto Enroll Face** allows the image captured for login to be saved as credential if the user face was not previously added.Enter **Button Label**. (Optional)**Note:**The Button Label entered here will show on the User portal login screen as authentication option. ![](/images/13570122/925136602f06.png) Click **Deploy Changes.**The Confirmation pop-up box is displayed.
+6. Click **Update**. ![](/images/13570122/1e18b8a98cdb.png) Oloid User Portal settings are successfully updated. Sample screen on the User Portal Login PageOn the User Portal login page, the **HR Picture Verify**button is displayed.**Note:**Button label will appear based on configuration in the Tenant Admin Portal. ![](/images/13570122/30d471fd8491.png) **Note:**When Auto Enroll Face is enabled, a user’s face is added to the Credentials tab after login if it has not already been enrolled. ![](/images/13570122/2cc515af7c04.png) 
+
+<Tip>
+  **Keywords:** HR Picture Verification configuration · How to Enable HR Picture Verification · Tenant Admin Portal settings
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to configure user details" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-user-details" />
+  <Card title="Oloid User Portal - How to Configure Oloid User Portal in Tenant Admin Portal" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-configure-oloid-user-portal-in-tenant-admin-portal" />
+  <Card title="How to Import Faces for HR Picture Verification" icon="arrow-right" href="/administration/admin-portal/how-to-import-faces-for-hr-picture-verification" />
+  <Card title="How to import faces for HR Picture Verification in the Tenant Admin Portal - Video Tutorial" icon="arrow-right" href="/administration/admin-portal/how-to-import-faces-for-hr-picture-verification-in-the-tenant-admin-portal-video-tutorial" />
+  <Card title="Oloid User Portal - How to Login through HR Picture verification" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-login-through-hr-picture-verification" />
+</CardGroup>

@@ -1,0 +1,86 @@
+---
+title: "Windows Login v2.0 - How to Deploy Windows Login v2.0 using Microsoft Configuration Manager (SCCM)"
+sidebarTitle: "V2.0 - How to Deploy Windows Login v2.0 using Microsoft Configuration Manager…"
+description: "This document provides step-by-step instructions to deploy Windows Login v2.0 using Microsoft Configuration Manager (SCCM)"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "15529405"
+  url: "https://oloid.help/en/articles/15529405-windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-microsoft-configuration-manager-sccm"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v2.0"
+  updatedAt: "2026-06-25T10:01:29Z"
+  migratedAt: "2026-08-13T09:16:18.215407+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions to deploy Windows Login v2.0 using Microsoft Configuration Manager (SCCM). It covers the creation of the application, configuration of deployment settings, detection methods, and deployment to target device collections.
+
+## Prerequisites
+
+- You must have admin access to Microsoft Configuration Manager (SCCM).
+- You must have the installation script file (`install.ps1`) required for deployment.
+- You must have the Windows Login v2.0 version number that will be used in the detection script.
+- The installation source files must be stored in a shared network location (UNC path) that is accessible from the Configuration Manager site server. For example: `\\<server>\Sources\Oloid Passwordless\`**Note:**Ensure the following source files are available in the shared location:Oloid Passwordless v2 installer (`.exe`)Installation script (`.ps1`)AutoPairConfig file (`.txt`)
+- Target device collections must be created and available in Microsoft Configuration Manager.
+- Distribution Points must be configured and accessible within your Configuration Manager environment.
+
+## Steps to Deploy Windows Login v2.0
+
+1. [Create Application](#h_d3f5de146f)
+2. [Deploy Application](#h_1dd9fcf8fc)
+3. [Monitor the Deployment](#h_e8331f9ffc)The Windows Login v2.0 is deployed successfully.
+
+## Create Application
+
+1. Launch the Microsoft Configuration Manager.The Microsoft Manager home screen is displayed.
+2. Navigate to **Software** **Library > Application Management > Applications**. ![](/images/15529405/3ad9dc50fb75.png) The Applications screen is displayed.
+3. **Right click** > select **Create Application**. ![](/images/15529405/b272c57ae599.png) The **Create Application Wizard** pop-up box is displayed.
+4. On General tab, select **Manually specify the application information**> click**Next**. ![](/images/15529405/14925014029d.png) The General Information tab is displayed.
+5. On **General Information** tab, do the following.Enter **Name**.Enter **Software Version**Click **Next.** ![](/images/15529405/2b5fa76528bf.png) The **Software Center** tab is displayed.
+6. On **Software Center** tab, do the following.**Note:** The **Software Center** tab allows admin to configure how the application appears to client devices in **Software Center**.Update **Localized application name** (Optional).Enter **Localized Description** (Optional).Click **Next**. ![](/images/15529405/2706a819a8ee.png) The **Deployment Types** tab is displayed.
+7. On **Deployment Types** tab, do the following:Click **Add**. ![](/images/15529405/d56c049832ff.png) The **Create Deployment Type Wizard** pop-up screen is displayed.
+8. On **Create Deployment Type Wizard,**do the following:On General tab, select **Manually specify the application information**> click**Next**. ![](/images/15529405/a790acadeb41.png) The **General Information** tab is displayed.On **General Information** tab, do the following.Enter **Name**.Click **Next**. ![](/images/15529405/caecf486565c.png) The **Content** tab is displayed.On **Content** tab, do the following.Enter **Content Location**.**Note:** UNC path to the source files.Enter **Installation Program**.**Note:** Use the following command. `%SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\install.ps1` Enter **Uninstallation Program**.**Note:**Use the following command.`%SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Uninstall-Package -Name 'Oloid Passwordless Login' -Force"` Select **Run installation and uninstall program as 32-bit process on 64-bit clients**.Click **Next**. ![](/images/15529405/0aa8deeec894.png) The **Detection Method** tab is displayed.On **Detection Method** tab, do the following:Select **Use a custom script to detect the presence of this deployment type.**Click **Edit**. ![](/images/15529405/68f641de94f2.png) The **Script Editor** pop-up box is displayed.Do the following:Select **PowerShell** as script type.Enter the **Script** in Script Contents.**Note:** i. In the expected field enters the app version number.ii. Use the following script. `$ErrorActionPreference = 'SilentlyContinue'` `$expected = 'x.x.xx'``$found = $false ` `$app = Get-ItemProperty 'HKLM:\SOFTWARE\OLOID\Oloid Passwordless Login' -ErrorAction SilentlyContinue ``if ($app -and $app.Version -eq $expected) { $found = $true }` `if (-not $found) {`` $paths = @(`` 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*',`` 'HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*'`` )`` $entry = Get-ItemProperty $paths -ErrorAction SilentlyContinue |`` Where-Object { $_.DisplayName -match 'Oloid' -and $_.DisplayVersion -eq $expected }`` if ($entry) { $found = $true }``}` `if ($found) { Write-Output 'Installed' }``exit 0` Click **OK**. ![](/images/15529405/579025cda4bd.png) The **Detection Method** screen is displayed.Confirm the **Script length** and click **Next**. ![](/images/15529405/16d2592d0f26.png) The **User Experience** tab is displayed.On **User Experience** screen, do the following:Select Installation behavior as **Install for system**.Select Logon requirement as **Whether or not a user is logged on**.Select Installation program visibility as **Hidden**.Set **Maximum allowed run time** as appropriate (default 120 min).Click **Next**. ![](/images/15529405/76735da33543.png) The **Requirements** tab is displayed.On **Requirements** tab, click **Next**. ![](/images/15529405/a720312e09fb.png) The **Dependencies** tab is displayed.On **Dependencies** tab, click **Next**. ![](/images/15529405/7341e5fffee2.png) The **Summary** tab is displayed.On **Summary** tab, review the general details and click **Next**. ![](/images/15529405/40e8778d6d4c.png) The **Progress** tab is displayed.On **Progress** tab, click **Next**.The **Completion** screen is displayed. ![](/images/15529405/ea0bb57786ec.png) The deployment type wizard is created and configured successfully. The **Deployment Types** page is displayed.
+9. Click **Next**. ![](/images/15529405/d8664ea30aea.png) The **Summary** tab is displayed.
+10. On **Summary** tab, review the general details and click **Next**. ![](/images/15529405/962fd1a4fae5.png) The **Progress** tab is displayed. ![](/images/15529405/65c8179153b8.png) The **Completion** tab is displayed.
+11. Click **Close**. ![](/images/15529405/c1b74bfc5ff4.png) The app is created successfully and listed on the **Applications** page. ![](/images/15529405/978b4c37bff7.png)
+
+## Deploy the Application
+
+1. On the Applications page, right-click the application that you created and select **Deploy**. ![](/images/15529405/9f1acae6c637.png) The **Deploy Software Wizard** screen is displayed.
+2. On **General** tab, do the following:Click **Browse** to select the collection ![](/images/15529405/4597049e8ebf.png) The **Select Collection** pop-up box is displayed.From the collection type drop-down list, select **Device Collections**.**Note:** Select **User Collections** if you want to deploy the application to users instead of devices. ![](/images/15529405/937e94539d36.png) The available device collections are displayed in the right side.Select the **Device Collection** > click **OK**. ![](/images/15529405/883a6f63b7d4.png) The **General** page is displayed.Click **Next**. ![](/images/15529405/bffbe4b5174e.png) The **Content** tab is displayed.
+3. On **Content** tab, do the following:Click **Add** and select **Distribution Point** from the drop-down. ![](/images/15529405/e2b835391653.png) The **Add distribution Points** pop-up box is displayed.Select the **Distribution points** > click **OK**. ![](/images/15529405/546c3039c59e.png) The **Content** tab is displayed.Click **Next**. ![](/images/15529405/c60316df898f.png) The **Deployment Settings** tab is displayed.
+4. On **Deployment Settings**tab, do the following:Ensure **Install** is selected as Action.Select **Required** as Purpose from the drop-down.Select **When a resource is no longer a member of the application, uninstall the application** check box.Click **Next**. ![](/images/15529405/8425b33d3252.png) The **Scheduling** tab is displayed.
+5. On **Scheduling** tab, do the following:Select the date and time to schedule the deployment.Select **As soon as possible after the available time** checkbox.**Note:** By default, this checkbox is selected.Click **Next**. ![](/images/15529405/6376392dcf7a.png) The **User Experience** tab is displayed.
+6. On **User Experience** tab, do the following:Ensure **Display in Software Center and show all notifications** is selected.Click **Next**. ![](/images/15529405/e82363701bfc.png) The **Alerts** tab is displayed.
+7. On **Alerts** tab, click **Next**. ![](/images/15529405/ed875e7870cc.png) The **Summary** tab is displayed.
+8. Review the General information and click **Next**. ![](/images/15529405/c16d38bfadae.png) The **Progress** tab is displayed. ![](/images/15529405/1081bb9ede6d.png) The **Completion** tab is displayed.
+9. Click **Close**. ![](/images/15529405/50334fdd3650.png) The app is deployed successfully and listed in the deployment list. ![](/images/15529405/d5f6f7a2fd93.png)
+
+## Monitor the Deployment (Optional)
+
+1. Go to the home page of the Microsoft SCCM and click **Overview**>**Deployments**. ![](/images/15529405/c80105435e3c.png) The Deployment list of software is displayed.
+2. Locate the deployment in the list. The bottom panel shows completion statistics (Success / In Progress / Error / Requirements Not Met / Unknown). ![](/images/15529405/d5f6f7a2fd93.png)
+
+---
+
+<Tip>
+  **Keywords:** Windows Login v2.0 deployment via SCCM · Deploy Windows Login v2.0 via Microsoft Configuration Manager
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login v2.0 - How to Install, and Auto-Pair Windows Login v2.0 App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-install-and-auto-pair-windows-login-v2-0-app" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using ManageEngine Endpoint Central (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-manageengine-endpoint-central-mdm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using Microsoft Intune (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-microsoft-intune-mdm" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using Microsoft Intune (MDM)" icon="arrow-right" href="/administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-microsoft-intune-mdm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Passwordless 2.0 using Command Line" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-passwordless-2-0-using-command-line" />
+</CardGroup>

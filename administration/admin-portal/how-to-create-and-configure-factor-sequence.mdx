@@ -1,0 +1,54 @@
+---
+title: "How to create and configure Factor Sequence"
+sidebarTitle: "Create and configure Factor Sequence"
+description: "This document provides step-by-step instructions to create factor sequence for MFA Apps."
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "9699393"
+  url: "https://oloid.help/en/articles/9699393-how-to-create-and-configure-factor-sequence"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Factor Sequence"
+  updatedAt: "2024-09-03T08:49:26Z"
+  migratedAt: "2026-08-13T09:16:27.980639+00:00"
+---
+Factor Sequence helps set up rules for *multi-factor authentication in Oloid applications. It determines the order and combination of these methods to make sure that the authentication process is effective and secure.
+
+*Multi-Factor Authentication (MFA) is a security process that requires users to authenticate their identity using two or more verification methods.
+
+## Steps to create Factor Sequence:
+
+1. Log in to the **Oloid Portal**. The homepage is displayed. ![](/images/9699393/deb7364e33f9.png)
+2. Click **Auth Policies** > **Factor Sequencing** from the menu panel. ![](/images/9699393/b3980aee813a.png) The **Factor Sequence for MFA Apps**page is displayed. ![](/images/9699393/8beffdca35c2.png)
+3. Click **Create Factor Sequence**in the top right. ![](/images/9699393/6e9fbd58a0bc.png) The **Create Factor Sequence** pop-up box is displayed. ![](/images/9699393/877beedffd1f.png)
+4. Enter **Factor Sequence Name**in the text field.
+5. Click **Create**.The Factor Sequence is created and the configuration page is displayed.
+6. Do the following to configure Factor Sequence:[Configure Details tab](#h_acfe4fb747)[Configure Policy Rules tab](#h_244d7b0b2c) The Factor Sequence is configured.
+
+## Configure Details tab
+
+1. Enter **Factor Sequence Name**.
+2. Enter **Factor Sequence Description**.(Optional)
+3. Click**Save**. ![](/images/9699393/214d4c6bec76.png)
+
+## Configure Policy Rules tab
+
+1. Go to **Policy Rules** > **Add Rule**to create a new policy rule. ![](/images/9699393/1182d60eb7e9.png) The **IF Factor 1** and **THEN Factor 2** section is displayed ![](/images/9699393/4af56c3f1025.png)
+2. Select preferred credentials under **Factor 1** and **Factor 2**.
+3. Click **Save**.The **Policy Rules** is saved Successfully. For detailed instructions, refer [How to add Policy Rules for Factor Sequencing](/administration/admin-portal/how-to-add-policy-rules-for-factor-sequencing)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="How to Configure PingOne Multi-Factor Authentication (MFA) for Windows Login Application in the PingOne Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console" />
+  <Card title="How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for the Windows Login Application in the OKTA Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-the-windows-login-application-in-the-okta-admin-console" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+</CardGroup>

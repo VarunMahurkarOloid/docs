@@ -1,0 +1,257 @@
+---
+title: "Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal"
+sidebarTitle: "Windows Login - How to create and configure Windows Login application"
+description: "This document provides step-by-step instructions to create and configure Windows Login Application in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "9352266"
+  url: "https://oloid.help/en/articles/9352266-windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:29:21Z"
+  migratedAt: "2026-08-13T09:16:26.386020+00:00"
+---
+## Introduction
+
+This section explains how to create a Windows Login passwordless application in the Tenant Admin Portal and configure the required settings to enable secure user authentication on Windows endpoints.
+
+## Steps to create and configure Windows Login application
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click **Create Application** in the top right corner. ![](/images/9352266/5e05391a739f.png) The **Create New Application** pop-up box is displayed.
+3. Do the following:Enter **Application Name.**Select **Application Type**as **Passwordless**.Click **Next**. ![](/images/9352266/4143d09cd7a0.png) The **Select Passwordless Use Case**page is displayed. Select **Windows Login** > click **Create**. ![](/images/9352266/0f5c1db9b27e.png) The Passwordlessapplication of type **Windows Login** is created and the configuration page is displayed.
+4. Configure the following:[Details tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)[Authenticator tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)[Theme tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)[Configure tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)Health Setup tab[Connections tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+<Note>
+  These are one-time settings and all the default settings are recommended.
+</Note>
+
+## Configure Details tab
+
+1. Modify **Application Name**(if required).**Note**: Special characters are not allowed in Application Name.
+2. Add **Description**. (Optional)**Note**: The description should be less than **140**characters.
+3. Select your **Timezone**based on your country and region from dropdown list. (Coming Soon)
+4. Select **Factor Sequence** from drop down list to activate Multi-Factor Authentication (MFA) for the Application's Endpoints. (Coming Soon)
+
+<Frame>
+  <img src="/images/9352266/c275b44ae828.png" alt="Screenshot" />
+</Frame>
+
+## Configure Authenticator tab
+
+You may enable username and one or more credential options based on your requirements.
+
+## Enable Username
+
+**Emp ID/Primary ID:**Enable this option to prompt the user to enter their Employee ID or Primary ID before authentication.
+
+- (Optional) In the **Custom Label** field, enter a label that appears on the login screen instead of **Emp ID / Primary ID**.
+
+<Frame>
+  <img src="/images/9352266/57d605960ea4.png" alt="Screenshot" />
+</Frame>
+
+**Email:**Enable this option to allow users to log in using their email ID without needing further authentication.
+
+- Select the **Remember Username** checkbox to save the user after the first login. Next time, the app skips the ID entry screen and opens the authentication screen directly.
+
+<Frame>
+  <img src="/images/9352266/de1c368e3497.png" alt="Screenshot" />
+</Frame>
+
+## Configure Credentials
+
+## Face
+
+Do the following:
+
+1. To use face as credential, enable **Face**option. The **Advanced Settings** page is displayed.Enable the **Take Re-consent During Transactions** Toggle.Take Re-consent During transactions: When enabled, shows the re-consent form to users with invalid consent during every face authentication until they re-sign.
+2. Configure **Face Match Parameters**, and **Liveliness Check Parameters** on the Advanced Settings page. For more, refer to [How to configure Face credential for Windows Login Application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-configure-face-credential-for-windows-login-in-the-tenant-admin-portal) ![](/images/9352266/5b682ffe2939.png)
+
+## Badge ID
+
+To use **Badge ID** as credential, enable **Badge ID**.
+
+- To configure **Select Badge Input**refer to: [How to Configure Badge ID for Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-configure-badge-id-for-windows-login)
+- Configure **Badge Auth Source**refer to: [How to configure Badge Auth Source in Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-configure-badge-auth-source)
+
+<Frame>
+  <img src="/images/9352266/8b09004d600b.png" alt="Screenshot" />
+</Frame>
+
+## QR Code
+
+To use **QR Code** as credential, enable QR Code for multi-factor authentication to sign into Windows Login application. For more, refer to [How to enable QR Code credential for Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-enable-qr-code-credential-for-windows-login-in-the-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/297606670507.png" alt="Screenshot" />
+</Frame>
+
+### NFC/ID
+
+To use **NFC/ID**credential, enable NFC/ID to sign into Windows Login application. For more, refer to [How to enable NFC/ID credential for Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-enable-nfc-id-credential-for-windows-login-in-the-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/e0b69e317d3d.png" alt="Screenshot" />
+</Frame>
+
+## Configure MFA Credentials
+
+## PIN
+
+To use **PIN** as credential, enable PIN for multi-factor authentication to sign into Windows Login application. For more, refer to: [How to enable and configure PIN credential for Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-configure-pin-credential-in-the-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/4af778419bc1.png" alt="Screenshot" />
+</Frame>
+
+## Password
+
+To use **Password**as credential, enable Password for multi-factor authentication to sign into Windows Login application. For more, refer to: [How to configure Password credential in Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-configure-password-credential-for-windows-login)
+
+<Frame>
+  <img src="/images/9352266/b268c59c916c.png" alt="Screenshot" />
+</Frame>
+
+## Duo
+
+To use **Duo**as credential, enable Duo for multi-factor authentication to sign into Windows Login application. For more, refer to: **[How to enable Duo MFA credential for Windows Login Application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-enable-duo-mfa-credential-for-windows-login-in-the-tenant-admin-portal)**
+
+<Frame>
+  <img src="/images/9352266/5db468376a00.png" alt="Screenshot" />
+</Frame>
+
+## PingOne
+
+To use **PingOne** as credential, enable PingOne for multi-factor authentication to sign into Windows Login application. For more, refer to: [How to Enable PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/cc2d1966bffb.png" alt="Screenshot" />
+</Frame>
+
+## Okta
+
+To use **Okta**as credential, enable Okta for multi-factor authentication to sign into Windows Login application. For more, refer to: [How to Enable OKTA Multi-Factor Authentication (MFA) Credential for Windows Login Application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/8a21efee29d3.png" alt="Screenshot" />
+</Frame>
+
+## Configure Theme tab
+
+You can customize theme of your login page of the Windows Login application by following the onscreen instructions. Refer **[How to Edit Theme tab for Windows Login Application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-edit-theme-tab-for-windows-login-application-in-the-tenant-admin-portal)**
+
+<Frame>
+  <img src="/images/9352266/3155de42b57c.png" alt="Screenshot" />
+</Frame>
+
+## Design Configure tab
+
+Do the following:
+
+1. Configure Settings tab
+2. [Configure rf IDEAS tab](#h_63f53e50d4)
+3. [Configure Enroll Options tab](#h_19eb299179)
+4. [Configure Health Setup tab](#h_84b01dec64)
+5. [Configure Connections tab](#h_84b01dec64)
+
+## Configure Settings tab
+
+- **Enable Auto Launch Mode:**Select this option to auto-launch the Windows Login app in the login screen. **Set Time-Out for Login Screen:**Select this option to allow users to configure the maximum time the system will wait on the login screen before timing out. ![](/images/9352266/13c8b7b439de.png)
+- **Use Groups for Authorization:**_Coming Soon_
+- **Validate Windows Credential:**Select this option to ensure Oloid Agent checks the validity of the user’s Windows credentials before logging in. ![](/images/9352266/de1edf1ab13c.png)
+- **Enable Passkey:**Turn on **Enable Passkeys**toggle button to allow users to log in using Passkey credential. ![](/images/9352266/ff7a600bc3e8.png)
+- **Allow Credential Updates and Enrollment:**Select this option to allow users to self-enroll or update their credentials. Enable **Hide Option to Save Windows Credentials**toggle to hide the Save credentials option from the enrollment screen after Windows domain credentials are validated.Select **Auto-save credentials on successful validation when the Save choice is hidden**checkbox to automatically save validated Windows credentials to the user’s Oloid account when the Save credentials option is hidden. Enable **Allow Login Through Local Credentials** to allow users to log in to Windows using their local Windows credentials. For more, refer to [How to Configure Allow Login Through Local Credentials](/passwordless/windows/passwordless/windows-login-how-to-configure-allow-login-through-local-credentials) ![](/images/9352266/4b62eedbc606.png)
+- **Capture Windows User Events:**Select this option to capture Windows events for user logins, logouts, locks, unlocks, and credential provider details. All captured data is stored in the transaction tab. ![](/images/9352266/2a46fe3f14e3.png)
+- Enable **Auto-recover Endpoint**to automatically validate and sync the endpoint configuration during login module launch. ![](/images/9352266/e0c9d2bc2371.png)
+- **Enable Manual Capture Accessibility:**Turn on this option to allow users to manually capture their face during face authentication. ![](/images/9352266/3345081d7151.png)
+- **Enable Auto Authentication of Webkey using Local Transaction toggle**to auto-authenticate the user into Webkey after device login. ![](/images/9352266/f91cd4f3e592.png)
+- **Enable Badge Out:**Select **Badge out using Windows Service**option to allow users to log out of their Windows system using their badge. For details, refer to [Windows Login - How to configure Enable Badge Out option](/passwordless/windows/passwordless/windows-login-how-to-configure-badge-out-option) ![](/images/9352266/98c20140832a.png)
+- **Master Admin override passcode:**Follow the onscreen instruction to create master admin override passcode. For details, refer [How to create device-admin passcode for Supervisor App](/administration/device-admin-apps/windows-login-how-to-create-device-admin-passcode-for-supervisor-app) ![](/images/9352266/1669b55e8900.png)
+- **Apply Endpoint Template**: Select a Windows Login endpoint template that is applied during the endpoint pairing process. ![](/images/9352266/8528a7951eb8.png)
+- **Enable Proxy Configuration** to configure proxy settings for secure network communication through a proxy server.
+- Do the following:Enter **Proxy URL**.Enter **Port**.Enter **Username**. Enter **Password**.
+- Click **Save**.
+
+<Frame>
+  <img src="/images/9352266/e5fa8bf89886.png" alt="Screenshot" />
+</Frame>
+
+## Configure rf IDEAS tab
+
+1. Do the following:Select **RFID Reader Type**from the **Select RFID reader type** dropdown .Enter **Description**. (Optional)Click to browse the file or drag the file to upload/download.Click**Save**.The application is updated successfully. For more details, refer [How to upload/download HWG file in Oloid Portal](/administration/admin-portal/windows-login-how-to-upload-download-hwg-file-in-tenant-admin-portal) ![](/images/9352266/f96e3cfc8292.png)
+
+## Configure Epic EHR
+
+**Epic EHR for Windows Login** in the Tenant Admin Portal which enables secure authentication into Epic applications using Windows Login. For more information please refer to: [How to Configure Epic EHR in the Tenant Admin Portal](/resources/industry/healthcare/windows-login-healthcare-how-to-configure-epic-ehr-in-the-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/9367d61372ee.png" alt="Screenshot" />
+</Frame>
+
+## Customize Buttons tab
+
+- **Customize Authentication Button Labels**: Enter customized**Button Label**to display on the Windows application.
+- Select **Enable Badge Options** to display on the Windows Login app.Do one of the following:Select **Enroll Badge Only** to enable Badge loginSelect **Enroll Badge + Pin** to enable Badge and Pin login. ![](/images/9352266/bccb0f7d2130.png)
+
+## Configure Auto Update tab
+
+Auto update features keep all Windows Device Agents up to date without manual effort. It allows the tenant admin to install the latest version or select a specific version. They can also schedule updates to run at a set time, with options to retry if an update fails.
+
+For more, refer to [How to configure Auto Update feature in Windows Login Application in Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-configure-auto-update-feature-for-windows-login-in-tenant-admin-portal)
+
+<Frame>
+  <img src="/images/9352266/759975542d80.png" alt="Screenshot" />
+</Frame>
+
+## Configure Health Setup tab
+
+Do the following:
+
+1. Enter **Server Name**
+2. Enter URL in the **Add URL that needs to be monitored**field and click **Add**The Health Setup tab is configured. ![](/images/9352266/da8cca7c2510.png)
+
+## Configure Connections tab
+
+Do the following:
+
+1. Select **+** **Add Connections** to map a connection to the application. ![](/images/9352266/64c7b309c8be.png)
+2. On the **Add Connections** pop-up box, select connection name(s) from the **Select Connection** dropdown list and click **Add**.
+
+<Frame>
+  <img src="/images/9352266/7647a0f39c1a.png" alt="Screenshot" />
+</Frame>
+
+<Note>
+  Click **Save**after each action to save your configuration.
+</Note>
+
+The **Windows Login**application is configured and listed on the Application page.
+
+## Video Tutorial
+
+Watch the videos to create and configure Windows Login App:
+
+1. [How to create Windows Login application - Video Tutorial](/passwordless/windows/passwordless/how-to-create-windows-login-application-video-tutorial)
+2. [How to configure Windows Login application - Video Tutorial](/passwordless/windows/passwordless/how-to-configure-windows-login-application-video-tutorial)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Configure Face Credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-face-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Configure PIN Credential in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pin-credential-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to configure PC/SC Badge configuration in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pc-sc-badge-configuration-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Duo MFA credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-duo-mfa-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+</CardGroup>

@@ -1,0 +1,47 @@
+---
+title: "How to View and Download User Transaction in Tenant Admin Portal"
+sidebarTitle: "View and Download User Transaction"
+description: "This document provides step-by-step instructions to view and download user transaction report in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8223521"
+  url: "https://oloid.help/en/articles/8223521-how-to-view-and-download-user-transaction-in-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Reports"
+  updatedAt: "2025-08-28T10:15:04Z"
+  migratedAt: "2026-08-13T09:16:20.177234+00:00"
+---
+<Frame>
+  <img src="/images/8223521/6a64f09cbb15.gif" alt="Screenshot" />
+</Frame>
+
+**Introduction**
+
+A user transaction is a record of a user's authentication that captures important details such as the date and time of the transaction, the type of credential used (e.g., NFC, QR code, badge, pin), the name of the application accessed, and the endpoint involved. These transactions help track and analyse user interactions.
+
+**Steps to view and download user transaction report:**
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Transactions** on the left menu panel. ![](/images/8223521/7da71b76ef88.png) The **User Transactions** page is displayed.
+3. Click**Export to excel icon**. ![](/images/11401404/c8b6b7d41139.png) The **Export to Excel** pop-up box is displayed. ![](/images/11401404/0adbfec426db.png)
+4. Click **Download**.The user transaction report is downloaded.**Note:**By default, the transaction report is generated for the past seven days.
+5. **Customize the report** by configuring the following options (Optional):**From Date & Time**: Select the start date and time.**To Date & Time**: Select the end date and time.**Time Zone**: Choose a time zone.**Use Application Time Zone**: Enable to apply the application's configured time zone.**Note:** This option only works if a time zone is set in the application. If different time zones are selected for the application and export, the application's time zone takes priority when this option is enabled.To set time zone in the preferred application, go to home page > select the Application > Details tab > Time Zone. **Transaction Status**: Select one or more statuses.**Application Names**: Select the relevant application(s).**Endpoint Names**: Select the desired endpoint(s).**User’s Primary ID**: Enter the User's **Primary ID**.**Mode**: Select the transaction mode.**Face Match Status**: Filter by face match status.
+6. Click **Download** to export the report.The **user transaction report is downloaded** to your device in Excel format.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to create and download transaction report (adhoc)" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-download-transaction-report-adhoc" />
+  <Card title="How to view Activity Log in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-view-activity-log-in-tenant-admin-portal" />
+  <Card title="How to View and Download User Transaction in Supervisor Portal" icon="arrow-right" href="/passwordless/windows/supervisor/how-to-view-and-download-user-transaction-in-supervisor-portal" />
+  <Card title="How to create and download User Transactions report" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-download-user-transactions-report" />
+  <Card title="How to view and download user transactions report in Tenant Admin Portal - Video Tutorial" icon="arrow-right" href="/administration/admin-portal/how-to-view-and-download-user-transactions-report-in-tenant-admin-portal-video-tutorial" />
+</CardGroup>

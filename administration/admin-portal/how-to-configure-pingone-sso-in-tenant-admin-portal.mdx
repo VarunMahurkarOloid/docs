@@ -1,0 +1,58 @@
+---
+title: "How to Configure PingOne SSO in Tenant Admin Portal"
+sidebarTitle: "Configure PingOne SSO"
+description: "This document provides step-by-step instructions to configure PingOne SSO in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10316179"
+  url: "https://oloid.help/en/articles/10316179-how-to-configure-pingone-sso-in-tenant-admin-portal"
+  collection: "SSO Login Configuration"
+  section: "PingOne SSO Setup"
+  updatedAt: "2026-08-10T11:08:58Z"
+  migratedAt: "2026-08-13T09:16:05.069968+00:00"
+---
+## Introduction
+
+This document explains how to configure **PingOne Single Sign-On (SSO)** for the **Tenant Admin Portal**. The configuration enables users to authenticate securely using PingOne by entering the required PingOne parameters in the Oloid Tenant Admin Portal after completing the setup in the PingOne Administrator Console.
+
+## Prerequisite
+
+Generate the required configuration parameters in the **PingOne Administrator Console**. For detailed instructions, see [PingOne Settings for Oloid SSO](/resources/integrations/sso/pingone-settings-for-oloid-sso)
+
+## Steps to Configure PingOne SSO
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/10316179/a0c10011c3d1.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![Image](/images/10299914/dd6256eec1ca.png) The **Tenant Settings** page is displayed.
+4. Go to **Security**tab > click **PingOne SSO**. ![](/images/10316179/45fb2def6808.png)
+5. Turn on **Enable Ping Identity SSO**toggle. ![](/images/10316179/9083e0ba5014.png)
+6. Do the following:Copy **Redirect URL**.Use any of the provided Redirect URLs when configuring login in the Ping Identity Admin Console. ![](/images/10316179/b127d31bc3c0.png) ![](/images/10316179/bfb4abff57e1.png) In the **PingOne** **Administrator Console**, go to **Application > Overview** > **General** section and copy the parameters and add the following details:**Environment ID:**Add the Environment ID in the Environment ID field.**Client ID:** Add the Client ID in the Client ID field.**Client Secret:** Add the Client Secret in the Client Secret field. ![](/images/10316179/0783800ab723.png) In the **PingOne** **Administrator Console**, go to **Application > Overview** > **Connection Details**section and copy the parameters and add the following details:**Auth URL:** Add the Authorization URL in the Auth URL field.**Token URL:** Add the Token Endpoint in the Token URL field.**User Info URL:** Add the User Info URL in the User Info URL field. ![](/images/10316179/190bf58be241.png) ![](/images/10316179/41f1815fec92.png)
+7. Click **Save**.The PingOne SSO is configured successfully. ![](/images/10316179/848df2d959ee.png)
+
+---
+
+<Tip>
+  **Keywords:** Configure PingOne in Tenant Admin Portal · PingOne SSo Configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="How to Configure Okta SSO in Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-okta-sso-in-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="Tenant Admin Portal - How to Configure Duo SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-duo-sso" />
+  <Card title="How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+</CardGroup>

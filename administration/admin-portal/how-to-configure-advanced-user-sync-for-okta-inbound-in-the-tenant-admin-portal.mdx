@@ -1,0 +1,156 @@
+---
+title: "How to Configure Advanced User Sync for Okta - Inbound in the Tenant Admin Portal"
+sidebarTitle: "Okta - Inbound"
+description: "This document provides step-by-step instructions to configure Advanced User Sync for Okta - Inbound in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "13700588"
+  url: "https://oloid.help/en/articles/13700588-how-to-configure-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Advanced User Sync"
+  updatedAt: "2026-02-27T02:49:13Z"
+  migratedAt: "2026-08-13T09:16:14.539731+00:00"
+---
+## Introduction
+
+This document describes how to configure Advanced User Sync for Okta - Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- An **Advanced User Sync profile for Okta - Inbound** is created.
+- A **Data Mapper Table** is created and available for user attribute mapping.
+
+## Steps to Configure Advanced User Sync for Okta -Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. Go to **Agents > Advanced User Sync**. ![](/images/13569620/096adf4607aa.png) The **Advanced User Sync** page is displayed.
+3. Select the preferred Okta - Inbound Advanced User Sync. ![](/images/13700588/8eae2854390f.png) The **Advanced User Sync** detail page is displayed.
+4. Do the following:[Configure Details Tab](#h_49b805c5c6)[Setup Configuration Tab](#h_98fee2bab0)[Configure Account Tab](#h_67eda5e7a2)[Configure Schedule Tab](#h_7cbbc164c7)
+5. Click **Activate**. ![](/images/13700588/5a2bf38ae197.png) The **Confirm Activation** pop-up box is displayed.
+6. Click **Confirm**. ![](/images/13700588/c5887e905015.png) The Advanced User Sync is configured and activated successfully. ![](/images/13700588/c3685fa81901.png)
+7. (Optional) Go to **Action >** **User Sync**.**Note:** Selecting **Sync Now** immediately triggers a manual synchronization. ![](/images/13700588/08742129604a.png) The **Sync Now?** pop-up box is displayed.
+8. Click **Confirm**. ![](/images/13700588/3d068c5e2f0a.png) The **Success** pop-up box is displayed. ![](/images/13700588/75222d30ecae.png) The Advanced User Sync for Okta - Inbound is configured successfully. ![](/images/13700588/8ba5bc607a2a.png)
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the Advanced User Sync.
+
+Do the following:
+
+1. Update the **User Sync Name** (if required).
+2. Enter the **User Sync Description** (Optional).
+3. Click **Save**. ![](/images/13700588/c5090ca573f8.png) The Details tab is configured successfully. ![](/images/13700588/d8d8dbbbd132.png)
+
+## Setup Configuration Tab
+
+This tab is used to map user data from **Okta**to **Oloid** and select the Oloid connection where users are added during the inbound user sync.
+
+Do the following:
+
+1. Select the **Data Mapper Table** from the drop-down.**Note:** Click **View Tables** to review or create a data mapper table, if required.
+2. Select **Connection** from the drop-down.
+3. Click **Save**. ![](/images/13700588/b6f636cb94bf.png) The Configuration tab is configured successfully. ![](/images/13700588/43dce68d34ae.png)
+
+## Configure Account Tab
+
+This tab is used to add and configure the **Okta** account details required for inbound user synchronization with **Oloid**.
+
+Do the following:
+
+1. Enter **Account Name**.
+2. Select **Auth Type**.**Note:** Select **Basic**.
+3. Enter **Organisational URL**.**Note:** You can find the Organisational URL under **User Profile** in Okta Admin console. ![](/images/13700588/97a9e10aa25f.png)
+4. Enter **Token**.**Note:** You can find the Token in the OKTA Admin Console under **Security > API > Tokens**. ![](/images/13700588/2eff20facaa9.png)
+5. Enter **Groups.**
+6. Click **Save**. ![](/images/13700588/37e59085127b.png) The Account tab is configured successfully.
+7. Click **Test**. ![](/images/13700588/2f8a59ef97a5.png) The **Success** pop-up box is displayed. ​![](/images/13700588/d56f92c50980.png)
+
+## Configure Schedule Tab
+
+This tab is used to define when the **Okta – Inbound** user sync runs. You can configure the sync to run on a recurring schedule or run once when the sync is activated.
+
+Do one of the following:
+
+[Repeat Every](#h_19db253a1c)
+
+**OR**
+
+[Run Once When Activated](#h_fdccb38e14)
+
+<Frame>
+  <img src="/images/13700588/8b870709a673.png" alt="Screenshot" />
+</Frame>
+
+The Schedule tab is configured successfully.
+
+## Repeat Every
+
+The **Repeat Every**section is used torun the user sync on selected days and times.
+
+Do the following:
+
+1. Select **Repeat Every**.
+2. Select the required day(s).**Note:** You can select multiple days (if needed).
+3. Select the run time in the **Runs at** field.**Note:** You can add multiple execution time. To do, click **+Add** to configure additional run times, if required.
+4. Select **Time Zone**from the drop-down.
+5. Enter email address(es) in the **Send failed job-run alerts to** field.**Note:** Separate multiple email addresses with commas.
+6. Click **Save**. ![](/images/13700588/5f7040fdbe07.png) The **Repeat Every** section is configured successfully. ![](/images/13700588/4ec2c7e2b9d0.png)
+
+## Run Once When Activated
+
+The **Run Once When Activated** section is used to run the sync only once.
+
+Do the following:
+
+1. Select **Run Once When Activated**.
+2. Select the date and time in the **Select Date & Time** field.
+3. Select **Time Zone**from the drop-down.
+4. Enter email address(es) in the **Send failed job-run alerts to** field.**Note:** Separate multiple email addresses with commas.
+5. Click **Save**.
+
+<Frame>
+  <img src="/images/13700588/936db8264cb9.png" alt="Screenshot" />
+</Frame>
+
+The **Run Once When Activated** section is configured successfully.
+
+<Frame>
+  <img src="/images/13700588/899c2363cf63.png" alt="Screenshot" />
+</Frame>
+
+#### Related Articles
+
+[How to Create Advanced User Sync for OKTA - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-create-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal)
+
+[How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal)
+
+[How to Create a Token ID for Advanced User Sync – Okta Inbound in the Okta Admin Console | Oloid Help Center](/resources/integrations/sso/how-to-create-a-token-id-for-advanced-user-sync-okta-inbound-in-the-okta-admin-console)
+
+---
+
+<Tip>
+  **Keywords:** Configure Advanced User Sync for Okta - Inbound · How to Edit Advanced User Sync for Okta - Inbound
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Configure Advanced User Sync for Workday - Inbound" icon="arrow-right" href="/resources/integrations/hrms/tenant-admin-portal-how-to-configure-advanced-user-sync-for-workday-inbound" />
+  <Card title="How to Configure Advanced User Sync for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Advanced User Sync for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-create-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Advanced User Sync for ADP Vantage HCM - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

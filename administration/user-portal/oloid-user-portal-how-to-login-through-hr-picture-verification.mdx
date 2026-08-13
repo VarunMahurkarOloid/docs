@@ -1,0 +1,109 @@
+---
+title: "Oloid User Portal - How to Login through HR Picture verification"
+sidebarTitle: "Oloid User Portal - How to Login through HR Picture…"
+description: "Oloid User Portal - How to Login through HR Picture verification"
+icon: "user"
+tags:
+  - "Administration"
+  - "User Portal"
+categories:
+  - "administration/user-portal"
+primaryCategory: "administration/user-portal"
+navPath: "Administration > User Portal"
+source:
+  system: "intercom"
+  articleId: "14815240"
+  url: "https://oloid.help/en/articles/14815240-oloid-user-portal-how-to-login-through-hr-picture-verification"
+  collection: "Oloid User Portal -Credential Management"
+  section: "Oloid User Portal - Face Management"
+  updatedAt: "2026-05-06T09:19:22Z"
+  migratedAt: "2026-08-13T09:16:16.766304+00:00"
+---
+## Introduction
+
+**HR Picture Verification** enables users to authenticate by matching their live image with the HR image stored in the system. Depending on whether a face credential already exists and the user’s consent status, the system guides users through authentication or enrollment to complete the login process.
+
+## ​Prerequisites
+
+- You have the **login URL** provided to access the User portal.
+- HR Picture Verification must be enabled in the Tenant settings
+- Your **Employee ID or Email ID** must be registered in the system
+- Camera access must be available on your device (if required)
+
+## Steps to log into User Portal
+
+1. Launch your browser.
+2. Enter the provided **URL** in the browser’s address bar and press **Enter**.The **Oloid Login**page is displayed.
+3. Click **Verify.****Note**: You will only see the authentication methods (Face, Badge and NFC/ID) enabled for you. Button names may vary based on configuration. Contact [Support](mailto:Support@oloid.ai) if no authentication method appears. ![](/images/14815240/f27f4553bca1.png) The User Authentication screen is displayed.
+4. Enter **Employee ID/ Email ID**.
+5. Click **Continue.** ![](/images/14815240/2f85d5c2af41.png) Based on the configurations, one of the following scenarios will occur[Face Credential Already Exists](#h_cfa2aa6e2e)[Face Credential Not Available](#h_4a334f63f0)
+
+## Face Credential Already Exists
+
+If your face is already registered in the system:
+
+1. **Face already enrolled** error popup is displayed Click **Okay.**The Authentication screen is displayed ![](/images/14815240/c8b800c5bc11.png) The **Oloid Login**page is displayed.
+2. Click **Login with Face.**Refer to: **[How to login with face in Oloid User Portal](/administration/user-portal/how-to-login-with-face-in-oloid-user-portal)**User is successfully logged in.
+
+## Face Credential Not Available
+
+If your face credential is not registered there can be the following scenarios:
+
+- **[Consent Provided](#h_4589c16a3c)**
+- **[Consent Not Provided](#h_e77e5f5b04)**
+- **[Re-consent pending](#h_ecda92e680)**
+
+### Consent Provided
+
+The camera opens.
+
+<Note>
+  Provide camera permission if prompted.
+</Note>
+
+<Frame>
+  <img src="/images/14815240/efc4cb41f8a8.png" alt="Screenshot" />
+</Frame>
+
+1. Position your face in front of the camera and tap the Capture button to authenticate face.**Note**: If you do not tap the Capture button, the app automatically captures your face after a few seconds. ![](/images/14815240/885ebc0939a1.png) Once the image is captured, it is matched against the HR Verification picture in the oloid databaseYou are signed in to the Oloid User Portal Successfully.
+
+<Frame>
+  <img src="/images/14815240/05a74eafbe19.png" alt="Screenshot" />
+</Frame>
+
+### Consent Not Provided
+
+1. The Consent page is displayed.
+2. Click **Agree** to submit consent. ![](/images/14815240/349bc8561e0f.png) The consent is submitted successfully. The camera opens. ![](/images/14815240/efc4cb41f8a8.png)
+3. Position your face in front of the camera and tap the Capture button to authenticate face.**Note**: If you do not tap the Capture button, the app automatically captures your face after a few seconds. ![](/images/14815240/885ebc0939a1.png) You are signed in to the Oloid User Portal Successfully.
+
+<Frame>
+  <img src="/images/14815240/05a74eafbe19.png" alt="Screenshot" />
+</Frame>
+
+### Re-consent pending
+
+The re-submit consent screen appears
+
+1. Click **Agree.****Note:** You need to provide your consent to proceed to next steps if consent is enabled for you. ![](/images/14815240/38ae0adbada2.png) The camera opens. ![](/images/14815240/efc4cb41f8a8.png)
+2. Position your face in front of the camera and tap the Capture button to authenticate face.**Note**: If you do not tap the Capture button, the app automatically captures your face after a few seconds. ![](/images/14815240/885ebc0939a1.png) You are signed in to the Oloid User Portal Successfully.
+
+<Frame>
+  <img src="/images/14815240/05a74eafbe19.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** HR Picture Verification login · User Portal Login using HR Picture Verification · Login using face · Oloid User Portal login guide
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - Add Faces" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-faces" />
+  <Card title="Oloid DeviceLock App - How to Enroll Face" icon="arrow-right" href="/passwordless/android/devicelock/oloid-devicelock-app-how-to-enroll-face" />
+  <Card title="Webkey - How to Enroll Face using Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-enroll-face-using-webkey" />
+  <Card title="How to login with face in Oloid User Portal" icon="arrow-right" href="/administration/user-portal/how-to-login-with-face-in-oloid-user-portal" />
+  <Card title="Tenant Admin Portal - How to Enable HR Picture Verification for Oloid User Portal" icon="arrow-right" href="/administration/user-portal/tenant-admin-portal-how-to-enable-hr-picture-verification-for-oloid-user-portal" />
+</CardGroup>

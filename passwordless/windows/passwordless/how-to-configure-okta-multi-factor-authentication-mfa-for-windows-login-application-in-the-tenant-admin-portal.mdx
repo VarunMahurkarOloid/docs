@@ -1,0 +1,67 @@
+---
+title: "How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal"
+sidebarTitle: "Configure OKTA Multi-Factor Authentication (MFA) for…"
+description: "This document provides step-by-step instructions to Configure OKTA Multi Factor Authentication (MFA) for Windows Login application in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "13165352"
+  url: "https://oloid.help/en/articles/13165352-how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal"
+  collection: "Multi Factor Authentication (MFA) Configuration for Windows Login"
+  section: "OKTA MFA - Configuration Guides"
+  updatedAt: "2026-01-20T11:45:28Z"
+  migratedAt: "2026-08-13T09:16:12.409339+00:00"
+---
+## Introduction
+
+This document describes how to configure **OKTA Multi-Factor Authentication (MFA)** in the **Oloid Tenant Admin Portal**. Enabling OKTA MFA adds an additional verification step during login and requires configuring the necessary parameters from the **OKTA Administrator Console**.
+
+## Prerequisites
+
+- You must have **Tenant Admin access** in the Tenant Admin Portal.
+- Ensure OKTA Multi Factor Authentication toggle is enabled in the Windows Login Application. To enable, refer [How to Enable OKTA MFA Credential for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal)
+- Ensure Token ID is created. To create, refer [How to Create Token ID in OKTA for Windows Login Application | Oloid Help Center](/passwordless/windows/passwordless/how-to-create-token-id-for-windows-login-application-in-okta-admin-console)
+
+## Steps to Configure OKTA MFA
+
+1. Log in to the Tenant Admin Portal.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/12972617/f13b2a86bc7e.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![](/images/12972617/fe5f5833afe6.png) The **Tenant Settings** page is displayed.
+4. Click **Security > 3rd Party Tokens** > **OKTA Configuration for MFA**. ![](/images/13165352/32915ea8c954.png) OKTA Configuration for MFA screen is displayed.
+5. Do the following:**Base URL:** Add the **Base URL** in the Base URL field.**Token ID:** Enter the Token ID in the Token ID field.Click **Save**. ![](/images/13165352/72fd48031a10.png) To see the Token ID in **OKTA Administrator Console**, go to **Security**>**API**> **Tokens** tab. ![](/images/13165352/f2ecee2a5b6b.png) The OKTA Configuration for MFA is configured. ![](/images/13165352/91ecd014e102.png)
+
+## Related Articles
+
+[How to Create Token ID in OKTA for Windows Login Application | Oloid Help Center](/passwordless/windows/passwordless/how-to-create-token-id-for-windows-login-application-in-okta-admin-console)
+
+[How to Enable OKTA MFA Credential for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure OKTA MFA · OKTA Administrator Console · Configure OKTA MFA in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enable PingOne Multi Factor Authentication (MFA) for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enable OKTA Multi-Factor Authentication (MFA) Credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="How to Configure PingOne Multi-Factor Authentication (MFA) for Windows Login Application in the PingOne Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console" />
+  <Card title="How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for the Windows Login Application in the OKTA Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-the-windows-login-application-in-the-okta-admin-console" />
+</CardGroup>

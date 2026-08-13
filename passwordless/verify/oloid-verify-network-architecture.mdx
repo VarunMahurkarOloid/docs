@@ -1,0 +1,53 @@
+---
+title: "Oloid Verify - Network architecture"
+sidebarTitle: "Oloid Verify - Network architecture"
+description: "This document provides detailed information about Network architecture of Oloid Verify App."
+tags:
+  - "Passwordless"
+  - "Oloid Verify"
+categories:
+  - "passwordless/verify"
+primaryCategory: "passwordless/verify"
+navPath: "Passwordless > Oloid Verify"
+source:
+  system: "intercom"
+  articleId: "8644249"
+  url: "https://oloid.help/en/articles/8644249-oloid-verify-network-architecture"
+  collection: "Oloid Verify"
+  section: "Getting Started with Oloid Verify App"
+  updatedAt: "2026-07-03T04:03:35Z"
+  migratedAt: "2026-08-13T09:16:23.550757+00:00"
+---
+**Note:** Ensure that the iPad’s network connection (Wi-Fi or Ethernet) can communicate with the servers listed below. All network requests are outbound.
+
+| **Sn.** | **Domain name** | **Port** | **Description** |
+|---|---|---|---|
+| 1 | oloid.cloud | 80, 443 | Production Oloid Face VaultPlatform Root Domain |
+| 2 | *.oloid.cloud | 80, 443 | Production Flex Tenant SubDomains |
+| 3 | oloiddev.com | 80, 443 | Development Oloid Face VaultPlatform Root Domain |
+| 4 | *.oloiddev.com | 80, 443 | Development Flex Tenant SubDomains |
+| 5 | *.crashlytics.co | 80, 443 | Capturing Crash Logs |
+| 6 | *.amazonaws.com | 80, 443 | Accessing AWS Resourcesdirectly ( e.g S3 ) |
+| 7 | cv.proxce.co | 80, 443 | Legacy Computer Vision Server |
+| 8 | *.googleapis.com | 80, 443 | Firebase Pub Sub ProductionInterface |
+| 9 | visionlabsbv.prod.sentinelcloud.com | 80, 443 | On Device FR LicenseManagement Server |
+
+<Frame>
+  <img src="/images/8644249/dc41c98cd7f2.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### SEO Keywords
+
+Oloid Verify network architecture | Oloid Verify server communication | Oloid Verify outbound connections
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - Add Faces" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-faces" />
+  <Card title="Oloid Verify - How to Pair an Endpoint" icon="arrow-right" href="/passwordless/verify/oloid-verify-how-to-pair-an-endpoint" />
+  <Card title="Oloid Verify - View User details" icon="arrow-right" href="/passwordless/verify/oloid-verify-view-user-details" />
+  <Card title="Network architecture of Oloid Connect" icon="arrow-right" href="/passwordless/ios/connect/network-architecture-of-oloid-connect" />
+  <Card title="Oloid Vault (Chrome / Chromium) – Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-network-url-whitelisting-requirements-for-preview-uat-environment" />
+</CardGroup>

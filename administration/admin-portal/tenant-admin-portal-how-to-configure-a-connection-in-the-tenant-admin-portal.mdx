@@ -1,0 +1,80 @@
+---
+title: "Tenant Admin Portal - How to Configure a Connection in the Tenant Admin Portal"
+sidebarTitle: "Tenant Admin Portal - How to Configure a Connection"
+description: "This document provides step-by-step instructions to configure a Connection in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8305588"
+  url: "https://oloid.help/en/articles/8305588-tenant-admin-portal-how-to-configure-a-connection-in-the-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Connections"
+  updatedAt: "2026-08-07T07:11:49Z"
+  migratedAt: "2026-08-13T09:16:20.962825+00:00"
+---
+## Introduction
+
+The Tenant Admin Portal allows admin to configure connections for managing authentication, user onboarding, and security settings. You can customize parameters such as face quality checks, face match threshold, user termination limit, liveness check, etc. Proper configuration helps ensure secure and efficient identity management for your organization.
+
+## Prerequisite
+
+You must create a Connection in the Tenant Admin Portal. For more details, refer [How to create a Connection](/administration/admin-portal/tenant-admin-portal-how-to-create-connection).
+
+## Steps to Configure a Connection
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Connections** on the left menu panel. ![](/images/8305588/6df130d9ae6d.png) The **Connections** page is displayed.
+3. Click connection name to be configured from the listed connections. ![](/images/8305588/b1a31ec4b283.png) The Connection Details page is displayed. ![](/images/8305588/e4a2a23f1298.png)
+4. Configure the following tab:[Details Tab](#h_b59ba79671)[Configure Tab](#h_2f5941d2d6)[Application Tab](#h_38cad442ce)
+
+## Details Tab
+
+1. Go to **Details**tab, add a **Description**for the connection (optional). **Note**: The description should be **less than 140 characters**. ![](/images/8305588/36d2c23fe99b.png)
+2. Click **Save**The description is added successfully. ![](/images/8305588/25799c89a2be.png)
+
+## Setup Configure Tab
+
+Go to **Configure** tab and do the following:
+
+- [Configure Settings](#h_a7ef23e66d)
+- [Configure Face Match and Liveness](#h_9fd0fc19ea)
+- [Configure Consent](#h_d103919622)
+
+<Frame>
+  <img src="/images/8305588/ed1de3f9d593.png" alt="Screenshot" />
+</Frame>
+
+### Configure Settings
+
+1. On **Settings** section, do the following:Turn on **Enable** **OloID Account**toggle.**Note:** Enabling this toggle automatically creates Oloid Accounts for users added to this connection. Oloid Accounts are not generated for users without an email ID or phone number. Set a value in **Set User Termination Limit**field. **Note:** CSV user deletion is limited to the configured value. The default is 0 users and the maximum is 5000 users per batch.Turn on **Enable** **Email Alerts** toggle and enter the required email addresses to receive notifications.**Note:** Alerts are sent when the configured **User Termination Limit** is reached.Click **Save**. ![](/images/8305588/525da6ff3731.png) The Settings menu is configured.
+
+### Configure Face Match and Liveness
+
+1. On Face Match and Liveness section, do the followingTurn on **Enable** **Face Quality Check**toggle.**Note**: Enabling this toggle ensures a face quality check is performed on the captured image before it is added as a user's face credential. ![](/images/8305588/e2a6a04bb13e.png) Turn on **Face Match Threshold** toggle and adjust the slider or enter a value directly into the input box to set the face match threshold value. **(Oloid internal use)****Note**: Enabling this toggle ensures that a face recognition transaction will only be successful if the captured image meets the minimum face match threshold. ![](/images/8305588/57bf36ec2944.png) Turn on **Enable Software Liveness Check for Adding new face**toggle.Set the **Minimum Liveness Probability**value, either drag the slider or enter a value directly into the input box.**Note**: This value defines the minimum probability threshold for considering a face as "live."Set the **Minimum Liveness Quality** value, either drag the slider or enter a value directly into the input box.**Note**: This value defines the minimum quality threshold for the captured face liveness detection.Click **Save**. ![](/images/8305588/b7eda0c38be1.png) The Configure Face Match and Liveness menu is configured.
+
+### Configure Consent
+
+1. On Consent section, do the following:Click **Enable Consent**. ![](/images/8305588/23858fcc7ac5.png) Enable Consent popup-box is displayed.Select the applicable **Consent Template** from the dropdown list.**Note:**To create a consent template, refer [How to create a Consent Template](/administration/admin-portal/how-to-create-and-configure-consent-template).Click **Next**. ![](/images/8237994/7494749de491.png) Applicable User Set screen is displayed.Select **All Users** > Click **Next**. ![](/images/8237994/4fde1f3a7d0a.png) Authentication validity pop-up box is displayed.Do one of the following:**No end-date:**Select this option to allow authentication without a defined end date. Face images and biometric data for all users in the connection whether they have already provided consent or have not yet provided will remain valid, and users will continue to authenticate using face biometrics after signing the re-consent document.OR**Permit authentication until the Set Date:** Select this option and enter the preferred date.**Note**: If consent is not provided by the selected date, the face data and associated biometric information will be deleted.Click **Confirm**. ![](/images/8237994/62abddaae60b.png) **Consent Updated** popup box is displayed.Click **Okay**. ![](/images/8237994/ea8323fce375.png) Consent is enabled and the connection is successfully configured. Application TabGo to **Application** tab to see the application(s) associated with the connection. ![](/images/8305588/be135217189d.png) **Related Documents**[How to create a consent template](/administration/admin-portal/how-to-create-and-configure-consent-template)[How to configure consent template](/administration/admin-portal/how-to-configure-consent-template-for-user-face-onboarding-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Connection in Tenant Admin Portal · How to Configure Connection · Connection Settings
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - How to Create and Configure Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure Oloid Connect Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure Connection Groups" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-connection-groups" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

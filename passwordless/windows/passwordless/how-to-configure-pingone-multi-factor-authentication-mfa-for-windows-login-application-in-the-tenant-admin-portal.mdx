@@ -1,0 +1,64 @@
+---
+title: "How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal"
+sidebarTitle: "Configure PingOne Multi Factor Authentication (MFA) for…"
+description: "This document provides step-by-step instructions to configure PingOne MFA into Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "12972617"
+  url: "https://oloid.help/en/articles/12972617-how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal"
+  collection: "Multi Factor Authentication (MFA) Configuration for Windows Login"
+  section: "PingOne MFA - Configuration Guides"
+  updatedAt: "2026-01-21T08:18:40Z"
+  migratedAt: "2026-08-13T09:16:12.211524+00:00"
+---
+## Introduction
+
+This document describes how to configure **PingOne Multi-Factor Authentication (MFA)** in the **Oloid Tenant Admin Portal**. Enabling PingOne MFA adds an additional verification step during login and requires configuring the necessary parameters in the PingOne Administrator Console.
+
+## Prerequisites
+
+- You must have **Tenant Admin access** in the Tenant Admin Portal.
+- Ensure PingOne Multi Factor Authentication toggle is enabled for the Windows Login Application. To enable, refer [How to Enable PingOne MFA for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal).
+
+## Steps to Configure PingOne MFA
+
+1. Log in to the Tenant Admin Portal.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/12972617/f13b2a86bc7e.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![](/images/12972617/fe5f5833afe6.png) The **Tenant Settings** page is displayed.
+4. Click **Security > API Tokens > 3rd Party Tokens** > **PingOne Configuration for MFA**. ![](/images/12972617/76cdbd88c928.png) Pingone Configuration for MFA screen is displayed.
+5. In the **PingOne Administrator Console**, go to **Application > Overview** **> General** section, copy the following parameters and add the following details.**Base URL:** Add the **Base URL** in the Base URL field.**Environment ID:** Add the **Environment ID** in the Environment ID field.**Client ID:** Add the **Client ID** in the Client ID field.**Secret:** Add the **Client Secret** in the Secret field.Click **Save**. ![](/images/12972617/eb1fe26312a9.png) ![](/images/12972617/6c2f36c6301b.png) The PingOne Configuration for MFA is configured successfully. ![](/images/12972617/591b20b55221.png)
+
+## Related Articles
+
+[How to Configure PingOne Multi Factor Authentication (MFA) in Windows Login Application | Oloid Help Center](/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console)
+
+---
+
+<Tip>
+  **Keywords:** Configure PingOne MFA · PingOne Administrator Console · Configure PingOne MFA in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure PingOne SSO in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="Windows Login - How to Enable PingOne Multi Factor Authentication (MFA) for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="How to Configure PingOne Multi-Factor Authentication (MFA) for Windows Login Application in the PingOne Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+</CardGroup>

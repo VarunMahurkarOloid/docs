@@ -1,0 +1,38 @@
+---
+title: "How to configure Wiegand Access"
+sidebarTitle: "Configure Wiegand Access"
+description: "How to configure Wiegand Access"
+icon: "door-closed"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "PACS"
+categories:
+  - "resources/integrations/pacs"
+primaryCategory: "resources/integrations/pacs"
+navPath: "Resources > Integrations > PACS"
+source:
+  system: "intercom"
+  articleId: "8492442"
+  url: "https://oloid.help/en/articles/8492442-how-to-configure-wiegand-access"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Wiegand Access"
+  updatedAt: "2024-12-05T04:45:25Z"
+  migratedAt: "2026-08-13T09:16:22.497462+00:00"
+---
+Steps to configure Weigand Access:
+
+1. Log in to the **Oloid Portal**.
+2. On the home page of the portal, select **Weigand Access** on the left menu panel. ![](/images/8492442/422b02b87c1a.png) The **Weigand Access** page is displayed.
+3. Select the Weigand Name to edit. ![](/images/8492442/067bb412f4c5.png) The **Weigand details**page is displayed. ![](/images/8492442/861fb5067e3b.png)
+4. Do the following:**Description**: Provide a description of the Wiegand Format(Optional).You can describe the specific arrangement of your binary card data.**Length**: Enter length of Wiegand Format.Length = number of bits in a badge binary.**Facility Code**: Enter the Facility Code of the card format.This is a number that represents the facility or building that the card will be used in.**Facility Code Start**: Enter the start number of the Facility Code. This is used to identify or represent each cardholder.**Facility Code Length**: Enter the facility code length.Facility Code Length is the length (number of bits) available for storing facility code.**Encoded # Start**: Enter encoding start position.Encoded Start represents the starting bit position from where card number will be stored.**Encoded # Length**: Enter encoded length.Encoded length represents number of bits available to store the card number. ​**Note**: These details are provided by customer for their access control system.Select **+ Add Parity Bit Definitions** to enter values.**Note**: A parity bit is used as a very simple quality check for the accuracy of the transmitted binary data.![](/images/8492442/0c669dd40982.png) Click **Save**.The Wiegand format is configured and listed on the **Wiegand Access** page. ![](/images/8492442/547b6d9c64b5.png)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to create Weigand Format" icon="arrow-right" href="/resources/integrations/pacs/how-to-create-weigand-format" />
+  <Card title="How to delete Wiegand Access" icon="arrow-right" href="/resources/integrations/pacs/how-to-delete-wiegand-access" />
+  <Card title="How to configure Card Reader Using RF IDEAS Configuration Utility for Oloid Applications" icon="arrow-right" href="/resources/integrations/pacs/how-to-configure-card-reader-using-rf-ideas-configuration-utility-for-oloid-applications" />
+  <Card title="How to configure Card Reader Using RF IDEAS Configuration Utility for Windows Login application" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-card-reader-using-rf-ideas-configuration-utility-for-windows-login-application" />
+  <Card title="Windows Login - How to Update Badge" icon="arrow-right" href="/passwordless/windows/supervisor/supervisor-app-update-badge" />
+</CardGroup>

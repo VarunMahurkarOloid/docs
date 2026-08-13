@@ -1,0 +1,82 @@
+---
+title: "Windows Login - How to Upload/Download HWG file in Tenant Admin Portal"
+sidebarTitle: "Upload/Download HWG file"
+description: "This document provides step-by-step instructions to upload and download an HWG file in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/windows/supervisor"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "9215874"
+  url: "https://oloid.help/en/articles/9215874-windows-login-how-to-upload-download-hwg-file-in-tenant-admin-portal"
+  collection: "Supervisor App"
+  section: "Platform Configuration - Supervisor App"
+  updatedAt: "2026-08-07T08:48:43Z"
+  migratedAt: "2026-08-13T09:16:25.593978+00:00"
+---
+## Introduction
+
+The **rf IDEAS** settings allows the Tenant Admin to upload and manage **HWG (Hardware Configuration)** files for supported RFID readers used with the Supervisor App.
+
+Uploading the correct HWG file ensures the RFID reader is configured correctly for badge enrollment and authentication. You can also download the currently configured HWG file for backup or reuse.
+
+[Uploading HWG file](#h_999bffeb08)
+
+[Downloading HWG file](#h_8a4a15a35e)
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- Ensure a **Windows Login** application is created in the Tenant Admin Portal.
+- Ensure the required HWG file is available before starting the upload.
+
+## Steps to Upload HWG file:
+
+1. Log in to the Tenant Admin Portal.The Application Detail page is displayed.
+2. Select the Windows Login application configured for the Supervisor App. ![](/images/9215874/ab1f40d15779.png) The Application Details page is displayed.
+3. Go to **Configure**tab > **rf IDEAS**. ![](/images/9215874/81a2853db8e6.png)
+4. Do the following:Select an **RFID reader type** from the RFID Reader Type drop-down list.Enter **Description**. (Optional)Click the upload area to browse for the HWG file, or drag and drop the file into the upload area.Click**Save**.
+
+<Frame>
+  <img src="/images/9215874/6abb40d77388.png" alt="Screenshot" />
+</Frame>
+
+The HWG file is downloaded successfully.
+
+<Frame>
+  <img src="/images/9215874/00a82d994869.png" alt="Screenshot" />
+</Frame>
+
+---
+
+## Steps to Download HWG file:
+
+1. Log in to the Tenant Admin Portal.The Application Detail page is displayed.
+2. Select the Windows Login application configured for the Supervisor App. ![](/images/9215874/ab1f40d15779.png) The Application Details page is displayed.
+3. Go to **Configure**tab > click **rf IDEAS**. ![](/images/9215874/81a2853db8e6.png)
+4. Click **Download File** to download the HWG file to your local device. ![](/images/9215874/417e7ed3dc89.png) The application is updated successfully.
+
+---
+
+<Tip>
+  **Keywords:** HWG file · Upload HWG file · Download HWG file · RFID reader · RFID configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal" />
+  <Card title="Windows Login - How to Configure Face Credential for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-face-credential-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Configure PIN Credential in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pin-credential-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Windows Default Domain for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-windows-default-domain-for-windows-login-in-the-tenant-admin-portal" />
+</CardGroup>

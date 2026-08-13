@@ -1,0 +1,82 @@
+---
+title: "DeviceLock - Hardware and Software Requirements"
+sidebarTitle: "DeviceLock - Hardware and Software Requirements"
+description: "This document provides minimum hardware and software requirements for installing and operating the Oloid DeviceLock application."
+icon: "lock-keyhole"
+tags:
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "passwordless/android/devicelock"
+primaryCategory: "passwordless/android/devicelock"
+navPath: "Passwordless > Android > Devicelock"
+source:
+  system: "intercom"
+  articleId: "11476804"
+  url: "https://oloid.help/en/articles/11476804-devicelock-hardware-and-software-requirements"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Platform Configuration"
+  updatedAt: "2026-05-27T05:16:41Z"
+  migratedAt: "2026-08-13T09:16:08.109744+00:00"
+---
+## Introduction
+
+Oloid DeviceLock is an Android application designed to secure mobile workforce operations through seamless identity-based authentication. It enables employees to log in to HRMS systems, and lock or unlock their device screens using a variety of physical identity factors such as Face, Badge, PIN, NFC tags, Passwords, and QR codes.
+
+## Minimum Software Requirements
+
+| **Components** | **Minimum Requirements** |
+|---|---|
+| Operating System | Android 9 or above |
+| Processor (CPU) | Quad-core ARM Cortex-A53 or equivalent, 1.4 GHz or higher |
+
+## Minimum Hardware Requirements
+
+| **Components** | **Minimum Requirements** |
+|---|---|
+| RAM | 4 GB |
+| Internal Storage | 500 MB free storage space |
+| Camera | Front-facing camera, minimum 5 MP resolution (required for Face recognition and QR code) |
+| Connectivity | Wi-Fi and/or LTE |
+| NFC | Required inbuilt NFC for authentication |
+| Badge | Required Badge for authentication. |
+| Card Reader | Required Card reader for Badge/NFC authentication. |
+| Battery | 2500 mAh or higher (recommended for full-day enterprise use) |
+
+## Recommended Hardware and Software Specifications
+
+| **Component** | **Recommended Specification** |
+|---|---|
+| Operating System | Android 12 or later |
+| Processor (CPU) | Octa-core ARM Cortex-A75 or higher |
+| RAM | 8 GB or higher |
+| Internal Storage | 1 GB free storage space |
+| Camera | 8 MP or higher resolution (for faster and more accurate face detection) |
+| Security Module | Support for Trusted Execution Environment (TEE) & Secure Boot |
+| Device Compliance | Android Enterprise Recommended (AER) |
+
+## Incompatibility Warnings
+
+Oloid DeviceLock **may not function properly** on devices with the following limitations:
+
+- Devices running Android OS below version 9.
+- Devices without a functional camera, NFC module, or Bluetooth.
+- Devices with heavily modified OEM firmware or lacking regular security updates.
+- Android Go edition devices with limited processing power or memory.
+- Devices without Google Mobile Services (unless sideloaded and managed via MDM).
+
+## Connectivity Requirements
+
+- Internet Access: Required during app registration, updates, and for syncing logs or HRMS transactions.
+- MDM Support: Recommended for app deployment for enterprises, policy enforcement, and updates.**Note:**On Samsung devices, Knox can be used to enable and manage kiosk mode.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login v1.0 - Hardware and Software Requirements" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v1-0-hardware-and-software-requirements" />
+  <Card title="Oloid Vault (Chrome / Chromium) - Hardware and Software Requirements" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-hardware-and-software-requirements" />
+  <Card title="Webkey - Hardware and Software Requirements" icon="arrow-right" href="/passwordless/web/webkey/webkey-hardware-and-software-requirements" />
+  <Card title="Windows Login v2.0 - Hardware and Software Requirements" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-hardware-and-software-requirements" />
+  <Card title="Windows Login (Healthcare) - Hardware and Software Requirements" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-hardware-and-software-requirements" />
+</CardGroup>

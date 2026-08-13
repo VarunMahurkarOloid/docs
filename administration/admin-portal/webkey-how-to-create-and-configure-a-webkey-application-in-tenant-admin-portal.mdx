@@ -1,0 +1,294 @@
+---
+title: "Webkey – How to Create and Configure a Webkey Application in Tenant Admin Portal"
+sidebarTitle: "How to Create and Configure a Webkey Application"
+description: "This document is a step by step guide on how to create and configure the WebKey application and its associated settings in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/web/webkey"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8693859"
+  url: "https://oloid.help/en/articles/8693859-webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-06-17T09:06:45Z"
+  migratedAt: "2026-08-13T09:16:23.965128+00:00"
+---
+## Introduction
+
+Tenant Admin can create and configure a WebKey application from the Tenant Admin Portal to define authentication methods, customize the login experience, and control security and session behavior.
+
+## Prerequisite
+
+- You must have access to the Tenant Admin portal.
+
+## Steps to create and configure WebKey application
+
+1. Log in to the **Tenant Admin Portal**. For more details refer [How to log in to the Tenant Admin Portal](/administration/admin-portal/how-to-log-in-to-the-tenant-admin-portal).
+2. On the **Applications** page, click **Create Application** in the top right corner. ![](/images/8693859/f95fc59b38db.png) The **Create New Application** pop-up box is displayed.
+3. Do the following:Enter **Application Name**and select **Application Type**as **Passwordless**. ![](/images/8693859/f0942c6b47d6.png) Click **Next**.The **Select Passwordless Use Case**page is displayed. Select **WebKey** > click **Create**. ![](/images/8693859/36c29b9b8517.png) The Application is created successfully. ![](/images/8693859/8c975b0779fb.png)
+4. Do the following:[Configure Details tab](#h_d6f1c16aee)[Configure Authenticator tab](#h_6e2751be8f)[Configure Theme tab](#h_77adabc23e)[DesignConfigure tab](#h_ba84a9ee65)[Configure Connections tab](#h_aec78abc12)
+
+<Note>
+  These are one-time settings and all the default settings are recommended.
+</Note>
+
+## Configure Details tab
+
+1. Edit **Application Name**if required.
+2. Add **Description**. (Optional)
+3. View **Linked Identity Profile** to to identify the configured Identity Provider Profile.
+4. Select **Time Zone** from the dropdown list. (Optional)
+5. Copy **Login URL Path** to sign in to WebKey app.
+
+<Frame>
+  <img src="/images/8693859/dc461ddb453c.png" alt="Screenshot" />
+</Frame>
+
+## Configure Authenticator tab
+
+You may enable one or more credential options based on your requirements.
+
+<Frame>
+  <img src="/images/8693859/3f8f45d9790a.png" alt="Screenshot" />
+</Frame>
+
+### Enable Username
+
+#### Emp ID/ Primary ID
+
+Enable Employee ID/Primary ID as Username: Enabling this option will prompt the user to enter their Employee ID or Primary ID before authentication.
+
+**Note:**A custom label can be added which will be shown instead of Emp ID/Primary ID on the login screen.
+
+<Frame>
+  <img src="/images/8693859/fc007de47318.png" alt="Screenshot" />
+</Frame>
+
+#### Email
+
+Enabling this option will prompt the user to enter their Email ID before authentication.
+
+**Note:**Login through Email ID will not be available for Apps.
+
+<Frame>
+  <img src="/images/8693859/d280ebdf9f7d.png" alt="Screenshot" />
+</Frame>
+
+### Credentials
+
+#### Face
+
+To use face as credential, enable **Face**option.
+
+<Frame>
+  <img src="/images/8693859/eb86d3d52f32.png" alt="Screenshot" />
+</Frame>
+
+The **Advanced Settings** section is displayed.
+
+1. Enable **Take Re-consent During Transactions** to show the re-consent form to users with invalid consent during every face authentication until they re-sign.
+2. Select **Face Capture Mode** from the dropdown.The **Precision Capture (Default)** mode provides balanced performance across most environments. It delivers an optimal combination of speed, image quality, and reliable auto-capture.(or)The **Precision Capture X** mode offers enhanced performance and adaptability. It provides faster processing, improved image quality, and advanced auto-capture powered by machine learning.
+3. Configure **Face Match Parameters**, and **Liveliness Check Parameters** on the Advanced Settings page.
+
+<Note>
+  The parameters are pre-configured. This is done by Oloid admin.
+</Note>
+​
+
+Configure the following:
+
+- [Face Match Parameters](#h_cf23cec68b)
+- [Liveliness Check Paraments](#h_83c7944b44)
+
+#### Face Match Parameters
+
+**Note:**You must consult your Oloid representative before making any changes to the **Face Match Parameters** to ensure optimal authentication performance.
+
+1. Turn on **Strict Error Handing** toggle to skip the error and perform a direct one-to-one face match.
+2. Turn on **Enable Virtual Camera** to allow third-party virtual camera app to be used for face capture. If a user attempts to spoof the system using a third-party app, this feature helps detect and flag potential spoofing attempts.
+3. Turn on **Additional Face Match** toggle to perform a one-to-one face match alongside the standard face matching process.
+4. Adjust the **Face Match Threshold** slider or enter a value directly into the input box to set the face match threshold value.
+
+<Frame>
+  <img src="/images/8693859/6e6842abdabf.png" alt="Screenshot" />
+</Frame>
+
+#### Liveness Check Parameters
+
+**Note:**You must consult your Oloid representative before making any changes to the **Liveness check parameters** value to ensure optimal authentication performance.
+
+1. **Min Liveness Probability**: Specifies the threshold used to determine whether an image is live or spoofed.Default value: 0.5Images with a liveness probability of **0.5 or higher** are classified as live.
+2. **Min Liveness Quality**: Specifies the minimum quality required for an image to be suitable for a liveness check.Default: 0.1Images with a quality score of **0.1 or higher** are considered suitable for liveness verification.
+
+<Frame>
+  <img src="/images/8693859/665d19599466.png" alt="Screenshot" />
+</Frame>
+
+#### Additional Settings
+
+1. **Enable Manual Capture Accessibility** toggle to allow users manually capture their face during the face recognition process. Select**Disable Auto-capture**to disable automatic face capture. When enabled, users must manually capture their face using:**Enter** or **Space bar** on desktops and laptops.**Tap anywhere** on the screen for mobile and tablet devices. ![](/images/8693859/6817ea981424.png)
+2. **Enable Timed Auto-Capture**to allow the system to automatically capture the user's face if it is not captured within a set time.
+
+- Set the **Time-out Duration** in seconds.
+- After the timer ends, the system captures the face automatically, even without user action. ![](/images/11493834/57421b80210b.png)
+
+**Configure Image Capture Resolution.**
+
+- **Select Capture Resolution**from the **Select Resolution** dropdown list.
+- **Low: 640×480:**Lower quality image.
+- **Medium: 1280×720:**Balanced quality.
+- **High: 1920×1080:**High-quality image, Best clarity.
+
+<Frame>
+  <img src="/images/8693859/df2b49dc487c.png" alt="Screenshot" />
+</Frame>
+
+Enable **Adjust Video Preview Container Spacing From Top**toggle to move the face capture preview upward for better alignment with the camera.
+
+- Click **Save**.
+
+<Frame>
+  <img src="/images/8693859/f85e3a5f31b2.png" alt="Screenshot" />
+</Frame>
+
+#### Badge ID
+
+To use **Badge ID** as credential, enable **Badge ID**. Select a **Badge Type** from the dropdown list.
+
+<Frame>
+  <img src="/images/8693859/20ca16472ecb.png" alt="Screenshot" />
+</Frame>
+
+<Note>
+  Enable Badge ID, then enable PIN for multi-factor authentication (if applicable).
+</Note>
+
+#### QR Code
+
+1. To use QR Code as credential, enable **QR Code** option to sign in to WebKey application.By default, the front camera opens for QR code scanning.
+2. Enable **Show Camera Flip button** to allow users to switch between the front and rear cameras. This option displays a camera flip button on the preview screen during QR code scanning.
+3. Under **Default camera selection**, select a camera option:**Front Camera** (default)**Rear Camera****Note:**This feature is available only for iOS devices and Android devices.
+4. Click **Save**.
+
+<Frame>
+  <img src="/images/8693859/aa9e20943df1.png" alt="Screenshot" />
+</Frame>
+
+#### NFC/ID
+
+To use NFC/IDcredential, enable **NFC/ID** to sign in to WebKey application from your desktop/laptop.
+
+The **NFC/ID option** section is displayed.
+
+Do the following:
+
+1. Enable **Use Web-NFC**to allow NFC Login from the Mobile Phone and Tablet browser that supports NFC (such as Google Chrome on Android)
+2. Enable **Replace the Credential Label - NFC Tag**to replace the default **"NFC"** or **"NFC Tag"** label with a custom name.
+3. Enter the new label in the **Replace label with** field. Example: Replace **NFC Tag** with **RFID**.
+4. Provide **NFC Scan Instruction** to guide users on scanning their NFC badge for login.
+5. **Authentication Success Message**: Enter a message to display when authentication is successful.
+6. **Authentication Failure Message**: Enter a message to display when authentication fails. ![](/images/8693859/12f5e5efcc8a.png) **Note**: Enable NFC/ID, and then enable PIN for multi-factor authentication (if applicable).
+
+### MFA Credentials: PIN
+
+To use PIN credentials, enable **PIN**as a multi-factor authentication method for signing into the WebKey application.
+
+<Frame>
+  <img src="/images/8693859/b60e9a78c913.png" alt="Screenshot" />
+</Frame>
+
+## Configure Theme tab
+
+You can customize theme of your login page of the WebKey application by following the onscreen instructions.
+
+<Frame>
+  <img src="/images/8693859/9078c8f13149.png" alt="Screenshot" />
+</Frame>
+
+## Design Configure tab
+
+You can set up the configure tab by configuring browser settings and customizing button labels.
+
+### Configure Settings tab
+
+<Frame>
+  <img src="/images/8693859/67f1967f1333.png" alt="Screenshot" />
+</Frame>
+
+**Do the following:**
+
+1. Enable **Inactivity Session Time Out**toggle button to automatically return to the previous screen if credential capture fails within the set time-out duration.
+2. Enable **Auto-Authentication using Local transactions**toggle button will allow user to auto-authenticate into Webkey after device login.
+3. Enable **Continue Without Local Transaction** toggle button will allow user to authenticate manually without giving an error if local authentication transaction is not found.
+
+### Client Authentication
+
+1. **Enable** **Custom User Agent** to allow users to log in to WebKey app from custom browsers.
+2. Select **Enable Browser Fingerprint**to allow WebKey login to function only on registered browsers.Do one of the following:Select **+ Browser Fingerprint** to manually add browser fingerprint.Select **Transactions** > **Action** dropdown > **Add Browser Fingerprint to Application**. For more information, see [How to configure Browser Fingerprint for WebKey](/administration/admin-portal/webkey-how-to-configure-browser-fingerprint-from-failed-transactions-in-the-tenant-admin-portal)Click **Save**.Select **Add Device** to register devices for Webkey Login. Refer: [How to configure Custom User Agent in WebKey Application](/passwordless/web/webkey/webkey-how-to-configure-a-custom-user-agent-for-webkey)
+
+### Configure Customize Buttons tab
+
+<Frame>
+  <img src="/images/8693859/eaddde7c73c6.png" alt="Screenshot" />
+</Frame>
+
+Do the following:
+
+1. Enter customized**Button Label**to display on the Web Key application.
+2. Select **Enable Face Enrollment**option to add a customized button label and enrollment URL to the login page of the WebKey application.
+3. Select **Enable Custom Button** option to add a customized button label and redirect URL to the login page of WebKey application.**Note:** Click **Save**after each action to save your configuration
+
+#### Enable Custom Button in Authentication Flow
+
+This option allows you to add a custom button to the authentication screen and define its behaviour based on user interaction.
+
+<Frame>
+  <img src="/images/8693859/4015c9c32fda.png" alt="Screenshot" />
+</Frame>
+
+To configure Custom Button in Authentication Flow do the following:
+
+1. Turn on the **Enable Custom Button in Authentication Flow** toggle.
+2. **Button Label** Enter the text to be displayed on the custom button in the authentication page. ​_Example: Back_
+3. **Redirect URL** Enter the URL where the user will be redirected when the custom button is clicked.
+4. **Show button only on authentication failure page** Select this checkbox to display the custom button **only when authentication fails**. If not selected, the button will be visible on the main authentication screen.
+5. Click **Save**. The Custom button is enabled for authentication flow.
+
+## Configure Connections tab
+
+Do the following:
+
+1. Select **+** **Add Connections** to map a connection to the application. ![](/images/8693859/684f1a99e370.png)
+2. On the **Add Connections** pop-up box, select connection name(s) from the **Select Connection** dropdown list and click **Add**. ![](/images/8693859/67d47cc89e16.png)
+
+<Note>
+  Click **Save**after each action to save your configuration.
+</Note>
+
+The **WebKey**application is configured and listed on the Application page.
+
+---
+
+<Tip>
+  **Keywords:** WebKey application · WebKey configuration · How to create Webkey Application · How to Configure Webkey Application
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to Configure Theme tab for Webkey Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-theme-tab-for-webkey-application-in-the-tenant-admin-portal" />
+  <Card title="WebKey - How to configure Face credential in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-face-credential-in-tenant-admin-portal" />
+  <Card title="Webkey - How to configure QR Code credential for Webkey in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-qr-code-credential-for-webkey-in-the-tenant-admin-portal" />
+</CardGroup>

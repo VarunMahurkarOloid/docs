@@ -1,0 +1,41 @@
+---
+title: "Accounts"
+sidebarTitle: "Accounts"
+description: "Accounts"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "7041132"
+  url: "https://oloid.help/en/articles/7041132-accounts"
+  collection: "Oloid Workflow"
+  section: "Accounts"
+  updatedAt: "2023-05-17T09:58:06Z"
+  migratedAt: "2026-08-13T09:16:19.437045+00:00"
+---
+Oloid Workflow Accounts contain a method of authentication and authorization for a specific application. Application Trigger/Action nodes use these accounts to connect to them. Users need to rightly configure credentials in the Account. Account is never tied to a flow one-to-one, instead, a single Account can be used by multiple flows.
+
+Once configured, Account can be tested for connectivity and credentials validity. This helps users quickly check if they have configured the right account. Accounts can be created, edited & deleted based on the user's needs. The credentials are stored in AWS Secrets Manager for data security.
+
+The below sections explain how to configure accounts for various applications.
+
+[ProWatch Account](/workflow/workflow/prowatch-account)
+
+[ServiceNow Account](/workflow/workflow/servicenow-account)
+
+[Oloid Account](/workflow/workflow/oloid-account)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Workflow - Overview" icon="arrow-right" href="/workflow/workflow/oloid-workflow-overview" />
+  <Card title="ProWatch <> ServiceNow Integration" icon="arrow-right" href="/workflow/workflow/prowatch-servicenow-integration" />
+  <Card title="ServiceNow Account" icon="arrow-right" href="/workflow/workflow/servicenow-account" />
+  <Card title="Oloid Account" icon="arrow-right" href="/workflow/workflow/oloid-account" />
+  <Card title="Integrating Oloid as an External Method Authentication (EAM) with Microsoft Entra ID" icon="arrow-right" href="/resources/integrations/sso/integrating-oloid-as-an-external-method-authentication-eam-with-microsoft-entra-id" />
+</CardGroup>

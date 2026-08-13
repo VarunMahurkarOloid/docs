@@ -1,0 +1,59 @@
+---
+title: "Oloid Workflow - Overview"
+sidebarTitle: "Workflow - Overview"
+description: "Oloid Workflow - Overview"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "7041009"
+  url: "https://oloid.help/en/articles/7041009-oloid-workflow-overview"
+  collection: "Oloid Workflow"
+  section: "Overview"
+  updatedAt: "2023-06-02T08:02:26Z"
+  migratedAt: "2026-08-13T09:16:19.317073+00:00"
+---
+Oloid Workflow is a visual flow automation application with a no-code/low-code rule engine which supports automation of complex business processes across cloud and on-premises applications.
+
+It runs as a cloud application or as an on-prem application. A tenant can have at most one cloud application and any number of on-prem applications.
+
+Following is the architectural model of workflow on-prem instance and how it interacts with various entities.
+
+<Frame>
+  <img src="/images/7041009/6d5c7dd895ef.png" alt="Screenshot" />
+</Frame>
+
+## How it works?
+
+Oloid Workflow on-prem instance runs within the user's server, typically behind a firewall, and it establishes outbound access to connect to Oloid Cloud Platform. It does not need any inbound access. Thus, workflow instance is within the same secure perimeter as other business systems. Multiple Oloid Workflow instances can be installed to achieve high availability and load balancing capabilities.
+
+The Oloid Workflow cloud instance sits in the cloud and can be used for cloud-app to cloud-app integration (e.g., okta to ServiceNow).
+
+## Advantages
+
+## Manage multiple integrations
+
+With Oloid workflow application, you can define and configure rules for multiple integrations to manage various events at your workplace from anywhere in the world at any given time.
+
+## Browser based editor
+
+This flow-based editor can be used in a browser, giving you the flexibility to access it from anywhere. You can connect multiple business applications, APIs and other services to create events you want to trigger at your workplace entry points.
+
+## Versatile & Flexible
+
+The workflow builder has different prebuilt nodes which can be connected together to build multiple flows. These flows can be integrated with various business application accounts for the event execution by simply deploying them on cloud or on premises.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Workflow - Core Features" icon="arrow-right" href="/workflow/workflow/oloid-workflow-core-features" />
+  <Card title="Getting Started with Oloid Workflow" icon="arrow-right" href="/workflow/workflow/getting-started-with-oloid-workflow" />
+  <Card title="What is Oloid Workflow?" icon="arrow-right" href="/workflow/workflow/what-is-oloid-workflow" />
+  <Card title="Oloid Workflow- Application Modes" icon="arrow-right" href="/workflow/workflow/oloid-workflow-application-modes" />
+  <Card title="How to upgrade Oloid Workflow ?" icon="arrow-right" href="/workflow/workflow/how-to-upgrade-oloid-workflow" />
+</CardGroup>

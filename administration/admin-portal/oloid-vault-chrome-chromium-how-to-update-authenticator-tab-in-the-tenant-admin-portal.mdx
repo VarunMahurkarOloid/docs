@@ -1,0 +1,109 @@
+---
+title: "Oloid Vault (Chrome / Chromium) - How to Update Authenticator tab in the Tenant Admin Portal"
+sidebarTitle: "Chromium) - How to Update Authenticator tab"
+description: "This document provides step by step instructions to update the Authenticator tab for Chrome Vault Application in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Web"
+  - "Chrome Vault"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/web/chrome-vault"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "12458180"
+  url: "https://oloid.help/en/articles/12458180-oloid-vault-chrome-chromium-how-to-update-authenticator-tab-in-the-tenant-admin-portal"
+  collection: "Oloid Chrome Vault"
+  section: "Chrome Vault - Admin Guides"
+  updatedAt: "2026-05-14T09:58:28Z"
+  migratedAt: "2026-08-13T09:16:10.718769+00:00"
+---
+## Introduction
+
+The **Authenticator** tab in the Oloid Vault (Chrome / Chromium) application allows admin to enable and manage authentication methods such as Face, Badge ID, and NFC/ID. Each method has different configurable parameters to enhance security and optimize authentication performance.
+
+## Prerequisite
+
+Chrome Vault application is created. To create refer [How to Create and Configure Chrome Vault Application in the Tenant Admin Portal](/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal).
+
+## Steps to Update Authenticator Tab
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the Home page of the portal, click on the preferred Oloid Vault application. ![](/images/12442012/1a1c053bd1bf.png) The application detail page is displayed.
+3. Go to Authenticator tab and configure the following:[Face](#h_3791424da5)[Badge ID](#h_31cebc628d)[NFC/ID](#h_e545be4337)
+
+<Frame>
+  <img src="/images/12458180/134a14dbad5f.png" alt="Screenshot" />
+</Frame>
+
+## Face
+
+1. Select **Face**option from the left menu panel > turn on **Face**toggle.
+2. Adjust the following setting for **Face Match Parameters**.**Note:**You must consult your Oloid representative before making any changes to the **Face Match Parameters** to ensure optimal authentication performance. ![](/images/11476775/fc14e8c0aa39.png) Turn on **Strict Error Handing** toggle to skip the error and perform a direct one-to-one face match. ![](/images/11476775/36a4a4154dc7.png) Turn on **Additional Face Match** toggle to perform a one-to-one face match alongside the standard face matching process. ![](/images/11476775/af505705c951.png) Adjust the **Face Match Threshold** slider or enter a value directly into the input box to set the face match threshold value. ![](/images/11476775/f4f631561d2f.png)
+3. Adjust the following setting for**Liveness check parameters**.**Note:**You must consult your Oloid representative before making any changes to the **Liveness check parameters** value to ensure optimal authentication performance.**Min Liveness Probability**: Specifies the threshold used to determine whether an image is live or spoofed.Default value: 0.5Images with a liveness probability of **0.5 or higher** are classified as live.**Min Liveness Quality**: Specifies the minimum quality required for an image to be suitable for a liveness check.Default: 0.1Images with a quality score of **0.1 or higher** are considered suitable for liveness verification. ![](/images/12458180/85f514f27c2f.png)
+4. Click **Save**.
+
+<Note>
+  The parameters are pre-configured. This is done by **Oloid admin**.
+</Note>
+
+### Additional Settings
+
+1. **Configure Image Capture Resolution:** Select the preferred resolution from the **Select Resolution** dropdown list for image capture during facial authentication.
+2. Click **Save**.**Note:**If the selected resolution is not available, the browser will default to the closest supported resolution. ![](/images/12458180/e1ec8d987620.png) The face credential is(are) updated successfully.
+
+<Frame>
+  <img src="/images/12458180/64327fdb59ed.png" alt="Screenshot" />
+</Frame>
+
+## Badge ID
+
+1. Select **Badge ID**option from the left menu panel > turn on **Badge ID**toggle.
+2. Select Badge input type from Badge type drop down list.
+3. Click **Save**. **Note:** The Application will support the selected Badge input type at the linked endpoints.
+
+<Frame>
+  <img src="/images/12458180/caecef9d90b8.png" alt="Screenshot" />
+</Frame>
+
+The Badge ID credential is updated successfully.
+
+<Frame>
+  <img src="/images/12458180/03b449a6b0ef.png" alt="Screenshot" />
+</Frame>
+
+## NFC/ID
+
+1. Select **NFC/ID**option from the left menu panel.
+2. Turn on **NFC/ID**toggle.
+
+<Frame>
+  <img src="/images/12458180/898a081d2e0d.png" alt="Screenshot" />
+</Frame>
+
+The NFC/ID is enabled successfully.
+
+<Frame>
+  <img src="/images/12458180/540d6432a703.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Update Chrome Vault Authenticator · Edit Chrome Vault Authenticator tab · Configure Authentication methods in Chrome Vault
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium)- How to Set Up and Use" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-set-up-and-use" />
+  <Card title="How to log in to Chrome Vault" icon="arrow-right" href="/passwordless/web/chrome-vault/how-to-log-in-to-chrome-vault" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Add Connections in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-add-connections-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Update Details tab in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-update-details-tab-in-the-tenant-admin-portal" />
+</CardGroup>

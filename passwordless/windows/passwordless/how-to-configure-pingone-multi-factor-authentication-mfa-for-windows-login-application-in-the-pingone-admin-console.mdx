@@ -1,0 +1,125 @@
+---
+title: "How to Configure PingOne Multi-Factor Authentication (MFA) for Windows Login Application in the PingOne Admin Console"
+sidebarTitle: "Configure PingOne Multi-Factor Authentication (MFA) for…"
+description: "This document provides step-by-step instruction to configure PingOne Multi-Factor Authentication (MFA) in PingOne Admin Console."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "12958196"
+  url: "https://oloid.help/en/articles/12958196-how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console"
+  collection: "Multi Factor Authentication (MFA) Configuration for Windows Login"
+  section: "PingOne MFA - Configuration Guides"
+  updatedAt: "2026-01-21T11:21:30Z"
+  migratedAt: "2026-08-13T09:16:12.189752+00:00"
+---
+## Introduction
+
+PingOne provides authentication and MFA capabilities that can be integrated with Oloid applications. Configuring PingOne allows admin to establish a secure environment, create applications, and enable MFA for users.
+
+## Prerequisites
+
+- You must have **admin access** to the **PingOne Identity Administrator Console**.
+- You must have the **redirect URLs** from the Oloid team to complete the SSO configuration. If you don’t have the redirect URLs, contact [Oloid Support.](mailto:Support@oloid.ai)
+
+## Steps to Configure PingOne
+
+[Create Environment](#h_94dadbbafb)
+
+[Create Applications](#h_d63ef644dd)
+
+[Configure Application](#h_2bf51c6454)
+
+[Create User](#h_c2e071ef41)
+
+## Steps to Create Environment
+
+1. Sign in to the Ping Identity Administrator Console using your PingOne account credentials.
+2. Go to **Environments** > **Environments+**. ![](/images/12958196/68110a0b4347.png) The Create Environment screen is displayed.
+3. Select **Workforce Solution** and click **Next**. ![](/images/12958196/54aaf9cf25e7.png) The Workforce Solution page is displayed.
+4. Click **Next**. ![](/images/12958196/77e81853e55d.png) The Services page is displayed.
+5. Enter the **Trial** **Environment Name** and click **Finish**. ![](/images/12958196/60535628ddfa.png) The Trial Environment is created and listed on the Environment list.
+6. Click **Created Trial Environment.** ![](/images/12958196/e010254005a9.png) The Environment details page is displayed.
+7. Click **Manage Environment.** ![](/images/12958196/fd996296a2e4.png) Environment is created successfully.
+
+## Steps to Create Application
+
+1. On PingOne home page, go to **Applications** > **Applications**. ![](/images/12958196/fc87424689ee.png) The Applications page is displayed.
+2. Click **Application +**. ![](/images/12958196/1412ce7fcbd9.png) The Add Application page is displayed.
+3. Do the following:Enter the **Application Name.**Select **Worker**. Click **Save** ![](/images/12958196/2fbca28ada17.png)
+
+The application is created successfully.
+
+## Steps to Configure the Application
+
+1. Enable the **Application** toggle. ![](/images/12958196/714e91bd326d.png)
+2. Setup the following tabs:[Configure Roles Tab](#h_4c0c3e6b61)[Configure the Resources Tab](#h_1f9ea69664)[Setup Configuration Tab](#h_4a8b7595f3)
+
+### Steps to Configure the Roles Tab
+
+1. On Application detail page, click **Roles > Grant Roles**. ![](/images/12958196/e79eb82ea72d.png) The **Available responsibilities** tab is displayed. ![](/images/12958196/de4ad6a5a42d.png)
+2. Add the following roles from the Roles list. Environment Admin.Identity Data Admin.**Note:** Always click on **Select All**.Organization Admin.Click **Save**. ![](/images/12958196/033666fbe04d.png) The Roles added successfully. ![](/images/12958196/3fe899bb9d76.png)
+
+### Steps to Configure the Resources Tab
+
+1. On Application detail page, click on **Resources > Allowed Scopes Edit icon** **>** select **Email > Save**. ![](/images/12958196/ab059dec3498.png) The Email is added in the allowed scopes list. ![](/images/12958196/61c8e668d974.png)
+
+### Steps to Setup the Configuration Tab
+
+1. On Application detail page, go to **Configuration >**click **Edit**icon. ![](/images/12958196/3df92bcc47e5.png) The Edit Configuration page is displayed.
+2. Do the following:Select **Code** as Response Type.On **Grant Type** select the following:Authorization Code.**Note:** PKCE Enforcement is set to **_Optional_** by default. Keep this setting as **_Optional_**.Client Credentials.Enter the **Redirect URls**. The redirected URLs are added for the Tenant Admin Portal and Oloid User Portal.**Note:** To add more redirect URL, click **+** **Add**to add another Sign-In Redirect URL field in this section. ![](/images/12958196/b32d21f9a020.png) ![](/images/12958196/2634c3872895.png) Click **Save**.The Application is configured Successfully.
+
+### Steps to Configure MFA Parameter in the Oloid Tenant Admin Portal
+
+1. Click **Overview** and copy next to each of the following parameter and then add these values into the corresponding field in the Tenant Admin Portal.Environment ID.Client ID.Client Secret. ![](/images/12958196/6c2f36c6301b.png) To navigate the required fields, in the **Tenant Admin Portal,** go to **User Profile Icon > Tenant Settings > Security > API Token > 3rd Party Tokens > PingOne Configuration for MFA**, and enter the required parameter in the applicable fields. ![](/images/12958196/e734acc3ed72.png)
+
+## Steps to Create User
+
+1. Go to **Directory** **> Users >** **Users +** > **Create User.** ![](/images/12958196/d4bdd8f5bf37.png) The Add user page is displayed.
+2. Do the following:Enter **Username**.Enter **Email ID**.**Note:** Select the checkbox to verify the mail ID. A verification email is sent to the entered email ID after the checkbox is selected.Enter **Password** or click **Generate Password**.**Note:** When click on **Generate Password**, a temporary password is generated.
+3. Click **Save**. ![](/images/12958196/4d58bd4a65ed.png) The user is added successfully. ![](/images/12958196/20683ef53351.png)
+4. On User detail, click **API** and copy the **ID** value. Use this ID in the **Ping ID** field under **User Details** in the Tenant Admin Portal. ![](/images/12958196/a1d6cad63e76.png) To navigate the Ping ID field, on **Tenant Admin Portal**, go to **Directory > Users > Select User > Other Identifier** section, enter the ID in the **Ping ID** field.​ ![](/images/12958196/d785dc32c446.png) The **ID** added successfully.
+
+### Steps to Setup the Multi Factor Authentication
+
+1. Go to **Applications > PingOne Self-Service - MyAccount**. ![](/images/12958196/ad641e333215.png) PingOne Self-Service - MyAccount page is displayed.
+2. Copy the **Home Page URL** and open it in a web browser. ![](/images/12958196/6719b8241391.png) The PingOne Identity Screen is displayed.
+3. Do the following:Enter **UserName**.Enter **Password**.**Note:** Use the password that you added/generated when creating the user account.Click **Sign On**. ![](/images/12958196/4bc7b7d6b31a.png) The **Change Password** screen is displayed.
+4. Do the following:Enter the **Current Password**in the Current Password field.**Note:** Use the password that you added/generated when creating the user account.Enter **New Password**in the New Password field.Enter the **Password** in the Verify New Password field. Click **Save**. ![](/images/12958196/1719f41db1bb.png) The password is added successfully, and the Verification code screen is displayed.
+5. Do the following:Enter the **Verification Code**.**Note:** The verification code is sent to your registered email address.Click **Verify**. ![](/images/12958196/6162dde6ac74.png) The Pingone User Profile page is displayed.
+6. Go to **Authentication** tab > click **Add Method**. ![](/images/12958196/67a7d45d51d4.png) The **Select Method** screen is displayed.
+7. Select **PingID Mobile Application.** ![](/images/12958196/421f9f460e52.png) Scan QR Code screen is displayed.
+8. Open the PingOne application from your device and scan the QR Code. **Note:** Make sure that PingOne application is installed in your device.The PingOne MFA setup is configured successfully. ![](/images/12958196/488d03fffdd4.png)
+
+### Related Articles
+
+[How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** PingOne MFA integration with Oloid · Configure PingOne for Oloid · Multi Factor Authentication with PingOne
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure PingOne SSO in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enable PingOne Multi Factor Authentication (MFA) for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal" />
+  <Card title="How to Configure PingOne Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for the Windows Login Application in the OKTA Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-the-windows-login-application-in-the-okta-admin-console" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+</CardGroup>

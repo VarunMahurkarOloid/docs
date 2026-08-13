@@ -1,0 +1,48 @@
+---
+title: "How to migrate users in bulk in Tenant Admin Portal"
+sidebarTitle: "Migrate users in bulk"
+description: "This document provides step-by-step instructions to migrate users in bulk from one connection to another in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10435072"
+  url: "https://oloid.help/en/articles/10435072-how-to-migrate-users-in-bulk-in-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Users"
+  updatedAt: "2025-05-02T06:33:16Z"
+  migratedAt: "2026-08-13T09:16:05.519562+00:00"
+---
+**Pre-requisite:**
+
+- You must be a Tenant Admin in Tenant Admin Portal.
+
+**Notes:**
+
+- Supervisors and Admins cannot be migrated to another connection.
+- Users with a facial credential uploaded in the portal cannot be migrated. The Admin must remove the user's facial credential before proceeding with migration.
+- Always consult Oloid Support before initiating the migration process to ensure all pre-requisites are met.
+
+**Steps to migrate user:**
+
+1. Log in to the**Tenant Admin Portal**.
+2. On the homepage, select **Directory** from the left menu panel. ![](/images/10435072/4fb5548bcdaa.png) The **Users** page is displayed.
+3. Select **Migrate Users** from the left menu panel. ![](/images/10435072/3fff4be3a4dd.png) The **Migrate Users** page is displayed.
+4. Click **Migrate Users** from the top right. ![](/images/10435072/666a095e5459.png) The **Migrate Users** pop-up is displayed
+5. Do the following:Click**Download Template**.You may download a**.csv**or **.json** file as per your requirement. ![](/images/10435072/fa69280ae4aa.png) The template is downloaded.Open the Template and fill the details.Enter **primary ID** of the user whom you want to migrate under **Primary ID field**.Enter **connection ID** of the connection to which you want to migrate the user to under **Target Connection ID** field. ![](/images/10435072/63555b664c97.png)**Note**: You must ensure that the**Primary ID** and **Target Connection ID** fields are filled accurately with appropriate data.Save the File.Drag and drop or upload the file to the Migrate Users pop-up box.Click **Upload File & Migrate**. ![](/images/10435072/8ed3ec5d491f.png) The Users are migrated to the respective connections in bulk successfully. The file is listed in the Migrate Users page. **Note**: After migration is completed:Users lose access to their current endpoints. New Supervisors get assigned to the migrated users. To check the status of the migration in the logs, click on the file link to download the file. ![](/images/10435072/438bb2a90388.png) Find the following status for the migrated users.**No user found**- No user found is displayed when the user doesn't exists in the portal.**Completed**- Completed is displayed when the user exists and migrated to the respective connection successfully.**Error**- Error is displayed when the user is either a Tenant Admin or Supervisor or the user who has face uploaded as credential in the Portal. ![](/images/10435072/eea52db19682.png)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal – How to Add Users in Bulk" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-add-users-in-bulk" />
+  <Card title="How to add and invite a Tenant Admin" icon="arrow-right" href="/administration/admin-portal/how-to-add-and-invite-a-tenant-admin" />
+  <Card title="Tenant Admin Portal - How to configure user details" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-user-details" />
+  <Card title="Tenant Admin Portal - How to Log in to Tenant Admin Portal with Microsoft SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-microsoft-sso" />
+  <Card title="Tenant Admin Portal - How to Log in to Tenant Admin Portal with Google SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-google-sso" />
+</CardGroup>

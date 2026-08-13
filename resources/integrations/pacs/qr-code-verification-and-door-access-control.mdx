@@ -1,0 +1,114 @@
+---
+title: "QR Code Verification and Door Access Control"
+sidebarTitle: "QR Code Verification and Door Access Control"
+description: "API Documentation for QR code vendors"
+icon: "door-closed"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "PACS"
+  - "Workflow"
+categories:
+  - "resources/integrations/pacs"
+  - "workflow/workflow"
+primaryCategory: "resources/integrations/pacs"
+navPath: "Resources > Integrations > PACS"
+source:
+  system: "intercom"
+  articleId: "9016890"
+  url: "https://oloid.help/en/articles/9016890-qr-code-verification-and-door-access-control"
+  collection: "Oloid Workflow"
+  section: "CloudKey"
+  updatedAt: "2024-02-29T23:40:56Z"
+  migratedAt: "2026-08-13T09:16:24.764263+00:00"
+---
+This documentation provides comprehensive guidance for integrating your QR code reader system with our Door Access Control API. This API is designed to verify the validity of QR codes presented by users and trigger the opening of physical doors when authentication is successful. Below, you'll find detailed instructions on how to invoke this API, including the required inputs and the expected responses.
+
+**API Endpoint**
+
+**`POST /api/door-access`/**
+
+**Base URL**
+
+**`https://`api.oloidpreview.com**
+
+orProduction domains
+
+**Authentication**
+
+This API requires an API key for authentication. Include your API key in the header of each request:
+
+```
+Authorization: Bearer <Your_API_Key>
+```
+
+**Required Inputs**
+
+To invoke the API, you must provide the following information in the request body, formatted as JSON:
+
+- **QR Code Data** (**`qrData`**): The data encoded in the QR code, typically a string.
+- **Door ID** (**`doorId`**): The unique identifier for the door that needs to be unlocked.
+- **Client Token** (**`clientToken`**): A token to verify the request's and client's authenticity.
+
+**Request Body Example:**
+
+```
+{ "qrData": "encodedQRCodeData", "doorId": "12345", "clientToken": "secureclientToken" }
+```
+
+**Response**
+
+The API will respond with a JSON object containing the following fields:
+
+- **status** (**`string`**): Indicates the result of the request, such as **`Success`** or **`Failure`**.
+- **message** (**`string`**): Provides additional information about the result, e.g., "Door opened successfully" or "Invalid QR code".
+
+**Success Response Example:**
+
+```
+{ "status": "Success", "message": "Door opened successfully" }
+```
+
+**Failure Response Example:**
+
+```
+{ "status": "Failure", "message": "Invalid QR code" }
+```
+
+**Error Handling**
+
+In case of errors, the API will return an appropriate HTTP status code and a message detailing the issue. Common errors include:
+
+- **400 Bad Request**: Missing or invalid input data.
+- **401 Unauthorized**: Invalid or missing API key.
+- **403 Forbidden**: The authentication token is invalid or expired.
+- **404 Not Found**: The specified Door ID does not exist.
+- **500 Internal Server Error**: Unexpected server error.
+
+## Integration Steps
+
+1. **Authentication**: Ensure your system is capable of securely storing and transmitting the API key.
+2. **QR Code Reading**: Implement functionality in your QR code reader to capture and encode the QR data.
+3. **API Invocation**: Use the captured QR data, along with the Door ID and authentication token, to make a POST request to the API endpoint.
+4. **Response Handling**: Based on the API response, take the appropriate action (e.g., unlock the door, display an error message).
+
+## Security Considerations
+
+- Always use HTTPS to encrypt data in transit.
+- Store the API key and authentication tokens securely.
+- Register Clients for endpoint security
+- Validate the QR code data before sending it to prevent injection attacks.
+
+**Support**
+
+For any issues or questions regarding this API, please contact our support team at [support@oloid.ai](mailto:support@oloid.ai).
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to generate QR Code in bulk" icon="arrow-right" href="/administration/admin-portal/how-to-generate-qr-code-in-bulk" />
+  <Card title="How to Log into Workforce/HRMS Platforms using QR Code Credential through Device Lock app" icon="arrow-right" href="/passwordless/android/devicelock/how-to-log-into-workforce-hrms-platforms-using-qr-code-credential-through-device-lock-app" />
+  <Card title="Webkey - How to configure QR Code credential for Webkey in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-qr-code-credential-for-webkey-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Log In with QR Code" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-log-in-with-qr-code" />
+  <Card title="Supervisor App - How to Add QR Code" icon="arrow-right" href="/passwordless/windows/supervisor/supervisor-app-how-to-add-qr-code" />
+</CardGroup>

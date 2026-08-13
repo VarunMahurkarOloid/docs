@@ -1,0 +1,123 @@
+---
+title: "Oloid Verify - How to Configure Endpoint in Tenant Admin Portal"
+sidebarTitle: "Configure Endpoint"
+description: "Oloid Verify - How to Configure Endpoint in Tenant Admin Portal"
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10511068"
+  url: "https://oloid.help/en/articles/10511068-oloid-verify-how-to-configure-endpoint-in-tenant-admin-portal"
+  collection: "Oloid Verify"
+  section: "Oloid Verify: Platform Configuration"
+  updatedAt: "2026-04-29T08:35:16Z"
+  migratedAt: "2026-08-13T09:16:05.875491+00:00"
+---
+## Introduction
+
+This document explains how to configure an endpoint in the Tenant Admin Portal. Endpoint configuration allows Tenant Admin to manage endpoint settings, appearance, groups and transaction behaviour for the **Oloid Verify** app.
+
+**Note:** Once you pair an endpoint with Oloid Verify application, it gets saved and appears in the Tenant Admin Portal. After pairing, you can configure the endpoint.
+
+## Prerequisite
+
+You must pair Oloid Verify endpoint. For more, refer to[How to Pair an Oloid Verify Endpoint](/passwordless/verify/oloid-verify-how-to-pair-an-endpoint)
+
+## Steps to configure the Endpoint
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Endpoints** on the left menu panel. ![](/images/10511068/c63f6b503e62.png) The **Endpoints** page is displayed.
+3. Select the paired Oloid Verify Endpoint. ![](/images/10511068/2387636e626b.png) The **Endpoint Details**page is displayed. ![](/images/10511068/8ec8c8fcd76e.png)
+4. Do the following:[Configure Details Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)[Design Configure Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)[Configure Transactions Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)[Configure Health Response Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)The Endpoint is configured successfully.
+
+## Configure Details Tab
+
+1. Edit **Endpoint Name** if required.
+2. Enter**Endpoint Description**. (Optional)
+3. Select **Time Zone** from the dropdown list. (Optional)**Note:** If time zone is not set for the Endpoint, it automatically uses the application's default time zone.
+4. Click **Save**. ![](/images/10511068/0eb02e4193e9.png) The Details tab is configured successfully. ![](/images/10511068/c560ff10d236.png)
+
+## Design Configure Tab
+
+Configure the following:
+
+- [Endpoint Settings](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+- [Groups](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+- [Web Button](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+- [Health Setup](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+
+### Endpoint Settings
+
+1. Turn on **Capture Location**toggleto activate location capture on the endpoint for each transaction.**Note**: The **Location Permission** of the device must be enabled to make the feature functional.
+2. Turn on **Generate Debug Logs**toggle to activate log generation for the endpoint until disabled.
+3. Click **Save**. ![](/images/10511068/2afeb823f513.png) The Endpoint setting is configured successfully. ![](/images/10511068/661b72f0ca2e.png)
+
+### Groups
+
+1. Turn on **One Face/User (On Device FR)** toggle to ensure that only one facial image of each user is stored on the device as a reference for On-device Transaction. ![](/images/10511068/08ef35f65aa5.png)
+2. Click **+ Add Group**. ![](/images/10511068/f262de33891c.png) The **Add Group** pop-up box is displayed.
+3. Select group(s) in **Add Group** field.
+4. Click **Save**. ![](/images/10511068/b3d3ae824d3c.png) The Group is added successfully. ![](/images/10511068/ed16c9e6fdfa.png)
+
+### Web Button
+
+1. Turn on**Web Button** toggle to display the Web Button on the endpoint preview screen. This button allows users to view transactions.
+2. In the **URL** field, enter the complete URL of the website where users will review punch data.**Note:** You have to enter the URL of the website where the user will review the punches.
+3. In the **Timeout** field, enter the delay (in minutes) before the URL launches.
+4. Turn on **Show only on Auth**toggle to display the Web Button only after the user is successfully authorized. (Optional)
+5. Turn on **Auto Launch** toggle to automatically launch the web button and view transaction. (Optional)
+6. Click **Save**. ![](/images/10511068/e33241358010.png) The Web Button is configured successfully. ![](/images/10511068/ef36fb943579.png)
+
+### Health Setup
+
+1. Enter **Server Name**.
+2. Enter URL of the server in **Add URL that needs to be monitored** field.
+3. Click **Add**.The monitored URLs will appear in the list below, with columns for **Server Name** and **URL**.​**Note:** Configure the settings only if they are applicable. Consult your Oloid representative before making any changes.
+
+<Frame>
+  <img src="/images/10511068/117944a38055.png" alt="Screenshot" />
+</Frame>
+
+The Server is added along with its URL successfully.
+
+## Configure Transactions Tab
+
+The Transactions tab allows you to view detailed user transactions. You can monitor transaction statuses and filter results based on success or failure.
+
+<Frame>
+  <img src="/images/10511068/ee8ca860740d.png" alt="Screenshot" />
+</Frame>
+
+## Configure Health Response Tab
+
+1. Turn on **Share Endpoint Logs** toggle to share logs.
+2. Turn on **Relaunch** toggle to automatically apply changes made on the Tenant Admin Portal to the Oloid Verify app without manually closing or restarting the app.
+3. Click **Check Health** to initiate a health check successfully.
+
+<Frame>
+  <img src="/images/10511068/45d6871db5d4.png" alt="Screenshot" />
+</Frame>
+
+In this section, you can see the endpoint status, check health of the endpoint and configure health alert. For more information on health alert, see [How to configure health alert for an endpoint](/administration/admin-portal/how-to-add-health-alerts-in-the-endpoint).
+
+---
+
+<Tip>
+  **Keywords:** Oloid Verify endpoint configuration · Configure endpoint in Tenant Admin Portal · Endpoint settings Oloid Verify
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - How to Create and Configure Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure Oloid Connect Endpoint Template" icon="arrow-right" href="/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template" />
+  <Card title="Oloid Verify - How to Create and Configure Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+  <Card title="DeviceLock App - How to Configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/devicelock-app-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

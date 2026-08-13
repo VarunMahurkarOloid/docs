@@ -1,0 +1,117 @@
+---
+title: "How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal"
+sidebarTitle: "Configure Security Assertion Markup Language (SAML)…"
+description: "This document provides step-by-step instructions to configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "12840218"
+  url: "https://oloid.help/en/articles/12840218-how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-07-27T10:54:52Z"
+  migratedAt: "2026-08-13T09:16:11.932448+00:00"
+---
+## Introduction
+
+The SAML–Okta Identity Provider (IdP) Profile enables secure authentication between Okta and the Oloid Tenant Admin Portal. Configuring SAML allows users to sign in to Oloid applications using their Okta credentials.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- Ensure that the **SAML IDP** application is created. To create SAML application, refer [How to Create IDP Profile for Security Assertion Markup Language (SAML) in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml).
+- Ensure that the required **Okta SAML parameters** are available or can be generated from the SAML Identity Provider configuration in the Okta Admin Console. To see the parameter, refer [How to Configure Security Assertion Markup Language (SAML) IDP in OKTA Admin Console | Oloid Help Center](/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console).
+- Ensure that the Webkey application is created. To create Webkey application, refer [How to create and configure WebKey Application in Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal).
+
+## Steps to Configure SAML-Okta IDP Profile
+
+1. Log in to the **Oloid** **Tenant Admin Portal**.
+2. On the **Applications** page, click **Auth Policies** > **Identity Provider**. ![](/images/12840218/f71f621b44a7.png)The **Identity Provider Profiles** page is displayed.
+3. Click preferred SAML-IDP application. ![](/images/12840218/42de48092cf0.png) The IDP details page is displayed. ![](/images/12840218/53e7264d74aa.png)
+4. Do the following:[Configure Details tab](/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal)[Integrate Metadata tab for Okta Settings](/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal)[Configure IDP Settings tab](/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal)[Configure Claims tab](#h_ecb80a1178)The IDP Profile is configured successfully.
+
+## Configure Details tab
+
+The Details tab is used to view and manage the basic information for the Microsoft Entra ID identity provider configured in the Tenant Admin Portal.
+
+To configure the Details tab, do the following:
+
+1. Edit the **IDP Name** (if required). ![](/images/12840218/30724b16547c.png)
+2. Enter **Description** (optional). ![](/images/12840218/e9504d1e7eee.png)
+3. Do one of the following:Select the required WebKey application from the **Select WebKey Application**drop-down list. ![](/images/12840218/3523813d2f8d.png) (OR)Click **Make Default**.**Note:** The **Make Default** button is enabled only when more than one IDP is added in the Tenant Admin Portal. ![](/images/12840218/3e80ae629e56.png) The **Set this as Default IDP** pop-up box is displayed, do the following.Select the **Webkey Application**from the drop-down.Click **Set as Default**. ![](/images/12840218/f4f692ae9de3.png) **Note:**If another IDP is currently set as default, it will be replaced upon confirmation.To make IDP as default, click **Make Default**. The confirmation pop-up box is displayed.Click **Set as Default**to designate the preferred IDP as default. ![](/images/12840218/a32b5f43122d.png) The WebKey application is linked to the IDP.
+4. Click **Save.** ![](/images/12840218/d863ea499b2e.png) The Linking IDP top Application pop-up box is displayed.
+5. Click **Confirm Action**. ![](/images/12840218/7e40a7e9afb8.png) Details tab is configured successfully. ![](/images/12840218/0b4035f1db4d.png)
+
+## Configure Metadata Tab
+
+The Metadata tab is used to provide the required information to configure SAML settings and enable SAML-based authentication between the identity provider and the Tenant Admin Portal.
+
+1. Click **Oloid Metadata** tab.The Oloid Metadata tab is displayed.
+2. Click **[Visit help page](/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console)**for the document to configure Okta settings for SSO login.
+3. Do the following:**Download Certificate:** Download the certificate and upload it to the **IdP Signature Certificate** field.**Sign-On URL:** Copy the Sign-on URL and enter it in the **IdP Issuer URL** field.**Entity ID:** Copy the Entity ID and enter it in the **Sign-on URL** field. ![](/images/12840218/4312beb7cb94.png) **Note:** You can find the **IdP Signature Certificate, IdP Issuer URL** and **Sign-on URL**fields on the SAML protocol section on SAML in OKTA Admin Console. For more details, click **[here](/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console)**. ![](/images/12840218/b0523487f565.png)
+
+## Configure IDP Settings Tab
+
+The **IDP Settings** tab is used to configure and upload the required SAML details to enable authentication between the identity provider and Tenant Admin Portal.
+
+To configure the IDP settings tab, do the following:
+
+1. Click the **IDP Settings**tab. ![](/images/12840218/50f71df86f89.png) The IDP Setting tab is displayed.
+2. Do one of the following to configure the IDP Settings tab.Upload **Metadata** file. ![](/images/12840218/1921ea6824a5.png) OREnter **Entity ID**. ![](/images/12840218/772456a51a90.png) Enter**ACS URL**. ![](/images/12840218/4c99cb31dd69.png) **Note:** You can find the **Metadata file, Entity ID** and **ACS URL**on the SAML application details page. For details, click **[here](/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console)**. ![](/images/12840218/300952f75725.png) Select **Name ID Format** from the drop-down.**Note:** By default, Email Address is selected. ![](/images/12840218/1aa2cf485601.png) Select **SAML Subject** from the drop-down.**Note:** By default, Email is selected. ![](/images/12840218/5e33208e0464.png) Enter **Home URL:**Enter the URL of the home page.Enter **Home Button Label**: Enter the text displayed on the **Home** button. ![](/images/12840218/798217ca3411.png) Click **Save**. ![](/images/12840218/cea81bd9f4b4.png) IDP settings tab is configured successfully.
+
+## Configure Claims Tab (Optional)
+
+The **Claims** tab is used to configure custom claims that pass user attributes from Oloid to the OIDC provider.
+
+Do the following:
+
+- [Additional Claims](#h_ad38192031)
+- [Group Claims](#h_a562946c89) ![](/images/12840218/ff4d336b05ca.png)
+
+### Add Additional Claims
+
+Custom Claims allow the admin to map Oloid user attributes to OIDC attributes.
+
+Do the following:
+
+1. In the **Additional Claims** section, click **Add Field**. ![](/images/12840218/3bb9446e08ac.png)
+2. In the**SAML Claim**field, enter the claim name to be sent to the service provider.
+3. Selectone of the following types.**Basic:** Standard claim format.**Unspecified:** No specific format defined.**URI Reference:** Claim uses a URI-based format.
+4. In the **Oloid Value** dropdown, select the corresponding Oloid attribute (for example, Oloid ID).**Note:**Click **Add Field** to add additional claim items.
+5. Click **Save.** ![](/images/12840218/8daad6246d55.png) The Custom claims tab is configured.
+
+### Group Claims
+
+The **Group Claims** section allows you to pass user group-related attributes from Oloid to the Service Provider during authentication.
+
+1. In the **Group** **Claims** tab, expand the **Group Claims** section.The Group Claims section is displayed.
+2. Click **Add Field**. ![](/images/12840218/132fd3ac63b5.png)
+3. Enter the following details:**Attribute Name**: Enter the group attribute name to be sent to the Service Provider.**Type**: Select the claim format:**Basic****Unspecified****URI Reference****Oloid Value**: Enter or select the group-related value.**Condition**: Select one of the following:**Contains****Equal****Starts With**
+4. Click **Save**. ![](/images/12840218/236ec3bee860.png) The **Group Claims** section is configured successfully. ![](/images/12840218/c94dce08a8e5.png) The **SAML IDP** is successfully configured. ![](/images/12840218/dfae0bdab0ad.png)
+
+---
+
+<Tip>
+  **Keywords:** SAML Okta integration · Configure SAML IdP in Oloid · Oloid Tenant Admin Portal SAML configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Create an OIDC-Okta IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for Security Assertion Markup Language (SAML)" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) IDP in OKTA Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console" />
+</CardGroup>

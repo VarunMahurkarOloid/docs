@@ -1,0 +1,116 @@
+---
+title: "How to Configure Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal"
+sidebarTitle: "Configure Data Mapper Table for ADP Enterprise Inbound"
+description: "This document provides step-by-step instructions to configure Data Mapper Table for ADP Enterprise Inbound in Tenant Admin Portal."
+icon: "users-gear"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/hrms"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/hrms"
+navPath: "Resources > Integrations > HRMS"
+source:
+  system: "intercom"
+  articleId: "13718445"
+  url: "https://oloid.help/en/articles/13718445-how-to-configure-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Data Tables"
+  updatedAt: "2026-02-27T06:00:30Z"
+  migratedAt: "2026-08-13T09:16:14.738773+00:00"
+---
+## Introduction
+
+This document provides instructions on how to configure a Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal.**
+- Data Mapper Table for ADP Enterprise Inbound must be created.
+
+## Steps to Configure Data Mapper Table for ADP Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, go to **Agents > Data Tables**. ![](/images/13718445/250aaa458311.png) The **Data Tables** page is displayed.
+3. Click preferred data table. ![](/images/13718445/69e4b7ca72af.png) The data table details page is displayed.
+4. Do the Following:[Configure Details Tab](#h_da79138b27)[Setup Configure Tab](#h_a8e4ddfd68) ![](/images/13718445/8d0030b8699e.png) After saving your changes, the Data Mapper Table for **ADP Enterprise Inbound** is configured successfully.
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the data mapper table.
+
+Do the following:
+
+1. Update the **Table Name** (if required).
+2. Enter **Description** (Optional).
+3. Click **Save**. ![](/images/13718445/551119875e65.png) The details tab is configured successfully.
+
+## Setup Configure Tab
+
+This tab is used to configure data field mappings between ADP and Oloid.
+
+**Note:** The **FullName, DisplayName, PrimaryID, and Status** fields are mandatory and must be mapped to corresponding source fields or expressions before saving the configuration.
+
+Do one of the following:
+
+- [Inline](#h_5beddd6098)**OR**
+- [Upload File](#h_5515cfe8b3) ![](/images/13718445/789b08f4cdf0.png) The Configure tab is set up successfully.
+
+## Inline
+
+In the **Inline** section, do the following:
+
+1. **Source / Expression:**Enter the ADP field name or expression that provides the source value.
+2. **Destination – Oloid Field:**Enter the Oloid field name to which the source value is mapped.
+3. **Data Type:** Select the data type from the drop-down.
+4. Click **Add field** to add more fields.**Note:** For mapping the table, refer **[Data mapper Table](#h_99c49d2a65)**.
+5. Click **Save**. ![](/images/13718445/4a1b441de760.png) The Inline section is configured successfully.
+
+## Upload File
+
+In the **Upload File** section, do the following:
+
+1. Select **Upload File** and upload the mapping file.**Note:** The file format must be in **.XLSX** or **.CSV**.
+2. Click **Save**. ![](/images/13718445/13ce8713f2c9.png) The Upload File section is configured successfully.The Configure tab is set up successfully. ![](/images/13718445/7eaf1325bc8a.png)
+
+## Additional Information
+
+## Data Mapping Table
+
+Use the following fields to define data mappings when configuring the Data Mapper Table.
+
+| **ADP Use Field** | **Oloid User Field** | **Data Type** |
+|---|---|---|
+| associateOID | PrimaryID | String |
+| \{workerDates.originalHireDate\} | \{UserMetadata.HireDate\} | String |
+| \{workerDates.terminationDate\} | \{UserMetadata.EndDate\} | String |
+| \{workerStatus.statusCode.codeValue\} | \{UserMetadata.Status\} | String |
+| \{"Active"\} | Status | String |
+| \{person.preferredName.givenName + ' ' + person.preferredName.familyName1\} | DisplayName | String |
+| \{person.preferredName.givenName + ' ' + person.preferredName.familyName1\} | FullName | String |
+
+**Note:** Contact **[Oloid support](mailto:support@oloid.ai)** if you need assistance while configuring the Data Mapper table.
+
+#### Related Article
+
+[How to Create Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Data Mapper Table for ADP Enterprise Inbound · ADP Enterprise Inbound Data Mapper Configuration · ADP Data Mapping in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure Data Mapper Table for Workday - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

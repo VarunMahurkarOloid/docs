@@ -1,0 +1,51 @@
+---
+title: "How to add Personal Computer/Smart Card (PC/SC) Badge input enabled Connection to the Application in the Tenant Admin Portal"
+sidebarTitle: "Add Personal Computer/Smart Card (PC/SC) Badge input…"
+description: "This document provides step-by-step instructions to add Personal Computer/Smart Card (PC/SC) Badge input enabled Connection to the Application in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "11710522"
+  url: "https://oloid.help/en/articles/11710522-how-to-add-personal-computer-smart-card-pc-sc-badge-input-enabled-connection-to-the-application-in-the-tenant-admin-portal"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Connections"
+  updatedAt: "2025-11-20T03:29:15Z"
+  migratedAt: "2026-08-13T09:16:09.184039+00:00"
+---
+## Introduction
+
+The Tenant Admin Portal allows administrators to add a PC/SC Badge Input-enabled Connection to an Application. This ensures that the Application can authenticate users through PC/SC-compatible badge readers (e.g., HID cards). Adding the created PC/SC-enabled Connection to the Application enables secure and consistent badge-based authentication.
+
+## Prerequisite
+
+PC/SC Badge input enabled connection must be created. For more details refer [How to create PC/SC Badge Input enabled Connections in the Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-create-personal-computer-smart-card-pc-sc-badge-input-enabled-connections).
+
+## Steps to add PC/SC Badge input enabled Connection
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click Application name to edit. ![](/images/11710522/743988a88699.png) The **Application**details page is displayed.
+3. Go to **Connection**tab > select **Add Connections**.**Note:**Before adding a **PC/SC Badge input enabled connection**, ensure that the connection is already created and listed in the application list. To create a **PC/SC Badge input enabled connection**, refer to this link [How to create PC/SC Badge Input enabled Connections in the Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-create-personal-computer-smart-card-pc-sc-badge-input-enabled-connections). ![](/images/11710522/98ce72e97be3.png) The **Add Connections** pop-up box is displayed.
+4. On the pop-up box, do the following:Select the preferred **PC/SC Badge input enabled connection** from **Connection**dropdown menu. Click **Add**.**Note:**An application can have a maximum of **5 Connections**. All connections associated with a single application must be of the same type either all **PC/SC Badge input enabled** or all **non-PC/SC Badge input enabled**. Combining different connection types within the same application is not supported. ![](/images/11710522/e2284dd4473f.png) The **PC/SC enabled connection** is added successfully. ![](/images/11710522/36ac56515be1.png)
+
+---
+
+<Tip>
+  **Keywords:** Add PC/SC Badge Input enabled Connection · Configure PC/SC-enabled Connection in Application · HID card authentication setup
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Create Connection" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-create-connection" />
+  <Card title="How to Map Connections to an Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-map-connections-to-an-application-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to configure Badge ID credential for Webkey in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-badge-id-credential-for-webkey-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Create Personal Computer/Smart Card (PC/SC) Badge Input enabled Connections" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-create-personal-computer-smart-card-pc-sc-badge-input-enabled-connections" />
+  <Card title="Windows Login - How to configure PC/SC Badge configuration in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pc-sc-badge-configuration-in-the-tenant-admin-portal" />
+</CardGroup>

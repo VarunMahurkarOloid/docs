@@ -1,0 +1,81 @@
+---
+title: "Tenant Admin Portal – How to Add Users in Bulk"
+sidebarTitle: "Tenant Admin Portal – How to Add Users in Bulk"
+description: "This document provides instructions to add users in bulk in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8185203"
+  url: "https://oloid.help/en/articles/8185203-tenant-admin-portal-how-to-add-users-in-bulk"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Users"
+  updatedAt: "2026-03-27T12:14:31Z"
+  migratedAt: "2026-08-13T09:16:20.045317+00:00"
+---
+## Introduction
+
+This document explains how to add users in bulk in the Tenant Admin Portal using a CSV or JSON file. It also includes the required formatting guidelines for preparing the upload file to ensure that user data is processed correctly and to prevent errors during import.  
+​
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- Use the provided CSV template and do not change the column headers.
+- Do not use commas (,) in field values.
+- Ensure all values are in the correct format (for example, a valid email address).
+- Ensure the CSV file does not contain extra spaces or incorrect formatting.
+
+## Steps to add users in bulk
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Directory**on the left menu panel. ![](/images/8185203/cc61235fc4da.png) The **Users** page is displayed.
+3. On the Directory menu panel, click **Import**> **Import Users**. ![](/images/8185203/7c2f4edaea44.png) The **Import Users**pageis displayed. ![](/images/8185203/5591519bc377.png)
+4. Click **Import Users** button on top-right corner of the page. ![](/images/8185203/2f8e6b1c0292.png) The **Import User(s)** pop-up box is displayed.
+5. In the **Upload**section, Do one of the following:Click **CSV** to download the CSV file template.OrClick **JSON**to download the JSON file template. **Note:** Please follow these guidelines when updating the downloaded template:If **Primary ID** is blank, use `{{oloid}}` to auto-generate it.Add **custom fields** without the `#Oloid#_` prefix.Keep only **PrimaryID**, **FullName**, and **Status**; you may delete other columns as required.To **delete a user**, set the **Status** to `TERMINATED`.
+
+<Frame>
+  <img src="/images/8185203/025cc5e1ff09.png" alt="Screenshot" />
+</Frame>
+
+The CSV or JSON template file is downloaded to your system.
+
+1. Prepare the CSV or JSON template file for upload.**Note:**To prepare the user upload template, refer [How to prepare User Upload Template](/administration/admin-portal/tenant-admin-portal-how-to-prepare-user-upload-template).
+2. Drag and drop the file or click on the **Import CSV or JSON file** area to upload your prepared CSV or JSON file. ![](/images/8185203/25af662af3cd.png)
+3. Select **Upload** **File**.
+
+<Frame>
+  <img src="/images/8185203/acbff267259d.png" alt="Screenshot" />
+</Frame>
+
+The file is uploaded in the **Upload** section.
+
+1. In the **Analyze**section, do the following:Select preferred **Connection Name** from dropdown > click **Analyze**. ![](/images/8185203/40038ec18a7e.png) You can review the imported data for any validation error.Click **Publish**.**Note:**You can click Reset to clear the current upload process. ![](/images/8185203/8ed0342d585e.png) The file is uploaded and listed on the Import Users page. The user and user details are added to the Tenant Admin Portal. ![](/images/8185203/ca0cec2f977f.png) **Note**: Check the logs to see the users’ status. ![](/images/8185203/7590c47b87a8.png)
+
+## Video Tutorial
+
+Watch the video [How to add users in bulk in Tenant Admin Portal-Video Tutorial](/administration/admin-portal/how-to-add-users-in-bulk-in-tenant-admin-portal-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** bulk user upload · add users in bulk tenant admin portal · import users CSV · import users JSON
+</Tip>
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to add Users in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-add-users-in-the-tenant-admin-portal" />
+  <Card title="How to invite a Tenant Admin" icon="arrow-right" href="/administration/admin-portal/how-to-invite-a-tenant-admin" />
+  <Card title="Tenant Admin Portal - How to Map User to a Group" icon="arrow-right" href="/administration/admin-portal/how-to-map-users-to-a-group" />
+  <Card title="How to migrate users in bulk in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-migrate-users-in-bulk-in-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Import Bulk Passwords" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-import-bulk-passwords" />
+</CardGroup>

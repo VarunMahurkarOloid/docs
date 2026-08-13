@@ -1,0 +1,178 @@
+---
+title: "Oloid Connect - How to configure Intent screen in Tenant Admin Portal"
+sidebarTitle: "Oloid Connect - How to configure Intent screen"
+description: "This document provides step-by-step instructions to customize the Multi Button screen in the Oloid Connect Application in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "9937044"
+  url: "https://oloid.help/en/articles/9937044-oloid-connect-how-to-configure-intent-screen-in-tenant-admin-portal"
+  collection: "Oloid Connect"
+  section: "Oloid Connect: Platform Configuration"
+  updatedAt: "2026-04-13T09:48:29Z"
+  migratedAt: "2026-08-13T09:16:30.225319+00:00"
+---
+## Introduction
+
+The intent screen is used in Endpoint Kiosk mode, allowing users to define their actions, such as entering a job code or selecting from multiple available authentication options.
+
+## Steps to configure intent screen
+
+1. Log in to Tenant Admin Portal.
+2. Go to **Application** > **Configure** tab > **Configure Intent Screen**.**Note:**You must configure the application with which your endpoint is paired. ![](/images/9937044/715edaf7cf05.png)
+3. Turn on**Show Intent Screen**toggle. ![](/images/9937044/41d80db5029d.png)
+4. Configure one of the following:[Job-Code](#h_7270caa3ac)OR[Multi button](#h_7c3498a212)The Intent screen is configured.
+
+## Prerequisite:
+
+You must prepare the Job and Charge Code template before configuring the Job  and Charge Code. For more, refer to [Oloid Connect - How to prepare Job and Charge Code Template](/administration/admin-portal/oloid-connect-how-to-prepare-job-and-charge-code-template)
+
+## Configuring Job Code
+
+1. Select **Job Code** to allow users to enter the job code. ![](/images/9937044/28d332ad40cc.png) The intent screen is configured and displays the Job Code in the preview screen. **Sample intent screen for Job Code** ![](/images/9937044/1101a9447d32.png) The user selects **Clock Out** after completing the assigned work.
+2. Configure **Job Code** and **Charge Code**:Go to the **Job-Code** section.Select the **Show Job-code selector**checkbox to enable the fields for uploading Job Codes and Charge Codes.Click **Save** to apply the configuration.
+
+<Frame>
+  <img src="/images/9937044/dccebf81f69d.png" alt="Screenshot" />
+</Frame>
+
+**Prerequisite**
+
+You must prepare the Job Code and Charge Code templates before uploading. For more, refer to [How to prepare Job and Charge Code Template](/administration/admin-portal/oloid-connect-how-to-prepare-job-and-charge-code-template)
+
+## Upload Job Code File
+
+1. In the **Job Codes** section, click or drag your file to the upload area.**Note:**The file must be in **XLSX** or **CSV** format.
+2. If needed, download the file template:Click **XLSX** to download the Excel template.Click **CSV** to download the CSV template.**Note:**Fill out the template with valid job codes before uploading. ![](/images/9937044/5d79a44e212c.png) The Job Code file is uploaded successfully.
+
+## Upload Charge Code file
+
+1. In the **Charge Codes** section, click or drag your file to the upload area.**Note:** The file must be in **XLSX** or **CSV** format.
+2. If needed, download the file template:Click **XLSX** to download the Excel template.Click **CSV** to download the CSV template.**Note:**Fill out the template with valid Charge codes before uploading. ![](/images/9937044/0827ad11feeb.png) The Job Code file is uploaded successfully. **Sample intent screen for Job-code selector** ![](/images/9937044/984e94ee5447.png)**Configuring Multi-Button**[Configure multi-button intent screen](#h_cd5c5716b7) based on your requirement**Note:**Once enabled you must add the required fields else blank intent screen will be displayed. **Multi-Button Intent Screen Configuration**
+
+1. Go to the **Job-Code** section on the configuration screen.
+2. Select **Multi-Button.** ![](/images/9937044/b3b4c041ae6f.png)
+
+Enable the following options based on your requirements:
+
+1. **Choose Departments**: Select this option to enable users to select a department. For detailed information, see [Configure Departments](#h_ac601881a0).
+2. **Conduct Survey**: Select this option to create a survey form after end-of-shift authentication, allowing the user to submit and proceed to the next screen. To create your survey form, see [Customize Survey Form](#h_0f65558fd5).
+
+## Configure Intent Screen
+
+1. Enter a clear title in the **Intent Screen Heading** field. This title appears at the top of the intent screen.
+2. Type a short and clear description in the Intent Screen Description field.
+
+<Frame>
+  <img src="/images/9937044/2c9d7f5324ae.png" alt="Screenshot" />
+</Frame>
+
+The intent screen heading and description are displayed on the preview screen.
+
+**Sample intent screen heading and description for reference**
+
+<Frame>
+  <img src="/images/9937044/952b57620463.png" alt="Screenshot" />
+</Frame>
+
+1. Configure the following as per your requirement:[Configure Intent Screen Buttons](#h_60bec37554)[Design Minimum Lunch Break Config](#h_9941417330)[Customize Survey Form](#h_0f65558fd5)[Configure Departments](#h_ac601881a0)
+2. Click **Save**to apply your changes.
+
+The intent screen is configured.
+
+**Configure Intent Screen Buttons**
+
+You can configure at least one and up to six intent buttons.
+
+1. Do the following:Click **+Add Button** to add an intent button.The button section is displayed. ![](/images/9937044/2d12d13bdbb9.png) Select **Button Type**from the Button Type dropdown menu.Enter **Button Label** for different user intents.**Note:**The label is displayed on the intent screen. (See [Sample intent screen](#h_9c95c7965e))Click **Save** to apply your changes.
+
+<Frame>
+  <img src="/images/9937044/c6b04ea87c1a.png" alt="Screenshot" />
+</Frame>
+
+**Sample intent screen for reference**
+
+<Frame>
+  <img src="/images/9937044/d0f828d789cb.png" alt="Screenshot" />
+</Frame>
+
+**Design Minimum Lunch Break Config**
+
+You can configure the minimum lunch break requirements for the user.
+
+**Note:**You must add Start Lunch and End Lunch button type in your intent screen before you configure minimum lunch break.
+
+1. **Lunch Break Validation Message**: Enter the message that will be displayed if the minimum lunch break requirement is not met. (See [Sample Screen](#h_2790fbae98) below)
+2. **Minimum Lunch Break**: Set the minimum time for a lunch break, specifying hours and minutes. (See [Sample Screen](#h_2790fbae98) below)
+3. Click **Save** to apply your changes.
+
+<Frame>
+  <img src="/images/9937044/b432daa2caaa.png" alt="Screenshot" />
+</Frame>
+
+**Sample lunch break screen for reference**
+
+<Frame>
+  <img src="/images/9937044/f76e32fb503a.png" alt="Screenshot" />
+</Frame>
+
+**Customize Survey Form**
+
+You can configure at least one and up to seven survey question options to present to users after they complete an action.
+
+1. Click **+Add Question**to add survey questions to the survey form.The enter question text field is displayed.Enter the survey question in the **Question 1: Enter question**text field.Click **Save** to apply your changes.
+
+<Frame>
+  <img src="/images/9937044/f4bfe3ff38c7.png" alt="Screenshot" />
+</Frame>
+
+**Sample survey form for reference**
+
+<Frame>
+  <img src="/images/9937044/3ff9d4d96af9.png" alt="Screenshot" />
+</Frame>
+
+**Design Configure Departments**
+
+You can configure a department section for users during the clock-in and clock-out process.
+
+1. Click **+Add Department**to create a new department.
+
+<Frame>
+  <img src="/images/9937044/d5d2d5518c57.png" alt="Screenshot" />
+</Frame>
+
+The department detail section is displayed.
+
+<Frame>
+  <img src="/images/9937044/54882d7fc1e3.png" alt="Screenshot" />
+</Frame>
+
+1. Configure the department details:**Department Name**: Enter the department name.**Department Code**: Enter a department code.**Clock ID**: Enter the unique clock ID for the sub-department. (Optional)Click **Save**to apply your changes.
+
+**Note:**Repeat steps 1–2 for each department you want to add.
+
+**Sample Select Department screen for reference**
+
+<Frame>
+  <img src="/images/9937044/aa9171eaeeb1.png" alt="Screenshot" />
+</Frame>
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - How to Create and Configure Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure Oloid Connect Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to Configure Offline Intent Screen in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-offline-intent-screen-in-tenant-admin-portal" />
+  <Card title="Oloid Device lock - How to Configure Offline Intent Screen in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-device-lock-how-to-configure-offline-intent-screen-in-tenant-admin-portal" />
+</CardGroup>

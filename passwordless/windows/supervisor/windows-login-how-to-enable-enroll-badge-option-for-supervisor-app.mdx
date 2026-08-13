@@ -1,0 +1,69 @@
+---
+title: "Windows Login - How to Enable Enroll Badge Option for Supervisor App"
+sidebarTitle: "Enable Enroll Badge Option for Supervisor App"
+description: "This document provides step-by-step instructions to enable badge enrollment options for the Supervisor App in the Tenant Admin Portal."
+icon: "eye"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "passwordless/windows/supervisor"
+primaryCategory: "passwordless/windows/supervisor"
+navPath: "Passwordless > Windows > Supervisor"
+source:
+  system: "intercom"
+  articleId: "9182568"
+  url: "https://oloid.help/en/articles/9182568-windows-login-how-to-enable-enroll-badge-option-for-supervisor-app"
+  collection: "Supervisor App"
+  section: "Platform Configuration - Supervisor App"
+  updatedAt: "2026-08-11T08:46:53Z"
+  migratedAt: "2026-08-13T09:16:25.459487+00:00"
+---
+## Introduction
+
+The Enable Badge Options setting allows Tenant Admin to control the badge enrollment options available in the Supervisor App. Depending on your authentication requirements, you can allow users to enroll using Badge only or require Badge + PIN authentication.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- Ensure Windows Login application is created in the Tenant Admin Portal. For more information, refer [Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+
+## Steps to Enable Badge Enrollment Options:
+
+1. Log in to the Tenant Admin Portal.The Application Detail page is displayed.
+2. Select the application that is configured in the Supervisor App. ![](/images/9182568/ab1f40d15779.png) The Application Details page is displayed.Go to **Configure** > click **Customize Buttons**> click **Enable Badge Options**. ![](/images/9182568/66c8c39de81d.png) The Configuration page is displayed.
+3. Do one of the following:Select **Enroll Badge Only** to allow badge-only enrollment.Select **Enroll Badge + PIN** to require badge and PIN authentication.
+4. Click **Save**.
+
+<Frame>
+  <img src="/images/9182568/c18e6bedda06.png" alt="Screenshot" />
+</Frame>
+
+The badge enrollment configuration is saved successfully.
+
+<Frame>
+  <img src="/images/9182568/ee4e0c774237.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch our video **[How to enable Badge option for Supervisor App for Windows in Oloid Portal - Video Tutorial](/passwordless/windows/supervisor/how-to-enable-badge-option-for-supervisor-app-for-windows-in-oloid-portal-video-tutorial)**
+
+---
+
+<Tip>
+  **Keywords:** Enable Badge Options · Badge enrollment · Windows Login Badge authentication · Badge + PIN
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enroll Badge and PIN using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll / Assign Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-assign-badge" />
+  <Card title="Windows Login - How to Enroll Badge using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge" />
+  <Card title="Windows Login - How to Enable Forgot PIN Link for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-forgot-pin-link-for-windows-login" />
+</CardGroup>

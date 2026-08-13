@@ -1,0 +1,63 @@
+---
+title: "Tenant Admin Portal - How to Create IDP Profile for OIDC-PingOne"
+sidebarTitle: "Tenant Admin Portal - How to Create IDP Profile for OIDC-PingOne"
+description: "This document provides step-by-step instructions to create IDP Profile for PingOne in Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "10822772"
+  url: "https://oloid.help/en/articles/10822772-tenant-admin-portal-how-to-create-idp-profile-for-oidc-pingone"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-08-05T09:44:48Z"
+  migratedAt: "2026-08-13T09:16:06.833884+00:00"
+---
+## Introduction
+
+Identity providers (IDP) help the system store and verify the user identity. Oloid acts as IDP for Passwordless SSO use cases.
+
+## Prerequisite
+
+You must have access to the Tenant Admin Portal.
+
+## Steps to Create PingOne IDP Profile
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, select **Security** > **Identity Provider**. ![](/images/10822772/1dce6a6624c0.png) The **Identity Provider Profiles** page is displayed.
+3. Select **Create IDP**in the top right corner. ![](/images/10822772/00fd9dc6db08.png) **Note**: You cannot create a new IDP unless a default IDP is already set. Please open an existing IDP and mark it as default before proceeding. For more details refer [How to make an IDP default](/resources/integrations/sso/webkey-how-to-link-webkey-with-an-identity-provider-idp-in-tenant-admin-portal). ![](/images/10822772/689d9d6dba89.png) The **Create New IDP**pop-up box is displayed.
+4. Do the following:Enter **IDP Profile Name**.Select**OIDC**asAuth Protocol.Select**Next**.Select **PingOne**as IDP Provider for OIDC.Click **Create**. ![](/images/10822772/c90f1eb6a499.png) The IDP Profile for OIDC-PingOne is successfully created.
+
+<Frame>
+  <img src="/images/10822772/36aff37a9a2d.png" alt="Screenshot" />
+</Frame>
+
+#### Related Document
+
+[How to configure OIDC - PingOne IDP Profile](/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile)
+
+---
+
+<Tip>
+  **Keywords:** Oloid PingOne IDP Profile · Oloid OIDC PingOne Configuration · Configure PingOne IDP in Oloid · Oloid Tenant Admin Portal PingOne Setup
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Tenant Admin Portal - How to Create an OIDC-Okta IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-oidc-entra-id" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+</CardGroup>

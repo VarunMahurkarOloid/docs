@@ -1,0 +1,98 @@
+---
+title: "Oloid Device lock - How to Configure Offline Intent Screen in Tenant Admin Portal"
+sidebarTitle: "Oloid Device lock - How to Configure Offline Intent Screen"
+description: "This document provides step by step instructions to configure Offline Intent Screen for Oloid Device Lock in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/android/devicelock"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "14084872"
+  url: "https://oloid.help/en/articles/14084872-oloid-device-lock-how-to-configure-offline-intent-screen-in-tenant-admin-portal"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Device Lock - Admin Settings"
+  updatedAt: "2026-04-21T06:57:37Z"
+  migratedAt: "2026-08-13T09:16:15.715444+00:00"
+---
+## Introduction
+
+The Offline Intent Screen allows users to choose an intent when the device is not connected to internet. You can enable the Offline intent screen, show an offline message, and configure intent buttons that appear on the screen.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- The **Oloid Device Lock** application must be created and configured in the Tenant Admin Portal. For more details refer, [How to Create and Configure DeviceLock Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal)
+- Ensure that the authentication method (FR Mode) is set to **Hybrid**.
+- Ensure that the user and endpoint are added to the appropriate group. For more information, refer [How to Configure Group](/administration/admin-portal/tenant-admin-portal-how-to-configure-group). ​
+
+## Steps to Configure Offline Intent Screen
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click on the Device Lock application. ![](/images/14084872/de47390de0c5.png) The application **details** page is displayed. ![](/images/14084872/54835a38c765.png)
+3. Go to**Configure** tab > **Offline Intent Screen.** ![](/images/14084872/244fa3db535c.png)
+4. Do the following:[Configure Show Intent Screen](#h_07d8f689bb)[Configure Multi Button Intent Screen](#h_207935d21e)The Offline Intent Screen is configured successfully.
+
+## Configure Show Intent Screen
+
+1. Enable **Show Intent Screen** toggle.
+2. Do the following:Turn on **Show Offline Mode Banner** toggle.Review or edit the banner message displayed to users on the Intent Screen (Optional) ​![](/images/13212909/e1c61df492b8.png) The Show Intent Screen is configured successfully.
+
+## Configure Multi-Button Intent Screen
+
+1. Enter a title in the **Intent Screen Heading** field. This title appears at the top of the intent screen.
+2. Type a short description in the **Intent Screen Description** field. ![](/images/14084872/b6ae20825b32.png)
+3. [Configure the intent screen buttons.](#h_c2293e2536) The intent screen is configured successfully.
+
+### Configure Intent Screen Buttons
+
+**Note:** You can configure at least one and up to six intent buttons.
+
+1. Click **+Add Button** to add an intent button.The button section is displayed. ![](/images/14084872/9ca47fa9cfeb.png)
+2. Select **Button Type**from the dropdown list.
+3. Enter **Button Label**.**Note:**The button label is displayed on the intent screen.
+4. [Configure the Advanced Settings (Optional)](#h_33d20749c0).The intent screen buttons are configured.
+
+### Configure Advanced Settings Flags
+
+1. Select **Show Pop up** to display a confirmation pop-up box when a user taps the intent button.
+2. Do the following:In the **Popup Heading** field**,**enter the title text that appears at the top of the popup. ​**Note:** This heading should clearly describe the purpose of the popup.In the **Popup Content**field, enter the main message or instructions displayed inside the popup. ​**Note:** This content should provide clear and concise information to the user. ![](/images/13212909/2c09c14d74d9.png)
+3. Select **Show Selection Dropdown 1** (or Dropdown 2 if required).
+4. Configure the following fields:**Heading:** Enter the title displayed on the dropdown screen.**Sub-heading:** (Optional) Provide additional context.**Dropdown Label:** Enter the label shown for the dropdown field.
+5. Enable the **Full Width Button** toggle (Optional).
+6. Click **View and Edit Options**. ![](/images/14084872/4a1a05f5b058.png) The **View or Edit Dropdown Options** pop-up box is displayed.
+7. Click **Download Template** and select one of the following formats:CSVXLSX
+8. Open the downloaded file and add or update the dropdown values as required.
+9. Upload the CSV/XLSX file using one of the following options:**Drag and drop** the file.**Click to upload** and select the file from your system. ![](/images/13212909/4e4f765db3ef.png)
+10. After the file is uploaded, review the **Analyze** section.Ensure the result displays **"result": "ok"**, indicating a successful validation.
+11. Click **Import**. ![](/images/13212909/3d5b400b04b6.png) The Offline Intent Screen is configured successfully.
+
+#### Sample Screen
+
+<Frame>
+  <img src="/images/14084872/820a8fcb4fad.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Offline Intent Screen · Oloid Device Lock Offline Mode · Configure Offline Intent Screen · Oloid Device Lock Intent Screen setup
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - How to Create and Configure Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure Oloid Connect Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Intent screen in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-intent-screen-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to Configure Offline Intent Screen in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-offline-intent-screen-in-tenant-admin-portal" />
+  <Card title="Oloid Device lock - How to configure Offline Intent Screen in Tenant Admin Portal - Video Tutorial" icon="arrow-right" href="/administration/admin-portal/oloid-device-lock-how-to-configure-offline-intent-screen-in-tenant-admin-portal-video-tutorial" />
+</CardGroup>

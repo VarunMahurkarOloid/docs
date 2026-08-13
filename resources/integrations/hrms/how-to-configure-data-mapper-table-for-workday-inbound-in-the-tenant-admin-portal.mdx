@@ -1,0 +1,118 @@
+---
+title: "How to Configure Data Mapper Table for Workday - Inbound in the Tenant Admin Portal"
+sidebarTitle: "Configure Data Mapper Table for Workday - Inbound"
+description: "This document provides step-by-step instructions to configure Data Mapper Table for Workday Inbound in Tenant Admin Portal."
+icon: "users-gear"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/hrms"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/hrms"
+navPath: "Resources > Integrations > HRMS"
+source:
+  system: "intercom"
+  articleId: "13524078"
+  url: "https://oloid.help/en/articles/13524078-how-to-configure-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Data Tables"
+  updatedAt: "2026-02-27T05:59:29Z"
+  migratedAt: "2026-08-13T09:16:13.427949+00:00"
+---
+## Introduction
+
+This document provides instructions on how to configure a Data Mapper Table for Workday - Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- Data Mapper Table for Workday - Inbound must be created.
+- You must have access to the **Tenant Admin Portal.**
+
+## Steps to Configure Data Mapper Table for Workday Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, go to **Agents > Data Tables**. ![](/images/13524078/f0deb134c8c6.png) The Data Tables page is displayed.
+3. Click preferred data table. ![](/images/13524078/1ca2b84acf09.png) The data table details page is displayed.
+4. Do the Following:[Configure Details Tab](#h_8ea117ed2b)[Setup Configure Tab](#h_bbd5cef5c5) ![](/images/13524078/d2eb818e90ef.png) After saving your changes, the Data Mapper Table for **Workday – Inbound** is configured successfully.
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the data mapper table.
+
+Do the following:
+
+1. Update the **Table Name** (if required).
+2. Enter **Description** (Optional).
+3. Click **Save**. ![](/images/13524078/8776607dd6bc.png) The details tab is configured successfully.
+
+## Setup Configure Tab
+
+This tab is used to configure data field mappings between Workday and Oloid.
+
+**Note:** The **FullName, DisplayName, PrimaryID, and Status** fields are mandatory and must be mapped to corresponding source fields or expressions before saving the configuration.
+
+Do one of the following:
+
+- [Inline](#h_bd2638a7f4)**OR**
+- [Upload File](#h_420000317a) ![](/images/13524078/d4875ec94af1.png) The Configure tab is set up successfully.
+
+### Inline
+
+In the **Inline** section, do the following:
+
+1. **Source / Expression:**Enter the Workday field name or expression that provides the source value.
+2. **Destination – Oloid Field:**Enter the Oloid field name to which the source value is mapped.
+3. **Data Type:** Select the data type from the drop-down.
+4. Click **Add field** to add more fields.**Note:** For mapping the table, refer **[Data mapper Table](#h_fe94f9b75f)**.
+5. Click **Save**. ![](/images/13524078/6d5a483c0778.png) The Inline section is configured successfully.
+
+### Upload File
+
+In the **Upload File** section, do the following:
+
+1. Select **Upload File** and upload the mapping file.**Note:** The file format must be in **.XLSX** or **.CSV**.
+2. Click **Save**. ![](/images/13524078/708dafb71e34.png) The Upload File section is configured successfully. The Configure tab is set up successfully. ![](/images/13524078/10ec677a1e85.png)
+
+## Additional Information
+
+## Data Mapping Table
+
+Use the following fields to define data mappings when configuring the Data Mapper Table.
+
+| **Workday Use Field** | **Oloid User Field** | **Data Type** |
+|---|---|---|
+| \{ Schedule_Blocks.map(b => (([, r]) => (([s, e]) => (\{ start: s.trim(), end: e.trim() \}))(r.split("–")))(b.scheduleBlock.descriptor.split(" : "))) \} | \{UserMetadata.Shifts\} | JSON |
+| costCenter | \{UserMetadata.CostCenter \} | JSON |
+| employeeID | PrimaryID | String |
+| \{worker.descriptor\} | Display Name | String |
+| \{worker.descriptor\} | FullName | String |
+| email_Work | Email | String |
+| \{activeStatus == true ? 'Active' : 'Inactive'\} | \{Status\} | String |
+| Schedule_Blocks | \{UserMetadata.WorkdaySchedule\} | JSON |
+| \{worker.id\} | ExternalID1 | String |
+
+**Note:** Contact **[Oloid support](mailto:support@oloid.ai)** if you need assistance while configuring the Data Mapper table.
+
+#### Related Article
+
+[How to Create Data Mapper Table for Workday - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/hrms/how-to-create-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Data Mapper Table for Workday Inbound · Workday Inbound Data Mapper Configuration · Workday Data Mapping in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create Data Mapper Table for Workday - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

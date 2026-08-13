@@ -1,0 +1,101 @@
+---
+title: "DeviceLock App - How to Configure Endpoint in the Tenant Admin Portal"
+sidebarTitle: "DeviceLock App - How to Configure Endpoint"
+description: "This document provides step-by-step instructions to configure Devicelock endpoint in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Android"
+  - "Devicelock"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/android/devicelock"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "13330667"
+  url: "https://oloid.help/en/articles/13330667-devicelock-app-how-to-configure-endpoint-in-the-tenant-admin-portal"
+  collection: "Oloid Android Passwordless Authenticator -DeviceLock"
+  section: "Device Lock - Admin Settings"
+  updatedAt: "2026-04-29T05:54:14Z"
+  migratedAt: "2026-08-13T09:16:13.088322+00:00"
+---
+## Introduction
+
+This document describes how to configure a paired **DeviceLock** endpoint in the Tenant Admin Portal. It covers endpoint configuration and monitoring using the **Details**, **Settings**, **Groups**, **Integrations**, **Transactions**, and **Health** tabs.
+
+## Prerequisite
+
+The endpoint is successfully paired with the DeviceLock application.
+
+## Steps to Configure the Endpoint
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Endpoints** on the left menu panel. ![](/images/10511068/c63f6b503e62.png) The **Endpoints** page is displayed.
+3. Select the paired Devicelock Endpoint. ![](/images/13330667/b2739b0ddc7d.png) The **Endpoint Details**page is displayed. ![](/images/13330667/6c3957e96a90.png)
+4. Do the following:[Configure Details Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)[Design Configure Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)[Configure Transactions Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)[Configure Health Response Tab](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+
+## Configure Details Tab
+
+1. Click Details tab, and do the following:Edit **Endpoint Name** (if required).Enter**Endpoint Description**. (Optional)Enter **OS Version**. (Optional)Select **Time Zone** from the dropdown list. (Optional)Click **Save**. ![](/images/13330667/b8b6a724783b.png) The details tab is configured successfully.
+
+## Design Configure Tab
+
+Configure the following:
+
+- [Endpoint Settings](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+- [Groups](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+- [Integration](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+- [Health Setup](/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal)
+
+## Endpoint Settings
+
+1. Click on Endpoint Settings and do the following:Enable **Use Endpoint in Admin Mode Only**toggleto restrict the endpoint device to Admin mode.Enable **Capture Location**toggleto activate location capture on the endpoint for each transaction.**Note**: The **Location Permission** of the device must be enabled to make the feature functional.Enable **Generate Debug Logs**toggleto activate log generation for the endpoint until disabled.Click **Save** to apply the configuration. ​![](/images/13330667/dac0e09607d0.png) The endpoint settings tab is configured successfully.
+
+## Groups tab
+
+1. Click **Groups**.The group page is displayed. ![](/images/13330667/60e170ce4178.png)
+2. Click **+ Add Group** and do the following:Select group(s) in **Add Group** field.Click **Save**. ![](/images/13330667/b3d3ae824d3c.png) The group is added successfully.
+
+## Integration tab
+
+1. Click **Integration**.The Integration tab is displayed.
+2. Enable the applicable integration by clicking on the toggle button. ![](/images/13330667/9a1eda30c550.png) The integration tab is configured successfully.
+
+## Health Setup Tab
+
+This tab is used to add and monitor the server URLs.
+
+1. Click Health Setup and do the following:Enter **Server Name**.Enter URL of the server in **Add URL that needs to be monitored** field.Click **Add**.The added server appears in the list with the corresponding **Server Name** and **URL**.​**Note:** Configure settings only when required. Consult your Oloid representative before making any changes. ​![](/images/13330667/8fa9f43c3fcc.png) The Server is added successfully.
+
+## Configure Transactions Tab
+
+The Transactions tab allows you to view detailed user transactions. You can monitor transaction statuses and filter results based on success or failure.
+
+1. Click **Transactions**tab.The Transaction tab is displayed, and you can see the list of transactions. ![](/images/13330667/b5e4cdb94bdf.png)
+
+## Configure Health Response Tab
+
+**Health Response** tab is used to check the endpoint health status and manage health-related actions. In this section, you can see the endpoint status, check health of the endpoint and configure health alert.
+
+1. Click **Health Response** and do the following:Enable **Share Endpoint Logs** to share logs.Click **Check Health** to initiate a health check. ![](/images/13330667/d7f64734ce3c.png)
+2. For more information on health alert, refer **[How to configure health alert for an endpoint](/administration/admin-portal/how-to-add-health-alerts-in-the-endpoint)**.
+
+---
+
+<Tip>
+  **Keywords:** DeviceLock Endpoint Configuration · DeviceLock Endpoint Settings · DeviceLock Health Response
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure Theme Tab for DeviceLock App" icon="arrow-right" href="/passwordless/android/devicelock/tenant-admin-portal-how-to-configure-theme-tab-for-devicelock-app" />
+  <Card title="How to Create and Configure DeviceLock Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-devicelock-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Verify - How to Create and Configure Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

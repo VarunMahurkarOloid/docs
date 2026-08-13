@@ -1,0 +1,41 @@
+---
+title: "What is an offline task and what does it do"
+sidebarTitle: "What is an offline task and what does it do"
+description: "What is an offline task and what does it do"
+tags:
+  - "Passwordless"
+  - "iOS"
+  - "Oloid Connect"
+categories:
+  - "passwordless/ios/connect"
+primaryCategory: "passwordless/ios/connect"
+navPath: "Passwordless > iOS > Oloid Connect"
+source:
+  system: "intercom"
+  articleId: "8246849"
+  url: "https://oloid.help/en/articles/8246849-what-is-an-offline-task-and-what-does-it-do"
+  collection: "Oloid Verify/Connect"
+  section: "Supporting Documents"
+  updatedAt: "2023-09-11T08:52:01Z"
+  migratedAt: "2026-08-13T09:16:20.386824+00:00"
+---
+## What is an offline task?
+
+In the context of Time and Attendance, **Offline Task** is a cron job that runs every 30 mins. This task is designed to process any failed transaction records from the Oloid Database to the target integration.
+
+## What does it do?
+
+The **Offline Task** picks up the transaction records with status as “**Error**”, ”**Pending**”, “**Failed**”, and “**None**” from the Oloid Database and tries to process them to the target Integration system.
+
+This cron job runs every 30 mins and picks transaction records for the last 24 hours.
+
+The task is set to retry each error record for a maximum of 10 times before it marks the record with status = “FAILED”.
+
+The offline task needs to be deployed for each tenant on a request basis. It is not a default configuration.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="ADP to Active Directory Integration" icon="arrow-right" href="/resources/integrations/hrms/adp-to-active-directory-integration" />
+  <Card title="What is Oloid's Insights Dashboard?" icon="arrow-right" href="/administration/admin-portal/what-is-oloid-s-insights-dashboard" />
+</CardGroup>

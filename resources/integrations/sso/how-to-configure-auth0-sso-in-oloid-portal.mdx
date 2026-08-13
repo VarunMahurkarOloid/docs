@@ -1,0 +1,70 @@
+---
+title: "How to configure Auth0 SSO in Oloid Portal"
+sidebarTitle: "Configure Auth0 SSO in Oloid Portal"
+description: "How to configure Auth0 SSO in Oloid Portal"
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "11098861"
+  url: "https://oloid.help/en/articles/11098861-how-to-configure-auth0-sso-in-oloid-portal"
+  collection: "SSO Login Configuration"
+  section: "Auth0 SSO Setup"
+  updatedAt: "2026-08-11T09:13:30Z"
+  migratedAt: "2026-08-13T09:16:07.281233+00:00"
+---
+**Pre-requisite:**
+
+To set up the configuration between Auth0 and Oloid, you must generate the parameters in  Auth0 dashboard. For detailed instructions, see [Auth0 Settings for Oloid SSO](/resources/integrations/sso/auth0-settings-for-oloid-sso)
+
+To configure Auth0 SSO:
+
+1. Log in to the **Oloid Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/10299914/c8560f399688.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![Image](/images/10299914/dd6256eec1ca.png) The **Tenant Settings** page is displayed.
+4. Go to **Security**> **Auth0**. ![](/images/11098861/cabe4db9a9b8.png)
+5. Turn on **Enable Auth0 Identity SSO**button. ![](/images/11098861/fcfc8c6247db.png)
+6. Do the following: ![](/images/11098861/ecd9870829a6.png) Copy **Redirect URL**.Use both the provided Redirect URLs when configuring login in the Auth0 dashboard.Enter **Client ID.**You can find the Client ID from your Auth0 dashboard under **Created Application** > **Settings** > **Basic Information**. See, [Sample Screen for Client ID](#h_cb95f3aff1).Enter **Auth URL.**You can find the Auth URL as `authorization_endpoint` value in the OpenID configuration URL. See, [Sample Screen for Auth URL](#h_a53b603e8f)Enter **Token URL**.You can find the **Token URL** as `token_endpoint` value in the OpenID configuration URL. See, [Sample Screen for Token URL](#h_a53b603e8f)Enter **Client Secret**.You can find the Client Secret from your Auth0 dashboard under **Created Application >** **Settings** > **Basic Information**. See, [Sample Screen for Client Secret](#h_cb95f3aff1).Enter **User Info URL**You can find the **User Info URL** as `userinfo_endpoint` value in the OpenID configuration URL. See, [Sample Screen for User Info URL](#h_a53b603e8f)Click **Save**.The Auth0 Identity SSO is configured.
+
+## To obtain Auth0 endpoint parameters
+
+1. Log in to your Auth0 dashboard.
+2. In the top-left menu bar, select your Auth0 tenant name. ![](/images/11098861/dce44726753c.png)
+3. Replace `<your-auth0-domain>` in the following URL with your actual Auth0 domain: ​`https://<your-auth0-domain>/.well-known/openid-configuration`Example: ​[https://dev-1hnsh6lb8jg6s16v.us.auth0.com/.well-known/openid-configuration](https://dev-1hnsh6lb8jg6s16v.us.auth0.com/.well-known/openid-configuration)
+4. Open the URL in a browser to view the OpenID configuration.
+5. Copy the following endpoint values and paste them into the corresponding fields in the Oloid Portal:
+
+- `authorization_endpoint`
+- `token_endpoint`
+- `userinfo_endpoint`
+
+## Sample Screens
+
+### Sample Screen for Client ID and Client Secret
+
+<Frame>
+  <img src="/images/11098861/545d48834194.png" alt="Screenshot" />
+</Frame>
+
+### Sample screen for Endpoint Parameters
+
+<Frame>
+  <img src="/images/11098861/0f984c22bff7.png" alt="Screenshot" />
+</Frame>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="Configure Oloid as OIDC IDP in Auth0" icon="arrow-right" href="/resources/integrations/sso/configure-oloid-as-oidc-idp-in-auth0" />
+  <Card title="Auth0 Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/auth0-settings-for-oloid-sso" />
+  <Card title="Oloid User Portal - How to log in to Oloid User Portal using Auth0 SSO" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-using-auth0-sso" />
+  <Card title="Tenant Admin Portal - How to Configure Duo SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-duo-sso" />
+</CardGroup>

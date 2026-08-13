@@ -1,0 +1,67 @@
+---
+title: "Windows Login - Screen block on Gadgets detected"
+sidebarTitle: "Windows Login - Screen block on Gadgets detected"
+description: "Windows Login - Screen block on Gadgets detected"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "10021367"
+  url: "https://oloid.help/en/articles/10021367-windows-login-screen-block-on-gadgets-detected"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login- Presence Detection Guides"
+  updatedAt: "2025-01-29T08:02:14Z"
+  migratedAt: "2026-08-13T09:16:04.443018+00:00"
+---
+## Screen block on Gadgets detected
+
+Your windows system supports the screen block on "**Gadget Detected**" functionality with Oloid's Presence detection feature.
+
+The Windows system will automatically get blocked if the camera detects any other device in use other than your work system. The screen displays a screen block message.
+
+**Note:** All screen interactions are disabled, except for the buttons shown on the blocked screen.
+
+<Frame>
+  <img src="/images/10021367/1b5a20f4087c.gif" alt="Screenshot" />
+</Frame>
+
+## Requirement for Presence Detection Feature
+
+1. Your Windows system must be registered for Presence Detection.
+2. The "Gadget Detected" option must be enabled by your admin at the endpoint level.
+
+## Steps to Take if Your Screen is Blocked
+
+<Frame>
+  <img src="/images/10021367/c312610ac92d.png" alt="Screenshot" />
+</Frame>
+
+1. **Click "Get Help" to contact your Support team and report screen block.**The Support Team will notify your supervisor of the event.The supervisor will review and unblock your screen.
+2. **Click "Unblock Now" after Supervisor confirms of screen unblock.**Your screen will be unblocked, and you can resume work.
+3. **If the screen remains blocked and the "Unblock Failed" popup appears:**Contact your supervisor to reach out to Oloid Support.
+
+**Note:**Without Supervisor approval, your screen will automatically be unblocked after the specified time duration if auto unblock is enabled for that endpoint.
+
+For more information on auto unblock, see [How the Self-Unblock Feature Works in Windows Login Presence Detection](/passwordless/windows/passwordless/how-the-self-unblock-feature-works-in-windows-login-presence-detection)
+
+<Frame>
+  <img src="/images/10021367/efaec8c5c36d.png" alt="Screenshot" />
+</Frame>
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-windows-alert-for-presence-detection" />
+  <Card title="Windows Login - Screen block on Multiple faces detected" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-screen-block-on-multiple-faces-detected" />
+  <Card title="Windows Login - Screen block on Face Tracking Violation" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-screen-block-on-face-tracking-violation" />
+  <Card title="Window Login (Presence Detection) - Setting up windows endpoint for Presence Detection" icon="arrow-right" href="/passwordless/windows/passwordless/window-login-presence-detection-setting-up-windows-endpoint-for-presence-detection" />
+  <Card title="Windows Login v2.0 - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-configure-windows-alert-for-presence-detection" />
+</CardGroup>

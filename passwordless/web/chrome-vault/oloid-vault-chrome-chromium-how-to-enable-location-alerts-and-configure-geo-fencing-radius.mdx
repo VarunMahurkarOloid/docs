@@ -1,0 +1,52 @@
+---
+title: "Oloid Vault (Chrome / Chromium) - How to Enable Location Alerts and Configure Geo-fencing Radius"
+sidebarTitle: "Oloid Vault (Chrome / Chromium) - How to Enable Location…"
+description: "Oloid Vault (Chrome / Chromium) - How to Enable Location Alerts and Configure Geo-fencing Radius"
+icon: "chrome"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Chrome Vault"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/web/chrome-vault"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/web/chrome-vault"
+navPath: "Passwordless > Web > Chrome Vault"
+source:
+  system: "intercom"
+  articleId: "15699935"
+  url: "https://oloid.help/en/articles/15699935-oloid-vault-chrome-chromium-how-to-enable-location-alerts-and-configure-geo-fencing-radius"
+  collection: "Oloid Chrome Vault"
+  section: "Chrome Vault - Admin Guides"
+  updatedAt: "2026-08-04T06:42:30Z"
+  migratedAt: "2026-08-13T09:16:18.589571+00:00"
+---
+## Introduction
+
+This document explains how to enable the **Location Alerts** feature and configure **Geo-Fencing Radius** for the Oloid Vault (Chrome / Chromium) application.
+
+## Prerequisites
+
+- You must have Admin access to the Tenant Admin Portal.
+- You must create and configure Oloid Vault (Chrome / Chromium) application in the Tenant Admin Portal. For more, refer to [Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal](/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal)
+
+## Steps to Enable Location Alerts
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click on the Chrome Vault application. ![](/images/15699935/1a1c053bd1bf.png) The application **details** page is displayed. ![](/images/15699935/662e45178116.png)
+3. Go to**Configure** tab > **Settings.** ![](/images/15699935/fcab5d5b4ee4.png) The settings page is displayed.
+4. **Enable Location Alerts** toggle to generate an alert transaction when a user's authentication occurs outside the configured geo-fencing radius. ​**Note:** When enabled, users must grant device location access before authentication.
+5. In the **Geo-fencing Radius** section, configure the allowed authentication distance:**Miles** – Enter the allowed radius in miles.​**Feet** – Enter the allowed radius in feet.**Note:** To receive a **Windows Alert** each time a location violation occurs, enable **Browser Tracking** and configure the **Push Browser-data to transaction every** interval. For more, refer to [How to Enable and Configure Browser Tracking.](/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal)
+6. Click **Save.** ![](/images/15699935/8a89ace4d847.png) The Location Alerts is configured successfully. ![](/images/15699935/0341a7b36b4d.png) Keywords|Geo-Fencing Radius| Chrome Vault Location Alert | Geofence Configuration|
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to manually pair an endpoint" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-manually-pair-an-endpoint" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Enable Saving Passkeys" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-enable-saving-passkeys" />
+  <Card title="Oloid Vault (Chrome / Chromium) – Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-network-url-whitelisting-requirements-for-preview-uat-environment" />
+  <Card title="Oloid's Location Alerts and Geo-fencing Radius Feature for Oloid Vault (Chrome / Chromium)" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-s-location-alerts-and-geo-fencing-radius-feature-for-oloid-vault-chrome-chromium" />
+</CardGroup>

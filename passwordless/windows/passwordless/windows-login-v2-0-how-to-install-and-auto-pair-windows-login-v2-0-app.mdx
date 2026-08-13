@@ -1,0 +1,80 @@
+---
+title: "Windows Login v2.0 - How to Install, and Auto-Pair Windows Login v2.0 App"
+sidebarTitle: "V2.0 - How to Install, and Auto-Pair Windows Login v2.0…"
+description: "This document provides step-by-step instructions to download, install and configure the Windows Authenticator App (Version 2.0)."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "13670102"
+  url: "https://oloid.help/en/articles/13670102-windows-login-v2-0-how-to-install-and-auto-pair-windows-login-v2-0-app"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v2.0"
+  updatedAt: "2026-06-18T07:12:41Z"
+  migratedAt: "2026-08-13T09:16:14.304527+00:00"
+---
+## Introduction
+
+The Windows Login App provides secure, passwordless access to your Windows machine, making it easy to log in without the need for traditional passwords.
+
+## Prerequisites
+
+- You have local administrator access on the Windows machine.
+- Check System Requirements. For more information, refer: [Windows Login Version 2 - Hardware and Software Requirements](/passwordless/windows/passwordless/windows-login-v2-0-hardware-and-software-requirements)
+- The installer file must be downloaded. For more details, see: [Windows Login v 2.0 - How to download Windows Login v 2.0 installer file from Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-v2-0-how-to-download-windows-login-v2-0-installer-file-from-tenant-admin-portal)
+
+## Steps to Install Windows Login App
+
+1. Double-click on Oloid Passwordless Login file. ![](/images/13670102/b34eff0c9853.png) The **Oloid Passwordless Login Setup**pop-up box is displayed.
+2. Click **Start**. ![](/images/13670102/da9ff843a094.png) The **End-User License Agreement** page is displayed.
+3. Select **License Agreement** checkbox and click **Next**. ![](/images/13670102/584aefc893d0.png) The **Destination Folder** screen is displayed.
+4. Use the default path to install the application and click **Next**. ![](/images/13670102/3376e10122ab.png) The **Capabilities** pop-up box is displayed.
+5. Select the required feature check box(es) and click **Next**. ![](/images/13670102/6e224d3e3505.png) **Note:**The following provides additional details about each capability:**On-device Face Recognition:** Authenticates users locally using facial recognition even if the device is offline.**Local Cache Server:** Enables login and authentication during network issues using locally stored data.**Presence Detection:** Detects user presence to enable hands-free login and auto-lock when the user leaves.**Oloid Launcher:** Provides a central interface to launch apps and workflows after authentication.**EPIC Integration:** Enables secure, passwordless access to Epic workflows through seamless authentication. The Autopair Settings screen is displayed.
+6. Do one of the following: Select **Manual**> click **Next.**Manual settings allow the Supervisor to pair the application after installation. Refer: [Windows Login - How to manually pair the Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-manually-pair-the-supervisor-app) ![](/images/13670102/e1f1f7db9467.png) (Or)Select **Automatic**> Enter **Encoded String** in Text Box> click **Next.**Automatic Pairing will pair the Endpoint using the Encoded string, Upon restart the Windows device will be automatically paired.**Note:**Encoded string can be accessed from the tenant admin portal. Refer: [Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal) ![](/images/13670102/b7a7fd258596.png) The **Ready to Install** screen is displayed.
+7. Click **Install**. ![](/images/13670102/514fe7275911.png) **Note: If Prompted**then follow the following steps. The **Microsoft Visual C++** screen is displayed.
+8. Select **License terms and conditions** checkbox and click **Install.** ![](/images/13670102/2db29828be50.png) The **Setup Successful** screen is displayed.
+9. Click **Close**. ![](/images/13670102/1e8304aff641.png) The **Microsoft ASP.Net** screen is displayed.
+10. Select **License terms and conditions** checkbox and click **Install.** ![](/images/13670102/d7e8bac0ed6a.png) The **Setup Successful** screen is displayed.
+11. Click **Close**. ![](/images/13670102/b3a2dfcd2f90.png) The **Windows Desktop Runtime** screen is displayed.
+12. Click **Install**. ![](/images/13670102/27ea6b981d81.png) The **Installation was successful** screen is displayed.
+13. Click **Close**. ![](/images/13670102/7df4b2c13018.png) The **Completing the Oloid Passwordless Login Setup Wizard** screen is displayed.
+14. Click **Finish**. ![](/images/13670102/e006cf5fd5fb.png) The **Oloid Passwordless Login** pop-up box is displayed.
+15. Click **Yes** to restart the system.**Note:** You must restart your system after successful installation. ![](/images/13670102/b7e6ea14740f.png) After successful installation, you can find the Oloid app icon ![](/images/10568115/588054bd1a5a.png) on your desktop. **Note:** The **Apache CouchDB** is installed on the system by default.
+
+## Steps to Auto-pair the Windows Authenticator App
+
+1. On the Windows lock screen, do the following:Click **Sign-in options**. ![](/images/10568115/b7642c7ea999.png)The Windows login app is displayed.Select **Windows login app**. ![](/images/10568115/a6e2b17283ce.png) Select **Login with OLOID**. ![](/images/10568115/f24bfc0a6fd4.png) The Windows Login app is displayed.
+2. Select **Yes, pair my device**to auto-pair the device. ![](/images/10449230/6b6d30c74a64.png) The Windows machine has been successfully paired and is now ready for use. ![](/images/13670102/4c5bfca9f9da.png)
+
+**OR**
+
+After installing the Windows Authenticator app, unlock your Windows machine using a credential other than the Oloid login method.
+
+1. On the desktop, double-click on the **Windows Authenticator App**![](/images/10568115/588054bd1a5a.png) icon to start.The **Welcome** screen is displayed. You can see the**"Auto-pair config found!"** message.**Note:** The auto-pair config file is present in your installer file (Installer path\OloidV2\Oloid\config). Reach out to [Oloid Support](mailto:support@oloid.ai)if you do not see auto-pair option.You can also [manually pair](/passwordless/windows/supervisor/windows-login-how-to-pair-supervisor-app-using-auto-pair-config-file-option)your supervisor app incase auto pair fails.
+2. Select **Yes, Pair my device**to auto-pair the device. ![](/images/13670102/b522e7657656.png) The Windows machine is paired successfully.
+
+<Frame>
+  <img src="/images/13670102/4c5bfca9f9da.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Download Windows Authenticator App 2.0 · Auto-pair Windows Authenticator App 2.0 · Windows Authenticator App 2.0
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login (Healthcare) - How to Download and Install Windows Login App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-download-and-install-windows-login-app" />
+  <Card title="Windows Login v2.0 - Overview" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-overview" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using ManageEngine Endpoint Central (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-manageengine-endpoint-central-mdm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using Microsoft Intune (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-microsoft-intune-mdm" />
+  <Card title="Windows Login 2.0 - How to Download and Automatically Pair Windows Device during Installation" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-2-0-how-to-download-and-automatically-pair-windows-device-during-installation" />
+</CardGroup>

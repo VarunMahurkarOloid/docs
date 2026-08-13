@@ -1,0 +1,56 @@
+---
+title: "Duo Settings for Oloid SSO"
+sidebarTitle: "Duo Settings for Oloid SSO"
+description: "This document explains how to configure Duo SSO login in the Duo Admin Console for Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "12094549"
+  url: "https://oloid.help/en/articles/12094549-duo-settings-for-oloid-sso"
+  collection: "SSO Login Configuration"
+  section: "Duo SSO Setup"
+  updatedAt: "2025-09-05T08:16:29Z"
+  migratedAt: "2026-08-13T09:16:09.893783+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions for configuring Duo Single Sign-On (SSO) in the Duo Identity Administrator Console for use with the Tenant Admin Portal.
+
+## Prerequisites
+
+Before you begin, ensure the following:
+
+- You have **administrator access** to the **Duo Identity Administrator Console**.
+- You have the **redirect URLs** from the Oloid team to complete the SSO configuration. If you don’t have the redirect URLs, contact [Oloid Support.](mailto:Support@oloid.ai)
+
+## Steps to Configure Duo SSO Login for Tenant Admin Portal in Duo Admin Console
+
+1. Sign in to the Duo Identity Administrator Console with your Duo account credentials.The Duo Console page is displayed.![](/images/12094549/053f4b43ace1.png)
+2. Click **Applications > Applications.**![](/images/12094549/693c9ccfb8a9.png)The Applications page is displayed.
+3. Click + **Add Application.**![](/images/12094549/d1d43dd7e6ce.png)The**Application Catalog** page is displayed.
+4. Find the Oloid application in the list or use the search bar to search for it.![A screenshot of a computer AI-generated content may be incorrect.](/images/12094549/fb19049327a3.png)
+5. Click **+ Add** on the **Oloid Application**.![A screenshot of a application catalog AI-generated content may be incorrect.](/images/12094549/f7fd5be6d2d8.png)The application is added, and the application details are displayed.
+6. By default, the **Single Sign-On** tab is displayed.![](/images/12094549/9ab2333f75c0.png)
+7. Do the following in the **Single Sign-On** tab.**Basic Configuration:**In this section configure the basic information of the application.**Application Name:**If required, update the application name.**User Access:**Click **Enable for all users**.![](/images/12094549/e4bf82c60b63.png) **Metadata:** Select **Copy** next to each of the following parameter and then add these values into the corresponding field in the Tenant Admin Portal.**Authorization URL**.**Token URL**.**Client ID**.**Client Secret**.**User Info URL**.![](/images/12094549/7a1c4285c4e1.png)**Note:** Add the parameters to the relevant sections in the Tenant Admin Portal.![](/images/12094549/201e88d66d83.png) **Sign-In Redirect URLs:**These URLs allow Duo to redirect users back to the Tenant Admin Portal after successful authentication.Add the **Redirect URLs**in the **Sign-In Redirect URL** field from Tenant Admin Portal. ![](/images/12094549/795b45c3d819.png)The redirected URLs are added for the Tenant Admin Portal and Oloid User Portal.**Note:** To add more redirect URL, click **+** **Add Redirect URL**to add another Sign-In Redirect URL field in this section.**Example Redirect URLs:**https://\<tenantname>.oloid.cloud.com/login/duo/callbackhttps://\<tenantname>.myoloid.com/login/duo/callback **Policy:**Apply a policy to define user access and authentication rules for the application. Select an existing policy or create a new one, if required.To add policy, click on **Apply a policy to all users**.![A screenshot of a computer AI-generated content may be incorrect.](/images/12094549/2b349c62231a.png)The Add policy pop-up is displayed.Select the policy from the drop-down menu.**Note:** If required, you can create a new policy.![](/images/12094549/53edba87f65f.png) Click **Apply Policy.**The policy is added to the application.You have successfully configured Duo SSO for the Tenant Admin Portal.
+
+## Related Document
+
+[How to configure Duo SSO in Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-configure-duo-sso)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="Tenant Admin Portal - How to Configure Duo SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-configure-duo-sso" />
+  <Card title="Oloid User Portal - How to Log in to Oloid User Portal using Duo SSO" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-using-duo-sso" />
+  <Card title="How to log in to Tenant Admin Portal with Duo SSO" icon="arrow-right" href="/administration/admin-portal/how-to-log-in-to-tenant-admin-portal-with-duo-sso" />
+</CardGroup>

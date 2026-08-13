@@ -1,0 +1,73 @@
+---
+title: "Tenant Admin Portal - How to Enable Passkey SSO in Tenant Admin Portal"
+sidebarTitle: "Enable Passkey SSO"
+description: "Tenant Admin Portal - How to Enable Passkey SSO in Tenant Admin Portal"
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "administration/admin-portal"
+  - "resources/integrations/sso"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "13856829"
+  url: "https://oloid.help/en/articles/13856829-tenant-admin-portal-how-to-enable-passkey-sso-in-tenant-admin-portal"
+  collection: "Passwordless Authenticator"
+  section: "Credential Management"
+  updatedAt: "2026-07-28T08:40:37Z"
+  migratedAt: "2026-08-13T09:16:15.107404+00:00"
+---
+## Introduction
+
+This document explains how to enable single sign-on (SSO) using passkeys in the Tenant Admin Portal. Once configured, this setting allows users to authenticate through SSO using passkeys instead of traditional login methods.
+
+## Prerequisite
+
+- You must have a Tenant Admin account.
+- OKTA IDP must be created for the application. To create, refer [How to create IDP Profile for OIDC-Okta in the Tenant Admin Portal](/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile)
+
+## Steps to configure Oloid SSO
+
+1. Login to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click**Profile icon**on the bottom left corner of the menu panel. ![](/images/13597272/41c2bc01017a.png) The user profile menu is displayed.
+3. Click **Tenant Settings**. ![](/images/13597272/0ed9e08eb1f7.png) The **Tenant Settings** page is displayed.
+4. Click **Security** tab. ![](/images/13856829/e11cae407e57.png) On the Security tab section in the left menu panel select **Passkey.**
+5. Do the following:Turn on **Enable SSO using Passkey**toggle.Click **Save**.
+
+<Frame>
+  <img src="/images/13856829/faf5ec8ca39a.png" alt="Screenshot" />
+</Frame>
+
+The Oloid Passkey SSO is successfully enabled.
+
+<Frame>
+  <img src="/images/13856829/65eeed4960eb.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Related Documents
+
+[How to Login to User Portal with Oloid Passkey SSO](https://oloid.help/en/articles/13884773-how-to-login-to-user-portal-with-oloid-passkey-sso)
+
+---
+
+<Tip>
+  **Keywords:** Enable Oloid Passkey SSO · Configure Passkey SSO Tenant Admin Portal · Oloid SSO passkey setup · Enable SSO using passkey
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure Okta SSO in Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-okta-sso-in-tenant-admin-portal" />
+  <Card title="Webkey - How to Enable Oloid (Webkey) SSO login" icon="arrow-right" href="/resources/integrations/sso/webkey-how-to-enable-oloid-webkey-sso-login" />
+  <Card title="Tenant Admin Portal - How to Generate Personal Passkey" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-generate-personal-passkey" />
+  <Card title="Tenant Admin Portal - How to Log in to the Tenant Admin Portal using Oloid Passkey (Webkey) SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-the-tenant-admin-portal-using-oloid-passkey-webkey-sso" />
+  <Card title="Tenant Admin Portal - How to log into Tenant Admin Portal using Personal Passkey" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-into-tenant-admin-portal-using-personal-passkey" />
+</CardGroup>

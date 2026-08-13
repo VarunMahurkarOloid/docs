@@ -1,0 +1,101 @@
+---
+title: "How to Change Consent Template of a Connection"
+sidebarTitle: "Change Consent Template of a Connection"
+description: "How to Change Consent Template of a Connection"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "13407101"
+  url: "https://oloid.help/en/articles/13407101-how-to-change-consent-template-of-a-connection"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Consent Documents"
+  updatedAt: "2026-06-01T05:33:57Z"
+  migratedAt: "2026-08-13T09:16:13.339258+00:00"
+---
+## Introduction
+
+The Tenant Admin Portal allows the admin to Remove/ disable consent of a connection or Change the consent Template of a connection.
+
+## Prerequisites
+
+- You must create a Consent template. To create refer **[How to create a Consent Template](/administration/admin-portal/how-to-create-and-configure-consent-template)**.
+- You must have access to the Tenant Admin Portal.
+
+## Steps to add Consent
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, click **Connections** on the left menu panel. ![](/images/13407101/578f16962cec.png) The **Connections** page is displayed.
+3. Select a connection name to edit. ![](/images/13407101/b1a31ec4b283.png) The Connection detail page is displayed. ![](/images/13407101/de930df92191.png)
+4. Go to **Configure Tab**> click **Consent.** ![](/images/13407101/8f09baa25537.png)
+5. Click **Disable / Change Consent.**
+
+<Frame>
+  <img src="/images/13407101/7d8d6e19f5a5.png" alt="Screenshot" />
+</Frame>
+
+The Change consent Alert pop-up box is displayed.
+
+Do one of the following:
+
+1. To [Remove and Disable Consent Template](#h_2bc74dd2e3)
+2. To [Change Consent Template](#h_3e32b3e489)
+
+---
+
+### Remove and Disable Consent Template
+
+1. Select **Remove and Disable Consent**> Select the **Consent template** from the dropdown list.
+2. Click **Next.** ![](/images/13407101/8334acd1c752.png) The Consent Removal Alert pop-up box is displayed.
+3. **Type** the reason for removal of Consent or **upload a supporting document.**
+4. Click **Confirm.**
+
+<Frame>
+  <img src="/images/13407101/ad14a877c9c8.png" alt="Screenshot" />
+</Frame>
+
+The Consent is successfully changed.
+
+<Frame>
+  <img src="/images/13407101/6b271b987e6e.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### To Change Consent Template:
+
+1. Select **Change Consent Template**> Select the **Consent template** from the dropdown list.**Note:**Only Published Consent Templates will appear in the dropdown list.
+2. Click **Next.** ![](/images/13407101/6c723e9bfd8b.png) The Applicable User Set pop-up box is displayed.
+3. Select **New User Only**(or)**All User**> click **Next.****Note:**Selecting _All users_ updates the consent template for all existing and new users, while selecting _New users only_ applies the updated template only to users created after the change. ![](/images/13407101/1273bcadab06.png) The Authentication Validity pop-up box is displayed.
+4. Select **No End Date**(or) **Permit Authentication until the set date** > click **Confirm**.**Note:**Ensure that all users provide consent within the defined authentication validity period, if a validity date is configured.
+
+<Frame>
+  <img src="/images/13407101/edea2dc454be.png" alt="Screenshot" />
+</Frame>
+
+The Consent Template for the connection is successfully changed.
+
+<Frame>
+  <img src="/images/13407101/6b271b987e6e.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Consent Template · Remove Consent · Change Consent Template · How to Disable / Change consent
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Platform - How to add a Consent Template to a Connection in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-platform-how-to-add-a-consent-template-to-a-connection-in-the-tenant-admin-portal" />
+  <Card title="How to create and configure consent template" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-consent-template" />
+  <Card title="How to configure Consent Template for user face onboarding in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-consent-template-for-user-face-onboarding-in-the-tenant-admin-portal" />
+  <Card title="Oloid Platform - How to Revoke Consent of a User" icon="arrow-right" href="/administration/admin-portal/oloid-platform-how-to-revoke-consent-of-a-user" />
+  <Card title="How to Create and Configure Language version for Consent Template" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-language-version-for-consent-template" />
+</CardGroup>

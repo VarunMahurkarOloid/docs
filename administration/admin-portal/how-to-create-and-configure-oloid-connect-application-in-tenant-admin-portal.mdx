@@ -1,0 +1,215 @@
+---
+title: "How to Create and Configure Oloid Connect Application in Tenant Admin Portal"
+sidebarTitle: "Create and Configure Oloid Connect Application"
+description: "This document provides step-by-step instructions to create and configure Oloid Connect Application in Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8655943"
+  url: "https://oloid.help/en/articles/8655943-how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal"
+  collection: "Oloid Connect"
+  section: "Oloid Connect: Platform Configuration"
+  updatedAt: "2026-08-03T10:09:42Z"
+  migratedAt: "2026-08-13T09:16:23.745695+00:00"
+---
+## Introduction
+
+To use the Oloid Connect app, you must first create and configure the application in the Tenant Admin Portal. This includes creating and managing the application, connection, and template(optional). Once configured, the app can be used to manage user authentication and access.
+
+## Steps to create and configure Oloid Connect application
+
+1. Log in to the**Tenant Admin Portal**.
+2. On the **Applications** page, click **Create Application** in the top right. ![](/images/8655943/b7f0276ba29f.png) The **Create New Application** pop-up box is displayed.
+3. On the pop-up box, do the following: Enter **Application Name**and select **Application Type**as Oloid Verify.Click **Create**. ![](/images/8655943/76250926197d.png) The **Oloid Connect for passwordless**application is created and the configuration page is displayed. ![](/images/8655943/e013c34adb99.png)
+4. Configure the following:[Configure Details tab](#h_6fa3f7f997)[Authenticator tab](#h_307e5bc53a)[Design Theme tab](#h_879dec5493)[Configure tab](#h_c214dcb2c4)[Configure Health Setup tab](#h_3392ee9d98)[Configure Connections tab](#h_e4a397cd75)[Configure Integrations tab](#h_78967cab3d)[Configure Exception tab](#h_e9627bc281)
+5. Click **Save**after each action to save your configuration.The application is created and configured.**Note**: These are one-time settings and all the default settings are recommended.
+
+## Configure Details tab
+
+1. Modify **Application name**(if required).
+2. Add **Description** (Optional).
+3. Set **Time-zone** (Optional).
+4. Select **Factor Sequence**from dropdown list to activate Multi-Factor Authentication (Optional). For more details, refer [How to create and configure Factor Sequence](/administration/admin-portal/how-to-create-and-configure-factor-sequence).
+5. Set **Idle Screen Soft Time Limit** (Optional).
+6. Set **Idle Screen Hard Time Limit**(Optional). ![](/images/8655943/53da73683e28.png)
+
+## Configure Authenticator tab
+
+You may enable one or more credential options based on your requirements. **Face** is enabled by default.
+
+## Face
+
+To use face as a credential, enable **Face**option.
+
+<Frame>
+  <img src="/images/8655943/6c0bdf008b17.png" alt="Screenshot" />
+</Frame>
+
+Do the following:
+
+1. Select**FR Mode** from the FR Mode dropdown. select the preferred face recognition mode:(if required)**Hybrid**: Combines cloud and on-device facial recognition.**Cloud**: Uses cloud-based facial recognition.**On Device**: Uses on-device facial recognition.(if required)
+2. **On-Device Model**: Edit this field if required. (Optional)
+3. Choose a liveness mode:Enable **Hardware Liveness** in devices with dedicated hardware sensors for higher accuracy.Enable **Software Liveness** to use software-based analysis to verify the captured face image authenticity.**Note:** Software Liveness verification may take longer to complete compared to Hardware Liveness verification. By default Hardware Liveness is enabled.
+4. Adjust the following settings for Software Liveness:**Min Liveness Probability**:Determines the probability threshold to classify an image as live.Default: 0.5**Min Liveness Quality**:Defines the minimum acceptable quality for images used in liveness checks.Default: 0.1
+5. Click **Save**.
+
+<Note>
+  The parameters are pre-configured. This is done by Oloid admin.
+</Note>
+
+## Badge ID
+
+To use Badge ID as credential, enable **Badge ID**. Select **Badge Type(s)** from the dropdown and click **Save**.
+
+<Frame>
+  <img src="/images/8655943/e38604e4c454.png" alt="Screenshot" />
+</Frame>
+
+## QR Code
+
+To use QR Code credential, enable **QR Code**.
+
+1. enable **QR Code** option.By default, the front camera opens for QR code scanning.
+2. Enable **Show Camera Flip button** to allow users to switch between the front and rear cameras.This option displays a camera flip button on the preview screen during QR code scanning.
+
+- Under **Default camera selection**, select a camera option:**Front Camera** (default)**Rear Camera**
+
+<Frame>
+  <img src="/images/8655943/7fba778bff36.png" alt="Screenshot" />
+</Frame>
+
+## PIN
+
+To use PINcredential, enable **PIN**.
+
+**Enable Pin Selfie** to capture and save a selfie every time a user enters their PIN.
+
+**Note:** The system will automatically take a photo (selfie) during each PIN transaction.
+
+<Frame>
+  <img src="/images/8655943/606344c744cb.png" alt="Screenshot" />
+</Frame>
+
+## NFC/ID
+
+To use NFC credential, enable **NFC/ID**.
+
+<Frame>
+  <img src="/images/8655943/b43320d307cf.png" alt="Screenshot" />
+</Frame>
+
+## Design Theme tab
+
+The **Theme** tab allows you to customize the appearance of the Oloid Connect app login page. (Optional)
+
+Follow the on-screen instructions to customize your screen, then click **Deploy** to save your changes.
+
+<Frame>
+  <img src="/images/8655943/60381cc7bd18.png" alt="Screenshot" />
+</Frame>
+
+## Design Configure tab
+
+Do the following:
+
+1. [Configure Settings tab](#h_618e2159cd)
+2. [Configure Intent Screen tab](#h_edfc829274)
+3. [Customize Messages tab](#h_d578823077)
+4. [Configure Passwordless tab](#h_62ac0e8d06)
+5. [Customize Buttons tab](#h_af9b1776ca)
+
+## Configure Settings tab
+
+1. **Enable Offline Mode**: Enable this option to allow endpoint transactions to be processed even without network connectivity.
+2. **Use Group Authorization**: Enable this option to download groups so that users and endpoints of the same group are downloaded for authorization in offline mode.
+3. **Authentication Timeout**: Set an appropriate timeout value to determine the duration the application waits for the user to begin the authentication process before being redirected to the initial screen.
+4. **Apply Endpoint Template**: Use this option to choose a template that will be applied automatically when connecting an endpoint device.
+5. **Show Clock on Intent/Auth Screens**: Turn on this toggle to show the clock on all screens Intent, Authentication selection, and Identity verification.
+6. **Enable Landscape Mode for Preview Screen:**Turn on this toggle to change the user preview screen from portrait to landscape mode. ![](/images/8655943/7d22fc58a216.png)
+
+## Configure Intent Screen
+
+You can configure the intent screen of the Connect app by following the onscreen instructions.
+
+<Frame>
+  <img src="/images/8655943/f7494af9e742.png" alt="Screenshot" />
+</Frame>
+
+For further details, refer **[How to configure intent screen for Oloid Connect](/administration/admin-portal/oloid-connect-how-to-configure-intent-screen-in-tenant-admin-portal)**.
+
+## Customize Messages tab
+
+1. **Enable Show Action Status**: Enable this option to display the action status of the user's facial transaction. You can customize the messages your user sees on the Oloid Verify App.Select **Show default message from the integration**to show success or error messages from the system after user logs in.Select **Auto-dismiss the error prompt after** to enter the preferred time (in seconds).**Action Initialization** **Label**: Enter Action InitializationLabel in the text field.**Action Success Label**: Enter Action Success Label in the text field.**Action Failure Label**: Enter Action Failure Label in the text field.
+2. Edit **Authentication Failure Error Message**field (Optional).
+
+<Frame>
+  <img src="/images/8655943/34c0ab71266b.png" alt="Screenshot" />
+</Frame>
+
+## Configure Passwordless
+
+The Configure Passwordless feature allows you to enable and set up passwordless authentication for endpoints.
+
+<Frame>
+  <img src="/images/8655943/faab469ac5c1.png" alt="Screenshot" />
+</Frame>
+
+1. Turn on **Enable Passwordless Config**toggle to switch the endpoint's functionality to **Passwordless Login**.**Note:** When enabled, the **Passwordless SSO URL** toggle is automatically turned on.**Passwordless SSO URL:****Note:** When you enable **Passwordless Config**, the **Passwordless SSO URL** toggle is automatically enabled.Enter all the URLs in the **URL** field. ![](/images/8655943/b3e5584a18b7.png) **Workday Punch Integration:**Turn on **Workday Punch Integration**toggle.In the **Workday Punch Integration** field, enter the URL.![](/images/8655943/f49d97434ef6.png) Set the desired **Timeout** duration (in minutes and seconds) after which the screen automatically times out.Click **Save**. ![](/images/8655943/e4739dbb0773.png)
+
+## Customize Buttons tab
+
+1. **Customize Authentication Button Labels**: You can customize the button label on the Connect application authentication page. ![](/images/8655943/f975621f9294.png)
+2. **Configure Login Page Options:**
+
+- **Enable Enrollment**: Select this option to customize the**Button Label** text and enter a custom URL in the **Enroll URL**field to redirect to the specified URL.**Note**: The default label is **Enroll Credential**.
+- **Enable Custom Button**: Select this option to customize the**Button Label** text and enter a custom URL in the **Redirect URL**field to redirect to the specified URL.**Note**: The default label is **Login with Password**. ![](/images/8655943/3f47eeb10aae.png)
+
+## Configure Health Setup tab
+
+Do the following:
+
+1. Enter **Server Name**.
+2. Enter **URL that needs to be monitored**.
+3. Click**Add**.
+
+<Frame>
+  <img src="/images/8655943/1e0c5254f7d9.png" alt="Screenshot" />
+</Frame>
+
+## Configure Connections tab
+
+A connection is a collection of multiple users. An application can only have a maximum of five connections.
+
+<Frame>
+  <img src="/images/8655943/ff076f2244b2.png" alt="Screenshot" />
+</Frame>
+
+Do the following:
+
+1. Select **+** **Add Connections** to map a connection to the application.
+2. On the **Add Connections** pop-up box, select connection name(s) from the **Select Connection** dropdown list and click **Add**. ![](/images/8655943/53a8e5f36795.png)
+
+## Configure Integrations tab
+
+You can **Enable Integrations**to perform cloud-based actions (Optional).
+
+<Frame>
+  <img src="/images/8655943/c18265b6934e.png" alt="Screenshot" />
+</Frame>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - How to Create and Configure Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

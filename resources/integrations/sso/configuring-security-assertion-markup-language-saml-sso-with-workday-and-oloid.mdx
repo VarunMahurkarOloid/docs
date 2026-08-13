@@ -1,0 +1,120 @@
+---
+title: "Configuring Security Assertion Markup Language (SAML) SSO with Workday and Oloid"
+sidebarTitle: "Configuring Security Assertion Markup Language (SAML) SSO…"
+description: "This document provides step-by-step instructions to configure SAML SSO with Workday and Oloid."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "HRMS"
+categories:
+  - "resources/integrations/sso"
+  - "resources/integrations/hrms"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "14884360"
+  url: "https://oloid.help/en/articles/14884360-configuring-security-assertion-markup-language-saml-sso-with-workday-and-oloid"
+  collection: "SSO Login Configuration"
+  section: "Workday SSO Setup"
+  updatedAt: "2026-05-12T09:00:38Z"
+  migratedAt: "2026-08-13T09:16:16.925032+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions to configure Workday for Single Sign-On (SSO) integration with Oloid. It covers security configuration, creation of an Authentication Selector, setup of an Identity Provider, and SAML configuration required to enable secure user authentication through Oloid.
+
+## Prerequisites
+
+- You must have access to the Workday Admin Access.
+- Ensure that the Webkey application is created and configured in the Tenant Admin Portal. For more information, refer. [How to create and configure WebKey Application in Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal).
+- Ensure that the IDP profile is created and configured in the Tenant Admin Portal. For more information, refer [How to Create IDP Profile for Security Assertion Markup Language (SAML) in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml).
+
+## Steps to Configure Workday
+
+- [Configure Workday Security](#h_b01cdbc438)
+- [Create and Configure Authentication Selector](#h_86ade1dea5)
+- [Create Identity Provider in Workday](#h_0b36898fca)
+- [Configure Certificate](#h_e14c161c6c)
+- [Configure SAML Settings](#h_ab9a88df39)
+- [Generate Workday Certificate & Signature (Optional but Recommended)](#h_521204977b)
+
+The Workday is configured successfully.
+
+## Configure Workday Security
+
+1. Log in to the Workday.The Welcome screen is displayed.
+2. Navigate/Search **Edit Tenant Setup – Security** in the search bar. ![](/images/14884360/4a00a42d533e.png) The Edit Tenant Setup - Security page is displayed.
+
+## Create and Configure Authentication Selector
+
+**Note:** Workday requires an **Authentication Selector** to route users to the appropriate Identity Provider (e.g., Oloid). If one does not already exist, it must be created.
+
+1. Go to **Single Sign-on**section.
+2. Click the **➕ (Add Row)** button. ![](/images/14884360/9d4f12771c99.png) A new row is added.
+3. In the new row, under **Redirect Type**, select **Authentication Selector > Create Authentication Selector.** ![](/images/14884360/749a0201dabc.png) The **Create Authentication Selector**screen is displayed.
+4. Do the following.Enter **Name**.Enter **Description** (Optional).Select and Enter **Login Redirect URL.**Select and Enter **Mobile App Login Redirect URL**.Select and Enter **Mobile Browser Login Redirect URL**.**Note:** Refer below table for the URLs.
+
+| **Field** | **Value** |
+|---|---|
+| Login Redirect URL | [https://\<](https://<)**your-environment>**.workday.com/\<**your-tenant-name>**/login-saml2.flex |
+| Mobile App Login Redirect URL | [https://\<](https://<)**your-environment>**.workday.com/\<**your-tenant-name>**/login-saml2.flex |
+| Mobile Browser Login Redirect URL | [https://\<](https://<)**your-environment>**.workday.com/\<**your-tenant-name>**/login-saml2.flex |
+
+**Note:**Enter your workday environment and your tenant name in the URL.
+
+5. Click **OK**.
+
+<Frame>
+  <img src="/images/14884360/d5b601ac9ccc.png" alt="Screenshot" />
+</Frame>
+
+The **Authentication Selector** is created and configured successfully.
+
+6.  Go back to **Single Sign-on** section and do the following.
+
+a. Select the newly created selector.
+
+b. Enable **SAML Authentication**.
+
+<Frame>
+  <img src="/images/14884360/68a70657b310.png" alt="Screenshot" />
+</Frame>
+
+## Create Identity Provider in Workday
+
+1. Enter **Identity Provider Name.**
+2. Enter **Issuer**. ![](/images/14884360/f15f0a0bfe8f.png) **Note:** To navigate the issuer URL, on your**Tenant Admin Portal**, go to **Auth Policy > Identity Provider > Select the preferred IDP > Oloid Metadata**, copy **Entity ID**.
+
+## Configure Certificate in Workday
+
+1. Select **Create** **x509 Public Key**. ![](/images/14884360/af4a8e6479d3.png) The **Create x509 Public Key** pop-up is displayed.
+2. Do the following.Upload the **signing certificate**.**Note:** To download the Certificate, on your**Tenant Admin Portal**, go to **Auth Policy > Identity Provider > Select the preferred IDP > Oloid Metadata**, click **Download Certificate**. Click **Ok**. ![](/images/14884360/dabacd42ba40.png) The certificate is configured successfully, and the SAML Identity Provider page is displayed. ![](/images/14884360/f15f0a0bfe8f.png)
+
+## Configure SAML Settings in Workday
+
+1. Go the **SAML Identity Provider** page, scroll right to configure the SAML settings in Workday.
+2. Enable **Use Unspecified Name ID Format for Logout Request**.
+3. Enable **SP Initiated**.
+4. Enable**Do Not Deflate SP-initiated Authentication Request**.
+5. Enter **IdP SSO Service URL.****Note:** To navigate the IdP SSO Service URL, on your**Tenant Admin Portal**, go to **Auth Policy > Identity Provider > Select the preferred IDP > Oloid Metadata**, copy **Sign-on URL**.
+6. Enter **Used for Environments**.**Note:** You can select Implementation, Sandbox and Production (as required).
+7. Click **Ok**. ![](/images/14884360/ed0440eb6281.png) The SAML Settings is configured successfully.After configuration, to log in to Workday refer [How to Log in to Workday with Assigned Credentials | Oloid Help Center](/resources/integrations/hrms/how-to-log-in-to-workday-with-assigned-credentials)
+
+---
+
+<Tip>
+  **Keywords:** Workday SSO · Workday Identity Provider · Oloid Workday integration · Workday SAML setup
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="PingOne Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/pingone-settings-for-oloid-sso" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for Security Assertion Markup Language (SAML)" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) IDP in OKTA Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal" />
+</CardGroup>

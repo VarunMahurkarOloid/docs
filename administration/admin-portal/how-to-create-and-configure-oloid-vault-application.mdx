@@ -1,0 +1,136 @@
+---
+title: "How to create and configure Oloid Vault application"
+sidebarTitle: "Create and configure Oloid Vault application"
+description: "How to create and configure Oloid Vault application"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10346057"
+  url: "https://oloid.help/en/articles/10346057-how-to-create-and-configure-oloid-vault-application"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Applications"
+  updatedAt: "2025-07-10T05:29:19Z"
+  migratedAt: "2026-08-13T09:16:05.293594+00:00"
+---
+Steps to create and configure Oloid Vault application:
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click **Create Application** in the top right corner. ![](/images/10346057/e32d9f26e07e.png) The **Create New Application** pop-up box is displayed.
+3. Do the following:Enter **Application Name**and select **Application Type**as **Passwordless**. ![](/images/10346057/5597b75f464e.png) Click **Next**.The **Select Passwordless Use Case**screen is displayed.Select **Oloid Vault** then click **Create**. ![](/images/10346057/ed676a46d9d9.png) The Passwordlessapplication of type **Oloid Vault** is created and the configuration page is displayed.
+4. Configure the following:[Details tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)[Authenticator tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)[Configure tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)[Connections tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+<Note>
+  These are one-time settings and all the default settings are recommended.
+</Note>
+
+## Configure Details tab
+
+1. Modify **Application Name**.
+2. Add **Description**. (Optional)
+3. Factor Sequence _...Coming Soon...._
+
+<Frame>
+  <img src="/images/10346057/43ee6f45c1b5.png" alt="Screenshot" />
+</Frame>
+
+## Configure Authenticator tab
+
+You may enable one or more credential options based on your requirements.
+
+## Face
+
+<Frame>
+  <img src="/images/10346057/310c298eec45.png" alt="Screenshot" />
+</Frame>
+
+- To use face as credential, enable **Face**option. The **Advanced Settings** page is displayed.Configure **Face Match Parameters**, and **Liveliness Check Parameters** on the Advanced Settings page.
+
+<Note>
+  The parameters are pre-configured. This is done by Oloid admin.
+</Note>
+
+**Additional Settings**
+
+<Frame>
+  <img src="/images/10346057/13d6bc6f324d.png" alt="Screenshot" />
+</Frame>
+
+- **Configure Image Capture Resolution:** Select the preferred resolution from the **Select Resolution** dropdown list for image capture during facial authentication.
+
+- Click **Save**.**Note:**If the selected resolution is not available, the browser will default to the closest supported resolution.
+
+## Badge ID
+
+<Frame>
+  <img src="/images/10346057/0fd968617d95.png" alt="Screenshot" />
+</Frame>
+
+Select a **Badge Type**from the dropdown list. To use Badge ID as credential, enable **Badge ID**.
+
+## PIN
+
+_Coming Soon_
+
+## NFC/ID
+
+<Frame>
+  <img src="/images/10346057/cbef3611462e.png" alt="Screenshot" />
+</Frame>
+
+To use NFC/ID as credential, enable **NFC/ID**option.
+
+## Design Configure tab
+
+Do the following:
+
+1. [Configure Settings tab](https://app.intercom.com)
+2. [Customize Buttons tab](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+
+## Configure Settings tab
+
+## Vault Behavior
+
+- **Enable Auto-Submit:**_Coming Soon_
+- **Enable Copy Password:**Select this option to allow users to copy passwords from the Oloid Vault home page after logging in.
+- **Enable Face Camera to open in a new Tab:**Select this option to open the face camera in a new tab for Oloid Vault users. ![](/images/10346057/fd2c905d2be1.png)
+
+## Set Time-out durations for Re-authentication
+
+- **Session Limit:**Set the maximum duration a user can remain signed into the Oloid Vault per session, up to a max of 55 mins.
+- **Inactivity Timer:**Enable this option to protect user sessions from unauthorized access. Set the timer to automatically log off the user after a specified period of inactivity.
+
+**Apply Endpoint Template:**_Coming Soon_
+
+<Frame>
+  <img src="/images/10346057/f50bdddb0d54.png" alt="Screenshot" />
+</Frame>
+
+## Customize Buttons tab
+
+You can customize the button label of your application's authentication page by following the onscreen instructions.
+
+<Frame>
+  <img src="/images/10346057/bb9457fde53d.png" alt="Screenshot" />
+</Frame>
+
+## Configure Connections tab
+
+1. Do the following:Select **+** **Add Connections** to map a connection to the application. ![](/images/10346057/8a0f6f0c9e1d.png) On the **Add Connections** pop-up box, select connection name(s) from the **Select Connection** dropdown list and click **Add**. ![](/images/10346057/406390d5dbe0.png) **Note**: Click **Save**after each action to save your configuration.The **Oloid Vault**application is configured and listed on the Application page.
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Oloid Connect Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal" />
+  <Card title="How to Create and Configure DeviceLock Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/android/devicelock/how-to-create-and-configure-devicelock-application-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal" />
+  <Card title="How to Create and Configure Oloid Connect Passwordless Application in Tenant Admin Portal" icon="arrow-right" href="/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-passwordless-application-in-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Update Authenticator tab in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-update-authenticator-tab-in-the-tenant-admin-portal" />
+</CardGroup>

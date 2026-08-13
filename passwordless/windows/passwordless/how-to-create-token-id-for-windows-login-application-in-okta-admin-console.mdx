@@ -1,0 +1,69 @@
+---
+title: "How to Create Token ID for Windows Login Application in OKTA Admin Console"
+sidebarTitle: "Create Token ID for Windows Login Application in OKTA…"
+description: "This document provides step-by-step instructions to create Token ID for Windows Login application in the OKTA Admin Console."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "13175430"
+  url: "https://oloid.help/en/articles/13175430-how-to-create-token-id-for-windows-login-application-in-okta-admin-console"
+  collection: "Multi Factor Authentication (MFA) Configuration for Windows Login"
+  section: "OKTA MFA - Configuration Guides"
+  updatedAt: "2026-02-12T11:11:33Z"
+  migratedAt: "2026-08-13T09:16:12.494722+00:00"
+---
+## Introduction
+
+This document explains how to create a Token ID in the Okta Admin Console.  
+The Token ID is required to securely authenticate and authorize API access for Okta integrations.
+
+## Prerequisite
+
+You must have **admin access** to the Okta Admin Console.
+
+## Steps to Create Token ID
+
+1. Log in to the **Okta Admin Account**.
+2. On the left menu panel, go to **Security**>**API.** ![](/images/13175430/b913ac5f0bd0.png) The **API** screen is displayed.
+3. Click **Tokens**. ![](/images/13175430/80bc2cd86eb2.png) The API Token page is displayed.
+4. Click **Create token**. ![](/images/13175430/5a336a3ee01d.png) The **Create token** pop-up box is displayed.
+5. Do the following:Enter **Token name**.Select the API calls from the drop-down.**Note:** Select **Any IP**.Click **Create token**. ![](/images/13175430/a03d3e73b2c4.png) The **Verify your Password** screen is displayed.
+6. Enter **OKTA Password** and click **Verify**. ![](/images/13175430/fb3c8a0a7646.png) The Token ID is created successfully.
+
+<Frame>
+  <img src="/images/13175430/14e5b3edc250.png" alt="Screenshot" />
+</Frame>
+
+## Related Articles
+
+[How to Configure OKTA Multi Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal | Oloid Help Center](/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Create Token ID in Okta for Windows Login · Okta Token Configuration · Okta Token Value
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for the Windows Login Application in the OKTA Admin Console" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-the-windows-login-application-in-the-okta-admin-console" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Login to Windows Device using NFC/ID and OKTA" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-nfc-id-and-okta" />
+  <Card title="How to Create a Token ID for Advanced User Sync – Okta Inbound in the Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-a-token-id-for-advanced-user-sync-okta-inbound-in-the-okta-admin-console" />
+</CardGroup>

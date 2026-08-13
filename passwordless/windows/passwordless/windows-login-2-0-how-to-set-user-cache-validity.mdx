@@ -1,0 +1,60 @@
+---
+title: "Windows login 2.0 - How to Set User Cache Validity"
+sidebarTitle: "2.0 - How to Set User Cache Validity"
+description: "This document provides step-by-step instructions to set the User Cache Validity duration for an endpoint in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "15431849"
+  url: "https://oloid.help/en/articles/15431849-windows-login-2-0-how-to-set-user-cache-validity"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v2.0"
+  updatedAt: "2026-07-06T05:28:32Z"
+  migratedAt: "2026-08-13T09:16:18.017285+00:00"
+---
+## Introduction
+
+User Cache Validity controls how long user data is stored locally on an endpoint after authentication. This document explains how to configure the User Cache Validity duration for an endpoint in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- Ensure Windows Login Application is created. [Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+- Ensure the Endpoint is paired with the application. Refer: [Windows Login - How to pair Supervisor App using auto-pair config file option](/passwordless/windows/supervisor/windows-login-how-to-pair-supervisor-app-using-auto-pair-config-file-option)
+
+## Steps to Set User Cache Validity
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the Left menu Panel of the Home page select **Endpoints**. ![](/images/15431849/a204bb4e8bfa.png) The **Endpoints** page is displayed.
+3. Select the **Endpoint name** to edit. ![](/images/15431849/54db28d23417.png) The **Endpoints** Details page is displayed.
+4. Go to **Endpoint Tab**> **Endpoint Settings**. ![](/images/15431849/b60e9684c1f4.png) The **Endpoint Settings**page is displayed.
+5. Enable the **User Cache Validity** toggle.
+6. Under User Cache Validity set the **Duration** as required.**Note:**User Cache validity is the duration for which the user data will be saved on the machine as cache.
+7. Click **Save**. ![](/images/15431849/2619980f2b2b.png) The User Cache Validity duration is set.
+
+<Frame>
+  <img src="/images/15431849/362e579ecd1d.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** User cache validity Oloid · Configure cache duration endpoint · Oloid endpoint cache settings · Set user cache duration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Windows login v2.0 - How to set user cache validity - Video Tutorial" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-set-user-cache-validity-video-tutorial" />
+  <Card title="Windows Login v2.0 - How to configure Windows Alert for presence detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-configure-windows-alert-for-presence-detection" />
+  <Card title="Windows Login v2.0 - How to Enable Focus Monitor for Presence Detection" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-enable-focus-monitor-for-presence-detection" />
+</CardGroup>

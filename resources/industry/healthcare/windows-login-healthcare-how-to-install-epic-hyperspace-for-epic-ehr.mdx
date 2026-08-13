@@ -1,0 +1,75 @@
+---
+title: "Windows Login (Healthcare) - How to Install Epic Hyperspace for Epic EHR"
+sidebarTitle: "(Healthcare) - How to Install Epic Hyperspace for Epic EHR"
+description: "This guide outlines the steps to install and configure Epic Hyperspace on a Windows system."
+icon: "hospital"
+tags:
+  - "Resources"
+  - "Industry"
+  - "Healthcare"
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "resources/industry/healthcare"
+  - "passwordless/windows/passwordless"
+primaryCategory: "resources/industry/healthcare"
+navPath: "Resources > Industry > Healthcare"
+source:
+  system: "intercom"
+  articleId: "13722773"
+  url: "https://oloid.help/en/articles/13722773-windows-login-healthcare-how-to-install-epic-hyperspace-for-epic-ehr"
+  collection: "Windows Login (Healthcare )"
+  section: "Windows Login (Healthcare) - Overview and Setup"
+  updatedAt: "2026-05-08T07:19:11Z"
+  migratedAt: "2026-08-13T09:16:14.797535+00:00"
+---
+## Introduction
+
+Installing **Epic Hyperspace (Hyperdrive Client Test Harness)** is required to enable secure authentication workflows and integration with supported applications such as the Windows Authenticator (Healthcare).
+
+## Prerequisites
+
+- You must have access to the **Epic Hyperdrive Client Test Harness installer** provided by your Oloid representative.
+- Local administrator rights to install applications on the system.
+- Access to the system directory path: ​`C:\Program Files (x86)\Epic\Hyperdrive\Config`
+- **Notepad++** installed on the system to modify configuration files.
+- Required Workstation ID details based on the configured authentication flow
+
+## Steps to install Epic Hyperspace
+
+1. Download **HyperdriveClientTestHarness-5**file on your system.**Note:**Select the version as advised by your Oloid Rep. ![](/images/13722773/ec7a3e7bea55.png) The **HyperdriveClientTestHarness-5**file is downloaded in your system.
+2. Right-click and select **Extract All** > **HyperdriveClientTestHarness-5.zip**file. ![](/images/13722773/3694d3acb841.png) The extracted files will be saved in the same folder as the original zipped file.
+3. Double-click on **HyperdriveClientTestHarness-5** file > double click **Epic Hyperdrive** **setup** file. ![](/images/13722773/8b186ced3b08.png) The installation pop-up is displayed.**Note:**If any of the files are missing, the application prompts to install the missing component. ![](/images/13722773/6207a80e40d5.png)
+4. Click **Ok**to finish the installation.Hyperdrive is successfully installed.
+
+## Setting Up Epic Hyperspace
+
+1. In the **HyperdriveClientTestHarness-5.zip**file, right click the **100config file** and click **Copy.** ![](/images/13722773/c81dda75d528.png)
+2. In **C drive** > click **Program files x86** > select **Epic.** ![](/images/13722773/91f3009d1ab6.png)
+3. Select the **Hyperdrive** folder > click **Config File** ![](/images/13722773/736f7c236ef7.png)
+4. **Right click** and click **paste** the 100config file in this folder.Click replace in destination. ![](/images/13722773/3b8aa02104d2.png)
+5. Open the **100config** file using **Notepad++**.**Note:**Changes may not save in Notepad, it is recomended to use **Notepad++** ![](/images/13722773/89735ba9bc8d.png)
+6. Change the **Workstation ID**to:For Username and Password flow: "**OLOIDWORKSTATION**"For SAML flow: "**OLOIDWORKSTATIONSAML**"
+7. Click **File** > **Save.** ![](/images/13722773/71cf80615bf8.png)
+
+Epic Hyperspace is successfully configured.
+
+<Note>
+  Now restart your system for the Windows Epic Hyperspace to take effect.
+</Note>
+
+---
+
+<Tip>
+  **Keywords:** How to Install Epic Hyperspace · Epic Hyperdrive installation guide · Configure Epic workstation ID · Epic Hyperspace configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login (Healthcare) - How to Download and Install Windows Login App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-download-and-install-windows-login-app" />
+  <Card title="Windows Login (Healthcare) - How to Configure Epic EHR in the Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-configure-epic-ehr-in-the-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare)-Two User Authentication using Badge ID in Epic Hyperspace" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-two-user-authentication-using-badge-id-in-epic-hyperspace" />
+  <Card title="Windows Login (Healthcare)- Epic EHR Integration with Oloid Windows Login" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-epic-ehr-integration-with-oloid-windows-login" />
+  <Card title="Windows Login (Healthcare) - How to Switch User + Sign Out of Windows using Badge out in Epic Hyperspace" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-switch-user-sign-out-of-windows-using-badge-out-in-epic-hyperspace" />
+</CardGroup>

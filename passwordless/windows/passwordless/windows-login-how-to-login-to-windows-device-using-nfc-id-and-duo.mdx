@@ -1,0 +1,54 @@
+---
+title: "Windows Login - How to Login to Windows Device using NFC/ID and Duo"
+sidebarTitle: "Windows Login - How to Login to Windows Device using…"
+description: "This document provides step by step instruction to login to Windows Device using NFC/ID and Duo Credential."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "12421965"
+  url: "https://oloid.help/en/articles/12421965-windows-login-how-to-login-to-windows-device-using-nfc-id-and-duo"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "User Guides - Windows Login"
+  updatedAt: "2026-06-29T09:17:15Z"
+  migratedAt: "2026-08-13T09:16:10.588887+00:00"
+---
+## Introduction
+
+The Windows Login app allows users to securely sign in to their Windows devices using NFC/ID and Duo authentication. This passwordless, multi-factor login method provides a faster and more secure way to access devices by combining NFC/ID-based verification with Duo’s two-factor authentication.
+
+## Prerequisites
+
+- An NFC ID must be assigned to you.
+- You must have your registered mobile no.
+- External Username or DUO Id from Add Identifier must be added in the User Details page which is registered in DUO app.**Note**: If you don't see the login option reach out to [Oloid Support](mailto:support@oloid.ai).
+
+## Steps to sign in to Windows Device
+
+1. On the Windows lock screen, do the following:Click **Sign-in options**. ![](/images/10568115/b7642c7ea999.png) The Windows login app is displayed.Select **Windows login app**. ![](/images/10568115/a6e2b17283ce.png) Select **Login with OLOID**. ![](/images/10568115/f24bfc0a6fd4.png) The **Tap NFC** **Tag at the device**screen is displayed.
+2. Tap the **NFC** **Tag**on the**Reader** to scan it. ![](/images/12421965/56f01941c9d8.png) The **Choose Your Account** pop-up box is displayed.**Note**: If the user has multiple passwords configured in the Oloid Portal, they can select a specific account to sign in. If the user has only one account configured, **Choose Your Account** pop-up box will not be displayed.
+3. Select the account to sign in. ![](/images/12421904/4af001793749.png) The **Duo Security** pop-up box is displayed. ![](/images/12421965/06edf5798d70.png)
+4. Select the user’s phone number from the **Device** dropdown in the **User Details** section.**Note:**The **Device** dropdown displays multiple phone numbers only if the user has more than one phone number configured in the system.
+5. Do one of the following:**Duo Push**: Select **Send push** to send a notification to the registered mobile number. ![](/images/12421904/1ca3ca92217c.png) The Push notification is displayed in your registered device.Tap **Approve**.![](/images/12421904/5edf6bd05063.png) **Passcode:**Select **Enter a Passcode**to send a Passcode to the registered mobile number. ![](/images/12421904/d7b3317d3299.png) A Passcode is displayed on the Duo mobile application. ![](/images/12421965/c4f3d5a23e9b.png) Enter the passcode in the passcode field and click **Log In**. ![](/images/12421947/ffd6e67b6d8a.png) ORClick **Text me New Codes.** ![](/images/12421904/d81d508699ae.png) You will receive a SMS with a verification code. Enter the code in the Passcode Login field and then click **Login.** ![](/images/12421904/3d3891ad10af.png) After successful authentication, the Duo success screen appears, and the user is logged in to their account. ![](/images/12421947/073fb1001847.png) You are signed in to the Windows device successfully.
+
+---
+
+<Tip>
+  **Keywords:** Log in with NFC ID and Duo · Multi-factor Authentication Windows device with NFC ID and Duo · Oloid Duo login process
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Login to Windows Device using Face and Duo" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-face-and-duo" />
+  <Card title="Windows Login - How to Log in to Windows Device using Badge ID and Duo" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-id-and-duo" />
+  <Card title="Windows Login - How to Log in to Windows Device using QR Code and Duo" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-qr-code-and-duo" />
+  <Card title="Windows Login - How to Login to Windows Device using NFC/ID and OKTA" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-nfc-id-and-okta" />
+  <Card title="Windows Login - How to Login to Windows Device using NFC/ID and PingOne" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-nfc-id-and-pingone" />
+</CardGroup>

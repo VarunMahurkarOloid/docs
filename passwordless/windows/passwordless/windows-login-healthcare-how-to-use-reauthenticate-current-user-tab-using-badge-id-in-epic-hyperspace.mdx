@@ -1,0 +1,65 @@
+---
+title: "Windows Login (Healthcare) - How to Use Reauthenticate Current User Tab using Badge ID in Epic Hyperspace"
+sidebarTitle: "Use Reauthenticate Current User Tab using Badge ID in…"
+description: "Windows Login (Healthcare) - How to Use Reauthenticate Current User Tab using Badge ID in Epic Hyperspace"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Resources"
+  - "Industry"
+  - "Healthcare"
+categories:
+  - "passwordless/windows/passwordless"
+  - "resources/industry/healthcare"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "14752988"
+  url: "https://oloid.help/en/articles/14752988-windows-login-healthcare-how-to-use-reauthenticate-current-user-tab-using-badge-id-in-epic-hyperspace"
+  collection: "Windows Login (Healthcare )"
+  section: "Windows Login (Healthcare)- Reauthentication and User Switching"
+  updatedAt: "2026-05-20T06:28:49Z"
+  migratedAt: "2026-08-13T09:16:16.571636+00:00"
+---
+## Introduction
+
+Reauthenticating the current user in **Epic Hyperspace** ensures that the identity of the logged-in user is verified again before proceeding with specific actions. This additional verification step enhances security within active sessions, especially in shared or high-sensitivity environments.
+
+## Prerequisites
+
+- You must have access to Epic Hyperspace.
+- Epic Vault Password must be created for the user. Refer: **[How to create Vault Password for a user](/passwordless/web/chrome-vault/chrome-vault-how-to-create-vault-password-for-a-user)**
+- The badge reader must be connected to the Windows system.
+- Ensure the Tray application is running in the background.
+- Badge must be assigned to the user. Refer: **[How to assign Badge ID as credential to users](/administration/admin-portal/how-to-assign-badge-id-as-credential-to-users)**
+- The PIN must be enabled and assigned to the user. Refer: **[Tenant Admin Portal - How to Configure PIN](/administration/admin-portal/tenant-admin-portal-how-to-configure-pin)**
+
+## Steps to Reauthenticate current user in Epic Hyperspace
+
+1. Log in to **Epic Hyperspace** application on your Windows Machine. refer: **[How to log in to Epic Hyperspace using Badge ID + PIN](/passwordless/windows/passwordless/windows-login-healthcare-how-to-log-in-to-epic-hyperspace-using-badge-id-pin-when-epic-sso-is-not-enabled)**The **Epic Hyperspace** home page is displayed. ![](/images/13903549/e2f7272b7fa5.png)
+2. On the top menu panel of the homepage, click **Reauthentication Test View**. ![](/images/13903549/b69ec7db1b2a.png) The Reauthentication Test view page is displayed.
+3. Click **Reauthenticate Current User.****Note:**Authentication is based on the factor configured in **Reauthenticate Current User** under the reauthentication workflow. eg: Application factors, First factor only or Second factor only. ![](/images/14752988/83dea7ace693.png) The **Scan Badge** screen is displayed.
+4. The current user must tap the **Badge** on the **Badge Reader** to scan it.**Note**: The current user (the user already logged into Epic Hyperspace) must authenticate. ![](/images/14752988/8a6f5319ad35.png)
+5. Hyperspace pop-up box is displayed. Click **Ok**The current user is successfully reauthenticated.
+
+<Frame>
+  <img src="/images/14752988/3d6dde1b43f8.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Reauthenticate current user Epic Hyperspace · Epic Hyperspace reauthentication · Badge reauthentication Epic · Epic session reauthentication
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login (Healthcare)-Two User Authentication using Badge ID in Epic Hyperspace" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-two-user-authentication-using-badge-id-in-epic-hyperspace" />
+  <Card title="Windows Login (Healthcare) - How to Use the Reauthenticate Current User - Second Factor Tab in Epic EHR" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-use-the-reauthenticate-current-user-second-factor-tab-in-epic-ehr" />
+  <Card title="Windows Login (Healthcare) - How to Use Reauthenticate Current User Editable Tab in Epic Hyperspace using Badge ID + PIN" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-use-reauthenticate-current-user-editable-tab-in-epic-hyperspace-using-badge-id-pin" />
+  <Card title="Windows Login (Healthcare) - How to Switch User within Epic Hyperspace using Badge" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-switch-user-within-epic-hyperspace-using-badge" />
+  <Card title="Windows Login (Healthcare) - How to reauthenticate current user editable in Epic Hyperspace using Badge ID + PIN - Video Tutorial" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-reauthenticate-current-user-editable-in-epic-hyperspace-using-badge-id-pin-video-tutorial" />
+</CardGroup>

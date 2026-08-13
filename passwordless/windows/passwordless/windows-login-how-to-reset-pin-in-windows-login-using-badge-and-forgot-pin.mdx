@@ -1,0 +1,57 @@
+---
+title: "Windows Login - How to Reset PIN in Windows Login Using Badge and Forgot PIN"
+sidebarTitle: "Windows Login - How to Reset PIN in Windows Login Using…"
+description: "Windows Login - How to Reset PIN in Windows Login Using Badge and Forgot PIN"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "14074958"
+  url: "https://oloid.help/en/articles/14074958-windows-login-how-to-reset-pin-in-windows-login-using-badge-and-forgot-pin"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "User Guides - Windows Login"
+  updatedAt: "2026-06-29T09:19:49Z"
+  migratedAt: "2026-08-13T09:16:15.646741+00:00"
+---
+## Introduction
+
+This document explains how users can reset their PIN credential in Windows Login if they have forgotten their existing PIN. The Forgot PIN feature allows users to securely reset their PIN directly from the Windows Login screen after authenticating with another credential such as a Badge.
+
+## Prerequisites
+
+- The **Forgot PIN**toggle must be enabled and configured in the Tenant Admin Portal. For more, refer to [How to Enable Forgot PIN Link in Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-enable-forgot-pin-link-for-windows-login)
+- The Badge reader is connected to the Windows device.
+- The user must have a valid Badge credential assigned.
+
+## Steps to Reset PIN from Windows Login Screen
+
+1. On the Windows lock screen, do the following:Click **Sign-in options**. ![](/images/10568115/b7642c7ea999.png) The Windows login app is displayed.Select **Windows login app**. ![](/images/10568115/a6e2b17283ce.png) Select **Login with OLOID**. ![](/images/10568115/f24bfc0a6fd4.png) The Windows login app opens and the **Welcome** page is displayed.
+2. On the **Welcome** page, Click **Login with Badge.** ![](/images/14074958/2f96b7901ba8.png) The **Scan Badge at the Reader** page is displayed.
+3. Tap the **Badge** on the **Badge Reader** to scan it. ![](/images/12421947/ee54a0be34fc.png) On Badge authentication, the **Enter PIN**pop-up box is displayed.
+4. Click **Forgot PIN.** ![](/images/14074958/c3374b57636f.png) **Note:**Depending on how the Tenant Admin configured the feature, one of the following occurs: Option 1: Show PopupA popup message appears with instructions to reset the PIN. ![](/images/14074958/c54934c31042.png) Option 2: PIN enrollment using Windows credential verificationThe system redirects you to the **Verify using Windows Credential page**.From this page, reset your PIN following the Windows credential management process.The **Verify using Windows Credential** screen is displayed.
+
+1. Do the following:Enter **Domain name**.Enter **Username**.Enter **Password**.**Note**: Use your Windows account password.Select **Enroll Windows credential to your account**. (Optional)Click **Continue**. ![](/images/14074958/56f3f061a305.png) The **Select Credential to Enroll or Update** screen is displayed.
+2. Click **PIN**. ![](/images/14074958/9237fa881ba2.png) The Add/Update PIN page is displayed
+3. Do the following:Enter **new PIN.****Re-enter new PIN**.Click **Submit**.**Note:**You can configure PIN credentials in the Tenant Admin Portal. For more details, refer to [How to configure PIN](/administration/admin-portal/tenant-admin-portal-how-to-configure-pin) ![](/images/14074958/2afe072283f9.png) The PIN credential is reset successfully. ![](/images/14074958/9eb3b314ba08.png)
+
+---
+
+<Tip>
+  **Keywords:** Reset Windows Login PIN · Reset PIN · Forgot PIN Windows Login
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to log in to Windows device using Badge and PIN" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-and-pin" />
+  <Card title="Windows Login - How to Enroll Badge and PIN using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app" />
+  <Card title="Windows Login - How to Enable Forgot PIN Link for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-forgot-pin-link-for-windows-login" />
+  <Card title="Windows Login (Healthcare) - How to Switch User + Sign Out of Windows using Badge out in Epic Hyperspace" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-switch-user-sign-out-of-windows-using-badge-out-in-epic-hyperspace" />
+  <Card title="Windows Login (Healthcare)- How to log in to Epic Hyperspace using Badge ID + PIN when Epic SSO is enabled." icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-log-in-to-epic-hyperspace-using-badge-id-pin-when-epic-sso-is-enabled" />
+</CardGroup>

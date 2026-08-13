@@ -1,0 +1,61 @@
+---
+title: "Windows Login - How to Edit Theme tab for Windows Login Application in the Tenant Admin Portal"
+sidebarTitle: "Windows Login - How to Edit Theme tab for Windows Login…"
+description: "This document provides step-by-step instructions to edit Theme tab for Windows Login Application in the Tenant Admin Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "10756679"
+  url: "https://oloid.help/en/articles/10756679-windows-login-how-to-edit-theme-tab-for-windows-login-application-in-the-tenant-admin-portal"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:40:59Z"
+  migratedAt: "2026-08-13T09:16:06.672671+00:00"
+---
+## Introduction
+
+The Theme tab in the Tenant Admin Portal for windows login application allows you to customize the appearance of your Windows Login Application. You can upload your organization’s logo, change the login icon, and update the button text to align with your company’s standards.
+
+## Prerequisite
+
+You must create a Windows Login Application in the Tenant Admin Portal. For more details, refer [How to create and configure Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal).
+
+## ​Steps to Edit Theme Tab
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click on the preferred Windows Login application to edit. ![](/images/10756679/e53937ccd904.png) The application page is displayed.
+3. Go to **Theme**tab. ![](/images/10009894/6ce9f8823363.png) The theme tab is displayed. ![](/images/10009894/6ce9f8823363.png)
+4. Do the following:Edit Customer logo.**Note:** The maximum file dimensions for the logo are **264x72 px**, with a maximum size of **1 MB** in **PNG** format. ![](/images/10009894/a8fab751f871.png) **Background Image:** Do one of the following:Edit Background image.**Note:** The maximum file size is **2 MB** (JPG, PNG, JPEG). This image is used as the widget background.orSelect **Solid Background** option > enter color code. ![](/images/10009894/a29601a2c35f.png) **Foreground Color:**Select **Solid Background** option > enter color code.**Primary Color/Button Default:** Update the primary color code to define the primary button's default background and its hover-state text color.**Secondary Color/Hover State:** Update the secondary color code to define the primary button's hover background and its default text color.**Customize Heading:** Update the heading that appears at the top of the screen.**Heading Text Color:** Update the text color code of the screen heading.**Widget Header/Footer Color:** Update the background color for the Widget's header and footer.**Footer Text Color:** Update the footer text color code in Login App.**Enable Help-text:** Turn on **Enable Help-text** toggle and then enter the help text to display on the **Identity Selection** screen.**Note:** The help text is displayed only on the **Identity Selection** screen and must not exceed **100 characters**. ![](/images/10009894/30a1d43b2463.png)
+5. (Optional) In the **Preview** section, select one of the following tabs to preview the theme configuration:**Identity Selection:**Preview the appearance of the identity selection screen displayed before user authentication.**Authentication:** Preview the authentication screen displayed when users authenticate using their configured credentials.**Error:** Preview how error messages and error screens are displayed to users during authentication failures. ![](/images/10009894/5ab0dbf3b5a3.png)
+6. Click **Deploy**. ![](/images/10009894/747e56465466.png) The **Confirm Update** pop-up box is displayed.
+7. Click **Update**. ![](/images/10009894/f5407af16ed1.png) The Windows Login theme tab is updated successfully.
+
+#### Sync Configuration to Apply Changes
+
+You must sync the configuration in the **Supervisor App** to apply the changes. For detailed steps, see [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app).
+
+---
+
+<Tip>
+  **Keywords:** Windows Login Application Theme Customization · Windows Login Theme Settings · Windows Login Theme Configuration
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure Theme Tab for DeviceLock App" icon="arrow-right" href="/passwordless/android/devicelock/tenant-admin-portal-how-to-configure-theme-tab-for-devicelock-app" />
+  <Card title="Windows Login - How to edit Details tab for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-edit-details-tab-for-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to Configure Theme tab for Webkey Application in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-theme-tab-for-webkey-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Windows Default Domain for Windows Login in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-windows-default-domain-for-windows-login-in-the-tenant-admin-portal" />
+</CardGroup>

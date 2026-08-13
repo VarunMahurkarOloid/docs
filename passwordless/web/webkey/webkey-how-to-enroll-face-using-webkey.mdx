@@ -1,0 +1,85 @@
+---
+title: "Webkey - How to Enroll Face using Webkey"
+sidebarTitle: "Webkey - How to Enroll Face using Webkey"
+description: "This document provides step-by-instructions to enroll your face through WebKey app."
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "9263144"
+  url: "https://oloid.help/en/articles/9263144-webkey-how-to-enroll-face-using-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Using WebKey"
+  updatedAt: "2026-08-10T09:25:38Z"
+  migratedAt: "2026-08-13T09:16:25.792659+00:00"
+---
+## Introduction
+
+Webkey allows users to enroll their face as a credential for face-based authentication. During enrollment, the user provides consent and captures an image that is associated with their profile for use during future authentication.
+
+## Prerequisites
+
+- User Image must be imported into HR Picture Verification. For more information, Refer: [How to Import Faces for HR Picture Verification](/administration/admin-portal/how-to-import-faces-for-hr-picture-verification)
+- Manual face capture (as per the requirement) must be configured in Oloid Portal.
+- Enable Enrollment field should be selected at the application level. Refer **Create and configure Webkey >**[Configure Customize Buttons tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+**To enroll for face login:**
+
+1. Launch the **Webkey**Application URL in your browser.
+2. Select **Enroll for Face Login**.**Note:**You can select preferred display language from the **Language Dropdown Selector**. For more information, refer [Additional information section](#h_82073d25e5). ![](/images/9263144/657429366c22.png) The **Enroll for Face Login**page is displayed.**Note:**In case, custom URL is added for your application then you will be redirected to the provided redirect URL. Follow the onscreen instructions to enroll your face.
+3. Enter your **Employee ID** (primary ID).
+4. Click **Continue**. ![](/images/9263144/c379d54c1b6a.png) TheConsentpage is displayed.
+5. Click **Agree**. ![](/images/9263144/0eccc0fe4330.png) This opens the camera on your device.
+6. Look at the camera to capture your face for enrollment and press **Enter or Spacebar.**Note: For manual capture to function it must be configured in the Tenant Admin Portal. ![](/images/9263144/f305ad525756.png)
+7. Do one of the following:Tap **Yes- Submit** to submit the image.The face is submitted successfully and is displayed on the details screen.Tap **No- Retake** to take the photo again.The camera turns on to retake the photo.**Note**: You can add a maximum of five faces per user. The user's face is added to the Oloid portal. ![](/images/9263144/fe66a51e5872.png)
+
+Face is enrolled successfully.
+
+<Frame>
+  <img src="/images/9263144/f7d71730759b.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### Additional Information
+
+**WebKey** now supports multiple language versions, allowing users to select their preferred display language from the **Language Dropdown Selector** on the Login screen.
+
+**Note:** Languages supported: English, Spanish, French, German, and Portuguese language.
+
+#### Sample Screen
+
+The display language updates based on the selected language. The following sample shows the WebKey application in German.
+
+<Frame>
+  <img src="/images/9263144/c6ed690f89db.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch the video [How to enroll-for face using webkey- Video Tutorial](/passwordless/web/webkey/how-to-enroll-for-face-using-webkey-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** Enroll face using Webkey · Enroll face credential Oloid · Webkey face enrollment · Webkey face login
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - Add Faces" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-faces" />
+  <Card title="Oloid DeviceLock App - How to Enroll Face" icon="arrow-right" href="/passwordless/android/devicelock/oloid-devicelock-app-how-to-enroll-face" />
+  <Card title="Webkey - How to edit Configure tab" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-edit-configure-tab" />
+  <Card title="WebKey - How to configure Face credential in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-face-credential-in-tenant-admin-portal" />
+  <Card title="Windows Login - How to Enroll Face and PIN Credential" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enroll-face-and-pin-credential" />
+</CardGroup>

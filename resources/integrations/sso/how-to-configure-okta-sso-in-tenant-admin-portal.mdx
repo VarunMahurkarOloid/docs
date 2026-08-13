@@ -1,0 +1,58 @@
+---
+title: "How to Configure Okta SSO in Tenant Admin Portal"
+sidebarTitle: "Configure Okta SSO"
+description: "This document provides step-by-step instructions to configure Okta SSO login in the Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "10299914"
+  url: "https://oloid.help/en/articles/10299914-how-to-configure-okta-sso-in-tenant-admin-portal"
+  collection: "SSO Login Configuration"
+  section: "Okta SSO Setup"
+  updatedAt: "2026-07-07T09:27:26Z"
+  migratedAt: "2026-08-13T09:16:04.907182+00:00"
+---
+## Introduction
+
+Okta Single Sign-On (SSO) allows users to sign in to Oloid using their existing Okta credentials. To enable this integration, admin must generate specific parameters in the Okta Admin Console and enter them in the Oloid Portal.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- To configure the integration between Okta and Oloid, generate the required parameters in the **Okta Admin Console**. For detailed steps, see [Okta Settings for Oloid SSO](/resources/integrations/sso/okta-settings-for-oloid-sso).
+
+## Steps to Configure Okta SSO
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the homepage of the portal, click **user profile icon**on the bottom left corner of the menu panel. ![](/images/10299914/c8560f399688.png) The user profile menu is displayed.
+3. Click **Tenant** **Settings**. ![Image](/images/10299914/dd6256eec1ca.png) The **Tenant Settings** page is displayed.
+4. Go to **Security**> **Okta**. ![](/images/10299914/6ec6c52895a0.png)
+5. Turn on **Enable Okta SSO**toggle. ![](/images/10299914/2bfa98a8f267.png)
+6. Do the following: **Redirect URL**: Copy the redirect URL. ![](/images/10299914/3f3fe6a6cf4d.png) Use the Redirect URLs when configuring client application in the Okta Admin Console. ![](/images/10299914/970239f1ca23.png) **Iss**:Enter the default Issuer URL in the Iss field. ![](/images/10299914/a71d296a6346.png) You can find the **default Issuer URL**from your Okta Admin Console under **Security** > **API** > **Authorization server** tab. ![](/images/10299914/79fa9b8390c4.png) **Native Client ID**(Not Applicable).**Domain**: Enter the **Domain ID** in the domain field. ![](/images/10299914/6805edcb8f8e.png) You can find the Domain ID from your Okta Admin Console under **User Profile** icon. ![](/images/10299914/d306bc5bc856.png) **Web Client ID:** Enter the client ID in the Web Client ID field. ![](/images/10299914/ae56974753bb.png) You can find the Client ID from your Okta Admin Console under **General** tab. ![](/images/10299914/7b7ace5606e6.png) **User Info URL**(Not Applicable).Click **Save**.The Okta SSO is configured successfully. ![](/images/10299914/bcbfc9ef198c.png)
+
+---
+
+<Tip>
+  **Keywords:** Configure Okta SSO in Tenant Admin Portal · How to Configure Okta SSO
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="How to Configure PingOne SSO in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal" />
+  <Card title="How to log in to the Tenant Admin Portal with Okta SSO" icon="arrow-right" href="/resources/integrations/sso/how-to-log-in-to-the-tenant-admin-portal-with-okta-sso" />
+  <Card title="How to Configure OKTA Multi-Factor Authentication (MFA) for Windows Login Application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal" />
+</CardGroup>

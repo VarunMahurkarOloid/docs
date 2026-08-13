@@ -1,0 +1,114 @@
+---
+title: "How to Configure Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal"
+sidebarTitle: "Configure Data Mapper Table for ADP ETime Inbound"
+description: "This document provides step-by-step instructions to configure Data Mapper Table for ADP ETime Inbound in Tenant Admin Portal."
+icon: "users-gear"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/hrms"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/hrms"
+navPath: "Resources > Integrations > HRMS"
+source:
+  system: "intercom"
+  articleId: "14468403"
+  url: "https://oloid.help/en/articles/14468403-how-to-configure-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Data Tables"
+  updatedAt: "2026-04-28T09:11:28Z"
+  migratedAt: "2026-08-13T09:16:15.976464+00:00"
+---
+## Introduction
+
+This document provides instructions on how to configure a Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal.**
+- Data Mapper Table for ADP ETime Inbound must be created. To create refer, [How to Create Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal).
+
+## Steps to Configure Data Mapper Table for ADP ETime Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, go to **Agents > Data Tables**. ![](/images/14468403/5386c6a00911.png) The **Data Tables** page is displayed.
+3. Click the ADP Etime data table. ![](/images/14468403/fb32d323a6d5.png) The data table details page is displayed.
+4. Do the Following:[Configure Details Tab](#h_675abbf24c)[Setup Configure Tab](#h_e0d36a2d70) ![](/images/14468403/f58175f48542.png) After saving your changes, the Data Mapper Table for **ADP ETime Inbound** is configured successfully.
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the data mapper table.
+
+Do the following:
+
+1. Update the **Table Name** (Optional).
+2. Enter **Description** (Optional).
+3. Click **Save**. ![](/images/14468403/657df957222f.png) The details tab is configured successfully.
+
+## Setup Configure Tab
+
+This tab is used to configure data field mappings between ADP Etime and Oloid.
+
+**Note:** The **FullName, DisplayName, PrimaryID, and Status** fields are mandatory and must be mapped to corresponding source fields or expressions before saving the configuration.
+
+Do one of the following:
+
+- [Inline](#h_5765d4c21d)**OR**
+- [Upload File](#h_c1658ec40e) ![](/images/14468403/949dc3666105.png) The Configure tab is set up successfully.
+
+## Inline
+
+In the **Inline** section, do the following:
+
+1. **Source / Expression:**Enter the ADP field name or expression that provides the source value.
+2. **Destination – Oloid Field:**Enter the Oloid field name to which the source value is mapped.
+3. **Data Type:** Select the data type from the drop-down.
+4. Click **Add field** to add more fields.**Note:** For mapping the table, refer **[Data mapper Table](#h_e1b70a5203)**.
+5. Click **Save**. ![](/images/14468403/030293756bb5.png) The Inline section is configured successfully.
+
+## Upload File
+
+In the **Upload File** section, do the following:
+
+1. Select **Upload File** and upload the mapping file.**Note:** The file format must be in **.XLSX** or **.CSV**.
+2. Click **Save**. ![](/images/14468403/28ae70a08f31.png) The Upload File section is configured successfully.The Configure tab is set up successfully. ![](/images/14468403/3dcd9e3ea908.png)
+
+## Additional Information
+
+## Data Mapping Table
+
+Use the following fields to define data mappings when configuring the Data Mapper Table.
+
+| **ADP Use Field** | **Oloid User Field** | **Data Type** |
+|---|---|---|
+| FullName | FullName | String |
+| FullName | DisplayName | String |
+| PersonNumber | PrimaryID | String |
+| Status | Status | String |
+| \{UserMetadata.Shifts\} | \{UserMetadata.Shifts\} | String |
+
+**Note:** Contact **[Oloid support](mailto:support@oloid.ai)** if you need assistance while configuring the Data Mapper table.
+
+#### Related Article
+
+[How to Create Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Data Mapper Table for ADP ETime Inbound · ADP ETime Inbound Data mapper Configuration · ADP ETime Data Mapping in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure Data Mapper Table for Workday - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

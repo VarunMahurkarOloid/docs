@@ -1,0 +1,54 @@
+---
+title: "Set up S2 NetBox for Oloid Workflow integrations"
+sidebarTitle: "S2 NetBox for Oloid Workflow integrations"
+description: "Set up S2 NetBox for Oloid Workflow integrations"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "7966111"
+  url: "https://oloid.help/en/articles/7966111-set-up-s2-netbox-for-oloid-workflow-integrations"
+  collection: "Oloid Workflow"
+  section: "Set up 3rd party Applications"
+  updatedAt: "2023-05-31T10:40:42Z"
+  migratedAt: "2026-08-13T09:16:19.676877+00:00"
+---
+Here are the steps to set up S2 Netbox for Oloid workflow integrations.
+
+## Step 1 : Create Use Role for API privilege in S2 NetBox
+
+When creating a user role, you can set specific permissions for API privilege. Below is the list of available permissions. Please select Read-Only or Read-Write based on your usecase.
+
+**None** – No access to the NBAPI
+
+**Read-Only** – Ability to execute NBAPI read-only commands that retrieve information from a system—such as GetReader, SearchPersonData, and GetAccessHistory.
+
+**Read-Write** – Ability to execute NBAPI read-write commands that make changes to a system—such as ModifyPerson, ActivateOutput, and LockPortal.
+
+## Step 2 : Create a User with API privilege
+
+- Go to **Administration > People Add**
+- Enter **First Name** and **Last Name** for the user.
+- Go to Login sectionEnter **User Name** and **Password** for API privilege.Select api privilege **User Role** created in step-1.
+- **Save** the User.
+
+<Frame>
+  <img src="/images/7966111/c506de7a0a75.png" alt="Screenshot" />
+</Frame>
+
+_Here, api_access User Role has api privileges_.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Set up ProWatch for Oloid Workflow Integrations" icon="arrow-right" href="/workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations" />
+  <Card title="Oloid Workflow Guides List" icon="arrow-right" href="/workflow/workflow/oloid-workflow-guides-list" />
+  <Card title="Set up ServiceNow for Oloid Workflow integrations" icon="arrow-right" href="/workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations" />
+  <Card title="Set up Microsoft Entra ID for Oloid Workflow Integration" icon="arrow-right" href="/resources/integrations/sso/set-up-microsoft-entra-id-for-oloid-workflow-integration" />
+  <Card title="Oloid + SOTI MobiControl Integration: Required Credentials and Prerequisites" icon="arrow-right" href="/passwordless/android/devicelock/oloid-soti-mobicontrol-integration-required-credentials-and-prerequisites" />
+</CardGroup>

@@ -1,0 +1,46 @@
+/* Custom styling for the Oloid docs site.
+ *
+ * Mintlify automatically includes any .css file in the content directory on
+ * every page — this file does not need to be referenced from docs.json.
+ */
+
+/* ---------------------------------------------------------------------------
+ * Sidebar width
+ *
+ * The default theme sidebar is 14rem (224px), which is cramped for this site:
+ * the navigation nests up to five levels (tab > menu > super-group > section >
+ * Videos), so group labels wrap badly at the default width.
+ *
+ * Change the single value below to tune it. 18rem is a comfortable default;
+ * 20rem gives deep groups more room, 16rem is a subtler bump.
+ *
+ * Three measurements are coupled in the theme and must move together, or the
+ * content column overlaps the sidebar / stops being centred:
+ *   1. #sidebar-content  width         (theme: w-56)
+ *   2. #body-content     padding-left  (theme: lg:pl-56)
+ *   3. #content-area     margin-left   (theme hardcodes 14rem in a calc())
+ * The 348px in that calc is half of the content column's max width (max-w-174
+ * = 43.5rem = 696px); it centres the column in the space left over.
+ *
+ * ID selectors outrank Tailwind's utility classes, so no !important is needed.
+ * Scoped to the theme's `lg` breakpoint (1024px) because below it the sidebar
+ * is a hidden off-canvas drawer and these offsets must not apply.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --oloid-sidebar-width: 18rem;
+}
+
+@media (min-width: 1024px) {
+  #sidebar-content {
+    width: var(--oloid-sidebar-width);
+  }
+
+  #body-content {
+    padding-left: var(--oloid-sidebar-width);
+  }
+
+  #content-area {
+    margin-left: max(0px, calc(50vw - 348px - var(--oloid-sidebar-width)));
+  }
+}

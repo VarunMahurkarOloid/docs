@@ -1,0 +1,65 @@
+---
+title: "Windows Login - How to Customize Buttons in Windows Login application"
+sidebarTitle: "Windows Login - How to Customize Buttons in Windows Login…"
+description: "This document provides step-by-step instructions to Customize Buttons in Windows Login application."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "11069364"
+  url: "https://oloid.help/en/articles/11069364-windows-login-how-to-customize-buttons-in-windows-login-application"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:33:36Z"
+  migratedAt: "2026-08-13T09:16:07.158307+00:00"
+---
+### Introduction
+
+The Customize Buttons section allows Tenant admin to rename the authenticator button label displayed on the Windows Login app.
+
+### Steps to configure Customize Buttons:
+
+1. Log in to the **Oloid Portal**.
+2. On the **Applications** page, select the application paired in the Supervisor App (Windows Authenticator App). ![](/images/10900687/ca340dba5264.png) The application page is displayed. ![](/images/10900687/479f82ca733c.png)
+3. Go to**Configure** > **Customize Buttons** tab. ![](/images/11069364/d19ed4250a88.png)
+4. In **Button Label**field, enter the text to be displayed on the Windows Login app. Example- Sign in with, Login with, Authenticate with. ![](/images/11069364/1dcd80efe073.png)
+5. **Enable Badge Options** toggle to allow badge assignment through the Supervisor App. **Note**: You must enable Badge Credential in the Authenticator tab of the Windows Login application. After enabling Badge option, select one of the following modes: ​**Default:** Enroll Badge + PIN**Enroll Badge Only** Select this option to enroll badge using the Supervisor App.**Enroll Badge + PIN** Select this option to enroll badge with PIN credential using the Supervisor App.
+6. Click **Save**. ![](/images/11069364/59cfd1822a08.png) The configuration is saved successfully. See, [Sample screen for customized button](#h_c464382251) ![](/images/11069364/60e247cd0ca7.png) **Note:**In **Windows Authenticator** app, you must sync the configuration to see the latest customized buttons. For more details, refer [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app)
+
+## Sample screen for customized button
+
+<Frame>
+  <img src="/images/11069364/071478f3772b.png" alt="Screenshot" />
+</Frame>
+
+## Video Tutorial
+
+Watch the video [How to Customize Buttons in Windows Login application-Video Tutorial](/passwordless/windows/passwordless/how-to-customize-buttons-in-windows-login-application-video-tutorial)
+
+## Related Document
+
+[How to enroll Badge using Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-using-supervisor-app)
+
+[How to enroll Badge and PIN using Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app)  
+​
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enable Enroll Badge Option for Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enable-enroll-badge-option-for-supervisor-app" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to enable Credential Updates and Enrollment for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-credential-updates-and-enrollment-for-windows-login" />
+  <Card title="Windows Login - How to Enroll Credentials" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enroll-credentials" />
+  <Card title="Windows Login - How to Enable Forgot PIN Link for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-forgot-pin-link-for-windows-login" />
+</CardGroup>

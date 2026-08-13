@@ -1,0 +1,57 @@
+---
+title: "How to install Windows Authenticator App"
+sidebarTitle: "Install Windows Authenticator App"
+description: "How to install Windows Authenticator App"
+icon: "eye"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "passwordless/windows/supervisor"
+primaryCategory: "passwordless/windows/supervisor"
+navPath: "Passwordless > Windows > Supervisor"
+source:
+  system: "intercom"
+  articleId: "9036683"
+  url: "https://oloid.help/en/articles/9036683-how-to-install-windows-authenticator-app"
+  collection: "Supervisor App"
+  section: "Installation and Configuration of Supervisor App"
+  updatedAt: "2026-03-25T04:27:17Z"
+  migratedAt: "2026-08-13T09:16:24.811536+00:00"
+---
+The Windows Authenticator App is a Windows-based application that enables you to configure the Windows Login app. It allows you to set up endpoints, manage users and shared credentials, and support multiple authentication methods such as badge, PIN, and password.
+
+**Pre-requisite**
+
+The Windows Authenticator App must be downloaded. For detailed instructions, see [How to download Windows Authenticator App](/passwordless/windows/supervisor/how-to-download-supervisor-app)  
+​**Note:**It is recommended to use [Tenant Settings](/passwordless/windows/supervisor/how-to-download-supervisor-app) tab to download the installer file.
+
+Make sure your system has the following installed components:
+
+- Visual C++ "14" Runtime Libraries (x64)
+- .Net Runtime 6.0.36 (x64)
+- .Net Desktop Runtime 6.0.36 (x64)
+
+If any of these components are missing, you'll need to run the **setup.exe** file included in the installation file.
+
+**Steps to install Windows Authenticator App:**
+
+1. Download **Windows Authenticator App**file on your system. ![](/images/10568115/398c2f18a125.png) **Note:**If you have subscribed to Presence Detection feature, then download **Windows Authenticator App (Presence Detection)**file on your system. ![](/images/9036683/1fe32d290276.png) The **OloidPasswordlessSupervisor.Setup.zip**file is downloaded to your system.
+2. Right-click and select **Extract All** > **OloidPasswordlessSupervisor.Setup.zip**file.The extracted files will be saved in the same folder as the original zipped file.
+3. Confirm the presence of required components:If all required components are already installed, then double-click **OloidPasswordlessSupervisor.Setup** file. ![](/images/9036683/2b6cc3067ed5.png)If any component is missing, double-click **setup.exe** to install missing dependencies. ![](/images/9036683/b0d544aa580d.png)
+4. In the **Oloid Passwordless Supervisor Setup** window, review the listed components, and click **Install** to proceed. ![](/images/10568115/edfacbb9a9c3.png) **Note:**If components are missing, the setup prompts you to install them. ![](/images/9036683/1dedf5418fc4.png)
+5. On the **Oloid Passwordless Supervisor** Setup wizard, click **Next**. ![](/images/10449230/ae32b2c51922.png)
+6. Use the default path to install the application and click **Next**. ![](/images/10449230/5dcdec4acd1d.png)
+7. Click **Next**to confirm the installation. ![](/images/10449230/d5f6ee51e3be.png)
+8. Click **Close**after the installation is complete. ![](/images/10568115/999dd18926f3.png) You can find the app icon ![](/images/9036683/089247237b00.png) on your desktop. Now restart your system for the Windows Supervisor App to take effect
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Installing Oloid RPA Add-On + RPA Runtime for EHR Login (RPA Only)" icon="arrow-right" href="/resources/industry/healthcare/installing-oloid-rpa-add-on-rpa-runtime-for-ehr-login-rpa-only" />
+  <Card title="Windows Login - How to Install and Auto-Pair Windows Authenticator App through MDM" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-install-and-auto-pair-windows-authenticator-app-through-mdm" />
+  <Card title="How to download, install, and configure Windows Authenticator App" icon="arrow-right" href="/passwordless/windows/passwordless/how-to-download-install-and-configure-windows-authenticator-app" />
+  <Card title="Windows Login v2.0 - How to Install, and Auto-Pair Windows Login v2.0 App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-install-and-auto-pair-windows-login-v2-0-app" />
+  <Card title="Windows Login (Healthcare) - How to Download and Install Windows Login App" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-download-and-install-windows-login-app" />
+</CardGroup>

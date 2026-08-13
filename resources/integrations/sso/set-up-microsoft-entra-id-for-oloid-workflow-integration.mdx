@@ -1,0 +1,79 @@
+---
+title: "Set up Microsoft Entra ID for Oloid Workflow Integration"
+sidebarTitle: "Set up Microsoft Entra ID for Oloid Workflow Integration"
+description: "Set up Microsoft Entra ID for Oloid Workflow Integration"
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Workflow"
+categories:
+  - "resources/integrations/sso"
+  - "workflow/workflow"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "8559826"
+  url: "https://oloid.help/en/articles/8559826-set-up-microsoft-entra-id-for-oloid-workflow-integration"
+  collection: "Oloid Workflow"
+  section: "Set up 3rd party Applications"
+  updatedAt: "2025-03-19T03:30:11Z"
+  migratedAt: "2026-08-13T09:16:22.839652+00:00"
+---
+Connecting to Microsoft Entra ID on Oloid Workflow is a multistep process involving configuration steps in the Microsoft Active Directory and Oloid Workflow.
+
+## Steps to create Oloid Workflow on Microsoft Entra ID
+
+Creating Oloid Workflow Application on Microsoft Entra ID consists of the following steps:
+
+- [Step 1: Register your application](#h_b9319a9381)
+- [Step 2: Grant your application permissions](#h_e7cb7fbcb3)
+- [Step 3: Generate a client secret for your application](#h_4768040797)
+
+## Step 1: Register your application
+
+Register your Oloid Workflow application with Microsoft Entra ID
+
+.
+
+1. Log in to the [Microsoft Azure](https://portal.azure.com)
+2. Select **App registrations**.
+3. On the resulting page, click **+ New registration**.
+4. Name your application. This is the user-facing display name for this application. Microsoft allows you to change this name later.![](/images/8559826/db8c375207fb.png)
+5. In **Supported account types**, select the first option, **Accounts in this organizational directory only**.
+6. In the **Redirect URI** field, set the platform type to **Web** and provide the redirect URI.
+7. The next page displays the details of the newly-created application. Pay attention to the **Application (client) ID** and the **Directory (tenant) ID**. You will need these values later to authenticate in Oloid Workflow.![](/images/8559826/b78e0744b2f5.png)
+
+## Step 2: Assign permissions to your application
+
+Now it's time to assign permissions to our Oloid Workflow application.
+
+These instructions demonstrate how to grant the minimum permissions necessary to establish a connection with Oloid Workflow. The permissions you need are variable and based on your use case.
+
+1. Select **API permissions** from the left navigation sidebar.
+2. Click **+ Add a permission**.
+3. Click **Microsoft Graph** to open the permissions interface.![](/images/8559826/1a60817d114e.png)
+4. Select **Application permissions**.![](/images/8559826/7afd6e78f899.png)
+5. Scroll to **User**. Add the `User.Read.All `and `User.ReadWrite.All` permissions, along with any other necessary [permissions](https://docs.workato.com/connectors/azure-ad/connection-setup.html).![](/images/8559826/f71b0bf2b2d7.png)
+6. Click **Add permissions**.
+7. You will see these permissions added to **Microsoft Graph**. However, you will need admin approval to grant them to your application officially.If you are logged in with an administrator account, click **Grant admin consent for Default Directory**.
+8. Once admin consent is granted, Microsoft updates the **Status** column to **Granted**.![](/images/8559826/fe4e1df79461.png)
+
+## Step 3: Generate a client secret for your application
+
+1. Select **Certificates & secrets** from the left navigation sidebar.
+2. Click **+ New client secret**.![](/images/8559826/23276780cfd1.png)
+3. In the interface that appears, provide a description of the secret and determine when the secret will expire.
+4. Copy and save the **Value** in a safe place. This is the only time Microsoft Entra ID displays this value. ​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure User Sync in Microsoft Entra ID Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-user-sync-in-microsoft-entra-id-admin-console" />
+  <Card title="Integrating Oloid as an External Method Authentication (EAM) with Microsoft Entra ID" icon="arrow-right" href="/resources/integrations/sso/integrating-oloid-as-an-external-method-authentication-eam-with-microsoft-entra-id" />
+  <Card title="Tenant Admin Portal - How to Configure IDP Profile for OIDC-Entra ID" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-idp-profile-for-oidc-entra-id" />
+  <Card title="How to Configure Advanced User Sync for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Advanced User Sync in Microsoft Entra ID Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-advanced-user-sync-in-microsoft-entra-id-admin-console" />
+</CardGroup>

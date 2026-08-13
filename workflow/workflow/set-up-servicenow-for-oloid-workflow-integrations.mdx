@@ -1,0 +1,50 @@
+---
+title: "Set up ServiceNow for Oloid Workflow integrations"
+sidebarTitle: "ServiceNow for Oloid Workflow integrations"
+description: "Set up ServiceNow for Oloid Workflow integrations"
+icon: "diagram-project"
+tags:
+  - "Workflow"
+categories:
+  - "workflow/workflow"
+primaryCategory: "workflow/workflow"
+navPath: "Workflow > Workflow"
+source:
+  system: "intercom"
+  articleId: "8015577"
+  url: "https://oloid.help/en/articles/8015577-set-up-servicenow-for-oloid-workflow-integrations"
+  collection: "Oloid Workflow"
+  section: "Set up 3rd party Applications"
+  updatedAt: "2023-06-22T09:51:19Z"
+  migratedAt: "2026-08-13T09:16:19.789616+00:00"
+---
+ServiceNow is a single, unified cloud platform that offers a comprehensive suite of IT management software in the areas of IT service, IT operations, and IT business.
+
+Oloid workflow requires the following ServiceNow credentials with Rest API privileges for the integration.
+
+1.      ServiceNow Instance URL (e.g. myinstance.service-now.com)
+
+2.     ServiceNow Username
+
+3.     ServiceNow Password
+
+Here are the steps to set up the user in ServiceNow.
+
+## Option 1 - User with Base System Role
+
+Some Base system roles (such as admin) include access control to ServiceNow instance Tables. If you wish to use this User for integration, you do not need to do any additional configuration.
+
+## Option 2 - User with Custom Role
+
+- Create a role in ServiceNow instance with desired name for integration. ( Please refer this for more details - [https://docs.servicenow.com/bundle/utah-customer-service-management/page/product/customer-service-management/concept/creating-custom-csm-user-roles.html](https://docs.servicenow.com/bundle/utah-customer-service-management/page/product/customer-service-management/concept/creating-custom-csm-user-roles.html) )
+- Assign appropriate access control rules to the role according to integration use case. (Please refer to this for more details - [https://docs.servicenow.com/en-US/bundle/rome-application-development/page/integrate/inbound-rest/concept/c_RESTAPI.html#d730041e697](https://docs.servicenow.com/en-US/bundle/rome-application-development/page/integrate/inbound-rest/concept/c_RESTAPI.html) )
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Workflow - Overview" icon="arrow-right" href="/workflow/workflow/oloid-workflow-overview" />
+  <Card title="Outbound Network Access Requirements" icon="arrow-right" href="/workflow/workflow/outbound-network-access-requirements" />
+  <Card title="ProWatch <> ServiceNow Integration" icon="arrow-right" href="/workflow/workflow/prowatch-servicenow-integration" />
+  <Card title="Oloid Workflow Guides List" icon="arrow-right" href="/workflow/workflow/oloid-workflow-guides-list" />
+  <Card title="Set up C-Cure 9000 for Oloid Workflow integrations" icon="arrow-right" href="/resources/integrations/pacs/set-up-c-cure-9000-for-oloid-workflow-integrations" />
+</CardGroup>

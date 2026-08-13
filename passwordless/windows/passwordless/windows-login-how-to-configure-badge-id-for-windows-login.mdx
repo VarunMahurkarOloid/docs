@@ -1,0 +1,89 @@
+---
+title: "Windows Login - How to Configure Badge ID for Windows Login"
+sidebarTitle: "Windows Login - How to Configure Badge ID for Windows…"
+description: "Windows Login - How to Configure Badge ID for Windows Login"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "14698260"
+  url: "https://oloid.help/en/articles/14698260-windows-login-how-to-configure-badge-id-for-windows-login"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:53:15Z"
+  migratedAt: "2026-08-13T09:16:16.383056+00:00"
+---
+## Introduction
+
+This document explains how to enable and configure **Badge ID authentication** for the Windows Login application in the Tenant Admin Portal. Badge-based authentication allows users to log in by scanning an RFID badge, providing a fast and efficient alternative to traditional credentials.
+
+## Prerequisite
+
+- You must have Tenant Admin Access.
+- Windows Login Application must be created in the Tenant Admin Portal. For more information, refer: [How to create and configure Windows Login application in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal)
+
+## Steps to Configure Badge ID credential
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click the **Windows Login** application. ![](/images/10900687/ca340dba5264.png) The application page is displayed.
+3. Go to the**Authenticato**r tab. ![](/images/11484465/83d7f75d2fd5.png) The Authenticator page is displayed.
+4. Turn on the **Badge ID**toggle. ![](/images/14698260/8b09004d600b.png) The **Badge ID** is enabled successfully.
+5. Do the following:[Configure **Select Badge Input**](#h_cae3744f37)[Configure **Select Badge Auth Source**](#h_7ab283f441)
+6. Click **Save**after configuration changes to apply the configuration.The Badge Input source is successfully configured.
+
+## Configure **Select Badge Input**
+
+1. Select Badge Input
+2. RFID HF/LF Settings Use this option to configure RFID badge input based on frequency type.**HF (13.56 MHz)**: Typically used for access cards and modern RFID systems.**LF (125 / 134.2 kHz)**: Used for older or legacy animal tag systems. **Note:**Select the appropriate frequency based on the badge type used in your environment. ​![](/images/14698260/15c28183161a.png)
+3. Input Method Choose how badge data is received by the application: • **SDK** Enables badge reading through the integrated SDK. This is the recommended option for most deployments where native reader integration is used. • **Keyboard** Uses keyboard emulation mode where badge data is input as keystrokes (commonly used in wedge-based readers).
+4. PC/SC (UID) Reads the card’s **UID (Unique Identifier)** in numeric or binary format. This uniquely identifies the RFID tag.This option is **automatically enabled** when a PC/SC-compatible connection is added to the application.
+5. RFID Badge TypeAdmins must select the specific RFID badge type from the dropdown.This ensures compatibility between the reader and badge format. ![](/images/14698260/970b25c77c85.png)
+6. Smart Card Enable this option when using smart cards for authentication. Smart Card Type**PIV (Personal Identity Verification)****CAC (Common Access Card)**Select the appropriate card type based on organizational requirements.
+7. Authentication Type Defines how authentication is performed using the smart card: • **Direct** Authentication is handled directly through the configured system. • **Oloid Certificate (Coming Soon)** Future capability for certificate-based authentication managed via Oloid.
+
+## Configure **Select Badge Auth Source**
+
+<Frame>
+  <img src="/images/14698260/3529276e7de2.png" alt="Screenshot" />
+</Frame>
+
+This setting allows admins to define the source used to validate badge authentication. It determines how the scanned badge data is verified.
+
+Refer to: **[How to configure Badge Auth Source in Windows Login Application](/passwordless/windows/passwordless/windows-login-how-to-configure-badge-auth-source)**
+
+The Badge ID is successfully configured.
+
+<Frame>
+  <img src="/images/14698260/c48fb8c9a5b5.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Sync Configuration
+
+**Note:**In **Windows Authenticator** app, you must sync the configuration to Validate Windows Credential to work properly. For more details, refer [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app)
+
+---
+
+#### Keywords
+
+​| Configure Badge ID authentication | Windows Login badge setup | Badge ID configuration Tenant Admin Portal |
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to configure Badge Auth Source" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-badge-auth-source" />
+  <Card title="Windows Login - How to Enable and Configure NFC/ID Credential for Windows Login in Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-and-configure-nfc-id-credential-for-windows-login-in-tenant-admin-portal" />
+  <Card title="Webkey - How to configure Badge ID credential for Webkey in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-badge-id-credential-for-webkey-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to configure PC/SC Badge configuration in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-pc-sc-badge-configuration-in-the-tenant-admin-portal" />
+</CardGroup>

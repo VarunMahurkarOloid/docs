@@ -1,0 +1,61 @@
+---
+title: "Windows Login - How to Enroll PC/SC Badge using Supervisor App"
+sidebarTitle: "Windows Login - How to Enroll PC/SC Badge using…"
+description: "Windows Login - How to Enroll PC/SC Badge using Supervisor App"
+icon: "eye"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "passwordless/windows/supervisor"
+primaryCategory: "passwordless/windows/supervisor"
+navPath: "Passwordless > Windows > Supervisor"
+source:
+  system: "intercom"
+  articleId: "11721445"
+  url: "https://oloid.help/en/articles/11721445-supervisor-app-enroll-pc-sc-badge"
+  collection: "Supervisor App"
+  section: "Credential Management - Supervisor App"
+  updatedAt: "2026-08-13T08:50:00Z"
+  migratedAt: "2026-08-13T09:16:09.213173+00:00"
+---
+## Introduction
+
+This document provides instructions for enrolling a PC/SC badge to a user through the Supervisor App. The badge can be scanned using a connected PC/SC badge reader and enrolled directly from the user's Badge details.
+
+## Prerequisites
+
+- Ensure the endpoint is paired with the Windows Login application. For more information, refer: [Windows Login - How to manually pair the Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-manually-pair-the-supervisor-app)
+- Log in to the Supervisor App using an Admin or Supervisor account. For more, refer [How to log in to Supervisor App](/passwordless/windows/supervisor/how-to-log-in-to-supervisor-app)
+- Ensure the Badge option is enabled for the application in the Tenant Admin Portal to make the Enroll Badge option available in the Supervisor App. Refer to **[How to enable badge option for Supervisor App.](/passwordless/windows/supervisor/windows-login-how-to-enable-enroll-badge-option-for-supervisor-app)**
+- Ensure a supported badge reader is connected to the system.
+- Ensure the user exists in the Tenant Admin Portal. Refer: [Windows Login - How to Add a User](/passwordless/windows/supervisor/windows-login-how-to-add-a-user)
+- The badge must be assigned to the user. For more details, refer [Supervisor App: Assign Badge](/passwordless/windows/supervisor/windows-login-how-to-enroll-assign-badge).
+- The connection added to the application must be PC/SC Badge input enabled. For more details refer [How to add PC/SC Badge input enabled Connection to the Application in the Tenant Admin Portal](/administration/admin-portal/how-to-add-personal-computer-smart-card-pc-sc-badge-input-enabled-connection-to-the-application-in-the-tenant-admin-portal).
+
+## Steps to Enroll PC/SC Badge:
+
+1. Log in to **Supervisor App**. For more, refer [How to log in to Supervisor App](/passwordless/windows/supervisor/how-to-log-in-to-supervisor-app)The **Admin Home** screen is displayed.
+2. On the Admin Home screen, select **User Management**. ![](/images/11721445/b7be252b2708.png) The**Users**screen is displayed.
+3. Select the user to view details. ![](/images/11721445/508a929190e0.png) The User details screen is displayed.
+4. Select **Badge**tab.
+5. Click **Scan Badge to Enroll.** ![](/images/11721445/fa63abf7435d.png) The **Scan Badge to Enroll**pop-up box is displayed.
+6. Tap the **Badge** on the **Reader** to scan it.**Note:**PC/SC Badge reader must be connected to the system.
+7. Click **Create**. ![](/images/11721445/ff05615a1317.png) The **Badge**is enrolled successfully. ![](/images/11721445/87559104bfe0.png)
+
+---
+
+<Tip>
+  **Keywords:** PC/SC badge reader · Enroll PC/SC badge · Enroll badge Windows Login · Supervisor App badge enrollment · Badge authentication
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enroll Badge and PIN using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll / Assign Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-assign-badge" />
+  <Card title="Windows Login - How to Enroll Badge using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge" />
+  <Card title="Windows Login - How to Update Badge" icon="arrow-right" href="/passwordless/windows/supervisor/supervisor-app-update-badge" />
+</CardGroup>

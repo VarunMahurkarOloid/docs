@@ -1,0 +1,56 @@
+---
+title: "Windows Login - Set up Preferred Machine Configuration for Windows Login"
+sidebarTitle: "Windows Login - Set up Preferred Machine Configuration…"
+description: "Windows Login - Set up Preferred Machine Configuration for Windows Login"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "11330684"
+  url: "https://oloid.help/en/articles/11330684-windows-login-set-up-preferred-machine-configuration-for-windows-login"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Admin Guides- Windows Login"
+  updatedAt: "2026-06-29T08:40:35Z"
+  migratedAt: "2026-08-13T09:16:07.712653+00:00"
+---
+## Introduction
+
+The Preferred Machines setting allows you to specify which Windows devices can use a domain shared credential. When creating a domain shared credential in the Tenant Admin Portal, you can select one or more preferred machines to restrict usage.
+
+This enhances security by ensuring the credential can only be used on designated devices. The Windows Login app supports this feature, enabling login only on assigned Windows systems.
+
+You can enable preferred machine login in the following ways:
+
+- [When creating shared Windows credentials in the **Tenant Admin Portal**](#h_0e811561ed)
+- [When creating shared Windows credentials in the **Supervisor App**](#h_05758f89b8) ​
+
+## Set Up a Preferred Machine in the Tenant Admin Portal
+
+1. **Pair the Endpoint**You must pair the endpoint before it can be used with preferred machine login. Choose one of the following methods:**Using Auto-Pair Configuration File**: If the endpoint is paired using an auto-pair config file through the **Supervisor App**, you must manually enable the **Enable Only Preferred Machine Login** setting from the **Tenant Admin Portal**.**Using Supervisor App (Pair as Supervisor)**: If the endpoint is paired using the **Supervisor App** (Pair as Supervisor option), the **Enable Only Preferred Machine Login** setting is automatically enabled in the **Tenant Admin Portal**.**Download and Pair from Tenant Admin Portal**: If you download the endpoint config file from the **Tenant Admin Portal** and pair it using the **Supervisor App**, the **Enable Only Preferred Machine Login** setting is also automatically enabled in the **Tenant Admin Portal**. **Note:** After enabling the preferred machine login setting, click **Save** to apply the configuration. For detailed instructions, see [How to enable Preferred Machine Users in Shared Credentials](/passwordless/windows/passwordless/windows-login-how-to-enable-preferred-machine-users-in-shared-credentials)
+2. **Create the Shared Domain Credential**Go to **Tenant Admin Portal** > **Users** > **Shared Credentials**> **Windows Password**.Select **Create Password**.Select **Windows Domain User** as Password type.Under **Preferred Machine(s)**, select one or more Windows endpoints from the list.**Save** the credential.For detailed instructions, see [How to create shared credentials for Windows login](/passwordless/windows/passwordless/how-to-create-shared-password-for-windows-login-application-in-the-tenant-admin-portal)
+3. **Assign the Credential**After Windows Shared Password is created, the created password can be assigned to users from the details page. For detailed instructions, see [How to associate users with shared credentials](/administration/admin-portal/tenant-admin-portal-how-to-associate-users-with-window-shared-credentials-in-the-tenant-admin-portal) OR Under User detail page, assign the Windows password to the selected user.For detailed instructions, see [How to assign shared credential to user](/passwordless/windows/passwordless/how-to-assign-shared-password-for-windows-login-in-the-tenant-admin-portal)From the **Endpoints** section, assign the created shared credential to the desired endpoint. For detailed instructions, see[How to assign shared credentials to an endpoint through the oloid platform](/administration/admin-portal/how-to-assign-shared-credentials-to-an-endpoint-through-the-oloid-platform)
+
+## Set up a Preferred Machine while creating shared Windows credentials in the Supervisor App
+
+1. **Pair the Endpoint**You must pair the endpoint before it can be used with preferred machine login. Choose one of the following methods:**Using Auto-Pair Configuration File**: If the endpoint is paired using an auto-pair configuration file through the **Supervisor App**, you must manually enable the **Enable Only Preferred Machine Login** setting from the **Tenant Admin Portal**.**Using Supervisor App (Pair as Supervisor)**: If the endpoint is paired using the **Supervisor App** (Pair as Supervisor option), the **Enable Only Preferred Machine Login** setting is automatically enabled in the **Tenant Admin Portal**.**Download and Pair from Tenant Admin Portal**: If you download the endpoint from the **Tenant Admin Portal** and pair it using the **Supervisor App**, the **Enable Only Preferred Machine Login** setting is also automatically enabled in the **Tenant Admin Portal**. **Note:** After enabling the preferred machine login setting, click **Save** to apply the configuration.
+2. **Create the Shared Domain Credential**Open the **Supervisor App**.Go to **Shared Credential** > **Create Shared Password**.Choose **Domain Shared Credential**.Select the endpoint under **Preferred Machine**.Save the credential.For detailed instructions, see [How to create Shared Credentials using the Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-create-shared-password-using-the-supervisor-app)
+3. **Assign the Credential** After Windows Shared Password is created, the created password can be assigned to users from the details page. For detailed instructions, see [How to view and edit Shared Credential details in Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-view-and-edit-shared-password-details-in-supervisor-app) OR Under **User Management**, assign the Windows password to the selected user. For detailed instructions, see [Supervisor App: Assign Shared Credential](/passwordless/windows/supervisor/windows-login-how-to-assign-shared-credential) ​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to enable Preferred Machine Users in Shared Credentials" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-preferred-machine-users-in-shared-credentials" />
+  <Card title="Windows Login - How to Add Password" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-add-password" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to Configure Login options for Oloid Apps" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-configure-login-options-for-oloid-apps" />
+  <Card title="Windows login 2.0 - How to Set User Cache Validity" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-2-0-how-to-set-user-cache-validity" />
+</CardGroup>

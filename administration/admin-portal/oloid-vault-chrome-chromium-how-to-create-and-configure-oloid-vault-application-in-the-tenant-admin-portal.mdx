@@ -1,0 +1,351 @@
+---
+title: "Oloid Vault (Chrome / Chromium) - How to Create and Configure Oloid Vault Application in the Tenant Admin Portal"
+sidebarTitle: "Create and Configure Oloid Vault Application"
+description: "This document provides step by step instructions to create and configure Oloid Vault (Chrome / Chromium) application in the Tenant Admin Portal."
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Web"
+  - "Chrome Vault"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/web/chrome-vault"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "9586885"
+  url: "https://oloid.help/en/articles/9586885-oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal"
+  collection: "Oloid Chrome Vault"
+  section: "Chrome Vault- Platform Configuration"
+  updatedAt: "2026-07-17T04:43:06Z"
+  migratedAt: "2026-08-13T09:16:26.934913+00:00"
+---
+Doc Version 1.1
+
+## Introduction
+
+The **Oloid Vault (Chrome / Chromium)** application in the Tenant Admin Portal enables secure passwordless access to stored credentials. Admins can configure authentication methods such as Face, QR Code, Badge ID, NFC/ID, and Oloid Session.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- You must create a connection in the Tenant Admin Portal. To create connection, refer [How to create Connections in the Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-create-connection).
+
+## Steps to Create and Configure Oloid Vault (Chrome / Chromium) Application
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click **Create Application** on the top right corner. ![](/images/10346057/e32d9f26e07e.png) The **Create New Application** pop-up box is displayed.
+3. Do the following:Enter **Application Name.**Select **Application Type**as **Passwordless**.Click **Next**. ![](/images/9586885/5c0da9fbfd69.png) The **Select Passwordless Use Case**screen is displayed.Select **Oloid Vault**.Click **Next**. ![](/images/9586885/0ab48f146197.png) The **Select Vault Type** pop-up box is displayed.Select **Chrome / Chromium Vault**.Click **Create** ![](/images/9586885/d5e9337e9d4b.png) The **Oloid Vault** application is created, and the configuration page is displayed.
+4. Configure the following tabs:[Details tab](#h_e6d165b891)[Authenticator tab](#h_858e4e05f0)[Configure tab](#h_8552e54a12)[Connections tab](#h_dba62ad888)
+
+<Note>
+  These settings need to be configured only once, and it is recommended to keep the default values.
+</Note>
+
+<Frame>
+  <img src="/images/9586885/0c3452651c44.png" alt="Screenshot" />
+</Frame>
+
+## Configure Details Tab
+
+The **Details** tab is used to configure the basic application information, such as the application name, description, and time zone.
+
+Do the following:
+
+1. Update the **Application Name**(if needed).
+2. Add the **Description** (Optional).
+3. Select the **Time Zone** from the drop-down menu.
+4. Click **Save**. ![](/images/9586885/fd3504fb12ec.png)
+
+## Configure Authenticator Tab
+
+This tab is used to enable the login methods you want to support such as Face, Badge ID, NFC/ID and Oloid Session.
+
+**Note:** You can enable one or more credential options based on your requirements.
+
+### Face
+
+The **Face** authenticator enables users to authenticate using facial recognition for secure passwordless access.
+
+Do the following:
+
+1. Enable **Face**toggle. ![](/images/9586885/8ec5850141fe.png) The **Advanced Settings** page is displayed.
+2. Configure the **Face Match Parameters** and **Liveness Check Parameters**on the Advanced Settings page. **Note**: The parameters are pre-configured. This is done by Oloid admin.
+3. Click **Save**.
+
+### Additional Settings
+
+- **Configure Image Capture Resolution:** Select the preferred resolution from the **Select Resolution** drop-down.**Note:**If the selected resolution is not available, the browser will default to the closest supported resolution.
+- Click **Save**. ![](/images/9586885/13d6bc6f324d.png)
+
+### Badge ID
+
+The **Badge ID** authenticator allows users to authenticate using a badge for quick and secure access.
+
+Do the following:
+
+1. Enable **Badge ID** Toggle. ![](/images/9586885/6dccd8f06629.png) The **Advanced Settings** page is displayed.
+2. Select **RFID** **Badge Type**from the drop-down.
+3. Click **Save**.The Badge ID is configured successfully.
+
+### QR Code
+
+The QR Code feature allows users to authenticate by scanning a QR code.
+
+Do the following.
+
+1. Enable **QR Code** toggle.
+2. Enable **Show Camera Flip button** to allow users to switch between the front and rear cameras.**Note:** By default, the front camera opens for QR code scanning.Under **Default camera selection**, select a camera option:**Front Camera** (default)**Rear Camera.**
+3. Click **Save**. ![](/images/9586885/c269f0d8684d.png)
+
+The QR code is enabled successfully.
+
+### NFC/ID
+
+The **NFC/ID** authenticator allows users to authenticate by tapping an NFC card or ID badge on a supported reader, enabling quick and secure passwordless access.
+
+1. Enable the **NFC/ID** toggle.The **NFC/ID** toggle is enabled successfully. ![](/images/9586885/ce2cecbe2df6.png)
+
+### Oloid Session
+
+The **Oloid Session** feature uses the existing Oloid authentication session to securely authenticate users without requiring re-authentication.
+
+**Note:**
+
+- Ensure **Include user token in session response** is enabled in **Endpoint Integration Settings** under **Passwordless Session Token**, as the Oloid session token works only for endpoints that include the user token in the session response.
+- To use this feature, install the Supervisor application with Presence Detection support.
+
+Do the following:
+
+1. Enable the **Oloid Session** toggle.
+2. Select the **Session Expiry Time** with the help of drop-down.**Note:** The maximum expiry time is **12** Hours.
+3. Click **Save.** ![](/images/9586885/fe1ee9264b2b.png) The Oloid Session is configured successfully.
+
+## Configure Theme tab
+
+The **Theme** tab allows you to customize the appearance of the DeviceLock application by following the onscreen instructions. For more details, see [Oloid Vault (Chrome/Chromium) How to Configure Theme Tab in Tenant Admin Portal | Oloid Help Center](https://oloid.help/en/articles/14887791-oloid-vault-chrome-chromium-how-to-configure-theme-tab-in-tenant-admin-portal).
+
+<Frame>
+  <img src="/images/9586885/c961a3c8e1e9.png" alt="Screenshot" />
+</Frame>
+
+The theme tab is configured successfully.
+
+## Setup Configure Tab
+
+Do the following:
+
+1. [Configure Settings tab](#h_087765cd5a)
+2. [Customize Buttons tab](#h_dbefdcac75)
+
+### Configure Settings tab
+
+**Vault Behaviour**
+
+The **Vault Behavior** section is used to control how **Oloid Vault** behaves during login, browser interaction, password handling, passkey usage, and session-based actions.
+
+Do the following:
+
+1. **Enable Auto-Submit:**Enable the toggle toautomatically submits prefilled passwords from Oloid Vault to websites.
+2. **Enable Copy Password:**Enable the toggle to allow users to copy passwords from the Oloid Vault home page after logging in.
+3. **Enable Face Camera to open in a new Tab:**Enable the toggle to open the face camera in a new tab for Oloid Vault users.
+4. **Enable Saving Passkeys:** Enable the toggle to allow users to securely store and use passkeys within the Oloid Vault application for websites that support passkey authentication.
+5. **Enable Browser Lock:** When enabled, the browser is locked until the user re-authenticates through Oloid Vault. This applies only when the user is logged in to Vault and manually triggers the Browser Lock feature.**Note:** Select **Lock browser when OS (Windows / MacOS / Linux) user locks screen** to automatically lock the browser when the system screen is locked.
+6. **Clear Browser Redirect URL:** Enter the URL that opens in a new tab when a different user unlocks the browser using a Windows transaction.
+7. **Clear Browser data:** Select the applicable data to clear browser data when a new user unlocks the browser or when **Logout All** is triggered.
+8. **Enable Browser Tracking** toggle to record users' browsing activity as Browser Tracking alerts in the Windows Alert sectionConfigure the **Push Browser-data to transaction every** interval to receive a Windows Alert whenever a location violation occurs. Configure the following:**Hours** – Select the number of hours. **Minutes** – Select the number of minutes.
+9. **Enable Location Alerts** toggle to generate an alert transaction when a user's authentication occurs outside the configured geo-fencing radius. For more, refer to [How to Enable Location Mandate and Configure Geo-fencing Radius](/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-enable-location-alerts-and-configure-geo-fencing-radius) ![](/images/9586885/396c6c7ee709.png)
+10. **Enforce Login via Vault:**Enable the toggle to require authentication to specified URLs using **Oloid Vault** instead of manually entering credentials.Do the following:Enable the **Enforce Login via Oloid Vault** toggle.In the **Add URL** field, enter the login URL where Vault-based authentication must be enforced.
+11. Click **Save**. ![](/images/9586885/b98908d9c821.png) The Vault Behaviour is configured successfully.
+
+**Set Time-out durations for Re-authentication**
+
+This setting is used to define the **session and inactivity time-out durations** for Oloid Vault to ensure secure user sessions.
+
+Do the following:
+
+1. **Session Limit:**Set the maximum duration a user can remain signed into the Oloid Vault per session.**Note:** The maximum session limit is 24 hours.
+2. **Inactivity Timer:** Enable the toggle and set the time duration to protect user sessions from unauthorized access. **Note:** Set the timer to automatically log off the user after a specified period of inactivity.
+3. Click **Save**. ![](/images/9586885/f728c2b03c77.png)
+
+**Apply Endpoint Template**
+
+This section isused to apply a predefined endpoint template to configure the endpoint with the required settings.
+
+Do the following:
+
+1. Select the Endpoint Template from the drop-down.
+2. Click **Save**. ![](/images/9586885/99fd5141cd85.png) The endpoint template is added successfully.
+
+### Customize Buttons tab
+
+This section is used to customize the button label of your application's authentication page by following the on-screen instructions.
+
+Do the following:
+
+1. Enter the Button Label.
+2. Click **Save**. ![](/images/9586885/14468d4d10b9.png) The Customize Button is configured successfully.
+
+## Configure Connections Tab
+
+This tab is used to select the connections that provide the set of users allowed to authenticate via Oloid vault application.
+
+**Note:** Ensure that **Oloid ID is enabled**, as it is mandatory for Oloid Vault authentication.
+
+Do the following:
+
+1. Select **+** **Add Connections**. ![](/images/9586885/477c602fa870.png) The **Add Connections** pop-up box is displayed.
+2. Select connection from the drop-down list and click **Add**. ![](/images/9586885/406390d5dbe0.png) The connection is added to the application successfully.
+
+The Oloid Vault application is configured successfully.
+
+---
+
+## Keywords
+
+<Accordion title="View Keywords">
+  <Accordion title="Details">
+    | Configure Chrome Vault Application | Oloid Vault application setup | Passwordless authentication methods |
+  </Accordion>
+</Accordion>
+
+---
+
+## Doc History
+
+<Accordion title="View Doc History">
+  <Accordion title="Details">
+    | Version | Date | Description | Author |
+    |---|---|---|---|
+    | 1.0 |  | Initial creation | Oloid Documentation Team |
+    | 1.1 | Mar 16, 2026 | Lock Browser, Oloid Session, Clear Browser URL functions have been added. Screenshots are updated. | Oloid Documentation Team |
+  </Accordion>
+</Accordion>
+
+---
+
+## Doc Version 1.0
+
+<Accordion title="View Doc Version 1.0">
+  <Accordion title="Details">
+    ## Introduction
+
+    The Chrome Vault application in the Tenant Admin Portal provides secure passwordless access to stored credentials. Admins can create and configure authentication methods (Face, Badge ID and NFC/ID) for Chrome Vault Application.
+
+    ## **Prerequisites**
+
+    - You must have a Tenant Admin account in the Tenant Admin Portal.
+    - You must create a connection in the Tenant Admin Portal. To create connection, refer [How to create Connections in the Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-create-connection).
+
+    ## Steps to Create and Configure Chrome Vault Application
+
+    1. Log in to the **Tenant Admin Portal**.
+    2. On the **Applications** page, click **Create Application** on the top right corner. ![](/images/10346057/e32d9f26e07e.png) The **Create New Application** pop-up box is displayed.
+    3. Do the following:Enter **Application Name**and select **Application Type**as **Passwordless**.Click **Next**.![](/images/9586885/5c0da9fbfd69.png) The **Select Passwordless Use Case**screen is displayed.Select **Oloid Vault**.Click **Next**. ![](/images/9586885/0ab48f146197.png) The **Select Vault Type** pop-up box is displayed.Select **Chrome Vault**.Click **Create** ![](/images/9586885/53395dbc976c.png) The **Chrome Vault** application is created, and the configuration page is displayed.
+    4. Configure the following:[Details tab](#h_e6d165b891)[Authenticator tab](#h_858e4e05f0)[Configure tab](#h_087765cd5a)[Connections tab](#h_ea7acf086a)
+
+    **Note**: These settings need to be configured only once, and it is recommended to keep the default values.
+
+<Frame>
+  <img src="/images/9586885/c5b4ed8b894f.png" alt="Screenshot" />
+</Frame>
+
+    ## **Configure Details Tab**
+
+    1. Update the **Application Name**(if needed).
+    2. Add the **Description** (Optional).
+    3. Factor Sequence:_Coming Soon...._
+    4. Select the **Time Zone** from the drop-down menu.
+    5. Click **Save**. ![](/images/9586885/64da89d69be0.png)
+
+    ## **Configure Authenticator tab**
+
+    Use this tab to enable the login methods you want to support such as Face, Badge ID, or NFC/ID.
+
+    **Note:** You can enable one or more credential options based on your requirements.
+
+    ## **Face**
+
+    1. To use face as credential, turn on **Face**toggle from the left menu panel. ![](/images/9586885/310c298eec45.png) The **Advanced Settings** page is displayed.
+    2. Configure the **Face Match Parameters** and **Liveness Check Parameters**on the Advanced Settings page. **Note**: The parameters are pre-configured. This is done by Oloid admin.
+
+    ## **Additional Settings**
+
+    - **Configure Image Capture Resolution:** Select the preferred resolution from the **Select Resolution** drop-down list for image capture during facial authentication. ![](/images/9586885/13d6bc6f324d.png)
+    - Click **Save**.**Note:**If the selected resolution is not available, the browser will default to the closest supported resolution.
+
+    ## **Badge ID**
+
+    1. Select Badge ID from the left menu panel > turn on **Badge ID**toggle.The **Advanced Settings** page is displayed.
+    2. Select **Badge Type**from the dropdown list.
+    3. Click **Save**. ![](/images/9586885/e08043d0eb25.png)
+
+    ## **PIN**
+
+    _Coming Soon_
+
+    ## **NFC/ID**
+
+    1. Select NFC/ID from the left menu panel > turn on **NFC/ID**toggle from the left menu panel.
+
+<Frame>
+  <img src="/images/9586885/898a081d2e0d.png" alt="Screenshot" />
+</Frame>
+
+    ## Setup Configure tab
+
+    Do the following:
+
+    1. [Configure Settings tab](#h_087765cd5a)
+    2. [Customize Buttons tab](#h_dbefdcac75)
+
+    ## Configure Settings tab
+
+    ## Vault Behaviour
+
+    - **Enable Auto-Submit:**Enable this toggle toautomatically submits prefilled passwords from Chrome Vault to websites.
+    - **Enable Copy Password:**Enable this toggle to allow users to copy passwords from the Oloid Vault home page after logging in.
+    - **Enable Face Camera to open in a new Tab:**Enable this toggle to open the face camera in a new tab for Chrome Vault users.
+    - **Enable Saving Passkeys:** Enable this toggle to allow users to securely store and use passkeys within the Chrome Vault application for websites that support passkey authentication. ![](/images/9586885/19284a786fd9.png)
+
+    ## Set Time-out durations for Re-authentication
+
+    - **Session Limit:**Set the maximum duration a user can remain signed into the Chrome Vault per session, up to a max of 55 mins.
+    - **Inactivity Timer:** Enable this option to protect user sessions from unauthorized access. Set the timer to automatically log off the user after a specified period of inactivity.
+
+    ## Apply Endpoint Template**:**_Coming Soon_
+
+<Frame>
+  <img src="/images/9586885/eced393d68b1.png" alt="Screenshot" />
+</Frame>
+
+    ## Customize Buttons tab
+
+    You can customize the button label of your application's authentication page by following the onscreen instructions.
+
+<Frame>
+  <img src="/images/9586885/52de5f5ce27d.png" alt="Screenshot" />
+</Frame>
+
+    ## Configure Connections tab
+
+    1. Do the following:Select **+** **Add Connections** to map a connection to the application. ![](/images/9586885/68cf28c41324.png) On the **Add Connections** pop-up box, select connection name(s) from the **Select Connection** dropdown list and click **Add**. ![](/images/10346057/406390d5dbe0.png) **Note**: Click **Save**after each action to save your configuration.The **Chrome Vault**application is configured and listed on the Application page.
+
+    ## Keywords
+
+    Configure Chrome Vault Application, Oloid Vault application setup and Passwordless authentication methods.
+  </Accordion>
+</Accordion>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Oloid Connect Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Enable Saving Passkeys" icon="arrow-right" href="/passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-enable-saving-passkeys" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Add Connections in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-add-connections-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Update Authenticator tab in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-update-authenticator-tab-in-the-tenant-admin-portal" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Create and Configure Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-endpoint-template-in-the-tenant-admin-portal" />
+</CardGroup>

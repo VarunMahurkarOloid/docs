@@ -1,0 +1,88 @@
+---
+title: "Windows Login v2.0 - How to Deploy Windows Login v2.0 using ManageEngine Endpoint Central (MDM)"
+sidebarTitle: "V2.0 - How to Deploy Windows Login v2.0 using…"
+description: "This document provides step by step instruction to deploy Windows Login v2.0 using ManageEngine Endpoint Central (MDM)."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Device Admin Apps"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "passwordless/windows/passwordless"
+  - "administration/device-admin-apps"
+  - "resources/integrations/sso"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "15201297"
+  url: "https://oloid.help/en/articles/15201297-windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-manageengine-endpoint-central-mdm"
+  collection: "Oloid Windows Passwordless Authenticator - Windows Login"
+  section: "Windows Login v2.0"
+  updatedAt: "2026-05-26T05:56:41Z"
+  migratedAt: "2026-08-13T09:16:17.583434+00:00"
+---
+## Introduction
+
+This guide explains how to deploy **Windows Login 2.0** across Windows devices using **ManageEngine Endpoint Central**.
+
+The deployment process includes:
+
+- Creating a software package.
+- Configuring installation and uninstallation commands.
+- Deploying the package to target machines using Computer Configuration.
+
+---
+
+## Prerequisites
+
+- You must have admin access to the Endpoint Central console.
+- You must download the Oloid Passwordless installer (.exe). For more information refer to [Windows Login v 2.0 - How to download Windows Login v 2.0 installer file from Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-v2-0-how-to-download-windows-login-v2-0-installer-file-from-tenant-admin-portal).
+- You must download the **AutoPairConfig.txt** file from the Tenant Admin Portal. For more information, refer to [Windows Login - How to generate Auto-Pair config file for Windows Login in Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal).**Note:** Download the AutoPairConfig file in `.txt` format only.
+- You have the installation script file. To get the script file, contact [Oloid Support](mailto:support@oloid.ai).
+
+## Steps to Deploy Windows Login 2.0 via ManageEngine Endpoint Central
+
+1. [Create the Package](#h_f1934e147b)
+2. [Deploy the Package](#h_9e78bcbca3)The Windows 2.0 is deployed successfully.
+
+## Steps to Configure the Package Details
+
+1. Log in to the ManageEngine Endpoint Central.The ManageEngine Endpoint Central home screen is displayed.
+2. Click **Software Deployment.** ![](/images/15201297/c0bdfdf28d79.png) The **Software Deployment** screen is displayed.
+3. Click **+ Add Package > Windows.** ![](/images/15201297/60453dae3771.png) The **Windows Package Creation** screen is displayed.
+4. Do the following:Enter Package Name.Select **EXE / APPX / MSIEXEC / MSU / MSIX / MSIX Bundle** as the Package Type.Select **Commercial** as the License Type.Select **From Local Computer** as Locate Installable. ![](/images/15201297/9d2d1099791e.png) Click **Browse** and upload the following files:Oloid Passwordless installer (`.exe`). AutoPairConfig.txt (Optional).**Note:** If the AutoPair configuration file is added, the app is installed and paired automatically. If not, manual pairing is required after installation.Installation script file. Click **Open.** ![](/images/15201297/8749c86e86fc.png) All files are uploaded successfully. ![](/images/15201297/3ad5a3dd6754.png)
+5. Go to Installation tab and do the following:Enter the installation command in the **Installation Command with Switches/Arguments** field.**Note:** Use the following command.%SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\\\<installation script file name> **Note:**Replace the \<installation script file name> text with actual installation script file name.Enable **Mask sensitive data** to hide sensitive information from users (Optional). ![](/images/15201297/0035c2a38224.png) The installation command is configured successfully.
+6. Click **Uninstallation** tab and do the following:Enter the installation command in the **Uninstallation Command with Switches/Arguments** field.**Note:** It is recommended to use the below command.%SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Uninstall-Package -Name 'Oloid Passwordless Login' -Force" Enable **Mask sensitive data** to hide sensitive information from users who can modify the package (Optional). ![](/images/15201297/2664c59b399d.png) The Uninstallation tab is configured successfully.
+7. Go to the **Set Package Properties** section, expand **Package Properties**, and enter the version number of the Passwordless installer file.**Note:** The version number helps identify and track a specific package release and ensures that the correct package version is deployed.
+8. Click **Add Package.** ![](/images/15201297/cab22b9c04e9.png) The package is created and listed in the Packages screen.
+
+## Steps to Deploy the Package
+
+1. Go to **Software Deployment** home page, select the checkbox next to **Oloid Passwordless.****Note:** Select the Oloid Passwordless package created in the previous step.
+2. Click **Install/Uninstall Software > Computer Configuration (Windows).** ![](/images/15201297/6706d6f0479c.png) The **Install/Uninstall Windows Software (Computer)** screen is displayed.
+3. In the **Name and Description** section, do the following:Enter the configuration name.Click **Add** **Description** and then enter the description in the displayed text box. (Optional)
+4. In the **Install/Uninstall Windows Software**, do the following: Ensure **Install** is selected under **Operation Type**.Verify that the package name matches the package selected in **Step 1**.Expand **Configure Install/Uninstall options** and ensure **System User** is selected under **Install As**.**Note:** The **Package Name, Install** and **System User** options are selected by default. Verify that the same settings are selected before proceeding. ![](/images/15201297/cf42ebca2730.png)
+5. Scroll down to the **Deployment Settings** section and select Policy from the **Apply Deployment Policy** drop-down list. ![](/images/15201297/a889b5581950.png)
+6. Under **Define Target**, configure **Target 1**:Select the required **Target Type** from the drop-down.Configure the **Target settings**. ![](/images/15201297/bcae94d182a7.png) **Note:** The **Execution Settings** and **Scheduler Settings** sections are preconfigured with the recommended settings. Do not modify any options in these sections.
+7. Click **Deploy.****Note:** Changes may take a few minutes to apply. To deploy the changes immediately, click **Deploy Immediately**. ![](/images/15201297/44cebf72e619.png) The deployment is initiated and the configuration is pushed to target machines. ![](/images/15201297/de7f259cb358.png)
+
+---
+
+<Tip>
+  **Keywords:** Deploy Oloid Passwordless Login · ManageEngine Endpoint Central software deployment · Windows passwordless deployment guide · Oloid Windows Login deployment
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login v2.0 - Overview" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-overview" />
+  <Card title="Oloid Vault (Chrome / Chromium) - How to Deploy Oloid Vault using ManageEngine Endpoint Central (MDM)" icon="arrow-right" href="/administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-manageengine-endpoint-central-mdm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using Microsoft Intune (MDM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-microsoft-intune-mdm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Login v2.0 using Microsoft Configuration Manager (SCCM)" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-login-v2-0-using-microsoft-configuration-manager-sccm" />
+  <Card title="Windows Login v2.0 - How to Deploy Windows Passwordless 2.0 using Command Line" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-how-to-deploy-windows-passwordless-2-0-using-command-line" />
+</CardGroup>

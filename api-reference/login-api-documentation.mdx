@@ -1,0 +1,82 @@
+---
+title: "Login API Documentation"
+sidebarTitle: "Login API Documentation"
+description: "Login API Documentation"
+tags:
+  - "API Reference"
+categories:
+  - "api-reference"
+primaryCategory: "api-reference"
+navPath: "API Reference"
+source:
+  system: "intercom"
+  articleId: "9073240"
+  url: "https://oloid.help/en/articles/9073240-login-api-documentation"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "API Guides"
+  updatedAt: "2024-09-05T16:15:00Z"
+  migratedAt: "2026-08-13T09:16:25.193372+00:00"
+---
+## Overview
+
+The Login API provides a mechanism for users to authenticate against the system and receive tokens for accessing protected resources. This document outlines the API request and response formats for the login operation.
+
+## Endpoint
+
+**POST /Login**
+
+## Domain
+
+Check with your account representative
+
+## Request
+
+The request body, referred to as **loginRequest**, must be a JSON object containing the credentials of the user attempting to log in.
+
+## Request Body Parameters
+
+- **UserName** (string): The **username** or **ClientID** of the user attempting to log in.
+- **TenantName** (string): The name of the tenant that the user belongs to.
+- **Password** (string): The **password** or **Secret** of the user.
+
+Note - Even when using "ClientID", "Secret" use "UserName" and "Password" as key in the payload
+
+## Example Request
+
+```
+{  "UserName": "string",  "TenantName": "string",  "Password": "string"}
+```
+
+## Response
+
+The response body contains the cognito tokens required for authentication and authorization in subsequent API requests.
+
+## Response Body Parameters
+
+- **cognitoToken** (object): An object containing the tokens and related information.**ChallengeParameters** (object): An object containing challenge parameters (if any). This is typically empty (**\{\}**) but included for completeness.**AuthenticationResult** (object): An object containing the authentication result.**IdToken** (string): The JWT token that serves as the identity token.**TokenType** (string): The type of token provided.**ExpiresIn** (integer): The expiration time of the token in seconds.**RefreshToken** (string): The token used to refresh the authentication when the current token expires.**AccessToken** (string): The token used to access API resources.
+
+## Example Response
+
+```
+{  "cognitoToken": {    "ChallengeParameters": {},    "AuthenticationResult": {      "IdToken": "string",      "TokenType": "string",      "ExpiresIn": 0,      "RefreshToken": "string",      "AccessToken": "string"    }  }}
+```
+
+## Security Considerations
+
+- The Login API should be accessed over HTTPS to ensure the confidentiality and integrity of the transmitted credentials.
+- Passwords should be stored securely and never logged or written to any insecure location.
+- Tokens should be securely stored on the client side and transmitted using the Authorization header in API requests requiring authentication.
+
+## Error Handling
+
+In case of an error (e.g., incorrect username or password), the API will return an appropriate HTTP status code (e.g., **401 Unauthorized**) along with a JSON object describing the error.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api" />
+  <Card title="List Activity Logs API" icon="arrow-right" href="/api-reference/list-activity-logs-api" />
+  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions" />
+  <Card title="Oloid Passwordless SDK Usage Guide for Windows Developers" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers" />
+  <Card title="Webkey – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-eu-environment" />
+</CardGroup>

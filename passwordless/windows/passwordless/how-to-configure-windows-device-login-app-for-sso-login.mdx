@@ -1,0 +1,74 @@
+---
+title: "How to Configure Windows Device Login app for SSO Login"
+sidebarTitle: "Configure Windows Device Login app for SSO Login"
+description: "How to Configure Windows Device Login app for SSO Login"
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "passwordless/windows/passwordless"
+  - "resources/integrations/sso"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "8564267"
+  url: "https://oloid.help/en/articles/8564267-how-to-configure-windows-device-login-app-for-sso-login"
+  collection: "Passwordless Authenticator"
+  section: "Passwordless Authenticator- Supporting Documents"
+  updatedAt: "2023-11-24T07:57:33Z"
+  migratedAt: "2026-08-13T09:16:22.855944+00:00"
+---
+## Introduction
+
+Oloid's Windows device login provides secure, user-friendly authentication for devices, apps, and networks, using options like facial recognition, badges, PINs, and Multi-Factor Authentication (MFA). This login mechanism enhances security and user convenience, offering a reliable alternative to traditional passwords for accessing crucial data and services.
+
+## Configuration
+
+To configure the Windows Device Login, perform the below steps:
+
+1. Create "**Application**".**Note**: You must create an application of "**Passwordless**" type.
+2. Create "**User**".
+3. Add "**Connection**" to the "**Application**".**Note:**Add the same Connection to the Application in which the User is present.
+4. Assign "**Badge**".
+5. Add "**Pin**".**Note**:By default, the Pin is set to 4 Digit Numeric Pin. You can configure the Pin length. For Pin configuration, see [How to configure the Pin](/administration/admin-portal/tenant-admin-portal-how-to-configure-pin).
+6. Onboard "**Face**".
+7. Create "**Password**".
+8. Create and assign "**Shared Credential**".
+9. Pair "**Windows Device Login endpoint**".
+
+The Windows Device Login is now configured and ready for use.
+
+For step-by-step instructions to create an application, read [How to create an application](/administration/admin-portal/tenant-admin-portal-how-to-create-an-application).
+
+For step-by-step instructions to create an user, read [How to add an user](/administration/admin-portal/how-to-add-users-in-the-tenant-admin-portal).
+
+For step-by-step instructions to add Connection to the Application, read [How to Configure Application Type - Passwordless](/administration/admin-portal/how-to-create-and-configure-application-type-passwordless)**.**
+
+For step-by-step instructions to assign Badge, read [How to assign Badge as credential to users](/administration/admin-portal/how-to-assign-badge-id-as-credential-to-users).
+
+For step-by-step instructions to add pin, read[How to add Pin as credential to users](/administration/admin-portal/how-to-add-pin-as-a-credential-for-users).
+
+For step-by-step instructions to onboard face, read [How to onboard face of a single user](/administration/admin-portal/how-to-onboard-face-of-a-single-user).
+
+For step-by-step instructions to create password, read [How to create Password for Windows Login](/passwordless/windows/passwordless/how-to-create-password-for-windows-login).
+
+For step-by-step instructions to create shared credential, read [How to create shared credentials for Windows login](/passwordless/windows/passwordless/how-to-create-shared-password-for-windows-login-application-in-the-tenant-admin-portal).
+
+For step-by-step instructions to assign shared credential, read [How to assign shared credential with user.](/passwordless/windows/passwordless/how-to-assign-shared-password-for-windows-login-in-the-tenant-admin-portal)
+
+For step-by-step instructions to pair a Windows Device Login endpoint, read [How to pair an Windows Device Login endpoint for Passwordless](/passwordless/windows/supervisor/windows-login-how-to-pair-windows-login-endpoint-from-supervisor-app)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to log in to Windows device using Badge and PIN" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-badge-and-pin" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to log in to Windows device using QR Code and PIN" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-log-in-to-windows-device-using-qr-code-and-pin" />
+  <Card title="Windows Login - How to Enable Forgot PIN Link for Windows Login" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-forgot-pin-link-for-windows-login" />
+  <Card title="Windows Login v2.0 - Feature-to-Capability Mapping" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-feature-to-capability-mapping" />
+</CardGroup>

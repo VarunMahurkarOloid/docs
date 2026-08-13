@@ -1,0 +1,90 @@
+---
+title: "Webkey - How to log into Workforce /HRMS platforms using NFC/ID and PIN in Webkey"
+sidebarTitle: "Webkey - How to log into Workforce /HRMS platforms using NFC/ID and PIN in Webkey"
+description: "Webkey - How to log into Workforce /HRMS platforms using NFC/ID and PIN in Webkey"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+  - "Resources"
+  - "Integrations"
+  - "HRMS"
+categories:
+  - "passwordless/web/webkey"
+  - "resources/integrations/hrms"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "9245333"
+  url: "https://oloid.help/en/articles/9245333-webkey-how-to-log-into-workforce-hrms-platforms-using-nfc-id-and-pin-in-webkey"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Using WebKey"
+  updatedAt: "2026-08-10T10:01:02Z"
+  migratedAt: "2026-08-13T09:16:25.727227+00:00"
+---
+## Introduction
+
+This document provides step-by-step instructions for logging in with NFC/ID and PIN to Workforce / HRMS platforms.
+
+## Prerequisites
+
+- You must have an Okta account.
+- In the Tenant Admin Portal, you must do the following:Assign NFC to the user. For more details, refer [How to assign NFC/ID as a credential to the user](/administration/admin-portal/how-to-assign-nfc-id-as-a-credential-to-the-user)Add a PIN for the user. For more details, refer [How to add PIN as credential to users](/administration/admin-portal/how-to-add-pin-as-a-credential-for-users)
+- In the Tenant Admin Portal, you must enable NFC/ID and PIN under the WebKey Application. For more details, refer [How to create and configure Webkey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal) > [Configure Authenticator tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+## Login using Badge and PIN:
+
+1. Launch the **Webkey**Application URL in your browser.
+2. On the home page of the app, select **Login with NFC/ID**.**Note:**You can select preferred display language from the **Language Dropdown Selector**. For more information, refer [Additional information section](#h_25922b8f57). ![](/images/9245333/59f91e547ba1.png) The **Scan NFC/ID Tag**screen is displayed.
+3. Tap the **NFC/ID**tag on the **Reader** to scan it.**Note:**The Reader should be connected to your system. ![](/images/9245333/8aa6ff62c84a.png) On NFC/ID authentication, the **Type or Scan PIN**screen is displayed.
+4. Do any of the following:Tap the card that contains the PIN on the **Reader** to scan it.**Note:**The Reader should be connected to your system.**(OR)**Enter the **PIN**.Click **Submit**.
+
+<Frame>
+  <img src="/images/9245333/2828f39a0c9b.png" alt="Screenshot" />
+</Frame>
+
+On PIN authentication, you are signed in to the **Workforce /HRMS** platform.
+
+<Frame>
+  <img src="/images/9245333/fdf1820138c5.png" alt="Screenshot" />
+</Frame>
+
+---
+
+### Additional Information
+
+**WebKey** now supports multiple language versions, allowing users to select their preferred display language from the **Language Dropdown Selector** on the Login screen.
+
+**Note:** Languages supported: English, Spanish, French, German, and Portuguese language.
+
+#### Sample Screen
+
+The display language updates based on the selected language. The following sample shows the WebKey application in German.
+
+<Frame>
+  <img src="/images/9245333/c6ed690f89db.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch the video [How to log into Workforce Management platforms using NFC/ID and PIN through WebKey - Video Tutorial](/passwordless/web/webkey/how-to-log-into-workforce-management-platforms-using-nfc-id-and-pin-through-webkey-video-tutorial)
+
+---
+
+<Tip>
+  **Keywords:** Webkey NFC/ID login · NFC/ID and PIN authentication · Login with NFC/ID · Workforce HRMS login · Webkey authentication
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Face and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-face-and-pin-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platforms using Badge and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-badge-and-pin-through-webkey" />
+  <Card title="Webkey - How to log into Workforce /HRMS platform using Badge through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platform-using-badge-through-webkey" />
+  <Card title="How to log into Workforce /HRMS platform using NFC/ID through WebKey" icon="arrow-right" href="/passwordless/web/webkey/how-to-log-into-workforce-hrms-platform-using-nfc-id-through-webkey" />
+  <Card title="Webkey - How to log into OKTA Workforce /HRMS platforms using QR Code and PIN through Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-log-into-okta-workforce-hrms-platforms-using-qr-code-and-pin-through-webkey" />
+</CardGroup>

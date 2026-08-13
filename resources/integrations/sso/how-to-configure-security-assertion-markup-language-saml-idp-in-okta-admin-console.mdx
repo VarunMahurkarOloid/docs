@@ -1,0 +1,73 @@
+---
+title: "How to Configure Security Assertion Markup Language (SAML) IDP in OKTA Admin Console"
+sidebarTitle: "Configure Security Assertion Markup Language (SAML) IDP…"
+description: "This document provides information on how to configure SAML IDP for Oloid SSO in the OKTA Admin Console."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "12838654"
+  url: "https://oloid.help/en/articles/12838654-how-to-configure-security-assertion-markup-language-saml-idp-in-okta-admin-console"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage IDP Provider"
+  updatedAt: "2026-01-23T04:52:07Z"
+  migratedAt: "2026-08-13T09:16:11.878342+00:00"
+---
+## Introduction
+
+This document explains how to configure Security Assertion Markup Language (SAML) as an Identity Provider (IdP) using **Okta** for Oloid application. The configuration involves creating a SAML IdP in the Okta Admin Console and configuring Oloid application with the SAML.
+
+## Prerequisites
+
+- You must have Admin access to the Okta Admin Console.
+- Ensure Webkey application is created. To create Webkey application, refer [How to create and configure WebKey Application in Tenant Admin Portal | Oloid Help Center](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal).
+- Ensure the SAML IDP application is created. To create SAML application, refer [How to Create IDP Profile for Security Assertion Markup Language (SAML) in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml).
+
+## Steps to Add Identity Provider
+
+1. On the home page of the Okta Admin Console, go to **Security**> **Identity Providers**. ![](/images/12838654/3306910ba37a.png) Identity Providers page is displayed.
+2. Click **Add Identity provider**. ![](/images/12838654/6f8693eb9b55.png) The identity provider list is displayed.
+3. Select **SAML**and click**Next**. ![](/images/12838654/1c24cb9916fc.png) The **Configure SAML 2.0 IdP** popup box is displayed.
+4. Do the following:Under **General settings**section, enter **Name**for the Identity Provider configuration. ![](/images/12838654/bad46b76e3a6.png) Under**Account matching with IdP Username**section:Select the **IdP username**from the dropdown list**.****Note:** It is recommended to select **idpuser.subjectNameId** in the idP username field.Select **Enable automatic linking** in **Account link policy**to allow Okta to automatically link the IdP user to an existing Okta user account.In the **If no match is found** section, select **Redirect to Okta Sign-in page**. ![](/images/12838654/a64be1b9f233.png)
+5. Under **SAML Protocol Settings**sections:Enter the **IdP Issuer URL**.See **Tenant Admin Portal > Identity Provider > SAML Application > Oloid Metadata**tab and copy **Entity ID**.Enter the **IdP Single Sign-On URL**. See **Tenant Admin Portal > Identity Provider > SAML Application > Oloid Metadata**tab and copy **Sign-on URL**.Upload the **IdP Signature Certificate**.To download, go to **Tenant Admin Portal > Identity Provider > SAML Application > Oloid Metadata**tab and select **Download Certificate**.Request Signature,**Unselect** the **Sign SAML Authentication Request**.Select Response in Response Signature Verification.Click **Finish**. ![](/images/12838654/f3a5306982e9.png) ![](/images/12838654/8c84899d25b1.png) IDP created successfully and listed under **Security**> **Identity Providers.****Note**: In the search bar, you can search using identity provider name. ![](/images/12838654/f7a4e1ba37a2.png)
+6. Go to IDP details and do the following:Download the Metadata file and upload it in the Metadata field under **Tenant Admin Portal > Identity Provider > SAML Application > IDP Settings > Metadata.**ORCopy **IDP ID**and enter it in **Tenant Admin Portal > Identity Provider > SAML Application > IDP Settings > Entity ID**.Copy **Assertion Consumer Service URL** and enter it in **Tenant Admin Portal > Identity Provider > SAML Application > IDP Settings > ACS URL**. ![](/images/12838654/300952f75725.png) ![](/images/12838654/8e0e71f12df7.png)
+
+## Add Routing Rules
+
+## Steps to add Routing Rules
+
+1. In the Okta Admin Console, on Identity Providers Screen, go to **Routing** **rules >**Click **Add Routing Rule.** ![](/images/12838654/d7eba4f4ed52.png) The Add Rule pop-up box is displayed.
+2. Do the following:Enter **Rule Name.**Select **User matches** from the Dropdown list.Note: Select **Regex on Login and enter the mail.**Select **Use this Identity provider** from the drop-down list.**Note:** Select the Identity Provider added in **[Step 1](#h_a0fd430a3c)**.Click **Create rule**. ![](/images/12838654/0fd24f2cd374.png) The rule is created successfully and added on the Routing Rule list. ![](/images/12838654/e45c21b2a214.png)
+3. Configure the IDP Profile in the Tenant Admin Portal.On the homepage of the portal, select the preferred IDP to edit.On the IDP details page, select the WebKey Application from **Select WebKey Application**dropdown.Click **Save**. ![](/images/12838654/62b1f2123494.png)
+
+---
+
+#### Related Articles
+
+[How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Okta SAML IdP configuration · Configure Okta SAML with Oloid
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Create IDP Profile for Security Assertion Markup Language (SAML)" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Configuring Security Assertion Markup Language (SAML) SSO with Workday and Oloid" icon="arrow-right" href="/resources/integrations/sso/configuring-security-assertion-markup-language-saml-sso-with-workday-and-oloid" />
+</CardGroup>

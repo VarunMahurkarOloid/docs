@@ -1,0 +1,71 @@
+---
+title: "Windows Login - How to Enroll NFC ID"
+sidebarTitle: "Enroll NFC ID"
+description: "This document provides step-by-step instructions to enroll an NFC tag for a user using the Supervisor App."
+icon: "eye"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "passwordless/windows/supervisor"
+primaryCategory: "passwordless/windows/supervisor"
+navPath: "Passwordless > Windows > Supervisor"
+source:
+  system: "intercom"
+  articleId: "9526633"
+  url: "https://oloid.help/en/articles/9526633-windows-login-how-to-enroll-nfc-id"
+  collection: "Supervisor App"
+  section: "User Management- Supervisor App"
+  updatedAt: "2026-08-11T08:16:58Z"
+  migratedAt: "2026-08-13T09:16:26.700108+00:00"
+---
+## Introduction
+
+The NFC tab in the Supervisor App allows Admin and Supervisor to enroll an NFC tag as a user's authentication credential.
+
+## Prerequisites
+
+- Ensure the endpoint is paired with the Windows Login application. For more information, refer: [Windows Login - How to manually pair the Supervisor App](/passwordless/windows/supervisor/windows-login-how-to-manually-pair-the-supervisor-app)
+- Log in to the Supervisor App using an Admin or Supervisor account. For more, refer [How to log in to Supervisor App](/passwordless/windows/supervisor/how-to-log-in-to-supervisor-app)
+- Ensure at least one connection is configured for the selected application in the Tenant Admin Portal. For more information, refer: [How to Configure a Connection in the Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-configure-a-connection-in-the-tenant-admin-portal)
+
+## Steps to Enroll NFC:
+
+1. Log in to Supervisor App. Refer [How to log in to Supervisor App](/passwordless/windows/supervisor/how-to-log-in-to-supervisor-app)The Admin Home screen is displayed.On the Admin Home screen, select User Management. ![](/images/9526633/b7be252b2708.png) The Users screen is displayed.
+2. Select a user to view details. ![](/images/9526633/508a929190e0.png) The **Details** tab is displayed.
+3. Select **NFC**tab > **Scan NFC Tag to Enroll**. ![](/images/9526633/3eb86d3359bf.png) The **Enroll NFC/ID**pop-up box is displayed.
+4. Scan your NFC Tag in the Reader. The scanned NFC number is auto-populated on the **Add Your NFC** **Tag**field.
+5. Click **Create**.**Note:**If Keystroke is selected under **RFID HF/LF Settings**, users can enter the NFC number manually using the keyboard or scan the NFC tag to add the NFC credential.
+
+<Frame>
+  <img src="/images/9526633/e20fbca7ac52.png" alt="Screenshot" />
+</Frame>
+
+The NFC Tag is enrolled successfully.
+
+<Frame>
+  <img src="/images/9526633/f447f2af5fa2.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Video Tutorial
+
+Watch our video **[How to assign NFC in Supervisor App for Windows - Video Tutorial](/passwordless/windows/supervisor/how-to-assign-nfc-in-supervisor-app-for-windows-video-tutorial)**
+
+---
+
+<Tip>
+  **Keywords:** Enroll NFC tag · Assign NFC · NFC credential · NFC enrollment · NFC reader
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login - How to Enroll Badge and PIN using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll Badge using Supervisor App" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge-using-supervisor-app" />
+  <Card title="Windows Login - How to Enroll Badge" icon="arrow-right" href="/passwordless/windows/supervisor/windows-login-how-to-enroll-badge" />
+  <Card title="Windows Login - How to Enroll Credentials" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enroll-credentials" />
+  <Card title="DeviceLock App - How to Assign NFC/ID for Users in the DeviceLock App through Admin Mode" icon="arrow-right" href="/passwordless/android/devicelock/devicelock-app-how-to-assign-nfc-id-for-users-in-the-devicelock-app-through-admin-mode" />
+</CardGroup>

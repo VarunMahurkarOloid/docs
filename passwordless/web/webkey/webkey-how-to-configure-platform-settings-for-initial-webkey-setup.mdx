@@ -1,0 +1,59 @@
+---
+title: "Webkey – How to Configure Platform Settings for Initial Webkey Setup"
+sidebarTitle: "How to Configure Platform Settings for Initial Webkey…"
+description: "Webkey – How to Configure Platform Settings for Initial Webkey Setup"
+icon: "shield-keyhole"
+tags:
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "passwordless/web/webkey"
+primaryCategory: "passwordless/web/webkey"
+navPath: "Passwordless > Web > Webkey"
+source:
+  system: "intercom"
+  articleId: "9285899"
+  url: "https://oloid.help/en/articles/9285899-webkey-how-to-configure-platform-settings-for-initial-webkey-setup"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-06-09T10:17:17Z"
+  migratedAt: "2026-08-13T09:16:25.843483+00:00"
+---
+For Oloid's WebKey to function, it needs to be configured in the Oloid Platform.
+
+## Initial set up
+
+## Step 1: Set up IDP Profile
+
+1. Create IDP Profile for OIDC-Okta. Refer to [How to create IDP Profile for OIDC-Okta](/resources/integrations/sso/tenant-admin-portal-how-to-create-an-oidc-okta-idp-profile) guide.
+2. Configure OIDC-Okta IDP Profile. Refer to [How to configure OIDC - Okta IDP Profile](/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal)
+
+## Step 2: Set up Application and Connection
+
+1. Create and Configure WebKey Application. Refer to [How to create and configure WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+2. Create Connections. Refer to [How to create Connections](/administration/admin-portal/tenant-admin-portal-how-to-create-connection)
+
+## Step 3: Map Connections to Applications.
+
+Once both Application and Connection are created, you need to map the Connection to the Application.
+
+Refer to [How to Map Connection to Application](/administration/admin-portal/how-to-map-connections-to-an-application-in-the-tenant-admin-portal)
+
+## Step 4: Create user and assign user to connection.
+
+Create users and assign users to connections in Oloid Portal. Refer to [User Onboarding](/resources/guides/user-onboarding-for-oloid-portal) guide.
+
+## Step 5: Enable Authenticator factors
+
+Based on the requirement , enable authenticator factors in the tenant application. Refer to [How to create and configure WebKey application](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal) > [Configure Authenticator tab](/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Okta (OIDC) as an Identity Provider in Okta Admin Console" icon="arrow-right" href="/resources/integrations/sso/how-to-create-and-configure-okta-oidc-as-an-identity-provider-in-okta-admin-console" />
+  <Card title="How to Configure OIDC - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-oidc-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="How to Configure Security Assertion Markup Language (SAML) - Okta IDP Profile in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-security-assertion-markup-language-saml-okta-idp-profile-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to Enable Oloid (Webkey) SSO login" icon="arrow-right" href="/resources/integrations/sso/webkey-how-to-enable-oloid-webkey-sso-login" />
+</CardGroup>

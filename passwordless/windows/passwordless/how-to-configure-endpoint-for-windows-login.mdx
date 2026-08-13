@@ -1,0 +1,143 @@
+---
+title: "How to configure endpoint for Windows Login"
+sidebarTitle: "Configure endpoint for Windows Login"
+description: "This document provides step-by-step instructions to configure Endpoint for Windows Login in the Oloid Portal."
+icon: "key"
+tags:
+  - "Passwordless"
+  - "Windows"
+categories:
+  - "passwordless/windows/passwordless"
+primaryCategory: "passwordless/windows/passwordless"
+navPath: "Passwordless > Windows > Passwordless"
+source:
+  system: "intercom"
+  articleId: "8555710"
+  url: "https://oloid.help/en/articles/8555710-how-to-configure-endpoint-for-windows-login"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Endpoints"
+  updatedAt: "2026-06-16T10:15:20Z"
+  migratedAt: "2026-08-13T09:16:22.817498+00:00"
+---
+Steps to configure Windows Login Endpoint:
+
+1. Log in to the **Oloid Portal**.
+2. On the home page of the portal, click **Endpoints** on the left menu panel. ![](/images/8555710/225cce2f9bcd.png) The Endpoints page is displayed.
+3. Click an endpoint name to edit from the listed endpoints. ![](/images/10259846/cd8fdf543f2f.png) The Endpoint details page is displayed. ![](/images/8555710/1e4d25765174.png)
+4. Do the following:[Details tab](#h_ee79390670)[Configure tab](#h_f5d98c99d2)[Transactions tab](#h_ee79390670)[Windows Alert tab](#h_bb0a26acfe)[Health Response tab](https://7.%20Pair%20using%20auto-config%20option%20if%20auto-config%20fails%20use%20manual%20pairing%20option)The Windows Login endpoint is configured.
+
+## Configure Details tab
+
+<Frame>
+  <img src="/images/8555710/1e4d25765174.png" alt="Screenshot" />
+</Frame>
+
+1. Edit **Endpoint Name**. (if required)
+2. Enter **Endpoint Description.** (optional).
+3. Select Timezone from **Timezone**dropdown. (optional)**Note**: If Endpoint time zone is not specified, by default the endpoint takes the time zone specified for the application.
+4. Edit **IP Address**. (optional)
+5. Edit **Machine Name**. (optional)**Note**: Enter your Windows device name.
+
+## Design Configure tab
+
+The Configure tab allows you to manage settings for Endpoint Settings, Groups, Windows Shared Passwords, App Version, and Health Setup.
+
+Do the following:
+
+1. [Endpoint Settings tab](#h_23ed40bb4d)
+2. [Groups tab](#h_ae611ead41)
+3. [Windows Shared Passwords tab](#h_d1e2e324ae)
+4. [App Version](#h_f44434c54c)
+5. [Health Setup](#h_c0df13b521)
+
+## Endpoint Settings tab
+
+<Frame>
+  <img src="/images/8555710/853979f028e0.png" alt="Screenshot" />
+</Frame>
+
+- **Enable Only Preferred Machine Login:**Turn on this option to allow users to log in to the endpoint only from preferred machines. If disabled, domain credentials can be used to log in from any machine.
+- **Allow any individual with Domain Credentials:**Turn on this button to allow any individual to log into the endpointusing domain credentials.
+- **User Cache Validity:**Set the duration (in hours) to save user data as cached on the machine. This prevents repeated logins from the same machine within the specified time.
+- **Show on-screen keyboard:**Turn on this option to display an on-screen keyboard during Windows login. This option is useful for devices without a physical keyboard, such as tablets.
+
+## Groups tab
+
+<Frame>
+  <img src="/images/8555710/75c5a6922975.png" alt="Screenshot" />
+</Frame>
+
+1. Select **+ Add Group** to map a group to the endpoint.
+2. On the **Add Group** pop-up box, select group from the **Add Group** dropdown list and click **Save**. ![](/images/8555710/f1161b19737d.png)
+
+## Windows Shared Passwords tab
+
+<Frame>
+  <img src="/images/8555710/7488586c6553.png" alt="Screenshot" />
+</Frame>
+
+1. Select **+Assign Windows Shared Credential** to allow you to add new Windows shared credentials for endpoints.
+2. On the **Assign Windows Shared Credential**pop-up box, select Domain Windows Shared Credential(s) from the **Assign Windows Shared Credential**dropdown list and click **Assign**. ![](/images/8555710/fc7867f127ed.png)
+
+## App Version tab
+
+You can view the versions of the installed apps.
+
+<Frame>
+  <img src="/images/8555710/34210d42c538.png" alt="Screenshot" />
+</Frame>
+
+## Health Setup tab
+
+Do the following:
+
+1. Enter **Server Name**.
+2. Enter **URL that needs to be monitored**.
+3. Click**Add**.
+
+<Frame>
+  <img src="/images/8555710/925d1c036fd4.png" alt="Screenshot" />
+</Frame>
+
+## Transactions tab
+
+You can view the transaction for the endpoint.
+
+<Frame>
+  <img src="/images/8555710/f2a5fc62de9f.png" alt="Screenshot" />
+</Frame>
+
+## Windows Alert tab
+
+You can configure the windows alert tab by following the onscreen instructions.
+
+<Frame>
+  <img src="/images/8555710/16126067c742.png" alt="Screenshot" />
+</Frame>
+
+For further details, refer **[How to configure Windows Alert for Presence Detection](/passwordless/windows/passwordless/windows-login-how-to-configure-windows-alert-for-presence-detection)**.
+
+## Health Response tab
+
+You can check the health status of the endpoint.
+
+<Frame>
+  <img src="/images/8555710/e530f674f35a.png" alt="Screenshot" />
+</Frame>
+
+In this section, you can see the endpoint status, check health of the endpoint and configure health alert. For more information on health alert, see**[How to configure health alert for an endpoint](/administration/admin-portal/how-to-add-health-alerts-in-the-endpoint)**.  
+​
+
+## Video Tutorial
+
+Watch the video [How to configure an endpoint for Windows Login](/passwordless/windows/passwordless/how-to-configure-an-endpoint-for-windows-login-video-tutorial)
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to configure Endpoint for Verify/Connect" icon="arrow-right" href="/administration/admin-portal/how-to-configure-endpoint-for-verify-connect" />
+  <Card title="Windows Login - How to enable Preferred Machine Users in Shared Credentials" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-enable-preferred-machine-users-in-shared-credentials" />
+  <Card title="Windows Login - How to create and configure Windows Login application in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-application-in-the-tenant-admin-portal" />
+  <Card title="Windows Login - How to create and configure Windows Login Endpoint Template in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-how-to-create-and-configure-windows-login-endpoint-template-in-the-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

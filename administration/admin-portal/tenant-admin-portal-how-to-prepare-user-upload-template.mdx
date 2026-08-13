@@ -1,0 +1,57 @@
+---
+title: "Tenant Admin Portal – How to Prepare User Upload Template"
+sidebarTitle: "Tenant Admin Portal – How to Prepare User Upload Template"
+description: "Tenant Admin Portal – How to Prepare User Upload Template"
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "10650742"
+  url: "https://oloid.help/en/articles/10650742-tenant-admin-portal-how-to-prepare-user-upload-template"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Users"
+  updatedAt: "2026-03-27T12:14:28Z"
+  migratedAt: "2026-08-13T09:16:06.542383+00:00"
+---
+## Introduction
+
+This document explains how to prepare the user upload template for bulk import in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the Tenant Admin Portal.
+- Use the provided CSV template and do not change the column headers.
+- Do not use commas (,) in field values.
+- Ensure all values are in the correct format.
+- Ensure the CSV file does not contain extra spaces or incorrect formatting.
+
+## Steps to prepare the User Upload template
+
+1. Log in to Tenant Admin Portal.
+2. To download the template, go to **Directory**![](/images/10650742/b6d3b288792a.png) > **Import**> **Import Users**.
+3. Open the downloaded template in Excel.
+4. In the template, select rows **6 to 10**, right-click and click **Delete** to remove these rows.
+5. Columns **A**, **B**, and **C**are mandatory fields required to successfully upload the user data. Keep any additional columns that requires updates as part of the User data. Rest of columns should be selected and deleted using the right click option. ![](/images/10650742/b37acf5efa99.png)
+6. Fill the remaining columns with the relevant user data and save the updated template with an appropriate file name.
+
+**IMPORTANT TO NOTE:**
+
+1. If you do not have the Primary ID (Employee ID) of a user and want to assign Oloid’s Default ID – known as “oloid”- then use `{{oloid}}` in the primary ID field. Refer to the snapshot below for reference. ![](/images/10650742/16b0f9c6548a.png)
+2. To remove an existing user, set their **Status** field to **TERMINATED**.
+3. If you want to add any custom fields, please add the custom header name and populate the column in the file. Do not add `#Oloid#_ `prefix with custom headers.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to add Users in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-add-users-in-the-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal – How to Add Users in Bulk" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-add-users-in-bulk" />
+  <Card title="Tenant Admin Portal - How to Log in to Tenant Admin Portal with Microsoft SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-microsoft-sso" />
+  <Card title="Oloid User Portal - How to Configure Oloid User Portal in Tenant Admin Portal" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-configure-oloid-user-portal-in-tenant-admin-portal" />
+  <Card title="How to migrate users in bulk in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-migrate-users-in-bulk-in-tenant-admin-portal" />
+</CardGroup>

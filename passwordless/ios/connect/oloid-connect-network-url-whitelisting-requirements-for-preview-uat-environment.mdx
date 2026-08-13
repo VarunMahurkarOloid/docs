@@ -1,0 +1,84 @@
+---
+title: "Oloid Connect – Network URL Whitelisting Requirements for Preview/UAT Environment"
+sidebarTitle: "Oloid Connect – Network URL Whitelisting Requirements for Preview/UAT Environment"
+description: "Oloid Connect – Network URL Whitelisting Requirements for Preview/UAT Environment"
+tags:
+  - "Passwordless"
+  - "iOS"
+  - "Oloid Connect"
+categories:
+  - "passwordless/ios/connect"
+primaryCategory: "passwordless/ios/connect"
+navPath: "Passwordless > iOS > Oloid Connect"
+source:
+  system: "intercom"
+  articleId: "15392106"
+  url: "https://oloid.help/en/articles/15392106-oloid-connect-network-url-whitelisting-requirements-for-preview-uat-environment"
+  collection: "Oloid Connect"
+  section: "Getting Started with Oloid Connect App"
+  updatedAt: "2026-06-05T10:34:17Z"
+  migratedAt: "2026-08-13T09:16:17.971058+00:00"
+---
+## Introduction
+
+This document lists the **domain URLs that must be whitelisted** in the customer network to allow Oloid products to function correctly.
+
+Whitelisting these URLs ensures proper connectivity for the **Oloid platform.**
+
+Allow **outbound HTTPS traffic (Port 443)** to the domains listed below.
+
+---
+
+## Product Information
+
+| **Field** | **Value** |
+|---|---|
+| Product Name | Oloid Connect |
+| Protocol | HTTPS |
+| Port | 443 |
+| Direction | Outbound |
+
+---
+
+Use the following table for URL whitelisting.
+
+| **Service** | **UAT** | **Description** |
+|---|---|---|
+| Admin API | api.oloidpreview.com | The Admin API is used for Authentication. |
+| Tenant User API | api.previewoloid.net | The Tenant User API is used for user authentication credential. |
+| Face Authentication | fr.oloidpreview.com | The Face Authentication API is used to authenticate users through facial recognition. |
+
+---
+
+## Google and Amazon Services
+
+| **Service** | **UAT** |
+|---|---|
+| Firebase Authentication | firebase.google.com |
+| Google APIs | googleapis.com |
+| Cloud Firestore | firestore.googleapis.com |
+| Firebase Storage | firebasestorage.googleapis.com |
+| Google Cloud Storage | storage.googleapis.com |
+| Amazon Web Services (AWS) | *.amazonaws.com |
+
+#### Related Document
+
+[Platform Portal and User Portal – Network URL Whitelisting Requirements for Preview/UAT Environment | Oloid Help Center](/administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-preview-uat-environment)
+
+---
+
+<Tip>
+  **Keywords:** Oloid Connect Whitelisting URLs for Preview/UAT Environment · Oloid Connect Whitelisting URLs
+</Tip>
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Oloid Verify - Network URL Whitelisting Requirements" icon="arrow-right" href="/passwordless/verify/oloid-verify-network-url-whitelisting-requirements" />
+  <Card title="Windows Login v1.0 - Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v1-0-network-url-whitelisting-requirements-for-preview-uat-environment" />
+  <Card title="Windows Login v2.0 - Network URL Whitelisting Requirements for Preview/UAT Environment" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-preview-uat-environment" />
+  <Card title="Oloid Connect – Network URL Whitelisting Requirements for Prod (US) Environment" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-prod-us-environment" />
+  <Card title="Oloid Connect – Network URL Whitelisting Requirements for Prod (EU) Environment" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-prod-eu-environment" />
+</CardGroup>

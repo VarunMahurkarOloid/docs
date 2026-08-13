@@ -1,0 +1,55 @@
+---
+title: "Set up Genetec Web SDK for Oloid Workflow integrations"
+sidebarTitle: "Genetec Web SDK for Oloid Workflow integrations"
+description: "Set up Genetec Web SDK for Oloid Workflow integrations"
+icon: "door-closed"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "PACS"
+  - "Workflow"
+categories:
+  - "resources/integrations/pacs"
+  - "workflow/workflow"
+primaryCategory: "resources/integrations/pacs"
+navPath: "Resources > Integrations > PACS"
+source:
+  system: "intercom"
+  articleId: "9139936"
+  url: "https://oloid.help/en/articles/9139936-set-up-genetec-web-sdk-for-oloid-workflow-integrations"
+  collection: "Oloid Workflow"
+  section: "Set up 3rd party Applications"
+  updatedAt: "2024-04-01T10:11:12Z"
+  migratedAt: "2026-08-13T09:16:25.329456+00:00"
+---
+**Prerequisites and licensing requirements**
+
+- An SDK part must be provided on the Security Center license.
+- The Web SDK option on the Security Center license must be enabled.
+- Config Tool client application.
+
+**Steps to add a Web-based SDK role to Security Center**
+
+- To do this, open **Config Tool** > **System** >**Roles** > **Add an entity**. Select **Web-based SDK** and create the role. ![](/images/9139936/eb3b5c5353b3.png)
+- Once the role has been created, go to the **Properties** tab of the role and make sure the port and streaming port are available. You can also change the base URI and enable SSL encryption (It is recommended that you use secure communication). ![](/images/9139936/8dc94c500f75.png) Now that you have added and configured your Web-based SDK role, your Security Center system is ready to send requests.
+
+**Authentication for Genetec WebSDK APIs**
+
+When using the Web SDK, requests are sent through HTTP and authentication is   
+done using basic HTTP authentication. This process means that every call to the   
+API must include valid credentials. Authentication is composed of the following:
+
+- The login, composed of your Security Center username and a semicolon, and ending with the application ID tag from the Security Center SDK certificate.
+- The password of the specified Security Center user.Example:
+- **Login**: jsmith;KxsD11z743Hf5Gq9mv3+5ekxzemlCiUXkTFY5ba1NOGcLCmGst t2n0zYE9NsNimv
+- **Password**: ilOveSc!
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Set up ProWatch for Oloid Workflow Integrations" icon="arrow-right" href="/workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations" />
+  <Card title="Set up ServiceNow for Oloid Workflow integrations" icon="arrow-right" href="/workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations" />
+  <Card title="Set up C-Cure 9000 for Oloid Workflow integrations" icon="arrow-right" href="/resources/integrations/pacs/set-up-c-cure-9000-for-oloid-workflow-integrations" />
+  <Card title="Oloid Workflow- Application Modes" icon="arrow-right" href="/workflow/workflow/oloid-workflow-application-modes" />
+  <Card title="Oloid Passwordless SDK Usage Guide for Windows Developers" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers" />
+</CardGroup>

@@ -1,0 +1,78 @@
+---
+title: "How to Create and Configure Application Type – Generic"
+sidebarTitle: "Create and Configure Application Type – Generic"
+description: "How to Create and Configure Application Type – Generic"
+tags:
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "administration/admin-portal"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "8300397"
+  url: "https://oloid.help/en/articles/8300397-how-to-create-and-configure-application-type-generic"
+  collection: "Oloid Platform - Enterprise Features"
+  section: "Create and Manage Applications"
+  updatedAt: "2026-08-05T06:45:18Z"
+  migratedAt: "2026-08-13T09:16:20.853612+00:00"
+---
+## Introduction
+
+This document provides instructions to create and configure a Generic application in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have **Admin** access to the Tenant Admin Portal.
+- The required **Connection** must already be created before mapping it to the application. For more, refer to [How to create Connections in the Tenant Admin Portal](/administration/admin-portal/tenant-admin-portal-how-to-create-connection)
+
+## Steps to Create and Configure Generic Application
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the **Applications** page, click **Create Application** in the top right corner. ![](/images/8294483/a03e60ff8588.png) The **Create New Application** pop-up box is displayed.
+3. On the pop-up box, do the following:Enter **Application Name**and select **Application Type**as **Generic**.Click **Create**. ![](/images/8300397/d7947b46d5dc.png) The **Generic** application is created and application details page is displayed.
+4. Configure the following tabs:[Details tab](#h_a26f965ade)[Health Setup](#h_bbad21b8a1)[Connections tab](#h_4a53739162)**Note**: These settings need to be configured only once, and it is recommended to keep the default values. ![](/images/8300397/c70784829c15.png)
+
+## Configure Details Tab
+
+The **Details** tab is used to configure the basic application information, such as the application name, description, and time zone.
+
+Do the following:
+
+1. Update the **Application Name**(if needed).
+2. Add the **Description** (Optional).
+3. Select the **Time Zone** from the drop-down menu.
+4. Click **Save**. ![](/images/8300397/ec1ce42a6de9.png)
+
+## Configure Health setup Tab
+
+The **Health Setup** tab is used to configure servers and URLs that the application monitors. Health checks help verify the availability and accessibility of the configured servers.  
+​**Note:** The default health monitoring servers are created automatically recommended. to add server, do the following:
+
+1. Enter the **Server Name**.**Example:** Amazon AWS
+2. Enter the **URL that needs to be monitored**.**Example:** `https://amazonaws.com/`
+3. Click **Add**. ![](/images/8300397/85bb691c2cbc.png) The server is added to the Health Setup list successfully.The following details are displayed in the table:**Server Name:** Displays the configured server name.**URL:** Displays the URL configured for health monitoring. ![](/images/8300397/547d58ceb526.png)
+
+## Configure Connections Tab
+
+Do the following:
+
+1. Select **+** **Add Connections** to map a connection to the application. ![](/images/8300397/a6be8cf7ac26.png) The **Add Connections** pop-up box is displayed.
+2. Select connection from the drop-down list and click **Add**. ![](/images/8300397/021fdfb9974c.png) The connection is added to the application successfully.
+
+---
+
+<Tip>
+  **Keywords:** Generic Application Configuration · Create Generic Application · Configure Generic Application · Tenant Admin Portal Generic Application
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Create and Configure Oloid Connect Endpoint Template" icon="arrow-right" href="/passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template" />
+  <Card title="How to Create and Configure DeviceLock Endpoint Template in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-configure-devicelock-endpoint-template-in-tenant-admin-portal" />
+  <Card title="Oloid Verify - How to Configure Endpoint in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-verify-how-to-configure-endpoint-in-tenant-admin-portal" />
+  <Card title="Oloid Connect - How to configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+  <Card title="DeviceLock App - How to Configure Endpoint in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/devicelock-app-how-to-configure-endpoint-in-the-tenant-admin-portal" />
+</CardGroup>

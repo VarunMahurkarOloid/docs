@@ -1,0 +1,111 @@
+---
+title: "Windows Login (Healthcare) - How to Configure Epic EHR in the Tenant Admin Portal"
+sidebarTitle: "Configure Epic EHR"
+description: "This document provides a step by step guide on how to configure Epic EHR for Windows Authenticator (Healthcare) in the tenant admin portal."
+icon: "hospital"
+tags:
+  - "Resources"
+  - "Industry"
+  - "Healthcare"
+  - "Passwordless"
+  - "Windows"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/industry/healthcare"
+  - "passwordless/windows/passwordless"
+  - "administration/admin-portal"
+primaryCategory: "resources/industry/healthcare"
+navPath: "Resources > Industry > Healthcare"
+source:
+  system: "intercom"
+  articleId: "13714282"
+  url: "https://oloid.help/en/articles/13714282-windows-login-healthcare-how-to-configure-epic-ehr-in-the-tenant-admin-portal"
+  collection: "Windows Login (Healthcare )"
+  section: "Windows Login (Healthcare) - Tenant Admin Configuration"
+  updatedAt: "2026-05-15T06:01:37Z"
+  migratedAt: "2026-08-13T09:16:14.688121+00:00"
+---
+## Introduction
+
+Tenant Admin can configure **Epic EHR for Windows Login** in the Tenant Admin Portal which enables secure authentication into Epic applications using Windows Authenticator (Healthcare). This setup allows Tenant Admins to define how users are authenticated into Epic
+
+## Prerequisites
+
+- You must have a Tenant Admin account.
+- The Windows Login application must be created in the Tenant Admin Portal, for more information see: [How to create and configure Application Type - Passwordless](/administration/admin-portal/how-to-create-and-configure-application-type-passwordless)
+- Windows Authenticator Healthcare build must be installed in the system.
+- Epic Vault Password must be created for both the user.**Note:**Vault Password is required for Username/ Password flow. For more information, refer: [Chrome Vault - How to create Vault Password for a user](/passwordless/web/chrome-vault/chrome-vault-how-to-create-vault-password-for-a-user)
+- Ensure that Epic Hyperspace is installed. For more Information. refer: [How to Install Epic Hyperspace for Epic EHR](/resources/industry/healthcare/windows-login-healthcare-how-to-install-epic-hyperspace-for-epic-ehr)
+- Ensure Epic Subspace Config is configured from the sys admin portal.
+
+## Steps to configure Epic EHR for Windows Login
+
+1. Login to the Tenant Admin Portal.
+2. On the homepage on the left menu panel select **Home**> **Applications.** ![](/images/13713982/7dacbe1e90eb.png)
+3. Select the application that is configured in the Supervisor App (Windows Authenticator App).The application details page is displayed.
+4. Click **Configure**tab> **Epic EHR**tab. ![](/images/13714282/9367d61372ee.png) The Epic EHR page is displayed.
+5. Turn on the **Enable Epic SSO** toggle. For more information, refer: [Windows Login (Healthcare) - How to Enable Epic SSO in the Tenant Admin Portal](/passwordless/windows/passwordless/windows-login-healthcare-how-to-enable-epic-sso-in-the-tenant-admin-portal) ![](/images/13714282/1b53651078f5.png)
+6. [Configure Epic Authentication Mode](#h_6e597e47a5)
+7. Click **Save** to apply changes.Epic EHR is successfully configured.
+
+## Configure Epic Authentication Mode
+
+This section allows admins to define how Oloid authenticates users into Epic.
+
+You can configure authentication using either:
+
+- [Stored Epic username/password (metadata-based authentication), or](#h_5d4e20398e)
+- [Epic-configured SAML Identity Provider (SAML Flow)](#h_09a5ff6448)
+
+### Username / Password Flow
+
+1. Select **Username / Password Flow**.**Note:**Ensure each user has a valid Epic username and password stored under their metadata.
+2. Enable **Validate EPIC Credentials** if required.**Note:** Check **Validate EPIC Credentials** to prompt users to enter Epic credentials if previously stored credentials are incorrect or invalid.
+3. Click **Save**. ![](/images/13714282/430d9f721973.png)
+
+### SAML Flow
+
+Use this option to authenticate users using an Epic-configured SAML Identity Provider.
+
+1. Select **SAML Flow**.
+2. From the **SAML IDP** dropdown, select the configured Identity Provider.**Note:** Ensure the SAML IDP configuration has been completed in Epic and Oloid prior to selection. For More: [How to Create IDP Profile for Security Assertion Markup Language (SAML) in the Tenant Admin Portal](/resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml)
+3. Click **Save**.
+
+<Frame>
+  <img src="/images/13714282/7cf54f2b3fed.png" alt="Screenshot" />
+</Frame>
+
+Epic EHR is successfully configured.
+
+<Frame>
+  <img src="/images/13714282/1dc6a6e98a56.png" alt="Screenshot" />
+</Frame>
+
+---
+
+#### Related Documents
+
+**[How to Configure Re-authentication Workflow for Epic EHR in Tenant Admin Portal](/resources/industry/healthcare/windows-login-healthcare-how-to-configure-reauthentication-workflow-for-epic-ehr-in-tenant-admin-portal)**
+
+---
+
+#### Sync Configuration to Apply Changes
+
+You must sync configuration in the supervisor app to apply changes . For Detailed steps, see [How to sync configuration in Supervisor App](/passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app)
+
+---
+
+<Tip>
+  **Keywords:** Configure Epic EHR Windows Login · Epic authentication setup · Windows Authenticator Epic integration · Epic SAML configuration · Epic username password login
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Windows Login (Healthcare) - How to Enable Epic SSO in the Tenant Admin Portal" icon="arrow-right" href="/passwordless/windows/passwordless/windows-login-healthcare-how-to-enable-epic-sso-in-the-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare)- Epic EHR Integration with Oloid Windows Login" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-epic-ehr-integration-with-oloid-windows-login" />
+  <Card title="Windows Login (Healthcare) - How to Configure Two User Authentication Workflow for Epic EHR in Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-configure-two-user-authentication-workflow-for-epic-ehr-in-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare) - How to Configure Reauthenticate Current User for Epic EHR in Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-configure-reauthenticate-current-user-for-epic-ehr-in-tenant-admin-portal" />
+  <Card title="Windows Login (Healthcare) - How to Enable Current User Editable for Epic EHR in Tenant Admin Portal" icon="arrow-right" href="/resources/industry/healthcare/windows-login-healthcare-how-to-enable-current-user-editable-for-epic-ehr-in-tenant-admin-portal" />
+</CardGroup>

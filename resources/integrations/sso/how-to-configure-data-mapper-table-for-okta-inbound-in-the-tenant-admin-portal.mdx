@@ -1,0 +1,116 @@
+---
+title: "How to Configure Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal"
+sidebarTitle: "Configure Data Mapper Table for OKTA - Inbound"
+description: "This document provides step-by-step instructions to configure Data Mapper Table for OKTA - Inbound in Tenant Admin Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+  - "Administration"
+  - "Admin Portal"
+categories:
+  - "resources/integrations/sso"
+  - "administration/admin-portal"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "13696411"
+  url: "https://oloid.help/en/articles/13696411-how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal"
+  collection: "Manage Agents"
+  section: "Data Tables"
+  updatedAt: "2026-02-27T05:58:09Z"
+  migratedAt: "2026-08-13T09:16:14.409552+00:00"
+---
+## Introduction
+
+This document provides instructions on how to configure a Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal.
+
+## Prerequisites
+
+- You must have access to the **Tenant Admin Portal**.
+- Data Mapper Table for OKTA - Inbound must be created.
+
+## Steps to Configure Data Mapper Table for OKTA - Inbound
+
+1. Log in to the **Tenant Admin Portal**.
+2. On the home page of the portal, go to **Agents > Data Tables**. ![](/images/13696411/e7a76c5f5d53.png) The **Data Tables** page is displayed.
+3. Click preferred data table. ![](/images/13524078/1ca2b84acf09.png) The data table details page is displayed.
+4. Do the following:[Configure Details Tab](#h_d505fdf7c5)[Setup Configure Tab](#h_b44ecc440c) ![](/images/13696411/e986a49cd814.png) The Data Mapper Table for **OKTA – Inbound** is configured successfully.
+
+## Configure Details Tab
+
+This tab is used to view and edit basic information about the data mapper table.
+
+Do the following:
+
+1. Update the **Table Name** (if required).
+2. Enter **Description** (Optional).
+3. Click **Save**. ![](/images/13696411/958506ce0f04.png) The details tab is configured successfully.
+
+## Setup Configure Tab
+
+This tab is used to configure data field mappings between OKTA and Oloid.
+
+**Note:** The **FullName, DisplayName, PrimaryID, and Status** fields are mandatory and must be mapped to corresponding source fields or expressions before saving the configuration.
+
+Do one of the following:
+
+- [Inline](#h_5254e28344)**OR**
+- [Upload File](#h_38d1ebe453) ![](/images/13696411/aaac8c12360d.png) The Configure tab is set up successfully.
+
+## Inline
+
+In the **Inline** section, define the fields as follows:
+
+1. **Source - OKTA Field / Expression:**Enter the OKTA field name or expression that provides the source value.
+2. **Destination – Oloid Field:**Enter the Oloid field name to which the source value is mapped.
+3. **Data Type:** Select the data type from the drop-down.
+4. Click **Add field** to add more fields.**Note:** For mapping the table, refer **[Data Mapping Table](#h_1af501383a)**.
+5. Click **Save**. ![](/images/13696411/8070a3f4c308.png) The Inline section is configured successfully.
+
+## Upload File
+
+In the **Upload File** section, do the following:
+
+1. Select **Upload File** and upload the mapping file.**Note:** The file format must be in **.XLSX** or **.CSV**.
+2. Click **Save**. ​![](/images/13696411/c798e27caf93.png) The Upload File section is configured successfully.The configure tab is set up successfully. ![](/images/13696411/40aee780c7ce.png)
+
+## Additional Information
+
+## Data Mapping Table
+
+Use the following fields to define data mappings when configuring the Data Mapper Table.
+
+| **OKTA Use Field** | **Oloid User Field** | **Data Type** |
+|---|---|---|
+| id | PrimaryID | String |
+| \{profile.firstName+''+ profile.lastName\} | DisplayName | String |
+| email | Email | String |
+| \{profile.mobilePhone\} | \{UserMatadata.MobilePhone\} | String |
+| \{status=='STAGED"?'ACTIVE' : 'INACTIVE'\} | Status | String |
+
+**Note:** Contact **[Oloid support](mailto:support@oloid.ai)** if you need assistance while configuring the Data Mapper table.
+
+---
+
+#### Related Articles
+
+[How to Create Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal | Oloid Help Center](/resources/integrations/sso/how-to-create-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** Configure Data Mapper Table for OKTA Inbound · OKTA Inbound Data Mapper Configuration · OKTA Data Mapping in Tenant Admin Portal
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to Configure Data Mapper Table for Workday - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for Entra ID - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-configure-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Create Data Mapper Table for OKTA - Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/sso/how-to-create-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP Enterprise Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal" />
+  <Card title="How to Configure Data Mapper Table for ADP ETime Inbound in the Tenant Admin Portal" icon="arrow-right" href="/resources/integrations/hrms/how-to-configure-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal" />
+</CardGroup>

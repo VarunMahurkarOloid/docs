@@ -1,0 +1,65 @@
+---
+title: "PingOne Settings for Oloid SSO"
+sidebarTitle: "PingOne Settings for Oloid SSO"
+description: "This document provides step-by-step instructions to configure PingOne SSO login in the PingOne Admin Console for Oloid Portal."
+icon: "right-to-bracket"
+tags:
+  - "Resources"
+  - "Integrations"
+  - "SSO"
+categories:
+  - "resources/integrations/sso"
+primaryCategory: "resources/integrations/sso"
+navPath: "Resources > Integrations > SSO"
+source:
+  system: "intercom"
+  articleId: "8727716"
+  url: "https://oloid.help/en/articles/8727716-pingone-settings-for-oloid-sso"
+  collection: "SSO Login Configuration"
+  section: "PingOne SSO Setup"
+  updatedAt: "2026-01-06T10:44:13Z"
+  migratedAt: "2026-08-13T09:16:24.278908+00:00"
+---
+## Introduction
+
+This document provides instructions to configure **PingOne Single Sign-On (SSO)** in the PingOne Admin Console for the Oloid Tenant Admin Portal.
+
+## Prerequisite
+
+You must have **administrator access** to the PingOne Identity Administrator Console.
+
+## Steps to Configure PingOne SSO log in the PingOne Admin Console for Oloid Portal
+
+1. Sign in to the Ping Identity Administrator Console with your PingOne account credentials.
+2. Select **Create Environment**, then select **Create a Customer Solution**. ![](/images/8727716/5ee23f4f1d98.png) ![](/images/8727716/66167770ccf5.png)
+3. Go to the newly created environment, select **Applications > Application**. ![](/images/8727716/047dcf7c4615.png) The application page is displayed.
+4. Click Add icon (![](/images/8727716/a9e870fb98b2.png)). ![](/images/8727716/b8c5c6d440ee.png) The add application page is displayed.
+5. Do the following:Enter **Application Name**.Select **OIDC Web App**from Application Type.Click **Save**. ![](/images/8727716/5c9c9fd76b12.png) The application is created successfully.
+6. Select the newly created application from the application list to edit. ![](/images/8727716/2a3be241387d.png)
+7. On the application **Profile** page, enable the app using the toggle button next to the application name. ![](/images/8727716/e0f8260ca421.png)
+8. Select **Overview**tab > **OpenID Connect** > Add the preferred **Redirect URLs >**Click **Save.**[https://\<tenantname>.oloid.cloud.com/login/ping/callback](https://\<tenantname>.oloid.cloud.com/login/ping/callback)[https://\<tenantname>.myoloid.com/login/ping/callback](https://\<tenantname>.myoloid.com/login/ping/callback)**Note:** Please contact [Oloid Support](mailto:support@oloid.ai) for the Redirect URL. ![](/images/8727716/6d31821e895d.png) ![](/images/8727716/65ebb43bb619.png)
+9. Go to **Overview**tab, and do the following:On **General** section:Copy **Environment ID.**Copy **Client ID**.Copy **Client Secret**.**Note:** Share **ClientID** and **Client secret** with [Oloid Support](mailto:support@oloid.ai). ![](/images/8727716/0783800ab723.png) On **Connection Details**section:Copy **Authorization URL**.Copy **Token Endpoint URL**.Copy **User Info Endpoint URL**. ![](/images/8727716/190bf58be241.png) **Note:** Add the parameters to the relevant sections in the Tenant Admin Portal. ![](/images/8727716/f465cf6cf4a1.png)
+10. Go to **Overview > OpenID Connect** > **Token Endpoint Authentication Method** select **Client Secret Basic**from the dropdown list and click **Save.** ​![](/images/8727716/1fe4fbf26ef3.png)
+11. Go to application details, click **Resources > Allowed Scopes Edit icon** **>** select **Email >**click **Save**. ![](/images/8727716/14d54776d6a6.png) ![](/images/8727716/b5694e02c70f.png) The Email is added in the allowed scopes list. ![](/images/8727716/c01bef1f1371.png) The PingOne SSO is configured successfully.
+
+---
+
+## Related Article
+
+[How to configure PingOne SSO in Oloid Portal | Oloid Help Center](/administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal)
+
+---
+
+<Tip>
+  **Keywords:** PingOne SSO configuration · PingOne SSO for Oloid · Configure PingOne SSO login
+</Tip>
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Okta Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/okta-settings-for-oloid-sso" />
+  <Card title="How to Configure PingOne SSO in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal" />
+  <Card title="Tenant Admin Portal - How to Configure OIDC - PingOne IDP Profile" icon="arrow-right" href="/resources/integrations/sso/tenant-admin-portal-how-to-configure-oidc-pingone-idp-profile" />
+  <Card title="How to log in to Oloid Portal with PingOne SSO" icon="arrow-right" href="/resources/integrations/sso/how-to-log-in-to-oloid-portal-with-pingone-sso" />
+  <Card title="Duo Settings for Oloid SSO" icon="arrow-right" href="/resources/integrations/sso/duo-settings-for-oloid-sso" />
+</CardGroup>

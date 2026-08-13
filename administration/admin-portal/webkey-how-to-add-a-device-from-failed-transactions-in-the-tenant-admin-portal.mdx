@@ -1,0 +1,65 @@
+---
+title: "Webkey - How to Add a Device from Failed Transactions in the Tenant Admin Portal"
+sidebarTitle: "How to Add a Device from Failed Transactions"
+description: "This document is a step by step guide on how to add a device from the transactions section in the tenant admin portal"
+icon: "gauge"
+tags:
+  - "Administration"
+  - "Admin Portal"
+  - "Passwordless"
+  - "Web"
+  - "Webkey"
+categories:
+  - "administration/admin-portal"
+  - "passwordless/web/webkey"
+primaryCategory: "administration/admin-portal"
+navPath: "Administration > Admin Portal"
+source:
+  system: "intercom"
+  articleId: "13175211"
+  url: "https://oloid.help/en/articles/13175211-webkey-how-to-add-a-device-from-failed-transactions-in-the-tenant-admin-portal"
+  collection: "Oloid Web Passwordless Login -WebKey"
+  section: "Platform Configuration - WebKey"
+  updatedAt: "2026-06-09T10:25:28Z"
+  migratedAt: "2026-08-13T09:16:12.475087+00:00"
+---
+## Introduction
+
+Enabling a Custom User Agent allows the tenant admin to register new devices directly from user transactions.
+
+## Prerequisite
+
+- You must have a tenant admin account.
+- Custom User agent must be enabled. Devices can also be added to Webkey application from Oloid portal. For further information please refer: [How to configure Custom User Agent in WebKey Application](/passwordless/web/webkey/webkey-how-to-configure-a-custom-user-agent-for-webkey)
+
+## Steps to Add Device to Application
+
+1. Log in to the **Tenant Admin Portal**.
+2. Click **Transactions** from the left menu panel. ![](/images/13175211/f3d0cd0c3450.png) The **User Transaction Through Your Device** page is displayed.
+3. Selectthe latest transactionto edit.**Note:**Device can only be added from failed transaction. ![](/images/13175211/6e95b84f5189.png)
+4. On the top right, select **Action** > **Add Device to Application**. ![](/images/13175211/8f51d14638c2.png)
+5. On the Confirm Device Registration pop-up box, select **Confirm**.**Note:**Registering will link the device to the application using its User Agent or Device ID ![](/images/13175211/471f64aa716a.png)
+
+The device is successfully added to the WebKey application.
+
+<Frame>
+  <img src="/images/13175211/4421adba15b3.png" alt="Screenshot" />
+</Frame>
+
+---
+
+<Tip>
+  **Keywords:** Custom User Agent for WebKey · How to Enable Custom User agent · Add device to Webkey · How to Add device to Application
+</Tip>
+
+​
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="Webkey – How to Create and Configure a Webkey Application in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal" />
+  <Card title="WebKey - How to configure Browser Fingerprint from Failed Transactions in the Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-configure-browser-fingerprint-from-failed-transactions-in-the-tenant-admin-portal" />
+  <Card title="Webkey - How to Enable Oloid (Webkey) SSO login" icon="arrow-right" href="/resources/integrations/sso/webkey-how-to-enable-oloid-webkey-sso-login" />
+  <Card title="Webkey - How to login to Tenant Admin Portal with Oloid Webkey SSO" icon="arrow-right" href="/administration/admin-portal/webkey-how-to-login-to-tenant-admin-portal-with-oloid-webkey-sso" />
+  <Card title="Tenant Admin Portal - How to Log in to the Tenant Admin Portal using Oloid Passkey (Webkey) SSO" icon="arrow-right" href="/administration/admin-portal/tenant-admin-portal-how-to-log-in-to-the-tenant-admin-portal-using-oloid-passkey-webkey-sso" />
+</CardGroup>

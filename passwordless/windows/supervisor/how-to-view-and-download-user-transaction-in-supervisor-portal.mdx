@@ -1,0 +1,43 @@
+---
+title: "How to View and Download User Transaction in Supervisor Portal"
+sidebarTitle: "View and Download User Transaction in Supervisor Portal"
+description: "This document provides step-by-step instructions to view and download user transaction report in Supervisor Portal."
+icon: "eye"
+tags:
+  - "Passwordless"
+  - "Windows"
+  - "Supervisor"
+categories:
+  - "passwordless/windows/supervisor"
+primaryCategory: "passwordless/windows/supervisor"
+navPath: "Passwordless > Windows > Supervisor"
+source:
+  system: "intercom"
+  articleId: "11401404"
+  url: "https://oloid.help/en/articles/11401404-how-to-view-and-download-user-transaction-in-supervisor-portal"
+  collection: "Supervisor Portal"
+  section: "Supervisor Portal - Create & Manage Users"
+  updatedAt: "2025-05-23T08:02:10Z"
+  migratedAt: "2026-08-13T09:16:07.811394+00:00"
+---
+**Introduction**
+
+A user transaction is a record of a user's activity that captures important details such as the date and time of the action, the type of credential used (e.g., NFC, QR code, batch, pin), the name of the application accessed, and the endpoint involved. These transactions help track and analyse user interactions.
+
+**Steps to view and download user transaction report:**
+
+1. Log in to the **Supervisor Portal .**
+2. On the home page of the portal, click **Transactions** on the left menu panel. ![](/images/11401404/72860658d479.png) The **User Transactions** page is displayed.
+3. Click**Export to excel icon**. ![](/images/11401404/c8b6b7d41139.png) The **Export to Excel** pop-up box is displayed. ![](/images/11401404/0adbfec426db.png)
+4. (Optional) **Customize the report** by configuring the following options:**From Date & Time**: Select the start date and time.**To Date & Time**: Select the end date and time.**Time Zone**: Select a time zone.**Use Application Time Zone**: Enable to apply the application's configured time zone.**Note:** This option only works if a time zone is set in the application. If different time zones are selected for the application and export, the application's time zone takes priority when this option is enabled.To set time zone in the preferred application, go to home page > select the Application > Details tab > Time Zone. **Transaction Status**: Select one or more statuses.**Application Names**: Select the relevant application(s).**Endpoint Names**: Select the desired endpoint(s).**User’s Primary ID**: Enter the User's **Primary ID**.**Mode**: Select the transaction mode.**Face Match Status**: Filter by face match status.
+5. Click **Download** to export the report. The **user transaction report is downloaded** to your device in Excel format.
+
+## Related Articles
+
+<CardGroup cols={2}>
+  <Card title="How to View and Download User Transaction in Tenant Admin Portal" icon="arrow-right" href="/administration/admin-portal/how-to-view-and-download-user-transaction-in-tenant-admin-portal" />
+  <Card title="How to create and download transaction report (adhoc)" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-download-transaction-report-adhoc" />
+  <Card title="How to configure a scheduled Transaction Report" icon="arrow-right" href="/administration/admin-portal/how-to-configure-a-scheduled-transaction-report" />
+  <Card title="How to create and download User Transactions report" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-download-user-transactions-report" />
+  <Card title="How to create and download Endpoint Login Log Report" icon="arrow-right" href="/administration/admin-portal/how-to-create-and-download-endpoint-login-log-report" />
+</CardGroup>
