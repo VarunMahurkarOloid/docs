@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CaptureUrl": {
+      "type": "string",
+      "nullable": false
+    },
+    "ConsentFormTitle": {
+      "type": "string",
+      "nullable": false
+    },
+    "ConsentID": {
+      "type": "string",
+      "nullable": false
+    },
+    "LegalDocuments": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": false
+    },
+    "OloID": {
+      "type": "string",
+      "description": "The unique OloID of the user.",
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "minLength": 32,
+      "maxLength": 32,
+      "nullable": false
+    },
+    "Scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "TemplateID": {
+      "type": "string",
+      "nullable": false
+    },
+    "TemplateVersion": {
+      "type": "number",
+      "nullable": false
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": false
+    }
+  }
+}

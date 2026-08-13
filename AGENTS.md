@@ -31,3 +31,38 @@
 
 {/* Define what should and shouldn't be documented */}
 {/* Example: Don't document internal admin features */}
+
+## API reference
+
+OpenAPI specs live in `apis/` — 13 platform specs plus 4 under `apis/scoped/`
+(a separate host, `integrations.oloidpreview.com`, with non-interchangeable
+credentials). Shared models sit in `apis/common/` and `apis/schemas/`.
+
+Two rules that are easy to trip over:
+
+- **No external `$ref`s.** Mintlify rejects a spec outright with
+  "External $ref references are not allowed". Models from `common/` and
+  `schemas/` must be inlined into the spec's own `components.schemas` and
+  referenced as `#/components/schemas/<Name>`. `apis/common/` and
+  `apis/schemas/` remain on disk as the source of truth to regenerate from.
+- **One major tag per spec.** Mintlify groups endpoints in the sidebar by tag.
+  Each spec carries a single resource tag (`Users`, `Credentials`, …) so the
+  sidebar shows resource groups rather than raw URL paths.
+
+Each endpoint is its own MDX page holding only frontmatter:
+
+```mdx
+---
+title: "Get users"
+description: "Retrieve top 100 user informations"
+openapi: "apis/users.yaml GET /users"
+---
+```
+
+Pages live under `api-reference/platform/<resource>/` and
+`api-reference/integrations/<resource>/`, named from the operation's
+`operationId`. The playground, auth, parameters and response schema all render
+from the spec — nothing else belongs in these files.
+
+To add an endpoint: add it to the spec, create the MDX page, and add its path to
+the matching group in `docs.json`. Run `mint validate` (strict) before shipping.

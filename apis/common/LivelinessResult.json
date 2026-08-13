@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "isSpoof": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "details": {
+      "$ref": "./Liveliness.json"
+    },
+    "IsValid": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Error": {
+      "type": "string",
+      "nullable": true
+    },
+    "LivelinessData": {
+      "$ref": "./Liveliness.json"
+    },
+    "FaceCompareData": {
+      "$ref": "./Liveliness.json"
+    }
+  }
+}

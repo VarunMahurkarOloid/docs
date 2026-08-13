@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "CaptureDate": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "FaceID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ModelPVData": {
+      "$ref": "./Worker.json"
+    },
+    "OnlineModelFaceID": {
+      "type": "string",
+      "nullable": true
+    },
+    "SignedUrl": {
+      "type": "string",
+      "format": "url",
+      "nullable": true
+    },
+    "ReferenceImageURL": {
+      "type": "string",
+      "format": "url",
+      "nullable": true
+    },
+    "Stability": {
+      "type": "integer",
+      "nullable": true
+    },
+    "BodyHTML": {
+      "type": "string",
+      "nullable": true
+    },
+    "SmsBody": {
+      "type": "string",
+      "nullable": true
+    },
+    "Subject": {
+      "type": "string",
+      "nullable": true
+    },
+    "ReturnPath": {
+      "type": "string",
+      "nullable": false
+    },
+    "QueryParams": {
+      "$ref": "./Worker.json"
+    },
+    "Recipients": {
+      "type": "string",
+      "nullable": true
+    },
+    "EmailBody": {
+      "type": "string",
+      "nullable": true
+    },
+    "SendOnlySms": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "SmsRecipients": {
+      "type": "string",
+      "nullable": true
+    },
+    "LoginUrl": {
+      "type": "string",
+      "nullable": true
+    },
+    "httpStatusCode": {
+      "type": "integer",
+      "nullable": false
+    },
+    "requestId": {
+      "type": "string",
+      "nullable": true,
+      "minLength": 32,
+      "maxLength": 32
+    },
+    "attempts": {
+      "type": "integer",
+      "nullable": true
+    },
+    "totalRetryDelay": {
+      "type": "number",
+      "nullable": true
+    }
+  }
+}

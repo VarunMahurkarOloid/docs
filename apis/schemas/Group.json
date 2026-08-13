@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Description": {
+      "type": "string",
+      "nullable": true
+    },
+    "GroupID": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "minLength": 32,
+      "maxLength": 32,
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "nullable": false
+    },
+    "GroupName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Prefix": {
+      "type": "string",
+      "nullable": true
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Endpoints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "Status": {
+      "type": "string",
+      "nullable": true
+    },
+    "Users": {
+      "type": "array",
+      "items": {
+        "$ref": "./User.json"
+      },
+      "nullable": true
+    },
+    "Stability": {
+      "type": "integer",
+      "nullable": true
+    }
+  }
+}

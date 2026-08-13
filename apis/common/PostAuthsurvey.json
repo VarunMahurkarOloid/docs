@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ConductSurvey": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Questions": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "$ref": "./Question.json"
+      }
+    }
+  }
+}

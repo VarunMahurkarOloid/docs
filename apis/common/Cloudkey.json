@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ActiveEndpoints": {
+      "type": "array",
+      "items": {
+        "$ref": "../schemas/Endpoint.json"
+      }
+    },
+    "ChallengeCode": {
+      "type": "string",
+      "nullable": false
+    },
+    "CreatedOn": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": false
+    },
+    "Expiry": {
+      "type": "number",
+      "nullable": true
+    },
+    "Image": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

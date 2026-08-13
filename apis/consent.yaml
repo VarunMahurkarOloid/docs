@@ -1,0 +1,263 @@
+openapi: 3.0.3
+info:
+  title: User Consent Documentation
+  version: 1.0.0
+  description: API documentation for user consent.
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://api.previewoloid.com
+paths:
+  /tenant-user/onboard/{primaryId}/consent-template:
+    get:
+      summary: Get specific user consent
+      description: It get specific user consent
+      operationId: getUserConsent
+      tags:
+      - Consent
+      parameters:
+      - in: path
+        name: primaryId
+        required: false
+        schema:
+          type: string
+          example: "primary-id"
+          nullable: false
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      responses:
+        "200":
+          description: Get specific user consent data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConsentUserResponse"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Transaction does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  securitySchemes:
+    AuthToken:
+      type: http
+      scheme: bearer
+  schemas:
+    ConsentUserResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        user:
+          $ref: "#/components/schemas/User"
+        consentTemplate:
+          $ref: "#/components/schemas/ConsentTemplate"
+
+    User:
+      type: object
+      properties:
+        OloID:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        FullName:
+          type: string
+          nullable: false
+        ConsentProvided:
+          type: boolean
+          nullable: false
+
+    ConsentTemplate:
+      type: object
+      properties:
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: false
+        ConsentBodyRawText:
+          type: string
+          nullable: true
+        TemplateVersion:
+          type: string
+          nullable: true
+        ConsentBodyHTML:
+          type: string
+          nullable: true
+        OloidLegalDocuments:
+          type: array
+          items:
+            $ref: "#/components/schemas/LegalDocumentItem"
+        LegalDocuments:
+          type: array
+          items:
+            $ref: "#/components/schemas/TemplateLegalDocument"
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: false
+        TemplateStatus:
+          type: string
+          nullable: true
+        OloidLegalConfig:
+          $ref: "#/components/schemas/OloidLegalConfig"
+        ConsentFormTitle:
+          type: string
+          nullable: true
+        Scope:
+          type: array
+          items:
+            type: string
+            nullable: true
+        Language:
+          type: string
+          nullable: true
+        TemplateName:
+          type: string
+          nullable: true
+        ShowScope:
+          type: boolean
+          nullable: true
+        LegalDocumentHeading:
+          type: string
+          nullable: true
+        ConsentHeading:
+          type: string
+          nullable: true
+        TemplateID:
+          type: string
+          nullable: false
+          pattern: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+
+    LegalDocumentItem:
+      type: object
+      properties:
+        FileURL:
+          type: string
+          format: uri
+          nullable: true
+        Identifier:
+          type: string
+          nullable: true
+
+    TemplateLegalDocument:
+      type: object
+      properties:
+        Version:
+          type: string
+          nullable: true
+        Identifier:
+          type: string
+          nullable: true
+        DocURL:
+          type: string
+          nullable: true
+          format: uri
+
+    OloidLegalConfig:
+      type: object
+      properties:
+        OloidLegalText:
+          type: string
+          nullable: true
+
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+  examples:
+    BadRequestExample:
+      value:
+        status: "400"
+        message: Bad Request
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+    NotFoundExample:
+      value:
+        status: "404"
+        message: Not Found
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: Internal Server Error - Server encountered an unexpected condition
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+security:
+- AuthToken: []
+tags:
+- name: Consent
+  description: User consent and onboarding operations.

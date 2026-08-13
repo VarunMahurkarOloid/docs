@@ -1,0 +1,37 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "AllowFileUpload": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AllowEndpointFileStore": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AllowEndpointPairing": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnablePinEncryption": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Tabs": {
+      "$ref": "./Tabs.json"
+    },
+    "EnableWindowsLockAlerts": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableBetaFeatures": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableMaskPii": {
+      "type": "boolean",
+      "nullable": true
+    }
+  }
+}

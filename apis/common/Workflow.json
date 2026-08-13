@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "nullable": true,
+  "additionalProperties": false,
+  "properties": {
+    "AccountID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApiKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApplicationId": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "maxLength": 32,
+      "minLength": 32,
+      "nullable": false,
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856"
+    },
+    "AuthEndpoint": {
+      "type": "string",
+      "nullable": true
+    },
+    "BaseDN": {
+      "type": "string",
+      "nullable": true
+    },
+    "ClientId": {
+      "type": "string",
+      "nullable": true
+    },
+    "ClientSecret": {
+      "type": "string",
+      "nullable": true
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Credentials": {
+      "type": "string",
+      "nullable": true
+    },
+    "CustomerCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "LastConnected": {
+      "type": "string",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    },
+    "OApiKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "Status": {
+      "type": "string",
+      "nullable": true
+    },
+    "TenantId": {
+      "type": "string",
+      "description": "The unique ID of the tenant.",
+      "nullable": false,
+      "minLength": 16,
+      "maxLength": 16,
+      "pattern": "^[0-9a-fA-F]{16}$",
+      "example": "FA0280A8A0E64DF9"
+    },
+    "Token": {
+      "type": "string",
+      "nullable": true
+    },
+    "TokenEndpoint": {
+      "type": "string",
+      "nullable": true
+    },
+    "Type": {
+      "type": "string",
+      "nullable": true
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Url": {
+      "type": "string",
+      "nullable": true
+    },
+    "WorkStation": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

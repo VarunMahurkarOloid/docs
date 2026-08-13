@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "IsDesktop": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DeviceType": {
+      "type": "string",
+      "nullable": true
+    },
+    "OS": {
+      "type": "string",
+      "nullable": true
+    },
+    "DeviceInfo": {
+      "$ref": "./DeviceInfo.json"
+    },
+    "OSVersion": {
+      "type": "string",
+      "nullable": true
+    },
+    "IsIOS": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DeviceIP": {
+      "type": "string",
+      "format": "ipv4",
+      "nullable": true
+    },
+    "IsAndroid": {
+      "type": "boolean",
+      "nullable": true
+    }
+  }
+}

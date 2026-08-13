@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "GettingStarted": {
+      "$ref": "./Worker.json"
+    },
+    "Dashboard": {
+      "$ref": "./Worker.json"
+    },
+    "Onboarding": {
+      "$ref": "./Worker.json"
+    }
+  }
+}

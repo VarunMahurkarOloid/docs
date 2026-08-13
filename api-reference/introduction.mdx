@@ -1,8 +1,57 @@
 ---
 title: "Introduction"
 sidebarTitle: "Introduction"
-description: "Overview of the Oloid API."
+description: "How the Oloid APIs are organised and how to start calling them."
 icon: "code"
 ---
 
-Placeholder API Reference introduction.
+The Oloid APIs let you manage users, credentials, endpoints and activity data
+programmatically. Everything the Tenant Admin Portal does is available over HTTP.
+
+## Two API surfaces
+
+<CardGroup cols={2}>
+  <Card title="Platform API" icon="server" href="/api-reference/platform/users/get-users">
+    The main surface — users, credentials, endpoints, groups, applications,
+    connections, transactions and settings.
+  </Card>
+  <Card title="Integrations API" icon="plug" href="/api-reference/integrations/login/login">
+    A scoped surface for partner integrations, exposing a deliberately narrow
+    set of login, consent, transaction and activity-log operations.
+  </Card>
+</CardGroup>
+
+They are separate hosts and are documented separately in this section. An
+integration credential is scoped to the Integrations API and cannot be used
+against the Platform API.
+
+## Conventions
+
+All endpoints accept and return JSON. Send `Content-Type: application/json` on
+any request with a body.
+
+<Note>
+  Every request must carry a bearer token. See [Authentication](/api-reference/authentication)
+  for how to obtain and send one.
+</Note>
+
+Each endpoint page in this section includes a request builder you can run
+against the selected server, plus generated code samples. Use the server
+dropdown at the top of a page to switch environments.
+
+## Where to start
+
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="key" href="/api-reference/authentication">
+    Obtain a token and send it correctly.
+  </Card>
+  <Card title="Login API" icon="right-to-bracket" href="/api-reference/login-api-documentation">
+    A worked example of the login flow.
+  </Card>
+  <Card title="Retrieving events" icon="list" href="/api-reference/guide-to-retrieving-events-and-transactions">
+    Pull transactions and activity out of Oloid.
+  </Card>
+  <Card title="Users" icon="user" href="/api-reference/platform/users/get-users">
+    Create and manage users.
+  </Card>
+</CardGroup>

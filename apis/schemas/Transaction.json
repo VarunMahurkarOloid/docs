@@ -1,0 +1,495 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "AgentBuildNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "ActionStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "AllEndpointActionStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "AppSource": {
+      "type": "string",
+      "nullable": true
+    },
+    "CredentialFormatID": {
+      "type": "string",
+      "nullable": true
+    },
+    "BadgeBinary": {
+      "type": "string",
+      "nullable": true
+    },
+    "BadgeCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "CreatedOn": {
+      "type": "number",
+      "nullable": true
+    },
+    "ConnectionDisplayName": {
+      "type": "string",
+      "nullable": true
+    },
+    "LivelinessStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "AuthMethod": {
+      "type": "string",
+      "nullable": true
+    },
+    "MonthCreated": {
+      "type": "string",
+      "nullable": true
+    },
+    "Faces": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/Face.json"
+      }
+    },
+    "EndpointType": {
+      "type": "string",
+      "enum": [
+        "DeviceLock",
+        "Windows Login",
+        "OloidVault",
+        "CloudKey",
+        "M-Tag",
+        "Oloid Connect",
+        "Workflow",
+        "Oloid Verify",
+        "OloidWorkflow",
+        "iPad"
+      ],
+      "nullable": true
+    },
+    "Tenant": {
+      "type": "string",
+      "nullable": false
+    },
+    "AppConfigUpdatedAt": {
+      "type": "integer",
+      "nullable": true
+    },
+    "OloID": {
+      "type": "string",
+      "description": "The unique OloID of the user.",
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "minLength": 32,
+      "maxLength": 32,
+      "nullable": false
+    },
+    "TenantName": {
+      "type": "string",
+      "nullable": false
+    },
+    "AuthStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "TimeElapsed": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ClientInfo": {
+      "$ref": "../common/ClientInfo.json"
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    },
+    "SearchHttpStatus": {
+      "type": "integer",
+      "nullable": true
+    },
+    "DeviceType": {
+      "type": "string",
+      "nullable": true
+    },
+    "LivelinessQuality": {
+      "type": "number",
+      "nullable": true
+    },
+    "SearchEndTimeAtServer": {
+      "type": "number",
+      "nullable": true
+    },
+    "ProxyUrl": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "PasswordlessAuthStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "SourceConnection": {
+      "type": "string",
+      "nullable": true
+    },
+    "UserConsentProvided": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Role": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApplicationType": {
+      "type": "string",
+      "nullable": false,
+      "enum": ["Oloid Verify", "Generic", "Passwordless"],
+      "example": "Oloid Verify"
+    },
+    "FullName": {
+      "type": "string",
+      "nullable": true
+    },
+    "AppBuildNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "OverAllStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "AppBundleId": {
+      "type": "string",
+      "nullable": true
+    },
+    "SyncSource": {
+      "type": "string",
+      "nullable": true
+    },
+    "Groups": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "$ref": "./Group.json"
+      }
+    },
+    "SoftLivelinessResult": {
+      "$ref": "../common/Liveliness.json"
+    },
+    "IsPasswordFillByAdaptiveUser": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "IsAuthorized": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FRMethod": {
+      "type": "string",
+      "nullable": true
+    },
+    "IsProxyMode": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Intent": {
+      "$ref": "../common/Intent.json"
+    },
+    "BadgeSearchType": {
+      "type": "string",
+      "nullable": true
+    },
+    "IsPasswordAsSecondFactor": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "CapturedFace": {
+      "type": "string",
+      "nullable": true
+    },
+    "SecondaryID": {
+      "type": "string",
+      "nullable": true
+    },
+    "AppVersionNumber": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Status": {
+      "type": "string",
+      "nullable": true
+    },
+    "TransactionID": {
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$",
+      "maxLength": 36,
+      "minLength": 36,
+      "example": "b57f2ce0-3a0a-11f0-bdc5-c15d5eb33b4b",
+      "nullable": false
+    },
+    "FaceCropped": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "CredentialFormatName": {
+      "type": "string",
+      "nullable": true
+    },
+    "TenantID": {
+      "type": "string",
+      "description": "The unique ID of the tenant.",
+      "nullable": false,
+      "minLength": 16,
+      "maxLength": 16,
+      "pattern": "^[0-9a-fA-F]{16}$",
+      "example": "FA0280A8A0E64DF9"
+    },
+    "User": {
+      "$ref": "./User.json"
+    },
+    "AuthType": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApplicationID": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "maxLength": 32,
+      "minLength": 32,
+      "nullable": false,
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856"
+    },
+    "SearchField": {
+      "type": "string"
+    },
+    "SearchInitTimeAtServer": {
+      "type": "number",
+      "nullable": true
+    },
+    "FRConfidence": {
+      "type": "string",
+      "nullable": true
+    },
+    "ExtractDescriptorFailed": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "PlatformActions": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true
+    },
+    "EndpointConfigUpdatedAt": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Versions": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true
+    },
+    "DeviceOS": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApplicationName": {
+      "type": "string",
+      "nullable": true
+    },
+    "PrimaryID": {
+      "type": "string",
+      "nullable": true
+    },
+    "OtherMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "UpdatedOn": {
+      "type": "integer",
+      "nullable": true
+    },
+    "FaceMatchStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "FREndTime": {
+      "type": "number",
+      "nullable": true
+    },
+    "LivelinessResults": {
+      "$ref": "../common/LivelinessResult.json"
+    },
+    "FaceCompareResult": {
+      "$ref": "../common/LivelinessResult.json"
+    },
+    "ConnectionID": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "minLength": 32,
+      "maxLength": 32,
+      "nullable": false
+    },
+    "Mode": {
+      "type": "string",
+      "nullable": true
+    },
+    "DisableCropFace": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DisableLiveliness": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EndpointName": {
+      "type": "string",
+      "nullable": true
+    },
+    "EndpointActions": {
+      "$ref": "../common/EndpointAction.json"
+    },
+    "EndpointID": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{6}$",
+      "minLength": 6,
+      "maxLength": 6,
+      "nullable": false
+    },
+    "SearchInput": {
+      "type": "string",
+      "nullable": true
+    },
+    "LivelinessType": {
+      "type": "string",
+      "nullable": true
+    },
+    "Timestamp": {
+      "type": "integer",
+      "nullable": true
+    },
+    "LivelinessConfidence": {
+      "type": "number",
+      "nullable": true
+    },
+    "LivelinessScore": {
+      "type": "number",
+      "nullable": true
+    },
+    "FRInitTime": {
+      "type": "number",
+      "nullable": true
+    },
+    "LivelinessThreshold": {
+      "type": "number",
+      "nullable": true
+    },
+    "DetectionTime": {
+      "type": "number",
+      "nullable": true
+    },
+    "TransactionType": {
+      "type": "string",
+      "nullable": false
+    },
+    "WindowsLoginUser": {
+      "$ref": "../common/Window.json"
+    },
+    "Applications": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "Endpoints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": false
+      }
+    },
+    "Timezone": {
+      "type": "string",
+      "nullable": true
+    },
+    "IntegrationID": {
+      "type": "string",
+      "nullable": true
+    },
+    "IntegrationMethod": {
+      "type": "string",
+      "nullable": true
+    },
+    "FromDate": {
+      "type": "number",
+      "nullable": true
+    },
+    "ToDate": {
+      "type": "number",
+      "nullable": true
+    },
+    "FileID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ReturnEndpoints": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "TimezoneOffset": {
+      "type": "number",
+      "nullable": true
+    },
+    "page": {
+      "type": "number",
+      "nullable": true
+    },
+    "WindowsCredType": {
+      "type": "string",
+      "nullable": true
+    },
+    "WindowsUserType": {
+      "type": "string",
+      "nullable": true
+    },
+    "CapturedFaceUrl": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ReturnAllFields": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "PageSize": {
+      "type": "number",
+      "nullable": true
+    },
+    "NextPageToken": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true
+    },
+    "PrimaryId": {
+      "type": "string",
+      "nullable": true
+    },
+    "FilterKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "FilterValue": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

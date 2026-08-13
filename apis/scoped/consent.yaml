@@ -1,0 +1,312 @@
+openapi: 3.0.3
+info:
+  title: User Consent Documentation
+  version: 1.0.0
+  description: API documentation for user consent.
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://integrations.oloidpreview.com
+- url: https://integrations.oloiddev.com
+- url: https://api.oloidpreview.com
+- url: https://api.oloiddev.com
+paths:
+  /consent/users:
+    get:
+      summary: List user consents
+      description: It gets all the consent for primary id, startTime and endTime should be in milliseconds.
+      operationId: getUserConsent
+      tags:
+      - Consent
+      parameters:
+      - in: query
+        name: pageSize
+        required: false
+        schema:
+          type: number
+          example: 25
+          nullable: false
+      - in: query
+        name: startTime
+        required: true
+        schema:
+          type: number
+          description: should be in milliseconds
+          example: 1759301963000
+          nullable: false
+      - in: query
+        name: endTime
+        required: true
+        schema:
+          type: number
+          description: should be in milliseconds
+          example: 1759388363000
+          nullable: false
+      - in: query
+        name: primaryId
+        required: false
+        schema:
+          type: string
+          example: "primary-id"
+          nullable: false
+      - in: query
+        name: nextPageToken
+        required: false
+        schema:
+          type: string
+          nullable: true
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      responses:
+        "200":
+          description: Application details retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    nullable: true
+                  data:
+                    $ref: "#/components/schemas/ConsentUserResponse"
+                example:
+                  Consents:
+                  - Oloid: "70a4f870d7ef11gf97ef7fd6a9ac4856"
+                    PrimaryID: "primary-id"
+                    ConsentUrl: "https://integrations.oloidpreview.com/consents/70a4f870d7gf11ef97ef7fd6a9ac4856"
+                  - Oloid: "c9f718e0d7f044ef9d5c21dc3d7d3b43"
+                    PrimaryID: "primary-id"
+                    ConsentUrl: "https://integrations.oloidpreview.com/consents/c9f718e0d7f044ef9d5c21dc3d7d3b43"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Transaction does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+  /consent/users/{oloId}:
+    get:
+      summary: Get specific user consent
+      description: It get specific user consent pdf
+      operationId: getUserConsentPdf
+      tags:
+      - Consent
+      parameters:
+      - in: path
+        name: oloId
+        required: true
+        schema:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+      - name: download
+        in: query
+        required: true
+        schema:
+          type: boolean
+          example: true
+          default: true
+          nullable: false
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - in: header
+        name: Accept
+        required: true
+        schema:
+          type: string
+          enum: [application/pdf]
+        description: Must be set to `application/pdf` to receive the consent PDF.
+      responses:
+        "200":
+          description: PDF file containing user consent
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Transaction does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  securitySchemes:
+    AuthToken:
+      type: http
+      scheme: bearer
+  schemas:
+    ConsentUserResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        Consents:
+          type: array
+          items:
+            $ref: "#/components/schemas/Consents"
+
+    Consents:
+      type: object
+      properties:
+        Oloid:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        PrimaryID:
+          type: string
+          example: "primary-id"
+          nullable: false
+        ConsentUrl:
+          type: string
+          format: URL
+          nullable: false
+
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+  examples:
+    BadRequestExample:
+      value:
+        status: "400"
+        message: Bad Request
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+    NotFoundExample:
+      value:
+        status: "404"
+        message: Not Found
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: Internal Server Error - Server encountered an unexpected condition
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+security:
+- AuthToken: []
+tags:
+- name: Consent
+  description: Scoped user consent operations.

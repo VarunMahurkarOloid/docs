@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "LocationID": {
+      "type": "string",
+      "nullable": false
+    },
+    "LocationName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    },
+    "RuleType": {
+      "type": "string",
+      "nullable": true
+    },
+    "SettingType": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

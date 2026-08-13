@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "http_code": {
+      "type": "integer",
+      "nullable": true
+    },
+    "request_body": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "Response": {
+      "type": "string",
+      "nullable": true
+    },
+    "ActionResult": {
+      "type": "string",
+      "nullable": true
+    },
+    "ActionMode": {
+      "type": "string",
+      "nullable": true
+    },
+    "APIStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "Request": {
+      "type": "string",
+      "nullable": true
+    },
+    "UpdatedOn": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Error": {
+      "type": "string",
+      "nullable": true
+    },
+    "errorType": {
+      "type": "string",
+      "nullable": true
+    },
+    "errorMessage": {
+      "type": "string",
+      "nullable": true
+    },
+    "trace": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": false
+      }
+    },
+    "IntegrationID": {
+      "type": "string",
+      "nullable": true
+    },
+    "IntegrationType": {
+      "type": "string",
+      "nullable": true
+    },
+    "CreatedOn": {
+      "type": "integer",
+      "nullable": true
+    },
+    "StatusCode": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ActionStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "isComplete": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "fileId": {
+      "type": "string",
+      "nullable": true
+    },
+    "success": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "message": {
+      "type": "string",
+      "nullable": true
+    },
+    "EndpointID": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{6}$",
+      "minLength": 6,
+      "maxLength": 6,
+      "nullable": false
+    },
+    "FromDate": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ToDate": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Status": {
+      "type": "string",
+      "nullable": true
+    },
+    "Mode": {
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "nullable": true
+}

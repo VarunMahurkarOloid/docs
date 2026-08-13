@@ -1,0 +1,149 @@
+openapi: 3.0.3
+info:
+  title: Rds-Reports
+  version: 1.0.0
+  description: Rds-Reports
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://api.oloidpreview.com
+paths:
+  /rds/reports/{report_key}:
+    post:
+      summary: Rds-Reports
+      description: Rds-Reports
+      operationId: getRDSData
+      tags:
+      - RDS Reports
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - name: report_key
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Groups not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: Bad gateway
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  securitySchemes:
+    AuthToken:
+      type: http
+      scheme: bearer
+  schemas:
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+  examples:
+    BadRequestExample:
+      value:
+        status: "400"
+        message: Bad Request
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+    NotFoundExample:
+      value:
+        status: "404"
+        message: Not Found
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: Internal Server Error - Server encountered an unexpected condition
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+security:
+- AuthToken: []
+tags:
+- name: RDS Reports
+  description: Reporting data service operations.

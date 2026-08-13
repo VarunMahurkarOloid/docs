@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "PrivateKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "MachineName": {
+      "type": "string",
+      "nullable": true
+    },
+    "CredentialID": {
+      "type": "string",
+      "nullable": false
+    },
+    "DomainName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Username": {
+      "type": "string",
+      "nullable": true
+    },
+    "IsPasskey": {
+      "type": "string",
+      "nullable": true
+    },
+    "index": {
+      "type": "integer",
+      "nullable": true
+    },
+    "UserType": {
+      "type": "string",
+      "nullable": true
+    },
+    "Password": {
+      "type": "string",
+      "format": "password",
+      "nullable": true
+    },
+    "CredType": {
+      "type": "string",
+      "nullable": true
+    },
+    "Certificate": {
+      "type": "string",
+      "nullable": true
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "FormattedAddress": {
+      "type": "string",
+      "nullable": true
+    },
+    "Lat": {
+      "type": "number",
+      "nullable": true
+    },
+    "Long": {
+      "type": "number",
+      "nullable": true
+    },
+    "locationFetchError": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

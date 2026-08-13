@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "Active": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "CreatedOn": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "FlowDescription": {
+      "type": "string",
+      "nullable": true
+    },
+    "FlowID": {
+      "type": "string",
+      "nullable": true
+    },
+    "FlowName": {
+      "type": "string",
+      "nullable": true
+    },
+    "FlowType": {
+      "type": "string",
+      "nullable": true
+    },
+    "NodeCount": {
+      "type": "integer",
+      "nullable": true
+    },
+    "UsedAccounts": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-fA-F0-9]{32}$"
+      }
+    }
+  }
+}

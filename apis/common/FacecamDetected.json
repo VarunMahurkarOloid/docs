@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "Action": {
+      "type": "string",
+      "nullable": true
+    },
+    "CameraBlockSettings": {
+      "$ref": "./FacecamSetting.json"
+    },
+    "FaceTrackingSettings": {
+      "$ref": "./FacecamSetting.json"
+    },
+    "GadgetSettings": {
+      "$ref": "./FacecamSetting.json"
+    },
+    "MultipleFaceSettings": {
+      "$ref": "./FacecamSetting.json"
+    },
+    "Enable": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "UseSecondaryModel": {
+      "type": "boolean",
+      "nullable": true
+    }
+  }
+}

@@ -1,0 +1,377 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "AttendanceIndicator": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "BadgeBinary": {
+      "type": "string",
+      "nullable": true
+    },
+    "BadgeID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "BadgeLostStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "BadgeReaderNotification": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "BadgeType": {
+      "type": "string",
+      "nullable": true
+    },
+    "CustomField1": {
+      "type": "string",
+      "nullable": true
+    },
+    "CustomField2": {
+      "type": "string",
+      "nullable": true
+    },
+    "DepartmentCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "DepartmentName": {
+      "type": "string",
+      "nullable": true
+    },
+    "HomeState": {
+      "$ref": "./Worker.json"
+    },
+    "IsManager": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Location": {
+      "type": "string",
+      "nullable": true
+    },
+    "LocationName": {
+      "type": "string",
+      "nullable": true
+    },
+    "ManagerID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ManagerName": {
+      "type": "string",
+      "nullable": true
+    },
+    "MiddleName": {
+      "type": "string",
+      "nullable": true
+    },
+    "NFCLostStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "OrganizationOID": {
+      "type": "string",
+      "nullable": true
+    },
+    "PayRateType": {
+      "$ref": "./Worker.json"
+    },
+    "PostAuthSurvey": {
+      "$ref": "./PostAuthsurvey.json"
+    },
+    "SupervisorId": {
+      "type": "string",
+      "nullable": true
+    },
+    "SupervisoryOrganization": {
+      "$ref": "./Worker.json"
+    },
+    "SupervisoryOrganizationID": {
+      "type": "string",
+      "nullable": true
+    },
+    "TimeEntryTemplate": {
+      "type": "string",
+      "nullable": true
+    },
+    "TimeKeeper": {
+      "$ref": "./Worker.json"
+    },
+    "WorkState": {
+      "type": "string",
+      "nullable": true
+    },
+    "Worker": {
+      "$ref": "./Worker.json"
+    },
+    "WorkerID": {
+      "type": "string",
+      "nullable": true
+    },
+    "accountExpires": {
+      "type": "integer",
+      "nullable": true
+    },
+    "badPasswordTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "badPwdCount": {
+      "type": "integer",
+      "nullable": true
+    },
+    "cn": {
+      "type": "string",
+      "nullable": true
+    },
+    "codePage": {
+      "type": "integer",
+      "nullable": true
+    },
+    "company": {
+      "type": "string",
+      "nullable": true
+    },
+    "costCenter": {
+      "type": "string",
+      "nullable": true
+    },
+    "costCenter_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "countryCode": {
+      "type": "integer",
+      "nullable": true
+    },
+    "dSCorePropagationData": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "department": {
+      "type": "string",
+      "nullable": true
+    },
+    "description": {
+      "type": "string",
+      "nullable": true
+    },
+    "displayName": {
+      "type": "string",
+      "nullable": true
+    },
+    "distinguishedName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "format": "email",
+      "nullable": true
+    },
+    "employeeID": {
+      "type": "string",
+      "nullable": true
+    },
+    "employeeNumber": {
+      "type": "integer",
+      "nullable": true
+    },
+    "employeeType": {
+      "type": "array",
+      "items": {
+        "$ref": "./Worker.json"
+      }
+    },
+    "firstName": {
+      "type": "string",
+      "nullable": true
+    },
+    "givenName": {
+      "type": "string",
+      "nullable": true
+    },
+    "instanceType": {
+      "type": "integer",
+      "nullable": true
+    },
+    "lastLogoff": {
+      "type": "integer",
+      "nullable": true
+    },
+    "lastLogon": {
+      "type": "integer",
+      "nullable": true
+    },
+    "lastName": {
+      "type": "string",
+      "nullable": true
+    },
+    "location_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "logonCount": {
+      "type": "integer",
+      "nullable": true
+    },
+    "logonHours": {
+      "type": "string",
+      "nullable": true
+    },
+    "mS-DS-ConsistencyGuid": {
+      "type": "string",
+      "nullable": true
+    },
+    "mail": {
+      "type": "string",
+      "nullable": true
+    },
+    "memberOf": {
+      "type": "string",
+      "nullable": true
+    },
+    "mobile": {
+      "type": "string",
+      "nullable": true
+    },
+    "name": {
+      "type": "string",
+      "nullable": true
+    },
+    "objectCategory": {
+      "type": "string",
+      "nullable": true
+    },
+    "objectClass": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "objectGUID": {
+      "type": "string",
+      "nullable": true
+    },
+    "objectSid": {
+      "type": "string",
+      "nullable": true
+    },
+    "phone": {
+      "type": "string",
+      "nullable": true
+    },
+    "physicalDeliveryOfficeName": {
+      "type": "string",
+      "nullable": true
+    },
+    "position": {
+      "type": "string",
+      "nullable": true
+    },
+    "positionsForWorker": {
+      "type": "array",
+      "items": {
+        "$ref": "./Worker.json"
+      }
+    },
+    "primaryGroupID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "pwdLastSet": {
+      "type": "integer",
+      "nullable": true
+    },
+    "sAMAccountName": {
+      "type": "string",
+      "nullable": true
+    },
+    "sAMAccountType": {
+      "type": "integer",
+      "nullable": true
+    },
+    "sn": {
+      "type": "string",
+      "nullable": true
+    },
+    "telephoneNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "timeType": {
+      "type": "string",
+      "nullable": true
+    },
+    "timezone": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "timezone_id": {
+      "type": "string",
+      "nullable": true
+    },
+    "title": {
+      "type": "string",
+      "nullable": true
+    },
+    "totalPositions": {
+      "type": "integer",
+      "nullable": true
+    },
+    "uSNChanged": {
+      "type": "integer",
+      "nullable": true
+    },
+    "uSNCreated": {
+      "type": "integer",
+      "nullable": true
+    },
+    "userAccountControl": {
+      "type": "integer",
+      "nullable": true
+    },
+    "userPrincipalName": {
+      "type": "string",
+      "nullable": true
+    },
+    "whenChanged": {
+      "type": "string",
+      "nullable": true
+    },
+    "whenCreated": {
+      "type": "string",
+      "nullable": true
+    },
+    "workerHasPhoto": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "workerTimeCodeGroups": {
+      "type": "array",
+      "items": {
+        "$ref": "./Worker.json"
+      }
+    },
+    "Wtcg": {
+      "type": "object",
+      "properties": {
+        "timeEntryCodes": {
+          "type": "array",
+          "items": {
+            "$ref": "./Worker.json"
+          }
+        }
+      }
+    }
+  }
+}

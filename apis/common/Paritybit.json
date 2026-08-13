@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Type": {
+      "type": "string",
+      "nullable": true,
+      "example": "Even"
+    },
+    "Start": {
+      "type": "integer",
+      "nullable": true,
+      "example": 1
+    },
+    "Length": {
+      "type": "integer",
+      "nullable": true,
+      "example": 13
+    },
+    "Priority": {
+      "type": "integer",
+      "nullable": true,
+      "example": 1
+    },
+    "BitMask": {
+      "type": "string",
+      "nullable": true,
+      "example": "0101011110110"
+    },
+    "id": {
+      "type": "string",
+      "nullable": true,
+      "example": "f90gf90b-a916-57d7-bde9-9753f6c4f382"
+    },
+    "Bit": {
+      "type": "integer",
+      "nullable": true,
+      "example": 1
+    }
+  }
+}

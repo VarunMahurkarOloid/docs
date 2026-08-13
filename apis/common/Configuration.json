@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "EnableActionOnMaxAttempt": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Length": {
+      "type": "integer",
+      "nullable": true
+    },
+    "EnablePinComplexity": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "MaxPinAttemptsLimit": {
+      "type": "integer",
+      "nullable": true
+    },
+    "EnablePinEncryption": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "PinType": {
+      "type": "string",
+      "nullable": true
+    },
+    "AlphaNumeric": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ActionDuration": {
+      "type": "integer",
+      "nullable": true
+    },
+    "AllowDuplicates": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableLogUpload": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "TimeToBeUpload": {
+      "type": "integer",
+      "nullable": true
+    },
+    "AutoUnblock": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AutoUnblockAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "CameraBlockDetected": {
+      "$ref": "./FacecamDetected.json"
+    },
+    "EnableCameraAlertNonOloid": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableWindowsAlertsForOloidUser": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableWindowsLockAlerts": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableWindowsNotificationToUser": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FaceTrackingViolation": {
+      "$ref": "./FacecamDetected.json"
+    },
+    "FrameProcessDelayTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "GadgetDetected": {
+      "$ref": "./FacecamDetected.json"
+    },
+    "GadgetSettings": {
+      "$ref": "./FacecamSetting.json"
+    },
+    "MultipleFaceDetected": {
+      "$ref": "./FacecamDetected.json"
+    },
+    "NonOloidLoginAlerts": {
+      "$ref": "./FacecamDetected.json"
+    }
+  }
+}

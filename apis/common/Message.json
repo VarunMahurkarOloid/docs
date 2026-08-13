@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "nullable": true
+    },
+    "message": {
+      "type": "string",
+      "nullable": true
+    },
+    "data": {
+      "type": "string",
+      "nullable": true
+    },
+    "errorCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "errorName": {
+      "type": "string",
+      "nullable": true
+    },
+    "details": {
+      "type": "object",
+      "nullable": true,
+      "additionalProperties": true
+    },
+    "code": {
+      "type": "integer",
+      "nullable": true
+    }
+  }
+}

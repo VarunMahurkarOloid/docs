@@ -1,0 +1,533 @@
+openapi: 3.0.3
+info:
+  title: Activity Logs
+  version: 1.0.0
+  description: Activity Logs
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://integrations.oloidpreview.com
+- url: https://api.oloidpreview.com
+- url: https://api.oloiddev.com
+paths:
+  /rds/reports/get_activitylogs:
+    post:
+      summary: Activity Logs
+      description: Activity Logs
+      operationId: getActivityLogs
+      tags:
+      - Activity Logs
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ActivityRequest"
+            example:
+              InputFields:
+                end_date: "2025-08-25T15:00:00Z"
+                start_date: "2025-08-25T15:00:00Z"
+                page_number: 0
+                page_size: 0
+                filter_string: "logevent = ''Credential'' and type in  (''Add Face'',''Delete Face'',''Import Face'')"
+              # PaginationFields:
+              #   page_number: 0
+              #   page_size: 0
+              SortFields:
+                createdat: "desc"
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Success
+                  data:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        example: 10
+                      results:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/ActivityLogResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/ActivityLogResponseExample"
+
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Groups not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: Bad gateway
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  securitySchemes:
+    AuthToken:
+      type: http
+      scheme: bearer
+  schemas:
+    ActivityLogResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        tenantid:
+          type: string
+          example: "02D051B208C2460F"
+          nullable: false
+        tenantname:
+          type: string
+          example: "test"
+          nullable: false
+        createdat:
+          type: string
+          format: date-time
+          example: "2025-11-13T11:43:43.136Z"
+          nullable: false
+        updatedat:
+          type: string
+          format: date-time
+          example: "2025-11-13T11:43:43.342Z"
+          nullable: false
+        logid:
+          type: string
+          example: "01794200-c086-11f0-b262-791e0a452d13"
+          nullable: false
+        type:
+          type: string
+          example: "ServiceOperator Login"
+          nullable: false
+        logevent:
+          type: string
+          example: "Login"
+          nullable: false
+        details:
+          type: object
+          nullable: true
+          properties:
+            tenant:
+              type: string
+              example: "test"
+              nullable: false
+            userName:
+              type: string
+              example: "svc-ba229720bfaa11f09bcdcd4518d7e077"
+              nullable: false
+        category:
+          type: string
+          example: "INFO"
+          nullable: false
+        logepoch:
+          type: string
+          example: "1763034223136"
+          nullable: false
+        description:
+          type: string
+          example: "ServiceOperator Login success"
+          nullable: false
+        additional_cols:
+          type: object
+          nullable: true
+          example: "null"
+        userid:
+          type: string
+          nullable: true
+          example: "null"
+        username:
+          type: string
+          example: "svc-ba229720bfaa11f09bcdcd4518d7e077"
+          nullable: false
+        source:
+          type: string
+          nullable: true
+          example: "null"
+        useragent:
+          type: string
+          example: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+          nullable: false
+        host:
+          type: string
+          example: "c0ty75aoh4.execute-api.us-east-2.amazonaws.com"
+          nullable: false
+        ipaddress:
+          type: string
+          example: "15.158.42.136"
+          nullable: false
+        last_synced:
+          type: string
+          format: date-time
+          example: "2025-11-13T11:43:43.000Z"
+          nullable: false
+        dynamo_source_table:
+          type: string
+          example: "test-02D051B208C2460F-activitylogs"
+          nullable: false
+        isnative:
+          type: boolean
+          example: false
+          nullable: false
+        modifiedby:
+          type: object
+          example: {}
+          nullable: true
+        targetuser:
+          type: string
+          nullable: true
+          example: "null"
+        endpointid:
+          type: string
+          nullable: true
+          example: "null"
+        applicationid:
+          type: string
+          nullable: true
+          example: "null"
+        applicationname:
+          type: string
+          nullable: true
+          example: "null"
+        requesttype:
+          type: string
+          example: "ActivityLog"
+          nullable: false
+        snapshot:
+          type: object
+          nullable: true
+          example: "null"
+        areaid:
+          type: string
+          nullable: true
+          example: "null"
+        areaname:
+          type: string
+          nullable: true
+          example: "null"
+        buildingname:
+          type: string
+          nullable: true
+          example: "null"
+        connectiongroupid:
+          type: string
+          nullable: true
+          example: "null"
+        connectiongroupname:
+          type: string
+          nullable: true
+          example: "null"
+        connectionid:
+          type: string
+          nullable: true
+          example: "null"
+        credentialformatid:
+          type: string
+          nullable: true
+          example: "null"
+        credentialid:
+          type: string
+          nullable: true
+          example: "null"
+        credentialname:
+          type: string
+          nullable: true
+          example: "null"
+        documentname:
+          type: string
+          nullable: true
+          example: "null"
+        endpointname:
+          type: string
+          nullable: true
+          example: "null"
+        endpointtemplateid:
+          type: string
+          nullable: true
+          example: "null"
+        endpointtemplatename:
+          type: string
+          nullable: true
+          example: "null"
+        endpointtype:
+          type: string
+          nullable: true
+          example: "null"
+        groupid:
+          type: string
+          nullable: true
+          example: "null"
+        groupname:
+          type: string
+          nullable: true
+          example: "null"
+        idpid:
+          type: string
+          nullable: true
+          example: "null"
+        idpname:
+          type: string
+          nullable: true
+          example: "null"
+        locationid:
+          type: string
+          nullable: true
+          example: "null"
+        locationname:
+          type: string
+          nullable: true
+          example: "null"
+        mfaid:
+          type: string
+          nullable: true
+          example: "null"
+        mfaidid:
+          type: string
+          nullable: true
+          example: "null"
+        mfaname:
+          type: string
+          nullable: true
+          example: "null"
+        reportid:
+          type: string
+          nullable: true
+          example: "null"
+        reportname:
+          type: string
+          nullable: true
+          example: "null"
+        settingtype:
+          type: string
+          nullable: true
+          example: "null"
+        templateid:
+          type: string
+          nullable: true
+          example: "null"
+        templatename:
+          type: string
+          nullable: true
+          example: "null"
+        credentialformatname:
+          type: string
+          nullable: true
+          example: "null"
+        buildingid:
+          type: string
+          nullable: true
+          example: "null"
+
+    ActivityRequest:
+      type: object
+      properties:
+        InputFields:
+          type: object
+          properties:
+            end_date:
+              type: string
+              format: date-time
+              nullable: false
+            start_date:
+              type: string
+              format: date-time
+              nullable: false
+            page_number:
+              type: integer
+              nullable: false
+            page_size:
+              type: integer
+              nullable: false
+            filter_string:
+              type: string
+              nullable: false
+        # PaginationFields:
+        #   type: object
+        #   properties:
+        #     page_number:
+        #       type: integer
+        #       nullable: false
+        #     page_size:
+        #       type: integer
+        #       nullable: false
+        SortFields:
+          type: object
+          properties:
+            createdat:
+              type: string
+              nullable: false
+
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+  examples:
+    BadRequestExample:
+      value:
+        status: "400"
+        message: "Bad Request"
+
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+
+    NotFoundExample:
+      value:
+        status: "404"
+        message: "Not Found"
+
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: "Internal Server Error - Server encountered an unexpected condition"
+
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+
+    ActivityLogResponseExample:
+      summary: Example of a single activity log record
+      value:
+        message: "Success"
+        data:
+          count: 1
+          results:
+          - tenantid: "02D051B208C2460F"
+            tenantname: "test"
+            createdat: "2025-11-13T11:43:43.136Z"
+            updatedat: "2025-11-13T11:43:43.342Z"
+            logid: "01794200-c086-11f0-b262-791e0a452d13"
+            type: "ServiceOperator Login"
+            logevent: "Login"
+            details:
+              tenant: "test"
+              userName: "svc-ba229720bfaa11f09bcdcd4518d7e077"
+            category: "INFO"
+            logepoch: "1763034223136"
+            description: "ServiceOperator Login success"
+            additional_cols:
+            userid: "null"
+            username: "svc-ba229720bfaa11f09bcdcd4518d7e077"
+            source: "null"
+            useragent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+            host: "c0ty75aoh4.execute-api.us-east-2.amazonaws.com"
+            ipaddress: "15.158.42.136"
+            last_synced: "2025-11-13T11:43:43.000Z"
+            dynamo_source_table: "test-02D051B208C2460F-activitylogs"
+            isnative: false
+            modifiedby: {}
+            targetuser: "null"
+            endpointid: "null"
+            applicationid: "null"
+            applicationname: "null"
+            requesttype: "ActivityLog"
+            snapshot:
+            areaid: "null"
+            areaname: "null"
+            buildingname: "null"
+            connectiongroupid: "null"
+            connectiongroupname: "null"
+            connectionid: "null"
+            credentialformatid: "null"
+            credentialid: "null"
+            credentialname: "null"
+            documentname: "null"
+            endpointname: "null"
+            endpointtemplateid: "null"
+            endpointtemplatename: "null"
+            endpointtype: "null"
+            groupid: "null"
+            groupname: "null"
+            idpid: "null"
+            idpname: "null"
+            locationid: "null"
+            locationname: "null"
+            mfaid: "null"
+            mfaidid: "null"
+            mfaname: "null"
+            reportid: "null"
+            reportname: "null"
+            settingtype: "null"
+            templateid: "null"
+            templatename: "null"
+            credentialformatname: "null"
+            buildingid: "null"
+security:
+- AuthToken: []
+tags:
+- name: Activity Logs
+  description: Scoped activity log queries.

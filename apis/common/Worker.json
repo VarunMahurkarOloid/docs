@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "Confidence": {
+      "type": "number",
+      "nullable": true
+    },
+    "FaceDescriptor": {
+      "type": "string",
+      "nullable": true
+    },
+    "FaceModelVersion": {
+      "type": "string",
+      "nullable": true
+    },
+    "descriptor": {
+      "type": "string",
+      "nullable": true
+    },
+    "id": {
+      "type": "string",
+      "nullable": true
+    },
+    "Enabled": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Url": {
+      "type": "string",
+      "nullable": true
+    },
+    "returnUrl": {
+      "type": "string",
+      "nullable": true
+    },
+    "section": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

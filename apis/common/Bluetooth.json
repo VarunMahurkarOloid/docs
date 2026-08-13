@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "nullable": true,
+  "additionalProperties": false,
+  "properties": {
+    "CreatedOn": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": false
+    },
+    "CredentialID": {
+      "type": "string",
+      "nullable": false
+    },
+    "IsEncrypted": {
+      "type": "boolean",
+      "nullable": false
+    },
+    "TokenData": {
+      "type": "string",
+      "nullable": true
+    },
+    "RawToken": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "Status": {
+      "type": "string",
+      "enum": ["ACTIVE"],
+      "nullable": false
+    },
+    "Token": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "ValidityEnd": {
+      "type": "integer",
+      "nullable": false
+    },
+    "ValidityStart": {
+      "type": "integer",
+      "nullable": false
+    }
+  }
+}

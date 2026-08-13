@@ -1,0 +1,3062 @@
+openapi: 3.0.3
+info:
+  title: Login Documentation
+  version: 1.0.0
+  description: API documentation for managing Login.
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://api.oloidpreview.com
+paths:
+  /login:
+    post:
+      summary: Login to receive Cognito tokens and user data.
+      description: Authenticate the user and return tokens including IDToken, AccessToken, and RefreshToken.
+      operationId: login
+      tags:
+      - Login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+            example:
+              UserName: johndoe@oloid.ai
+              TenantName: preview
+              Password: MySecretPass123
+      responses:
+        "200":
+          description: Successfully authenticated. Returns Cognito tokens (AccessToken, IdToken, RefreshToken) and user data.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/LoginExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+  /federated-logins/google:
+    post:
+      summary: Login via google.
+      description: Authenticate the user and return tokens including IDToken, AccessToken, and RefreshToken.
+      operationId: googleLogin
+      tags:
+      - Login
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FederatedLoginRequest"
+            example:
+              TenantName: preview
+              Token: eyJraWQiOiJKZ...
+      responses:
+        "200":
+          description: Successfully authenticated. Returns Cognito tokens (AccessToken, IdToken, RefreshToken) and user data.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FederatedLoginResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/FederatedLoginExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: Does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  schemas:
+    Users:
+      type: object
+      additionalProperties: false
+      properties:
+        1WinPassword:
+          type: string
+          nullable: true
+        1WinUserName:
+          type: string
+          nullable: true
+        Attributes:
+          type: array
+          items:
+            type: object
+            properties:
+              Name:
+                type: string
+                nullable: true
+              Value:
+                type: string
+                nullable: true
+            nullable: true
+          nullable: true
+        AccessLevelGroup:
+          type: boolean
+          nullable: true
+        AlternateEmails:
+          type: array
+          items:
+            type: string
+            format: email
+            nullable: true
+          nullable: true
+        AppCustomData:
+          type: string
+          nullable: true
+        ApplicationID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          minLength: 32
+          maxLength: 32
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          nullable: false
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/Application'
+        AuthHeader:
+          type: string
+          nullable: true
+        AzurePassword:
+          type: string
+          nullable: true
+        AzureUserName:
+          type: string
+          nullable: true
+        BadgeBinary:
+          type: string
+          nullable: true
+        Bluetooth:
+          $ref: '#/components/schemas/Bluetooth'
+        ChallengeCodeCreatedOn:
+          type: integer
+          nullable: true
+        ChallengeCodeExpiry:
+          type: string
+          format: date-time
+          nullable: true
+        ClearAllLog:
+          type: boolean
+          nullable: true
+        CloudKey:
+          $ref: '#/components/schemas/Cloudkey'
+        CognitoRole:
+          type: string
+          nullable: true
+        Confidence:
+          type: number
+          nullable: true
+        ConnectionDisplayName:
+          type: string
+          minLength: 2
+          nullable: false
+        ConnectionGroupID:
+          type: string
+          nullable: true
+        ConnectionID:
+          type: string
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        ConnectionName:
+          type: string
+          minLength: 2
+          nullable: true
+        ConsentDenied:
+          type: boolean
+          nullable: true
+        ConsentDeniedTime:
+          type: string
+          format: date-time
+          nullable: true
+        ConsentMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsentMetadata'
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        CredentialFormatID:
+          type: string
+          nullable: true
+        CredentialFormatName:
+          type: string
+          nullable: true
+        CredentialMetadata:
+          $ref: '#/components/schemas/CredentialMetadata'
+        DebugTransactionExpiry:
+          type: integer
+          nullable: true
+        DeviceType:
+          type: string
+          nullable: true
+        DisplayName:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          format: email
+          nullable: true
+        Enabled:
+          type: boolean
+          nullable: true
+        EnableDesktopNotification:
+          type: boolean
+          nullable: true
+        EndpointName:
+          type: string
+          nullable: true
+        EndpointType:
+          type: string
+          nullable: true
+        ExternalID1:
+          type: string
+          nullable: true
+        ExternalUsername:
+          type: string
+          nullable: true
+        FaceDescriptor:
+          type: string
+          nullable: true
+        Faces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Face'
+        FirstName:
+          type: string
+          nullable: true
+        FullName:
+          type: string
+          nullable: true
+        GetBatteryInfo:
+          type: boolean
+          nullable: true
+        GroupOnlineModelFaceID:
+          type: string
+          nullable: true
+        Groups:
+          type: array
+          items:
+            type: string
+            pattern: ^[a-fA-F0-9]{32}$
+            minLength: 32
+            maxLength: 32
+            nullable: false
+            description: Group ID reference
+        IDSearch1:
+          type: string
+          nullable: true
+          description: Searchable badge or card value. Sending a number is rejected by the store.
+          example: '0112345678'
+        IDSearch2:
+          type: string
+          nullable: true
+        IDVerification:
+          type: string
+          nullable: true
+        LastName:
+          type: string
+          nullable: true
+        LogUploadTime:
+          type: integer
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        OloID:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        OloidVaultCredentials:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        OndeviceModel:
+          type: string
+          nullable: true
+        PasskeyCredentials:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        Phone:
+          type: string
+          nullable: true
+        Pin:
+          type: string
+          nullable: true
+        PreferredLanguage:
+          type: string
+          nullable: true
+        PrimaryFace:
+          type: string
+          nullable: true
+        PrimaryID:
+          type: string
+          nullable: false
+        QRCode:
+          $ref: '#/components/schemas/Qrcode'
+        Role:
+          type: string
+          nullable: true
+        Scopes:
+          type: array
+          items:
+            type: string
+            nullable: true
+        SearchField:
+          type: string
+        SecondaryID:
+          type: integer
+          nullable: true
+        SessionFeature:
+          type: string
+          nullable: true
+        Stability:
+          type: integer
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        Supervisor:
+          type: string
+          nullable: true
+        SupervisorEmail:
+          type: string
+          nullable: true
+        TemplateID:
+          type: string
+          nullable: true
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          nullable: false
+        Timezone:
+          type: string
+          nullable: true
+        TimeRule:
+          type: array
+          items:
+            $ref: '#/components/schemas/Timerule'
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        UserConsentProvided:
+          type: boolean
+          nullable: true
+        UserConsentStatus:
+          type: boolean
+          nullable: true
+        UserIntents:
+          $ref: '#/components/schemas/Intent'
+        UserMetadata:
+          $ref: '#/components/schemas/UserMetadata'
+        UserPasswords:
+          type: array
+          items:
+            type: string
+            nullable: true
+        UserStatus:
+          type: string
+          nullable: true
+        UserType:
+          type: string
+          nullable: true
+        WinPassword:
+          type: string
+          nullable: true
+        WinUserName:
+          type: string
+          nullable: true
+        importAs:
+          type: string
+          nullable: true
+        UserCreateDate:
+          type: string
+          format: date-time
+          nullable: true
+        UserLastModifiedDate:
+          type: string
+          format: date-time
+          nullable: true
+        Username:
+          type: string
+          nullable: true
+        Vaccination:
+          type: string
+          nullable: true
+        Message:
+          type: string
+          nullable: true
+        Success:
+          type: boolean
+          nullable: true
+    FederatedLoginRequest:
+      type: object
+      properties:
+        TenantName:
+          type: string
+          nullable: false
+        Token:
+          type: string
+          nullable: false
+    FederatedLoginResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        message:
+          type: string
+          nullable: false
+        data:
+          $ref: "#/components/schemas/FederatedLoginResponseData"
+    FederatedLoginResponseData:
+      type: object
+      properties:
+        User:
+          $ref: "#/components/schemas/Users"
+        CognitoToken:
+          type: string
+          nullable: false
+        RefreshToken:
+          type: string
+          nullable: false
+        ExpiresIn:
+          type: number
+          nullable: false
+    LoginRequest:
+      type: object
+      additionalProperties: false
+      required:
+      - UserName
+      - TenantName
+      - Password
+      properties:
+        UserName:
+          type: string
+          nullable: false
+          description: Username used to login.
+          example: johndoe@oloid.ai
+        TenantName:
+          type: string
+          nullable: false
+          description: Name of the tenant associated with the user.
+          example: preview
+        Password:
+          type: string
+          format: password
+          nullable: false
+          description: Password associated with the username.
+          example: MySecretPass123
+    LoginResponse:
+      title: Tenant Login Response Schema
+      type: object
+      additionalProperties: false
+      required:
+      - cognitoToken
+      - user
+      properties:
+        cognitoToken:
+          $ref: "#/components/schemas/CognitoToken"
+        user:
+          $ref: "#/components/schemas/UserInfo"
+    CognitoToken:
+      type: object
+      additionalProperties: false
+      required:
+      - $metadata
+      - AuthenticationResult
+      - ChallengeParameters
+      properties:
+        $metadata:
+          $ref: "#/components/schemas/MetaData"
+        AuthenticationResult:
+          $ref: "#/components/schemas/AuthenticationResult"
+        ChallengeParameters:
+          $ref: "#/components/schemas/ChallengeParams"
+    MetaData:
+      type: object
+      additionalProperties: false
+      required:
+      - httpStatusCode
+      - requestId
+      - attempts
+      - totalRetryDelay
+      properties:
+        httpStatusCode:
+          type: integer
+          description: This is the HTTP status code
+          example: 200
+          nullable: false
+        requestId:
+          type: string
+          description: This is requestId
+          example: 6607dfa0-4c7c-4d58-9393-08df997d9c0
+          nullable: false
+        attempts:
+          type: integer
+          description: This is the attempts count
+          example: 3
+          nullable: false
+        totalRetryDelay:
+          type: integer
+          description: This is the total retry delay count
+          example: 0
+          nullable: false
+    AuthenticationResult:
+      type: object
+      additionalProperties: false
+      required:
+      - AccessToken
+      - IdToken
+      - RefreshToken
+      - ExpiresIn
+      - TokenType
+      properties:
+        AccessToken:
+          type: string
+          description: The access token issued by Cognito.
+          format: jwt
+          example: eyJraWQiOiJKZ...
+          nullable: false
+        IdToken:
+          type: string
+          description: The ID token issued by Cognito.
+          format: jwt
+          example: eyJraWQiOiJGSl...
+          nullable: false
+        RefreshToken:
+          type: string
+          description: The refresh token used to obtain new tokens.
+          format: jwt
+          example: eyJjdHkiOiJKV1...
+          nullable: false
+        ExpiresIn:
+          type: integer
+          description: Expiration time in seconds for the token.
+          example: 3600
+          nullable: false
+        TokenType:
+          type: string
+          description: The type of token issued.
+          example: Bearer
+          nullable: false
+    ChallengeParams:
+      type: object
+      additionalProperties: true
+      description: Challenge parameters returned by Cognito, usually empty if authentication succeeds.
+      nullable: true
+      example: {}
+    UserInfo:
+      type: object
+      additionalProperties: false
+      required:
+      - OloID
+      - TenantID
+      - TenantName
+      properties:
+        OloID:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          description: The name of the tenant.
+          minLength: 2
+          example: preview
+          nullable: false
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+    UserMetadata:
+      type: object
+      additionalProperties: false
+      properties:
+        AttendanceIndicator:
+          type: boolean
+          nullable: true
+        BadgeBinary:
+          type: string
+          nullable: true
+        BadgeID:
+          type: integer
+          nullable: true
+        BadgeLostStatus:
+          type: string
+          nullable: true
+        BadgeReaderNotification:
+          type: boolean
+          nullable: true
+        BadgeType:
+          type: string
+          nullable: true
+        CustomField1:
+          type: string
+          nullable: true
+        CustomField2:
+          type: string
+          nullable: true
+        DepartmentCode:
+          type: string
+          nullable: true
+        DepartmentName:
+          type: string
+          nullable: true
+        HomeState:
+          $ref: '#/components/schemas/Worker'
+        IsManager:
+          type: boolean
+          nullable: true
+        Location:
+          type: string
+          nullable: true
+        LocationName:
+          type: string
+          nullable: true
+        ManagerID:
+          type: integer
+          nullable: true
+        ManagerName:
+          type: string
+          nullable: true
+        MiddleName:
+          type: string
+          nullable: true
+        NFCLostStatus:
+          type: string
+          nullable: true
+        OrganizationOID:
+          type: string
+          nullable: true
+        PayRateType:
+          $ref: '#/components/schemas/Worker'
+        PostAuthSurvey:
+          $ref: '#/components/schemas/PostAuthsurvey'
+        SupervisorId:
+          type: string
+          nullable: true
+        SupervisoryOrganization:
+          $ref: '#/components/schemas/Worker'
+        SupervisoryOrganizationID:
+          type: string
+          nullable: true
+        TimeEntryTemplate:
+          type: string
+          nullable: true
+        TimeKeeper:
+          $ref: '#/components/schemas/Worker'
+        WorkState:
+          type: string
+          nullable: true
+        Worker:
+          $ref: '#/components/schemas/Worker'
+        WorkerID:
+          type: string
+          nullable: true
+        accountExpires:
+          type: integer
+          nullable: true
+        badPasswordTime:
+          type: integer
+          nullable: true
+        badPwdCount:
+          type: integer
+          nullable: true
+        cn:
+          type: string
+          nullable: true
+        codePage:
+          type: integer
+          nullable: true
+        company:
+          type: string
+          nullable: true
+        costCenter:
+          type: string
+          nullable: true
+        costCenter_id:
+          type: string
+          nullable: true
+        countryCode:
+          type: integer
+          nullable: true
+        dSCorePropagationData:
+          type: array
+          items:
+            type: string
+            nullable: true
+        department:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        distinguishedName:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          format: email
+          nullable: true
+        employeeID:
+          type: string
+          nullable: true
+        employeeNumber:
+          type: integer
+          nullable: true
+        employeeType:
+          type: array
+          items:
+            $ref: '#/components/schemas/Worker'
+        firstName:
+          type: string
+          nullable: true
+        givenName:
+          type: string
+          nullable: true
+        instanceType:
+          type: integer
+          nullable: true
+        lastLogoff:
+          type: integer
+          nullable: true
+        lastLogon:
+          type: integer
+          nullable: true
+        lastName:
+          type: string
+          nullable: true
+        location_id:
+          type: string
+          nullable: true
+        logonCount:
+          type: integer
+          nullable: true
+        logonHours:
+          type: string
+          nullable: true
+        mS-DS-ConsistencyGuid:
+          type: string
+          nullable: true
+        mail:
+          type: string
+          nullable: true
+        memberOf:
+          type: string
+          nullable: true
+        mobile:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        objectCategory:
+          type: string
+          nullable: true
+        objectClass:
+          type: array
+          items:
+            type: string
+            nullable: true
+        objectGUID:
+          type: string
+          nullable: true
+        objectSid:
+          type: string
+          nullable: true
+        phone:
+          type: string
+          nullable: true
+        physicalDeliveryOfficeName:
+          type: string
+          nullable: true
+        position:
+          type: string
+          nullable: true
+        positionsForWorker:
+          type: array
+          items:
+            $ref: '#/components/schemas/Worker'
+        primaryGroupID:
+          type: integer
+          nullable: true
+        pwdLastSet:
+          type: integer
+          nullable: true
+        sAMAccountName:
+          type: string
+          nullable: true
+        sAMAccountType:
+          type: integer
+          nullable: true
+        sn:
+          type: string
+          nullable: true
+        telephoneNumber:
+          type: string
+          nullable: true
+        timeType:
+          type: string
+          nullable: true
+        timezone:
+          type: string
+          format: date-time
+          nullable: true
+        timezone_id:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        totalPositions:
+          type: integer
+          nullable: true
+        uSNChanged:
+          type: integer
+          nullable: true
+        uSNCreated:
+          type: integer
+          nullable: true
+        userAccountControl:
+          type: integer
+          nullable: true
+        userPrincipalName:
+          type: string
+          nullable: true
+        whenChanged:
+          type: string
+          nullable: true
+        whenCreated:
+          type: string
+          nullable: true
+        workerHasPhoto:
+          type: boolean
+          nullable: true
+        workerTimeCodeGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Worker'
+        Wtcg:
+          type: object
+          properties:
+            timeEntryCodes:
+              type: array
+              items:
+                $ref: '#/components/schemas/Worker'
+    PostAuthsurvey:
+      type: object
+      additionalProperties: false
+      properties:
+        ConductSurvey:
+          type: boolean
+          nullable: true
+        Questions:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Question'
+    Question:
+      type: object
+      additionalProperties: false
+      properties:
+        ChoiceList:
+          type: array
+          items:
+            $ref: '#/components/schemas/Choicelist'
+        QuestionID:
+          type: integer
+          nullable: true
+        Show:
+          type: boolean
+          nullable: true
+        Title:
+          type: string
+          nullable: true
+    Choicelist:
+      type: object
+      additionalProperties: false
+      properties:
+        AdditionalInfo:
+          type: object
+          nullable: true
+          additionalProperties:
+            type: string
+            nullable: true
+        ChoiceID:
+          type: integer
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+    Worker:
+      type: object
+      additionalProperties: false
+      properties:
+        Confidence:
+          type: number
+          nullable: true
+        FaceDescriptor:
+          type: string
+          nullable: true
+        FaceModelVersion:
+          type: string
+          nullable: true
+        descriptor:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        Enabled:
+          type: boolean
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+        returnUrl:
+          type: string
+          nullable: true
+        section:
+          type: string
+          nullable: true
+    Intent:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        UserInitiatedUnlock:
+          type: string
+          nullable: true
+        AutoUnlock:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        WriteRssi:
+          type: integer
+          nullable: true
+        IntentType:
+          type: string
+          nullable: true
+        DepartmentCode:
+          type: string
+          nullable: true
+        Department:
+          type: string
+          nullable: true
+        IntentValue:
+          type: string
+          nullable: true
+        DepartmentID:
+          type: integer
+          nullable: true
+        ClockID:
+          type: string
+          nullable: true
+        AllowEndpointIntent:
+          type: boolean
+          nullable: true
+        HideAutoUnlockSettings:
+          type: boolean
+          nullable: true
+        Label:
+          type: string
+          nullable: true
+        Value:
+          type: string
+          nullable: true
+        isEnabled:
+          type: string
+          nullable: true
+    Timerule:
+      type: object
+      additionalProperties: false
+      properties:
+        LocationID:
+          type: string
+          nullable: false
+        LocationName:
+          type: string
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        RuleType:
+          type: string
+          nullable: true
+        SettingType:
+          type: string
+          nullable: true
+    Qrcode:
+      type: object
+      additionalProperties: false
+      properties:
+        DyanamicCode:
+          $ref: '#/components/schemas/Cloudkey'
+        PermanentCode:
+          $ref: '#/components/schemas/Cloudkey'
+    Face:
+      type: object
+      additionalProperties: false
+      properties:
+        CaptureDate:
+          type: string
+          format: date-time
+          nullable: true
+        FaceID:
+          type: string
+          nullable: true
+        ModelPVData:
+          $ref: '#/components/schemas/Worker'
+        OnlineModelFaceID:
+          type: string
+          nullable: true
+        SignedUrl:
+          type: string
+          format: url
+          nullable: true
+        ReferenceImageURL:
+          type: string
+          format: url
+          nullable: true
+        Stability:
+          type: integer
+          nullable: true
+        BodyHTML:
+          type: string
+          nullable: true
+        SmsBody:
+          type: string
+          nullable: true
+        Subject:
+          type: string
+          nullable: true
+        ReturnPath:
+          type: string
+          nullable: false
+        QueryParams:
+          $ref: '#/components/schemas/Worker'
+        Recipients:
+          type: string
+          nullable: true
+        EmailBody:
+          type: string
+          nullable: true
+        SendOnlySms:
+          type: boolean
+          nullable: true
+        SmsRecipients:
+          type: string
+          nullable: true
+        LoginUrl:
+          type: string
+          nullable: true
+        httpStatusCode:
+          type: integer
+          nullable: false
+        requestId:
+          type: string
+          nullable: true
+          minLength: 32
+          maxLength: 32
+        attempts:
+          type: integer
+          nullable: true
+        totalRetryDelay:
+          type: number
+          nullable: true
+    CredentialMetadata:
+      type: object
+      additionalProperties: false
+      properties:
+        BadgeBinary:
+          $ref: '#/components/schemas/CredentialStatus'
+        Face:
+          $ref: '#/components/schemas/CredentialStatus'
+        Pin:
+          $ref: '#/components/schemas/CredentialStatus'
+        QRCode:
+          $ref: '#/components/schemas/CredentialStatus'
+    CredentialStatus:
+      type: object
+      additionalProperties: false
+      properties:
+        DateCreated:
+          type: string
+          format: date-time
+          nullable: true
+        LastUpdated:
+          type: string
+          format: date-time
+          nullable: true
+        LockedUntil:
+          type: integer
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+    ConsentMetadata:
+      type: object
+      additionalProperties: false
+      properties:
+        CaptureUrl:
+          type: string
+          nullable: false
+        ConsentFormTitle:
+          type: string
+          nullable: false
+        ConsentID:
+          type: string
+          nullable: false
+        LegalDocuments:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        Name:
+          type: string
+          nullable: false
+        OloID:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        Scope:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        TemplateID:
+          type: string
+          nullable: false
+        TemplateVersion:
+          type: number
+          nullable: false
+        Timestamp:
+          type: string
+          format: date-time
+          nullable: false
+    Cloudkey:
+      type: object
+      additionalProperties: false
+      properties:
+        ActiveEndpoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/Endpoint'
+        ChallengeCode:
+          type: string
+          nullable: false
+        CreatedOn:
+          type: string
+          format: date-time
+          nullable: false
+        Expiry:
+          type: number
+          nullable: true
+        Image:
+          type: string
+          nullable: true
+    Endpoint:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        Address:
+          $ref: '#/components/schemas/Address'
+        AdminOnly:
+          type: boolean
+          nullable: true
+        AgentAutoUpdate:
+          $ref: '#/components/schemas/Autoupdate'
+        AgentLastSyncTime:
+          type: string
+          nullable: true
+        AlertTransactions:
+          type: array
+          nullable: true
+          items:
+            type: string
+        AllowIndividualCredentials:
+          type: boolean
+          nullable: true
+        ApiBaseUrl:
+          type: string
+          nullable: true
+        AppBuildNumber:
+          type: string
+          nullable: true
+        AppOrientation:
+          type: object
+          nullable: true
+          additionalProperties: false
+        AppVersionNumber:
+          type: number
+          nullable: true
+        ApplicationID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          maxLength: 32
+          minLength: 32
+          nullable: false
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+        ApplicationName:
+          type: string
+          minLength: 3
+          nullable: true
+        ApplicationType:
+          type: string
+          nullable: false
+          enum:
+          - Oloid Verify
+          - Generic
+          - Passwordless
+          example: Oloid Verify
+        AreaID:
+          type: string
+          nullable: true
+        AuthHeader:
+          type: string
+          nullable: true
+        AutoUnblockAfter:
+          type: integer
+          nullable: true
+        BuildingID:
+          type: string
+          nullable: true
+        CaptureLocation:
+          type: boolean
+          nullable: true
+        ClearAllLog:
+          type: boolean
+          nullable: true
+        CloudKeyURL:
+          type: string
+          nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        DebugLogType:
+          type: string
+          nullable: true
+        DebugLogs:
+          type: boolean
+          nullable: true
+        Description:
+          type: string
+          nullable: true
+        DeviceOS:
+          type: string
+          nullable: true
+        DeviceType:
+          type: string
+          nullable: true
+        DisableLiveliness:
+          type: boolean
+          nullable: true
+        DomainUserPasswordsForAllMachines:
+          type: boolean
+          nullable: true
+        DoorID:
+          type: string
+          nullable: true
+        DownloadOneFace:
+          type: boolean
+          nullable: true
+        Email:
+          type: string
+          format: email
+          nullable: true
+        EnableHealthAlerts:
+          type: boolean
+          nullable: true
+        EnableLogUpload:
+          type: boolean
+          nullable: true
+        EnableOnScreenKeyboard:
+          type: boolean
+          nullable: true
+        EndpointAutoUpdate:
+          $ref: '#/components/schemas/Autoupdate'
+        EndpointBlockReason:
+          type: string
+          nullable: true
+        EndpointConfigFile:
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+          nullable: true
+        EndpointHealthAlertRecipients:
+          type: array
+          nullable: true
+        EndpointID:
+          type: string
+          pattern: ^[a-zA-Z0-9]{6}$
+          minLength: 6
+          maxLength: 6
+          nullable: false
+        EndpointLocation:
+          $ref: '#/components/schemas/Address'
+        EndpointName:
+          type: string
+          minLength: 3
+          nullable: false
+        EndpointState:
+          type: integer
+          nullable: true
+        EndpointTemplateID:
+          type: string
+          nullable: true
+        EndpointTemplateName:
+          type: string
+          nullable: true
+        EndpointVersion:
+          type: integer
+          nullable: true
+        EnpointsIntents:
+          $ref: '#/components/schemas/Intent'
+        Environment:
+          type: string
+          nullable: true
+        FetchDescriptors:
+          type: boolean
+          nullable: true
+        FirebaseUserId:
+          type: string
+          nullable: true
+        Flows:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Flow'
+        FourButtonIntent:
+          $ref: '#/components/schemas/Button'
+        Groups:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Group'
+        HealthAlertFrequency:
+          type: integer
+          nullable: true
+        HostName:
+          type: string
+          nullable: true
+        IPAddress:
+          type: string
+          format: ipv4
+          nullable: true
+        IPAddresses:
+          type: array
+          nullable: true
+          items:
+            type: string
+        InactiveEndpoint:
+          type: boolean
+          nullable: true
+        InstanceType:
+          type: string
+          nullable: true
+        Integrations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Integration'
+        LocationID:
+          type: string
+          nullable: true
+        LogConfig:
+          $ref: '#/components/schemas/Configuration'
+        LogUploadTime:
+          type: integer
+          nullable: true
+        MacAddress:
+          type: string
+          nullable: true
+        MachineName:
+          type: string
+          nullable: true
+        ModelNumber:
+          type: string
+          nullable: true
+        OSVersion:
+          type: string
+          nullable: true
+        PasskeyConfig:
+          type: object
+          nullable: true
+          additionalProperties: false
+        Password:
+          type: string
+          nullable: true
+        PreviewHomePage:
+          type: string
+          nullable: true
+        SecretID:
+          type: string
+          nullable: true
+        SharedCredentials:
+          type: array
+          nullable: true
+          items:
+            type: string
+        SharedPasskeys:
+          type: array
+          nullable: true
+          items:
+            type: string
+        Status:
+          type: string
+          nullable: true
+        StickerMACAddress:
+          type: string
+          nullable: true
+        StickerUUID:
+          type: string
+          nullable: true
+        Tags:
+          type: string
+          nullable: true
+        TemplateId:
+          type: string
+          nullable: true
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          nullable: true
+        TimeZone:
+          type: string
+          format: date-time
+          nullable: true
+        TwoButtonIntent:
+          $ref: '#/components/schemas/Button'
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+        UserCacheValidity:
+          type: integer
+          nullable: true
+        UserCredentials:
+          type: array
+          nullable: true
+          items:
+            type: string
+        IntegrationUrls:
+          type: string
+          nullable: true
+        UserID:
+          type: string
+          nullable: false
+        UserName:
+          type: string
+          nullable: true
+        UserPasskeys:
+          type: array
+          items:
+            type: string
+            nullable: true
+        Versions:
+          $ref: '#/components/schemas/Version'
+        WindowsLockConfig:
+          $ref: '#/components/schemas/Configuration'
+        CreatedOn:
+          type: integer
+          nullable: true
+        MonthCreated:
+          type: string
+          nullable: true
+        HealthCheckType:
+          type: string
+          nullable: true
+        RequestDateTime:
+          type: integer
+          nullable: true
+        RequestStatus:
+          type: string
+          nullable: true
+        RequestID:
+          type: string
+          nullable: true
+        ResponseDateTime:
+          type: integer
+          nullable: true
+        Timestamp:
+          type: integer
+          nullable: true
+        EndpointType:
+          type: string
+          enum:
+          - DeviceLock
+          - Windows Login
+          - OloidVault
+          - CloudKey
+          - M-Tag
+          - Oloid Connect
+          - Workflow
+          - Oloid Verify
+          - OloidWorkflow
+          - iPad
+          nullable: false
+        CoreConnectivity:
+          type: object
+          additionalProperties: false
+          nullable: true
+        TenantName1:
+          type: string
+          nullable: false
+        ActionID:
+          type: string
+          nullable: true
+        ActionTransaction:
+          type: object
+          additionalProperties: false
+          nullable: true
+        UpdatedOn:
+          type: number
+          nullable: true
+        IntegrationType:
+          type: string
+          nullable: true
+        IntegrationID:
+          type: string
+          nullable: true
+        TransactionID:
+          type: string
+          pattern: ^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$
+          maxLength: 36
+          minLength: 36
+          example: b57f2ce0-3a0a-11f0-bdc5-c15d5eb33b4b
+          nullable: false
+        PlatformActions:
+          type: object
+          additionalProperties: false
+          nullable: true
+        UpdatePlatformStatus:
+          type: boolean
+          nullable: true
+    Version:
+      type: object
+      nullable: true
+      additionalProperties: false
+      properties:
+        AdminApp:
+          type: string
+          nullable: true
+        Chrome:
+          type: string
+          nullable: true
+        CredentialProviderApp:
+          type: string
+          nullable: true
+        LoginApp:
+          type: string
+          nullable: true
+        OfflineServiceApp:
+          type: string
+          nullable: true
+        OloidEpicApp:
+          type: string
+          nullable: true
+        OloidSystemTrayApp:
+          type: string
+          nullable: true
+        PasswordlessInstaller:
+          type: string
+          nullable: true
+        WindowsAlertApp:
+          type: string
+          nullable: true
+        WindowsAlertServiceApp:
+          type: string
+          nullable: true
+        WaitForResponse:
+          type: boolean
+          nullable: true
+        WaitTimeInMilliseconds:
+          type: string
+          nullable: true
+        WebButton:
+          $ref: '#/components/schemas/Button'
+        WindowsLockConfig:
+          $ref: '#/components/schemas/Configuration'
+        WorkflowAccounts:
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Workflow'
+        WorkflowInstanceID:
+          type: string
+          nullable: true
+    Workflow:
+      type: object
+      nullable: true
+      additionalProperties: false
+      properties:
+        AccountID:
+          type: string
+          nullable: true
+        ApiKey:
+          type: string
+          nullable: true
+        ApplicationId:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          maxLength: 32
+          minLength: 32
+          nullable: false
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+        AuthEndpoint:
+          type: string
+          nullable: true
+        BaseDN:
+          type: string
+          nullable: true
+        ClientId:
+          type: string
+          nullable: true
+        ClientSecret:
+          type: string
+          nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        Credentials:
+          type: string
+          nullable: true
+        CustomerCode:
+          type: string
+          nullable: true
+        LastConnected:
+          type: string
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        OApiKey:
+          type: string
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        TenantId:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        Token:
+          type: string
+          nullable: true
+        TokenEndpoint:
+          type: string
+          nullable: true
+        Type:
+          type: string
+          nullable: true
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+        WorkStation:
+          type: string
+          nullable: true
+    Configuration:
+      type: object
+      additionalProperties: false
+      properties:
+        EnableActionOnMaxAttempt:
+          type: boolean
+          nullable: true
+        Length:
+          type: integer
+          nullable: true
+        EnablePinComplexity:
+          type: boolean
+          nullable: true
+        MaxPinAttemptsLimit:
+          type: integer
+          nullable: true
+        EnablePinEncryption:
+          type: boolean
+          nullable: true
+        PinType:
+          type: string
+          nullable: true
+        AlphaNumeric:
+          type: boolean
+          nullable: true
+        ActionDuration:
+          type: integer
+          nullable: true
+        AllowDuplicates:
+          type: boolean
+          nullable: true
+        EnableLogUpload:
+          type: boolean
+          nullable: true
+        TimeToBeUpload:
+          type: integer
+          nullable: true
+        AutoUnblock:
+          type: boolean
+          nullable: true
+        AutoUnblockAfter:
+          type: integer
+          nullable: true
+        CameraBlockDetected:
+          $ref: '#/components/schemas/FacecamDetected'
+        EnableCameraAlertNonOloid:
+          type: boolean
+          nullable: true
+        EnableWindowsAlertsForOloidUser:
+          type: boolean
+          nullable: true
+        EnableWindowsLockAlerts:
+          type: boolean
+          nullable: true
+        EnableWindowsNotificationToUser:
+          type: boolean
+          nullable: true
+        FaceTrackingViolation:
+          $ref: '#/components/schemas/FacecamDetected'
+        FrameProcessDelayTime:
+          type: integer
+          nullable: true
+        GadgetDetected:
+          $ref: '#/components/schemas/FacecamDetected'
+        GadgetSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        MultipleFaceDetected:
+          $ref: '#/components/schemas/FacecamDetected'
+        NonOloidLoginAlerts:
+          $ref: '#/components/schemas/FacecamDetected'
+    FacecamSetting:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        CameraBlockAlertAfter:
+          type: integer
+          nullable: true
+        CameraBlockCheckInterval:
+          type: integer
+          nullable: true
+        GadgetConfidence:
+          type: number
+          nullable: true
+        Suggestions:
+          type: string
+          nullable: true
+        FaceLandmarkMinConfidence:
+          type: number
+          nullable: true
+        MultipleFaceAlertAfter:
+          type: integer
+          nullable: true
+        NoFaceFoundAlertAfter:
+          type: integer
+          nullable: true
+        GadgetDetectedAlertAfter:
+          type: integer
+          nullable: true
+        GadgetMinConfidence:
+          type: number
+          nullable: true
+    FacecamDetected:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        Action:
+          type: string
+          nullable: true
+        CameraBlockSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        FaceTrackingSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        GadgetSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        MultipleFaceSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        Enable:
+          type: boolean
+          nullable: true
+        UseSecondaryModel:
+          type: boolean
+          nullable: true
+    Integration:
+      type: object
+      additionalProperties: false
+      properties:
+        PunchVerifyUrl:
+          type: string
+          format: uri
+          nullable: true
+        TimeZone:
+          type: string
+          nullable: true
+        KronosTimezoneCode:
+          type: integer
+          nullable: true
+        PunchTimeUrl:
+          type: string
+          format: uri
+          nullable: true
+        AuthKey:
+          type: string
+          nullable: true
+        IntegrationID:
+          type: string
+          nullable: true
+        AuthType:
+          type: string
+          enum:
+          - Firebase
+          - Bearer
+          nullable: true
+        IntegrationType:
+          type: string
+          nullable: true
+        URL:
+          type: string
+          format: uri
+          nullable: true
+        endpointName:
+          type: string
+          nullable: true
+        Token:
+          type: string
+          nullable: true
+        Method:
+          type: string
+          enum:
+          - GET
+          - POST
+          - PUT
+          - PATCH
+          - DELETE
+          nullable: true
+        descriptions:
+          type: string
+          nullable: true
+        UseAuth:
+          type: boolean
+          nullable: true
+        Username:
+          type: string
+          nullable: true
+        AllowBody:
+          type: boolean
+          nullable: true
+        Password:
+          type: string
+          format: password
+          nullable: true
+    Group:
+      type: object
+      additionalProperties: false
+      properties:
+        Description:
+          type: string
+          nullable: true
+        GroupID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          minLength: 32
+          maxLength: 32
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          nullable: false
+        GroupName:
+          type: string
+          nullable: true
+        Prefix:
+          type: string
+          nullable: true
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        Endpoints:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        Users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+          nullable: true
+        Stability:
+          type: integer
+          nullable: true
+    User:
+      type: object
+      additionalProperties: false
+      properties:
+        1WinPassword:
+          type: string
+          nullable: true
+        1WinUserName:
+          type: string
+          nullable: true
+        Attributes:
+          type: array
+          items:
+            type: object
+            properties:
+              Name:
+                type: string
+                nullable: true
+              Value:
+                type: string
+                nullable: true
+            nullable: true
+          nullable: true
+        AccessLevelGroup:
+          type: boolean
+          nullable: true
+        AlternateEmails:
+          type: array
+          items:
+            type: string
+            format: email
+            nullable: true
+          nullable: true
+        AppCustomData:
+          type: string
+          nullable: true
+        ApplicationID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          minLength: 32
+          maxLength: 32
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          nullable: false
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/Application'
+        AuthHeader:
+          type: string
+          nullable: true
+        AzurePassword:
+          type: string
+          nullable: true
+        AzureUserName:
+          type: string
+          nullable: true
+        BadgeBinary:
+          type: string
+          nullable: true
+        Bluetooth:
+          $ref: '#/components/schemas/Bluetooth'
+        ChallengeCodeCreatedOn:
+          type: integer
+          nullable: true
+        ChallengeCodeExpiry:
+          type: string
+          format: date-time
+          nullable: true
+        ClearAllLog:
+          type: boolean
+          nullable: true
+        CloudKey:
+          $ref: '#/components/schemas/Cloudkey'
+        CognitoRole:
+          type: string
+          nullable: true
+        Confidence:
+          type: number
+          nullable: true
+        ConnectionDisplayName:
+          type: string
+          minLength: 2
+          nullable: false
+        ConnectionGroupID:
+          type: string
+          nullable: true
+        ConnectionID:
+          type: string
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        ConnectionName:
+          type: string
+          minLength: 2
+          nullable: true
+        ConsentDenied:
+          type: boolean
+          nullable: true
+        ConsentDeniedTime:
+          type: string
+          format: date-time
+          nullable: true
+        ConsentMetadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsentMetadata'
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        CredentialFormatID:
+          type: string
+          nullable: true
+        CredentialFormatName:
+          type: string
+          nullable: true
+        CredentialMetadata:
+          $ref: '#/components/schemas/CredentialMetadata'
+        DebugTransactionExpiry:
+          type: integer
+          nullable: true
+        DeviceType:
+          type: string
+          nullable: true
+        DisplayName:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          format: email
+          nullable: true
+        Enabled:
+          type: boolean
+          nullable: true
+        EnableDesktopNotification:
+          type: boolean
+          nullable: true
+        EndpointName:
+          type: string
+          nullable: true
+        EndpointType:
+          type: string
+          nullable: true
+        ExternalID1:
+          type: string
+          nullable: true
+        ExternalUsername:
+          type: string
+          nullable: true
+        FaceDescriptor:
+          type: string
+          nullable: true
+        Faces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Face'
+        FirstName:
+          type: string
+          nullable: true
+        FullName:
+          type: string
+          nullable: true
+        GetBatteryInfo:
+          type: boolean
+          nullable: true
+        GroupOnlineModelFaceID:
+          type: string
+          nullable: true
+        Groups:
+          type: array
+          items:
+            type: string
+            pattern: ^[a-fA-F0-9]{32}$
+            minLength: 32
+            maxLength: 32
+            nullable: false
+            description: Group ID reference
+        IDSearch1:
+          type: string
+          nullable: true
+          description: Searchable badge or card value. Sending a number is rejected by the store.
+          example: '0112345678'
+        IDSearch2:
+          type: string
+          nullable: true
+        IDVerification:
+          type: string
+          nullable: true
+        LastName:
+          type: string
+          nullable: true
+        LogUploadTime:
+          type: integer
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        OloID:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        OloidVaultCredentials:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        OndeviceModel:
+          type: string
+          nullable: true
+        PasskeyCredentials:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        Phone:
+          type: string
+          nullable: true
+        Pin:
+          type: string
+          nullable: true
+        PreferredLanguage:
+          type: string
+          nullable: true
+        PrimaryFace:
+          type: string
+          nullable: true
+        PrimaryID:
+          type: string
+          nullable: false
+        QRCode:
+          $ref: '#/components/schemas/Qrcode'
+        Role:
+          type: string
+          nullable: true
+        Scopes:
+          type: array
+          items:
+            type: string
+            nullable: true
+        SearchField:
+          type: string
+        SecondaryID:
+          type: integer
+          nullable: true
+        SessionFeature:
+          type: string
+          nullable: true
+        Stability:
+          type: integer
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        Supervisor:
+          type: string
+          nullable: true
+        SupervisorEmail:
+          type: string
+          nullable: true
+        TemplateID:
+          type: string
+          nullable: true
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          nullable: false
+        Timezone:
+          type: string
+          nullable: true
+        TimeRule:
+          type: array
+          items:
+            $ref: '#/components/schemas/Timerule'
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        UserConsentProvided:
+          type: boolean
+          nullable: true
+        UserConsentStatus:
+          type: boolean
+          nullable: true
+        UserIntents:
+          $ref: '#/components/schemas/Intent'
+        UserMetadata:
+          $ref: '#/components/schemas/UserMetadata'
+        UserPasswords:
+          type: array
+          items:
+            type: string
+            nullable: true
+        UserStatus:
+          type: string
+          nullable: true
+        UserType:
+          type: string
+          nullable: true
+        WinPassword:
+          type: string
+          nullable: true
+        WinUserName:
+          type: string
+          nullable: true
+        importAs:
+          type: string
+          nullable: true
+        UserCreateDate:
+          type: string
+          format: date-time
+          nullable: true
+        UserLastModifiedDate:
+          type: string
+          format: date-time
+          nullable: true
+        Username:
+          type: string
+          nullable: true
+        Vaccination:
+          type: string
+          nullable: true
+        Message:
+          type: string
+          nullable: true
+        Success:
+          type: boolean
+          nullable: true
+    Button:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        Button1:
+          $ref: '#/components/schemas/Intent'
+        Button2:
+          $ref: '#/components/schemas/Intent'
+        Button3:
+          $ref: '#/components/schemas/Intent'
+        Button4:
+          $ref: '#/components/schemas/Intent'
+        Description:
+          type: string
+          nullable: true
+        Title:
+          type: string
+          nullable: true
+        AutoLaunch:
+          type: boolean
+          nullable: true
+        Show:
+          type: boolean
+          nullable: true
+        ShowOnlyOnAuth:
+          type: boolean
+          nullable: true
+        Timeout:
+          type: integer
+          nullable: true
+        URL:
+          type: string
+          nullable: true
+    Flow:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        Active:
+          type: boolean
+          nullable: true
+        CreatedOn:
+          type: string
+          format: date-time
+          nullable: true
+        FlowDescription:
+          type: string
+          nullable: true
+        FlowID:
+          type: string
+          nullable: true
+        FlowName:
+          type: string
+          nullable: true
+        FlowType:
+          type: string
+          nullable: true
+        NodeCount:
+          type: integer
+          nullable: true
+        UsedAccounts:
+          type: array
+          nullable: true
+          items:
+            type: string
+            pattern: ^[a-fA-F0-9]{32}$
+    Autoupdate:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        AutoUpdateDate:
+          type: string
+          nullable: true
+        AutoUpdateStartTime:
+          type: string
+          nullable: true
+        EnableAutoUpdate:
+          type: boolean
+          nullable: true
+        version:
+          type: string
+          nullable: true
+        CustomSchedule:
+          $ref: '#/components/schemas/Schedule'
+        Mode:
+          type: string
+          nullable: true
+    Schedule:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        EndTime:
+          type: string
+          nullable: true
+        RetryFrequency:
+          type: integer
+          nullable: true
+        RetryInterval:
+          type: integer
+          nullable: true
+        StartTime:
+          type: string
+          format: date-time
+          nullable: true
+        Version:
+          type: object
+          additionalProperties:
+            type: string
+            nullable: true
+          nullable: true
+    Address:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        FormattedAddress:
+          type: string
+          nullable: true
+        Lat:
+          type: number
+          nullable: true
+        Long:
+          type: number
+          nullable: true
+        locationFetchError:
+          type: string
+          nullable: true
+    Bluetooth:
+      type: object
+      nullable: true
+      additionalProperties: false
+      properties:
+        CreatedOn:
+          type: string
+          format: date-time
+          nullable: false
+        CredentialID:
+          type: string
+          nullable: false
+        IsEncrypted:
+          type: boolean
+          nullable: false
+        TokenData:
+          type: string
+          nullable: true
+        RawToken:
+          type: array
+          items:
+            type: integer
+        Status:
+          type: string
+          enum:
+          - ACTIVE
+          nullable: false
+        Token:
+          type: array
+          items:
+            type: integer
+        ValidityEnd:
+          type: integer
+          nullable: false
+        ValidityStart:
+          type: integer
+          nullable: false
+    Application:
+      type: object
+      properties:
+        ActionFailureLabel:
+          type: string
+          nullable: true
+          example: FAILED 30 Min Break Not Complete
+        ActionProcessingLabel:
+          type: string
+          nullable: true
+        ActionSucessLabel:
+          type: string
+          nullable: true
+        AgentAutoUpdate:
+          type: boolean
+          nullable: true
+        AllowCredentialEnrollmentUpdates:
+          type: boolean
+          nullable: true
+        AppSubType:
+          type: string
+          nullable: false
+          enum:
+          - WebKey
+          - DeviceLock
+          - OloidVault
+          - Windows Login
+        ApplicationID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          maxLength: 32
+          minLength: 32
+          nullable: false
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+        ApplicationLogo:
+          type: string
+          nullable: true
+          example: ' '
+        ApplicationName:
+          type: string
+          nullable: true
+          minLength: 2
+          example: abcd
+        ApplicationType:
+          type: string
+          nullable: false
+          enum:
+          - Oloid Verify
+          - Generic
+          - Passwordless
+          example: Oloid Verify
+        Authentication:
+          type: string
+          nullable: true
+        AuthFailureMessage:
+          type: string
+          nullable: true
+          example: Please contact your supervisor or admin for further assistance.
+        AuthTimeout:
+          type: integer
+          nullable: true
+        AuthenticationFailureErrorMessage:
+          type: string
+          nullable: true
+        AutoDismissIntentPrompt:
+          type: boolean
+          nullable: true
+        AutoDismissIntentPromptTime:
+          type: integer
+          nullable: true
+        AutoLaunchWebPagePostAuth:
+          type: boolean
+          nullable: true
+        AutoScan:
+          type: boolean
+          nullable: true
+        BadgeType:
+          type: array
+          items:
+            type: string
+            nullable: false
+          nullable: true
+        CaptureWindowsLoginEvents:
+          type: boolean
+          nullable: true
+        CertifyType:
+          type: string
+          nullable: true
+          example: AirTouch
+        CloudBBoxSize:
+          type: integer
+          nullable: true
+        ContinuousBadgeScan:
+          type: boolean
+          nullable: true
+        Connections:
+          type: array
+          nullable: true
+          description: The connections this application authenticates users against.
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              ConnectionID:
+                type: string
+                pattern: ^[0-9a-fA-F]{32}$
+                minLength: 32
+                maxLength: 32
+                example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+              ConnectionDisplayName:
+                type: string
+                nullable: true
+              IsAdded:
+                type: boolean
+                nullable: true
+              OnlineModel:
+                type: string
+                nullable: true
+              Priority:
+                type: integer
+                nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+          example: '2025-01-21T12:01:25Z'
+        Credentials:
+          type: object
+          additionalProperties: false
+          nullable: true
+          description: Which authenticators are turned on for this application. DisableAuth mirrors the ones left off.
+          properties:
+            EnableBadgeInput:
+              type: boolean
+              nullable: true
+            EnableBluetooth:
+              type: boolean
+              nullable: true
+            EnableCloudKey:
+              type: boolean
+              nullable: true
+            EnableEmail:
+              type: boolean
+              nullable: true
+            EnableFace:
+              type: boolean
+              nullable: true
+            EnableNFC:
+              type: boolean
+              nullable: true
+            EnablePin:
+              type: boolean
+              nullable: true
+            EnablePinSelfie:
+              type: boolean
+              nullable: true
+            EnablePrimaryID:
+              type: boolean
+              nullable: true
+            EnableQRCode:
+              type: boolean
+              nullable: true
+        Debug:
+          type: boolean
+          nullable: true
+        DebugPDLogs:
+          type: boolean
+          nullable: true
+        DefaultApplication:
+          type: boolean
+          nullable: true
+        DeleteUser:
+          type: boolean
+          nullable: true
+        Description:
+          type: string
+          nullable: true
+          example: Application for testing
+        DisableAuth:
+          type: string
+          nullable: true
+          description: Comma separated list of the authenticators that are turned off for this application, empty when all of them are on. Mirrors the Credentials object.
+          example: QR Code,Badge,Bluetooth,CloudKey
+        DisableFR:
+          type: boolean
+          nullable: true
+        DisableLiveliness:
+          type: boolean
+          nullable: true
+        DisplayInstructionScreen:
+          type: boolean
+          nullable: true
+        DisplayName:
+          type: string
+          nullable: true
+        DisplayThermalReading:
+          type: boolean
+          nullable: true
+        EnableAutoLogin:
+          type: boolean
+          nullable: true
+        EnableBadgeInput:
+          type: boolean
+          nullable: true
+        EnableCopyCredentials:
+          type: boolean
+          nullable: true
+        EnableMovingAverage:
+          type: boolean
+          nullable: true
+        EnableNewTabCamera:
+          type: boolean
+          nullable: true
+        EnableSoftwareLiveness:
+          type: boolean
+          nullable: true
+        EnableThermal:
+          type: boolean
+          nullable: true
+        EnableThermalErrorCorrection:
+          type: boolean
+          nullable: true
+        EndPoints:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        EndpointTemplateID:
+          type: string
+          nullable: true
+        ErrorPromptAutoDismissAfter:
+          type: integer
+          nullable: true
+        ExceptionTrigger:
+          type: boolean
+          nullable: true
+        Exceptions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        FaceLoginAdditionalFaceMatch:
+          type: boolean
+          nullable: true
+        FaceLoginFaceMatchThreshold:
+          type: number
+          nullable: true
+        FaceLoginLiveliness:
+          type: boolean
+          nullable: true
+        FaceLoginLivelinessProbability:
+          type: number
+          nullable: true
+        FaceLoginLivelinessQuality:
+          type: number
+          nullable: true
+        FaceLoginUseBothModel:
+          type: boolean
+          nullable: true
+        FrameProcessDelayTime:
+          type: integer
+          nullable: true
+        FRMode:
+          type: string
+          nullable: false
+          enum:
+          - OnDevice
+          - Hybrid
+          - Cloud
+          example: Hybrid
+        IdleScreenHardTimeLimit:
+          type: integer
+          nullable: true
+        IdleScreenSoftTimeLimit:
+          type: integer
+          nullable: true
+          example: 31556952
+        IdpID:
+          type: string
+          nullable: true
+        IgnoreConnection:
+          type: boolean
+          nullable: true
+        IntentScreenKey:
+          type: string
+          nullable: true
+          example: OloidIntentFourButton
+        LandmarksTargetConfidence:
+          type: number
+          nullable: true
+        LivelinessTargetConfidence:
+          type: integer
+          nullable: true
+        MFAId:
+          type: string
+          nullable: true
+        MovingMaxAverage:
+          type: boolean
+          nullable: true
+        MovingMinAverage:
+          type: boolean
+          nullable: true
+        OfflineMode:
+          type: boolean
+          nullable: true
+        Okta:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        OloidCertify:
+          type: boolean
+          nullable: true
+        OloidComInt:
+          type: boolean
+          nullable: true
+        OnDeviceBBoxSize:
+          type: number
+          nullable: true
+        OnDeviceModel:
+          type: string
+          nullable: true
+          example: ModelV
+        PingTimeOut:
+          type: integer
+          nullable: true
+        PlatformTriggers:
+          type: boolean
+          nullable: true
+        ReAuthenticateEveryTime:
+          type: boolean
+          nullable: true
+        RequireConsent:
+          type: boolean
+          nullable: true
+        RunLocalHttpServer:
+          type: boolean
+          nullable: true
+        SelfAttestationExpiry:
+          type: integer
+          nullable: true
+        SessionExpiry:
+          type: integer
+          nullable: true
+        ShowActionStatus:
+          type: boolean
+          nullable: true
+        ShowActualActionError:
+          type: boolean
+          nullable: true
+        ShowClockOnScreen:
+          type: boolean
+          nullable: true
+        ShowDefaultIntegrationMessage:
+          type: boolean
+          nullable: true
+        ShowIndividualActionStatus:
+          type: boolean
+          nullable: true
+        ShowIntentScreen:
+          type: boolean
+          nullable: true
+        StrictErrorHandling:
+          type: boolean
+          nullable: true
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          nullable: false
+          minLength: 2
+          example: preview
+        Timezone:
+          type: string
+          nullable: true
+          example: America/Los_Angeles
+        TransactionType:
+          type: string
+          nullable: true
+          example: FaceAuth
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+          example: '2025-04-08T04:59:22.270Z'
+        UseGroupsforAuth:
+          type: boolean
+          nullable: true
+        ValidateWindowsCredential:
+          type: boolean
+          nullable: true
+        Version:
+          type: integer
+          nullable: true
+        WindowsAdminPasscode:
+          type: string
+          nullable: true
+        WindowsLoginBadgeType:
+          type: array
+          items:
+            type: string
+            nullable: false
+          nullable: true
+        WindowsLoginTimeout:
+          type: integer
+          nullable: true
+        WriteRPAConfig:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+  examples:
+    FederatedLoginExample:
+      value:
+        message: Success
+        data:
+          User:
+            ConnectionDisplayName: Dummy Vault
+            ConnectionID: 1234567890abcdef1234567890abcdef
+            CreatedAt: 2025-01-01T12:00:00Z
+            DisplayName: john doe
+            Email: john.doe@example.com
+            EnableDesktopNotification: true
+            FullName: john doe
+            OloID: abcdef1234567890abcdef1234567890
+            PrimaryID: abcdef1234567890abcdef1234567890
+            Role: admin
+            SearchField: ABCDEF1234567890_JOHN DOE_ABCDEF1234567890_JOHN DOE
+            Status: ACTIVE
+            TenantID: FA0280A8A0E64DF9
+            TenantName: demo
+            UpdatedAt: 2025-01-01T12:30:00Z
+            UserConsentProvided: false
+          CognitoToken: eyJhbGciOi...dummy-token...gfw
+          RefreshToken: eyJjdHkiOi...dummy-refresh-token...2q
+          ExpiresIn: 3600
+    LoginExample:
+      value:
+        cognitoToken:
+          $metadata:
+            httpStatusCode: 200
+            requestId: 6607dfa0-4c7c-4d58-9393-08df997d9c0
+            attempts: 1
+            totalRetryDelay: 0
+          AuthenticationResult:
+            AccessToken: eyJraWQiOiJKZ...access
+            IdToken: eyJraWQiOiJGSl...id
+            RefreshToken: eyJjdHkiOiJKV1...refresh
+            ExpiresIn: 3600
+            TokenType: Bearer
+          ChallengeParameters: {}
+        user:
+          OloID: c4d2a2909b6711ef81534be9be30797b
+          TenantID: FA0280A8A0E64DF9
+          TenantName: oloid
+    BadRequestExample:
+      value:
+        status: "400"
+        message: Bad Request
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+    NotFoundExample:
+      value:
+        status: "404"
+        message: Not Found
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: Internal Server Error - Server encountered an unexpected condition
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+tags:
+- name: Login
+  description: Login and session operations.

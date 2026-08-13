@@ -1,0 +1,1198 @@
+openapi: 3.0.3
+info:
+  title: Settings Documentation
+  version: 1.0.0
+  description: API documentation for settings
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://api.oloidpreview.com
+paths:
+  /settings:
+    get:
+      summary: Get all settings
+      description: It gets all settings
+      operationId: getAllSettings
+      tags:
+      - Settings
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      responses:
+        "200":
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  message:
+                    type: string
+                    nullable: true
+                  data:
+                    $ref: "#/components/schemas/GetSetting"
+              examples:
+                default:
+                  $ref: "#/components/examples/GetAllSettingsSuccessExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: It does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+    put:
+      summary: Update setting
+      description: Update the settings
+      operationId: updateSettings
+      tags:
+      - Settings
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - SettingType
+              - Settings
+              type: object
+              additionalProperties: false
+              properties:
+                SettingType:
+                  type: string
+                  nullable: true
+                OverWrite:
+                  type: boolean
+                Settings:
+                  $ref: "#/components/schemas/Setting"
+            examples:
+              default:
+                $ref: "#/components/examples/UpdateSettingsRequestExample"
+      responses:
+        "200":
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetSetting"
+              examples:
+                default:
+                  $ref: "#/components/examples/UpdateSettingsSuccessExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: It does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+    post:
+      summary: Create settings
+      description: It creates settings
+      operationId: createSettings
+      tags:
+      - Settings
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - SettingType
+              - Settings
+              type: object
+              additionalProperties: false
+              properties:
+                SettingType:
+                  type: string
+                  nullable: true
+                OverWrite:
+                  type: boolean
+                Settings:
+                  $ref: "#/components/schemas/Setting"
+            examples:
+              default:
+                $ref: "#/components/examples/CreateSettingsRequestExample"
+      responses:
+        "200":
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetSetting"
+              examples:
+                default:
+                  $ref: "#/components/examples/CreateSettingsSuccessExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: It does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+  /settings/{settingType}:
+    get:
+      summary: Get setting
+      description: It get settings by settingtype
+      operationId: getSettings
+      tags:
+      - Settings
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - in: path
+        name: settingType
+        required: true
+        schema:
+          type: string
+          nullable: false
+      responses:
+        "200":
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GetSetting"
+              examples:
+                default:
+                  $ref: "#/components/examples/GetSettingByTypeSuccessExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: It does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+    delete:
+      summary: Delete setting
+      description: It deletes setting by settingtype
+      operationId: deleteSettings
+      tags:
+      - Settings
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - name: settingType
+        in: path
+        required: true
+        schema:
+          type: string
+          nullable: false
+      responses:
+        "200":
+          description: 200 response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/DeleteSettingSuccessExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: It does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  securitySchemes:
+    AuthToken:
+      type: http
+      scheme: bearer
+  schemas:
+    Setting:
+      type: object
+      additionalProperties: false
+      properties:
+        ApplicationID:
+          type: array
+          items:
+            type: string
+            pattern: ^[a-fA-F0-9]{32}$
+            maxLength: 32
+            minLength: 32
+            nullable: false
+            example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+        AutoRefreshConfig:
+          type: object
+          additionalProperties: false
+          nullable: true
+          properties:
+            RefreshTime:
+              type: integer
+              nullable: true
+            TransactionRefresh:
+              type: boolean
+              nullable: true
+        CloudKeyDistance:
+          type: integer
+          nullable: true
+        CloudKeyProximityCheck:
+          type: boolean
+          nullable: true
+        ConnectionTimeout:
+          type: integer
+          nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        Domain:
+          type: array
+          items:
+            $ref: '#/components/schemas/Domain'
+        DomainExt:
+          type: string
+          nullable: true
+        EnableIntercomChat:
+          type: boolean
+          nullable: true
+        FeatureFlag:
+          $ref: '#/components/schemas/FeatureFlag'
+        FirmwareVersion:
+          type: number
+          nullable: true
+        GPSRefreshFrequency:
+          type: integer
+          nullable: true
+        IdpSettings:
+          $ref: '#/components/schemas/AdminSetting'
+        IntentRSSI:
+          type: integer
+          nullable: true
+        MultiDomain:
+          type: boolean
+          nullable: true
+        newKey:
+          type: string
+          nullable: true
+        PinConfiguration:
+          $ref: '#/components/schemas/Configuration'
+        PrimaryCredential:
+          type: string
+          nullable: true
+        SelectedCredentials:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        SelectedUseCases:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        SettingType:
+          type: string
+          nullable: true
+        SourceOfUsers:
+          type: string
+          nullable: true
+        SuccessDelay:
+          type: integer
+          nullable: true
+        SupervisorAccess:
+          type: object
+          nullable: true
+          additionalProperties:
+            type: boolean
+            nullable: true
+        SyncInactiveUsers:
+          type: boolean
+          nullable: true
+        TenantIntents:
+          $ref: '#/components/schemas/Intent'
+        TenantInviteTemplate:
+          type: object
+          additionalProperties: false
+          nullable: true
+          properties:
+            Face:
+              $ref: '#/components/schemas/Face'
+        UUIDs:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+          nullable: true
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        UseSecretManagerForPasswords:
+          type: boolean
+          nullable: true
+    Face:
+      type: object
+      additionalProperties: false
+      properties:
+        CaptureDate:
+          type: string
+          format: date-time
+          nullable: true
+        FaceID:
+          type: string
+          nullable: true
+        ModelPVData:
+          $ref: '#/components/schemas/Worker'
+        OnlineModelFaceID:
+          type: string
+          nullable: true
+        SignedUrl:
+          type: string
+          format: url
+          nullable: true
+        ReferenceImageURL:
+          type: string
+          format: url
+          nullable: true
+        Stability:
+          type: integer
+          nullable: true
+        BodyHTML:
+          type: string
+          nullable: true
+        SmsBody:
+          type: string
+          nullable: true
+        Subject:
+          type: string
+          nullable: true
+        ReturnPath:
+          type: string
+          nullable: false
+        QueryParams:
+          $ref: '#/components/schemas/Worker'
+        Recipients:
+          type: string
+          nullable: true
+        EmailBody:
+          type: string
+          nullable: true
+        SendOnlySms:
+          type: boolean
+          nullable: true
+        SmsRecipients:
+          type: string
+          nullable: true
+        LoginUrl:
+          type: string
+          nullable: true
+        httpStatusCode:
+          type: integer
+          nullable: false
+        requestId:
+          type: string
+          nullable: true
+          minLength: 32
+          maxLength: 32
+        attempts:
+          type: integer
+          nullable: true
+        totalRetryDelay:
+          type: number
+          nullable: true
+    GetSetting:
+      type: object
+      additionalProperties: false
+      properties:
+        Settings:
+          type: array
+          items:
+            $ref: "#/components/schemas/Setting"
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+    Worker:
+      type: object
+      additionalProperties: false
+      properties:
+        Confidence:
+          type: number
+          nullable: true
+        FaceDescriptor:
+          type: string
+          nullable: true
+        FaceModelVersion:
+          type: string
+          nullable: true
+        descriptor:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+        Enabled:
+          type: boolean
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+        returnUrl:
+          type: string
+          nullable: true
+        section:
+          type: string
+          nullable: true
+    Intent:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        UserInitiatedUnlock:
+          type: string
+          nullable: true
+        AutoUnlock:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        WriteRssi:
+          type: integer
+          nullable: true
+        IntentType:
+          type: string
+          nullable: true
+        DepartmentCode:
+          type: string
+          nullable: true
+        Department:
+          type: string
+          nullable: true
+        IntentValue:
+          type: string
+          nullable: true
+        DepartmentID:
+          type: integer
+          nullable: true
+        ClockID:
+          type: string
+          nullable: true
+        AllowEndpointIntent:
+          type: boolean
+          nullable: true
+        HideAutoUnlockSettings:
+          type: boolean
+          nullable: true
+        Label:
+          type: string
+          nullable: true
+        Value:
+          type: string
+          nullable: true
+        isEnabled:
+          type: string
+          nullable: true
+    Configuration:
+      type: object
+      additionalProperties: false
+      properties:
+        EnableActionOnMaxAttempt:
+          type: boolean
+          nullable: true
+        Length:
+          type: integer
+          nullable: true
+        EnablePinComplexity:
+          type: boolean
+          nullable: true
+        MaxPinAttemptsLimit:
+          type: integer
+          nullable: true
+        EnablePinEncryption:
+          type: boolean
+          nullable: true
+        PinType:
+          type: string
+          nullable: true
+        AlphaNumeric:
+          type: boolean
+          nullable: true
+        ActionDuration:
+          type: integer
+          nullable: true
+        AllowDuplicates:
+          type: boolean
+          nullable: true
+        EnableLogUpload:
+          type: boolean
+          nullable: true
+        TimeToBeUpload:
+          type: integer
+          nullable: true
+        AutoUnblock:
+          type: boolean
+          nullable: true
+        AutoUnblockAfter:
+          type: integer
+          nullable: true
+        CameraBlockDetected:
+          $ref: '#/components/schemas/FacecamDetected'
+        EnableCameraAlertNonOloid:
+          type: boolean
+          nullable: true
+        EnableWindowsAlertsForOloidUser:
+          type: boolean
+          nullable: true
+        EnableWindowsLockAlerts:
+          type: boolean
+          nullable: true
+        EnableWindowsNotificationToUser:
+          type: boolean
+          nullable: true
+        FaceTrackingViolation:
+          $ref: '#/components/schemas/FacecamDetected'
+        FrameProcessDelayTime:
+          type: integer
+          nullable: true
+        GadgetDetected:
+          $ref: '#/components/schemas/FacecamDetected'
+        GadgetSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        MultipleFaceDetected:
+          $ref: '#/components/schemas/FacecamDetected'
+        NonOloidLoginAlerts:
+          $ref: '#/components/schemas/FacecamDetected'
+    FacecamSetting:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        CameraBlockAlertAfter:
+          type: integer
+          nullable: true
+        CameraBlockCheckInterval:
+          type: integer
+          nullable: true
+        GadgetConfidence:
+          type: number
+          nullable: true
+        Suggestions:
+          type: string
+          nullable: true
+        FaceLandmarkMinConfidence:
+          type: number
+          nullable: true
+        MultipleFaceAlertAfter:
+          type: integer
+          nullable: true
+        NoFaceFoundAlertAfter:
+          type: integer
+          nullable: true
+        GadgetDetectedAlertAfter:
+          type: integer
+          nullable: true
+        GadgetMinConfidence:
+          type: number
+          nullable: true
+    FacecamDetected:
+      type: object
+      additionalProperties: false
+      nullable: true
+      properties:
+        Action:
+          type: string
+          nullable: true
+        CameraBlockSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        FaceTrackingSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        GadgetSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        MultipleFaceSettings:
+          $ref: '#/components/schemas/FacecamSetting'
+        Enable:
+          type: boolean
+          nullable: true
+        UseSecondaryModel:
+          type: boolean
+          nullable: true
+    AdminSetting:
+      type: object
+      additionalProperties: false
+      properties:
+        REACT_APP_IDP:
+          type: string
+          nullable: true
+        REACT_APP_ENROAL_API_KEY:
+          type: string
+          nullable: true
+        IsMFAEnabled:
+          type: boolean
+          nullable: true
+        REACT_APP_IS_ALLOW_ENROLL_FACE:
+          type: boolean
+          nullable: true
+        REACT_APP_REDIRECT_URI:
+          type: string
+          format: uri
+          nullable: true
+        REACT_APP_CLIENT_ID:
+          type: string
+          nullable: true
+        REACT_APP_IS_ALLOW_SIGNUP:
+          type: boolean
+          nullable: true
+        topIndentForDesktop:
+          type: integer
+          nullable: true
+        isFaceLogging:
+          type: boolean
+          nullable: true
+        IS_NEED_ORGINAL_IMAGE:
+          type: boolean
+          nullable: true
+        topIndentForTablet:
+          type: integer
+          nullable: true
+        isLogEnabled:
+          type: boolean
+          nullable: true
+        allowDirectLoginBtn:
+          type: boolean
+          nullable: true
+        isFaceLoggingCount:
+          type: integer
+          nullable: true
+        topIndentForMobile:
+          type: integer
+          nullable: true
+        AUTH_METHOD:
+          type: array
+          items:
+            type: string
+            nullable: true
+        IS_RESTRICTED_LOCATION:
+          type: boolean
+          nullable: true
+        REACT_APP_API_ENDPOINT:
+          type: string
+          format: uri
+          nullable: true
+        TapAnywhere:
+          type: boolean
+          nullable: true
+        userNotFoundMessage:
+          type: string
+          nullable: true
+    FeatureFlag:
+      type: object
+      additionalProperties: false
+      properties:
+        AllowFileUpload:
+          type: boolean
+          nullable: true
+        AllowEndpointFileStore:
+          type: boolean
+          nullable: true
+        AllowEndpointPairing:
+          type: boolean
+          nullable: true
+        EnablePinEncryption:
+          type: boolean
+          nullable: true
+        Tabs:
+          $ref: '#/components/schemas/Tabs'
+        EnableWindowsLockAlerts:
+          type: boolean
+          nullable: true
+        EnableBetaFeatures:
+          type: boolean
+          nullable: true
+        EnableMaskPii:
+          type: boolean
+          nullable: true
+    Tabs:
+      type: object
+      additionalProperties: false
+      properties:
+        GettingStarted:
+          $ref: '#/components/schemas/Worker'
+        Dashboard:
+          $ref: '#/components/schemas/Worker'
+        Onboarding:
+          $ref: '#/components/schemas/Worker'
+    Domain:
+      type: object
+      additionalProperties: false
+      properties:
+        ChildURLs:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        ParentURL:
+          type: string
+          nullable: true
+        success:
+          type: boolean
+          nullable: true
+        data:
+          $ref: '#/components/schemas/Worker'
+  examples:
+    BadRequestExample:
+      value:
+        status: "400"
+        message: Bad Request
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+    NotFoundExample:
+      value:
+        status: "404"
+        message: Not Found
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: Internal Server Error - Server encountered an unexpected condition
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+    GetAllSettingsSuccessExample:
+      value:
+        message: Settings retrieved successfully
+        data:
+          Settings:
+          - SettingType: WINDOWS_DOMAIN
+            ApplicationID:
+            - 70a4f870d7ef11ef97ef7fd6a9ac4856
+            - 80b5f980e8f922f298f98e7b0bd5967a
+            Domain:
+            - ParentURL: https://corp.example.com
+              ChildURLs:
+              - https://sub1.example.com
+              - https://sub2.example.com
+              success: true
+            PrimaryCredential: Face
+            SelectedCredentials:
+            - Face
+            - Badge
+            - PIN
+            SelectedUseCases:
+            - Physical Access
+            - Time Attendance
+            ConnectionTimeout: 30
+            SuccessDelay: 2
+            SyncInactiveUsers: true
+            UseSecretManagerForPasswords: true
+            CreatedAt: "2024-01-15T10:30:00Z"
+            UpdatedAt: "2024-03-10T14:20:00Z"
+          - SettingType: AZURE_AD
+            ApplicationID:
+            - 90c6fa91f9f033f009f09ff8c1ce6a78
+            IdpSettings:
+              REACT_APP_IDP: AzureAD
+              REACT_APP_CLIENT_ID: azure-client-456abc
+              REACT_APP_REDIRECT_URI: https://app.example.com/callback
+              REACT_APP_API_ENDPOINT: https://api.example.com
+              IsMFAEnabled: true
+              REACT_APP_IS_ALLOW_SIGNUP: false
+            SourceOfUsers: Azure AD
+            MultiDomain: false
+            EnableIntercomChat: true
+            CreatedAt: "2024-02-01T09:00:00Z"
+            UpdatedAt: "2024-03-05T11:15:00Z"
+    CreateSettingsRequestExample:
+      value:
+        SettingType: WINDOWS_DOMAIN
+        OverWrite: false
+        Settings:
+          ApplicationID:
+          - 70a4f870d7ef11ef97ef7fd6a9ac4856
+          Domain:
+          - ParentURL: https://corp.example.com
+            ChildURLs:
+            - https://sub1.example.com
+            success: true
+          PrimaryCredential: Face
+          SelectedCredentials:
+          - Face
+          - Badge
+          SelectedUseCases:
+          - Physical Access
+          ConnectionTimeout: 30
+          SuccessDelay: 2
+          SyncInactiveUsers: true
+          UseSecretManagerForPasswords: true
+    CreateSettingsSuccessExample:
+      value:
+        Settings:
+        - SettingType: WINDOWS_DOMAIN
+          ApplicationID:
+          - 70a4f870d7ef11ef97ef7fd6a9ac4856
+          Domain:
+          - ParentURL: https://corp.example.com
+            ChildURLs:
+            - https://sub1.example.com
+            success: true
+          PrimaryCredential: Face
+          SelectedCredentials:
+          - Face
+          - Badge
+          SelectedUseCases:
+          - Physical Access
+          ConnectionTimeout: 30
+          SuccessDelay: 2
+          SyncInactiveUsers: true
+          UseSecretManagerForPasswords: true
+          CreatedAt: "2024-03-15T10:00:00Z"
+          UpdatedAt: "2024-03-15T10:00:00Z"
+    UpdateSettingsRequestExample:
+      value:
+        SettingType: WINDOWS_DOMAIN
+        OverWrite: true
+        Settings:
+          ApplicationID:
+          - 70a4f870d7ef11ef97ef7fd6a9ac4856
+          - 80b5f980e8f922f298f98e7b0bd5967a
+          Domain:
+          - ParentURL: https://corp.example.com
+            ChildURLs:
+            - https://sub1.example.com
+            - https://sub2.example.com
+            success: true
+          PrimaryCredential: Face
+          SelectedCredentials:
+          - Face
+          - Badge
+          - PIN
+          SelectedUseCases:
+          - Physical Access
+          - Time Attendance
+          ConnectionTimeout: 45
+          SuccessDelay: 3
+          SyncInactiveUsers: false
+          UseSecretManagerForPasswords: true
+          AutoRefreshConfig:
+            RefreshTime: 300
+            TransactionRefresh: true
+    UpdateSettingsSuccessExample:
+      value:
+        Settings:
+        - SettingType: WINDOWS_DOMAIN
+          ApplicationID:
+          - 70a4f870d7ef11ef97ef7fd6a9ac4856
+          - 80b5f980e8f922f298f98e7b0bd5967a
+          Domain:
+          - ParentURL: https://corp.example.com
+            ChildURLs:
+            - https://sub1.example.com
+            - https://sub2.example.com
+            success: true
+          PrimaryCredential: Face
+          SelectedCredentials:
+          - Face
+          - Badge
+          - PIN
+          SelectedUseCases:
+          - Physical Access
+          - Time Attendance
+          ConnectionTimeout: 45
+          SuccessDelay: 3
+          SyncInactiveUsers: false
+          UseSecretManagerForPasswords: true
+          AutoRefreshConfig:
+            RefreshTime: 300
+            TransactionRefresh: true
+          CreatedAt: "2024-01-15T10:30:00Z"
+          UpdatedAt: "2024-03-15T11:30:00Z"
+    GetSettingByTypeSuccessExample:
+      value:
+        Settings:
+        - SettingType: WINDOWS_DOMAIN
+          ApplicationID:
+          - 70a4f870d7ef11ef97ef7fd6a9ac4856
+          - 80b5f980e8f922f298f98e7b0bd5967a
+          Domain:
+          - ParentURL: https://corp.example.com
+            ChildURLs:
+            - https://sub1.example.com
+            - https://sub2.example.com
+            success: true
+          - ParentURL: https://subdomain.example.com
+            ChildURLs:
+            - https://sub3.example.com
+            success: true
+          PrimaryCredential: Face
+          SelectedCredentials:
+          - Face
+          - Badge
+          - PIN
+          SelectedUseCases:
+          - Physical Access
+          - Time Attendance
+          - Desktop Login
+          ConnectionTimeout: 30
+          SuccessDelay: 2
+          SyncInactiveUsers: true
+          UseSecretManagerForPasswords: true
+          MultiDomain: true
+          DomainExt: .local
+          IntentRSSI: -70
+          GPSRefreshFrequency: 60
+          CloudKeyDistance: 100
+          CloudKeyProximityCheck: true
+          FirmwareVersion: 2.5
+          SupervisorAccess:
+            AllowOverride: true
+            RequireApproval: false
+          EnableIntercomChat: true
+          CreatedAt: "2024-01-15T10:30:00Z"
+          UpdatedAt: "2024-03-10T14:20:00Z"
+    DeleteSettingSuccessExample:
+      value:
+        message: Setting deleted successfully
+security:
+- AuthToken: []
+tags:
+- name: Settings
+  description: Read and update settings.

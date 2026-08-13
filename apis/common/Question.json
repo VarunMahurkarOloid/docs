@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ChoiceList": {
+      "type": "array",
+      "items": {
+        "$ref": "./Choicelist.json"
+      }
+    },
+    "QuestionID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Show": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Title": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

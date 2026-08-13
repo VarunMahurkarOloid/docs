@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "CameraBlockAlertAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "CameraBlockCheckInterval": {
+      "type": "integer",
+      "nullable": true
+    },
+    "GadgetConfidence": {
+      "type": "number",
+      "nullable": true
+    },
+    "Suggestions": {
+      "type": "string",
+      "nullable": true
+    },
+    "FaceLandmarkMinConfidence": {
+      "type": "number",
+      "nullable": true
+    },
+    "MultipleFaceAlertAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "NoFaceFoundAlertAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "GadgetDetectedAlertAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "GadgetMinConfidence": {
+      "type": "number",
+      "nullable": true
+    }
+  }
+}

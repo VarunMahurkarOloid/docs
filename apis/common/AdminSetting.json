@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "REACT_APP_IDP": {
+      "type": "string",
+      "nullable": true
+    },
+    "REACT_APP_ENROAL_API_KEY": {
+      "type": "string",
+      "nullable": true
+    },
+    "IsMFAEnabled": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "REACT_APP_IS_ALLOW_ENROLL_FACE": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "REACT_APP_REDIRECT_URI": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "REACT_APP_CLIENT_ID": {
+      "type": "string",
+      "nullable": true
+    },
+    "REACT_APP_IS_ALLOW_SIGNUP": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "topIndentForDesktop": {
+      "type": "integer",
+      "nullable": true
+    },
+    "isFaceLogging": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "IS_NEED_ORGINAL_IMAGE": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "topIndentForTablet": {
+      "type": "integer",
+      "nullable": true
+    },
+    "isLogEnabled": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "allowDirectLoginBtn": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "isFaceLoggingCount": {
+      "type": "integer",
+      "nullable": true
+    },
+    "topIndentForMobile": {
+      "type": "integer",
+      "nullable": true
+    },
+    "AUTH_METHOD": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "IS_RESTRICTED_LOCATION": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "REACT_APP_API_ENDPOINT": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "TapAnywhere": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "userNotFoundMessage": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

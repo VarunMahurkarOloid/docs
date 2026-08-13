@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "isTablet": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "OSVersion": {
+      "type": "string",
+      "nullable": true
+    },
+    "OS": {
+      "type": "string",
+      "nullable": true
+    },
+    "LocalizedModel": {
+      "type": "string",
+      "nullable": true
+    },
+    "Vendor": {
+      "type": "string",
+      "nullable": true
+    },
+    "VendorId": {
+      "type": "string",
+      "nullable": true
+    },
+    "Model": {
+      "type": "string",
+      "nullable": true
+    },
+    "UA": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

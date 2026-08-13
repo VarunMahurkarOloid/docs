@@ -1,0 +1,60 @@
+---
+title: "Authentication"
+sidebarTitle: "Authentication"
+description: "How to authenticate requests to the Oloid APIs."
+icon: "key"
+---
+
+Every Oloid API request must be authenticated. Almost all endpoints use a
+bearer token sent in the `Authorization` header.
+
+## Bearer token
+
+Obtain a token from the login endpoint, then send it on every subsequent
+request:
+
+```bash
+curl https://api.oloidpreview.com/users \
+  -H "Authorization: Bearer <your-token>" \
+  -H "Content-Type: application/json"
+```
+
+<Note>
+  The header value must include the `Bearer ` prefix. Sending the raw token
+  without it is the most common cause of a 401.
+</Note>
+
+## Schemes in use
+
+The specs declare three security schemes. Which one applies depends on the API
+you are calling — each endpoint page states its own requirement.
+
+| Scheme | Type | Sent as | Used by |
+| --- | --- | --- | --- |
+| `AuthToken` | HTTP bearer | `Authorization: Bearer <token>` | Most Platform and Integrations endpoints |
+| `BearerAuth` | HTTP bearer, JWT | `Authorization: Bearer <jwt>` | Connections |
+| `ApiKeyAuth` | API key | `X-API-Key: <key>` | Selected credential endpoints |
+
+## Scope
+
+<Warning>
+  Platform and Integrations credentials are not interchangeable. A token issued
+  for the Integrations API is scoped to that surface only and will be rejected
+  by the Platform API.
+</Warning>
+
+## Getting a token
+
+Use the login endpoint for the surface you are targeting:
+
+<CardGroup cols={2}>
+  <Card title="Platform login" icon="right-to-bracket" href="/api-reference/platform/login/login">
+    Authenticate against the Platform API.
+  </Card>
+  <Card title="Integrations login" icon="plug" href="/api-reference/integrations/login/login">
+    Authenticate against the scoped Integrations API.
+  </Card>
+</CardGroup>
+
+For a worked example including the request and response bodies, see the
+[Login API documentation](/api-reference/login-api-documentation).

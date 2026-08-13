@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "AutoUpdateDate": {
+      "type": "string",
+      "nullable": true
+    },
+    "AutoUpdateStartTime": {
+      "type": "string",
+      "nullable": true
+    },
+    "EnableAutoUpdate": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "version": {
+      "type": "string",
+      "nullable": true
+    },
+    "CustomSchedule": {
+      "$ref": "./Schedule.json"
+    },
+    "Mode": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

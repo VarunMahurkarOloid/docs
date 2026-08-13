@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "PunchVerifyUrl": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "TimeZone": {
+      "type": "string",
+      "nullable": true
+    },
+    "KronosTimezoneCode": {
+      "type": "integer",
+      "nullable": true
+    },
+    "PunchTimeUrl": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "AuthKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "IntegrationID": {
+      "type": "string",
+      "nullable": true
+    },
+    "AuthType": {
+      "type": "string",
+      "enum": ["Firebase", "Bearer"],
+      "nullable": true
+    },
+    "IntegrationType": {
+      "type": "string",
+      "nullable": true
+    },
+    "URL": {
+      "type": "string",
+      "format": "uri",
+      "nullable": true
+    },
+    "endpointName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Token": {
+      "type": "string",
+      "nullable": true
+    },
+    "Method": {
+      "type": "string",
+      "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"],
+      "nullable": true
+    },
+    "descriptions": {
+      "type": "string",
+      "nullable": true
+    },
+    "UseAuth": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Username": {
+      "type": "string",
+      "nullable": true
+    },
+    "AllowBody": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Password": {
+      "type": "string",
+      "format": "password",
+      "nullable": true
+    }
+  }
+}

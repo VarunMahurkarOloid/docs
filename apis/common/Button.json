@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "Button1": {
+      "$ref": "./Intent.json"
+    },
+    "Button2": {
+      "$ref": "./Intent.json"
+    },
+    "Button3": {
+      "$ref": "./Intent.json"
+    },
+    "Button4": {
+      "$ref": "./Intent.json"
+    },
+    "Description": {
+      "type": "string",
+      "nullable": true
+    },
+    "Title": {
+      "type": "string",
+      "nullable": true
+    },
+    "AutoLaunch": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Show": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ShowOnlyOnAuth": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Timeout": {
+      "type": "integer",
+      "nullable": true
+    },
+    "URL": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

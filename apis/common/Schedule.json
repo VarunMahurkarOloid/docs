@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "EndTime": {
+      "type": "string",
+      "nullable": true
+    },
+    "RetryFrequency": {
+      "type": "integer",
+      "nullable": true
+    },
+    "RetryInterval": {
+      "type": "integer",
+      "nullable": true
+    },
+    "StartTime": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Version": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    }
+  }
+}

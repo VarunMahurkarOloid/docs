@@ -1,0 +1,1225 @@
+openapi: 3.0.3
+info:
+  title: Connections
+  version: 1.0.0
+  description: API documentations for managing Connection Endpoints
+  license:
+    name: Apache 2.0
+    url: https://www.oloid.ai
+servers:
+- url: https://api.oloidpreview.com
+paths:
+  /connections:
+    get:
+      summary: List connections
+      description: Retrieves a paginated list of all connections for the tenant. Connections define authentication policies, consent requirements, and face recognition settings for user access control. Returns up to 100 connections per request.
+      tags:
+      - Connections
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      operationId: getConnections
+      responses:
+        "200":
+          description: List of connections returned successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  message:
+                    type: string
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Connection"
+                    nullable: false
+              examples:
+                default:
+                  $ref: "#/components/examples/GetConnectionListExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "500":
+          description: Internal Server Error - Server encountered an unexpected condition
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+    post:
+      summary: Create connection
+      description: Creates a new connection with specified authentication policies and settings. Connections manage user authentication methods, consent templates, face recognition thresholds, and liveness detection configurations.
+      tags:
+      - Connections
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      operationId: createConnection
+      requestBody:
+        required: true
+        description: Required fields must match the CreateConnectionRequest schema.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                ConnectionDisplayName:
+                  type: string
+                  nullable: false
+                Description:
+                  type: string
+                  nullable: true
+                EnableAddFaceBestShot:
+                  type: boolean
+                  nullable: false
+                PCSCBadgeInput:
+                  type: boolean
+                  nullable: false
+              required:
+              - ConnectionDisplayName
+            examples:
+              default:
+                $ref: "#/components/examples/CreateConnectionRequestExample"
+      responses:
+        "200":
+          description: Connection created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  message:
+                    type: string
+                    nullable: true
+                  data:
+                    $ref: "#/components/schemas/Connection"
+              examples:
+                default:
+                  $ref: "#/components/examples/CreateConnectionResponseExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+  /connections/{connectionID}:
+    get:
+      summary: Get connection
+      description: Retrieves detailed configuration for a specific connection by ID. Returns all authentication policies, consent settings, face recognition parameters, and associated applications for the connection.
+      tags:
+      - Connections
+      operationId: getConnectionByConnectionID
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - in: query
+        name: excludeApplications
+        required: true
+        schema:
+          type: boolean
+          nullable: false
+      - in: path
+        name: connectionID
+        required: true
+        schema:
+          type: string
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        description: "connectionID (string, required): The ID of the connection to retrieve."
+      responses:
+        "200":
+          description: Connection details returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  message:
+                    type: string
+                  data:
+                    $ref: "#/components/schemas/Connection"
+              examples:
+                default:
+                  $ref: "#/components/examples/GetConnectionByIdExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: No connection found for the given ID.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+    put:
+      summary: Update connection
+      description: Modifies existing connection settings including description, consent requirements, and other configuration parameters. Only provided fields will be updated while others remain unchanged.
+      tags:
+      - Connections
+      operationId: updateConnection
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - name: rawJson
+        in: query
+        required: false
+        schema:
+          type: integer
+          nullable: true
+      - name: connectionID
+        in: path
+        required: true
+        schema:
+          type: string
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        description: "connectionID (string, required): The ID of the connection to update."
+      requestBody:
+        required: true
+        description: Must match the UpdateConnectionRequest schema.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Connection"
+              additionalProperties: true
+            examples:
+              default:
+                $ref: "#/components/examples/UpdateConnectionRequestExample"
+      responses:
+        "200":
+          description: Connection updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                properties:
+                  message:
+                    type: string
+                  data:
+                    $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  summary: Example of successful connection update response
+                  description: Example showing the response after successfully updating a connection
+                  value:
+                    message: Connection updated successfully
+        "400":
+          description: Invalid input or connection not found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: No connection found for the given ID.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+    delete:
+      summary: Delete connection
+      description: Permanently removes a connection from the system. The connection must not be marked as default and cannot have any active users linked to it. A reason must be provided for audit purposes.
+      tags:
+      - Connections
+      operationId: deleteConnection
+      parameters:
+      - in: header
+        name: Authorization
+        required: true
+        schema:
+          type: string
+          example: eyJraWQiOiJJMXBBZVExaiswNzBuTDJOVUsxUUtTZWdlQXIxTUgwQ29yZ0...
+          nullable: false
+      - name: connectionID
+        in: path
+        required: true
+        description: "connectionID (string, required): The ID of the connection to delete."
+        schema:
+          type: string
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+      - name: reason
+        in: query
+        required: true
+        description: Give a reason of deleting connection for the connectionID.
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Connection deleted successfully.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/DeleteConnectionResponseExample"
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadRequestExample"
+        "401":
+          description: "Unauthorized: Access token is missing or invalid."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/UnauthorizedExample"
+        "404":
+          description: No connection found for the given ID.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/NotFoundExample"
+        "500":
+          description: An error occurred on the server.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/InternalServerErrorExample"
+        "502":
+          description: "Bad Gateway: The proxy server received an invalid response."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+              examples:
+                default:
+                  $ref: "#/components/examples/BadGatewayExample"
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: jwt
+  schemas:
+    Connection:
+      type: object
+      properties:
+        ConnectionDisplayName:
+          type: string
+          nullable: true
+        ConnectionGroupID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          nullable: false
+        ConnectionID:
+          type: string
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        ConsentTemplateID:
+          type: string
+          nullable: false
+        ConsentTemplateName:
+          type: string
+          nullable: true
+        ConsentUpdatedDate:
+          type: string
+          format: date-time
+          nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        DeleteUserProtectionLimit:
+          type: integer
+          nullable: true
+        Description:
+          type: string
+          nullable: true
+        DisplayName:
+          type: string
+          nullable: true
+        EnableAddFaceBestShot:
+          type: boolean
+          nullable: true
+        EnableAddFaceLiveliness:
+          type: boolean
+          nullable: true
+        EnableAddFaceLivenessCheck:
+          type: boolean
+          nullable: true
+        EnableMinConfidence:
+          type: boolean
+          nullable: true
+        EnableOloID:
+          type: boolean
+          nullable: true
+        FaceCompare:
+          type: boolean
+          nullable: true
+        FaceCompareSimilarityThreshold:
+          type: number
+          nullable: true
+        FullName:
+          type: string
+          nullable: true
+        LivelinessConfig:
+          $ref: '#/components/schemas/Liveliness'
+        MinConfidence:
+          type: number
+          nullable: true
+        MinLivelinessProbability:
+          type: number
+          nullable: true
+        MinLivelinessQuality:
+          type: number
+          nullable: true
+        OloID:
+          type: string
+          description: The unique OloID of the user.
+          pattern: ^[0-9a-fA-F]{32}$
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+          minLength: 32
+          maxLength: 32
+          nullable: false
+        PCSCBadgeInput:
+          type: boolean
+          nullable: false
+        PreviousTemplateIDs:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        PrimaryID:
+          type: string
+          nullable: false
+        RequireConsent:
+          type: boolean
+          nullable: true
+        SearchField:
+          type: string
+        SendAppDownloadEmail:
+          type: boolean
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        SystemDefault:
+          type: boolean
+          nullable: true
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          nullable: true
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+        UserConsentProvided:
+          type: boolean
+          nullable: true
+        UserConsentStatus:
+          type: string
+          nullable: true
+        Applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/Application'
+      additionalProperties: false
+    Application:
+      type: object
+      properties:
+        ActionFailureLabel:
+          type: string
+          nullable: true
+          example: FAILED 30 Min Break Not Complete
+        ActionProcessingLabel:
+          type: string
+          nullable: true
+        ActionSucessLabel:
+          type: string
+          nullable: true
+        AgentAutoUpdate:
+          type: boolean
+          nullable: true
+        AllowCredentialEnrollmentUpdates:
+          type: boolean
+          nullable: true
+        AppSubType:
+          type: string
+          nullable: false
+          enum:
+          - WebKey
+          - DeviceLock
+          - OloidVault
+          - Windows Login
+        ApplicationID:
+          type: string
+          pattern: ^[a-fA-F0-9]{32}$
+          maxLength: 32
+          minLength: 32
+          nullable: false
+          example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+        ApplicationLogo:
+          type: string
+          nullable: true
+          example: ' '
+        ApplicationName:
+          type: string
+          nullable: true
+          minLength: 2
+          example: abcd
+        ApplicationType:
+          type: string
+          nullable: false
+          enum:
+          - Oloid Verify
+          - Generic
+          - Passwordless
+          example: Oloid Verify
+        Authentication:
+          type: string
+          nullable: true
+        AuthFailureMessage:
+          type: string
+          nullable: true
+          example: Please contact your supervisor or admin for further assistance.
+        AuthTimeout:
+          type: integer
+          nullable: true
+        AuthenticationFailureErrorMessage:
+          type: string
+          nullable: true
+        AutoDismissIntentPrompt:
+          type: boolean
+          nullable: true
+        AutoDismissIntentPromptTime:
+          type: integer
+          nullable: true
+        AutoLaunchWebPagePostAuth:
+          type: boolean
+          nullable: true
+        AutoScan:
+          type: boolean
+          nullable: true
+        BadgeType:
+          type: array
+          items:
+            type: string
+            nullable: false
+          nullable: true
+        CaptureWindowsLoginEvents:
+          type: boolean
+          nullable: true
+        CertifyType:
+          type: string
+          nullable: true
+          example: AirTouch
+        CloudBBoxSize:
+          type: integer
+          nullable: true
+        ContinuousBadgeScan:
+          type: boolean
+          nullable: true
+        Connections:
+          type: array
+          nullable: true
+          description: The connections this application authenticates users against.
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              ConnectionID:
+                type: string
+                pattern: ^[0-9a-fA-F]{32}$
+                minLength: 32
+                maxLength: 32
+                example: 70a4f870d7ef11ef97ef7fd6a9ac4856
+              ConnectionDisplayName:
+                type: string
+                nullable: true
+              IsAdded:
+                type: boolean
+                nullable: true
+              OnlineModel:
+                type: string
+                nullable: true
+              Priority:
+                type: integer
+                nullable: true
+        CreatedAt:
+          type: string
+          format: date-time
+          nullable: true
+          example: '2025-01-21T12:01:25Z'
+        Credentials:
+          type: object
+          additionalProperties: false
+          nullable: true
+          description: Which authenticators are turned on for this application. DisableAuth mirrors the ones left off.
+          properties:
+            EnableBadgeInput:
+              type: boolean
+              nullable: true
+            EnableBluetooth:
+              type: boolean
+              nullable: true
+            EnableCloudKey:
+              type: boolean
+              nullable: true
+            EnableEmail:
+              type: boolean
+              nullable: true
+            EnableFace:
+              type: boolean
+              nullable: true
+            EnableNFC:
+              type: boolean
+              nullable: true
+            EnablePin:
+              type: boolean
+              nullable: true
+            EnablePinSelfie:
+              type: boolean
+              nullable: true
+            EnablePrimaryID:
+              type: boolean
+              nullable: true
+            EnableQRCode:
+              type: boolean
+              nullable: true
+        Debug:
+          type: boolean
+          nullable: true
+        DebugPDLogs:
+          type: boolean
+          nullable: true
+        DefaultApplication:
+          type: boolean
+          nullable: true
+        DeleteUser:
+          type: boolean
+          nullable: true
+        Description:
+          type: string
+          nullable: true
+          example: Application for testing
+        DisableAuth:
+          type: string
+          nullable: true
+          description: Comma separated list of the authenticators that are turned off for this application, empty when all of them are on. Mirrors the Credentials object.
+          example: QR Code,Badge,Bluetooth,CloudKey
+        DisableFR:
+          type: boolean
+          nullable: true
+        DisableLiveliness:
+          type: boolean
+          nullable: true
+        DisplayInstructionScreen:
+          type: boolean
+          nullable: true
+        DisplayName:
+          type: string
+          nullable: true
+        DisplayThermalReading:
+          type: boolean
+          nullable: true
+        EnableAutoLogin:
+          type: boolean
+          nullable: true
+        EnableBadgeInput:
+          type: boolean
+          nullable: true
+        EnableCopyCredentials:
+          type: boolean
+          nullable: true
+        EnableMovingAverage:
+          type: boolean
+          nullable: true
+        EnableNewTabCamera:
+          type: boolean
+          nullable: true
+        EnableSoftwareLiveness:
+          type: boolean
+          nullable: true
+        EnableThermal:
+          type: boolean
+          nullable: true
+        EnableThermalErrorCorrection:
+          type: boolean
+          nullable: true
+        EndPoints:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        EndpointTemplateID:
+          type: string
+          nullable: true
+        ErrorPromptAutoDismissAfter:
+          type: integer
+          nullable: true
+        ExceptionTrigger:
+          type: boolean
+          nullable: true
+        Exceptions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        FaceLoginAdditionalFaceMatch:
+          type: boolean
+          nullable: true
+        FaceLoginFaceMatchThreshold:
+          type: number
+          nullable: true
+        FaceLoginLiveliness:
+          type: boolean
+          nullable: true
+        FaceLoginLivelinessProbability:
+          type: number
+          nullable: true
+        FaceLoginLivelinessQuality:
+          type: number
+          nullable: true
+        FaceLoginUseBothModel:
+          type: boolean
+          nullable: true
+        FrameProcessDelayTime:
+          type: integer
+          nullable: true
+        FRMode:
+          type: string
+          nullable: false
+          enum:
+          - OnDevice
+          - Hybrid
+          - Cloud
+          example: Hybrid
+        IdleScreenHardTimeLimit:
+          type: integer
+          nullable: true
+        IdleScreenSoftTimeLimit:
+          type: integer
+          nullable: true
+          example: 31556952
+        IdpID:
+          type: string
+          nullable: true
+        IgnoreConnection:
+          type: boolean
+          nullable: true
+        IntentScreenKey:
+          type: string
+          nullable: true
+          example: OloidIntentFourButton
+        LandmarksTargetConfidence:
+          type: number
+          nullable: true
+        LivelinessTargetConfidence:
+          type: integer
+          nullable: true
+        MFAId:
+          type: string
+          nullable: true
+        MovingMaxAverage:
+          type: boolean
+          nullable: true
+        MovingMinAverage:
+          type: boolean
+          nullable: true
+        OfflineMode:
+          type: boolean
+          nullable: true
+        Okta:
+          type: array
+          items:
+            type: string
+            nullable: true
+          nullable: true
+        OloidCertify:
+          type: boolean
+          nullable: true
+        OloidComInt:
+          type: boolean
+          nullable: true
+        OnDeviceBBoxSize:
+          type: number
+          nullable: true
+        OnDeviceModel:
+          type: string
+          nullable: true
+          example: ModelV
+        PingTimeOut:
+          type: integer
+          nullable: true
+        PlatformTriggers:
+          type: boolean
+          nullable: true
+        ReAuthenticateEveryTime:
+          type: boolean
+          nullable: true
+        RequireConsent:
+          type: boolean
+          nullable: true
+        RunLocalHttpServer:
+          type: boolean
+          nullable: true
+        SelfAttestationExpiry:
+          type: integer
+          nullable: true
+        SessionExpiry:
+          type: integer
+          nullable: true
+        ShowActionStatus:
+          type: boolean
+          nullable: true
+        ShowActualActionError:
+          type: boolean
+          nullable: true
+        ShowClockOnScreen:
+          type: boolean
+          nullable: true
+        ShowDefaultIntegrationMessage:
+          type: boolean
+          nullable: true
+        ShowIndividualActionStatus:
+          type: boolean
+          nullable: true
+        ShowIntentScreen:
+          type: boolean
+          nullable: true
+        StrictErrorHandling:
+          type: boolean
+          nullable: true
+        TenantID:
+          type: string
+          description: The unique ID of the tenant.
+          nullable: false
+          minLength: 16
+          maxLength: 16
+          pattern: ^[0-9a-fA-F]{16}$
+          example: FA0280A8A0E64DF9
+        TenantName:
+          type: string
+          nullable: false
+          minLength: 2
+          example: preview
+        Timezone:
+          type: string
+          nullable: true
+          example: America/Los_Angeles
+        TransactionType:
+          type: string
+          nullable: true
+          example: FaceAuth
+        UpdatedAt:
+          type: string
+          format: date-time
+          nullable: true
+          example: '2025-04-08T04:59:22.270Z'
+        UseGroupsforAuth:
+          type: boolean
+          nullable: true
+        ValidateWindowsCredential:
+          type: boolean
+          nullable: true
+        Version:
+          type: integer
+          nullable: true
+        WindowsAdminPasscode:
+          type: string
+          nullable: true
+        WindowsLoginBadgeType:
+          type: array
+          items:
+            type: string
+            nullable: false
+          nullable: true
+        WindowsLoginTimeout:
+          type: integer
+          nullable: true
+        WriteRPAConfig:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    ErrorResponse:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        errorCode:
+          type: string
+          nullable: true
+        errorName:
+          type: string
+          nullable: true
+        details:
+          type: object
+          nullable: true
+          additionalProperties: true
+        code:
+          type: integer
+          nullable: true
+    Liveliness:
+      type: object
+      additionalProperties: false
+      properties:
+        score:
+          type: number
+          nullable: true
+        probability:
+          type: number
+          nullable: true
+        isLive:
+          type: boolean
+          nullable: true
+        quality:
+          type: number
+          nullable: true
+        Confidence:
+          type: integer
+          nullable: true
+        Distance:
+          type: integer
+          nullable: true
+        error:
+          type: string
+          nullable: true
+        error_code:
+          type: string
+          nullable: true
+        IDRND:
+          type: object
+          nullable: true
+          additionalProperties:
+            type: number
+            nullable: true
+  examples:
+    GetConnectionListExample:
+      summary: Example of successful connections list retrieval
+      description: Shows a list of connections with complete details
+      value:
+        message: Connections retrieved successfully
+        data:
+        - ConnectionDisplayName: Face Authentication Connection
+          ConnectionGroupID: 7b07fe201c7811f0bc6e61eee85f49f2
+          ConnectionID: 7b07fe201c7811f0bc6e61eee85f49f2
+          ConsentTemplateID: 7b07fe20-1c78-11f0-bc6e-61eee85f49f2
+          ConsentTemplateName: Standard Consent
+          ConsentUpdatedDate: 2025-04-27T10:30:00Z
+          CreatedAt: 2025-04-27T10:30:00Z
+          DeleteUserProtectionLimit: 100
+          Description: Connection for facial authentication
+          EnableAddFaceBestShot: true
+          EnableAddFaceLiveliness: true
+          EnableAddFaceLivenessCheck: true
+          EnableMinConfidence: true
+          EnableOloID: true
+          FaceCompare: true
+          FaceCompareSimilarityThreshold: 0.95
+          LivelinessConfig:
+            IDRND:
+              Probability: 0.98
+              Quality: 0.95
+          MinConfidence: 0.9
+          MinLivelinessProbability: 0.95
+          MinLivelinessQuality: 0.9
+          PreviousTemplateIDs: []
+          RequireConsent: true
+          SendAppDownloadEmail: false
+          SystemDefault: false
+          UpdatedAt: 2025-04-27T11:30:00Z
+          Applications: []
+    CreateConnectionResponseExample:
+      value:
+        message: Connection created successfully
+        data:
+          ConnectionDisplayName: TestConn2
+          Description: Test Connection 2
+          EnableAddFaceBestShot: true
+          EnableAddFaceLiveliness: false
+          ConnectionID: 184ca0502a8411f09a8677da5ed0ab98
+          CreatedAt: 2025-05-06T14:12:08.021000Z
+          UpdatedAt: 2025-05-06T14:12:08.021000Z
+          PCSCBadgeInput: false
+          LivelinessConfig:
+            IDRND:
+              Probability: 0.1
+              Quality: 0.2
+    CreateConnectionRequestExample:
+      summary: Example of connection creation request
+      value:
+        ConnectionDisplayName: Face Authentication Connection
+        Description: Connection for facial authentication
+        EnableAddFaceBestShot: true
+        PCSCBadgeInput: false
+    GetConnectionByIdExample:
+      summary: Example of successful single connection retrieval
+      description: Shows a single connection with complete details
+      value:
+        message: Connection retrieved successfully
+        data:
+          ConnectionDisplayName: Face Authentication Connection
+          ConnectionGroupID: 7b07fe201c7811f0bc6e61eee85f49f2
+          ConnectionID: 7b07fe201c7811f0bc6e61eee85f49f2
+          ConsentTemplateID: 7b07fe20-1c78-11f0-bc6e-61eee85f49f2
+          ConsentTemplateName: Standard Consent
+          ConsentUpdatedDate: 2025-04-27T10:30:00Z
+          CreatedAt: 2025-04-27T10:30:00Z
+          DeleteUserProtectionLimit: 100
+          Description: Connection for facial authentication
+          EnableAddFaceBestShot: true
+          EnableAddFaceLiveliness: true
+          EnableAddFaceLivenessCheck: true
+          EnableMinConfidence: true
+          EnableOloID: true
+          FaceCompare: true
+          FaceCompareSimilarityThreshold: 0.95
+          LivelinessConfig:
+            IDRND:
+              Probability: 0.98
+              Quality: 0.95
+          MinConfidence: 0.9
+          MinLivelinessProbability: 0.95
+          MinLivelinessQuality: 0.9
+          PreviousTemplateIDs: []
+          RequireConsent: true
+          SendAppDownloadEmail: false
+          SystemDefault: false
+          UpdatedAt: 2025-04-27T11:30:00Z
+          Applications: []
+    UpdateConnectionRequestExample:
+      summary: Example of connection update request
+      description: Example showing a request to update an existing connection
+      value:
+        FaceCompare: false
+        ConnectionID: "9f82e3b0ab3c4f12b8c9d3e7f12a9981"
+        Description: "sample connection for staging environment"
+        FaceCompareSimilarityThreshold: 0.82
+        DeleteUserProtectionLimit: 250
+        EnableAddFaceLiveliness: true
+        CreatedAt: "2024-07-18T14:22:10.551Z"
+        PCSCBadgeInput: false
+        ConnectionDisplayName: "demo-connection-alpha"
+        EnableAddFaceBestShot: false
+        LivelinessConfig:
+          IDRND:
+            Probability: 0.35
+            Quality: 0.45
+        UpdatedAt: "2024-07-18T15:01:44.992Z"
+    DeleteConnectionResponseExample:
+      summary: Example of successful connection deletion response
+      description: Example showing the response after successfully deleting a connection
+      value:
+        status: success
+        message: Connection deleted successfully
+    BadRequestExample:
+      value:
+        status: "400"
+        message: Bad Request
+    UnauthorizedExample:
+      value:
+        status: "401"
+        message: "Unauthorized: Access token is missing or invalid"
+    NotFoundExample:
+      value:
+        status: "404"
+        message: Not Found
+    InternalServerErrorExample:
+      value:
+        status: "500"
+        message: Internal Server Error - Server encountered an unexpected condition
+    BadGatewayExample:
+      value:
+        status: "502"
+        message: "Bad Gateway: The proxy server received an invalid response from an upstream server"
+security:
+- BearerAuth: []
+tags:
+- name: Connections
+  description: Create and manage identity provider connections.

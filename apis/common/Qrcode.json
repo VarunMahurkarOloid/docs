@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "DyanamicCode": {
+      "$ref": "./Cloudkey.json"
+    },
+    "PermanentCode": {
+      "$ref": "./Cloudkey.json"
+    }
+  }
+}

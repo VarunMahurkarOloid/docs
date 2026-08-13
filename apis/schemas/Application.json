@@ -1,0 +1,492 @@
+{
+  "type": "object",
+  "properties": {
+    "ActionFailureLabel": {
+      "type": "string",
+      "nullable": true,
+      "example": "FAILED 30 Min Break Not Complete"
+    },
+    "ActionProcessingLabel": {
+      "type": "string",
+      "nullable": true
+    },
+    "ActionSucessLabel": {
+      "type": "string",
+      "nullable": true
+    },
+    "AgentAutoUpdate": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AllowCredentialEnrollmentUpdates": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AppSubType": {
+      "type": "string",
+      "nullable": false,
+      "enum": ["WebKey", "DeviceLock", "OloidVault", "Windows Login"]
+    },
+    "ApplicationID": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "maxLength": 32,
+      "minLength": 32,
+      "nullable": false,
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856"
+    },
+    "ApplicationLogo": {
+      "type": "string",
+      "nullable": true,
+      "example": " "
+    },
+    "ApplicationName": {
+      "type": "string",
+      "nullable": true,
+      "minLength": 2,
+      "example": "abcd"
+    },
+    "ApplicationType": {
+      "type": "string",
+      "nullable": false,
+      "enum": ["Oloid Verify", "Generic", "Passwordless"],
+      "example": "Oloid Verify"
+    },
+    "Authentication": {
+      "type": "string",
+      "nullable": true
+    },
+    "AuthFailureMessage": {
+      "type": "string",
+      "nullable": true,
+      "example": "Please contact your supervisor or admin for further assistance."
+    },
+    "AuthTimeout": {
+      "type": "integer",
+      "nullable": true
+    },
+    "AuthenticationFailureErrorMessage": {
+      "type": "string",
+      "nullable": true
+    },
+    "AutoDismissIntentPrompt": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AutoDismissIntentPromptTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "AutoLaunchWebPagePostAuth": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AutoScan": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "BadgeType": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": false
+      },
+      "nullable": true
+    },
+    "CaptureWindowsLoginEvents": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "CertifyType": {
+      "type": "string",
+      "nullable": true,
+      "example": "AirTouch"
+    },
+    "CloudBBoxSize": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ContinuousBadgeScan": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Connections": {
+      "type": "array",
+      "nullable": true,
+      "description": "The connections this application authenticates users against.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "ConnectionID": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F]{32}$",
+            "minLength": 32,
+            "maxLength": 32,
+            "example": "70a4f870d7ef11ef97ef7fd6a9ac4856"
+          },
+          "ConnectionDisplayName": { "type": "string", "nullable": true },
+          "IsAdded": { "type": "boolean", "nullable": true },
+          "OnlineModel": { "type": "string", "nullable": true },
+          "Priority": { "type": "integer", "nullable": true }
+        }
+      }
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2025-01-21T12:01:25Z"
+    },
+    "Credentials": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true,
+      "description": "Which authenticators are turned on for this application. DisableAuth mirrors the ones left off.",
+      "properties": {
+        "EnableBadgeInput": { "type": "boolean", "nullable": true },
+        "EnableBluetooth": { "type": "boolean", "nullable": true },
+        "EnableCloudKey": { "type": "boolean", "nullable": true },
+        "EnableEmail": { "type": "boolean", "nullable": true },
+        "EnableFace": { "type": "boolean", "nullable": true },
+        "EnableNFC": { "type": "boolean", "nullable": true },
+        "EnablePin": { "type": "boolean", "nullable": true },
+        "EnablePinSelfie": { "type": "boolean", "nullable": true },
+        "EnablePrimaryID": { "type": "boolean", "nullable": true },
+        "EnableQRCode": { "type": "boolean", "nullable": true }
+      }
+    },
+    "Debug": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DebugPDLogs": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DefaultApplication": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DeleteUser": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Description": {
+      "type": "string",
+      "nullable": true,
+      "example": "Application for testing"
+    },
+    "DisableAuth": {
+      "type": "string",
+      "nullable": true,
+      "description": "Comma separated list of the authenticators that are turned off for this application, empty when all of them are on. Mirrors the Credentials object.",
+      "example": "QR Code,Badge,Bluetooth,CloudKey"
+    },
+    "DisableFR": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DisableLiveliness": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DisplayInstructionScreen": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DisplayName": {
+      "type": "string",
+      "nullable": true
+    },
+    "DisplayThermalReading": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableAutoLogin": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableBadgeInput": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableCopyCredentials": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableMovingAverage": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableNewTabCamera": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableSoftwareLiveness": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableThermal": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableThermalErrorCorrection": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EndPoints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "EndpointTemplateID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ErrorPromptAutoDismissAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ExceptionTrigger": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "FaceLoginAdditionalFaceMatch": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FaceLoginFaceMatchThreshold": {
+      "type": "number",
+      "nullable": true
+    },
+    "FaceLoginLiveliness": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FaceLoginLivelinessProbability": {
+      "type": "number",
+      "nullable": true
+    },
+    "FaceLoginLivelinessQuality": {
+      "type": "number",
+      "nullable": true
+    },
+    "FaceLoginUseBothModel": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FrameProcessDelayTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "FRMode": {
+      "type": "string",
+      "nullable": false,
+      "enum": ["OnDevice", "Hybrid", "Cloud"],
+      "example": "Hybrid"
+    },
+    "IdleScreenHardTimeLimit": {
+      "type": "integer",
+      "nullable": true
+    },
+    "IdleScreenSoftTimeLimit": {
+      "type": "integer",
+      "nullable": true,
+      "example": 31556952
+    },
+    "IdpID": {
+      "type": "string",
+      "nullable": true
+    },
+    "IgnoreConnection": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "IntentScreenKey": {
+      "type": "string",
+      "nullable": true,
+      "example": "OloidIntentFourButton"
+    },
+    "LandmarksTargetConfidence": {
+      "type": "number",
+      "nullable": true
+    },
+    "LivelinessTargetConfidence": {
+      "type": "integer",
+      "nullable": true
+    },
+    "MFAId": {
+      "type": "string",
+      "nullable": true
+    },
+    "MovingMaxAverage": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "MovingMinAverage": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "OfflineMode": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Okta": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "OloidCertify": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "OloidComInt": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "OnDeviceBBoxSize": {
+      "type": "number",
+      "nullable": true
+    },
+    "OnDeviceModel": {
+      "type": "string",
+      "nullable": true,
+      "example": "ModelV"
+    },
+    "PingTimeOut": {
+      "type": "integer",
+      "nullable": true
+    },
+    "PlatformTriggers": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ReAuthenticateEveryTime": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "RequireConsent": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "RunLocalHttpServer": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "SelfAttestationExpiry": {
+      "type": "integer",
+      "nullable": true
+    },
+    "SessionExpiry": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ShowActionStatus": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ShowActualActionError": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ShowClockOnScreen": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ShowDefaultIntegrationMessage": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ShowIndividualActionStatus": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ShowIntentScreen": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "StrictErrorHandling": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "TenantID": {
+      "type": "string",
+      "description": "The unique ID of the tenant.",
+      "nullable": false,
+      "minLength": 16,
+      "maxLength": 16,
+      "pattern": "^[0-9a-fA-F]{16}$",
+      "example": "FA0280A8A0E64DF9"
+    },
+    "TenantName": {
+      "type": "string",
+      "nullable": false,
+      "minLength": 2,
+      "example": "preview"
+    },
+    "Timezone": {
+      "type": "string",
+      "nullable": true,
+      "example": "America/Los_Angeles"
+    },
+    "TransactionType": {
+      "type": "string",
+      "nullable": true,
+      "example": "FaceAuth"
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true,
+      "example": "2025-04-08T04:59:22.270Z"
+    },
+    "UseGroupsforAuth": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ValidateWindowsCredential": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Version": {
+      "type": "integer",
+      "nullable": true
+    },
+    "WindowsAdminPasscode": {
+      "type": "string",
+      "nullable": true
+    },
+    "WindowsLoginBadgeType": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": false
+      },
+      "nullable": true
+    },
+    "WindowsLoginTimeout": {
+      "type": "integer",
+      "nullable": true
+    },
+    "WriteRPAConfig": {
+      "type": "boolean",
+      "nullable": true
+    }
+  },
+  "additionalProperties": false
+}

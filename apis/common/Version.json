@@ -1,0 +1,72 @@
+{
+  "type": "object",
+  "nullable": true,
+  "additionalProperties": false,
+  "properties": {
+    "AdminApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "Chrome": {
+      "type": "string",
+      "nullable": true
+    },
+    "CredentialProviderApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "LoginApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "OfflineServiceApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "OloidEpicApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "OloidSystemTrayApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "PasswordlessInstaller": {
+      "type": "string",
+      "nullable": true
+    },
+    "WindowsAlertApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "WindowsAlertServiceApp": {
+      "type": "string",
+      "nullable": true
+    },
+    "WaitForResponse": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "WaitTimeInMilliseconds": {
+      "type": "string",
+      "nullable": true
+    },
+    "WebButton": {
+      "$ref": "./Button.json"
+    },
+    "WindowsLockConfig": {
+      "$ref": "./Configuration.json"
+    },
+    "WorkflowAccounts": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "$ref": "./Workflow.json"
+      }
+    },
+    "WorkflowInstanceID": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

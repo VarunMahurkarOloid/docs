@@ -1,0 +1,166 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "ApplicationID": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-fA-F0-9]{32}$",
+        "maxLength": 32,
+        "minLength": 32,
+        "nullable": false,
+        "example": "70a4f870d7ef11ef97ef7fd6a9ac4856"
+      }
+    },
+    "AutoRefreshConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true,
+      "properties": {
+        "RefreshTime": {
+          "type": "integer",
+          "nullable": true
+        },
+        "TransactionRefresh": {
+          "type": "boolean",
+          "nullable": true
+        }
+      }
+    },
+    "CloudKeyDistance": {
+      "type": "integer",
+      "nullable": true
+    },
+    "CloudKeyProximityCheck": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ConnectionTimeout": {
+      "type": "integer",
+      "nullable": true
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Domain": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/Domain.json"
+      }
+    },
+    "DomainExt": {
+      "type": "string",
+      "nullable": true
+    },
+    "EnableIntercomChat": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FeatureFlag": {
+      "$ref": "../common/FeatureFlag.json"
+    },
+    "FirmwareVersion": {
+      "type": "number",
+      "nullable": true
+    },
+    "GPSRefreshFrequency": {
+      "type": "integer",
+      "nullable": true
+    },
+    "IdpSettings": {
+      "$ref": "../common/AdminSetting.json"
+    },
+    "IntentRSSI": {
+      "type": "integer",
+      "nullable": true
+    },
+    "MultiDomain": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "newKey": {
+      "type": "string",
+      "nullable": true
+    },
+    "PinConfiguration": {
+      "$ref": "../common/Configuration.json"
+    },
+    "PrimaryCredential": {
+      "type": "string",
+      "nullable": true
+    },
+    "SelectedCredentials": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "SelectedUseCases": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "SettingType": {
+      "type": "string",
+      "nullable": true
+    },
+    "SourceOfUsers": {
+      "type": "string",
+      "nullable": true
+    },
+    "SuccessDelay": {
+      "type": "integer",
+      "nullable": true
+    },
+    "SupervisorAccess": {
+      "type": "object",
+      "nullable": true,
+      "additionalProperties": {
+        "type": "boolean",
+        "nullable": true
+      }
+    },
+    "SyncInactiveUsers": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "TenantIntents": {
+      "$ref": "../common/Intent.json"
+    },
+    "TenantInviteTemplate": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true,
+      "properties": {
+        "Face": {
+          "$ref": "../common/Face.json"
+        }
+      }
+    },
+    "UUIDs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "nullable": true
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UseSecretManagerForPasswords": {
+      "type": "boolean",
+      "nullable": true
+    }
+  }
+}

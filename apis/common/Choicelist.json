@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "AdditionalInfo": {
+      "type": "object",
+      "nullable": true,
+      "additionalProperties": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "ChoiceID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

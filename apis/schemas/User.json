@@ -1,0 +1,452 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "1WinPassword": {
+      "type": "string",
+      "nullable": true
+    },
+    "1WinUserName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "Value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "AccessLevelGroup": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AlternateEmails": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "email",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "AppCustomData": {
+      "type": "string",
+      "nullable": true
+    },
+    "ApplicationID": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "minLength": 32,
+      "maxLength": 32,
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "nullable": false
+    },
+    "Applications": {
+      "type": "array",
+      "items": {
+        "$ref": "./Application.json"
+      }
+    },
+    "AuthHeader": {
+      "type": "string",
+      "nullable": true
+    },
+    "AzurePassword": {
+      "type": "string",
+      "nullable": true
+    },
+    "AzureUserName": {
+      "type": "string",
+      "nullable": true
+    },
+    "BadgeBinary": {
+      "type": "string",
+      "nullable": true
+    },
+    "Bluetooth": {
+      "$ref": "../common/Bluetooth.json"
+    },
+    "ChallengeCodeCreatedOn": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ChallengeCodeExpiry": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ClearAllLog": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "CloudKey": {
+      "$ref": "../common/Cloudkey.json"
+    },
+    "CognitoRole": {
+      "type": "string",
+      "nullable": true
+    },
+    "Confidence": {
+      "type": "number",
+      "nullable": true
+    },
+    "ConnectionDisplayName": {
+      "type": "string",
+      "minLength": 2,
+      "nullable": false
+    },
+    "ConnectionGroupID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ConnectionID": {
+      "type": "string",
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "minLength": 32,
+      "maxLength": 32,
+      "nullable": false
+    },
+    "ConnectionName": {
+      "type": "string",
+      "minLength": 2,
+      "nullable": true
+    },
+    "ConsentDenied": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ConsentDeniedTime": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "ConsentMetadata": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/ConsentMetadata.json"
+      }
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "CredentialFormatID": {
+      "type": "string",
+      "nullable": true
+    },
+    "CredentialFormatName": {
+      "type": "string",
+      "nullable": true
+    },
+    "CredentialMetadata": {
+      "$ref": "../common/CredentialMetadata.json"
+    },
+    "DebugTransactionExpiry": {
+      "type": "integer",
+      "nullable": true
+    },
+    "DeviceType": {
+      "type": "string",
+      "nullable": true
+    },
+    "DisplayName": {
+      "type": "string",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "format": "email",
+      "nullable": true
+    },
+    "Enabled": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableDesktopNotification": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EndpointName": {
+      "type": "string",
+      "nullable": true
+    },
+    "EndpointType": {
+      "type": "string",
+      "nullable": true
+    },
+    "ExternalID1": {
+      "type": "string",
+      "nullable": true
+    },
+    "ExternalUsername": {
+      "type": "string",
+      "nullable": true
+    },
+    "FaceDescriptor": {
+      "type": "string",
+      "nullable": true
+    },
+    "Faces": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/Face.json"
+      }
+    },
+    "FirstName": {
+      "type": "string",
+      "nullable": true
+    },
+    "FullName": {
+      "type": "string",
+      "nullable": true
+    },
+    "GetBatteryInfo": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "GroupOnlineModelFaceID": {
+      "type": "string",
+      "nullable": true
+    },
+    "Groups": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-fA-F0-9]{32}$",
+        "minLength": 32,
+        "maxLength": 32,
+        "nullable": false,
+        "description": "Group ID reference"
+      }
+    },
+    "IDSearch1": {
+      "type": "string",
+      "nullable": true,
+      "description": "Searchable badge or card value. Sending a number is rejected by the store.",
+      "example": "0112345678"
+    },
+    "IDSearch2": {
+      "type": "string",
+      "nullable": true
+    },
+    "IDVerification": {
+      "type": "string",
+      "nullable": true
+    },
+    "LastName": {
+      "type": "string",
+      "nullable": true
+    },
+    "LogUploadTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true
+    },
+    "OloID": {
+      "type": "string",
+      "description": "The unique OloID of the user.",
+      "pattern": "^[0-9a-fA-F]{32}$",
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856",
+      "minLength": 32,
+      "maxLength": 32,
+      "nullable": false
+    },
+    "OloidVaultCredentials": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "OndeviceModel": {
+      "type": "string",
+      "nullable": true
+    },
+    "PasskeyCredentials": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "Phone": {
+      "type": "string",
+      "nullable": true
+    },
+    "Pin": {
+      "type": "string",
+      "nullable": true
+    },
+    "PreferredLanguage": {
+      "type": "string",
+      "nullable": true
+    },
+    "PrimaryFace": {
+      "type": "string",
+      "nullable": true
+    },
+    "PrimaryID": {
+      "type": "string",
+      "nullable": false
+    },
+    "QRCode": {
+      "$ref": "../common/Qrcode.json"
+    },
+    "Role": {
+      "type": "string",
+      "nullable": true
+    },
+    "Scopes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "SearchField": {
+      "type": "string"
+    },
+    "SecondaryID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "SessionFeature": {
+      "type": "string",
+      "nullable": true
+    },
+    "Stability": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Status": {
+      "type": "string",
+      "nullable": true
+    },
+    "Supervisor": {
+      "type": "string",
+      "nullable": true
+    },
+    "SupervisorEmail": {
+      "type": "string",
+      "nullable": true
+    },
+    "TemplateID": {
+      "type": "string",
+      "nullable": true
+    },
+    "TenantID": {
+      "type": "string",
+      "description": "The unique ID of the tenant.",
+      "nullable": false,
+      "minLength": 16,
+      "maxLength": 16,
+      "pattern": "^[0-9a-fA-F]{16}$",
+      "example": "FA0280A8A0E64DF9"
+    },
+    "TenantName": {
+      "type": "string",
+      "nullable": false
+    },
+    "Timezone": {
+      "type": "string",
+      "nullable": true
+    },
+    "TimeRule": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/Timerule.json"
+      }
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UserConsentProvided": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "UserConsentStatus": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "UserIntents": {
+      "$ref": "../common/Intent.json"
+    },
+    "UserMetadata": {
+      "$ref": "../common/UserMetadata.json"
+    },
+    "UserPasswords": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "UserStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "UserType": {
+      "type": "string",
+      "nullable": true
+    },
+    "WinPassword": {
+      "type": "string",
+      "nullable": true
+    },
+    "WinUserName": {
+      "type": "string",
+      "nullable": true
+    },
+    "importAs": {
+      "type": "string",
+      "nullable": true
+    },
+    "UserCreateDate": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "UserLastModifiedDate": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Username": {
+      "type": "string",
+      "nullable": true
+    },
+    "Vaccination": {
+      "type": "string",
+      "nullable": true
+    },
+    "Message": {
+      "type": "string",
+      "nullable": true
+    },
+    "Success": {
+      "type": "boolean",
+      "nullable": true
+    }
+  }
+}

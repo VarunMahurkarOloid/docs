@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "TemplateCode": {
+      "type": "string",
+      "nullable": true,
+      "example": "H10301"
+    },
+    "TemplateName": {
+      "type": "string",
+      "nullable": true,
+      "example": "Standard 26-bit (H10301)"
+    },
+    "Description": {
+      "type": "string",
+      "nullable": true,
+      "example": "26 Bit"
+    },
+    "IsReverseFacilityCodeLength": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EncodedStart": {
+      "type": "integer",
+      "nullable": true,
+      "example": 10
+    },
+    "HotStampAndEncodedNumbersDefaultIdentical": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FacilityCodeLength": {
+      "type": "integer",
+      "nullable": true,
+      "example": 8
+    },
+    "FacilityCode": {
+      "type": "integer",
+      "nullable": true,
+      "example": 0
+    },
+    "ParityBitDefinition": {
+      "type": "array",
+      "items": {
+        "$ref": "./Paritybit.json"
+      }
+    },
+    "Name": {
+      "type": "string",
+      "nullable": true,
+      "example": "Oloid-35Bit"
+    },
+    "IsReverseEncodedLength": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FacilityCodeStart": {
+      "type": "integer",
+      "nullable": true,
+      "example": 2
+    },
+    "Length": {
+      "type": "integer",
+      "nullable": true,
+      "example": 26
+    },
+    "EncodedLength": {
+      "type": "integer",
+      "nullable": true,
+      "example": 16
+    },
+    "DataFormat": {
+      "type": "string",
+      "nullable": true,
+      "example": "Wiegand"
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "FormatID": {
+      "type": "string",
+      "nullable": true
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    }
+  }
+}

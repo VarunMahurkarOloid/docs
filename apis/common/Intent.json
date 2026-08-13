@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "UserInitiatedUnlock": {
+      "type": "string",
+      "nullable": true
+    },
+    "AutoUnlock": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "WriteRssi": {
+      "type": "integer",
+      "nullable": true
+    },
+    "IntentType": {
+      "type": "string",
+      "nullable": true
+    },
+    "DepartmentCode": {
+      "type": "string",
+      "nullable": true
+    },
+    "Department": {
+      "type": "string",
+      "nullable": true
+    },
+    "IntentValue": {
+      "type": "string",
+      "nullable": true
+    },
+    "DepartmentID": {
+      "type": "integer",
+      "nullable": true
+    },
+    "ClockID": {
+      "type": "string",
+      "nullable": true
+    },
+    "AllowEndpointIntent": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "HideAutoUnlockSettings": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Label": {
+      "type": "string",
+      "nullable": true
+    },
+    "Value": {
+      "type": "string",
+      "nullable": true
+    },
+    "isEnabled": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

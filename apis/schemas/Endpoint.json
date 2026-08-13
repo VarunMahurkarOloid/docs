@@ -1,0 +1,509 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "nullable": true,
+  "properties": {
+    "Address": {
+      "$ref": "../common/Address.json"
+    },
+    "AdminOnly": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "AgentAutoUpdate": {
+      "$ref": "../common/Autoupdate.json"
+    },
+    "AgentLastSyncTime": {
+      "type": "string",
+      "nullable": true
+    },
+    "AlertTransactions": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "AllowIndividualCredentials": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ApiBaseUrl": {
+      "type": "string",
+      "nullable": true
+    },
+    "AppBuildNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "AppOrientation": {
+      "type": "object",
+      "nullable": true,
+      "additionalProperties": false
+    },
+    "AppVersionNumber": {
+      "type": "number",
+      "nullable": true
+    },
+    "ApplicationID": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{32}$",
+      "maxLength": 32,
+      "minLength": 32,
+      "nullable": false,
+      "example": "70a4f870d7ef11ef97ef7fd6a9ac4856"
+    },
+    "ApplicationName": {
+      "type": "string",
+      "minLength": 3,
+      "nullable": true
+    },
+    "ApplicationType": {
+      "type": "string",
+      "nullable": false,
+      "enum": ["Oloid Verify", "Generic", "Passwordless"],
+      "example": "Oloid Verify"
+    },
+    "AreaID": {
+      "type": "string",
+      "nullable": true
+    },
+    "AuthHeader": {
+      "type": "string",
+      "nullable": true
+    },
+    "AutoUnblockAfter": {
+      "type": "integer",
+      "nullable": true
+    },
+    "BuildingID": {
+      "type": "string",
+      "nullable": true
+    },
+    "CaptureLocation": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "ClearAllLog": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "CloudKeyURL": {
+      "type": "string",
+      "nullable": true
+    },
+    "CreatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "DebugLogType": {
+      "type": "string",
+      "nullable": true
+    },
+    "DebugLogs": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Description": {
+      "type": "string",
+      "nullable": true
+    },
+    "DeviceOS": {
+      "type": "string",
+      "nullable": true
+    },
+    "DeviceType": {
+      "type": "string",
+      "nullable": true
+    },
+    "DisableLiveliness": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DomainUserPasswordsForAllMachines": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "DoorID": {
+      "type": "string",
+      "nullable": true
+    },
+    "DownloadOneFace": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "Email": {
+      "type": "string",
+      "format": "email",
+      "nullable": true
+    },
+    "EnableHealthAlerts": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableLogUpload": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EnableOnScreenKeyboard": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "EndpointAutoUpdate": {
+      "$ref": "../common/Autoupdate.json"
+    },
+    "EndpointBlockReason": {
+      "type": "string",
+      "nullable": true
+    },
+    "EndpointConfigFile": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "nullable": true
+      },
+      "nullable": true
+    },
+    "EndpointHealthAlertRecipients": {
+      "type": "array",
+      "nullable": true
+    },
+    "EndpointID": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9]{6}$",
+      "minLength": 6,
+      "maxLength": 6,
+      "nullable": false
+    },
+    "EndpointLocation": {
+      "$ref": "../common/Address.json"
+    },
+    "EndpointName": {
+      "type": "string",
+      "minLength": 3,
+      "nullable": false
+    },
+    "EndpointState": {
+      "type": "integer",
+      "nullable": true
+    },
+    "EndpointTemplateID": {
+      "type": "string",
+      "nullable": true
+    },
+    "EndpointTemplateName": {
+      "type": "string",
+      "nullable": true
+    },
+    "EndpointVersion": {
+      "type": "integer",
+      "nullable": true
+    },
+    "EnpointsIntents": {
+      "$ref": "../common/Intent.json"
+    },
+    "Environment": {
+      "type": "string",
+      "nullable": true
+    },
+    "FetchDescriptors": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "FirebaseUserId": {
+      "type": "string",
+      "nullable": true
+    },
+    "Flows": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "$ref": "../common/Flow.json"
+      }
+    },
+    "FourButtonIntent": {
+      "$ref": "../common/Button.json"
+    },
+    "Groups": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "$ref": "./Group.json"
+      }
+    },
+    "HealthAlertFrequency": {
+      "type": "integer",
+      "nullable": true
+    },
+    "HostName": {
+      "type": "string",
+      "nullable": true
+    },
+    "IPAddress": {
+      "type": "string",
+      "format": "ipv4",
+      "nullable": true
+    },
+    "IPAddresses": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "InactiveEndpoint": {
+      "type": "boolean",
+      "nullable": true
+    },
+    "InstanceType": {
+      "type": "string",
+      "nullable": true
+    },
+    "Integrations": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/Integration.json"
+      }
+    },
+    "LocationID": {
+      "type": "string",
+      "nullable": true
+    },
+    "LogConfig": {
+      "$ref": "../common/Configuration.json"
+    },
+    "LogUploadTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "MacAddress": {
+      "type": "string",
+      "nullable": true
+    },
+    "MachineName": {
+      "type": "string",
+      "nullable": true
+    },
+    "ModelNumber": {
+      "type": "string",
+      "nullable": true
+    },
+    "OSVersion": {
+      "type": "string",
+      "nullable": true
+    },
+    "PasskeyConfig": {
+      "type": "object",
+      "nullable": true,
+      "additionalProperties": false
+    },
+    "Password": {
+      "type": "string",
+      "nullable": true
+    },
+    "PreviewHomePage": {
+      "type": "string",
+      "nullable": true
+    },
+    "SecretID": {
+      "type": "string",
+      "nullable": true
+    },
+    "SharedCredentials": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "SharedPasskeys": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "Status": {
+      "type": "string",
+      "nullable": true
+    },
+    "StickerMACAddress": {
+      "type": "string",
+      "nullable": true
+    },
+    "StickerUUID": {
+      "type": "string",
+      "nullable": true
+    },
+    "Tags": {
+      "type": "string",
+      "nullable": true
+    },
+    "TemplateId": {
+      "type": "string",
+      "nullable": true
+    },
+    "TenantID": {
+      "type": "string",
+      "description": "The unique ID of the tenant.",
+      "nullable": false,
+      "minLength": 16,
+      "maxLength": 16,
+      "pattern": "^[0-9a-fA-F]{16}$",
+      "example": "FA0280A8A0E64DF9"
+    },
+    "TenantName": {
+      "type": "string",
+      "nullable": true
+    },
+    "TimeZone": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "TwoButtonIntent": {
+      "$ref": "../common/Button.json"
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    },
+    "Url": {
+      "type": "string",
+      "nullable": true
+    },
+    "UserCacheValidity": {
+      "type": "integer",
+      "nullable": true
+    },
+    "UserCredentials": {
+      "type": "array",
+      "nullable": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "IntegrationUrls": {
+      "type": "string",
+      "nullable": true
+    },
+    "UserID": {
+      "type": "string",
+      "nullable": false
+    },
+    "UserName": {
+      "type": "string",
+      "nullable": true
+    },
+    "UserPasskeys": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "nullable": true
+      }
+    },
+    "Versions": {
+      "$ref": "../common/Version.json"
+    },
+    "WindowsLockConfig": {
+      "$ref": "../common/Configuration.json"
+    },
+    "CreatedOn": {
+      "type": "integer",
+      "nullable": true
+    },
+    "MonthCreated": {
+      "type": "string",
+      "nullable": true
+    },
+    "HealthCheckType": {
+      "type": "string",
+      "nullable": true
+    },
+    "RequestDateTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "RequestStatus": {
+      "type": "string",
+      "nullable": true
+    },
+    "RequestID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ResponseDateTime": {
+      "type": "integer",
+      "nullable": true
+    },
+    "Timestamp": {
+      "type": "integer",
+      "nullable": true
+    },
+    "EndpointType": {
+      "type": "string",
+      "enum": [
+        "DeviceLock",
+        "Windows Login",
+        "OloidVault",
+        "CloudKey",
+        "M-Tag",
+        "Oloid Connect",
+        "Workflow",
+        "Oloid Verify",
+        "OloidWorkflow",
+        "iPad"
+      ],
+      "nullable": false
+    },
+    "CoreConnectivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true
+    },
+    "TenantName1": {
+      "type": "string",
+      "nullable": false
+    },
+    "ActionID": {
+      "type": "string",
+      "nullable": true
+    },
+    "ActionTransaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true
+    },
+    "UpdatedOn": {
+      "type": "number",
+      "nullable": true
+    },
+    "IntegrationType": {
+      "type": "string",
+      "nullable": true
+    },
+    "IntegrationID": {
+      "type": "string",
+      "nullable": true
+    },
+    "TransactionID": {
+      "type": "string",
+      "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$",
+      "maxLength": 36,
+      "minLength": 36,
+      "example": "b57f2ce0-3a0a-11f0-bdc5-c15d5eb33b4b",
+      "nullable": false
+    },
+    "PlatformActions": {
+      "type": "object",
+      "additionalProperties": false,
+      "nullable": true
+    },
+    "UpdatePlatformStatus": {
+      "type": "boolean",
+      "nullable": true
+    }
+  }
+}
