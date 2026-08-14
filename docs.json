@@ -62,7 +62,10 @@
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": ["passwordless/overview"]
+            "pages": [
+              "passwordless/overview"
+            ],
+            "hidden": true
           },
           {
             "item": "Windows Login",
@@ -1219,7 +1222,10 @@
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": ["timeclock/overview"]
+            "pages": [
+              "timeclock/overview"
+            ],
+            "hidden": true
           },
           {
             "item": "Android",
@@ -1257,7 +1263,10 @@
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": ["administration/overview"]
+            "pages": [
+              "administration/overview"
+            ],
+            "hidden": true
           },
           {
             "item": "Admin Portal",
@@ -2147,7 +2156,8 @@
               "api-reference/overview",
               "api-reference/introduction",
               "api-reference/authentication"
-            ]
+            ],
+            "hidden": true
           },
           {
             "item": "Guides",
@@ -2378,7 +2388,10 @@
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": ["resources/overview"]
+            "pages": [
+              "resources/overview"
+            ],
+            "hidden": true
           },
           {
             "item": "Workflow",
