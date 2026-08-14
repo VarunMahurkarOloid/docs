@@ -20,12 +20,7 @@
         "href": "mailto:support@oloid.ai",
         "label": "Support"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.oloid.ai"
-    }
+    ]
   },
   "footer": {
     "socials": {
@@ -67,9 +62,7 @@
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": [
-              "passwordless/overview"
-            ]
+            "pages": ["passwordless/overview"]
           },
           {
             "item": "Windows Login",
@@ -1086,9 +1079,7 @@
               },
               {
                 "group": "FAQs",
-                "pages": [
-                  "passwordless/web/chrome-vault/faqs-chrome-vault"
-                ]
+                "pages": ["passwordless/web/chrome-vault/faqs-chrome-vault"]
               },
               {
                 "group": "Getting Started",
@@ -1228,9 +1219,7 @@
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": [
-              "timeclock/overview"
-            ]
+            "pages": ["timeclock/overview"]
           },
           {
             "item": "Android",
@@ -1263,14 +1252,103 @@
         ]
       },
       {
+        "tab": "Workflow",
+        "groups": [
+          {
+            "group": "Workflow",
+            "icon": "diagram-project",
+            "pages": [
+              "workflow/overview",
+              {
+                "group": "Accounts",
+                "pages": [
+                  "workflow/workflow/accounts",
+                  "workflow/workflow/oloid-account",
+                  "workflow/workflow/prowatch-account",
+                  "workflow/workflow/servicenow-account"
+                ]
+              },
+              {
+                "group": "Data Protection",
+                "pages": ["workflow/workflow/data-protection"]
+              },
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "workflow/workflow/how-to-pair-oloid-workflow-instance-with-oloid-cloud-platform",
+                  "workflow/workflow/how-to-uninstall-oloid-workflow",
+                  "workflow/workflow/how-to-upgrade-oloid-workflow",
+                  "workflow/workflow/instruction-for-workflow-instance-setup",
+                  "workflow/workflow/outbound-network-access-requirements",
+                  "workflow/workflow/pre-req-system-requirements",
+                  "workflow/workflow/suggested-approach-for-installation-and-maintenance"
+                ]
+              },
+              {
+                "group": "How-to guides",
+                "pages": [
+                  "workflow/workflow/how-to-create-a-flow",
+                  "workflow/workflow/how-to-enable-disable-flow",
+                  "workflow/workflow/how-to-import-a-flow"
+                ]
+              },
+              {
+                "group": "On-Prem Application Health",
+                "pages": [
+                  "workflow/workflow/how-to-configure-system-and-api-health-in-oloid-workflow",
+                  "workflow/workflow/monitoring-health-status"
+                ]
+              },
+              {
+                "group": "Overview",
+                "pages": [
+                  "workflow/workflow/oloid-workflow-overview",
+                  "workflow/workflow/oloid-workflow-core-features",
+                  "workflow/workflow/oloid-workflow-application-modes",
+                  "workflow/workflow/oloid-workflow-key-concepts"
+                ]
+              },
+              {
+                "group": "Pre-built Flow Templates",
+                "pages": [
+                  "workflow/workflow/pro-watch-to-everbridge-critical-event-response-automation",
+                  "workflow/workflow/pro-watch-to-servicenow-incident-automation-and-ticketing-integration",
+                  "workflow/workflow/prowatch-servicenow-integration",
+                  "workflow/workflow/servicenow-to-pro-watch-access-management-automation"
+                ]
+              },
+              {
+                "group": "Security",
+                "pages": ["workflow/workflow/security"]
+              },
+              {
+                "group": "Set up 3rd party Applications",
+                "pages": [
+                  "workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations",
+                  "workflow/workflow/set-up-s2-netbox-for-oloid-workflow-integrations",
+                  "workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations"
+                ]
+              },
+              {
+                "group": "Workflow",
+                "pages": [
+                  "workflow/workflow/getting-started-with-oloid-workflow",
+                  "workflow/workflow/oloid-workflow-guides-list",
+                  "workflow/workflow/using-the-terminated-user-processing-api",
+                  "workflow/workflow/what-is-oloid-workflow"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Administration",
         "menu": [
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": [
-              "administration/overview"
-            ]
+            "pages": ["administration/overview"]
           },
           {
             "item": "Admin Portal",
@@ -2178,68 +2256,6 @@
             "icon": "server",
             "groups": [
               {
-                "group": "Login",
-                "pages": [
-                  "api-reference/platform/login/login",
-                  "api-reference/platform/login/google-login"
-                ]
-              },
-              {
-                "group": "Applications",
-                "pages": [
-                  "api-reference/platform/applications/get-applications",
-                  "api-reference/platform/applications/create-application",
-                  "api-reference/platform/applications/get-application-by-application-id",
-                  "api-reference/platform/applications/update-application",
-                  "api-reference/platform/applications/delete-application",
-                  "api-reference/platform/applications/get-application-users"
-                ]
-              },
-              {
-                "group": "Connections",
-                "pages": [
-                  "api-reference/platform/connections/get-connections",
-                  "api-reference/platform/connections/create-connection",
-                  "api-reference/platform/connections/get-connection-by-connection-id",
-                  "api-reference/platform/connections/update-connection",
-                  "api-reference/platform/connections/delete-connection"
-                ]
-              },
-              {
-                "group": "Endpoints",
-                "pages": [
-                  "api-reference/platform/endpoints/get-all-endpoints",
-                  "api-reference/platform/endpoints/get-endpoint-details-by-id",
-                  "api-reference/platform/endpoints/update-endpoint-detail",
-                  "api-reference/platform/endpoints/delete-endpoint",
-                  "api-reference/platform/endpoints/get-end-user-from-endpoint",
-                  "api-reference/platform/endpoints/get-uuid",
-                  "api-reference/platform/endpoints/re-pair-endpoint",
-                  "api-reference/platform/endpoints/update-intent",
-                  "api-reference/platform/endpoints/delete-endpoint-groups",
-                  "api-reference/platform/endpoints/pair-endpoint",
-                  "api-reference/platform/endpoints/init-health-check",
-                  "api-reference/platform/endpoints/auto-pair-endpoint",
-                  "api-reference/platform/endpoints/update-health-for-windows-endpoint",
-                  "api-reference/platform/endpoints/pair-endpoint-sticker",
-                  "api-reference/platform/endpoints/create-endpoint-template",
-                  "api-reference/platform/endpoints/list-endpoint-templates"
-                ]
-              },
-              {
-                "group": "Groups",
-                "pages": [
-                  "api-reference/platform/groups/get-all-groups",
-                  "api-reference/platform/groups/create-new-group",
-                  "api-reference/platform/groups/get-group-details",
-                  "api-reference/platform/groups/delete-group",
-                  "api-reference/platform/groups/add-users-to-group",
-                  "api-reference/platform/groups/remove-users-from-group",
-                  "api-reference/platform/groups/add-endpoints",
-                  "api-reference/platform/groups/remove-endpoints"
-                ]
-              },
-              {
                 "group": "Users",
                 "pages": [
                   "api-reference/platform/users/get-users",
@@ -2299,6 +2315,61 @@
                 ]
               },
               {
+                "group": "Endpoints",
+                "pages": [
+                  "api-reference/platform/endpoints/get-all-endpoints",
+                  "api-reference/platform/endpoints/get-endpoint-details-by-id",
+                  "api-reference/platform/endpoints/update-endpoint-detail",
+                  "api-reference/platform/endpoints/delete-endpoint",
+                  "api-reference/platform/endpoints/get-end-user-from-endpoint",
+                  "api-reference/platform/endpoints/get-uuid",
+                  "api-reference/platform/endpoints/re-pair-endpoint",
+                  "api-reference/platform/endpoints/update-intent",
+                  "api-reference/platform/endpoints/delete-endpoint-groups",
+                  "api-reference/platform/endpoints/pair-endpoint",
+                  "api-reference/platform/endpoints/init-health-check",
+                  "api-reference/platform/endpoints/auto-pair-endpoint",
+                  "api-reference/platform/endpoints/update-health-for-windows-endpoint",
+                  "api-reference/platform/endpoints/pair-endpoint-sticker",
+                  "api-reference/platform/endpoints/create-endpoint-template",
+                  "api-reference/platform/endpoints/list-endpoint-templates"
+                ]
+              },
+              {
+                "group": "Groups",
+                "pages": [
+                  "api-reference/platform/groups/get-all-groups",
+                  "api-reference/platform/groups/create-new-group",
+                  "api-reference/platform/groups/get-group-details",
+                  "api-reference/platform/groups/delete-group",
+                  "api-reference/platform/groups/add-users-to-group",
+                  "api-reference/platform/groups/remove-users-from-group",
+                  "api-reference/platform/groups/add-endpoints",
+                  "api-reference/platform/groups/remove-endpoints"
+                ]
+              },
+              {
+                "group": "Applications",
+                "pages": [
+                  "api-reference/platform/applications/get-applications",
+                  "api-reference/platform/applications/create-application",
+                  "api-reference/platform/applications/get-application-by-application-id",
+                  "api-reference/platform/applications/update-application",
+                  "api-reference/platform/applications/delete-application",
+                  "api-reference/platform/applications/get-application-users"
+                ]
+              },
+              {
+                "group": "Connections",
+                "pages": [
+                  "api-reference/platform/connections/get-connections",
+                  "api-reference/platform/connections/create-connection",
+                  "api-reference/platform/connections/get-connection-by-connection-id",
+                  "api-reference/platform/connections/update-connection",
+                  "api-reference/platform/connections/delete-connection"
+                ]
+              },
+              {
                 "group": "Transactions",
                 "pages": [
                   "api-reference/platform/transactions/get-transactions",
@@ -2318,8 +2389,20 @@
               },
               {
                 "group": "Consent",
+                "pages": ["api-reference/platform/consent/get-user-consent"]
+              },
+              {
+                "group": "Login",
                 "pages": [
-                  "api-reference/platform/consent/get-user-consent"
+                  "api-reference/platform/login/login",
+                  "api-reference/platform/login/google-login"
+                ]
+              },
+              {
+                "group": "Advanced Login",
+                "pages": [
+                  "api-reference/platform/advanced-login/login",
+                  "api-reference/platform/advanced-login/google-login"
                 ]
               },
               {
@@ -2344,9 +2427,7 @@
               },
               {
                 "group": "RDS Reports",
-                "pages": [
-                  "api-reference/platform/rds-reports/get-rdsdata"
-                ]
+                "pages": ["api-reference/platform/rds-reports/get-rdsdata"]
               }
             ]
           },
@@ -2356,16 +2437,7 @@
             "groups": [
               {
                 "group": "Login",
-                "pages": [
-                  "api-reference/integrations/login/login"
-                ]
-              },
-              {
-                "group": "Advanced Login",
-                "pages": [
-                  "api-reference/platform/advanced-login/login",
-                  "api-reference/platform/advanced-login/google-login"
-                ]
+                "pages": ["api-reference/integrations/login/login"]
               },
               {
                 "group": "Consent",
@@ -2392,145 +2464,40 @@
         ]
       },
       {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Product Release Notes",
+            "icon": "clock-rotate-left",
+            "pages": [
+              "changelog/platform",
+              "changelog/windows",
+              "changelog/android",
+              "changelog/ios",
+              "changelog/webkey",
+              "changelog/oloidvault",
+              "changelog/userportal"
+            ]
+          },
+          {
+            "group": "Coming Soon",
+            "icon": "rocket",
+            "pages": ["changelog/upcoming/apps", "changelog/upcoming/web"]
+          },
+          {
+            "group": "API",
+            "icon": "code",
+            "pages": ["changelog/releasenotes"]
+          }
+        ]
+      },
+      {
         "tab": "Resources",
         "menu": [
           {
             "item": "Overview",
             "icon": "book-open",
-            "pages": [
-              "resources/overview"
-            ]
-          },
-          {
-            "item": "Workflow",
-            "icon": "diagram-project",
-            "groups": [
-              {
-                "group": "Workflow",
-                "icon": "diagram-project",
-                "pages": [
-                  "workflow/overview",
-                  {
-                    "group": "Accounts",
-                    "pages": [
-                      "workflow/workflow/accounts",
-                      "workflow/workflow/oloid-account",
-                      "workflow/workflow/prowatch-account",
-                      "workflow/workflow/servicenow-account"
-                    ]
-                  },
-                  {
-                    "group": "Data Protection",
-                    "pages": [
-                      "workflow/workflow/data-protection"
-                    ]
-                  },
-                  {
-                    "group": "Getting Started",
-                    "pages": [
-                      "workflow/workflow/how-to-pair-oloid-workflow-instance-with-oloid-cloud-platform",
-                      "workflow/workflow/how-to-uninstall-oloid-workflow",
-                      "workflow/workflow/how-to-upgrade-oloid-workflow",
-                      "workflow/workflow/instruction-for-workflow-instance-setup",
-                      "workflow/workflow/outbound-network-access-requirements",
-                      "workflow/workflow/pre-req-system-requirements",
-                      "workflow/workflow/suggested-approach-for-installation-and-maintenance"
-                    ]
-                  },
-                  {
-                    "group": "How-to guides",
-                    "pages": [
-                      "workflow/workflow/how-to-create-a-flow",
-                      "workflow/workflow/how-to-enable-disable-flow",
-                      "workflow/workflow/how-to-import-a-flow"
-                    ]
-                  },
-                  {
-                    "group": "On-Prem Application Health",
-                    "pages": [
-                      "workflow/workflow/how-to-configure-system-and-api-health-in-oloid-workflow",
-                      "workflow/workflow/monitoring-health-status"
-                    ]
-                  },
-                  {
-                    "group": "Overview",
-                    "pages": [
-                      "workflow/workflow/oloid-workflow-overview",
-                      "workflow/workflow/oloid-workflow-core-features",
-                      "workflow/workflow/oloid-workflow-application-modes",
-                      "workflow/workflow/oloid-workflow-key-concepts"
-                    ]
-                  },
-                  {
-                    "group": "Pre-built Flow Templates",
-                    "pages": [
-                      "workflow/workflow/pro-watch-to-everbridge-critical-event-response-automation",
-                      "workflow/workflow/pro-watch-to-servicenow-incident-automation-and-ticketing-integration",
-                      "workflow/workflow/prowatch-servicenow-integration",
-                      "workflow/workflow/servicenow-to-pro-watch-access-management-automation"
-                    ]
-                  },
-                  {
-                    "group": "Security",
-                    "pages": [
-                      "workflow/workflow/security"
-                    ]
-                  },
-                  {
-                    "group": "Set up 3rd party Applications",
-                    "pages": [
-                      "workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations",
-                      "workflow/workflow/set-up-s2-netbox-for-oloid-workflow-integrations",
-                      "workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations"
-                    ]
-                  },
-                  {
-                    "group": "Workflow",
-                    "pages": [
-                      "workflow/workflow/getting-started-with-oloid-workflow",
-                      "workflow/workflow/oloid-workflow-guides-list",
-                      "workflow/workflow/using-the-terminated-user-processing-api",
-                      "workflow/workflow/what-is-oloid-workflow"
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "item": "Changelog",
-            "icon": "clock-rotate-left",
-            "description": "",
-            "groups": [
-              {
-                "group": "Product Release Notes",
-                "icon": "clock-rotate-left",
-                "pages": [
-                  "changelog/platform",
-                  "changelog/windows",
-                  "changelog/android",
-                  "changelog/ios",
-                  "changelog/webkey",
-                  "changelog/oloidvault",
-                  "changelog/userportal"
-                ]
-              },
-              {
-                "group": "Coming Soon",
-                "icon": "rocket",
-                "pages": [
-                  "changelog/upcoming/apps",
-                  "changelog/upcoming/web"
-                ]
-              },
-              {
-                "group": "API",
-                "icon": "code",
-                "pages": [
-                  "changelog/releasenotes"
-                ]
-              }
-            ]
+            "pages": ["resources/overview"]
           },
           {
             "item": "Integrations",
@@ -2842,9 +2809,7 @@
               },
               {
                 "group": "PaaS",
-                "pages": [
-                  "passwordless/windows/vault/getting-started"
-                ]
+                "pages": ["passwordless/windows/vault/getting-started"]
               }
             ]
           },
@@ -2854,27 +2819,19 @@
             "dropdowns": [
               {
                 "dropdown": "Healthcare",
-                "pages": [
-                  "passwordless/windows/vault/getting-started"
-                ]
+                "pages": ["passwordless/windows/vault/getting-started"]
               },
               {
                 "dropdown": "Pharma",
-                "pages": [
-                  "passwordless/windows/connect/getting-started"
-                ]
+                "pages": ["passwordless/windows/connect/getting-started"]
               },
               {
                 "dropdown": "Manufacturing",
-                "pages": [
-                  "passwordless/windows/connect/getting-started"
-                ]
+                "pages": ["passwordless/windows/connect/getting-started"]
               },
               {
                 "dropdown": "Retail",
-                "pages": [
-                  "passwordless/windows/vault/getting-started"
-                ]
+                "pages": ["passwordless/windows/vault/getting-started"]
               }
             ]
           },
@@ -2898,9 +2855,7 @@
               },
               {
                 "group": "Passwordless Authenticator - Miscellaneous Docs",
-                "pages": [
-                  "resources/guides/oloid-supported-card-types"
-                ]
+                "pages": ["resources/guides/oloid-supported-card-types"]
               },
               {
                 "group": "Passwordless Authenticator- Supporting Documents",
