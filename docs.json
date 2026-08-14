@@ -1263,101 +1263,6 @@
         ]
       },
       {
-        "tab": "Workflow",
-        "groups": [
-          {
-            "group": "Workflow",
-            "icon": "diagram-project",
-            "pages": [
-              "workflow/overview",
-              {
-                "group": "Accounts",
-                "pages": [
-                  "workflow/workflow/accounts",
-                  "workflow/workflow/oloid-account",
-                  "workflow/workflow/prowatch-account",
-                  "workflow/workflow/servicenow-account"
-                ]
-              },
-              {
-                "group": "Data Protection",
-                "pages": [
-                  "workflow/workflow/data-protection"
-                ]
-              },
-              {
-                "group": "Getting Started",
-                "pages": [
-                  "workflow/workflow/how-to-pair-oloid-workflow-instance-with-oloid-cloud-platform",
-                  "workflow/workflow/how-to-uninstall-oloid-workflow",
-                  "workflow/workflow/how-to-upgrade-oloid-workflow",
-                  "workflow/workflow/instruction-for-workflow-instance-setup",
-                  "workflow/workflow/outbound-network-access-requirements",
-                  "workflow/workflow/pre-req-system-requirements",
-                  "workflow/workflow/suggested-approach-for-installation-and-maintenance"
-                ]
-              },
-              {
-                "group": "How-to guides",
-                "pages": [
-                  "workflow/workflow/how-to-create-a-flow",
-                  "workflow/workflow/how-to-enable-disable-flow",
-                  "workflow/workflow/how-to-import-a-flow"
-                ]
-              },
-              {
-                "group": "On-Prem Application Health",
-                "pages": [
-                  "workflow/workflow/how-to-configure-system-and-api-health-in-oloid-workflow",
-                  "workflow/workflow/monitoring-health-status"
-                ]
-              },
-              {
-                "group": "Overview",
-                "pages": [
-                  "workflow/workflow/oloid-workflow-overview",
-                  "workflow/workflow/oloid-workflow-core-features",
-                  "workflow/workflow/oloid-workflow-application-modes",
-                  "workflow/workflow/oloid-workflow-key-concepts"
-                ]
-              },
-              {
-                "group": "Pre-built Flow Templates",
-                "pages": [
-                  "workflow/workflow/pro-watch-to-everbridge-critical-event-response-automation",
-                  "workflow/workflow/pro-watch-to-servicenow-incident-automation-and-ticketing-integration",
-                  "workflow/workflow/prowatch-servicenow-integration",
-                  "workflow/workflow/servicenow-to-pro-watch-access-management-automation"
-                ]
-              },
-              {
-                "group": "Security",
-                "pages": [
-                  "workflow/workflow/security"
-                ]
-              },
-              {
-                "group": "Set up 3rd party Applications",
-                "pages": [
-                  "workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations",
-                  "workflow/workflow/set-up-s2-netbox-for-oloid-workflow-integrations",
-                  "workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations"
-                ]
-              },
-              {
-                "group": "Workflow",
-                "pages": [
-                  "workflow/workflow/getting-started-with-oloid-workflow",
-                  "workflow/workflow/oloid-workflow-guides-list",
-                  "workflow/workflow/using-the-terminated-user-processing-api",
-                  "workflow/workflow/what-is-oloid-workflow"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Administration",
         "menu": [
           {
@@ -2487,39 +2392,6 @@
         ]
       },
       {
-        "tab": "Changelog",
-        "groups": [
-          {
-            "group": "Product Release Notes",
-            "icon": "clock-rotate-left",
-            "pages": [
-              "changelog/platform",
-              "changelog/windows",
-              "changelog/android",
-              "changelog/ios",
-              "changelog/webkey",
-              "changelog/oloidvault",
-              "changelog/userportal"
-            ]
-          },
-          {
-            "group": "Coming Soon",
-            "icon": "rocket",
-            "pages": [
-              "changelog/upcoming/apps",
-              "changelog/upcoming/web"
-            ]
-          },
-          {
-            "group": "API",
-            "icon": "code",
-            "pages": [
-              "changelog/releasenotes"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Resources",
         "menu": [
           {
@@ -2527,6 +2399,137 @@
             "icon": "book-open",
             "pages": [
               "resources/overview"
+            ]
+          },
+          {
+            "item": "Workflow",
+            "icon": "diagram-project",
+            "groups": [
+              {
+                "group": "Workflow",
+                "icon": "diagram-project",
+                "pages": [
+                  "workflow/overview",
+                  {
+                    "group": "Accounts",
+                    "pages": [
+                      "workflow/workflow/accounts",
+                      "workflow/workflow/oloid-account",
+                      "workflow/workflow/prowatch-account",
+                      "workflow/workflow/servicenow-account"
+                    ]
+                  },
+                  {
+                    "group": "Data Protection",
+                    "pages": [
+                      "workflow/workflow/data-protection"
+                    ]
+                  },
+                  {
+                    "group": "Getting Started",
+                    "pages": [
+                      "workflow/workflow/how-to-pair-oloid-workflow-instance-with-oloid-cloud-platform",
+                      "workflow/workflow/how-to-uninstall-oloid-workflow",
+                      "workflow/workflow/how-to-upgrade-oloid-workflow",
+                      "workflow/workflow/instruction-for-workflow-instance-setup",
+                      "workflow/workflow/outbound-network-access-requirements",
+                      "workflow/workflow/pre-req-system-requirements",
+                      "workflow/workflow/suggested-approach-for-installation-and-maintenance"
+                    ]
+                  },
+                  {
+                    "group": "How-to guides",
+                    "pages": [
+                      "workflow/workflow/how-to-create-a-flow",
+                      "workflow/workflow/how-to-enable-disable-flow",
+                      "workflow/workflow/how-to-import-a-flow"
+                    ]
+                  },
+                  {
+                    "group": "On-Prem Application Health",
+                    "pages": [
+                      "workflow/workflow/how-to-configure-system-and-api-health-in-oloid-workflow",
+                      "workflow/workflow/monitoring-health-status"
+                    ]
+                  },
+                  {
+                    "group": "Overview",
+                    "pages": [
+                      "workflow/workflow/oloid-workflow-overview",
+                      "workflow/workflow/oloid-workflow-core-features",
+                      "workflow/workflow/oloid-workflow-application-modes",
+                      "workflow/workflow/oloid-workflow-key-concepts"
+                    ]
+                  },
+                  {
+                    "group": "Pre-built Flow Templates",
+                    "pages": [
+                      "workflow/workflow/pro-watch-to-everbridge-critical-event-response-automation",
+                      "workflow/workflow/pro-watch-to-servicenow-incident-automation-and-ticketing-integration",
+                      "workflow/workflow/prowatch-servicenow-integration",
+                      "workflow/workflow/servicenow-to-pro-watch-access-management-automation"
+                    ]
+                  },
+                  {
+                    "group": "Security",
+                    "pages": [
+                      "workflow/workflow/security"
+                    ]
+                  },
+                  {
+                    "group": "Set up 3rd party Applications",
+                    "pages": [
+                      "workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations",
+                      "workflow/workflow/set-up-s2-netbox-for-oloid-workflow-integrations",
+                      "workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations"
+                    ]
+                  },
+                  {
+                    "group": "Workflow",
+                    "pages": [
+                      "workflow/workflow/getting-started-with-oloid-workflow",
+                      "workflow/workflow/oloid-workflow-guides-list",
+                      "workflow/workflow/using-the-terminated-user-processing-api",
+                      "workflow/workflow/what-is-oloid-workflow"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "item": "Changelog",
+            "icon": "clock-rotate-left",
+            "description": "",
+            "groups": [
+              {
+                "group": "Product Release Notes",
+                "icon": "clock-rotate-left",
+                "pages": [
+                  "changelog/platform",
+                  "changelog/windows",
+                  "changelog/android",
+                  "changelog/ios",
+                  "changelog/webkey",
+                  "changelog/oloidvault",
+                  "changelog/userportal"
+                ]
+              },
+              {
+                "group": "Coming Soon",
+                "icon": "rocket",
+                "pages": [
+                  "changelog/upcoming/apps",
+                  "changelog/upcoming/web"
+                ]
+              },
+              {
+                "group": "API",
+                "icon": "code",
+                "pages": [
+                  "changelog/releasenotes"
+                ]
+              }
             ]
           },
           {
