@@ -16,6 +16,7 @@ source:
   section: "API Guides"
   updatedAt: "2024-03-14T22:20:59Z"
   migratedAt: "2026-08-13T09:16:25.166015+00:00"
+public: true
 ---
 ## Overview
 
@@ -23,13 +24,13 @@ The Add Face URL API endpoint allows administrators to generate a unique login U
 
 ## Endpoint
 
-```
+```text
 POST /oloid-users/{primaryID}/login-url
 ```
 
 ## URL Parameters
 
-```
+```text
 primaryID: A unique identifier for the organization. Example: AZ-123
 ```
 
@@ -49,7 +50,7 @@ The request body should be a JSON object with the following fields:
 
 ## Example Request
 
-```
+```text
 curl --location 'https://api.oloidpreview.com/oloid-users/AZ-123/login-url' \--header 'Authorization: <AdminToken>' \--header 'Content-Type: application/json' \--data '{    "ReturnPath": "/login",    "QueryParams": {        "returnUrl": "credentials/faces",        "section": "face"    },    "PrimaryID": true,    "SendLinkToUser": false}'
 ```
 
@@ -64,7 +65,7 @@ The response is a JSON object containing a message and data fields.
 
 ## Example Response
 
-```
+```text
 {    "message": "Link sent successfully",    "data": {        "LoginUrl": "https://api.oloidpreview.com/oloid-s3/QYTQEeZ"    }}
 ```
 
@@ -80,9 +81,14 @@ In case of an error, the response will be a JSON object with an error descriptio
 ## Related Articles
 
 <CardGroup cols={2}>
-  <Card title="Oloid Verify - Add Faces" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-faces" />
-  <Card title="Oloid Connect - Add Face" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-add-face" />
-  <Card title="Webkey - How to Enroll Face using Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-enroll-face-using-webkey" />
-  <Card title="Oloid Passwordless SDK Usage Guide for Windows Developers" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers" />
-  <Card title="Oloid User Portal - How to Login through HR Picture verification" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-login-through-hr-picture-verification" />
+  <Card title="Oloid Verify - Add Faces" icon="arrow-right" href="/passwordless/verify/oloid-verify-add-faces">
+  </Card>
+  <Card title="Oloid Connect - Add Face" icon="arrow-right" href="/passwordless/ios/connect/oloid-connect-add-face">
+  </Card>
+  <Card title="Webkey - How to Enroll Face using Webkey" icon="arrow-right" href="/passwordless/web/webkey/webkey-how-to-enroll-face-using-webkey">
+  </Card>
+  <Card title="Oloid Passwordless SDK Usage Guide for Windows Developers" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers">
+  </Card>
+  <Card title="Oloid User Portal - How to Login through HR Picture verification" icon="arrow-right" href="/administration/user-portal/oloid-user-portal-how-to-login-through-hr-picture-verification">
+  </Card>
 </CardGroup>

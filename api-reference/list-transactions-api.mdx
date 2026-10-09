@@ -16,10 +16,11 @@ source:
   section: "API Guides"
   updatedAt: "2024-09-05T15:55:44Z"
   migratedAt: "2026-08-13T09:16:28.883239+00:00"
+public: true
 ---
 ## Endpoint
 
-```
+```text
 POST /transactions
 ```
 
@@ -38,7 +39,7 @@ This endpoint allows you to retrieve a list of transactions based on specified c
 
 The request body should be a JSON object with the following structure:
 
-```
+```text
 { "SearchField": "string", "PageSize": number, "NextPageToken": {}, "EndpointID": "string", "FromDate": "string","ToDate": "string", "ApplicationID": "string" }
 ```
 
@@ -59,7 +60,7 @@ The request body should be a JSON object with the following structure:
 - Status Code: 200 OK
 - Content-Type: application/json
 
-```
+```text
 {  "data": {    "NextPageToken": {},    "transactions": [      {        "ApplicationName": "string",        "User": {},        "EndpointName": "string",        "IsAuthorized": boolean,        "FRMethod": "string",        "EndpointID": "string",        "Mode": "string",        "CreatedOn": number,        "ApplicationID": "string",        "CapturedFace": "string",        "TransactionID": "string"      }    ]  },  "message": "string"}
 ```
 
@@ -72,13 +73,13 @@ The request body should be a JSON object with the following structure:
 
 ## Request
 
-```
+```text
 POST /transactionsContent-Type: application/jsonAuthorization: Bearer {access_token}{  "PageSize": 10,  "FromDate": "2023-09-01T00:00:00Z",  "ToDate": "2023-09-05T23:59:59Z",  "ApplicationID": "app-123"}
 ```
 
 ## Success Response
 
-```
+```text
 HTTP/1.1 200 OKContent-Type: application/json{  "data": {    "NextPageToken": {      "lastEvaluatedKey": "transaction-789"    },    "transactions": [      {        "ApplicationName": "AccessControl",        "User": {          "name": "John Doe",          "id": "user-456"        },        "EndpointName": "Main Entrance",        "IsAuthorized": true,        "FRMethod": "FaceRecognition",        "EndpointID": "endpoint-123",        "Mode": "Entry",        "CreatedOn": 1662364800,        "ApplicationID": "app-123",        "CapturedFace": "base64_encoded_image_data",        "TransactionID": "trans-789"      }      // ... more transactions ...    ]  },  "message": "Transactions retrieved successfully"}
 ```
 
@@ -93,7 +94,10 @@ HTTP/1.1 200 OKContent-Type: application/json{  "data": {    "NextPageToken": { 
 ## Related Articles
 
 <CardGroup cols={2}>
-  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api" />
-  <Card title="List Activity Logs API" icon="arrow-right" href="/api-reference/list-activity-logs-api" />
-  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions" />
+  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api">
+  </Card>
+  <Card title="List Activity Logs API" icon="arrow-right" href="/api-reference/list-activity-logs-api">
+  </Card>
+  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions">
+  </Card>
 </CardGroup>

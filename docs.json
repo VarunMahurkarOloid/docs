@@ -96,9 +96,11 @@
                       "passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-preview-uat-environment",
                       "passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-prod-eu-environment",
                       "passwordless/windows/passwordless/windows-login-v2-0-network-url-whitelisting-requirements-for-prod-us-environment"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Windows Login v1.0",
@@ -108,7 +110,8 @@
                     "pages": [
                       "passwordless/windows/passwordless/how-to-download-install-and-configure-windows-authenticator-app",
                       "passwordless/windows/passwordless/setting-up-and-using-windows-login"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "v1.0",
@@ -118,9 +121,11 @@
                       "passwordless/windows/passwordless/windows-login-1-0-network-url-whitelisting-requirements-for-prod-us-environment",
                       "passwordless/windows/passwordless/windows-login-v1-0-hardware-and-software-requirements",
                       "passwordless/windows/passwordless/windows-login-v1-0-network-url-whitelisting-requirements-for-preview-uat-environment"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Admin Guides",
@@ -165,7 +170,8 @@
                   "passwordless/windows/passwordless/windows-login-platform-configuration-for-initial-windows-login-set-up",
                   "passwordless/windows/passwordless/windows-login-set-up-preferred-machine-configuration-for-windows-login",
                   "passwordless/windows/passwordless/windows-login-platform-configuration-for-manual-capture-of-face"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "User Guides",
@@ -193,7 +199,8 @@
                   "passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-face-and-duo",
                   "passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-nfc-id-and-duo",
                   "passwordless/windows/passwordless/windows-login-how-to-reset-pin-in-windows-login-using-badge-and-forgot-pin"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Presence Detection",
@@ -204,7 +211,8 @@
                       "passwordless/windows/passwordless/how-the-self-unblock-feature-works-in-windows-login-presence-detection-video-tutorial",
                       "passwordless/windows/passwordless/how-to-configure-windows-alert-for-presence-detection-in-oloid-platform-video-tutorial",
                       "passwordless/windows/passwordless/how-to-unblock-a-user-s-blocked-screen-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Presence Detection Guides",
@@ -218,9 +226,11 @@
                       "passwordless/windows/passwordless/windows-login-screen-block-on-gadgets-detected",
                       "passwordless/windows/passwordless/windows-login-screen-block-on-multiple-faces-detected",
                       "passwordless/windows/passwordless/windows-login-app-presence-detection-hardware-and-software-requirements"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Healthcare",
@@ -231,21 +241,24 @@
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-log-in-to-epic-hyperspace-using-badge-id-pin-when-epic-sso-is-enabled",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-log-in-to-epic-hyperspace-using-badge-id-pin-when-epic-sso-is-not-enabled",
                       "passwordless/windows/passwordless/windows-login-healthcare-two-user-authentication-using-badge-id-in-epic-hyperspace"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "(Healthcare) - Overview and Setup",
                     "pages": [
                       "passwordless/windows/passwordless/windows-login-healthcare-hardware-and-software-requirements",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-download-and-install-windows-login-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "(Healthcare) - Tenant Admin Configuration",
                     "pages": [
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-configure-reauthenticate-current-user-second-factor-in-tenant-admin-portal",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-enable-epic-sso-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "(Healthcare) Videos",
@@ -256,7 +269,8 @@
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-reauthenticate-current-user-using-badge-id-in-epic-hyperspace-video-tutorial",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-switch-user-within-epic-hyperspace-using-badge-video-tutorial",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-use-two-user-authentication-using-badge-id-in-epic-hyperspace-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "(Healthcare)- Reauthentication and User Switching",
@@ -265,9 +279,11 @@
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-switch-user-within-epic-hyperspace-using-badge",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-use-reauthenticate-current-user-editable-tab-in-epic-hyperspace-using-badge-id-pin",
                       "passwordless/windows/passwordless/windows-login-healthcare-how-to-use-reauthenticate-current-user-tab-using-badge-id-in-epic-hyperspace"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Multi-Factor Authentication",
@@ -279,7 +295,8 @@
                       "passwordless/windows/passwordless/how-to-configure-okta-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal",
                       "passwordless/windows/passwordless/how-to-create-token-id-for-windows-login-application-in-okta-admin-console",
                       "passwordless/windows/passwordless/windows-login-how-to-enable-okta-multi-factor-authentication-mfa-credential-for-windows-login-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "OKTA MFA - User Guide",
@@ -288,7 +305,8 @@
                       "passwordless/windows/passwordless/how-to-login-to-windows-device-using-face-and-okta-credentials",
                       "passwordless/windows/passwordless/how-to-login-to-windows-device-using-qr-code-and-okta-credentials",
                       "passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-nfc-id-and-okta"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "PingOne MFA - Configuration Guides",
@@ -296,7 +314,8 @@
                       "passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-tenant-admin-portal",
                       "passwordless/windows/passwordless/how-to-configure-pingone-multi-factor-authentication-mfa-for-windows-login-application-in-the-pingone-admin-console",
                       "passwordless/windows/passwordless/windows-login-how-to-enable-pingone-multi-factor-authentication-mfa-for-windows-login-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "PingOne MFA - User Guide",
@@ -305,9 +324,11 @@
                       "passwordless/windows/passwordless/how-to-login-to-windows-device-using-face-and-pingone-credential",
                       "passwordless/windows/passwordless/how-to-login-to-windows-device-using-qr-code-and-pingone-credentials",
                       "passwordless/windows/passwordless/windows-login-how-to-login-to-windows-device-using-nfc-id-and-pingone"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Administration",
@@ -316,20 +337,23 @@
                     "group": "Accounts and Settings",
                     "pages": [
                       "passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "API Guides",
                     "pages": [
                       "passwordless/windows/passwordless/iga-web-hook-for-individual-windows-credential",
                       "passwordless/windows/passwordless/iga-web-hook-for-shared-windows-credential"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Endpoints",
                     "pages": [
                       "passwordless/windows/passwordless/how-to-configure-endpoint-for-windows-login"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Shared Credentials",
@@ -337,21 +361,25 @@
                       "passwordless/windows/passwordless/how-to-assign-shared-password-for-windows-login-in-the-tenant-admin-portal",
                       "passwordless/windows/passwordless/how-to-create-shared-password-for-windows-login-application-in-the-tenant-admin-portal",
                       "passwordless/windows/passwordless/windows-login-how-to-enable-preferred-machine-users-in-shared-credentials"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Shared Passwords Videos",
                     "pages": [
                       "passwordless/windows/passwordless/how-to-create-shared-passwords-for-windows-login-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Users",
                     "pages": [
                       "passwordless/windows/passwordless/how-to-create-password-for-windows-login"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Videos",
@@ -362,7 +390,8 @@
                       "passwordless/windows/passwordless/windows-login-v2-0-how-to-access-dev-dashboard-video-tutorial",
                       "passwordless/windows/passwordless/windows-login-v2-0-how-to-download-windows-login-v2-0-installer-file-from-tenant-admin-portal-video-tutorial",
                       "passwordless/windows/passwordless/windows-login-v2-0-how-to-set-user-cache-validity-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Videos",
@@ -399,9 +428,11 @@
                       "passwordless/windows/passwordless/windows-login-how-to-generate-auto-pair-config-file-for-windows-login-in-tenant-admin-portal-video-tutorial",
                       "passwordless/windows/passwordless/windows-login-video-tutorial",
                       "passwordless/windows/passwordless/windows-login-platform-configuration-for-manual-capture-of-face-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "More",
@@ -410,19 +441,22 @@
                     "group": "Other",
                     "pages": [
                       "passwordless/windows/passwordless/what-is-oloid-s-windows-login"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Passwordless Authenticator - Miscellaneous Docs",
                     "pages": [
                       "passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Passwordless Authenticator- Supporting Documents",
                     "pages": [
                       "passwordless/windows/passwordless/how-to-configure-windows-device-login-app-for-sso-login"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Supporting Documents",
@@ -430,9 +464,11 @@
                       "passwordless/windows/passwordless/how-to-configure-card-reader-using-rf-ideas-configuration-utility-for-windows-login-application",
                       "passwordless/windows/passwordless/integration-guide-for-tap-to-login-and-tap-badge-to-logout-for-windows-native-apps",
                       "passwordless/windows/passwordless/windows-passwordless-authenticator-troubleshooting-guide"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -457,14 +493,16 @@
                       "passwordless/windows/supervisor/supervisor-app-enroll-pc-sc-badge",
                       "passwordless/windows/supervisor/supervisor-app-update-badge",
                       "passwordless/windows/supervisor/windows-login-how-to-view-and-edit-shared-password-details-in-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Enroll Badge",
                     "pages": [
                       "passwordless/windows/supervisor/windows-login-how-to-enroll-badge-and-pin-using-supervisor-app",
                       "passwordless/windows/supervisor/windows-login-how-to-enroll-badge-using-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "FAQs",
@@ -473,7 +511,8 @@
                       "passwordless/windows/supervisor/how-to-sync-configuration-in-supervisor-app",
                       "passwordless/windows/supervisor/how-to-view-diagnostics-and-download-report-in-supervisor-app",
                       "passwordless/windows/supervisor/how-to-view-updates-in-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Installation and Configuration",
@@ -483,14 +522,16 @@
                       "passwordless/windows/supervisor/how-to-pair-supervisor-app-using-config-file",
                       "passwordless/windows/supervisor/windows-login-how-to-manually-pair-the-supervisor-app",
                       "passwordless/windows/supervisor/windows-login-how-to-pair-supervisor-app-using-auto-pair-config-file-option"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Platform Configuration",
                     "pages": [
                       "passwordless/windows/supervisor/windows-login-how-to-enable-enroll-badge-option-for-supervisor-app",
                       "passwordless/windows/supervisor/windows-login-how-to-set-credential-preferences-for-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "User Management",
@@ -505,9 +546,11 @@
                       "passwordless/windows/supervisor/windows-login-how-to-enroll-nfc-id",
                       "passwordless/windows/supervisor/windows-login-how-to-view-and-edit-pin",
                       "passwordless/windows/supervisor/windows-login-how-to-view-and-edit-user-details"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supervisor Portal",
@@ -520,7 +563,8 @@
                       "passwordless/windows/supervisor/supervisor-portal-how-to-assign-shared-credential-to-user",
                       "passwordless/windows/supervisor/supervisor-portal-how-to-create-password-for-windows-login",
                       "passwordless/windows/supervisor/supervisor-portal-how-to-create-shared-credentials-for-windows-login"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create & Manage Users",
@@ -551,7 +595,8 @@
                       "passwordless/windows/supervisor/supervisor-portal-how-to-remove-user",
                       "passwordless/windows/supervisor/supervisor-portal-how-to-create-vault-password",
                       "passwordless/windows/supervisor/supervisor-portal-how-to-generate-qr-code-for-multiple-users"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Videos",
@@ -601,9 +646,11 @@
                       "passwordless/windows/supervisor/how-to-view-and-edit-shared-credential-details-in-supervisor-app-for-windows-video-tutorial",
                       "passwordless/windows/supervisor/how-to-view-and-edit-user-details-in-the-supervisor-app-for-windows-video-tutorial",
                       "passwordless/windows/supervisor/supervisor-portal-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Administration",
@@ -624,28 +671,33 @@
                       "passwordless/windows/supervisor/how-to-unpair-endpoint-using-supervisor-app",
                       "passwordless/windows/supervisor/supervisor-portal-how-to-download-file-using-file-sharing-option",
                       "passwordless/windows/supervisor/supervisor-portal-how-to-log-in-to-supervisor-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Admin Guides- Windows Login",
                     "pages": [
                       "passwordless/windows/supervisor/windows-login-how-to-pair-windows-login-endpoint-from-supervisor-app",
                       "passwordless/windows/supervisor/windows-login-troubleshooting-auto-config-pairing-failure-in-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Reports",
                     "pages": [
                       "passwordless/windows/supervisor/how-to-create-and-download-supervisors-reports"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Windows Login v2.0",
                     "pages": [
                       "passwordless/windows/supervisor/windows-login-v2-0-how-to-add-supervisor-note-in-windows-alerts"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -663,7 +715,8 @@
                   "passwordless/android/devicelock/devicelock-app-how-to-assign-qr-code-for-users-in-the-devicelock-app-through-admin-mode",
                   "passwordless/android/devicelock/oloid-devicelock-app-how-to-add-face-for-users-in-the-devicelock-app-through-admin-mode",
                   "passwordless/android/devicelock/oloid-devicelock-app-how-to-enroll-face"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Admin Settings",
@@ -685,7 +738,8 @@
                   "passwordless/android/devicelock/oloid-devicelock-app-how-to-reset-tenant",
                   "passwordless/android/devicelock/oloid-devicelock-app-ways-to-pair-an-endpoint",
                   "passwordless/android/devicelock/setting-up-and-using-oloid-device-lock"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Other",
@@ -693,7 +747,8 @@
                   "passwordless/android/devicelock/android-passwordless-device-unlock-with-automatic-okta-login",
                   "passwordless/android/devicelock/setting-up-oloid-devicelock-mfa",
                   "passwordless/android/devicelock/updating-oloid-devicelock-mfa"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Configuration",
@@ -706,7 +761,8 @@
                   "passwordless/android/devicelock/how-to-log-out-of-the-oloid-devicelock-app",
                   "passwordless/android/devicelock/how-to-share-logs-in-devicelock-app",
                   "passwordless/android/devicelock/tenant-admin-portal-how-to-configure-theme-tab-for-devicelock-app"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supporting Documents",
@@ -720,7 +776,8 @@
                   "passwordless/android/devicelock/oloid-devicelock-credential-onboarding",
                   "passwordless/android/devicelock/set-up-oloid-devicelock-on-android-using-microsoft-intune-mdm",
                   "passwordless/android/devicelock/soti-mobicontrol-app-profile-policy-configuration-guide"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "User Guide",
@@ -734,7 +791,8 @@
                   "passwordless/android/devicelock/how-to-unlock-the-device-screen-using-the-oloid-devicelock-app-with-face-credential",
                   "passwordless/android/devicelock/how-to-unlock-the-device-screen-using-the-oloid-devicelock-app-with-nfc-tag-credential",
                   "passwordless/android/devicelock/how-to-unlock-the-device-screen-using-the-oloid-devicelock-app-with-qr-credential"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Videos",
@@ -761,7 +819,8 @@
                   "passwordless/android/devicelock/how-to-unlock-the-device-screen-using-the-oloid-devicelock-app-with-qr-code-as-credential-video-tutorial",
                   "passwordless/android/devicelock/oloid-device-lock-video-tutorial",
                   "passwordless/android/devicelock/oloid-devicelock-how-to-enroll-face-as-a-user-video-tutorial"
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -777,7 +836,8 @@
                     "group": "Getting started on the application",
                     "pages": [
                       "passwordless/ios/connect/faqs-oloid-verify-connect-application"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Getting Started with App",
@@ -787,7 +847,8 @@
                       "passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-prod-eu-environment",
                       "passwordless/ios/connect/oloid-connect-network-url-whitelisting-requirements-for-prod-us-environment",
                       "passwordless/ios/connect/what-is-oloid-connect"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Installation & Configuration",
@@ -797,16 +858,19 @@
                       "passwordless/ios/connect/oloid-connect-hardware-and-software-requirements",
                       "passwordless/ios/connect/oloid-connect-set-up-ipad-in-guided-access-mode",
                       "passwordless/ios/connect/oloid-connect-how-to-pair-an-endpoint"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "iPhone - Installation and Configuration",
                     "pages": [
                       "passwordless/ios/connect/how-to-download-and-install-the-oloid-connect-app-on-iphone",
                       "passwordless/ios/connect/how-to-pair-oloid-connect-endpoint-on-iphone"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "User Guides",
@@ -825,7 +889,8 @@
                       "passwordless/ios/connect/oloid-connect-how-to-send-qr-code-to-user",
                       "passwordless/ios/connect/oloid-connect-set-pin",
                       "passwordless/ios/connect/oloid-connect-view-user-details"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "iPhone",
@@ -842,7 +907,8 @@
                       "passwordless/ios/connect/oloid-connect-iphone-login-using-okta-sso",
                       "passwordless/ios/connect/oloid-connect-iphone-login-using-pingone-sso",
                       "passwordless/ios/connect/oloid-connect-iphone-platform-configuration"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "User Guides",
@@ -856,9 +922,11 @@
                       "passwordless/ios/connect/how-to-log-in-to-workforce-hrms-platform-using-qr-code-and-pin-through-oloid-connect-for-passwordless-app",
                       "passwordless/ios/connect/how-to-log-in-to-workforce-hrms-system-using-single-factor-authenticators-through-oloid-connect-passwordless-app",
                       "passwordless/ios/connect/how-to-log-in-with-face-through-oloid-connect-for-passwordless"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Admin Guides",
@@ -872,16 +940,19 @@
                       "passwordless/ios/connect/oloid-connect-passwordless-hardware-and-software-requirements",
                       "passwordless/ios/connect/setting-up-and-using-oloid-connect-for-passwordless",
                       "passwordless/ios/connect/setting-up-application-and-connections-for-passwordless-login-in-the-oloid-connect-application"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Platform Configuration",
                     "pages": [
                       "passwordless/ios/connect/how-to-apply-endpoint-template-during-auto-pair-process-for-oloid-connect-application",
                       "passwordless/ios/connect/how-to-create-and-configure-oloid-connect-endpoint-template"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "FAQs & Supporting Docs",
@@ -890,7 +961,8 @@
                     "group": "General FAQs",
                     "pages": [
                       "passwordless/ios/connect/hardboot-for-ipad-pro-11"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Supporting Documents",
@@ -898,9 +970,11 @@
                       "passwordless/ios/connect/oloid-connect-verify-ipad-installation",
                       "passwordless/ios/connect/set-up-sharing-logs-with-the-app-developer",
                       "passwordless/ios/connect/what-is-an-offline-task-and-what-does-it-do"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Videos",
@@ -960,7 +1034,8 @@
                   "passwordless/ios/connect/oloid-verify-how-to-re-pair-endpoint-video-tutorial",
                   "passwordless/ios/connect/oloid-verify-how-to-view-endpoint-details-run-health-check-test-network-connectivity-and-share-logs-video-tutorial",
                   "passwordless/ios/connect/oloid-verify-video-tutorial"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "More",
@@ -969,9 +1044,11 @@
                     "group": "iOS Passwordless Authenticator",
                     "pages": [
                       "passwordless/ios/connect/what-is-oloid-connect-for-passwordless"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -992,7 +1069,8 @@
                   "passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-preview-uat-environment",
                   "passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-eu-environment",
                   "passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-us-environment"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Configuration",
@@ -1005,13 +1083,15 @@
                   "passwordless/web/webkey/webkey-how-to-configure-a-custom-user-agent-for-webkey",
                   "passwordless/web/webkey/webkey-how-to-configure-platform-settings-for-initial-webkey-setup",
                   "passwordless/web/webkey/webkey-how-to-identify-spoofing-in-webkey"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supporting Documents",
                 "pages": [
                   "passwordless/web/webkey/troubleshooting-webkey-network-slowness-connectivity-issues"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Usage",
@@ -1028,7 +1108,8 @@
                   "passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-password-through-webkey",
                   "passwordless/web/webkey/webkey-how-to-log-into-workforce-hrms-platforms-using-qr-code-through-webkey",
                   "passwordless/web/webkey/webkey-how-to-re-submit-consent"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Videos",
@@ -1049,7 +1130,8 @@
                   "passwordless/web/webkey/webkey-how-to-enable-oloid-webkey-sso-login-video-tutorial",
                   "passwordless/web/webkey/webkey-platform-configuration-for-manual-capture-of-face-video-tutorial",
                   "passwordless/web/webkey/webkey-video-tutorial"
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -1066,23 +1148,29 @@
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-reset-tenant",
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-unpair-endpoint",
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-sync-configuration"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Admin Guides",
                 "pages": [
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-enable-location-alerts-and-configure-geo-fencing-radius"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Create and Manage Users",
                 "pages": [
                   "passwordless/web/chrome-vault/chrome-vault-how-to-create-vault-password-for-a-user"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "FAQs",
-                "pages": ["passwordless/web/chrome-vault/faqs-chrome-vault"]
+                "pages": [
+                  "passwordless/web/chrome-vault/faqs-chrome-vault"
+                ],
+                "public": true
               },
               {
                 "group": "Getting Started",
@@ -1095,7 +1183,8 @@
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-set-up-and-use",
                   "passwordless/web/chrome-vault/oloid-s-location-alerts-and-geo-fencing-radius-feature-for-oloid-vault-chrome-chromium",
                   "passwordless/web/chrome-vault/what-is-oloid-vault-chrome-chromium"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Installation & Configuration",
@@ -1103,13 +1192,15 @@
                   "passwordless/web/chrome-vault/how-to-install-oloid-vault-in-chrome-browser",
                   "passwordless/web/chrome-vault/how-to-install-oloid-vault-in-microsoft-edge-browser",
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-manually-pair-an-endpoint"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Configuration",
                 "pages": [
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-enable-saving-passkeys"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "User Guides",
@@ -1123,7 +1214,8 @@
                   "passwordless/web/chrome-vault/how-to-save-password-in-chrome-vault",
                   "passwordless/web/chrome-vault/how-to-update-password-in-chrome-vault",
                   "passwordless/web/chrome-vault/oloid-vault-chrome-chromium-how-to-log-in-with-qr-code"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Videos",
@@ -1143,7 +1235,8 @@
                   "passwordless/web/chrome-vault/how-to-save-password-in-chrome-vault-video-tutorial",
                   "passwordless/web/chrome-vault/how-to-unpair-endpoint-in-chrome-vault-video-tutorial",
                   "passwordless/web/chrome-vault/how-to-update-password-in-chrome-vault-video-tutorial"
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -1158,7 +1251,8 @@
                   "passwordless/verify/oloid-verify-add-faces",
                   "passwordless/verify/oloid-verify-add-qr-code",
                   "passwordless/verify/oloid-verify-credential-onboarding"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Getting Started with App",
@@ -1166,7 +1260,8 @@
                   "passwordless/verify/oloid-verify-network-architecture",
                   "passwordless/verify/oloid-verify-network-url-whitelisting-requirements",
                   "passwordless/verify/what-is-oloid-verify"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Installation & Configuration",
@@ -1176,21 +1271,24 @@
                   "passwordless/verify/oloid-verify-how-to-download-and-install-the-app",
                   "passwordless/verify/oloid-verify-how-to-pair-an-endpoint",
                   "passwordless/verify/oloid-verify-set-up-ipad-in-guided-access-mode-or-kiosk-mode"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "User Guides",
                 "pages": [
                   "passwordless/verify/oloid-verify-how-to-authenticate-a-user-using-credentials",
                   "passwordless/verify/oloid-verify-how-to-view-punch-details"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "User Management",
                 "pages": [
                   "passwordless/verify/oloid-verify-add-user",
                   "passwordless/verify/oloid-verify-view-user-details"
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -1210,7 +1308,8 @@
                   "passwordless/cloudkey/using-the-oloid-cloudkey-app-profile",
                   "passwordless/cloudkey/using-the-oloid-cloudkey-app-wallet",
                   "passwordless/cloudkey/using-the-oloid-cloudkey-app-credentials-tab"
-                ]
+                ],
+                "public": true
               }
             ]
           }
@@ -1235,7 +1334,8 @@
                 "group": "Platform Configuration",
                 "pages": [
                   "timeclock/android/how-to-enable-devicelock-workday-punch-integration-in-tenant-admin-portal"
-                ]
+                ],
+                "public": true
               },
               "timeclock/android/getting-started/introduction"
             ]
@@ -1251,7 +1351,8 @@
                   "passwordless/windows/supervisor/how-to-log-in-to-supervisor-app",
                   "passwordless/windows/supervisor/setting-up-and-using-supervisor-app",
                   "passwordless/windows/supervisor/what-is-supervisor-app"
-                ]
+                ],
+                "public": true
               }
             ]
           }
@@ -1281,23 +1382,27 @@
                     "pages": [
                       "administration/admin-portal/how-to-log-in-to-the-tenant-admin-portal",
                       "administration/admin-portal/how-to-set-new-password-on-first-time-login-to-oloid-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Platform - Enterprise Features",
                     "pages": [
                       "administration/admin-portal/first-time-enrollment-login-of-oloid-credentials",
                       "administration/admin-portal/tenant-admin-portal-how-to-add-face-using-capture-face"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Platform Videos",
                     "pages": [
                       "administration/admin-portal/how-to-upload-download-hwg-file-in-oloid-portal-video-tutorial",
                       "administration/admin-portal/oloid-user-roles-and-permissions-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Users & Groups",
@@ -1325,9 +1430,11 @@
                           "administration/admin-portal/how-to-remove-endpoint-from-a-group-in-the-tenant-admin-portal",
                           "administration/admin-portal/how-to-sync-users-in-a-group-in-the-tenant-admin-portal",
                           "administration/admin-portal/tenant-admin-portal-how-to-configure-group-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Users",
@@ -1409,11 +1516,14 @@
                           "administration/admin-portal/how-to-send-invite-to-a-user-to-set-pin-video-tutorial",
                           "administration/admin-portal/how-to-send-qr-code-on-email-in-the-tenant-admin-portal-video-tutorial",
                           "administration/admin-portal/how-to-upload-face-of-a-user-in-the-tenant-admin-portal-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Credentials & Passwords",
@@ -1423,7 +1533,8 @@
                     "pages": [
                       "administration/admin-portal/how-to-add-policy-rules-for-factor-sequencing",
                       "administration/admin-portal/how-to-create-and-configure-factor-sequence"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Shared Credentials",
@@ -1441,7 +1552,8 @@
                       "administration/admin-portal/how-to-send-pin-to-user-via-email-in-the-tenant-admin-portal",
                       "administration/admin-portal/tenant-admin-portal-how-to-associate-users-with-window-shared-credentials-in-the-tenant-admin-portal",
                       "administration/admin-portal/tenant-admin-portal-how-to-import-bulk-passwords"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Shared Passwords Videos",
@@ -1457,7 +1569,8 @@
                       "administration/admin-portal/how-to-import-bulk-passwords-in-the-tenant-admin-portal-video-tutorial",
                       "administration/admin-portal/tenant-admin-portal-how-to-add-password-owners-for-a-vault-shared-password-video-tutorial",
                       "administration/admin-portal/tenant-admin-portal-how-to-configure-windows-shared-passwords-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Credential Management",
@@ -1470,11 +1583,14 @@
                         "group": "Videos",
                         "pages": [
                           "administration/admin-portal/tenant-admin-portal-how-to-generate-personal-passkey-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Applications & Connections",
@@ -1492,9 +1608,11 @@
                           "administration/admin-portal/tenant-admin-portal-geo-location-overview",
                           "administration/admin-portal/how-to-create-an-application-in-the-oloid-portal-video-tutorial",
                           "administration/admin-portal/how-to-create-an-application-in-the-tenant-admin-portal"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Connections",
@@ -1513,11 +1631,14 @@
                           "administration/admin-portal/how-to-create-a-connection-in-the-oloid-portal-video-tutorial",
                           "administration/admin-portal/how-to-create-a-connection-in-the-tenant-admin-portal",
                           "administration/admin-portal/tenant-admin-portal-how-to-enable-oloid-account-for-a-connection-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Endpoints & Locations",
@@ -1534,7 +1655,8 @@
                       "administration/admin-portal/tenant-admin-portal-how-to-add-an-endpoint-to-a-group",
                       "administration/admin-portal/tenant-admin-portal-how-to-create-a-cloudkey-endpoint",
                       "administration/admin-portal/tenant-admin-portal-how-to-create-endpoint-template"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Locations",
@@ -1543,9 +1665,11 @@
                       "administration/admin-portal/how-to-add-location-to-endpoints-in-bulk",
                       "administration/admin-portal/how-to-add-location-to-the-endpoint",
                       "administration/admin-portal/how-to-create-location-using-endpoint"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Consent Documents",
@@ -1574,11 +1698,14 @@
                           "administration/admin-portal/how-to-revoke-consent-of-a-user-in-the-tenant-admin-portal-video-tutorial",
                           "administration/admin-portal/how-to-view-and-download-active-consent-of-a-user-video-tutorial",
                           "administration/admin-portal/how-to-view-and-download-consent-history-of-a-user-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Reports & Insights",
@@ -1613,9 +1740,11 @@
                           "administration/admin-portal/how-to-create-and-download-user-transactions-report-in-the-tenant-admin-portal-video-tutorial",
                           "administration/admin-portal/how-to-create-and-download-users-report-in-the-tenant-admin-portal-video-tutorial",
                           "administration/admin-portal/how-to-view-and-download-user-transactions-report-in-tenant-admin-portal-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Insights Dashboard",
@@ -1629,16 +1758,19 @@
                       "administration/admin-portal/oloid-platform-insights-dashboard-user-matrix-tab",
                       "administration/admin-portal/oloid-platform-insights-dashboard-windows-shared-passwords-report",
                       "administration/admin-portal/what-is-oloid-s-insights-dashboard"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Reporting",
                     "pages": [
                       "administration/admin-portal/ad-hoc-reports",
                       "administration/admin-portal/scheduled-reports"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "SSO & User Sync",
@@ -1648,41 +1780,48 @@
                     "pages": [
                       "administration/admin-portal/how-to-configure-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal",
                       "administration/admin-portal/how-to-configure-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Auth0 SSO Setup",
                     "pages": [
                       "administration/admin-portal/how-to-log-in-to-tenant-admin-portal-using-auth0-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Azure SSO Setup",
                     "pages": [
                       "administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-microsoft-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Duo SSO Setup",
                     "pages": [
                       "administration/admin-portal/how-to-log-in-to-tenant-admin-portal-with-duo-sso",
                       "administration/admin-portal/tenant-admin-portal-how-to-configure-duo-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Google SSO Setup",
                     "pages": [
                       "administration/admin-portal/how-to-configure-gsuite-sso-in-tenant-admin-portal",
                       "administration/admin-portal/tenant-admin-portal-how-to-log-in-to-tenant-admin-portal-with-google-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "PingOne SSO Setup",
                     "pages": [
                       "administration/admin-portal/how-to-configure-pingone-sso-in-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Accounts & Settings",
@@ -1734,23 +1873,28 @@
                           "administration/admin-portal/tenant-admin-portal-how-to-configure-security-tab-within-tenant-settings-video-tutorial",
                           "administration/admin-portal/tenant-admin-portal-how-to-configure-tenant-details-video-tutorial",
                           "administration/admin-portal/tenant-admin-portal-login-options-and-configurations"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Accounts and Settings - Supervisor App",
                     "pages": [
                       "administration/admin-portal/how-to-reset-tenant-in-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Security, Encryption & Compliance",
                     "pages": [
                       "administration/admin-portal/enable-customer-managed-encryption-keys-cmek-for-your-oloid-tenant-aws-kms-kek-encryption"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Application Administration",
@@ -1760,7 +1904,8 @@
                     "pages": [
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-add-vault-shared-password-for-a-user-in-the-tenant-admin-portal",
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-shared-password-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Chrome Vault - Admin Guides",
@@ -1768,20 +1913,23 @@
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-update-authenticator-tab-in-the-tenant-admin-portal",
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-update-details-tab-in-the-tenant-admin-portal",
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-generate-and-download-auto-pair-config-file-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Chrome Vault - Installation & Configuration",
                     "pages": [
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-configure-endpoint-templates-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Chrome Vault Videos",
                     "pages": [
                       "administration/admin-portal/chrome-vault-how-to-add-vault-shared-password-for-a-user-in-the-tenant-admin-portal-video-tutorial",
                       "administration/admin-portal/chrome-vault-how-to-create-shared-password-in-the-tenant-admin-portal-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Chrome Vault- Platform Configuration",
@@ -1790,14 +1938,16 @@
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-endpoint-template-in-the-tenant-admin-portal",
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-create-and-configure-oloid-vault-application-in-the-tenant-admin-portal",
                       "administration/admin-portal/oloid-vault-chrome-chromium-how-to-enable-password-autofill-for-multi-domain-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "CloudKey- Admin Guides",
                     "pages": [
                       "administration/admin-portal/oloid-cloudkey-app-platform-configuration",
                       "administration/admin-portal/set-up-application-and-connection-for-cloudkey"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Connect Videos",
@@ -1805,7 +1955,8 @@
                       "administration/admin-portal/how-to-create-oloid-connect-application-in-the-tenant-admin-portal-video-tutorial",
                       "administration/admin-portal/how-to-generate-auto-pair-config-file-for-oloid-connect-app-in-the-tenant-admin-portal-video-tutorial",
                       "administration/admin-portal/oloid-connect-how-to-configure-screensaver-in-tenant-admin-portal-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Connect- Admin Guides",
@@ -1826,14 +1977,16 @@
                       "administration/admin-portal/oloid-connect-how-to-test-network-connectivity-on-the-oloid-connect-endpoint",
                       "administration/admin-portal/oloid-connect-how-to-unpair-endpoint",
                       "administration/admin-portal/oloid-connect-how-to-view-endpoint-details-on-the-oloid-connect-endpoint"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Connect: Installation & Configuration",
                     "pages": [
                       "administration/admin-portal/how-to-generate-auto-pair-config-file-for-oloid-connect-in-tenant-admin-portal",
                       "administration/admin-portal/oloid-connect-admin-setup"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Connect: Platform Configuration",
@@ -1842,7 +1995,8 @@
                       "administration/admin-portal/how-to-create-and-configure-oloid-connect-application-in-tenant-admin-portal",
                       "administration/admin-portal/oloid-connect-how-to-configure-endpoint-in-the-tenant-admin-portal",
                       "administration/admin-portal/oloid-connect-how-to-configure-intent-screen-in-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Device Lock - Admin Settings",
@@ -1852,26 +2006,30 @@
                       "administration/admin-portal/how-to-create-and-configure-devicelock-endpoint-template-in-tenant-admin-portal",
                       "administration/admin-portal/oloid-device-lock-how-to-configure-offline-intent-screen-in-tenant-admin-portal",
                       "administration/admin-portal/tenant-admin-portal-how-to-update-auto-pair-config-file-for-oloid-devicelock-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Device Lock Videos",
                     "pages": [
                       "administration/admin-portal/oloid-device-lock-how-to-configure-offline-intent-screen-in-tenant-admin-portal-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Passwordless Authenticator- Supporting Documents",
                     "pages": [
                       "administration/admin-portal/operations-allowed-for-supervisor-in-admin-mode"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Platform Configuration - Supervisor App",
                     "pages": [
                       "administration/admin-portal/windows-login-how-to-enable-add-delete-users-in-tenant-admin-portal-for-supervisors",
                       "administration/admin-portal/windows-login-how-to-upload-download-hwg-file-in-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Platform Configuration - WebKey",
@@ -1886,19 +2044,22 @@
                       "administration/admin-portal/webkey-how-to-enable-personal-passkey-in-the-tenant-admin-portal",
                       "administration/admin-portal/webkey-how-to-generate-auto-pair-config-file-for-webkey-in-tenant-admin-portal",
                       "administration/admin-portal/webkey-how-to-create-and-configure-a-webkey-application-in-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Supervisor Portal - Admin Settings",
                     "pages": [
                       "administration/admin-portal/supervisor-portal-how-to-set-up-supervisor-profile"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Using WebKey",
                     "pages": [
                       "administration/admin-portal/webkey-how-to-login-to-tenant-admin-portal-with-oloid-webkey-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Verify - Admin Guides",
@@ -1911,20 +2072,23 @@
                       "administration/admin-portal/oloid-verify-how-to-unpair-endpoint",
                       "administration/admin-portal/oloid-verify-how-to-view-endpoint-details-on-endpoint",
                       "administration/admin-portal/oloid-verify-how-to-update-location-permission-on-ipad"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Verify - Installation & Configuration",
                     "pages": [
                       "administration/admin-portal/oloid-verify-admin-setup"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Verify/Connect Videos",
                     "pages": [
                       "administration/admin-portal/oloid-verify-how-to-configure-authentication-in-the-tenant-admin-portal-video-tutorial",
                       "administration/admin-portal/oloid-verify-how-to-login-to-the-admin-mode-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Verify: Platform Configuration",
@@ -1933,9 +2097,11 @@
                       "administration/admin-portal/oloid-verify-how-to-configure-endpoint-in-tenant-admin-portal",
                       "administration/admin-portal/oloid-verify-how-to-create-and-configure-application-in-tenant-admin-portal",
                       "administration/admin-portal/oloid-verify-how-to-create-and-configure-endpoint-template-in-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -1950,7 +2116,8 @@
                   "administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-preview-uat-environment",
                   "administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-eu-environment",
                   "administration/user-portal/platform-portal-and-user-portal-network-url-whitelisting-requirements-for-prod-us-environment"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Credential Management",
@@ -1961,7 +2128,8 @@
                       "administration/user-portal/how-to-deactivate-badge-in-oloid-user-portal",
                       "administration/user-portal/how-to-enroll-for-badge-login-using-oloid-user-portal",
                       "administration/user-portal/how-to-replace-and-assign-badge-using-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Credential Management",
@@ -1973,7 +2141,8 @@
                       "administration/user-portal/pin-onboarding",
                       "administration/user-portal/qr-onboarding",
                       "administration/user-portal/setting-up-consent-management-templates"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Face Management",
@@ -1983,14 +2152,16 @@
                       "administration/user-portal/how-to-login-with-face-in-oloid-user-portal",
                       "administration/user-portal/oloid-user-portal-how-to-login-through-hr-picture-verification",
                       "administration/user-portal/oloid-user-portal-how-to-revoke-consent"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "NFC Management",
                     "pages": [
                       "administration/user-portal/how-to-enroll-for-nfc-login-using-oloid-user-portal",
                       "administration/user-portal/how-to-replace-and-assign-nfc-using-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Password Management",
@@ -1998,7 +2169,8 @@
                       "administration/user-portal/how-to-create-individual-password-using-oloid-user-portal",
                       "administration/user-portal/how-to-create-vault-password-using-oloid-user-portal",
                       "administration/user-portal/how-to-edit-individual-password-using-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "PIN Management",
@@ -2007,15 +2179,18 @@
                       "administration/user-portal/how-to-create-pin-using-oloid-user-portal",
                       "administration/user-portal/how-to-edit-pin-in-oloid-user-portal",
                       "administration/user-portal/how-to-reset-pin-using-invite-link-in-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "QR Code Management",
                     "pages": [
                       "administration/user-portal/how-to-view-qr-code-using-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Accounts & Settings",
@@ -2030,9 +2205,11 @@
                       "administration/user-portal/how-to-share-feedback-using-oloid-user-portal",
                       "administration/user-portal/oloid-user-portal-how-to-configure-oloid-user-portal-in-tenant-admin-portal",
                       "administration/user-portal/tenant-admin-portal-how-to-enable-hr-picture-verification-for-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "SSO Setup",
@@ -2041,27 +2218,32 @@
                     "group": "Auth0 SSO Setup",
                     "pages": [
                       "administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-using-auth0-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Azure SSO Setup",
                     "pages": [
                       "administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-with-microsoft-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Duo SSO Setup",
                     "pages": [
                       "administration/user-portal/oloid-user-portal-how-to-log-in-to-oloid-user-portal-using-duo-sso"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "PingOne SSO Setup",
                     "pages": [
                       "administration/user-portal/how-to-log-in-to-oloid-user-portal-with-ping-sso"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Administration",
@@ -2070,7 +2252,8 @@
                     "group": "Create and Manage Consent Documents",
                     "pages": [
                       "administration/user-portal/how-to-configure-and-test-biometric-policy-to-add-face-for-the-user-using-oloid-user-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Users",
@@ -2080,11 +2263,14 @@
                         "group": "Videos",
                         "pages": [
                           "administration/user-portal/how-to-send-qr-code-credential-to-user-using-user-portal-link-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Videos",
@@ -2096,7 +2282,8 @@
                   "administration/user-portal/how-to-enroll-for-nfc-login-using-oloid-user-portal-video-tutorial",
                   "administration/user-portal/how-to-replace-and-assign-badge-using-oloid-user-portal-video-tutorial",
                   "administration/user-portal/how-to-replace-and-assign-nfc-using-oloid-user-portal-video-tutorial"
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -2109,38 +2296,44 @@
                 "group": "Accounts and Settings - Supervisor App",
                 "pages": [
                   "administration/device-admin-apps/how-to-disable-passwordless-using-device-admin-passcode-in-supervisor-app"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Chrome Vault - Getting Started",
                 "pages": [
                   "administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-manageengine-endpoint-central-mdm",
                   "administration/device-admin-apps/oloid-vault-chrome-chromium-how-to-deploy-oloid-vault-using-microsoft-intune-mdm"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Connect: Installation & Configuration",
                 "pages": [
                   "administration/device-admin-apps/how-to-install-and-auto-pair-oloid-connect-app-through-mdm"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Platform Configuration - Supervisor App",
                 "pages": [
                   "administration/device-admin-apps/windows-login-how-to-create-device-admin-passcode-for-supervisor-app"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supervisor App Videos",
                 "pages": [
                   "administration/device-admin-apps/how-to-create-device-admin-passcode-for-supervisor-app-video-tutorial"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supervisor Portal Videos",
                 "pages": [
                   "administration/device-admin-apps/how-to-install-and-auto-pair-windows-authenticator-app-through-mdm-video-tutorial"
-                ]
+                ],
+                "public": true
               }
             ]
           }
@@ -2193,7 +2386,8 @@
                   "api-reference/platform/users/send-login-url-multiple-users",
                   "api-reference/platform/users/invite-new-user",
                   "api-reference/platform/users/encrypt-all-users-pin"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Credentials",
@@ -2231,7 +2425,8 @@
                   "api-reference/platform/credentials/remove-user-face",
                   "api-reference/platform/credentials/access-control-badges",
                   "api-reference/platform/credentials/get-user-credential"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Endpoints",
@@ -2252,7 +2447,8 @@
                   "api-reference/platform/endpoints/pair-endpoint-sticker",
                   "api-reference/platform/endpoints/create-endpoint-template",
                   "api-reference/platform/endpoints/list-endpoint-templates"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Groups",
@@ -2265,7 +2461,8 @@
                   "api-reference/platform/groups/remove-users-from-group",
                   "api-reference/platform/groups/add-endpoints",
                   "api-reference/platform/groups/remove-endpoints"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Applications",
@@ -2276,7 +2473,8 @@
                   "api-reference/platform/applications/update-application",
                   "api-reference/platform/applications/delete-application",
                   "api-reference/platform/applications/get-application-users"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Connections",
@@ -2286,7 +2484,8 @@
                   "api-reference/platform/connections/get-connection-by-connection-id",
                   "api-reference/platform/connections/update-connection",
                   "api-reference/platform/connections/delete-connection"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Transactions",
@@ -2304,25 +2503,31 @@
                   "api-reference/platform/transactions/export-kronos-action",
                   "api-reference/platform/transactions/get-error-transaction",
                   "api-reference/platform/transactions/get-action-view"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Consent",
-                "pages": ["api-reference/platform/consent/get-user-consent"]
+                "pages": [
+                  "api-reference/platform/consent/get-user-consent"
+                ],
+                "public": true
               },
               {
                 "group": "Login",
                 "pages": [
                   "api-reference/platform/login/login",
                   "api-reference/platform/login/google-login"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Advanced Login",
                 "pages": [
                   "api-reference/platform/advanced-login/login",
                   "api-reference/platform/advanced-login/google-login"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Settings",
@@ -2332,7 +2537,8 @@
                   "api-reference/platform/settings/create-settings",
                   "api-reference/platform/settings/get-settings",
                   "api-reference/platform/settings/delete-settings"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Tenant Settings",
@@ -2342,11 +2548,15 @@
                   "api-reference/platform/tenant-settings/get-cognito-user-cred",
                   "api-reference/platform/tenant-settings/update-cognito-user-cred",
                   "api-reference/platform/tenant-settings/delete-cognito-user-cred"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "RDS Reports",
-                "pages": ["api-reference/platform/rds-reports/get-rdsdata"]
+                "pages": [
+                  "api-reference/platform/rds-reports/get-rdsdata"
+                ],
+                "public": true
               }
             ]
           },
@@ -2356,27 +2566,33 @@
             "groups": [
               {
                 "group": "Login",
-                "pages": ["api-reference/integrations/login/login"]
+                "pages": [
+                  "api-reference/integrations/login/login"
+                ],
+                "public": true
               },
               {
                 "group": "Consent",
                 "pages": [
                   "api-reference/integrations/consent/get-user-consent",
                   "api-reference/integrations/consent/get-user-consent-pdf"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Transactions",
                 "pages": [
                   "api-reference/integrations/transactions/get-transactions",
                   "api-reference/integrations/transactions/get-transaction"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Activity Logs",
                 "pages": [
                   "api-reference/integrations/activity-logs/get-activity-logs"
-                ]
+                ],
+                "public": true
               }
             ]
           }
@@ -2409,13 +2625,15 @@
                       "workflow/workflow/oloid-account",
                       "workflow/workflow/prowatch-account",
                       "workflow/workflow/servicenow-account"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Data Protection",
                     "pages": [
                       "workflow/workflow/data-protection"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Getting Started",
@@ -2427,7 +2645,8 @@
                       "workflow/workflow/outbound-network-access-requirements",
                       "workflow/workflow/pre-req-system-requirements",
                       "workflow/workflow/suggested-approach-for-installation-and-maintenance"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "How-to guides",
@@ -2435,14 +2654,16 @@
                       "workflow/workflow/how-to-create-a-flow",
                       "workflow/workflow/how-to-enable-disable-flow",
                       "workflow/workflow/how-to-import-a-flow"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "On-Prem Application Health",
                     "pages": [
                       "workflow/workflow/how-to-configure-system-and-api-health-in-oloid-workflow",
                       "workflow/workflow/monitoring-health-status"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Overview",
@@ -2451,7 +2672,8 @@
                       "workflow/workflow/oloid-workflow-core-features",
                       "workflow/workflow/oloid-workflow-application-modes",
                       "workflow/workflow/oloid-workflow-key-concepts"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Pre-built Flow Templates",
@@ -2460,13 +2682,15 @@
                       "workflow/workflow/pro-watch-to-servicenow-incident-automation-and-ticketing-integration",
                       "workflow/workflow/prowatch-servicenow-integration",
                       "workflow/workflow/servicenow-to-pro-watch-access-management-automation"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Security",
                     "pages": [
                       "workflow/workflow/security"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Set up 3rd party Applications",
@@ -2474,7 +2698,8 @@
                       "workflow/workflow/set-up-prowatch-for-oloid-workflow-integrations",
                       "workflow/workflow/set-up-s2-netbox-for-oloid-workflow-integrations",
                       "workflow/workflow/set-up-servicenow-for-oloid-workflow-integrations"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Workflow",
@@ -2483,9 +2708,11 @@
                       "workflow/workflow/oloid-workflow-guides-list",
                       "workflow/workflow/using-the-terminated-user-processing-api",
                       "workflow/workflow/what-is-oloid-workflow"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -2504,7 +2731,8 @@
                   "changelog/webkey",
                   "changelog/oloidvault",
                   "changelog/userportal"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Coming Soon",
@@ -2512,14 +2740,16 @@
                 "pages": [
                   "changelog/upcoming/apps",
                   "changelog/upcoming/web"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "API",
                 "icon": "code",
                 "pages": [
                   "changelog/releasenotes"
-                ]
+                ],
+                "public": true
               }
             ]
           },
@@ -2538,14 +2768,16 @@
                         "pages": [
                           "resources/integrations/sso/auth0-settings-for-oloid-sso",
                           "resources/integrations/sso/how-to-configure-auth0-sso-in-oloid-portal"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Azure SSO Setup",
                         "pages": [
                           "resources/integrations/sso/how-to-configure-azure-sso-in-oloid-portal",
                           "resources/integrations/sso/tenant-admin-portal-how-to-enable-entra-id-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Create and Manage IDP Provider",
@@ -2563,13 +2795,15 @@
                           "resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-oidc-entra-id",
                           "resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-oidc-pingone",
                           "resources/integrations/sso/tenant-admin-portal-how-to-create-idp-profile-for-security-assertion-markup-language-saml"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Duo SSO Setup",
                         "pages": [
                           "resources/integrations/sso/duo-settings-for-oloid-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Okta SSO Setup",
@@ -2579,22 +2813,26 @@
                           "resources/integrations/sso/how-to-log-in-to-the-tenant-admin-portal-with-okta-sso",
                           "resources/integrations/sso/okta-settings-for-oloid-sso",
                           "resources/integrations/sso/oloid-user-portal-how-to-log-in-oloid-user-portal-with-okta-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "PingOne SSO Setup",
                         "pages": [
                           "resources/integrations/sso/how-to-log-in-to-oloid-portal-with-pingone-sso",
                           "resources/integrations/sso/pingone-settings-for-oloid-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Workday SSO Setup",
                         "pages": [
                           "resources/integrations/sso/configuring-security-assertion-markup-language-saml-sso-with-workday-and-oloid"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "User Sync & SCIM",
@@ -2606,7 +2844,8 @@
                           "resources/integrations/sso/how-to-create-a-token-id-for-advanced-user-sync-okta-inbound-in-the-okta-admin-console",
                           "resources/integrations/sso/how-to-create-advanced-user-sync-for-entra-id-inbound-in-the-tenant-admin-portal",
                           "resources/integrations/sso/how-to-create-advanced-user-sync-for-okta-inbound-in-the-tenant-admin-portal"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Data Tables",
@@ -2615,16 +2854,19 @@
                           "resources/integrations/sso/how-to-configure-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal",
                           "resources/integrations/sso/how-to-create-data-mapper-table-for-entra-id-inbound-in-the-tenant-admin-portal",
                           "resources/integrations/sso/how-to-create-data-mapper-table-for-okta-inbound-in-the-tenant-admin-portal"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "System for Cross-Domain Identity Management (SCIM) - Configuration Guide",
                         "pages": [
                           "resources/integrations/sso/oloid-configuration-guide-for-okta-system-for-cross-domain-identity-management-scim-client",
                           "resources/integrations/sso/tenant-admin-portal-how-to-configure-system-for-cross-domain-identity-management-scim"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Application SSO",
@@ -2633,7 +2875,8 @@
                         "group": "Connect- Admin Guides",
                         "pages": [
                           "resources/integrations/sso/oloid-connect-login-using-ping-one-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Connect: Installation & Configuration",
@@ -2641,32 +2884,37 @@
                           "resources/integrations/sso/oloid-connect-first-time-login-using-google-sso",
                           "resources/integrations/sso/oloid-connect-first-time-login-using-microsoft-sso",
                           "resources/integrations/sso/oloid-connect-first-time-login-using-okta-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Passwordless Authenticator - Miscellaneous Docs",
                         "pages": [
                           "resources/integrations/sso/how-to-add-oloid-as-an-identity-provider-idp-in-pingfederate"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Platform Configuration - WebKey",
                         "pages": [
                           "resources/integrations/sso/webkey-how-to-enable-oloid-webkey-sso-login",
                           "resources/integrations/sso/webkey-how-to-link-webkey-with-an-identity-provider-idp-in-tenant-admin-portal"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Supervisor Portal - Create & Manage Shared Credentials",
                         "pages": [
                           "resources/integrations/sso/supervisor-portal-how-to-associate-users-with-shared-credentials"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Supervisor Portal Videos",
                         "pages": [
                           "resources/integrations/sso/how-to-associate-users-with-shared-credentials-in-the-supervisor-portal-video-tutorial"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Verify - Admin Guides",
@@ -2674,15 +2922,18 @@
                           "resources/integrations/sso/oloid-verify-login-using-google-sso",
                           "resources/integrations/sso/oloid-verify-login-using-microsoft-sso",
                           "resources/integrations/sso/oloid-verify-login-using-okta-sso"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Web Passwordless Login -WebKey",
                         "pages": [
                           "resources/integrations/sso/enabling-oloid-as-saml-identity-provider-idp-in-adfs"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "More",
@@ -2691,35 +2942,42 @@
                         "group": "Accounts",
                         "pages": [
                           "resources/integrations/sso/how-to-configure-user-sync-in-microsoft-entra-id-admin-console"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Accounts and Settings",
                         "pages": [
                           "resources/integrations/sso/how-to-associate-group-with-supervisor"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Getting Started",
                         "pages": [
                           "resources/integrations/sso/enabling-okta-sso-for-oloid-apps-verify-connect-device-lock-oloid-app"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Set up 3rd party Applications",
                         "pages": [
                           "resources/integrations/sso/set-up-microsoft-entra-id-for-oloid-workflow-integration"
-                        ]
+                        ],
+                        "public": true
                       },
                       {
                         "group": "Supporting Documents",
                         "pages": [
                           "resources/integrations/sso/oloid-sub-processors-list"
-                        ]
+                        ],
+                        "public": true
                       }
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "HRMS & Agents",
@@ -2732,7 +2990,8 @@
                       "resources/integrations/hrms/how-to-create-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal",
                       "resources/integrations/hrms/how-to-create-advanced-user-sync-for-workday-inbound-in-the-tenant-admin-portal",
                       "resources/integrations/hrms/tenant-admin-portal-how-to-configure-advanced-user-sync-for-workday-inbound"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Data Tables",
@@ -2743,7 +3002,8 @@
                       "resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-enterprise-inbound-in-the-tenant-admin-portal",
                       "resources/integrations/hrms/how-to-create-data-mapper-table-for-adp-etime-inbound-in-the-tenant-admin-portal",
                       "resources/integrations/hrms/how-to-create-data-mapper-table-for-workday-inbound-in-the-tenant-admin-portal"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Device Lock Videos",
@@ -2751,40 +3011,47 @@
                       "resources/integrations/hrms/how-to-log-into-workforce-hrms-platforms-using-qr-code-through-oloid-device-lock-app-video-tutorial",
                       "resources/integrations/hrms/how-to-log-into-workforce-hrms-platforms-using-badge-through-oloid-device-lock-app-video-tutorial",
                       "resources/integrations/hrms/how-to-log-into-workforce-hrms-platforms-using-nfc-id-through-oloid-device-lock-app-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Manage Agents Videos",
                     "pages": [
                       "resources/integrations/hrms/how-to-create-advanced-user-sync-for-adp-vantage-hcm-inbound-in-the-tenant-admin-portal-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Pre-built Flow Templates",
                     "pages": [
                       "resources/integrations/hrms/adp-to-active-directory-integration",
                       "resources/integrations/hrms/workday-to-pro-watch-employee-lifecycle-automation"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Set up 3rd party Applications",
                     "pages": [
                       "resources/integrations/hrms/connecting-workday-hris-with-oloid-cloud-platform"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Workday SSO Setup",
                     "pages": [
                       "resources/integrations/hrms/how-to-log-in-to-workday-with-assigned-credentials"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Workflow",
                     "pages": [
                       "resources/integrations/hrms/set-up-workday-integration-time-and-attendance-and-user-sync"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "PACS & Access Control",
@@ -2793,7 +3060,8 @@
                     "group": "CloudKey",
                     "pages": [
                       "resources/integrations/pacs/qr-code-verification-and-door-access-control"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Create and Manage Wiegand Access",
@@ -2801,19 +3069,22 @@
                       "resources/integrations/pacs/how-to-configure-wiegand-access",
                       "resources/integrations/pacs/how-to-create-weigand-format",
                       "resources/integrations/pacs/how-to-delete-wiegand-access"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "FAQs- Supervisor App",
                     "pages": [
                       "resources/integrations/pacs/how-to-update-badge-reader-using-supervisor-app"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Passwordless Authenticator - Miscellaneous Docs",
                     "pages": [
                       "resources/integrations/pacs/installing-oloid-passwordless-on-local-machine-running-ehr-citrix-or-local-with-usb-badge-reader"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Set up 3rd party Applications",
@@ -2821,19 +3092,25 @@
                       "resources/integrations/pacs/set-up-c-cure-9000-for-oloid-workflow-integrations",
                       "resources/integrations/pacs/set-up-genetec-web-sdk-for-oloid-workflow-integrations",
                       "resources/integrations/pacs/set-up-lenel-onguard-for-oloid-workflow-integrations"
-                    ]
+                    ],
+                    "public": true
                   },
                   {
                     "group": "Supporting Documents",
                     "pages": [
                       "resources/integrations/pacs/how-to-configure-card-reader-using-rf-ideas-configuration-utility-for-oloid-applications"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "PaaS",
-                "pages": ["passwordless/windows/vault/getting-started"]
+                "pages": [
+                  "passwordless/windows/vault/getting-started"
+                ],
+                "public": true
               }
             ]
           },
@@ -2873,13 +3150,18 @@
                     "group": "Videos",
                     "pages": [
                       "resources/guides/oloid-passwordless-solution-video-tutorial"
-                    ]
+                    ],
+                    "public": true
                   }
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Passwordless Authenticator - Miscellaneous Docs",
-                "pages": ["resources/guides/oloid-supported-card-types"]
+                "pages": [
+                  "resources/guides/oloid-supported-card-types"
+                ],
+                "public": true
               },
               {
                 "group": "Passwordless Authenticator- Supporting Documents",
@@ -2890,7 +3172,8 @@
                   "resources/guides/setting-up-and-using-user-groups",
                   "resources/guides/setting-up-locations-and-connections",
                   "resources/guides/user-onboarding-for-oloid-portal"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Quick Reference Guides (QRG)",
@@ -2899,7 +3182,8 @@
                   "resources/guides/oloid-platform-qrg-how-to-create-secrets",
                   "resources/guides/oloid-platform-qrg-how-to-generate-auto-pair-config-file",
                   "resources/guides/oloid-verify-qrg-how-to-kill-and-relaunch-the-app"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supporting Documents",
@@ -2909,20 +3193,23 @@
                   "resources/guides/list-of-oloid-supported-integrations",
                   "resources/guides/oloid-product-updates",
                   "resources/guides/what-s-new-in-oloid"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Supporting Videos",
                 "pages": [
                   "resources/guides/how-to-use-the-oloid-help-center-video-tutorial"
-                ]
+                ],
+                "public": true
               },
               {
                 "group": "Troubleshooting",
                 "pages": [
                   "resources/guides/troubleshooting-iphone-truedepth-camera-error-blocked-camera",
                   "resources/guides/troubleshooting-iphone-truedepth-camera-issue-face-id-disabled"
-                ]
+                ],
+                "public": true
               }
             ]
           }

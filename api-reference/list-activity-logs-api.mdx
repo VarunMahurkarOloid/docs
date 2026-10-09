@@ -16,10 +16,11 @@ source:
   section: "API Guides"
   updatedAt: "2024-09-05T16:00:09Z"
   migratedAt: "2026-08-13T09:16:28.912392+00:00"
+public: true
 ---
 ## Endpoint
 
-```
+```text
 /filterActivity
 ```
 
@@ -38,7 +39,7 @@ This endpoint allows you to retrieve a filtered list of activity logs. It suppor
 
 The request body should be a JSON object with the following structure:
 
-```
+```text
 {  "nextToken": "string",  "start": number,  "limit": number,  "end": number}
 ```
 
@@ -56,7 +57,7 @@ The request body should be a JSON object with the following structure:
 - Status Code: 200 OK
 - Content-Type: application/json
 
-```
+```text
 {  "data": {    "activities": [      {        "id": "string",        "timestamp": number,        "activityType": "string",        "details": {},        // ... other activity-specific fields ...      }    ],    "nextToken": "string"  },  "message": "string"}
 ```
 
@@ -69,13 +70,13 @@ The request body should be a JSON object with the following structure:
 
 ## Request
 
-```
+```text
 POST /filterActivityContent-Type: application/jsonAuthorization: Bearer {access_token}{  "start": 1662364800000,  "end": 1662451200000,  "limit": 50}
 ```
 
 ## Success Response
 
-```
+```text
 HTTP/1.1 200 OKContent-Type: application/json{  "data": {    "activities": [      {        "id": "act-123",        "timestamp": 1662388800000,        "activityType": "LOGIN",        "details": {          "userId": "user-456",          "userName": "John Doe",          "ipAddress": "192.168.1.100"        }      },      {        "id": "act-124",        "timestamp": 1662392400000,        "activityType": "ACCESS_GRANTED",        "details": {          "userId": "user-789",          "userName": "Jane Smith",          "endpointId": "endpoint-001",          "endpointName": "Main Entrance"        }      }      // ... more activities ...    ],    "nextToken": "next-page-token-xyz"  },  "message": "Activity logs retrieved successfully"}
 ```
 
@@ -92,9 +93,14 @@ HTTP/1.1 200 OKContent-Type: application/json{  "data": {    "activities": [    
 ## Related Articles
 
 <CardGroup cols={2}>
-  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api" />
-  <Card title="Login API Documentation" icon="arrow-right" href="/api-reference/login-api-documentation" />
-  <Card title="IGA Web hook for Individual Windows Credential" icon="arrow-right" href="/passwordless/windows/passwordless/iga-web-hook-for-individual-windows-credential" />
-  <Card title="List Transactions API" icon="arrow-right" href="/api-reference/list-transactions-api" />
-  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions" />
+  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api">
+  </Card>
+  <Card title="Login API Documentation" icon="arrow-right" href="/api-reference/login-api-documentation">
+  </Card>
+  <Card title="IGA Web hook for Individual Windows Credential" icon="arrow-right" href="/passwordless/windows/passwordless/iga-web-hook-for-individual-windows-credential">
+  </Card>
+  <Card title="List Transactions API" icon="arrow-right" href="/api-reference/list-transactions-api">
+  </Card>
+  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions">
+  </Card>
 </CardGroup>

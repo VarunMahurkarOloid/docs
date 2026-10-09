@@ -16,6 +16,7 @@ source:
   section: "API Guides"
   updatedAt: "2024-09-05T16:15:00Z"
   migratedAt: "2026-08-13T09:16:25.193372+00:00"
+public: true
 ---
 ## Overview
 
@@ -43,7 +44,7 @@ Note - Even when using "ClientID", "Secret" use "UserName" and "Password" as key
 
 ## Example Request
 
-```
+```text
 {  "UserName": "string",  "TenantName": "string",  "Password": "string"}
 ```
 
@@ -57,7 +58,7 @@ The response body contains the cognito tokens required for authentication and au
 
 ## Example Response
 
-```
+```text
 {  "cognitoToken": {    "ChallengeParameters": {},    "AuthenticationResult": {      "IdToken": "string",      "TokenType": "string",      "ExpiresIn": 0,      "RefreshToken": "string",      "AccessToken": "string"    }  }}
 ```
 
@@ -74,9 +75,14 @@ In case of an error (e.g., incorrect username or password), the API will return 
 ## Related Articles
 
 <CardGroup cols={2}>
-  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api" />
-  <Card title="List Activity Logs API" icon="arrow-right" href="/api-reference/list-activity-logs-api" />
-  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions" />
-  <Card title="Oloid Passwordless SDK Usage Guide for Windows Developers" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers" />
-  <Card title="Webkey – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-eu-environment" />
+  <Card title="Add Face URL API" icon="arrow-right" href="/api-reference/add-face-url-api">
+  </Card>
+  <Card title="List Activity Logs API" icon="arrow-right" href="/api-reference/list-activity-logs-api">
+  </Card>
+  <Card title="Guide to Retrieving Events and Transactions" icon="arrow-right" href="/api-reference/guide-to-retrieving-events-and-transactions">
+  </Card>
+  <Card title="Oloid Passwordless SDK Usage Guide for Windows Developers" icon="arrow-right" href="/passwordless/windows/passwordless/oloid-passwordless-sdk-usage-guide-for-windows-developers">
+  </Card>
+  <Card title="Webkey – Network URL Whitelisting Requirements for PROD (EU) Environment" icon="arrow-right" href="/passwordless/web/webkey/webkey-network-url-whitelisting-requirements-for-prod-eu-environment">
+  </Card>
 </CardGroup>
