@@ -494,7 +494,7 @@
                       "passwordless/windows/supervisor/supervisor-app-update-badge",
                       "passwordless/windows/supervisor/windows-login-how-to-view-and-edit-shared-password-details-in-supervisor-app"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "Enroll Badge",
@@ -2129,7 +2129,7 @@
                       "administration/user-portal/how-to-enroll-for-badge-login-using-oloid-user-portal",
                       "administration/user-portal/how-to-replace-and-assign-badge-using-oloid-user-portal"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "Credential Management",
@@ -2142,7 +2142,7 @@
                       "administration/user-portal/qr-onboarding",
                       "administration/user-portal/setting-up-consent-management-templates"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "Face Management",
@@ -2153,7 +2153,7 @@
                       "administration/user-portal/oloid-user-portal-how-to-login-through-hr-picture-verification",
                       "administration/user-portal/oloid-user-portal-how-to-revoke-consent"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "NFC Management",
@@ -2161,7 +2161,7 @@
                       "administration/user-portal/how-to-enroll-for-nfc-login-using-oloid-user-portal",
                       "administration/user-portal/how-to-replace-and-assign-nfc-using-oloid-user-portal"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "Password Management",
@@ -2170,7 +2170,7 @@
                       "administration/user-portal/how-to-create-vault-password-using-oloid-user-portal",
                       "administration/user-portal/how-to-edit-individual-password-using-oloid-user-portal"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "PIN Management",
@@ -2180,17 +2180,17 @@
                       "administration/user-portal/how-to-edit-pin-in-oloid-user-portal",
                       "administration/user-portal/how-to-reset-pin-using-invite-link-in-oloid-user-portal"
                     ],
-                    "public": true
+                    "public": false
                   },
                   {
                     "group": "QR Code Management",
                     "pages": [
                       "administration/user-portal/how-to-view-qr-code-using-oloid-user-portal"
                     ],
-                    "public": true
+                    "public": false
                   }
                 ],
-                "public": true
+                "public": false
               },
               {
                 "group": "Accounts & Settings",
